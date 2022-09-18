@@ -276,3 +276,8 @@ def parse_explain(prog):
                 return styler
     display(df.style.pipe(make_pretty))
     #display(df)
+
+def ones(n):
+    w = ['1' for i in range(n)]
+    return(unparse(w))    
+
