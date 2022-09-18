@@ -1,0 +1,19 @@
+[build-system]
+  requires = ["setuptools"]
+  build-backend = "setuptools.build_meta"
+[project]
+  name = "onesharp"
+  version = "0.0.0"
+  dependencies = [
+    "numpy",
+    "pandas",
+    "IPython"
+  ]
+  authors = [
+    {name = "Larry Moss", email = "larrymoss@gmail.com"},
+    {name = "Jacob Striebel", email = "striebel-dev@outlook.com"}
+  ]
+  description = "Interpreter and tools for the 1# language"
+  license = {file = "LICENSE"}
+[project.urls]
+  "Homepage" = "https://github.com/lmoss/onesharp"
