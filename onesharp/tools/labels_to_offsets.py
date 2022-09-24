@@ -17,7 +17,7 @@
 #     >>>   '<end>'
 #     >>> clear_1 = labels_to_offsets( clear_1_using_labels )
 #     >>> print(clear_1)
-#     1#####111###11####111####
+#     '1#####111###11####111####'
 #
 #
 def labels_to_offsets(program, lstart='<', lend='>'):

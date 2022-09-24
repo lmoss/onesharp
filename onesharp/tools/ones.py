@@ -6,8 +6,9 @@
 #   example
 #   -------
 #     >>> print(ones(3))
-#     111
+#     '111'
 #
 def ones(n):
-  assert n > 0
+  assert type(n) == int # ``n'' must be an integer
+  assert n > 0 # ``n'' must be positive
   return ''.join(['1' for _ in range(n)])
