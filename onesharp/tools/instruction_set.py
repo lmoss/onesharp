@@ -3,7 +3,7 @@ from ..tools.ones import ones
 def is_positive_int(n):
   return type(n) == int and n > 0
 
-def is_string(s)
+def is_string(s):
   return type(s) == str
 
 def enqueue_one(register):
