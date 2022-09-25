@@ -24,7 +24,7 @@ def labels_to_offsets(program, lstart='<', lend='>'):
   program = ''.join( program.split() ) # Remove all whitespace
   assert lstart not in ['1','#']
   assert lend not in ['1','#']
-  assert lstart != lend
+  assert lstart != lend # The label start and end delimiters must differ
   # Phase 1
   # Parse the label-containing program
   parse_of_program = []
@@ -43,7 +43,7 @@ def labels_to_offsets(program, lstart='<', lend='>'):
         char_index += 1
         assert char_index < prog_len_in_chars
         cur_char = program[char_index]
-        assert cur_char not in ['1','#'] # A label cannot contain ``1'' or ``#''
+        assert cur_char not in ['1','#',lstart] # A label cannot contain these
         if cur_char == lend:
           break
         label += cur_char
