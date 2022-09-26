@@ -1,3 +1,5 @@
+import sys
+
 # labels_to_offsets
 # =================
 # program : string, the ``label-enhanced'' 1# program
@@ -107,6 +109,8 @@ def labels_to_offsets(program, lstart='<', lend='>'):
       arg = ''.join(['1' for _ in range(offset)])
     # Confirm we have a valid arg; that is, we don't have an undefined label
     for char in arg:
-      assert char == '1'
+      if char != '1':
+        sys.stderr.write('offsets_to_labels: encountered undefined label: '+arg)
+        assert False
     program += arg + opcode
   return program

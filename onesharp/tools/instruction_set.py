@@ -36,3 +36,9 @@ def dequeue_and_branch(register):
 
 def no_operation():
   return jump_forward(1)
+
+def dequeue(register):
+  p =  dequeue_and_branch(register)
+  p += no_operation()
+  p += no_operation()
+  return p
