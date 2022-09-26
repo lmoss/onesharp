@@ -17,3 +17,5 @@
   license = {file = "LICENSE"}
 [project.urls]
   "Homepage" = "https://github.com/lmoss/onesharp"
+[tool.setuptools.packages.find]
+  exclude = ['ipy_notebooks/*']
