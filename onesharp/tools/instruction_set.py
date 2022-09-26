@@ -30,7 +30,7 @@ def jump_backward(offset):
   else:
     assert False # ``offset'' must be a positive integer or label string
 
-def dequeue_and_trifurcate(register):
+def dequeue_and_branch(register):
   assert is_positive_integer(register)
   return ones(register) + '#####'
 
