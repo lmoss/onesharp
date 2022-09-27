@@ -9,20 +9,54 @@ from ..programs.clear import clear
 from ..programs.move import move
 from ..programs.copy import copy
 
-PROG_TXT         =  1
-PROG_TXT_TMP     =  2
-INSTR_IDX        =  3
-INSTR_IDX_TMP    =  4
-INSTR_ONES       =  5
-INSTR_ONES_TMP   =  6
-INSTR_SHARPS     =  7
-INSTR_ONE_SAVE   =  8
-REG_FILE         =  9
-REG_FILE_TMP     = 10
-ENQUEUE_VAL_REG  = 11
-VAL_DEQUEUED_REG = 12
-COPY_TMP         = 13
-EXCEPTION_REG    = 14
+# The registers used in the universal program
+PROG_TXT         =  1 # Program text : the text of the 1# program that we are
+                      #   running the universal program on
+PROG_TXT_TMP     =  2 # Program text temporary : the temporary register used
+                      #   when cycling through the program text
+INSTR_IDX        =  3 # Instruction index : the index of the instruction in the
+                      #   the program text which we would like to execute / that
+                      #   is in the process of being executed (unary with empty
+                      #   meaning zero, a single 1 meaning one, etc.)
+INSTR_IDX_TMP    =  4 # Instruction index temporary : used to save the
+                      #   instruction index when we are counting down on the
+                      #   actual instruction index register to locate an
+                      #   instruction in the program text
+INSTR_ONES       =  5 # Instruction ones : the process of fetching an
+                      #   instruction writes the number of ones in that
+                      #   instruction into the instruction ones register;
+                      #   e.g., after the instruction ``1111###'' is fetched,
+                      #   the contents of this register will be ``1111''
+INSTR_ONES_TMP   =  6 # Instruction ones temporary : the register for saving
+                      #   the instruction ones register when we are doing
+                      #   operations directly on that register
+INSTR_SHARPS     =  7 # Instruction sharps : the process of fetching an
+                      #   instruction writes the number of sharps in that
+                      #   instruction into the instruction sharps register;
+                      #   e.g., after the instruction ``1111###'' is fetched,
+                      #   the contents of this register will be ``###''
+INSTR_ONE_SAVE   =  8 # Instruction one save : this is a temporary register that
+                      #   is used when probing the boundary between
+                      #   instructions in the fetch instruction module
+REG_FILE         =  9 # Register file : this is the register into which all
+                      #   the registers of the program we are executing are
+                      #   encoded via the encoding defined in the TRM web
+                      #   text by L. Moss
+REG_FILE_TMP     = 10 # Register file temporary : the temporary register used
+                      #   when cycling through the contents of the register file
+ENQUEUE_VAL_REG  = 11 # Enqueue value regsiter : the register into which the
+                      #   value to enqueue is written before control is
+                      #   transfered to the enqueue module
+VAL_DEQUEUED_REG = 12 # Value dequeued register : the register into which the
+                      #   the value dequeued from the register file is written
+                      #   before a call to the dequeue module returns
+COPY_TMP         = 13 # Copy temporary : the temporary register that used as
+                      #   scratch space during copy operations 
+EXCEPTION_REG    = 14 # Exception register : there is not much error handling
+                      #   (i.e., extra code to aid debugging)
+                      #   in this program but, where it is present, if an
+                      #   exception occurs a 1 will be written into this
+                      #   register
 
 def _fetch_instruction(
   prog_txt,
