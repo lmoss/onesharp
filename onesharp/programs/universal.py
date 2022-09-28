@@ -9,54 +9,65 @@ from ..programs.clear import clear
 from ..programs.move import move
 from ..programs.copy import copy
 
-# The registers used in the universal program
-PROG_TXT         =  1 # Program text : the text of the 1# program that we are
-                      #   running the universal program on
-PROG_TXT_TMP     =  2 # Program text temporary : the temporary register used
-                      #   when cycling through the program text
-INSTR_IDX        =  3 # Instruction index : the index of the instruction in the
-                      #   the program text which we would like to execute / that
-                      #   is in the process of being executed (unary with empty
-                      #   meaning zero, a single 1 meaning one, etc.)
-INSTR_IDX_TMP    =  4 # Instruction index temporary : used to save the
-                      #   instruction index when we are counting down on the
-                      #   actual instruction index register to locate an
-                      #   instruction in the program text
-INSTR_ONES       =  5 # Instruction ones : the process of fetching an
-                      #   instruction writes the number of ones in that
-                      #   instruction into the instruction ones register;
-                      #   e.g., after the instruction ``1111###'' is fetched,
-                      #   the contents of this register will be ``1111''
-INSTR_ONES_TMP   =  6 # Instruction ones temporary : the register for saving
-                      #   the instruction ones register when we are doing
-                      #   operations directly on that register
-INSTR_SHARPS     =  7 # Instruction sharps : the process of fetching an
-                      #   instruction writes the number of sharps in that
-                      #   instruction into the instruction sharps register;
-                      #   e.g., after the instruction ``1111###'' is fetched,
-                      #   the contents of this register will be ``###''
-INSTR_ONE_SAVE   =  8 # Instruction one save : this is a temporary register that
-                      #   is used when probing the boundary between
-                      #   instructions in the fetch instruction module
-REG_FILE         =  9 # Register file : this is the register into which all
+# The registers used in the universal 1# program
+# ==============================================
+PROG_TXT         =  1 # Program text : the index of the register that contains
+                      #   the text of the 1# program that we are running the
+                      #   universal program on
+PROG_TXT_TMP     =  2 # Program text temporary : the index of the temporary
+                      #   register used when cycling through the program text
+INSTR_IDX        =  3 # Instruction index : the index of the register that
+                      #   contains the index of the instruction in the
+                      #   the program text which we would like to execute or
+                      #   which is in the process of being executed; this value,
+                      #   in addition to being call the ``instruction index'',
+                      #   can synonymously be called the ``program counter'' and
+                      #   is encoded in unary, with an empty register meaning
+                      #   zero (i.e., the first instruction in the program),
+                      #   ``1'' meaning one, ``11'' meaning two, etc.)
+INSTR_IDX_TMP    =  4 # Instruction index temporary : the index of the register
+                      #   that is used to save the instruction index when we
+                      #   are counting down on the actual instruction index
+                      #   register to locate an instruction in the program text
+INSTR_ONES       =  5 # Instruction ones : the index of the instruction ones
+                      #   register; the process of fetching an instruction
+                      #   writes the number of ones in that instruction into
+                      #   the instruction ones register; e.g., after the
+                      #   instruction ``1111###'' is fetched, the contents of
+                      #   this register will be ``1111''
+INSTR_ONES_TMP   =  6 # Instruction ones temporary : the index of the register
+                      #   used to save the instruction ones register when we
+                      #   are doing operations directly on that register
+INSTR_SHARPS     =  7 # Instruction sharps : the index of the instruction sharps
+                      #   register; the process of fetching an instruction
+                      #   writes the number of sharps in that instruction into
+                      #   the instruction sharps register; e.g., after the
+                      #   instruction ``1111###'' is fetched, the contents of
+                      #   this register will be ``###''
+INSTR_ONE_SAVE   =  8 # Instruction one save : the index of the temporary
+                      #   register that is used when probing the boundary
+                      #   between instructions in the fetch instruction module
+REG_FILE         =  9 # Register file : the index of the register into which all
                       #   the registers of the program we are executing are
                       #   encoded via the encoding defined in the TRM web
                       #   text by L. Moss
-REG_FILE_TMP     = 10 # Register file temporary : the temporary register used
-                      #   when cycling through the contents of the register file
-ENQUEUE_VAL_REG  = 11 # Enqueue value regsiter : the register into which the
-                      #   value to enqueue is written before control is
-                      #   transfered to the enqueue module
-VAL_DEQUEUED_REG = 12 # Value dequeued register : the register into which the
-                      #   the value dequeued from the register file is written
-                      #   before a call to the dequeue module returns
-COPY_TMP         = 13 # Copy temporary : the temporary register that used as
-                      #   scratch space during copy operations 
-EXCEPTION_REG    = 14 # Exception register : there is not much error handling
+REG_FILE_TMP     = 10 # Register file temporary : the index of the temporary
+                      #   register used when cycling through the contents of the
+                      #   register file
+ENQUEUE_VAL_REG  = 11 # Enqueue value regsiter : the index of the register into
+                      #   which the value to enqueue is written before control
+                      #   is transfered to the enqueue module
+VAL_DEQUEUED_REG = 12 # Value dequeued register : the index of the register into
+                      #   which the value dequeued from the register file is
+                      #   written before a call to the dequeue module returns
+COPY_TMP         = 13 # Copy temporary : the index of the temporary register
+                      #   that used as scratch space during copy operations 
+EXCEPTION_REG    = 14 # Exception register : the index of the exception
+                      #   register; there is not much error handling
                       #   (i.e., extra code to aid debugging)
                       #   in this program but, where it is present, if an
-                      #   exception occurs a 1 will be written into this
-                      #   register
+                      #   exception occurs a 1 will be written into the
+                      #   exception register
 
 def _fetch_instruction(
   prog_txt,
@@ -157,6 +168,92 @@ def _populate_register_file(
   p +=   '<error>'
   return labels_to_offsets(p)
 
+# _enqueue_or_dequeue
+# ===================
+#                :
+# reg_file       : positive integer, the index of the register in which all the
+#                :   registers of the program we are executing via the
+#                :   universal program are encoded; we expect the registers
+#                :   to be encoded using the scheme defined in the universal
+#                :   program chapter of the TRM web text by L. Moss
+#                :
+# reg_file_tmp   : positive integer, the index of the temporary register used
+#                :   when cycling through the register-file register
+#                :
+# reg_to_get     : positive integer, the index of the register that we are
+#                :   either enqueuing a character into or dequeuing a character
+#                :   from
+#                :
+# reg_to_get_tmp : positive integer, the index of the register that we use to
+#                :   to save the contents of the ``reg_to_get'' register while
+#                :   we are doing processing directly on that register
+#                :
+# copy_tmp       : positive integer, the index of the register that we use for
+#                :   temporary scratch space during copy operations
+#                :
+# is_enqueue     : boolean, whether to return the 1# code module for enqueue
+#                :   or dequeue; if ``True'' then enqueue, and if ``false''
+#                :   then dequeue; this is the only variable in this entire file
+#                :   (universal.py) which is a sort of ``meta'' variable with
+#                :   respect to the 1# program that is being generated and which
+#                :   isn't included in the 1# program itself; all other
+#                :   variables in this file are positive integers which each
+#                :   refer to the index of a Moss machine register that is
+#                :   operated on in the actual 1# program that is generated
+#                :   by the Python code in this file
+#                :
+# enqueue_val    : positive integer, the index of the register into which the
+#                :   the value is passed to this module to enqueue into the
+#                :   register file in the case of an enqueue operation; in the
+#                :   case of a dequeue operation, this register will not be used
+#                :
+# val_dequeued   : positive integer, the index of the register into which the
+#                :   the value will be stored that is dequeued from the register
+#                :   file in the case of a dequeue operation; in the case of an
+#                :   enqueue operation, this register will not be used
+#                :
+# returns        : string, the 1# subprogram of the universal program which will
+#                :   either enqueue a character into a specified register in the
+#                :   the register file or will dequeue a character from a
+#                :   specified register in the register file, depending on the
+#                :   value specified for the ``is_enqueue'' argument
+#                :
+#   Summary of the 1# code modules that are returned for enqueuing and dequeuing
+#   ----------------------------------------------------------------------------
+#           The enqueue and dequeue modules both begin with a call to the
+#   ``_populate_regsiter_file'' module for which the index of the register that
+#   will be enqueued to or dequeued from is passed. The result of this call is
+#   that the register file is initialized up to the index of the register that
+#   will be enqueued to or dequeued from, if it is not already. For example,
+#   if the register file contains ``11 ## ##'', encoding an R1 contents of
+#   ``1'', an empty R2, and the remaining registers uninitialized, and if
+#   further the enqueue or dequeue operation that we are preparing to perform
+#   will operate on R4, then our call to the populate-register-file module will
+#   result in R3 and R4 being initialized in the regsiter file so the new
+#   contents are ``11 ## ## ## ##''. Initializing the register in the register
+#   file that we will operate on before we begin the operation simplifies coding
+#   the operation itself in 1#.
+#           After the register file has been initialized up to the register we
+#   will operate on, we next cycle through the register file until we reach
+#   the index of that register to operate on. Once the register has been
+#   reached, the action is of course different for an enqueue versus a dequeue
+#   operation. For enqueue, we continue to cycle through the current register
+#   until we reach the end-of-register code ``##''. At this point we append the
+#   value that we are enqueuing onto the cycle-temporary-register
+#   ``reg_file_tmp'', then we copy the remaining contents of the register file
+#   onto the cycle register, followed by copying the cycle register back into
+#   the ``reg_file'' register. At this point the enqueue operation is complete.
+#           In the case of a dequeue operation, the value encoded into the
+#   register of interest in the first position is read, without copying it into
+#   the cycle register. Instead it is copied into the ``val_dequeued'' register
+#   to be returned to the calling module. After this operation is complete,
+#   the remaining contents, if any, of the register that we just dequeued from
+#   are copied onto the cycle register, and after that all of the remaining
+#   contents of the register file are copied onto the cycle register, and
+#   finally the contents of the cycle register are moved back into the register
+#   file, to complete the cycle. At this point the dequeue operation is
+#   complete.
+#
 def _enqueue_or_dequeue(
   reg_file,
   reg_file_tmp,
