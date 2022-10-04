@@ -18,7 +18,7 @@ from onesharp.programs.move import move
 #         :   ``tmpB'' empty, a halt is eventually reached with contents ``y''
 #         :   in regsiter ``reg'' and registers ``tmpA'' and ``tmpB'' empty,
 #         :   where ``y'' is equal to phi_{write}(x) + x
-def write(reg, tmpA, tmpB):
+def diag(reg, tmpA, tmpB):
   p =  '<top>'
   p +=   db(reg)
   p +=   jf('<empty>')
