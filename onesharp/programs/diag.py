@@ -4,7 +4,7 @@ from ..tools.instruction_set import jump_forward as jf
 from ..tools.instruction_set import jump_backward as jb
 from ..tools.instruction_set import dequeue_and_branch as db
 from ..tools.labels_to_offsets import labels_to_offsets
-from move import move
+from ..programs.move import move
 
 # diag
 # ====
