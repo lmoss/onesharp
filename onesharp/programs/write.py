@@ -1,10 +1,10 @@
-from onesharp.tools.instruction_set import enqueue_one as eo
-from onesharp.tools.instruction_set import enqueue_sharp as es
-from onesharp.tools.instruction_set import jump_forward as jf
-from onesharp.tools.instruction_set import jump_backward as jb
-from onesharp.tools.instruction_set import dequeue_and_branch as db
-from onesharp.tools.labels_to_offsets import labels_to_offsets
-from onesharp.programs.move import move
+from ..tools.instruction_set import enqueue_one as eo
+from ..tools.instruction_set import enqueue_sharp as es
+from ..tools.instruction_set import jump_forward as jf
+from ..tools.instruction_set import jump_backward as jb
+from ..tools.instruction_set import dequeue_and_branch as db
+from ..tools.labels_to_offsets import labels_to_offsets
+from move import move
 
 # write
 # =====
