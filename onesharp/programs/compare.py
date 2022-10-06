@@ -72,7 +72,7 @@ def compare(a, b):
   p +=       clear(b)
   p +=       jf('<break>')
   p +=     '<a_sharp_b_sharp>'
-  p +=       # a equals b *so far*
+             # a equals b *so far*
   p +=       jb('<continue>')
   p += '<break>'
   return labels_to_offsets(p)
