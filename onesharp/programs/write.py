@@ -10,15 +10,15 @@ from ..programs.move import move
 # =====
 # reg     : positive integer, the index of the register on whose contents the
 #         :   the write program will be executed and into which the output
-#         :   program-text will be written
-# tmp     : positive integer, the index of the temporary register
+#         :   program-text will be written (default is 1)
+# tmp     : positive integer, the index of the temporary register (default is 2)
 # returns : string, the 1# program with the property that when it is run with
 #         :   contents ``x'' in register ``reg'' and register ``tmp'' empty,
 #         :   we eventually halt with contents ``y'' in regsiter ``reg'' and
 #         :   register ``tmp'' empty, where ``y'' is a program in the 1#
 #         :   language such that when ``y'' is executed (with no arguments),
-#         :   the result is to write ``x'' into register ``reg.''
-def write(reg, tmp):
+#         :   the result is to write ``x'' into register ``reg''
+def write(reg=1, tmp=2):
   p =  '<top>'
   p +=   db(reg)
   p +=   jf('<empty>')
