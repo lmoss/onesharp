@@ -11,12 +11,12 @@ import sys
 #   example
 #   -------
 #     >>> clear_1_using_labels = \
-#     >>>   '<start>'+\
-#     >>>     '1#####'+\
-#     >>>     '<end>###'+\
-#     >>>     '<start>####'+\
-#     >>>     '<start>####'+\
-#     >>>   '<end>'
+#     ...   '<start>'+\
+#     ...     '1#####'+\
+#     ...     '<end>###'+\
+#     ...     '<start>####'+\
+#     ...     '<start>####'+\
+#     ...   '<end>'
 #     >>> clear_1 = labels_to_offsets( clear_1_using_labels )
 #     >>> print(clear_1)
 #     '1#####111###11####111####'
