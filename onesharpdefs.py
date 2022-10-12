@@ -195,7 +195,7 @@ def print_snapshot(snap):
 display_formal_snapshot = false
 
 def step_by_step_with_snapshots(word_prog, register_inputs):
-    display_formal_snapshot == true
+    display_formal_snapshot = true
     step_by_step(word_prog,register_inputs)
     
 def step_by_step(word_prog, register_inputs):
