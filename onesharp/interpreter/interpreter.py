@@ -160,10 +160,10 @@ def pad(p, register_inputs):
     bigger = register_inputs + extras
     return (bigger)
 
-display_formal_snapshot = false
+display_formal_snapshot = False
 
 def step_by_step_with_snapshots(word_prog, register_inputs):
-    display_formal_snapshot = true
+    display_formal_snapshot = True
     step_by_step(word_prog,register_inputs)
 
 def addones(word): ### needed to get out the formal snapshots: see print_snapshot below
@@ -184,6 +184,7 @@ def word_representation(snapshot): ### needed to get out the formal snapshots: s
     b = [addones(snapshot.regs[i]) + '##' for i in range(registers)]
     c = "".join(b)
     return(a+ '##' + c)
+
 def print_snapshot(snap):
     regdf = pd.DataFrame([[snap.regs[n]] for n in range(len(snap.regs))],columns=["contents"])
     regdf.index = np.arange(1, len(regdf) + 1)
@@ -194,7 +195,7 @@ def print_snapshot(snap):
         #styler.hide(axis='index')
         return styler
     display(regdf.style.pipe(make_pretty))  
-    if display_formal_snapshot == true:
+    if display_formal_snapshot == True:
         print()
         print('The formal snapshot here as we represent it is ' + word_representation(snap))
         
