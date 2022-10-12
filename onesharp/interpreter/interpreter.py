@@ -163,7 +163,7 @@ def pad(p, register_inputs):
 display_formal_snapshot = false
 
 def step_by_step_with_snapshots(word_prog, register_inputs):
-    display_formal_snapshot == true
+    display_formal_snapshot = true
     step_by_step(word_prog,register_inputs)
 
 def addones(word): ### needed to get out the formal snapshots: see print_snapshot below
