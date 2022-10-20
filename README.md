@@ -1,6 +1,6 @@
 # onesharp
-This is a collection of files and notebooks related either to running 1# or to educational material related to computability theory using those tools.
-For more on 1#, see https://iulg.sitehost.iu.edu/trm/
+This is a collection of files and notebooks related either to running 1# or to educational material related to computability theory using those tools.  The goal is to turn these notebooks into an online textbook on computatbility theory.  The target audience are advanced undergraduates and beginning graduate students in either mathematics or computer science, or anyone who has the background and interest to pursue the subject.
+I have taugh a class on the subject given at Indiana University for quite a few years.  The previous version is https://iulg.sitehost.iu.edu/trm. I expect to write more on the content and overall approach and to put that in an introductory chapter.
 
 Here is more on the individual files here.
 
