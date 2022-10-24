@@ -44,7 +44,7 @@ def pow_unary(regA=1, regB=2, tmpAcc=3, tmpA=4, tmpAA=5, tmpBB=6, tmpCopy=7):
   p +=     jb('<mult_loop>')
   p +=   '<sharp>'
   p +=     jf('<error>')
-  p += '<epilogoue>'
+  p += '<epilogue>'
   p +=   clear(regA)
   p +=   clear(regB)
   p +=   move(tmpAcc, regA)
