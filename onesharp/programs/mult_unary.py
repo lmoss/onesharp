@@ -39,7 +39,7 @@ def mult_unary(regA=1, regB=2, tmpA=3, tmpB=4, tmpCopy=5):
   p +=     jb('<mult_loop>')
   p +=   '<sharp>'
   p +=     jf('<error>')
-  p += '<epilogoue>'
+  p += '<epilogue>'
   p +=   move(tmpA, regA)
   p +=   clear(regB)
   p += '<error>'
