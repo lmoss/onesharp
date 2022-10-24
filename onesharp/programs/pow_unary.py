@@ -7,7 +7,7 @@ from ..tools.labels_to_offsets import labels_to_offsets
 from ..programs.clear import clear
 from ..programs.move import move
 from ..programs.copy import copy
-from ..programs.add_unary import add_unary
+from ..programs.mult_unary import mult_unary
 
 # pow_unary
 # =========
