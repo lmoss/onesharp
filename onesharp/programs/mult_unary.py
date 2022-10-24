@@ -25,7 +25,7 @@ from ..programs.add_unary import add_unary
 # returns : string, the 1# program with that when executed will multiply the
 #         :   unary numbers contained in regA and regB, writing the result into
 #         :   regA and leaving regB empty
-def mult_unary(regA, regB, tmpA, tmpB, tmpCopy):
+def mult_unary(regA=1, regB=2, tmpA=3, tmpB=4, tmpCopy=5):
   p =  '<mult_loop>'
   p +=   db(regA)
   p +=   jf('<empty>')

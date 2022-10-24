@@ -14,7 +14,7 @@ from ..tools.labels_to_offsets import labels_to_offsets
 # returns : string, the 1# program that when executed will sum the unary
 #         :   numbers contained in regA and regB, writing the result into
 #         :   regA and leaving regB empty
-def add_unary(regA, regB):
+def add_unary(regA=1, regB=2):
   p =  '<add_loop>'
   p +=   db(regB)
   p +=   jf('<empty>')
