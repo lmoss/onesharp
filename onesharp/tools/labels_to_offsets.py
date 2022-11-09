@@ -99,7 +99,9 @@ def labels_to_offsets(program, lstart='<', lend='>'):
       label_ii = label__instruction_index[arg]
       offset = label_ii - instruction_index
       if offset < 0:
-        assert opcode == '####'
+        if opcode != '####':
+          sys.stderr.write('Offending label: '+arg)
+          assert False # We should be jumping backward, but we aren't
         offset = -offset
       elif offset > 0:
         assert opcode == '###'
