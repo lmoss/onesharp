@@ -509,6 +509,7 @@ def universal_alt(
                  val_dequeued   = val_dequeued_reg
                )
   p +=         clear(instr_ones) #eo(instr_ones)
+  p +=         clear(enqueue_val_reg)
   p +=         eo(instr_idx) # Advance the program counter by one
   p +=         jb('<program_loop>')
                ############################################
@@ -541,6 +542,7 @@ def universal_alt(
                  val_dequeued   = val_dequeued_reg
                )
   p +=         clear(instr_ones) #eo(instr_ones)
+  p +=         clear(enqueue_val_reg)
   p +=         eo(instr_idx) # Advance the program counter by one
   p +=         jb('<program_loop>')
                ##############################################
