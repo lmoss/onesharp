@@ -14,6 +14,8 @@ than evaluator.ipynb.  This is because working in Python also gives us extra too
 sanity.ipynb is a tool to help with writing 1# programs.   It shortens the distance from an algorithm or flowchart to an actual program.
 One doesn't have to use it at all, but I think most people would be relieved to see it.
 
-primitive_recursion.ipynb is intended to eventually be a standalone lesson on primitive recursive functions.  It's not there yet.  But it does allow one to enter primitive recursive terms (with a syntax checker), and then it automatically converts them to 1# programs.
+primitive_recursion.ipynb is intended to eventually be a standalone lesson on primitive recursive functions.  It's not completely done.  But it does allow one to enter primitive recursive terms (with a syntax checker), and then it automatically converts them to 1# programs. Before (or while) reading that, one could also look at the general discussion of coding numbers by terms found in arithmetic.ipynb.
 
-universal.ipynb is a discussion of the universal 1# program.
+self_writing.ipynb contains the write program, then diagonal program, and the self-writing 1# program, and exercise on these.
+
+universal.ipynb is a discussion of the universal 1# program.  My plan is to expand the notebook two_by_two.ipynb into a more detailed discussion of the programming technique that is involved in the universal program.
