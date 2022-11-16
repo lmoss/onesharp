@@ -15,3 +15,5 @@ sanity.ipynb is a tool to help with writing 1# programs.   It shortens the dista
 One doesn't have to use it at all, but I think most people would be relieved to see it.
 
 primitive_recursion.ipynb is intended to eventually be a standalone lesson on primitive recursive functions.  It's not there yet.  But it does allow one to enter primitive recursive terms (with a syntax checker), and then it automatically converts them to 1# programs.
+
+universal.ipynb is a discussion of the universal 1# program.
