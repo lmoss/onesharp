@@ -1,21 +1,26 @@
+# https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
 [build-system]
   requires = ["setuptools"]
   build-backend = "setuptools.build_meta"
 [project]
   name = "onesharp"
-  version = "0.0.0"
+  description      = "Interpreter and tools for the 1# language"
+#  long_description = "Interpreter and tools for the 1# language"
+#  long_description_content_type = "text/plain"
+  license = {text = "MIT License"}
+  version = "0.0.2"
   dependencies = [
-    "numpy",
-    "pandas",
-    "IPython"
+    "numpy >= 1.21.0",
+    "pandas >= 1.3.5",
+    "IPython >= 7.9.0"
   ]
   authors = [
-    {name = "Larry Moss", email = "larrymoss@gmail.com"},
-    {name = "Jacob Striebel", email = "striebel-dev@outlook.com"}
+    {name = "Larry Moss"},
+    {name = "Jacob Striebel"}
   ]
-  description = "Interpreter and tools for the 1# language"
-  license = {file = "LICENSE"}
 [project.urls]
-  "Homepage" = "https://github.com/lmoss/onesharp"
+  "Web Textbook" = "https://iulg.sitehost.iu.edu/trm/"
+  "Interactive Notebooks" = "https://lmoss.github.io/onesharp/"
+  "Source Code" = "https://github.com/lmoss/onesharp/"
 [tool.setuptools.packages.find]
   exclude = ['ipy_notebooks/*']
