@@ -1,0 +1,7 @@
+!python -m pip install -U setuptools
+!python -m pip install -U git+https://github.com/lmoss/onesharp.git@main
+from onesharp.interpreter.interpreter import *
+
+onesharp('1#',['1'])
+
+

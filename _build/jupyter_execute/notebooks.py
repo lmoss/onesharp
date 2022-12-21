@@ -40,7 +40,7 @@
 # Jupyter Book will also embed your code blocks and output in your book.
 # For example, here's some sample Matplotlib code:
 
-# In[1]:
+# In[ ]:
 
 
 from matplotlib import rcParams, cycler
@@ -49,7 +49,7 @@ import numpy as np
 plt.ion()
 
 
-# In[2]:
+# In[ ]:
 
 
 # Fixing random state for reproducibility

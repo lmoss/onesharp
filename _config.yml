@@ -7,13 +7,19 @@
 # Book settings
 title                       : Invitation to Computabitlity  # The title of the book. Will be placed in the left navbar.
 author                      : Lawrence S. Moss  # The author of the book
-copyright                   : "2022"  # Copyright year to be placed in the footer
-logo                        : logo.png  # A path to the book logo
+copyright                   : "2023"  # Copyright year to be placed in the footer
+logo                        : logo.png #was logo.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off # this had been 'force', and I also tried 'auto'
+
+
+sphinx:
+  extra_extensions:
+    - sphinx_exercise
+
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -26,7 +32,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/lmoss/Invitation to Computabitlity  # Online location of your book
+  url: https://github.com/lmoss/onesharp  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
