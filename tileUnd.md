@@ -12,7 +12,7 @@ the berst option is to run them on Colab.  For this, one starts by clicking on t
 ```{exercise}
 :label: factorial-exercise-prelim
 
-FUCK YOU
+FUCK YOU!
 ```
 
 ```{exercise}

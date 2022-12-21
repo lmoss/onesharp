@@ -9,7 +9,7 @@
 # 
 # To start, click on 'Open in Colab', and then click on the triangle.
 
-# In[1]:
+# In[ ]:
 
 
 #@title
@@ -335,7 +335,7 @@ copy_2_3_4 = '11#####11111111###1111###111##1111##11111####111#1111#11111111####
 
 # To begin, here is an *interpreter* for 1#.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.
 
-# In[3]:
+# In[ ]:
 
 
 def end_strip(list): ## removes the tail of empty registers
@@ -565,12 +565,12 @@ unparse(pre_program)
 # We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.
 # 
 
-# ###Exercise 5
+# ### Exercise 5
 # 
 # Write a program which takes the contents of R1 and adds them to the ends of *both* R2 and R3.
 # 
 
-# ###Exercise 6
+# ### Exercise 6
 # 
 # Write a program that clears out R1, leaving it empty.
 # 
