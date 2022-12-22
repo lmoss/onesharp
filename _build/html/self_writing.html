@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="The T predicate" href="T_predicate.html" />
+    <link rel="prev" title="Undecidability of Tiling" href="tileUnd.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -122,9 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   <span style="color:blue">
-    Getting stared with 1#
-   </span>
+   Getting stared with 1#
   </a>
  </li>
  <li class="toctree-l1">
@@ -182,8 +180,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="T_predicate.html">
-   The T predicate
+  <a class="reference internal" href="tileUnd.html">
+   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -430,58 +428,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercises">
    Exercises
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7">
-     Exercise 7
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8">
-     Exercise 8
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9">
-     Exercise 9
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10">
-     Exercise 10
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -528,58 +474,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exercises">
    Exercises
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7">
-     Exercise 7
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8">
-     Exercise 8
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9">
-     Exercise 9
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10">
-     Exercise 10
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -851,53 +745,76 @@ in <code class="docutils literal notranslate"><span class="pre">diag</span></cod
 and extending them.</p>
 <p>In all of these exercises, you are invited
 to check your work on the interpreter.</p>
-<div class="section" id="exercise-1">
-<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition" id="self_writing-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
+<div class="section" id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
 [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">+</span> <span class="pre">x</span></code>)?</p>
 </div>
-<div class="section" id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program which when started on all empty registers
 writes itself to R1 and also writes # to R2.</p>
 </div>
-<div class="section" id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
 write itself to R1 but rather writes itself followed by a #.
 In other words, <span class="math notranslate nohighlight">\(\phi_p(\ ) = p + \#\)</span>.</p>
 </div>
-<div class="section" id="exercise-4">
-<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
+<div class="section" id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
 </div>
-<div class="section" id="exercise-5">
-<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
 write itself to R1 but rather writes itself preceded by a #.
 In other words,
 <span class="math notranslate nohighlight">\(\phi_p(\ ) = \# + p\)</span>.</p>
 </div>
-<div class="section" id="exercise-6">
-<h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a self-replicating  program
 that begins with the program to transfer ahead
 one instruction, <code class="docutils literal notranslate"><span class="pre">1###</span></code>.</p>
 </div>
-<div class="section" id="exercise-7">
-<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program s which, when run with R2, R3, etc.
 empty,  ends up with R1 containing s <em>after</em> whatever
 happened to be in R1 at the start.
 In other words, for all words y,
 <span class="math notranslate nohighlight">\(\phi_s(y) = y + s\)</span></p>
 </div>
-<div class="section" id="exercise-8">
-<h2>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="exercise admonition" id="self_writing-exercise-7">
+
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program<code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
 <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  runs and halts with q in R1 if q=
@@ -905,24 +822,24 @@ a string q in R1,
 equal to <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>.
 (So this program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code> “knows itself”.)</p>
 </div>
-<div class="section" id="exercise-9">
-<h2>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h2>
-<p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
-which trades places with its input in R1.
-That is, running <code class="docutils literal notranslate"><span class="pre">trade</span></code>  with p in R1
-and all other registers empty does the same thing
-as running p with <code class="docutils literal notranslate"><span class="pre">trade</span></code> in R1 and all other
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">{exercise}Write</span> <span class="pre">a</span> <span class="pre">program</span> </code>trade<code class="docutils literal notranslate"> <span class="pre">which</span> <span class="pre">trades</span> <span class="pre">places</span> <span class="pre">with</span> <span class="pre">its</span> <span class="pre">input</span> <span class="pre">in</span> <span class="pre">R1.</span> <span class="pre">That</span> <span class="pre">is,</span> <span class="pre">running</span></code>trade<code class="docutils literal notranslate"> <span class="pre">with</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">R1</span> <span class="pre">and</span> <span class="pre">all</span> <span class="pre">other</span> <span class="pre">registers</span> <span class="pre">empty</span> <span class="pre">does</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">thing</span> <span class="pre">as</span> <span class="pre">running</span> <span class="pre">p</span> <span class="pre">with</span></code>trade``` in R1 and all other
 registers empty.</p>
 <p>[You will probably want to work through some later lessons
 before attempting this problem.  But it might be fun to try now.]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
-<div class="section" id="exercise-10">
-<h2>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition" id="self_writing-exercise-8">
+
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<div class="section" id="exercise-content">
 <p>Write two “twin’’ programs s and t with the properties
 that s and t are different programs;
 running s with all registers empty gives t in R1; and
 running t with all registers empty gives s in
 R1.</p>
+</div>
 </div>
 </div>
 
@@ -953,11 +870,11 @@ R1.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="T_predicate.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="tileUnd.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The T predicate</p>
+            <p class="prev-next-title">Undecidability of Tiling</p>
         </div>
     </a>
 </div>

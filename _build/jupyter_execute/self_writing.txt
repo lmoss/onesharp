@@ -44,5 +44,3 @@ self
 onesharp(self,[])
 
 onesharp(self,[])== self
-
-
