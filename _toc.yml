@@ -21,7 +21,7 @@ parts:
 - caption: Undecidability
   chapters:
   - file: haltUnd
-  - file: tileUnd.md
+  - file: tileUnd
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:
   - file: self_writing
