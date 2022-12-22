@@ -123,9 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   <span style="color:blue">
-    Getting stared with 1#
-   </span>
+   Getting stared with 1#
   </a>
  </li>
  <li class="toctree-l1">
@@ -183,8 +181,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="T_predicate.html">
+  <a class="reference internal" href="t_predicate.html">
    The T predicate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tileUnd.html">
+   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -448,23 +451,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">
    Universal programs of more than one argument
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -528,23 +514,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">
    Universal programs of more than one argument
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1436,21 +1405,31 @@ someone else in the class.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="universal-programs-of-more-than-one-argument">
 <h1>Universal programs of more than one argument<a class="headerlink" href="#universal-programs-of-more-than-one-argument" title="Permalink to this headline">#</a></h1>
-<img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"><div class="section" id="exercise-1">
-<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
+<img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="universal-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<div class="section" id="exercise-content">
 <p>What is <span class="math notranslate nohighlight">\(\varphi_u(\textit{self})\)</span>?</p>
-<p>Incidentally, running u on self takes 22,376,608 steps, whereas running self on empty registers takes 3,322.</p>
+<p>Incidentally, running u on self takes 22,376,608 steps, whereas running self on empty registers takes 3,322.
+‘’’</p>
 </div>
-<div class="section" id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
-<p>Write a program trade which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
+</div>
+<div class="exercise admonition" id="universal-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
 <p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
 <p>This exercise was given earlier, at the end of Lesson 4. But the solution really requires our work on universal programs.</p>
 </div>
-<div class="section" id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
-<p>Write a program self1 which writes itself to R1 but only uses that register. That is, self1 does not use any register besides R1.</p>
+</div>
+<div class="exercise admonition" id="universal-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses that register. That is, self1 does not use any register besides R1.</p>
 <p>[Hint: you will need the technique of coding several registers into R1.]</p>
+</div>
 </div>
 </div>
 

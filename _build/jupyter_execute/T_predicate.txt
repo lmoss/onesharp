@@ -520,5 +520,3 @@ last_index = len(a) -1 - first_index_in_reversed
 print(last_index)
 non_empty_registers = a[:last_index]
 print(non_empty_registers)
-
-

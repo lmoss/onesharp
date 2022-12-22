@@ -695,7 +695,7 @@ onesharp(clear_1,['1111###1111##########'])
 
 # ### Useful operations inside a Jupyter notebook
 # 
-# 1. Show the Table of Contents.
+# 1. Show the Table of Contents, and also hide it.
 # 
 # 2. Stop a program that is either in an infinite loop or otherwise is going too long.
 # 
@@ -710,3 +710,9 @@ onesharp(clear_1,['1111###1111##########'])
 # 7. Delete a cell.
 # 
 # 8. Open a new notebook.  
+
+# In[ ]:
+
+
+
+

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invitation to Computability &#8212; Invitation to Computabitlity</title>
+    <title>Undecidability of the Halting Problem &#8212; Invitation to Computabitlity</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting stared with 1#" href="getting_started.html" />
+    <link rel="next" title="Self-Replicating Programs" href="self_writing.html" />
+    <link rel="prev" title="Undecidability of Tiling" href="tileUnd.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="#">
+    <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
@@ -106,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Invitation to Computability
                 </a>
             </li>
@@ -193,9 +196,9 @@ const thebe_selector_output = ".output, .cell_output"
   Undecidability
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="haltUnd.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Undecidability of the Halting Problem
   </a>
  </li>
@@ -262,6 +265,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/haltUnd.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -301,7 +333,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2FhaltUnd.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -329,7 +361,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/index.md"
+        <a href="_sources/haltUnd.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -340,7 +372,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -388,22 +420,10 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Invitation to Computability
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-register-is-enough">
+   One register is enough
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#status-as-of-december-15-2022">
-   Status as of December 15, 2022
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-book">
-   Using the book
-  </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
  </li>
 </ul>
 
@@ -414,7 +434,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Invitation to Computability</h1>
+                <h1>Undecidability of the Halting Problem</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -424,22 +444,10 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Invitation to Computability
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-register-is-enough">
+   One register is enough
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#status-as-of-december-15-2022">
-   Status as of December 15, 2022
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-book">
-   Using the book
-  </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
  </li>
 </ul>
 
@@ -451,44 +459,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="invitation-to-computability">
-<h1>Invitation to Computability<a class="headerlink" href="#invitation-to-computability" title="Permalink to this headline">#</a></h1>
-<p>Lawrence S. Moss</p>
-<p>This is an online textbook on the basics of computability theory, originating in classes given by the author at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is not. It treats the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in computability theory, mathematics, and logic.</p>
-<p>On the other hand, aspects of the presentation are new.  This is mainly due to the online format using Jupyter notebooks.  The first part of the course uses a variant of register machines using two symbols and a “programming language” using those same two symbols, called 1#.  This text comes with a Python interpreter for 1# and with tool support to enable students to learn to write programs.  In addition, it is posisble to write explicit universal programs, self-writing programs, and similar artifacts.  So the course is much more explicit than most treatments.   At the same time, it enables one to go further, showing the undecidability of tiling using 1#, and then deriving as a corollary Church’s Theorem that satisfiability in first-order logic is undecidable.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Most of the chapters in the book are <a class="reference external" href="https://docs.jupyter.org/en/latest/index.html">Jupyter notebooks</a>.  So rather than simply
-read, they are intended to be <em>run</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open
-them on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don’t have buttons to run it on CoCalc, and
-the best option is to run them on Colab.  For this, one starts by clicking on the button at the top.</p>
-</div>
-</div>
-<div class="section" id="status-as-of-december-15-2022">
-<h1>Status as of December 15, 2022<a class="headerlink" href="#status-as-of-december-15-2022" title="Permalink to this headline">#</a></h1>
-<p>I am in the process of adding materials to the book.  The original <a class="reference external" href="https://iulg.sitehost.iu.edu/trm">source</a> for the course had
-much of the material, and the centerpiece was the Javascript interpreter for 1# developed by my former PhD students Robert Rose and
-David Sprunger. In 2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course exists
-in lecture slides.  So much of what I am doing now is revising them and adding them here.</p>
-</div>
-<div class="section" id="using-the-book">
-<h1>Using the book<a class="headerlink" href="#using-the-book" title="Permalink to this headline">#</a></h1>
-<p>There are a number of ways the book could be used in courses for students in several disciplines.  For computer science students,
-the subject is often taught as an end-of-semester topic in a theory course.  For this, one would need to select the topics
-judiciously and skip some of the beginning material. The book does not currently have much on complexity theory, but this might
-change. For mathematics courses aiming at undecidability results in logic, the book has a fair amount of advanced materaial, leading
-up to Church’s Theorem on the undecidability of first-order logic.  Overall, there is more than enough material for a course. At the
-same time, the topic of computability has many connections and developments, far too many for an “invitation” book. Instructors
-might prefer to use this book for some of their courses and to provide other material as well.</p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+  <p><a href="https://colab.research.google.com/github/lmoss/lmoss.github.io/blob/main/haltUnd.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="undecidability-of-the-halting-problem">
+<h1>Undecidability of the Halting Problem<a class="headerlink" href="#undecidability-of-the-halting-problem" title="Permalink to this headline">#</a></h1>
+<p>We come to one of the most famous results in computability theory, Turing’s theorem that the Halting Problem is undecidable.  The result has several formulations which we shall see.  The most basic one is that the set below is undecidable:
+$<span class="math notranslate nohighlight">\(
+\{ p : \mbox{\)</span>\phi_p(\ )\downarrow} }
+$$</p>
+<div class="section" id="one-register-is-enough">
+<h2>One register is enough<a class="headerlink" href="#one-register-is-enough" title="Permalink to this headline">#</a></h2>
+<p>A sharper form of the basic undecidability result concerns programs that only use R1.</p>
 </div>
 </div>
 
@@ -519,10 +499,17 @@ might prefer to use this book for some of their courses and to provide other mat
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="getting_started.html" title="next page">
+    <a class='left-prev' id="prev-link" href="tileUnd.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Undecidability of Tiling</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="self_writing.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting stared with 1#</p>
+        <p class="prev-next-title">Self-Replicating Programs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
