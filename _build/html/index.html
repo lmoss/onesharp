@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting stared with 1#" href="getting_started.html" />
@@ -463,9 +461,6 @@ in lecture slides.  So much of what I am doing now is revising them and adding t
 <p>Only a tiny fraction of the results here is due to the author.
 Most are standard in the literature.   In time, I willl add proper credits.</p>
 </div>
-<p>$$
-4 + 3 = 7
-$$</p>
 </div>
 <div class="section" id="using-the-book">
 <h2>Using the book<a class="headerlink" href="#using-the-book" title="Permalink to this headline">#</a></h2>
@@ -476,32 +471,6 @@ change. For mathematics courses aiming at undecidability results in logic, the b
 up to Church’s Theorem on the undecidability of first-order logic.  Overall, there is more than enough material for a course. At the
 same time, the topic of computability has many connections and developments, far too many for an “invitation” book. Instructors
 might prefer to use this book for some of their courses and to provide other material as well.</p>
-<div class="proof theorem admonition" id="my-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Orthogonal-Projection-Theorem)</p>
-<div class="theorem-content section" id="proof-content">
-<p>Given $y \in \mathbb R^n$ and linear subspace $S \subset \mathbb R^n$,
-there exists a unique solution to the minimization problem</p>
-<div class="math notranslate nohighlight">
-\[\hat y := \argmin_{z \in S} \|y - z\|\]</div>
-<p>The minimizer $\hat y$ is the unique vector in $\mathbb R^n$ that satisfies</p>
-<ul class="simple">
-<li><p>$\hat y \in S$</p></li>
-<li><p>$y - \hat y \perp S$</p></li>
-</ul>
-<p>The vector $\hat y$ is called the <strong>orthogonal projection</strong> of $y$ onto $S$.</p>
-</div>
-</div><div class="proof admonition" id="proof">
-<p>Proof. We’ll omit the full proof.</p>
-<p>But we will prove sufficiency of the asserted conditions.</p>
-<p>To this end, let $y \in \mathbb R^n$ and let $S$ be a linear subspace of $\mathbb R^n$.</p>
-<p>Let $\hat y$ be a vector in $\mathbb R^n$ such that $\hat y \in S$ and $y - \hat y \perp S$.</p>
-<p>Let $z$ be any other point in $S$ and use the fact that $S$ is a linear subspace to deduce</p>
-<div class="math notranslate nohighlight">
-\[\| y - z \|^2
-= \| (y - \hat y) + (\hat y - z) \|^2
-= \| y - \hat y \|^2  + \| \hat y - z  \|^2\]</div>
-<p>Hence $| y - z | \geq | y - \hat y |$, which completes the proof.</p>
-</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>

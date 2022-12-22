@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Undecidability of Tiling" href="tileUnd.html" />
@@ -462,8 +464,8 @@ title="Print to PDF"
 <div class="tex2jax_ignore mathjax_ignore section" id="undecidability-of-the-halting-problem">
 <h1>Undecidability of the Halting Problem<a class="headerlink" href="#undecidability-of-the-halting-problem" title="Permalink to this headline">#</a></h1>
 <p>We come to one of the most famous results in computability theory, Turing’s theorem that the Halting Problem is undecidable.  The result has several formulations which we shall see.  The most basic one is that the set below is undecidable:
-$$
-{ p : \mbox{$\phi_p(\ )\downarrow} }
+$<span class="math notranslate nohighlight">\(
+\{ p : \mbox{\)</span>\phi_p(\ )\downarrow} }
 $$</p>
 <div class="section" id="one-register-is-enough">
 <h2>One register is enough<a class="headerlink" href="#one-register-is-enough" title="Permalink to this headline">#</a></h2>

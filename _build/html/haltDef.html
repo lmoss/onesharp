@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tidy programs" href="tidy.html" />
@@ -487,21 +489,21 @@ title="Print to PDF"
 
 <p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <div class="section" id="exercise-content">
-<p>Exercise 1 was concerned with programs run on all empty registers.  Find a program $p$ and words $w_1$, $w_2$, and $w_3$ so that</p>
-<p>(a) When started with $w_1$ in R1, $p$ halts improperly.</p>
-<p>(b) When started with $w_2$ in R1, $p$ halts improperly.</p>
-<p>(c) When started with $w_3$ in R1, $p$ goes into an infinite loop inside $p$.</p>
+<p>Exercise 1 was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
+<p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
+<p>(b) When started with <span class="math notranslate nohighlight">\(w_2\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
+<p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop inside <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 </div>
 <div class="section" id="halting-the-formal-definitions">
 <h2>Halting: the formal definitions<a class="headerlink" href="#halting-the-formal-definitions" title="Permalink to this headline">#</a></h2>
 <p>There are five ways that p could halt.</p>
 <ol class="simple">
-<li><p>Instruction n of p (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of p, we reach this last instruction.</p></li>
-<li><p>Some instruction of p, say instruction number i, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also i + k = n + 1; and finally that at some point in the run of p, we reach instruction i.</p></li>
-<li><p>Instruction n of p (the last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this last instruction with Rk empty.</p></li>
-<li><p>Instruction n-1 of p (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this instruction with Rk containing a word beginning with 1.</p></li>
-<li><p>Instruction n-2 of p (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>,and at some point in the run of p, we reach this instruction with Rk containing a word beginning with #.</p></li>
+<li><p>Instruction n of p (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of p, we reach this last instruction.</p></li>
+<li><p>Some instruction of p, say instruction number i, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also i + k = n + 1; and finally that at some point in the run of p, we reach instruction i.</p></li>
+<li><p>Instruction n of p (the last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this last instruction with Rk empty.</p></li>
+<li><p>Instruction n-1 of p (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this instruction with Rk containing a word beginning with 1.</p></li>
+<li><p>Instruction n-2 of p (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>,and at some point in the run of p, we reach this instruction with Rk containing a word beginning with #.</p></li>
 </ol>
 </div>
 </div>

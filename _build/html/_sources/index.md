@@ -27,9 +27,6 @@ Only a tiny fraction of the results here is due to the author.
 Most are standard in the literature.   In time, I willl add proper credits.
 ```
 
-$$
- 4 + 3 = 7 
-$$
 
 ## Using the book
 
@@ -40,47 +37,5 @@ change. For mathematics courses aiming at undecidability results in logic, the b
 up to Church's Theorem on the undecidability of first-order logic.  Overall, there is more than enough material for a course. At the
 same time, the topic of computability has many connections and developments, far too many for an "invitation" book. Instructors
 might prefer to use this book for some of their courses and to provide other material as well.
-
-
-````{prf:theorem} Orthogonal-Projection-Theorem
-:label: my-theorem
-
-Given $y \in \mathbb R^n$ and linear subspace $S \subset \mathbb R^n$,
-there exists a unique solution to the minimization problem
-
-```{math}
-\hat y := \argmin_{z \in S} \|y - z\|
-```
-
-The minimizer $\hat y$ is the unique vector in $\mathbb R^n$ that satisfies
-
-* $\hat y \in S$
-
-* $y - \hat y \perp S$
-
-
-The vector $\hat y$ is called the **orthogonal projection** of $y$ onto $S$.
-````
-
-
-````{prf:proof}
-We'll omit the full proof.
-
-But we will prove sufficiency of the asserted conditions.
-
-To this end, let $y \in \mathbb R^n$ and let $S$ be a linear subspace of $\mathbb R^n$.
-
-Let $\hat y$ be a vector in $\mathbb R^n$ such that $\hat y \in S$ and $y - \hat y \perp S$.
-
-Let $z$ be any other point in $S$ and use the fact that $S$ is a linear subspace to deduce
-
-```{math}
-\| y - z \|^2
-= \| (y - \hat y) + (\hat y - z) \|^2
-= \| y - \hat y \|^2  + \| \hat y - z  \|^2
-```
-
-Hence $\| y - z \| \geq \| y - \hat y \|$, which completes the proof.
-````
 
 

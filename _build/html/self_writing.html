@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Undecidability of Tiling" href="tileUnd.html" />
@@ -520,11 +522,11 @@ from onesharp.interpreter.interpreter import *
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="section" id="diag">
 <h2>Diag<a class="headerlink" href="#diag" title="Permalink to this headline">#</a></h2>
 <p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word x in R1, the result is</p>
-<p>[$![[{\tt write}]]!$] (x) + x</p>
+<p>[<span class="math notranslate nohighlight">\(\![[{\tt write}]]\!\)</span>] (x) + x</p>
 <p>Running that last program on all empty registers gives the same thing as running x on itself:</p>
-<p>$[![$ <code class="docutils literal notranslate"><span class="pre">x</span></code> $]!]$(<code class="docutils literal notranslate"><span class="pre">x</span></code>)</p>
+<p><span class="math notranslate nohighlight">\([\![\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code> <span class="math notranslate nohighlight">\(]\!]\)</span>(<code class="docutils literal notranslate"><span class="pre">x</span></code>)</p>
 <p>in R1, assuming that
-$[![$ <code class="docutils literal notranslate"><span class="pre">x</span></code> $]!]$(<code class="docutils literal notranslate"><span class="pre">x</span></code>)
+<span class="math notranslate nohighlight">\([\![\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code> <span class="math notranslate nohighlight">\(]\!]\)</span>(<code class="docutils literal notranslate"><span class="pre">x</span></code>)
 is defined.</p>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
 <div class="cell docutils container">
@@ -679,7 +681,7 @@ is defined.</p>
 </div>
 <p>The three branches of the case instruction at the top take us to move3,1 (if R1 is empty), to the blue sub-program if the first symbol of R1 is a 1, and to the brown sub-program if that symbol is a #. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a 1 is removed from R1, what goes into R3 is the program which would write a 1 in R1 (this is 1#). And each time a # is removed from R1, what goes into R3 is the program which would write a # in R1 (this is 1##).</p>
 <p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
-Move x from R1 into R2, and also put $[![write]!]!](x)$ in R3.
+Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\([\![write]\!]\!](x)\)</span> in R3.
 Then
 move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
@@ -697,9 +699,14 @@ This, then, is <code class="docutils literal notranslate"><span class="pre">self
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
 After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.
 But running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> gives us <code class="docutils literal notranslate"><span class="pre">self</span></code>, by definition.</p>
-<p>So we conclude that running <code class="docutils literal notranslate"><span class="pre">self'''</span> <span class="pre">on</span> <span class="pre">nothing</span> <span class="pre">gives</span> </code>self```, as desired.</p>
+<p>So we conclude that running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing gives <code class="docutils literal notranslate"><span class="pre">self</span></code>, as desired.</p>
 <p>To summarize: running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing is the same as running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself; and this is <code class="docutils literal notranslate"><span class="pre">self</span></code>. In symbols, That is,</p>
-<p>$[![\mbox{self}]!]( \ ) = [![ \mbox{diag} ]!(\mbox{diag}) = \mbox{self}$.</p>
+<p><span class="math notranslate nohighlight">\([\![\mbox{self}]\!]( \ ) = [\![ \mbox{diag} ]\!(\mbox{diag}) = \mbox{self}\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Summary</p>
+<div class="math notranslate nohighlight">
+\[ [\![\mbox{self}]\!]( \ ) = [\![ \mbox{diag} ]\!(\mbox{diag}) = \mbox{self}.\]</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span>
@@ -785,7 +792,7 @@ writes itself to R1 and also writes # to R2.</p>
 <p>Write a program p which when started on all empty registers
 doesn’t
 write itself to R1 but rather writes itself followed by a #.
-In other words, $\phi_p(\ ) = p + #$.</p>
+In other words, <span class="math notranslate nohighlight">\(\phi_p(\ ) = p + \#\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
@@ -804,7 +811,7 @@ writes the next one in the list into R1.</p>
 doesn’t
 write itself to R1 but rather writes itself preceded by a #.
 In other words,
-$\phi_p(\ ) = # + p$.</p>
+<span class="math notranslate nohighlight">\(\phi_p(\ ) = \# + p\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
@@ -824,7 +831,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 empty,  ends up with R1 containing s <em>after</em> whatever
 happened to be in R1 at the start.
 In other words, for all words y,
-$\phi_s(y) = y + s$</p>
+<span class="math notranslate nohighlight">\(\phi_s(y) = y + s\)</span></p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
