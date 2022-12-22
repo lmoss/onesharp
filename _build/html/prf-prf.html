@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undecidability of Tiling &#8212; Invitation to Computabitlity</title>
+    <title>Proof Index &#8212; Invitation to Computabitlity</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,14 +53,19 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Self-Replicating Programs" href="self_writing.html" />
-    <link rel="prev" title="Undecidability of the Halting Problem" href="haltUnd.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
     
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -131,8 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="halting.html">
-   How programs “halt”
+  <a class="reference internal" href="haltDef.html">
+   When does a program halt?
   </a>
  </li>
  <li class="toctree-l1">
@@ -190,14 +195,14 @@ const thebe_selector_output = ".output, .cell_output"
   Undecidability
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="haltUnd.html">
    Undecidability of the Halting Problem
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tileUnd.html">
    Undecidability of Tiling
   </a>
  </li>
@@ -303,7 +308,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2FtileUnd.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fprf-prf.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -323,52 +328,6 @@ title="Open an issue"
   </div>
 </div>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/tileUnd.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
     </div>
 </div>
 
@@ -380,7 +339,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Undecidability of Tiling</h1>
+                <h1></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -392,30 +351,42 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="undecidability-of-tiling">
-<h1>Undecidability of Tiling<a class="headerlink" href="#undecidability-of-tiling" title="Permalink to this headline">#</a></h1>
-<img src="https://github.com/lmoss/onesharp/blob/main/tilingPdfs/tilingdiag1.pdf?raw=1" width="200" height="160">
-</div>
 
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
+   <h1>Proof Index</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
+   <a href="#cap-my-theorem"><strong>my-theorem</strong></a> | 
+   <a href="#cap-proposition-0"><strong>proposition-0</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-0"><td></td><td>
+       <strong>definition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="universal.html#definition-0"><code class="xref">definition-0</code></a> <em>(universal)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-my-theorem"><td></td><td>
+       <strong>my-theorem</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#my-theorem"><code class="xref">my-theorem</code></a> <em>(index)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-0"><td></td><td>
+       <strong>proposition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="tidy.html#proposition-0"><code class="xref">proposition-0</code></a> <em>(tidy)</em></td><td>
+       <em>proposition</em></td></tr>
+   </table>
+
 
               </div>
               
@@ -424,20 +395,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="haltUnd.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Undecidability of the Halting Problem</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="self_writing.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Self-Replicating Programs</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

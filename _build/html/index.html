@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting stared with 1#" href="getting_started.html" />
@@ -129,8 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="halting.html">
-   How programs “halt”
+  <a class="reference internal" href="haltDef.html">
+   When does a program halt?
   </a>
  </li>
  <li class="toctree-l1">
@@ -182,11 +185,6 @@ const thebe_selector_output = ".output, .cell_output"
    The T predicate
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tileUnd.html">
-   Undecidability of Tiling
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -197,6 +195,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="haltUnd.html">
    Undecidability of the Halting Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tileUnd.html">
+   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -388,22 +391,15 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Invitation to Computability
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#status-as-of-december-15-2022">
    Status as of December 15, 2022
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-the-book">
    Using the book
   </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
  </li>
 </ul>
 
@@ -424,22 +420,15 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Invitation to Computability
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#status-as-of-december-15-2022">
    Status as of December 15, 2022
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-the-book">
    Using the book
   </a>
-  <ul class="visible nav section-nav flex-column">
-  </ul>
  </li>
 </ul>
 
@@ -451,11 +440,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="invitation-to-computability">
+  <div class="tex2jax_ignore mathjax_ignore section" id="invitation-to-computability">
 <h1>Invitation to Computability<a class="headerlink" href="#invitation-to-computability" title="Permalink to this headline">#</a></h1>
 <p>Lawrence S. Moss</p>
 <p>This is an online textbook on the basics of computability theory, originating in classes given by the author at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is not. It treats the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in computability theory, mathematics, and logic.</p>
-<p>On the other hand, aspects of the presentation are new.  This is mainly due to the online format using Jupyter notebooks.  The first part of the course uses a variant of register machines using two symbols and a “programming language” using those same two symbols, called 1#.  This text comes with a Python interpreter for 1# and with tool support to enable students to learn to write programs.  In addition, it is posisble to write explicit universal programs, self-writing programs, and similar artifacts.  So the course is much more explicit than most treatments.   At the same time, it enables one to go further, showing the undecidability of tiling using 1#, and then deriving as a corollary Church’s Theorem that satisfiability in first-order logic is undecidable.</p>
+<p>On the other hand, aspects of the presentation are new.  This is mainly due to the online format using Jupyter notebooks.  The first part of the course uses a variant of register machines using two symbols and a “programming language” using those same two symbols, called 1#.  This text comes with a Python interpreter for 1# and with tool support to enable students to learn to write programs.  In addition, it is possible to write explicit universal programs, self-writing programs, and similar artifacts.  So the course is much more explicit than most treatments.   At the same time, it enables one to go further, showing the undecidability of tiling using 1#, and then deriving as a corollary Church’s Theorem that satisfiability in first-order logic is undecidable.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Most of the chapters in the book are <a class="reference external" href="https://docs.jupyter.org/en/latest/index.html">Jupyter notebooks</a>.  So rather than simply
@@ -463,23 +452,57 @@ read, they are intended to be <em>run</em>. One way to use them is to save them 
 them on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don’t have buttons to run it on CoCalc, and
 the best option is to run them on Colab.  For this, one starts by clicking on the button at the top.</p>
 </div>
-</div>
 <div class="section" id="status-as-of-december-15-2022">
-<h1>Status as of December 15, 2022<a class="headerlink" href="#status-as-of-december-15-2022" title="Permalink to this headline">#</a></h1>
+<h2>Status as of December 15, 2022<a class="headerlink" href="#status-as-of-december-15-2022" title="Permalink to this headline">#</a></h2>
 <p>I am in the process of adding materials to the book.  The original <a class="reference external" href="https://iulg.sitehost.iu.edu/trm">source</a> for the course had
 much of the material, and the centerpiece was the Javascript interpreter for 1# developed by my former PhD students Robert Rose and
 David Sprunger. In 2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course exists
 in lecture slides.  So much of what I am doing now is revising them and adding them here.</p>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>Only a tiny fraction of the results here is due to the author.
+Most are standard in the literature.   In time, I willl add proper credits.</p>
+</div>
+<p>$$
+4 + 3 = 7
+$$</p>
 </div>
 <div class="section" id="using-the-book">
-<h1>Using the book<a class="headerlink" href="#using-the-book" title="Permalink to this headline">#</a></h1>
+<h2>Using the book<a class="headerlink" href="#using-the-book" title="Permalink to this headline">#</a></h2>
 <p>There are a number of ways the book could be used in courses for students in several disciplines.  For computer science students,
 the subject is often taught as an end-of-semester topic in a theory course.  For this, one would need to select the topics
 judiciously and skip some of the beginning material. The book does not currently have much on complexity theory, but this might
-change. For mathematics courses aiming at undecidability results in logic, the book has a fair amount of advanced materaial, leading
+change. For mathematics courses aiming at undecidability results in logic, the book has a fair amount of advanced material, leading
 up to Church’s Theorem on the undecidability of first-order logic.  Overall, there is more than enough material for a course. At the
 same time, the topic of computability has many connections and developments, far too many for an “invitation” book. Instructors
 might prefer to use this book for some of their courses and to provide other material as well.</p>
+<div class="proof theorem admonition" id="my-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Orthogonal-Projection-Theorem)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Given $y \in \mathbb R^n$ and linear subspace $S \subset \mathbb R^n$,
+there exists a unique solution to the minimization problem</p>
+<div class="math notranslate nohighlight">
+\[\hat y := \argmin_{z \in S} \|y - z\|\]</div>
+<p>The minimizer $\hat y$ is the unique vector in $\mathbb R^n$ that satisfies</p>
+<ul class="simple">
+<li><p>$\hat y \in S$</p></li>
+<li><p>$y - \hat y \perp S$</p></li>
+</ul>
+<p>The vector $\hat y$ is called the <strong>orthogonal projection</strong> of $y$ onto $S$.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. We’ll omit the full proof.</p>
+<p>But we will prove sufficiency of the asserted conditions.</p>
+<p>To this end, let $y \in \mathbb R^n$ and let $S$ be a linear subspace of $\mathbb R^n$.</p>
+<p>Let $\hat y$ be a vector in $\mathbb R^n$ such that $\hat y \in S$ and $y - \hat y \perp S$.</p>
+<p>Let $z$ be any other point in $S$ and use the fact that $S$ is a linear subspace to deduce</p>
+<div class="math notranslate nohighlight">
+\[\| y - z \|^2
+= \| (y - \hat y) + (\hat y - z) \|^2
+= \| y - \hat y \|^2  + \| \hat y - z  \|^2\]</div>
+<p>Hence $| y - z | \geq | y - \hat y |$, which completes the proof.</p>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

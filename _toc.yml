@@ -5,7 +5,7 @@ parts:
   chapters:
   - file: getting_started
   - file: move_copy_write
-  - file: halting
+  - file: haltDef
   - file: tidy
 - caption: More Programs
   chapters:
@@ -18,10 +18,10 @@ parts:
   chapters:
   - file: coding
   - file: t_predicate
-  - file: tileUnd.md
 - caption: Undecidability
   chapters:
   - file: haltUnd
+  - file: tileUnd.md
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:
   - file: self_writing

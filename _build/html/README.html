@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -119,9 +120,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   <span style="color:blue">
-    Getting stared with 1#
-   </span>
+   Getting stared with 1#
   </a>
  </li>
  <li class="toctree-l1">
@@ -179,8 +178,25 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="T_predicate.html">
+  <a class="reference internal" href="t_predicate.html">
    The T predicate
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Undecidability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="haltUnd.html">
+   Undecidability of the Halting Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tileUnd.html">
+   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -377,7 +393,7 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="onesharp">
 <h1>onesharp<a class="headerlink" href="#onesharp" title="Permalink to this headline">#</a></h1>
 <p>This is a collection of files and notebooks related either to running 1# or to educational material related to computability theory using those tools.  The goal is to turn these notebooks into an online textbook on computatbility theory.  The target audience are advanced undergraduates and beginning graduate students in either mathematics or computer science, or anyone who has the background and interest to pursue the subject.
-I have taugh a class on the subject given at Indiana University for quite a few years.  The previous version is <a class="reference external" href="https://iulg.sitehost.iu.edu/trm">https://iulg.sitehost.iu.edu/trm</a>. I expect to write more on the content and overall approach and to put that in an introductory chapter.</p>
+I have taugh a class on the subject given at Indiana University for quite a few years.  The previous version is https://iulg.sitehost.iu.edu/trm. I expect to write more on the content and overall approach and to put that in an introductory chapter.</p>
 <p>Here is more on the individual files here.</p>
 <p>The .ipynb files are Juypter notebooks.   The run on Colab, and upon opening one you might well be asked if you want to run it on Colab.  You probably can run it on any platform that allows Jupyter notebooks, such as CoCalc.</p>
 <p>evaluator.ipynb provides a bare-bones interpreter for 1#, allowing the user to enter programs and up to three registers.  One can run things ‘step by step’ or ‘all in one fell swoop’.  There is a bit of error correction for wrong inputs.  But there is very little else in the way of functionality here.</p>
