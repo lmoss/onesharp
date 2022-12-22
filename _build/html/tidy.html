@@ -419,9 +419,21 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#halting-the-formal-definitions">
-   Halting: the formal definitions
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tidy programs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halting-the-formal-definitions">
+     Halting: the formal definitions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strong-equivalence-to-tidy-programs">
+   Strong equivalence to tidy programs
   </a>
  </li>
 </ul>
@@ -443,9 +455,21 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#halting-the-formal-definitions">
-   Halting: the formal definitions
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tidy programs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halting-the-formal-definitions">
+     Halting: the formal definitions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strong-equivalence-to-tidy-programs">
+   Strong equivalence to tidy programs
   </a>
  </li>
 </ul>
@@ -549,7 +573,10 @@ For the same reason, lines $N-1$ and $N-2$ cannot be case instructions.</p>
 <li><p>Instruction n-1 of p (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this instruction with Rk containing a word beginning with 1.</p></li>
 <li><p>Instruction n-2 of p (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup>$k$</sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>,and at some point in the run of p, we reach this instruction with Rk containing a word beginning with #.</p></li>
 </ol>
-<p>#Strong equivalence to tidy programs</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="strong-equivalence-to-tidy-programs">
+<h1>Strong equivalence to tidy programs<a class="headerlink" href="#strong-equivalence-to-tidy-programs" title="Permalink to this headline">#</a></h1>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
 <div class="proposition-content section" id="proof-content">
@@ -569,7 +596,6 @@ For the same reason, lines $N-1$ and $N-2$ cannot be case instructions.</p>
 <p>If $p$ is tidy, show that $p$ is strongly equivalent to any program of the form</p>
 <p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> $\cdots$ <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code>$\cdots$ <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
 <p>Show that all three parts of the definition of tidiness are needed in order to show this fact.</p>
-</div>
 </div>
 </div>
 </div>

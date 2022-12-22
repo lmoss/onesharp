@@ -27,9 +27,6 @@ Only a tiny fraction of the results here is due to the author.
 Most are standard in the literature.   In time, I willl add proper credits.
 ```
 
-$$
- 4 + 3 = 7 
-$$
 
 ## Using the book
 
@@ -48,9 +45,8 @@ might prefer to use this book for some of their courses and to provide other mat
 Given $y \in \mathbb R^n$ and linear subspace $S \subset \mathbb R^n$,
 there exists a unique solution to the minimization problem
 
-```{math}
-\hat y := \argmin_{z \in S} \|y - z\|
-```
+
+$$\hat y := \argmin_{z \in S} \|y - z\|$$
 
 The minimizer $\hat y$ is the unique vector in $\mathbb R^n$ that satisfies
 
