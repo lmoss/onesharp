@@ -3,11 +3,9 @@
 
 # <a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/getting_started.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# # <span style="color:blue">Getting stared with 1#</span> 
-# Lawrence S. Moss,
-# Indiana University
+# # Getting stared with 1#
 # 
-# To start, click on 'Open in Colab', and then click on the triangle.
+# To start, either download this notebook and run it locally, or else click on 'Open in Colab' above.  Then click on the triangle below.  
 
 # In[ ]:
 
@@ -386,15 +384,15 @@ onesharp(program,a)
 # 
 # The overall point is that the program ```11#####111111###111###1##1111####1#111111####``` may be run on words which are input in the registers. This program does not change when we run it, but the contents of the registers do change. Our first order of business is to understand programs like the one we've just seen. It turns out that this program is composed of seven instructions. We'll get to the instructions soon, but first we have an exercise for you to try.
 
-# ### Exercise 1 
-# 
+# ```{exercise}
 # Here is another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.
 # 
 # ```1##### 11111111### 1111### 111## 1111## 11111#### 111# 1111# 11111111#### 111##### 111111### 111### 1## 1111#### 1# 111111#### 1111##### 111111### 111### 1## 1111#### 1# 111111#### 11##### 111111### 111### 1## 1111#### 1# 111111####```
+# ```
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160">
 
-# # The 1# instruction set
+# ## The 1# instruction set
 # 
 # So far, we have seen two *programs* of 1#. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of 1# instructions.  Now is the time to introduce them.
 # 
@@ -407,7 +405,7 @@ onesharp(program,a)
 # | 111#   | Add 1 to R3      |
 # 
 # 
-# These instructions that a 1 to the end of the word in the specified register.
+# These instructions add a 1 to the end of the word (the right end, as in English words) in the specified register.
 # 
 # 
 # | Instruction      | Meaning |
@@ -417,14 +415,14 @@ onesharp(program,a)
 # | 111##   | Add # to R3      |
 # 		
 # 
-# These add a # to the end (the right side) of the word in the specified register.  We can summarize the two kinds of instructions which we have seen, and also extend them:
+# These add a # to the end (again, this means the right side) of the word in the specified register.  We can summarize the two kinds of instructions which we have seen, and also extend them:
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
 # | 1^n #      | Add 1 to Rn       |
 # | 1^n ##   | Add # to Rn      |
 # 
-# The programs of 1# are just sequences of instructions run together.  There is no punctuation between the instructions. However, we do have an important comment. So to move around in a program, we have two other kinds of instructions
+# The programs of 1# are just sequences of instructions run together.  There is no punctuation between the instructions.  To move around in a program, we have two other kinds of instructions
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
@@ -447,25 +445,24 @@ onesharp(program,a)
 # 
 # The 'cases' instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.
 
-# ### Exercise 2 
-# 
+# ```{exercise}
 # Again, start with 1 in R1 and R2, 1# in R3, and the other registers empty.
 # What happens in each register if we run 111##?
 # Try to figure this out for yourself, and then check your work by actually running the program.
+# ```
 
-# ### Exercise 3
-# 
+# ```{exercise}
 # As before, start with 1 in R1 and R2, 1# in R3, and the other registers empty.
 # What happens in each register if we run the same program p from Exercise 2 above?
-# 
+# ```
 
-# ### Exercise 4 
-# 
+# ```{exercise}
 # Write a program which, when started with all registers empty, gives 1 in R1 and R2, 1# in R3, and the other registers empty.
+# ```
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160">
 
-# # Example: A simple loop
+# ## Example: A simple loop
 # 
 # A good way to learn about the different commands is to examine simple programs.  Among these is a program called ```move_2_1```.   It is designed to move the contents of R2 onto the end of R1, emptying out R2 in the process.  Written out in full it is 
 # 
@@ -535,7 +532,7 @@ df.style.apply(lambda x:
 # 
 # 
 
-# # Modifying our simple loop
+# ## Modifying our simple loop
 # 
 # Suppose we want to modify ```move_2_1``` to get ```move_3_4```, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process.
 # Here is a way to do this which shows off some command-line tools that are part of the working environment of this course.
@@ -565,29 +562,26 @@ unparse(pre_program)
 # We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.
 # 
 
-# ### Exercise 5
-# 
+# ```{exercise}
 # Write a program which takes the contents of R1 and adds them to the ends of *both* R2 and R3.
-# 
+# ```
 
-# ### Exercise 6
-# 
+# ```{exercise}
 # Write a program that clears out R1, leaving it empty.
-# 
+# ```
 
-# ### Exercise 7
-# 
+# ```{exercise}
 # Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).
-# 
+# ```
 # 
 
-# ### Exercise 8 
-# 
+# ```{exercise}
 # Write a program p that adds a 1 to the *beginning* of R1, assuming that R2 is empty.  (For example, if R1 has ```##1``` to start, then running p would result in R1 having ```1##1```.)   Of course, your program may use R2!
+# ```
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160">
 
-# # Running programs in notebook cells rather than in an interpreter
+# ## Running programs in notebook cells rather than in an interpreter
 # 
 # Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.
 # 
@@ -661,7 +655,7 @@ onesharp(clear_1,['1111###1111##########'])
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160">
 
-# # Summary
+# ## Summary
 # 
 # ### Here is the full set of instructions of 1#:
 # 

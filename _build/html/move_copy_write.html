@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How programs “halt”" href="halting.html" />
@@ -123,9 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   <span style="color:blue">
-    Getting stared with 1#
-   </span>
+   Getting stared with 1#
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -185,6 +181,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="T_predicate.html">
    The T predicate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tileUnd.html">
+   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -414,28 +415,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#modifying-our-simple-loop">
    Modifying our simple loop
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7">
-     Exercise 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8">
-     Exercise 8
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#copy">
@@ -446,23 +425,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#write">
    Write
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9">
-     Exercise 9
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10">
-     Exercise 10
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11">
-     Exercise 11
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -492,28 +454,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#modifying-our-simple-loop">
    Modifying our simple loop
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7">
-     Exercise 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8">
-     Exercise 8
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#copy">
@@ -524,23 +464,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#write">
    Write
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9">
-     Exercise 9
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10">
-     Exercise 10
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11">
-     Exercise 11
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -807,21 +730,34 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 </div>
 </div>
 <p>We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.</p>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<div class="exercise admonition" id="move_copy_write-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program which takes the contents of R1 and adds them to the ends of <em>both</em> R2 and R3.</p>
 </div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="exercise admonition" id="move_copy_write-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program that clears out R1, leaving it empty.</p>
 </div>
-<div class="section" id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="exercise admonition" id="move_copy_write-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).</p>
 </div>
-<div class="section" id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="exercise admonition" id="move_copy_write-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program p that adds a 1 to the beginning of R1, assuming that R2 is empty. (For example, if R1 has ##1 to start, then running p would result in R1 having 1##1.) Of course, your program may use R2!</p>
+</div>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Here’s my dropdown<div class="sd-summary-down docutils">
@@ -834,7 +770,6 @@ Here’s my dropdown<div class="sd-summary-down docutils">
 </details><div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <p>The note body will be hidden!</p>
-</div>
 </div>
 </div>
 <div class="section" id="copy">
@@ -932,17 +867,25 @@ the top)</TD> </TR>
 </CENTER><p>It should be emphasized that <i>write</i> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
-<div class="section" id="exercise-9">
-<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h3>
+<div class="exercise admonition" id="move_copy_write-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
+<div class="section" id="exercise-content">
 <p>Is the result of running <code class="docutils literal notranslate"><span class="pre">move</span></code> on a word x  always a program,
 even if  x is a word which is not a program?</p>
 </div>
-<div class="section" id="exercise-10">
-<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="exercise admonition" id="move_copy_write-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<div class="section" id="exercise-content">
 <p>If we run φ<sub><i>write</i></sub>(x) with y in R1, do we get x + y or y + x?</p>
 </div>
-<div class="section" id="exercise-11">
-<h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="exercise admonition" id="move_copy_write-exercise-6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<div class="section" id="exercise-content">
 <p>Modify  <i>write</i> to get a program
 <i>write-to-2</i> with the following feature:
 If  <i> write-to-2</i> is started with  x in R1
@@ -952,17 +895,6 @@ y = φ<sub><i>write-to-2</i></sub>(x)
 in R2 and all other registers empty; moreover, running
 y  with R2 empty results in x back in R2  (not R1) and all
 other registers empty.</p>
-<div class="exercise admonition" id="my-exercise">
-
-<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
-<div class="section" id="exercise-content">
-<p>Recall that <span class="math notranslate nohighlight">\(n!\)</span> is read as “<span class="math notranslate nohighlight">\(n\)</span> factorial” and defined as
-<span class="math notranslate nohighlight">\(n! = n \times (n - 1) \times \cdots \times 2 \times 1\)</span>.</p>
-<p>There are functions to compute this in various modules, but let’s
-write our own version as an exercise.</p>
-<p>In particular, write a function <code class="docutils literal notranslate"><span class="pre">factorial</span></code> such that <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> returns <span class="math notranslate nohighlight">\(n!\)</span>
-for any positive integer <span class="math notranslate nohighlight">\(n\)</span>.</p>
-</div>
 </div>
 </div>
 </div>
@@ -999,7 +931,7 @@ for any positive integer <span class="math notranslate nohighlight">\(n\)</span>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span style="color:blue">Getting stared with 1#</span></p>
+            <p class="prev-next-title">Getting stared with 1#</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="halting.html" title="next page">

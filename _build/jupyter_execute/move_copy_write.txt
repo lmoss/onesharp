@@ -42,5 +42,3 @@ copy_1_2_3
 write
 
 parse_explain(write)
-
-
