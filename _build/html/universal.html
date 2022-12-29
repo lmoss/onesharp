@@ -124,7 +124,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   Getting stared with 1#
+   Getting started with 1#
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,6 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tidy.html">
    Tidy programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions defined by programs
   </a>
  </li>
 </ul>
@@ -534,6 +539,19 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/universal.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="math notranslate nohighlight">
+\[\newcommand{\hash}{\texttt{#}}
+\renewcommand{\one}{\texttt{1}}
+\newcommand{\diag}{\texttt{diag}}
+\newcommand{\writeprog}{\texttt{write}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\semantics}[1]{[\![ #1]\!]}
+\newcommand{\pair}[1]{\langle #1 \rangle}
+\newcommand\N{\mathbb{N}}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\bmat}{\left[\begin{array}}
+\newcommand{\emat}{\end{array}\right]}\]</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="universal-programs">
 <h1>Universal Programs<a class="headerlink" href="#universal-programs" title="Permalink to this headline">#</a></h1>
 <p>This lesson will teach you about  <i>universal programs</i>:
@@ -638,19 +656,7 @@ empty
 at the end), then we would get the same output x in R1 
 when we run <i>u</i> with p in R1 and all other registers empty.
 </div>
-</div><div class="amsmath math notranslate nohighlight">
-\[\begin{gather*}
-a_1=b_1+c_1\\
-a_2=b_2+c_2-d_2+e_2
-\end{gather*}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e50913bc-6b21-4dcd-b21c-d60f92c713e1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-e50913bc-6b21-4dcd-b21c-d60f92c713e1" title="Permalink to this equation">#</a></span>\[\begin{align}
-a_{11}&amp; =b_{11}&amp;
-  a_{12}&amp; =b_{12}\\
-a_{21}&amp; =b_{21}&amp;
-  a_{22}&amp; =b_{22}+c_{22}
-\end{align}\]</div>
-<p>Here is a specific example of this. Try running <i>u</i> with 1# 1## in
+</div><p>Here is a specific example of this. Try running <i>u</i> with 1# 1## in
 R1.  The result is 1#, and this is what happens when we run 1# 1## on all
 empty registers.  So the universal program <i>u</i> takes 1# 1## and
 simulates a run of that program. <br> <p> For another example,
@@ -682,7 +688,7 @@ And from this we conclude that
  &phi;<sub><i>u</i></sub>(1# 1## 1# 1## 1## + <i>u</i>) = 1#
 </center><br><p>
 This is something you can try for yourself.   
-<img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="section" id="the-plan-for-this-lesson">
+<div class="section" id="the-plan-for-this-lesson">
 <h2>The plan for this lesson<a class="headerlink" href="#the-plan-for-this-lesson" title="Permalink to this headline">#</a></h2>
 <p>
 The goal of this lesson is for you to write a universal program
@@ -707,31 +713,32 @@ it easier to write a universal program.  So we’ll outline how
 to write a program that is <i>close</i> to a universal program,
 but not quite a universal program.</p>
 <p>
-We'll write a program <i>u</i> that acts like a universal
+We'll write a program $u$ that acts like a universal
 program, but only for programs which use only R1, R2, and R3.
 In more detail:
- <br> <p>Let p be any
-program of 1# which only uses R1, R2, and R3.
-Let x be any word on {1,#},
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be any
+program of <span class="math notranslate nohighlight">\(\one\hash\)</span> which only uses R1, R2, and R3.
+Let <span class="math notranslate nohighlight">\(x\)</span> be any word on our alphabet <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>,
 including possibly the empty word. Then the following are equivalent: <ol>
-<li> If p is started with all empty registers, then eventually we halt
-with x in R1. <li> If <i>u</i> is started with p in R1 and all other
-registers are empty, then eventually we halt with x in R1. </ol> 
-<p>
-Once again, the work of this section sketches a construction of 
-such a program <i>u</i>.   You will need to do much of the work yourself
+\begin{enumerate}
+\item If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
+with <span class="math notranslate nohighlight">\(x\)</span> in R1.
+\item If <span class="math notranslate nohighlight">\(u\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and with the empty word
+in all other
+registers, then eventually we halt with <span class="math notranslate nohighlight">\(x\)</span> in R1.
+\end{enumerate}
+Once again, the work of this section sketches a construction of
+such a program <span class="math notranslate nohighlight">\(u\)</span>.   You will need to do much of the work yourself
 in actually getting the program from the sketch.  And even when we
-have <i>u</i>, it will not be quite what we want for this lesson overall,
-because <i>u</i> will only behave right on programs which use the first
-three registers.  
-Later on, we'll come
-back and drop this simplification to get a program which is truly 
-universal.
-<p>
-At this point, we are ready to sketch a method for you to
-write a universal program subject to this simplification.
-<p>
-We are going to use registers as follows:
+have <span class="math notranslate nohighlight">\(u\)</span>, it will not be quite what we want for this lesson overall,
+because <span class="math notranslate nohighlight">\(u\)</span> will only behave right on programs which use the first
+three registers.<br />
+Later on, we’ll come
+back and drop this simplification to get a program which is truly
+universal.</p>
+<p>At this point, we are ready to sketch a method for you to
+write a universal program subject to this simplification.</p>
+<p>We are going to use registers as follows:</p>
  <CENTER>
 <TABLE BORDER  Cellpadding="3">
  <TR><TD BGCOLOR="#B0E0E6">R1: the input program <i>p</i>  </TD>   </tr>
@@ -750,27 +757,26 @@ That is, we are going to <strong>simulate</strong> the
 computation of a register machine on a program p by
 using six registers.   Our universal program <i>u</i> is 
 what does the simulation, and it works step-by-step.  That is,
-<i>u</i> mimics what a register machine would really do.
+$u$ mimics what a register machine would really do.
 The only difference is that one step of a real register machine
-would be done by <i>many</i> steps of our universal program.
-<br><p>
-The registers above hold what is sometimes called a <strong>snapshot
-of a register machine run</strong>. 
+would be done by *many* steps of our universal program.
+<p>The registers above hold what is sometimes called a <strong>snapshot
+of a register machine run</strong>.
 This means that they hold all of the relevant information about a register
 machine computation at one particular point in time: they tell what program is
 running, which instruction would be run next and what number instruction it is,
 and also the contents of all of the registers that the program is using.
 Now a real register machine goes from snapshot to snapshot in <i>one</i> step,
 but the universal machine that we are building will take <i>many</i> steps to
-go from one snapshot to the next.  
+go from one snapshot to the next.<br />
 <br><p>
 Our universal program is composed of a few sub-programs.
 We shall illustrate the ideas behind several sub-programs by making a
 large chart.   This chart shows just one example
 of how a universal program could work, when we take
-<i>p</i>
+<span class="math notranslate nohighlight">\(p\)</span>
 to be the prorgram <center>
-1##  + <i>write </i>
+1##  + <i>write </i></p>
 </center>
 <br>
 <p>
@@ -1225,7 +1231,7 @@ at the end.
 The last column color is the yellow one at the very end.
 Before the yellow one starts up, the beige program
 has determined (in some sense) that 
-  our program <i>p</i> has 18 instructions and we have 
+  our program $p$ has 18 instructions and we have 
   come to a point where we ask for instruction 19.  Thus, 
   the input program has halted.   We therefore want to
   take the contents of R1 as run by the input program
@@ -1241,11 +1247,11 @@ But this isn't really what is happening at all.
 In the course of the beige subprograms, parts of R1 are copied
 to other registers, and the copied back.   So at the 
 <i>end</i> of the beige sub-programs, we have the original
-program p back in R1.   
+program $p$ back in R1.   
 <br><p>
 Similarly, it might seem weird to have R6 completely unused
-in running a universal program on <i>p</i>.  This is due
-to the fact that our program <i>p</i> only uses R1 and R2.
+in running a universal program on $p$.  This is due
+to the fact that our program $p$ only uses R1 and R2.
 If we worked with an example program that used R3, then R6
 would not have remained empty in the tables.
 </div>
