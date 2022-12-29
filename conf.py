@@ -20,11 +20,24 @@ html_favicon = ''
 html_logo = 'logo.png'
 html_sourcelink_suffix = ''
 html_theme = 'sphinx_book_theme'
-html_theme_options = {'search_bar_text': 'Search this book...', 'launch_buttons': {'notebook_interface': 'classic', 'binderhub_url': 'https://mybinder.org', 'jupyterhub_url': '', 'thebe': False, 'colab_url': ''}, 'path_to_docs': 'docs', 'repository_url': 'https://github.com/lmoss/onesharp', 'repository_branch': 'main', 'google_analytics_id': '', 'extra_navbar': 'Powered by <a href="https://jupyterbook.org">Jupyter Book</a>', 'extra_footer': '', 'home_page_in_toc': True, 'announcement': '', 'use_repository_button': True, 'use_edit_page_button': False, 'use_issues_button': True}
+
+html_theme_options = {'search_bar_text': 'Search this book...', 'launch_buttons': {'notebook_interface': 'classic', 'binderhub_url': 
+'https://mybinder.org', 'jupyterhub_url': '', 'thebe': False, 'colab_url': ''}, 'path_to_docs': 'docs', 'repository_url': 
+'https://github.com/lmoss/onesharp', 'repository_branch': 'main', 'google_analytics_id': '', 'extra_navbar': 'Powered by <a 
+href="https://jupyterbook.org">Jupyter Book</a>', 'extra_footer': '', 'home_page_in_toc': True, 'announcement': '', 
+'use_repository_button': True, 'use_edit_page_button': False, 'use_issues_button': True, "show_toc_level": 1,
+"show_navbar_depth":1
+}
+
+
+
 html_title = 'Invitation to Computabitlity'
 jupyter_cache = ''
 jupyter_execute_notebooks = 'off'
 latex_engine = 'pdflatex'
+latex_elements = {
+'preamble': r'\input{latex_macros.sty.txt}',
+}
 myst_enable_extensions = ['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist']
 myst_url_schemes = ['mailto', 'http', 'https']
 nb_output_stderr = 'show'

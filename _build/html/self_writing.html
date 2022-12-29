@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Undecidability of Tiling" href="tileUnd.html" />
+    <link rel="prev" title="Undecidability of the Halting Problem" href="haltUnd.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -195,11 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="haltUnd.html">
    Undecidability of the Halting Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tileUnd.html">
-   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -770,7 +765,7 @@ and extending them.</p>
 to check your work on the interpreter.</p>
 <div class="exercise admonition" id="self_writing-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
 <div class="section" id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
@@ -779,7 +774,7 @@ to check your work on the interpreter.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which when started on all empty registers
 writes itself to R1 and also writes # to R2.</p>
@@ -787,7 +782,7 @@ writes itself to R1 and also writes # to R2.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
@@ -797,7 +792,7 @@ In other words, <span class="math notranslate nohighlight">\(\phi_p(\ ) = p + \#
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
 <div class="section" id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
@@ -805,7 +800,7 @@ writes the next one in the list into R1.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
@@ -816,7 +811,7 @@ In other words,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a self-replicating program
 that begins with the program to transfer ahead
@@ -825,7 +820,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 </div>
 <div class="exercise admonition" id="self_writing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program s which, when run with R2, R3, etc.
 empty,  ends up with R1 containing s <em>after</em> whatever
@@ -836,7 +831,7 @@ In other words, for all words y,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
@@ -848,7 +843,7 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 </div>
 <div class="exercise admonition" id="self_writing-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
 which trades places with its input in R1.
@@ -862,7 +857,7 @@ before attempting this problem.  But it might be fun to try now.]</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 36 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
 <div class="section" id="exercise-content">
 <p>Write two “twin’’ programs s and t with the properties
 that s and t are different programs;
@@ -871,7 +866,17 @@ running t with all registers empty gives s in
 R1.</p>
 </div>
 </div>
+<div class="proof theorem admonition" id="goofy-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Goofy)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Let’s prove a theorem.</p>
 </div>
+</div><div class="proof theorem admonition" id="goofier-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Goofier)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Let’s prove a theorem using <a class="reference internal" href="#goofy-theorem">Theorem 1</a></p>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -900,11 +905,11 @@ R1.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="tileUnd.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="haltUnd.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Undecidability of Tiling</p>
+            <p class="prev-next-title">Undecidability of the Halting Problem</p>
         </div>
     </a>
 </div>

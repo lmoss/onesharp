@@ -13,7 +13,6 @@ them on a hosting service like CoCalc, Binder, or Google Colab. At the present t
 the best option is to run them on Colab.  For this, one starts by clicking on the button at the top.
 ```
 
-
 ## Status as of December 15, 2022
 
 I am in the process of adding materials to the book.  The original [source](https://iulg.sitehost.iu.edu/trm) for the course had 

@@ -124,7 +124,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   Getting stared with 1#
+   Getting started with 1#
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,6 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tidy.html">
    Tidy programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions defined by programs
   </a>
  </li>
 </ul>
@@ -196,11 +201,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="haltUnd.html">
    Undecidability of the Halting Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tileUnd.html">
-   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -421,7 +421,12 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When does a program halt?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#halting-the-formal-definitions">
    Halting: the formal definitions
   </a>
@@ -445,7 +450,12 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When does a program halt?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#halting-the-formal-definitions">
    Halting: the formal definitions
   </a>
@@ -461,19 +471,34 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/haltDef.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="when-does-a-program-halt">
+<div class="math notranslate nohighlight">
+\[\newcommand{\hash}{\texttt{#}}
+\renewcommand{\one}{\texttt{1}}
+\newcommand{\diag}{\texttt{diag}}
+\newcommand{\writeprog}{\texttt{write}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\semantics}[1]{[\![ #1]\!]}
+\newcommand{\pair}[1]{\langle #1 \rangle}
+\newcommand\N{\mathbb{N}}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\bmat}{\left[\begin{array}}
+\newcommand{\emat}{\end{array}\right]}\]</div>
+<div class="section" id="when-does-a-program-halt">
 <h1>When does a program halt?<a class="headerlink" href="#when-does-a-program-halt" title="Permalink to this headline">#</a></h1>
-<p>1# has programs with infinite loops such as</p>
+<p><span class="math notranslate nohighlight">\(\one\hash\)</span> has programs which contain <em>infinite loops</em> such as</p>
 <p>1###1####</p>
 <p>This program never finishes. Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
-<p>We say that a program p halts if at some point during the execution of p, the control transfers to right below the last instruction of p. In more detail, suppose that p has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
-<p>In contrast, we say that p stops improperly if at some point during the execution of p, the control tranfers either to a point before the beginning of p or to points more than one instruction beyond the last instruction of p.</p>
-<p>To see the difference, consider the following two programs: 11### and 1#</p>
-<p>The first says “Go forward 2,” and the second “Add 1 to R1.”</p>
-<p>The first halts, while the second stops improperly.</p>
+<p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
+<p>We say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
+<p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control tranfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>To see the difference, consider the following two programs:
+<span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\)</span> and <span class="math notranslate nohighlight">\(\one\hash\)</span>.</p>
+<p>The first says “Go forward 2,” and the second “Add <span class="math notranslate nohighlight">\(\one\)</span> to R1.”</p>
+<p>The first halts, while the second halts improperly.</p>
 <div class="exercise admonition" id="haltDef-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
 <div class="section" id="exercise-content">
 <p>Which of the following programs halt when run on all empty registers? Which stop improperly? Why?</p>
 <ol class="simple">
@@ -487,7 +512,7 @@ title="Print to PDF"
 </div>
 <div class="exercise admonition" id="haltDef-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
 <div class="section" id="exercise-content">
 <p>Exercise 1 was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
 <p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
@@ -495,17 +520,17 @@ title="Print to PDF"
 <p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop inside <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 </div>
-<div class="section" id="halting-the-formal-definitions">
-<h2>Halting: the formal definitions<a class="headerlink" href="#halting-the-formal-definitions" title="Permalink to this headline">#</a></h2>
-<p>There are five ways that p could halt.</p>
-<ol class="simple">
-<li><p>Instruction n of p (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of p, we reach this last instruction.</p></li>
-<li><p>Some instruction of p, say instruction number i, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also i + k = n + 1; and finally that at some point in the run of p, we reach instruction i.</p></li>
-<li><p>Instruction n of p (the last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this last instruction with Rk empty.</p></li>
-<li><p>Instruction n-1 of p (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this instruction with Rk containing a word beginning with 1.</p></li>
-<li><p>Instruction n-2 of p (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>,and at some point in the run of p, we reach this instruction with Rk containing a word beginning with #.</p></li>
-</ol>
 </div>
+<div class="section" id="halting-the-formal-definitions">
+<h1>Halting: the formal definitions<a class="headerlink" href="#halting-the-formal-definitions" title="Permalink to this headline">#</a></h1>
+<p>There are five ways that the run of a program <span class="math notranslate nohighlight">\(p\)</span> on some register contents could halt.</p>
+<ol class="simple">
+<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction.</p></li>
+<li><p>Some instruction of <span class="math notranslate nohighlight">\(p\)</span>, say instruction number <span class="math notranslate nohighlight">\(i\)</span>, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also <span class="math notranslate nohighlight">\(i + k = n + 1\)</span>; and finally that at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach instruction <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction with Rk empty.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n-1\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <span class="math notranslate nohighlight">\(\one\)</span>.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n-2\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <span class="math notranslate nohighlight">\(\hash\)</span>.</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">

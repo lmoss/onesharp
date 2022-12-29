@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="When does a program halt?" href="haltDef.html" />
-    <link rel="prev" title="Getting stared with 1#" href="getting_started.html" />
+    <link rel="prev" title="Getting started with 1#" href="getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -122,7 +124,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   Getting stared with 1#
+   Getting started with 1#
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -138,6 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tidy.html">
    Tidy programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions defined by programs
   </a>
  </li>
 </ul>
@@ -194,11 +201,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="haltUnd.html">
    Undecidability of the Halting Problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tileUnd.html">
-   Undecidability of Tiling
   </a>
  </li>
 </ul>
@@ -489,9 +491,22 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/move_copy_write.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="math notranslate nohighlight">
+\[\newcommand{\hash}{\texttt{#}}
+\renewcommand{\one}{\texttt{1}}
+\newcommand{\diag}{\texttt{diag}}
+\newcommand{\writeprog}{\texttt{write}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\semantics}[1]{[\![ #1]\!]}
+\newcommand{\pair}[1]{\langle #1 \rangle}
+\newcommand\N{\mathbb{N}}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\bmat}{\left[\begin{array}}
+\newcommand{\emat}{\end{array}\right]}\]</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="simple-programs">
 <h1>Simple programs<a class="headerlink" href="#simple-programs" title="Permalink to this headline">#</a></h1>
-<p>We have seen the syntax of 1# instructions
+<p>We have seen the syntax of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions
 <span class="xref myst">in a previous notebook</span>.
 We turn to the simplest programs in the language.</p>
 <div class="cell docutils container">
@@ -535,6 +550,7 @@ Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.8/di
 </div>
 </div>
 </div>
+<p><span class="math notranslate nohighlight">\(\damn\)</span> Let’s try it</p>
 <div class="section" id="move-2-1">
 <h2>move_2_1<a class="headerlink" href="#move-2-1" title="Permalink to this headline">#</a></h2>
 <p>The first is a program called <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code>.   It is designed to move the contents of R2 onto the end of R1, emptying out R2 in the process.  Written out in full it is</p>
@@ -554,7 +570,7 @@ Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.8/di
 </div>
 </div>
 <p>The words in the brackets are the contents of registers 1 and 2 when we start.  Again, our program moved the contents of R2 onto the end of R1, emptying R2.  You should want to change the opening contents of R1 and R2 in the cell above before going on.</p>
-<p>It is hard to understand a program of 1#, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
+<p>It is hard to understand a program of <span class="math notranslate nohighlight">\(\one\hash\)</span>, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
@@ -745,30 +761,30 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 <p>We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.</p>
 <div class="exercise admonition" id="move_copy_write-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which takes the contents of R1 and adds them to the ends of <em>both</em> R2 and R3.</p>
 </div>
 </div>
 <div class="exercise admonition" id="move_copy_write-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program that clears out R1, leaving it empty.</p>
 </div>
 </div>
 <div class="exercise admonition" id="move_copy_write-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).</p>
 </div>
 </div>
 <div class="exercise admonition" id="move_copy_write-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
 <div class="section" id="exercise-content">
-<p>Write a program p that adds a 1 to the beginning of R1, assuming that R2 is empty. (For example, if R1 has ##1 to start, then running p would result in R1 having 1##1.) Of course, your program may use R2!</p>
+<p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\one\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\one\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.) Of course, your program may use R2!</p>
 </div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -882,7 +898,7 @@ and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="move_copy_write-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
 <div class="section" id="exercise-content">
 <p>Is the result of running <code class="docutils literal notranslate"><span class="pre">move</span></code> on a word x  always a program,
 even if  x is a word which is not a program?</p>
@@ -890,14 +906,14 @@ even if  x is a word which is not a program?</p>
 </div>
 <div class="exercise admonition" id="move_copy_write-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
 <div class="section" id="exercise-content">
 <p>If we run φ<sub><i>write</i></sub>(x) with y in R1, do we get x + y or y + x?</p>
 </div>
 </div>
 <div class="exercise admonition" id="move_copy_write-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
 <div class="section" id="exercise-content">
 <p>Modify  <i>write</i> to get a program
 <i>write-to-2</i> with the following feature:
@@ -944,7 +960,7 @@ other registers empty.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Getting stared with 1#</p>
+            <p class="prev-next-title">Getting started with 1#</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="haltDef.html" title="next page">

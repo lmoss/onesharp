@@ -25,6 +25,13 @@ sphinx:
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof
+  mathjax_config:
+      tex:
+        macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat" : ["\\left[\\begin{array}"]
+          "emat" : ["\\end{array}\\right]"]
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -32,9 +39,12 @@ latex:
     targetname: book.tex
   latex_engine    : pdflatex
   use_jupyterbook_latex    : true  # 
+
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+
+
 
 # Information about where the book exists on the web
 repository:
@@ -54,3 +64,4 @@ parse:
     # including those that are enabled by default!
     - deflist
     - amsmath
+

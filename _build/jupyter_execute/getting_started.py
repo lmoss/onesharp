@@ -3,7 +3,22 @@
 
 # <a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/getting_started.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# # Getting stared with 1#
+# ```{math}
+# \newcommand{\hash}{\texttt{#}}
+# \renewcommand{\one}{\texttt{1}}
+# \newcommand{\diag}{\texttt{diag}}
+# \newcommand{\writeprog}{\texttt{write}}
+# \renewcommand{\phi}{\varphi}
+# \newcommand{\set}[1]{\{ #1 \}}
+# \newcommand{\semantics}[1]{[\![ #1]\!]}
+# \newcommand{\pair}[1]{\langle #1 \rangle}
+# \newcommand\N{\mathbb{N}}
+# \newcommand\floor[1]{\lfloor#1\rfloor}
+# \newcommand{\bmat}{\left[\begin{array}}
+# \newcommand{\emat}{\end{array}\right]}
+# ```
+
+# ## Getting started with 1#
 # 
 # To start, either download this notebook and run it locally, or else click on 'Open in Colab' above.  Then click on the triangle below.  
 
@@ -322,16 +337,16 @@ copy_1_3_4='1#####11111111###1111###111##1111##11111####111#1111#11111111####111
 copy_2_3_4 = '11#####11111111###1111###111##1111##11111####111#1111#11111111####1111#####111111###111###11##1111####11#111111####'
 
 
-# Welcome to our first tutorial lesson on 1#. You will learn the basics of the language here and also see some small programs.
+# Welcome to our first tutorial lesson on $\one\hash$. You will learn the basics of the language here and also see some small programs.
 # 
-# This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end, as does the only and mathematical notation. The rest of the lesson is a concrete introduction to 1#.
+# This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end, as does the only and mathematical notation. The rest of the lesson is a concrete introduction to $\one\hash$.
 # 
 # If you are familiar with any machine model in the theory of computations, such as Turing Machines, or classical register machines, you probably will want to skim through this lesson quickly.
 # 
 # But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.
 # 
 
-# To begin, here is an *interpreter* for 1#.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.
+# To begin, here is an *interpreter* for $\one\hash$.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.
 
 # In[ ]:
 
@@ -364,7 +379,7 @@ a = [remove_multiple_blanks(x) for x in a]
 onesharp(program,a)
 
 
-# Please copy the following *program* of 1# into the program line of the interpreter above.
+# Please copy the following *program* of $\one\hash$ into the program line of the interpreter above.
 # 
 # ```11#####111111###111###1##1111####1#111111####```
 # 
@@ -394,7 +409,7 @@ onesharp(program,a)
 
 # ## The 1# instruction set
 # 
-# So far, we have seen two *programs* of 1#. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of 1# instructions.  Now is the time to introduce them.
+# So far, we have seen two *programs* of $\one\hash$. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of $\one\hash$ instructions.  Now is the time to introduce them.
 # 
 # We begin our journey with the first two types of instructions of the language.
 # 
@@ -405,7 +420,7 @@ onesharp(program,a)
 # | 111#   | Add 1 to R3      |
 # 
 # 
-# These instructions add a 1 to the end of the word (the right end, as in English words) in the specified register.
+# These instructions add a $\one$ to the end of the word (the right end, as in English words) in the specified register.
 # 
 # 
 # | Instruction      | Meaning |
@@ -415,14 +430,14 @@ onesharp(program,a)
 # | 111##   | Add # to R3      |
 # 		
 # 
-# These add a # to the end (again, this means the right side) of the word in the specified register.  We can summarize the two kinds of instructions which we have seen, and also extend them:
+# These add a $\hash$ to the end (again, this means the right side) of the word in the specified register.  We can summarize the two kinds of instructions which we have seen, and also extend them:
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
 # | 1^n #      | Add 1 to Rn       |
 # | 1^n ##   | Add # to Rn      |
 # 
-# The programs of 1# are just sequences of instructions run together.  There is no punctuation between the instructions.  To move around in a program, we have two other kinds of instructions
+# The programs of $\one\hash$ are just sequences of instructions run together.  There is no punctuation between the instructions.  To move around in a program, we have two other kinds of instructions
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
@@ -439,154 +454,35 @@ onesharp(program,a)
 # 
 # If Rn is empty, we go to the very next instruction.
 # 
-# If the first symbol of Rn is 1, we delete that symbol and go to the second instruction after the case instruction.
+# If the first symbol of Rn is $\one$, we delete that symbol and go to the second instruction after the case instruction.
 # 
-# If the first symbol of Rn is #, we delete that symbol and go to the third instruction after the case instruction.
+# If the first symbol of Rn is $\hash$, we delete that symbol and go to the third instruction after the case instruction.
 # 
 # The 'cases' instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.
 
 # ```{exercise}
-# Again, start with 1 in R1 and R2, 1# in R3, and the other registers empty.
-# What happens in each register if we run 111##?
+# Again, start with $\one$ in R1 and R2, $\one\hash$ in R3, and the other registers empty.
+# What happens in each register if we run $\one\one\one\hash\hash$?
 # Try to figure this out for yourself, and then check your work by actually running the program.
 # ```
 
 # ```{exercise}
-# As before, start with 1 in R1 and R2, 1# in R3, and the other registers empty.
-# What happens in each register if we run the same program p from Exercise 2 above?
+# As before, start with $\one$ in R1 and R2, $\one\hash$ in R3, and the other registers empty.
+# What happens in each register if we run the same program $p$ from Exercise 2 above?
 # ```
 
 # ```{exercise}
-# Write a program which, when started with all registers empty, gives 1 in R1 and R2, 1# in R3, and the other registers empty.
+# Write a program which, when started with all registers empty, gives $\one$ in R1 and R2, $\one\hash$ in R3, and the other registers empty.
 # ```
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160">
 
-# ## Example: A simple loop
-# 
-# A good way to learn about the different commands is to examine simple programs.  Among these is a program called ```move_2_1```.   It is designed to move the contents of R2 onto the end of R1, emptying out R2 in the process.  Written out in full it is 
-# 
-# ```11#####111111###111###1##1111####1#111111####```
-# 
-# You can try the program out by (a) moving the interprer down, using the appropriate commands in the notebook; (b) entering ```move_2_1``` as the program and some random words in R1 and R2 and then running ```move_2_1``` on those inputs.
-# 
-# Since it is hard to understand a program of 1#, we have tools to help.  First, we can *parse* the program.  Parsing means dividing the program into instructions.
-
-# In[ ]:
-
-
-parse(move_2_1)
-
-
-# Even better, we can get an parse with glosses, as follows:
-
-# In[ ]:
-
-
-parse_explain(move_2_1)
-
-
-# The program ```move_2_1``` is a loop, and we can further add to the explanations in the chart.
-# 
-
-# In[ ]:
-
-
-#@title
-j = [['11#####', 'cases on R2', ],
- ['111111###', "register 2 is empty: go forward 6 to instruction 8 (we're done)"],
- ['111###', 'first symbol is a 1: go forward 3 to instruction 6 (to the tan section)'],
- ['1##', 'first symbol is a #: add # to R1'],
- ['1111####', 'go backward 4 to instruction 1 (to the top)'],
- ['1#', 'add 1 to R1'],
- ['111111####', 'go backward 6 to instruction 1 (to the top)']
-]
- 
-df = pd.DataFrame(j,columns=["instruction", 'explanation'])
-df.index = np.arange(1, len(df) + 1)
-df.style.set_properties(**{'border': '1.3px solid green',
-                          'color': 'magenta'})
-n = len(df.columns)
-df.style.set_properties(**{'text-align': 'left'})
-#df.style.apply(lambda x: ["background-color: red"]*n if x['instruction']== 'Reading' else ["background-color: white"]*n, axis = 1)
-#df.style.apply(lambda x: ["background-color: #B0E0E6"]*n if x['instruction'] in ['1##','1111####'] elif ["background-color: #D4B48C"]*n if x['instruction'] in ['1#','111111####'] else ["background-color: #FFFFCC"]*n, axis = 1)
-df.style.apply(lambda x: ["background-color: #B0E0E6"]*n if x['instruction'] in ['1##','1111####']  else ["background-color: #FFFFCC"]*n, axis = 1)
-df.style.apply(lambda x: 
-               ["background-color: #B0E0E6"]*n if x['instruction'] in ['1##','1111####'] 
-               else ["background-color: #D4B48C"]*n if x['instruction'] in ['1#','111111####']
-               else ["background-color: #FFFFCC"]*n, axis = 1)
-
-
-# 
-# 
-# If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred *out* of the program.  We say that the program *halts* at that point.
-# 
-# If the first symbol of R2 is a 1, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a 1 to R1 and return to the very beginning of the program.
-# 
-# If the first symbol of R2 is a #, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a # to R1 and return to the very beginning of the program.
-# 
-# The point is that by going around loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
-# Similarly, whenever m and n are different numbers, we can build a program ```move_m_n```. This program would write the contents of Rm onto the end of Rn, emptying Rm in the process.
-# 
-# 
-# 
-# 
-
-# ## Modifying our simple loop
-# 
-# Suppose we want to modify ```move_2_1``` to get ```move_3_4```, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process.
-# Here is a way to do this which shows off some command-line tools that are part of the working environment of this course.
-
-# In[ ]:
-
-
-parse(move_2_1)
-
-
-# When you enter the cell above, you get the program ```move_2_1``` as a Python *list* of instructions. We have seen the explanation of this parse above.  What we want to do in ```move_3_4``` is to change the overall "case" instruction in the beginning from ```11#####``` to ```111#####```.   And each time our program writes to a register, we want that register to be R4, not R1.  So we make two changes.
-
-# In[ ]:
-
-
-pre_program = ['111#####', '111111###', '111###', '1111##', '1111####', '1111#', '111111####']
-
-
-# To turn this into a program, we have a tool called "unparse".
-
-# In[ ]:
-
-
-unparse(pre_program)
-
-
-# We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.
-# 
-
-# ```{exercise}
-# Write a program which takes the contents of R1 and adds them to the ends of *both* R2 and R3.
-# ```
-
-# ```{exercise}
-# Write a program that clears out R1, leaving it empty.
-# ```
-
-# ```{exercise}
-# Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).
-# ```
-# 
-
-# ```{exercise}
-# Write a program p that adds a 1 to the *beginning* of R1, assuming that R2 is empty.  (For example, if R1 has ```##1``` to start, then running p would result in R1 having ```1##1```.)   Of course, your program may use R2!
-# ```
-
-# <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160">
-
-# ## Running programs in notebook cells rather than in an interpreter
+# ## Running programs in notebook cells
 # 
 # Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.
 # 
 # There are two programs that do this.  They are 
-# ```step_by_step``` and ```onesharp```.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in 1#.  They both require as inputs a 1# program followed by a sequence of register words.
+# ```step_by_step``` and ```onesharp```.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in $\one\hash$.  They both require as inputs a $\one\hash$ program followed by a sequence of register words.
 
 # In[ ]:
 
@@ -600,11 +496,11 @@ onesharp('1#11#####1###1###',['1#1','#'])
 step_by_step('1#11#####1###1###',['1#1','#'])
 
 
-# The last computation started with two inputs.  Try changing those inputs to see what happens.  As practice with the definition of *halt*, you might try yourself to predict what will happen before running it.  You can add the symbols 1 or #, and you also can delete symbols.  But you should not delete the quote marks.  Also, you can change the program the same way.   The idea is that you should explore this function *step_by_step* by trying it out on simple inputs.  
+# The last computation started with two inputs.  Try changing those inputs to see what happens.  As practice with the definition of *halt*, you might try yourself to predict what will happen before running it.  You can add the symbols $\one$ or $\hash$, and you also can delete symbols.  But you should not delete the quote marks.  Also, you can change the program the same way.   The idea is that you should explore this function *step_by_step* by trying it out on simple inputs.  
 
 # Here is an explanation of the form of the command ```step_by_step``` that we have been using.   
 # 
-# The first argument could be a 1# program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at 1# expressions without quotes around them.
+# The first argument could be a $\one\hash$ program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at $\one\hash$ expressions without quotes around them.
 # 
 # In addition, you can name expressions ahead of time using assignment statements like 
 # 
@@ -617,7 +513,7 @@ step_by_step('1#11#####1###1###',['1#1','#'])
 # 
 # ---
 # 
-# The program ```step_by_step``` begins with a parse of your program, and so if you input a word that is not a sequence of 1# expressions, it will stop without further ado.
+# The program ```step_by_step``` begins with a parse of your program, and so if you input a word that is not a sequence of $\one\hash$ expressions, it will stop without further ado.
 # 
 # The second argument to ```step_by_step``` is a list of words.   A list in Python is enclosed by square brackets \[ and \], not by parentheses.  The words that go in the list are used in R1, R2, . . . in that order.  It is understood that any register not represented by any input starts with the empty string.   You can also represent the empty string by ' '.  And the empty list  of registers is denoted by two square brackets with nothing inside,  [  ].
 # 
@@ -657,7 +553,7 @@ onesharp(clear_1,['1111###1111##########'])
 
 # ## Summary
 # 
-# ### Here is the full set of instructions of 1#:
+# ### The full set of instructions of 1#
 # 
 # 
 # | Instruction      | Meaning |
@@ -677,9 +573,9 @@ onesharp(clear_1,['1111###1111##########'])
 # 
 # If Rn is empty, we go to the very next instruction.
 # 
-# If the first symbol of Rn is 1, we delete that symbol and go to the second instruction after the case instruction.
+# If the first symbol of Rn is $\one$, we delete that symbol and go to the second instruction after the case instruction.
 # 
-# If the first symbol of Rn is #, we delete that symbol and go to the third instruction after the case instruction.
+# If the first symbol of Rn is $\hash$, we delete that symbol and go to the third instruction after the case instruction.
 # 
 
 # ### Useful command-line tools
@@ -710,9 +606,3 @@ onesharp(clear_1,['1111###1111##########'])
 # 7. Delete a cell.
 # 
 # 8. Open a new notebook.  
-
-# In[ ]:
-
-
-
-

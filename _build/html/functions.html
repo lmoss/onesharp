@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiling &#8212; Invitation to Computabitlity</title>
+    <title>Functions defined by programs &#8212; Invitation to Computabitlity</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Self-Replicating Programs" href="self_writing.html" />
-    <link rel="prev" title="Undecidability of the Halting Problem" href="haltUnd.html" />
+    <link rel="next" title="Tools to help write programs" href="sanity.html" />
+    <link rel="prev" title="Tidy programs" href="tidy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
   Text Register Machine Programs
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
    Getting stared with 1#
@@ -138,6 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tidy.html">
    Tidy programs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Functions defined by programs
   </a>
  </li>
 </ul>
@@ -190,15 +197,10 @@ const thebe_selector_output = ".output, .cell_output"
   Undecidability
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="haltUnd.html">
    Undecidability of the Halting Problem
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Tiling
   </a>
  </li>
 </ul>
@@ -272,7 +274,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/tileUnd.ipynb"
+        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/functions.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,7 +334,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2FtileUnd.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Ffunctions.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +362,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/tileUnd.ipynb"
+        <a href="_sources/functions.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -409,7 +411,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tiling</h1>
+                <h1>Functions defined by programs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -421,15 +423,25 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/tileUnd.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="tiling">
-<h1>Tiling<a class="headerlink" href="#tiling" title="Permalink to this headline">#</a></h1>
-<div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
-<div class="theorem-content section" id="proof-content">
-<p>The Tiling problem is undecidable.</p>
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="math notranslate nohighlight">
+\[\newcommand{\hash}{\mbox{\tt \#}}
+\renewcommand{\one}{\mbox{\tt 1}}
+\newcommand{\diag}{\texttt{diag}}
+\newcommand{\writeprog}{\texttt{write}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\semantics}[1]{[\![ #1]\!]}
+\newcommand{\pair}[1]{\langle #1 \rangle}
+\newcommand\N{\mathbb{N}}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\bmat}{\left[\begin{array}}
+\newcommand{\emat}{\end{array}\right]}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}\]</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="functions-defined-by-programs">
+<h1>Functions defined by programs<a class="headerlink" href="#functions-defined-by-programs" title="Permalink to this headline">#</a></h1>
 </div>
-</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -458,17 +470,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="haltUnd.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="tidy.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Undecidability of the Halting Problem</p>
+            <p class="prev-next-title">Tidy programs</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="self_writing.html" title="next page">
+    <a class='right-next' id="next-link" href="sanity.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Self-Replicating Programs</p>
+        <p class="prev-next-title">Tools to help write programs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

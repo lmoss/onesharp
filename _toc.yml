@@ -2,11 +2,13 @@ format: jb-book
 root: index.md 
 parts:
 - caption: Text Register Machine Programs
+  maxdepth: 1
   chapters:
   - file: getting_started
   - file: move_copy_write
   - file: haltDef
   - file: tidy
+  - file: functions
 - caption: More Programs
   chapters:
   - file: sanity
@@ -21,7 +23,7 @@ parts:
 - caption: Undecidability
   chapters:
   - file: haltUnd
-  - file: tileUnd
+#  - file: tileUnd
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:
   - file: self_writing
