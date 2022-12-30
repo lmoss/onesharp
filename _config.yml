@@ -22,6 +22,12 @@ sphinx:
   config:
      myst_enable_extensions: ["dollarmath", "amsmath", "colon_fence", "deflist"]
      mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+     latex_elements:
+        preamble: |
+          \newcommand\Model{\mathcal{M}}
+          \newcommand\sset[1]{\left\{#1\right\}}
+          \newcommand{\bmat}{\left[\begin{array}}
+          \newcommand{\emat}{\end{array}\right]}
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof

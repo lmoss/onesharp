@@ -337,16 +337,16 @@ copy_1_3_4='1#####11111111###1111###111##1111##11111####111#1111#11111111####111
 copy_2_3_4 = '11#####11111111###1111###111##1111##11111####111#1111#11111111####1111#####111111###111###11##1111####11#111111####'
 
 
-# Welcome to our first tutorial lesson on $\one\hash$. You will learn the basics of the language here and also see some small programs.
+# Welcome to our first tutorial lesson on $\mathtt{1\#}$. You will learn the basics of the language here and also see some small programs.
 # 
-# This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end, as does the only and mathematical notation. The rest of the lesson is a concrete introduction to $\one\hash$.
+# This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end, as does the only and mathematical notation. The rest of the lesson is a concrete introduction to $\mathtt{1\#}$.
 # 
 # If you are familiar with any machine model in the theory of computations, such as Turing Machines, or classical register machines, you probably will want to skim through this lesson quickly.
 # 
 # But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.
 # 
 
-# To begin, here is an *interpreter* for $\one\hash$.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.
+# To begin, here is an *interpreter* for $\mathtt{1\#}$.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.
 
 # In[ ]:
 
@@ -379,7 +379,7 @@ a = [remove_multiple_blanks(x) for x in a]
 onesharp(program,a)
 
 
-# Please copy the following *program* of $\one\hash$ into the program line of the interpreter above.
+# Please copy the following *program* of $\mathtt{1\#}$ into the program line of the interpreter above.
 # 
 # ```11#####111111###111###1##1111####1#111111####```
 # 
@@ -407,9 +407,9 @@ onesharp(program,a)
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160">
 
-# ## The 1# instruction set
+# ## The $\mathtt{1\#}$ instruction set
 # 
-# So far, we have seen two *programs* of $\one\hash$. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of $\one\hash$ instructions.  Now is the time to introduce them.
+# So far, we have seen two *programs* of $\mathtt{1\#}$. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of $\mathtt{1\#}$ instructions.  Now is the time to introduce them.
 # 
 # We begin our journey with the first two types of instructions of the language.
 # 
@@ -420,7 +420,7 @@ onesharp(program,a)
 # | 111#   | Add 1 to R3      |
 # 
 # 
-# These instructions add a $\one$ to the end of the word (the right end, as in English words) in the specified register.
+# These instructions add a $\mathtt{1}$ to the end of the word (the right end, as in English words) in the specified register.
 # 
 # 
 # | Instruction      | Meaning |
@@ -430,14 +430,14 @@ onesharp(program,a)
 # | 111##   | Add # to R3      |
 # 		
 # 
-# These add a $\hash$ to the end (again, this means the right side) of the word in the specified register.  We can summarize the two kinds of instructions which we have seen, and also extend them:
+# These add a $\mathtt{\#}$ to the end (again, this means the right side) of the word in the specified register.  We can summarize the two kinds of instructions which we have seen, and also extend them:
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
 # | 1^n #      | Add 1 to Rn       |
 # | 1^n ##   | Add # to Rn      |
 # 
-# The programs of $\one\hash$ are just sequences of instructions run together.  There is no punctuation between the instructions.  To move around in a program, we have two other kinds of instructions
+# The programs of $\mathtt{1\#}$ are just sequences of instructions run together.  There is no punctuation between the instructions.  To move around in a program, we have two other kinds of instructions
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
@@ -461,18 +461,21 @@ onesharp(program,a)
 # The 'cases' instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.
 
 # ```{exercise}
-# Again, start with $\one$ in R1 and R2, $\one\hash$ in R3, and the other registers empty.
-# What happens in each register if we run $\one\one\one\hash\hash$?
+# :label: try-to-figure
+# Again, start with $\mathtt{1}$ in R1 and R2, $\mathtt{1\#}$ in R3, and the other registers empty.
+# What happens in each register if we run
+# $\mathtt{111\#\#}$?
 # Try to figure this out for yourself, and then check your work by actually running the program.
 # ```
 
 # ```{exercise}
-# As before, start with $\one$ in R1 and R2, $\one\hash$ in R3, and the other registers empty.
-# What happens in each register if we run the same program $p$ from Exercise 2 above?
+# As before, start with $\one$ in R1 and R2, $\mathtt{1\#}$ in R3, and the other registers empty.
+# What happens in each register if we run the same program 
+# $\mathtt{111\#\#}$ from the previous exercise?
 # ```
 
 # ```{exercise}
-# Write a program which, when started with all registers empty, gives $\one$ in R1 and R2, $\one\hash$ in R3, and the other registers empty.
+# Write a program which, when started with all registers empty, gives $\mathtt{1}$ in R1 and R2, $\mathtt{1\#}$ in R3, and the other registers empty.
 # ```
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160">
@@ -496,7 +499,7 @@ onesharp('1#11#####1###1###',['1#1','#'])
 step_by_step('1#11#####1###1###',['1#1','#'])
 
 
-# The last computation started with two inputs.  Try changing those inputs to see what happens.  As practice with the definition of *halt*, you might try yourself to predict what will happen before running it.  You can add the symbols $\one$ or $\hash$, and you also can delete symbols.  But you should not delete the quote marks.  Also, you can change the program the same way.   The idea is that you should explore this function *step_by_step* by trying it out on simple inputs.  
+# The last computation started with two inputs.  Try changing those inputs to see what happens.  As practice with the definition of *halt*, you might try yourself to predict what will happen before running it.  You can add the symbols $\mathtt{1}$ or $\mathtt{\#}$, and you also can delete symbols.  But you should not delete the quote marks.  Also, you can change the program the same way.   The idea is that you should explore this function *step_by_step* by trying it out on simple inputs.  
 
 # Here is an explanation of the form of the command ```step_by_step``` that we have been using.   
 # 
@@ -551,9 +554,9 @@ onesharp(clear_1,['1111###1111##########'])
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160">
 
-# ## Summary
+# # Summary
 # 
-# ### The full set of instructions of 1#
+# ## The full set of instructions of 1#
 # 
 # 
 # | Instruction      | Meaning |
@@ -573,9 +576,9 @@ onesharp(clear_1,['1111###1111##########'])
 # 
 # If Rn is empty, we go to the very next instruction.
 # 
-# If the first symbol of Rn is $\one$, we delete that symbol and go to the second instruction after the case instruction.
+# If the first symbol of Rn is $\mathtt{1}$, we delete that symbol and go to the second instruction after the case instruction.
 # 
-# If the first symbol of Rn is $\hash$, we delete that symbol and go to the third instruction after the case instruction.
+# If the first symbol of Rn is $\mathtt{\#}$, we delete that symbol and go to the third instruction after the case instruction.
 # 
 
 # ### Useful command-line tools

@@ -633,28 +633,28 @@ Successfully installed jedi-0.18.1 onesharp-0.0.0
 </div>
 </div>
 </div>
-<div class="proof definition admonition" id="definition-0">
+<div class="proof definition admonition" id="my-definition">
 <p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
 <div class="definition-content section" id="proof-content">
-<p>label: my-definition</p>
-<p>A word <i>u</i> is <em>universal</em> if the following holds:
-Let p be any
-program of 1#, or indeed any word on {1,#}. Let x be any word on {1,#},
-including possibly the empty word. Then the following are equivalent: <ol></p>
-<li> If p is started with all empty registers, then eventually we halt
-with x in R1. <li> If <i>u</i> is started with p in R1 and all other
-registers are empty, then eventually we halt with x in R1. </ol> <br> <p>
-<p>
-This means that <i>if</i> running p on all empty registers
+<p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if the following holds:
+Let <span class="math notranslate nohighlight">\(p\)</span> be any
+program of
+<span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span>, or indeed any word on <span class="math notranslate nohighlight">\(\{\mathtt{1},\mathtt{\#}\}\)</span>. Let <span class="math notranslate nohighlight">\(x\)</span> be any word on <span class="math notranslate nohighlight">\(\{\mathtt{1},\mathtt{\#}\}\)</span>,
+including possibly the empty word. Then the following two conditions are equivalent:</p>
+<p>(A) If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
+with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
+<p>(B)  If <span class="math notranslate nohighlight">\(u\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other
+registers are empty, then eventually we halt with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
+<p>This means that <i>if</i> running <span class="math notranslate nohighlight">\(p\)</span> on all empty registers
 eventually gives some output in R1 (and all other registers empty),
-then that same output would be the result of running <i>u</i> with p
+then that same output would be the result of running <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span>
 in R1 and all other registers empty.
-And in the other direction, <i>if</i> running p with
-all empty registers gives some output, say x,
- in R1 (and all registers 
+And in the other direction, <i>if</i> running <span class="math notranslate nohighlight">\(p\)</span> with
+all empty registers gives some output, say <span class="math notranslate nohighlight">\(x\)</span>,
+in R1 (and all registers
 empty
-at the end), then we would get the same output x in R1 
-when we run <i>u</i> with p in R1 and all other registers empty.
+at the end), then we would get the same output <span class="math notranslate nohighlight">\(x\)</span> in R1
+when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty.</p>
 </div>
 </div><p>Here is a specific example of this. Try running <i>u</i> with 1# 1## in
 R1.  The result is 1#, and this is what happens when we run 1# 1## on all
@@ -717,17 +717,16 @@ We'll write a program $u$ that acts like a universal
 program, but only for programs which use only R1, R2, and R3.
 In more detail:
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be any
-program of <span class="math notranslate nohighlight">\(\one\hash\)</span> which only uses R1, R2, and R3.
-Let <span class="math notranslate nohighlight">\(x\)</span> be any word on our alphabet <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>,
-including possibly the empty word. Then the following are equivalent: <ol>
-\begin{enumerate}
-\item If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
-with <span class="math notranslate nohighlight">\(x\)</span> in R1.
-\item If <span class="math notranslate nohighlight">\(u\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and with the empty word
+program of <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> which only uses R1, R2, and R3.
+Let <span class="math notranslate nohighlight">\(x\)</span> be any word on our alphabet <span class="math notranslate nohighlight">\(\{\mathtt{1},\mathtt{\#}\}\)</span>,
+including possibly the empty word. Then the following are equivalent:</p>
+<p>(A’)
+If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
+with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
+<p>(B’) If <span class="math notranslate nohighlight">\(u\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and with the empty word
 in all other
-registers, then eventually we halt with <span class="math notranslate nohighlight">\(x\)</span> in R1.
-\end{enumerate}
-Once again, the work of this section sketches a construction of
+registers, then eventually we halt with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
+<p>Once again, the work of this section sketches a construction of
 such a program <span class="math notranslate nohighlight">\(u\)</span>.   You will need to do much of the work yourself
 in actually getting the program from the sketch.  And even when we
 have <span class="math notranslate nohighlight">\(u\)</span>, it will not be quite what we want for this lesson overall,
@@ -754,8 +753,8 @@ write a universal program subject to this simplification.</p>
 </center>
 <br><p>
 That is, we are going to <strong>simulate</strong> the 
-computation of a register machine on a program p by
-using six registers.   Our universal program <i>u</i> is 
+computation of a register machine on a program $p$ by
+using six registers.   Our universal program $u$ is 
 what does the simulation, and it works step-by-step.  That is,
 $u$ mimics what a register machine would really do.
 The only difference is that one step of a real register machine
@@ -776,7 +775,7 @@ large chart.   This chart shows just one example
 of how a universal program could work, when we take
 <span class="math notranslate nohighlight">\(p\)</span>
 to be the prorgram <center>
-1##  + <i>write </i></p>
+<span class="math notranslate nohighlight">\(\mathtt{1\#\#}\)</span>  + <i>write </i></p>
 </center>
 <br>
 <p>
@@ -835,7 +834,7 @@ the instruction numbers above them:
 <p>
 What we are going to show is tables of what the various
 registers show after different parts of a run of a universal program
-<i>u</i> on this program 1## + <i>write</i>.
+<i>u</i> on this program $\mathtt{1\#\#}$ + <i>write</i>.
 We hasten to add that the universal program exhibited above
 does <i>not</i> conform to the tables. (This is because
 registers work differently in it.  Also,  the program
@@ -1310,13 +1309,11 @@ would not have remained empty in the tables.
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="project">
 <h1>Project<a class="headerlink" href="#project" title="Permalink to this headline">#</a></h1>
-<p>Your project is to work in groups to write a universal program.
-I think that groups of 4 or 5 are optimal.  If you prefer to work alone,
+<p>Here is a suggestion on how groups of students could joint write a universal program.
+I have done this many times in my classes, and while everyone instructor and every class will be different, here is one idea.</p>
+<p>Make groups of 4 or 5 people.  If someone prefer to work alone,
 then it would be ok to do so, but I think it would be better to work with others.</p>
 <p>
-Probably you will want to follow the ideas above and to write the
-various sub-programs that were described.    But you don't really have
-to follow the outline at all; you are free to depart from it.
 <br>
 <p>
 Here is what each group needs to do:
@@ -1327,12 +1324,9 @@ The beige program could be the hardest, especially if you follow
 my comment below on it.
 <li>  You will need to meet, or at least to email each other, so that
 you can be sure that the different sub-programs do what they are supposed to.
-You'll get started next time during our class time.
-(So I'll be here, but you can meet somewhere else if you like.)
 <li>  You also will need to have a plan on how to assemble everything together.
 The various sub-programs will need to "talk to each other"
 via goto statments.  
-I can definitely help with ideas on joining programs.  
 One good way is 
 to use the 
 Sanity parser.   And one way that probably does not work well would be 
@@ -1359,10 +1353,6 @@ the input program only uses R1, R2, and R3.  You should get a program
   It is important to write well.   
  Your goal should be to write something that could be understood by
  someone else in the class.    
-  <li> I would be happy to 
-look at drafts or to talk about how things are going at any point.
-Hopefully this will not take so long, and hopefully you'll get started
-fairly soon.
 </ol>  
 <hr>
 <h3>A remark on the beige and green sub-programs</h3>
@@ -1432,17 +1422,16 @@ someone else in the class.</p>
 <p>You should try it out to make sure that it works right. Some good test cases would include the case when R4 is empty, as it would be in the beginning of a run.</p>
 <p>So far, we have described how add# instructions would be implemented in a universal program. All of the same work goes for add1 instructions, of course, with just a few changes.</p>
 <p>It would take a bit more work to handle the case instructions, but again, this is pretty similar.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="universal-programs-of-more-than-one-argument">
 <h1>Universal programs of more than one argument<a class="headerlink" href="#universal-programs-of-more-than-one-argument" title="Permalink to this headline">#</a></h1>
-<img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="universal-exercise-1">
+<div class="exercise admonition" id="universal-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <div class="section" id="exercise-content">
-<p>What is <span class="math notranslate nohighlight">\(\varphi_u(\textit{self})\)</span>?</p>
-<p>Incidentally, running u on self takes 22,376,608 steps, whereas running self on empty registers takes 3,322.
-‘’’</p>
+<p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <code class="docutils literal notranslate"><span class="pre">self</span></code>?</p>
+<p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <code class="docutils literal notranslate"><span class="pre">self</span></code> takes 22,376,608 steps, whereas running <code class="docutils literal notranslate"><span class="pre">self</span></code> on empty registers takes 3,322.</p>
 </div>
 </div>
 <div class="exercise admonition" id="universal-exercise-2">
@@ -1458,7 +1447,8 @@ someone else in the class.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <div class="section" id="exercise-content">
-<p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses that register. That is, self1 does not use any register besides R1.</p>
+<p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses R1 itself (no other registers).
+This exercise requires a trick, since there is no program like <code class="docutils literal notranslate"><span class="pre">diag</span></code> which only uses one register.</p>
 <p>[Hint: you will need the technique of coding several registers into R1.]</p>
 </div>
 </div>
