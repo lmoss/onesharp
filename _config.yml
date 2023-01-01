@@ -22,6 +22,18 @@ sphinx:
   config:
      myst_enable_extensions: ["dollarmath", "amsmath", "colon_fence", "deflist"]
      mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+     mathjax3_config:
+        tex:
+           macros:
+             "N": "\\mathbb{N}"
+             "set": ["\\left\\{#1\\right\\}", 1]
+             "one": ["\\mathtt{1}"]
+             "hash": ["\\mathtt{\\#}"]
+             "diag": ["\\mathtt{diag}"]
+             "self": ["\\mathtt{self}"]
+             "semantics": ["[\\![#1]\\!]", 1]
+             "phifn": ["\\varphi"]
+             "Rone": ["R1"]
      latex_elements:
         preamble: |
           \newcommand\Model{\mathcal{M}}
@@ -31,13 +43,6 @@ sphinx:
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof
-  mathjax_config:
-      tex:
-        macros:
-          "N": "\\mathbb{N}"
-          "floor": ["\\lfloor#1\\rfloor", 1]
-          "bmat" : ["\\left[\\begin{array}"]
-          "emat" : ["\\end{array}\\right]"]
 
 # Define the name of the latex output file for PDF builds
 latex:

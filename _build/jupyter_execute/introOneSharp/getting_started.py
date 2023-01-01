@@ -3,21 +3,6 @@
 
 # <a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/getting_started.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# ```{math}
-# \newcommand{\hash}{\texttt{#}}
-# \renewcommand{\one}{\texttt{1}}
-# \newcommand{\diag}{\texttt{diag}}
-# \newcommand{\writeprog}{\texttt{write}}
-# \renewcommand{\phi}{\varphi}
-# \newcommand{\set}[1]{\{ #1 \}}
-# \newcommand{\semantics}[1]{[\![ #1]\!]}
-# \newcommand{\pair}[1]{\langle #1 \rangle}
-# \newcommand\N{\mathbb{N}}
-# \newcommand\floor[1]{\lfloor#1\rfloor}
-# \newcommand{\bmat}{\left[\begin{array}}
-# \newcommand{\emat}{\end{array}\right]}
-# ```
-
 # ## Getting started with 1#
 # 
 # To start, either download this notebook and run it locally, or else click on 'Open in Colab' above.  Then click on the triangle below.  
@@ -454,7 +439,7 @@ onesharp(program,a)
 # 
 # If Rn is empty, we go to the very next instruction.
 # 
-# If the first symbol of Rn is $\one$, we delete that symbol and go to the second instruction after the case instruction.
+# If the first symbol of Rn is $\mbox{\mathtt{1}}$, we delete that symbol and go to the second instruction after the case instruction.
 # 
 # If the first symbol of Rn is $\hash$, we delete that symbol and go to the third instruction after the case instruction.
 # 
@@ -485,7 +470,7 @@ onesharp(program,a)
 # Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.
 # 
 # There are two programs that do this.  They are 
-# ```step_by_step``` and ```onesharp```.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in $\one\hash$.  They both require as inputs a $\one\hash$ program followed by a sequence of register words.
+# ```step_by_step``` and ```onesharp```.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in $\mathtt{1\#}$.  They both require as inputs a $\mathtt{1\#}$ program followed by a sequence of register words.
 
 # In[ ]:
 
@@ -503,7 +488,7 @@ step_by_step('1#11#####1###1###',['1#1','#'])
 
 # Here is an explanation of the form of the command ```step_by_step``` that we have been using.   
 # 
-# The first argument could be a $\one\hash$ program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at $\one\hash$ expressions without quotes around them.
+# The first argument could be a $\mathtt{1\#}$ program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at $\mathtt{1\#}$ expressions without quotes around them.
 # 
 # In addition, you can name expressions ahead of time using assignment statements like 
 # 

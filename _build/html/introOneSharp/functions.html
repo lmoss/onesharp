@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -125,6 +125,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
    Getting started with 1#
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="move_copy_write.html">
+   Simple programs
   </a>
  </li>
  <li class="toctree-l1">
@@ -419,23 +424,57 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="math notranslate nohighlight">
-\[\newcommand{\hash}{\mbox{\tt \#}}
-\renewcommand{\one}{\mbox{\tt 1}}
-\newcommand{\diag}{\texttt{diag}}
-\newcommand{\writeprog}{\texttt{write}}
-\renewcommand{\phi}{\varphi}
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\semantics}[1]{[\![ #1]\!]}
-\newcommand{\pair}[1]{\langle #1 \rangle}
-\newcommand\N{\mathbb{N}}
-\newcommand\floor[1]{\lfloor#1\rfloor}
-\newcommand{\bmat}{\left[\begin{array}}
-\newcommand{\emat}{\end{array}\right]}
-\usepackage{tikz}
-\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}\]</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-defined-by-programs">
 <h1>Functions defined by programs<a class="headerlink" href="#functions-defined-by-programs" title="Permalink to this headline">#</a></h1>
+<p>At this point we know what programs of   <span class="math notranslate nohighlight">\(\one\hash\)</span> are and how they work.
+We are interested not just in the programs themselves
+but in <em>what</em> they compute.</p>
+<p>We call the set <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>  our  <em>alphabet</em>,<br />
+and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
+<p>We know that it is odd to call such a small set an  ``alphabet’’,
+even more so when that set doesn’t have any letters in it!</p>
+<p>But this usage is standard, and so we’ll stick to it.
+When used in situations like ours, the word ``alphabet’’
+just means a set that you use to build words from.</p>
+<p>But if <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span> is our alphabet, what in
+the world are our words?!</p>
+<p>A \emph{word} is just a sequence of  symbols from our alphabet.</p>
+<p>(In contrast to most uses in mathematics and computer science,
+our words will all be \emph{non-empty}, unless we say otherwise.)</p>
+<p>Examples of words include
+<span class="math notranslate nohighlight">\(\one\one\hash\)</span>, and also
+<span class="math notranslate nohighlight">\(\hash\hash\hash\)</span>.</p>
+<p>Let us be clear about the difference between
+<em>instructions</em> and <em>programs</em>:</p>
+<p><em>Instructions</em> are single steps
+in programs.</p>
+<p>A \emph{program} of <span class="math notranslate nohighlight">\(\one\hash\)</span> is just a sequence of
+instructions,
+run together to make a big word.</p>
+<p>An instruction counts as a program,
+but programs of length <span class="math notranslate nohighlight">\(\geq 2\)</span> are not instructions.</p>
+<p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
+called <span class="math notranslate nohighlight">\(\phifn_p\)</span>  on words.</p>
+<p><span class="math notranslate nohighlight">\(\phifn_p (x) \simeq y\)</span> means that</p>
+<p><span class="math notranslate nohighlight">\(p\)</span> is a program,</p>
+<p>and
+when  we
+run it
+<span class="math notranslate nohighlight">\(p\)</span>  with the word <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty,</p>
+<p>then the register machine
+eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
+registers
+empty.</p>
+<p>In all other cases</p>
+<p>(if <span class="math notranslate nohighlight">\(p\)</span> isn’t a program,</p>
+<p>or if <span class="math notranslate nohighlight">\(p\)</span> does not halt with <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span>,</p>
+<p>or if
+<span class="math notranslate nohighlight">\(p\)</span> halts but not all of the registers besides <span class="math notranslate nohighlight">\(\Rone\)</span> are empty),
+then we say that<br />
+is <em>undefined</em>.</p>
+<p>Instead of <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span>, I might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.</p>
+<p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,</p>
+<p>just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in the other notation.</p>
 </div>
 
     <script type="text/x-thebe-config">

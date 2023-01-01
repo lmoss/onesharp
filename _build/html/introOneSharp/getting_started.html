@@ -51,11 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="When does a program halt?" href="haltDef.html" />
+    <link rel="next" title="Simple programs" href="move_copy_write.html" />
     <link rel="prev" title="Invitation to Computability" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -125,6 +125,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Getting started with 1#
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="move_copy_write.html">
+   Simple programs
   </a>
  </li>
  <li class="toctree-l1">
@@ -532,19 +537,6 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/getting_started.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="math notranslate nohighlight">
-\[\newcommand{\hash}{\texttt{#}}
-\renewcommand{\one}{\texttt{1}}
-\newcommand{\diag}{\texttt{diag}}
-\newcommand{\writeprog}{\texttt{write}}
-\renewcommand{\phi}{\varphi}
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\semantics}[1]{[\![ #1]\!]}
-\newcommand{\pair}[1]{\langle #1 \rangle}
-\newcommand\N{\mathbb{N}}
-\newcommand\floor[1]{\lfloor#1\rfloor}
-\newcommand{\bmat}{\left[\begin{array}}
-\newcommand{\emat}{\end{array}\right]}\]</div>
 <div class="section" id="getting-started-with-1">
 <h1>Getting started with 1#<a class="headerlink" href="#getting-started-with-1" title="Permalink to this headline">#</a></h1>
 <p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ above.  Then click on the triangle below.</p>
@@ -1013,7 +1005,7 @@ You might now enter some words in R3 to see if it makes a difference.</p>
 </table>
 <p>Here is what it does:</p>
 <p>If Rn is empty, we go to the very next instruction.</p>
-<p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\one\)</span>, we delete that symbol and go to the second instruction after the case instruction.</p>
+<p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mbox{\mathtt{1}}\)</span>, we delete that symbol and go to the second instruction after the case instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\hash\)</span>, we delete that symbol and go to the third instruction after the case instruction.</p>
 <p>The ‘cases’ instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.</p>
 <div class="exercise admonition" id="try-to-figure">
@@ -1047,7 +1039,7 @@ What happens in each register if we run the same program
 <h1>Running programs in notebook cells<a class="headerlink" href="#running-programs-in-notebook-cells" title="Permalink to this headline">#</a></h1>
 <p>Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.</p>
 <p>There are two programs that do this.  They are
-<code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> and <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in <span class="math notranslate nohighlight">\(\one\hash\)</span>.  They both require as inputs a <span class="math notranslate nohighlight">\(\one\hash\)</span> program followed by a sequence of register words.</p>
+<code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> and <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span>.  They both require as inputs a <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> program followed by a sequence of register words.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="s1">&#39;1#11#####1###1###&#39;</span><span class="p">,[</span><span class="s1">&#39;1#1&#39;</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">])</span>
@@ -1206,7 +1198,7 @@ The output is 1#11.
 </div>
 <p>The last computation started with two inputs.  Try changing those inputs to see what happens.  As practice with the definition of <em>halt</em>, you might try yourself to predict what will happen before running it.  You can add the symbols <span class="math notranslate nohighlight">\(\mathtt{1}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{\#}\)</span>, and you also can delete symbols.  But you should not delete the quote marks.  Also, you can change the program the same way.   The idea is that you should explore this function <em>step_by_step</em> by trying it out on simple inputs.</p>
 <p>Here is an explanation of the form of the command <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> that we have been using.</p>
-<p>The first argument could be a <span class="math notranslate nohighlight">\(\one\hash\)</span> program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at <span class="math notranslate nohighlight">\(\one\hash\)</span> expressions without quotes around them.</p>
+<p>The first argument could be a <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> expressions without quotes around them.</p>
 <p>In addition, you can name expressions ahead of time using assignment statements like</p>
 <p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">'1#'</span></code></p>
 <p>and then enter (for example)</p>
@@ -1589,10 +1581,10 @@ Registers are processed as queues: symbols enter on the right and exit on the le
             <p class="prev-next-title">Invitation to Computability</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="haltDef.html" title="next page">
+    <a class='right-next' id="next-link" href="move_copy_write.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">When does a program halt?</p>
+        <p class="prev-next-title">Simple programs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
