@@ -12,7 +12,7 @@ execution_allow_errors = False
 execution_excludepatterns = []
 execution_in_temp = False
 execution_timeout = 30
-extensions = ['sphinx_togglebutton', 'sphinx_copybutton', 'myst_nb', 'jupyter_book', 'sphinx_thebe', 'sphinx_comments', 'sphinx_external_toc', 'sphinx.ext.intersphinx', 'sphinx_design', 'sphinx_book_theme', 'sphinx_exercise', 'sphinxcontrib.bibtex', 'sphinx_jupyterbook_latex']
+extensions = ['sphinx_togglebutton', 'sphinx_copybutton', 'myst_nb', 'jupyter_book', 'sphinx_thebe', 'sphinx_comments', 'sphinx_external_toc', 'sphinx.ext.intersphinx', 'sphinx_design', 'sphinx_book_theme', 'sphinx_exercise', 'sphinxcontrib.bibtex', 'sphinx_jupyterbook_latex', 'sphinx-proof']
 external_toc_exclude_missing = False
 external_toc_path = '_toc.yml'
 html_baseurl = ''
@@ -38,7 +38,7 @@ latex_engine = 'pdflatex'
 latex_elements = {
 'preamble': r'\input{latex_macros.sty.txt}',
 }
-myst_enable_extensions = ['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist']
+myst_enable_extensions = ['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist','proof']
 myst_url_schemes = ['mailto', 'http', 'https']
 nb_output_stderr = 'show'
 numfig = True
