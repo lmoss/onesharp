@@ -5,7 +5,7 @@ parts:
   maxdepth: 1
   chapters:
   - file: introOneSharp/getting_started
-  - file: move_copy_write
+  - file: introOneSharp/move_copy_write
   - file: introOneSharp/haltDef
   - file: introOneSharp/tidy
   - file: introOneSharp/functions
