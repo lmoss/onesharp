@@ -71,3 +71,6 @@ parse:
     - deflist
     - amsmath
 
+  extra_extensions:
+    - sphinx_proof
+    - sphinx_examples
