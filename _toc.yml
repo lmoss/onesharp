@@ -4,11 +4,11 @@ parts:
 - caption: Text Register Machine Programs
   maxdepth: 1
   chapters:
-  - file: getting_started
+  - file: introOneSharp/getting_started
   - file: move_copy_write
-  - file: haltDef
-  - file: tidy
-  - file: functions
+  - file: introOneSharp/haltDef
+  - file: introOneSharp/tidy
+  - file: introOneSharp/functions
 - caption: More Programs
   chapters:
   - file: sanity
