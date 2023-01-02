@@ -500,7 +500,7 @@ onesharp(program,a)
 # ```
 # 
 
-# ## Running programs in notebook cells
+# # Running programs in notebook cells
 # 
 # Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.
 # 

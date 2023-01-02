@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tools to help write programs" href="../sanity.html" />
-    <link rel="prev" title="Tidy programs" href="tidy.html" />
+    <link rel="next" title="Tidy programs" href="tidy.html" />
+    <link rel="prev" title="When does a program halt?" href="haltDef.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,14 +137,14 @@ const thebe_selector_output = ".output, .cell_output"
    When does a program halt?
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tidy.html">
-   Tidy programs
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Functions defined by programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tidy.html">
+   Tidy programs
   </a>
  </li>
 </ul>
@@ -576,11 +576,11 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Our work will also involve other notions of “computable” besides <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.   For example, we’ll see <em>intuitive computability</em>, <em>Turing maching computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the “<span class="math notranslate nohighlight">\(\one\hash\)</span>” in the name “<span class="math notranslate nohighlight">\(\one\hash\)</span>-computable”. But at this stage, the notion which we’ll study the most is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.</p>
+<p>Our work will also involve other notions of “computable” besides <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.   For example, we’ll see <em>intuitive computability</em>, <em>Turing maching computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the “<span class="math notranslate nohighlight">\(\one\hash\)</span>” in the name “<span class="math notranslate nohighlight">\(\one\hash\)</span>-computable”. But at this stage, the notion which we’ll study the most is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable, where</p>
 <div class="math notranslate nohighlight">
@@ -596,9 +596,35 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <div class="section" id="exercise-content">
 <p>Is the set of <span class="math notranslate nohighlight">\(\one\hash\)</span> programs a <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable set of words?</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<div class="section" id="exercise-content">
+<p>Show that the following function is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(w) = \left\{ 
+  \begin{array}{ll}
+  w &amp; \mbox{if every symbol in $w$ is $\one$}\\
+  \hash &amp; \mbox{otherwise}
+  \end{array}
+  \right.
+\end{split}\]</div>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<div class="section" id="exercise-content">
+<p>(a)
+As a parallel to how we defined <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
+<p>(b) There is a Python program called <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> which takes two arguments, a <span class="math notranslate nohighlight">\(\one\hash\)</span> program and a finite sequence of <span class="math notranslate nohighlight">\(\one\hash\)</span>-words.   Assuming that <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> behaves correctly, show that every <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable function is Python computable.</p>
+<p>[Hint: you will need to say clearly what “behaves correctly: means.]</p>
 </div>
 </div>
 </div>
@@ -630,17 +656,17 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="tidy.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="haltDef.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tidy programs</p>
+            <p class="prev-next-title">When does a program halt?</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../sanity.html" title="next page">
+    <a class='right-next' id="next-link" href="tidy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tools to help write programs</p>
+        <p class="prev-next-title">Tidy programs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
