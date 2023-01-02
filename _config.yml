@@ -32,6 +32,7 @@ sphinx:
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
              "writeprog": ["\\mathtt{write}"]
+             "writetotwo": ["\\mathtt{write}_2"]
              "semantics": ["[\\![#1]\\!]", 1]
              "phifn": ["\\varphi"]
              "Rone": ["R1"]

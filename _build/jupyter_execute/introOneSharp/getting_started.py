@@ -392,6 +392,16 @@ onesharp(program,a)
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160">
 
+# We are going to present the full set of instructions of $\one\hash$.  There are five instruction types.  
+# 
+# ```{attention} 
+# When we use superscripts and write, for example,  $\one^k \hash^{\ell}$ we mean $k$ copies of the symbol $\one$ followed by $\ell$ copies of the symbol $\hash$.  For example,
+# 
+# $$
+# \one^{15}\hash^4 \mbox{ abbreviates } \one\one \one \one \one \one \one \one \one \one \one \one \one \one \one \hash\hash\hash\hash 
+# $$
+# ```
+
 # ## The $\mathtt{1\#}$ instruction set
 # 
 # So far, we have seen two *programs* of $\mathtt{1\#}$. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of $\mathtt{1\#}$ instructions.  Now is the time to introduce them.
@@ -464,6 +474,31 @@ onesharp(program,a)
 # ```
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160">
+
+# # What are programs?
+# 
+# ```{important}
+# A *program* is a sequence of instructions run together.
+# ```
+# 
+# We have already been using this terminology.  For example, we saw
+# 
+# 11#####111111###111###1##1111####1#111111####
+# 
+# near the top of this notebook.  This is the following sequence of instructions:
+# 
+# 11##### 111111### 111### 1## 1111#### 1# 111111####
+# 
+# Dividing a program into instructions is a very easy form of *parsing*.  In a real computer language, parsing is more difficult than it is for $\one\hash$.  
+# 
+# Incidentally, spaces are not significant in the interpreter above, or in the work we'll turn to shortly.  You may enter programs with spaces.
+# 
+# Let us emphasize something about programs.
+# 
+# ```{important}
+# Any sequence of $\one\hash$ instructions is a program. A program doesn't come with an explanation of what "it is supposed to do".
+# ```
+# 
 
 # ## Running programs in notebook cells
 # 

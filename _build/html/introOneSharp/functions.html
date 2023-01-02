@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -572,13 +572,17 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this headline">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
-<p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em>computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
+<p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em><span class="math notranslate nohighlight">\(\one\hash\)</span>-computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Our work will also involve other notions of “computable” besides <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.   For example, we’ll see <em>intuitive computability</em>, <em>Turing maching computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the “<span class="math notranslate nohighlight">\(\one\hash\)</span>” in the name “<span class="math notranslate nohighlight">\(\one\hash\)</span>-computable”. But at this stage, the notion which we’ll study the most is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also computable, where</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable, where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -588,6 +592,13 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 \overline{A} &amp; = &amp; \set{w\in \words : w\notin A} \\
 \end{array}
 \end{split}\]</div>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<div class="section" id="exercise-content">
+<p>Is the set of <span class="math notranslate nohighlight">\(\one\hash\)</span> programs a <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable set of words?</p>
 </div>
 </div>
 </div>

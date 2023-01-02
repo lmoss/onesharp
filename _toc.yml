@@ -7,8 +7,9 @@ parts:
   - file: introOneSharp/getting_started
   - file: introOneSharp/move_copy_write
   - file: introOneSharp/haltDef
-  - file: introOneSharp/tidy
   - file: introOneSharp/functions
+  - file: introOneSharp/tidy
+
 - caption: More Programs
   chapters:
   - file: sanity

@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -184,11 +184,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../coding.html">
    Coding words by numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../t_predicate.html">
-   The T predicate
   </a>
  </li>
 </ul>
@@ -471,24 +466,11 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/haltDef.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="math notranslate nohighlight">
-\[\newcommand{\hash}{\texttt{#}}
-\renewcommand{\one}{\texttt{1}}
-\newcommand{\diag}{\texttt{diag}}
-\newcommand{\writeprog}{\texttt{write}}
-\renewcommand{\phi}{\varphi}
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\semantics}[1]{[\![ #1]\!]}
-\newcommand{\pair}[1]{\langle #1 \rangle}
-\newcommand\N{\mathbb{N}}
-\newcommand\floor[1]{\lfloor#1\rfloor}
-\newcommand{\bmat}{\left[\begin{array}}
-\newcommand{\emat}{\end{array}\right]}\]</div>
 <div class="section" id="when-does-a-program-halt">
 <h1>When does a program halt?<a class="headerlink" href="#when-does-a-program-halt" title="Permalink to this headline">#</a></h1>
 <p><span class="math notranslate nohighlight">\(\one\hash\)</span> has programs which contain <em>infinite loops</em> such as</p>
 <p>1###1####</p>
-<p>This program never finishes. Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
+<p>This program never finishes. If you run this in an interpreter, you will need to figure out how to stop the execution.    Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
 <p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
@@ -499,7 +481,7 @@ title="Print to PDF"
 <span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\)</span> and <span class="math notranslate nohighlight">\(\one\hash\)</span>.</p>
 <p>The first says “Go forward 2,” and the second “Add <span class="math notranslate nohighlight">\(\one\)</span> to R1.”</p>
 <p>The first halts, while the second halts improperly.</p>
-<div class="exercise admonition" id="introOneSharp/haltDef-exercise-0">
+<div class="exercise admonition" id="on-halting">
 
 <p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
 <div class="section" id="exercise-content">
@@ -517,7 +499,7 @@ title="Print to PDF"
 
 <p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
 <div class="section" id="exercise-content">
-<p>Exercise 1 was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
+<p><a class="reference internal" href="#on-halting"><span class="std std-numref">Exercise 12</span></a> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
 <p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
 <p>(b) When started with <span class="math notranslate nohighlight">\(w_2\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
 <p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop inside <span class="math notranslate nohighlight">\(p\)</span>.</p>

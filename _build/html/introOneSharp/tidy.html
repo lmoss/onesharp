@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -184,11 +184,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../coding.html">
    Coding words by numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../t_predicate.html">
-   The T predicate
   </a>
  </li>
 </ul>
@@ -425,13 +420,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Tidy programs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#halting-the-formal-definitions">
-     Halting: the formal definitions
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#strong-equivalence-to-tidy-programs">
@@ -461,13 +449,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Tidy programs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#halting-the-formal-definitions">
-     Halting: the formal definitions
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#strong-equivalence-to-tidy-programs">
@@ -565,17 +546,6 @@ We would prefer to rewrite <span class="math notranslate nohighlight">\(q\)</spa
 Suppose that <span class="math notranslate nohighlight">\(p\)</span> had <span class="math notranslate nohighlight">\(N\)</span> lines, and line <span class="math notranslate nohighlight">\(N\)</span> were a case instruction
 <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>. If Rk stared with a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then executing <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code> would take us to line <span class="math notranslate nohighlight">\(N+3\)</span>, and there is no such line.
 For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</span> and <span class="math notranslate nohighlight">\(N-2\)</span> cannot be case instructions.</p>
-<div class="section" id="halting-the-formal-definitions">
-<h2>Halting: the formal definitions<a class="headerlink" href="#halting-the-formal-definitions" title="Permalink to this headline">#</a></h2>
-<p>There are five ways that p could halt.</p>
-<ol class="simple">
-<li><p>Instruction n of p (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of p, we reach this last instruction.</p></li>
-<li><p>Some instruction of p, say instruction number i, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also i + k = n + 1; and finally that at some point in the run of p, we reach instruction i.</p></li>
-<li><p>Instruction n of p (the last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this last instruction with Rk empty.</p></li>
-<li><p>Instruction n-1 of p (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of p, we reach this instruction with Rk containing a word beginning with 1.</p></li>
-<li><p>Instruction n-2 of p (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>,and at some point in the run of p, we reach this instruction with Rk containing a word beginning with #.</p></li>
-</ol>
-</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="strong-equivalence-to-tidy-programs">
 <h1>Strong equivalence to tidy programs<a class="headerlink" href="#strong-equivalence-to-tidy-programs" title="Permalink to this headline">#</a></h1>

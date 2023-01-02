@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -184,11 +184,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../coding.html">
    Coding words by numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../t_predicate.html">
-   The T predicate
   </a>
  </li>
 </ul>
@@ -787,29 +782,19 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\one\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\one\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.) Of course, your program may use R2!</p>
 </div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Here’s my dropdown<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">And here’s my dropdown content</p>
-</div>
-</details><div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>The note body will be hidden!</p>
-</div>
 </div>
 <div class="section" id="copy">
 <h2>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">#</a></h2>
 <p>The second program in this notebook is called <code class="docutils literal notranslate"><span class="pre">copy</span></code>.
 Like <code class="docutils literal notranslate"><span class="pre">move</span></code>, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> program is actually an infinite batch of programs.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>The difference between <i>moving</i> and <i>copying</i>
 for us is that when a register’s contents are moved, the
 register is left empty; but if the contents are copied,
 then the register is left at the end with exactly what it had
 at the beginning.</p>
+</div>
 <p>In order to copy in this way, we need an auxilliary register.
 So while the <code class="docutils literal notranslate"><span class="pre">move</span></code> programs had two registers in their names, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> programs have three.</p>
 <p><br><p>
@@ -826,23 +811,22 @@ Here is our program when m = 1, n = 2, p = 3:<div class="cell docutils container
 </div>
 </div>
 </div>
-<p>At this point, you should “copy” what we did earlier and get the parse of this last program, and then modify it to get programs for <code class="docutils literal notranslate"><span class="pre">copy_2_3_4</span></code>, <code class="docutils literal notranslate"><span class="pre">copy_1_3_5</span></code>, and the like.</p>
-<p>\</p>
 </div>
 <div class="section" id="write">
 <h2>Write<a class="headerlink" href="#write" title="Permalink to this headline">#</a></h2>
-<p>We start with
-a program <i>write</i> with
+<p>We construct with
+a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
 the following properties:</p>
-<ol>
-<li> When <i>write</i> is started with x in R1 
+<ol class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\writeprog\)</span> is started with <span class="math notranslate nohighlight">\(x\)</span> in R1
 and R2 empty, we eventually halt  with a
-word
-y = &phi;<sub><i>write</i></sub>(x)
-in R1 and all other registers empty.
-<li> Running
-y with R1 empty results in x back in R1 and all
-other registers empty.<div class="cell docutils container">
+word <span class="math notranslate nohighlight">\(y\)</span>
+in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty.</p></li>
+<li><p>Then <span class="math notranslate nohighlight">\(y\)</span> is a program, and running
+<span class="math notranslate nohighlight">\(y\)</span> with <span class="math notranslate nohighlight">\(\Rone\)</span> empty results in <span class="math notranslate nohighlight">\(x\)</span> back in <span class="math notranslate nohighlight">\(\Rone\)</span> and all
+other registers empty.</p></li>
+</ol>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">write</span>
 </pre></div>
@@ -893,36 +877,37 @@ the top)</TD> </TR>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-</CENTER><p>It should be emphasized that <i>write</i> reads from R1
+</CENTER><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
 <div class="section" id="exercise-content">
-<p>Is the result of running <code class="docutils literal notranslate"><span class="pre">move</span></code> on a word x  always a program,
-even if  x is a word which is not a program?</p>
+<p>Why is the result of running <span class="math notranslate nohighlight">\(\writeprog\)</span> on a word <span class="math notranslate nohighlight">\(x\)</span>  always a program,
+even if  <span class="math notranslate nohighlight">\(x\)</span> is a word which is not a program?</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
 <div class="section" id="exercise-content">
-<p>If we run φ<sub><i>write</i></sub>(x) with y in R1, do we get x + y or y + x?</p>
+<p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(p\)</span>.  If we run <span class="math notranslate nohighlight">\(p\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>, which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
 <div class="section" id="exercise-content">
-<p>Modify  <i>write</i> to get a program
-<i>write-to-2</i> with the following feature:
-If  <i> write-to-2</i> is started with  x in R1
+<p>Modify <span class="math notranslate nohighlight">\(\writeprog\)</span>
+to get a program <span class="math notranslate nohighlight">\(\writetotwo\)</span>
+with the following feature:
+If <span class="math notranslate nohighlight">\(\writetotwo\)</span> is started with  <span class="math notranslate nohighlight">\(x\)</span> in R1
 and R2 empty, we eventually halt  with a
 word
-y = φ<sub><i>write-to-2</i></sub>(x)
+<span class="math notranslate nohighlight">\(y\)</span>
 in R2 and all other registers empty; moreover, running
-y  with R2 empty results in x back in R2  (not R1) and all
+<span class="math notranslate nohighlight">\(y\)</span>  with R2 empty results in <span class="math notranslate nohighlight">\(x\)</span> back in R2  (not R1) and all
 other registers empty.</p>
 </div>
 </div>
