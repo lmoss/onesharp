@@ -36,14 +36,9 @@ sphinx:
              "semantics": ["[\\![#1]\\!]", 1]
              "phifn": ["\\varphi"]
              "Rone": ["R1"]
+             "Rtwo": ["R2"]
              "words": ["\\mbox{words}"]
              ## "Rone": ["\\mbox{register $1$}"]
-     latex_elements:
-        preamble: |
-          \newcommand\Model{\mathcal{M}}
-          \newcommand\sset[1]{\left\{#1\right\}}
-          \newcommand{\bmat}{\left[\begin{array}}
-          \newcommand{\emat}{\end{array}\right]}
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof

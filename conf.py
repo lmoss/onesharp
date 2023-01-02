@@ -34,9 +34,14 @@ href="https://jupyterbook.org">Jupyter Book</a>', 'extra_footer': '', 'home_page
 html_title = 'Invitation to Computabitlity'
 jupyter_cache = ''
 jupyter_execute_notebooks = 'off'
-latex_engine = 'pdflatex'
+latex_engine = 'xelatex'
+# was pdflatex
 latex_elements = {
-'preamble': r'\input{latex_macros.sty.txt}',
+'preamble': r'''
+\input{latex_macros.sty.txt},
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+'''
 }
 myst_enable_extensions = ['colon_fence', 'dollarmath', 'linkify', 'substitution', 'tasklist','proof']
 myst_url_schemes = ['mailto', 'http', 'https']
