@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Undecidability of the Halting Problem" href="haltUnd.html" />
-    <link rel="prev" title="Coding words by numbers" href="coding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -178,15 +176,10 @@ const thebe_selector_output = ".output, .cell_output"
   The Enumeration Theorem
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="coding.html">
    Coding words by numbers
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   The T predicate
   </a>
  </li>
 </ul>
@@ -272,7 +265,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/t_predicate.ipynb"
+        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/T_predicate.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,7 +325,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Ft_predicate.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2FT_predicate.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +353,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/t_predicate.ipynb"
+        <a href="_sources/T_predicate.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -420,16 +413,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#to-start-review-the-definitons-of-snapshot-and-trace">
-   To start, review the definitons of
-   <em>
-    snapshot
-   </em>
-   and
-   <em>
-    trace
-   </em>
-   .
+  <a class="reference internal nav-link" href="#snapshot-and-trace">
+   Snapshot and trace
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -450,8 +435,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#here-is-a-new-interface-for-running-program-which-includes-a-mode-capability-that-includes-the-option-of-seeing-all-the-snapshots-and-the-overall-trace">
-   Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.
+  <a class="reference internal nav-link" href="#new-interface">
+   New interface
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -481,16 +466,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#to-start-review-the-definitons-of-snapshot-and-trace">
-   To start, review the definitons of
-   <em>
-    snapshot
-   </em>
-   and
-   <em>
-    trace
-   </em>
-   .
+  <a class="reference internal nav-link" href="#snapshot-and-trace">
+   Snapshot and trace
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -511,8 +488,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#here-is-a-new-interface-for-running-program-which-includes-a-mode-capability-that-includes-the-option-of-seeing-all-the-snapshots-and-the-overall-trace">
-   Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.
+  <a class="reference internal nav-link" href="#new-interface">
+   New interface
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -903,8 +880,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="section" id="to-start-review-the-definitons-of-snapshot-and-trace">
-<h2>To start, review the definitons of <em>snapshot</em> and <em>trace</em>.<a class="headerlink" href="#to-start-review-the-definitons-of-snapshot-and-trace" title="Permalink to this headline">#</a></h2>
+<div class="section" id="snapshot-and-trace">
+<h2>Snapshot and trace<a class="headerlink" href="#snapshot-and-trace" title="Permalink to this headline">#</a></h2>
+<p>To start, review the definitons of <em>snapshot</em> and <em>trace</em>.</p>
 <div class="section" id="we-encode-a-word-on-1-say-a1-a-n-by-1-a-1-1-a-2-1-a-n">
 <h3>We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.<a class="headerlink" href="#we-encode-a-word-on-1-say-a1-a-n-by-1-a-1-1-a-2-1-a-n" title="Permalink to this headline">#</a></h3>
 <p>That is, we put the symbol 1 between all symbols of the word that we want to encode.</p>
@@ -916,11 +894,12 @@ title="Print to PDF"
 <h3>We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.<a class="headerlink" href="#we-encode-a-snapshot-by-taking-a-number-n-and-turning-it-into-unary-notation-and-then-following-it-by-a-sequence-encoding-some-words-the-idea-is-that-the-number-n-should-be-an-instruction-number-in-a-program-and-the-encoded-words-should-be-the-conents-of-the-registers" title="Permalink to this headline">#</a></h3>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></div>
 </div>
-<div class="section" id="here-is-a-new-interface-for-running-program-which-includes-a-mode-capability-that-includes-the-option-of-seeing-all-the-snapshots-and-the-overall-trace">
-<h2>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.<a class="headerlink" href="#here-is-a-new-interface-for-running-program-which-includes-a-mode-capability-that-includes-the-option-of-seeing-all-the-snapshots-and-the-overall-trace" title="Permalink to this headline">#</a></h2>
+<div class="section" id="new-interface">
+<h2>New interface<a class="headerlink" href="#new-interface" title="Permalink to this headline">#</a></h2>
+<p>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Text Register Machine &lt;br&gt; The entries for the program and registers must be words on the alphabet {1,#}, without quotes.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#title Text Register Machine &lt;br&gt; The entries for the program and registers must be words on the alphabet {1,#}, without quotes.</span>
 <span class="k">def</span> <span class="nf">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="c1">## removes the tail of empty registers</span>
   <span class="k">if</span> <span class="nb">list</span> <span class="o">==</span> <span class="p">[]:</span>
     <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
@@ -1426,20 +1405,6 @@ The output is ##11.
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="coding.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Coding words by numbers</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="haltUnd.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Undecidability of the Halting Problem</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

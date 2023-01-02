@@ -539,9 +539,7 @@ onesharp(clear_1,['1111###1111##########'])
 
 # <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160">
 
-# # Summary
-# 
-# ## The full set of instructions of 1#
+# # The full set of instructions of 1#
 # 
 # 
 # | Instruction      | Meaning |
