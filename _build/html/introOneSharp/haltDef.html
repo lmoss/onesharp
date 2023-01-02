@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -490,8 +490,11 @@ title="Print to PDF"
 <p>1###1####</p>
 <p>This program never finishes. Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
 <p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
 <p>We say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
 <p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control tranfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</div>
 <p>To see the difference, consider the following two programs:
 <span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\)</span> and <span class="math notranslate nohighlight">\(\one\hash\)</span>.</p>
 <p>The first says “Go forward 2,” and the second “Add <span class="math notranslate nohighlight">\(\one\)</span> to R1.”</p>

@@ -34,6 +34,8 @@ sphinx:
              "semantics": ["[\\![#1]\\!]", 1]
              "phifn": ["\\varphi"]
              "Rone": ["R1"]
+             "words": ["\\mbox{words}"]
+             ## "Rone": ["\\mbox{register $1$}"]
      latex_elements:
         preamble: |
           \newcommand\Model{\mathcal{M}}

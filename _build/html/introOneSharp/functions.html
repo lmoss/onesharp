@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -399,12 +399,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Functions defined by programs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-functions">
+   Partial functions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">
+   Functions of two or more arguments
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characteristic-functions">
+   Characteristic functions
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -416,6 +455,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Functions defined by programs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-functions">
+   Partial functions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">
+   Functions of two or more arguments
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characteristic-functions">
+   Characteristic functions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -429,18 +496,18 @@ title="Print to PDF"
 <p>At this point we know what programs of   <span class="math notranslate nohighlight">\(\one\hash\)</span> are and how they work.
 We are interested not just in the programs themselves
 but in <em>what</em> they compute.</p>
-<p>We call the set <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>  our  <em>alphabet</em>,<br />
-and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
-<p>We know that it is odd to call such a small set an  ``alphabet’’,
-even more so when that set doesn’t have any letters in it!</p>
-<p>But this usage is standard, and so we’ll stick to it.
-When used in situations like ours, the word ``alphabet’’
+<p>We call the set <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>  our  <em>alphabet</em>, and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
+<p>We know that it is odd to call such a small set an “alphabet”,
+even more so when that set doesn’t have any letters in it!
+But this usage is standard, and so we’ll adopt it.
+When used in situations like ours, the word “alphabet”
 just means a set that you use to build words from.</p>
 <p>But if <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span> is our alphabet, what in
 the world are our words?!</p>
-<p>A \emph{word} is just a sequence of  symbols from our alphabet.</p>
+<p>Answer:
+A <em>word</em> is just a sequence of  symbols from our alphabet.</p>
 <p>(In contrast to most uses in mathematics and computer science,
-our words will all be \emph{non-empty}, unless we say otherwise.)</p>
+our words will all be <em>non-empty</em>, unless we say otherwise.</p>
 <p>Examples of words include
 <span class="math notranslate nohighlight">\(\one\one\hash\)</span>, and also
 <span class="math notranslate nohighlight">\(\hash\hash\hash\)</span>.</p>
@@ -448,33 +515,86 @@ our words will all be \emph{non-empty}, unless we say otherwise.)</p>
 <em>instructions</em> and <em>programs</em>:</p>
 <p><em>Instructions</em> are single steps
 in programs.</p>
-<p>A \emph{program} of <span class="math notranslate nohighlight">\(\one\hash\)</span> is just a sequence of
+<p>A <em>program</em> of <span class="math notranslate nohighlight">\(\one\hash\)</span> is just a sequence of
 instructions,
-run together to make a big word.</p>
-<p>An instruction counts as a program,
+run together to make a big word.
+An instruction counts as a program,
 but programs of length <span class="math notranslate nohighlight">\(\geq 2\)</span> are not instructions.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<div class="definition-content section" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn_p\)</span>  on words.</p>
-<p><span class="math notranslate nohighlight">\(\phifn_p (x) \simeq y\)</span> means that</p>
-<p><span class="math notranslate nohighlight">\(p\)</span> is a program,</p>
-<p>and
+<p><span class="math notranslate nohighlight">\(\phifn_p (x) \simeq y\)</span> means that
+<span class="math notranslate nohighlight">\(p\)</span> is a program,
+and
 when  we
 run it
-<span class="math notranslate nohighlight">\(p\)</span>  with the word <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty,</p>
-<p>then the register machine
+<span class="math notranslate nohighlight">\(p\)</span>  with the word <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty,
+then the register machine
 eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
 registers
 empty.</p>
-<p>In all other cases</p>
-<p>(if <span class="math notranslate nohighlight">\(p\)</span> isn’t a program,</p>
-<p>or if <span class="math notranslate nohighlight">\(p\)</span> does not halt with <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span>,</p>
-<p>or if
+<p>In all other cases
+(if <span class="math notranslate nohighlight">\(p\)</span> isn’t a program,
+or if <span class="math notranslate nohighlight">\(p\)</span> does not halt with <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span>,
+or if
 <span class="math notranslate nohighlight">\(p\)</span> halts but not all of the registers besides <span class="math notranslate nohighlight">\(\Rone\)</span> are empty),
-then we say that<br />
+then we say that <span class="math notranslate nohighlight">\(\phifn_p (x)\)</span>
 is <em>undefined</em>.</p>
-<p>Instead of <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span>, I might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.</p>
-<p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,</p>
-<p>just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in the other notation.</p>
+</div>
+</div><div class="tip admonition">
+<p class="admonition-title">Examples</p>
+<p><span class="math notranslate nohighlight">\(\phifn_{\one\hash\hash}(\one) \simeq \one\hash\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\phifn_{\one\hash}(\hash\one) \simeq\hash\one\one\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\phifn_{\hash}(\one)\)</span> is undefined</p>
+<p><span class="math notranslate nohighlight">\(\phifn_{\one\hash\hash\hash\one\hash\hash\hash\hash}(x)\)</span> is undefined for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Instead of <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span>, we might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.
+We do this especially when we want to iterate the construction.
+That is, instead of writing</p>
+<div class="math notranslate nohighlight">
+\[\phifn_{\phifn_{\one\hash\hash}(\one)}(\hash\one)
+\simeq \hash\one\one.
+\]</div>
+<p>we would prefer to write</p>
+<div class="math notranslate nohighlight">
+\[\semantics{\semantics{\one\hash\hash}(\one)}(\hash\one)\simeq \hash\one\one.
+\]</div>
+</div>
+<p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,
+just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in the other notation.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="partial-functions">
+<h1>Partial functions<a class="headerlink" href="#partial-functions" title="Permalink to this headline">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="functions-of-two-or-more-arguments">
+<h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this headline">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="characteristic-functions">
+<h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em>computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
+</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also computable, where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+A\cap B &amp; = &amp; \set{w \in \words : w\in A \mbox{ and } w\in B} \\
+A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
+      w\in B \mbox{(or both)}} \\
+\overline{A} &amp; = &amp; \set{w\in \words : w\notin A} \\
+\end{array}
+\end{split}\]</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

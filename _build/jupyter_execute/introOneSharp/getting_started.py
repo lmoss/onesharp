@@ -322,9 +322,9 @@ copy_1_3_4='1#####11111111###1111###111##1111##11111####111#1111#11111111####111
 copy_2_3_4 = '11#####11111111###1111###111##1111##11111####111#1111#11111111####1111#####111111###111###11##1111####11#111111####'
 
 
-# Welcome to our first tutorial lesson on $\mathtt{1\#}$. You will learn the basics of the language here and also see some small programs.
+# Welcome to our first tutorial lesson on $\one\hash$. You will learn the basics of the language here and also see some small programs.
 # 
-# This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end, as does the only and mathematical notation. The rest of the lesson is a concrete introduction to $\mathtt{1\#}$.
+# This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end, as does the only and mathematical notation. The rest of the lesson is a concrete introduction to $\one\hash$.
 # 
 # If you are familiar with any machine model in the theory of computations, such as Turing Machines, or classical register machines, you probably will want to skim through this lesson quickly.
 # 
