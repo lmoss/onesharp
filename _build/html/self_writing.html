@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -424,18 +424,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Self-Replicating Programs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diag">
-     Diag
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#self">
-     Self
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diag">
+   Diag
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self">
+   Self
+  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-idea-in-english">
@@ -470,18 +468,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Self-Replicating Programs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diag">
-     Diag
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#self">
-     Self
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diag">
+   Diag
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#self">
+   Self
+  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-idea-in-english">
@@ -519,14 +515,15 @@ from onesharp.interpreter.interpreter import *
 </div>
 </div>
 </div>
-<img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="section" id="diag">
-<h2>Diag<a class="headerlink" href="#diag" title="Permalink to this headline">#</a></h2>
+<img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"></div>
+<div class="tex2jax_ignore mathjax_ignore section" id="diag">
+<h1>Diag<a class="headerlink" href="#diag" title="Permalink to this headline">#</a></h1>
 <p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word x in R1, the result is</p>
-<p>[<span class="math notranslate nohighlight">\(\![[{\tt write}]]\!\)</span>] (x) + x</p>
+<p><span class="math notranslate nohighlight">\(\semantics{\writeprog}(x) + x\)</span></p>
 <p>Running that last program on all empty registers gives the same thing as running x on itself:</p>
-<p><span class="math notranslate nohighlight">\([\![\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code> <span class="math notranslate nohighlight">\(]\!]\)</span>(<code class="docutils literal notranslate"><span class="pre">x</span></code>)</p>
+<p><span class="math notranslate nohighlight">\(\semantics{x}(x)\)</span></p>
 <p>in R1, assuming that
-<span class="math notranslate nohighlight">\([\![\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code> <span class="math notranslate nohighlight">\(]\!]\)</span>(<code class="docutils literal notranslate"><span class="pre">x</span></code>)
+<span class="math notranslate nohighlight">\(\semantics{x}(x)\)</span>
 is defined.</p>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
 <div class="cell docutils container">
@@ -681,7 +678,7 @@ is defined.</p>
 </div>
 <p>The three branches of the case instruction at the top take us to move3,1 (if R1 is empty), to the blue sub-program if the first symbol of R1 is a 1, and to the brown sub-program if that symbol is a #. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a 1 is removed from R1, what goes into R3 is the program which would write a 1 in R1 (this is 1#). And each time a # is removed from R1, what goes into R3 is the program which would write a # in R1 (this is 1##).</p>
 <p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
-Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\([\![write]\!]\!](x)\)</span> in R3.
+Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\(\semantics{\writeprog}(x)\)</span> in R3.
 Then
 move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
@@ -689,23 +686,23 @@ The official version of <code class="docutils literal notranslate"><span class="
 <p>The tables below show the important feature of <code class="docutils literal notranslate"><span class="pre">diag</span></code>. You should memorize it as soon as possible for use below and in the next lesson.</p>
 <p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></div>
-<div class="section" id="self">
-<h2>Self<a class="headerlink" href="#self" title="Permalink to this headline">#</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="self">
+<h1>Self<a class="headerlink" href="#self" title="Permalink to this headline">#</a></h1>
 <p>We now define a self-writing program, <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <p>The idea is to apply the program <code class="docutils literal notranslate"><span class="pre">diag</span></code> to diag itself.
 This might seem like a strange thing to do. But as we’ll see, it gives us exactly what we’re looking for.
-When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get $\phi_{write}(<code class="docutils literal notranslate"><span class="pre">diag</span></code>) + <code class="docutils literal notranslate"><span class="pre">diag</span></code> in R1.
-This, then, is <code class="docutils literal notranslate"><span class="pre">self</span></code>: the program which would write out <code class="docutils literal notranslate"><span class="pre">diag</span></code> followed by <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself.</p>
+When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <span class="math notranslate nohighlight">\(\phifn_{\writeprog}(\diag) + \diag\)</span> in R1.
+This, then, is <span class="math notranslate nohighlight">\(\self\)</span>: the program which would write out <code class="docutils literal notranslate"><span class="pre">diag</span></code> followed by <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself.</p>
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
 After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.
 But running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> gives us <code class="docutils literal notranslate"><span class="pre">self</span></code>, by definition.</p>
 <p>So we conclude that running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing gives <code class="docutils literal notranslate"><span class="pre">self</span></code>, as desired.</p>
-<p>To summarize: running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing is the same as running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself; and this is <code class="docutils literal notranslate"><span class="pre">self</span></code>. In symbols, That is,</p>
-<p><span class="math notranslate nohighlight">\([\![\mbox{self}]\!]( \ ) = [\![ \mbox{diag} ]\!(\mbox{diag}) = \mbox{self}\)</span>.</p>
+<p>To summarize: running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing is the same as running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself; and this is <code class="docutils literal notranslate"><span class="pre">self</span></code>. In symbols:</p>
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
-<div class="math notranslate nohighlight">
-\[ [\![\mbox{self}]\!]( \ ) = [\![ \mbox{diag} ]\!(\mbox{diag}) = \mbox{self}.\]</div>
+<p><span class="math notranslate nohighlight">\(
+\semantics{\self}(\ ) = \semantics{\diag}{\diag) \simeq \self
+\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,7 +731,6 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 </div>
 </div>
 <p>The run of <code class="docutils literal notranslate"><span class="pre">self</span></code> on empty registers takes 14,204 steps to output itself.</p>
-</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-idea-in-english">
 <h1>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Permalink to this headline">#</a></h1>
@@ -792,7 +788,7 @@ writes itself to R1 and also writes # to R2.</p>
 <p>Write a program p which when started on all empty registers
 doesn’t
 write itself to R1 but rather writes itself followed by a #.
-In other words, <span class="math notranslate nohighlight">\(\phi_p(\ ) = p + \#\)</span>.</p>
+In other words, <span class="math notranslate nohighlight">\(\phifn_p(\ ) = p + \#\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
@@ -811,7 +807,7 @@ writes the next one in the list into R1.</p>
 doesn’t
 write itself to R1 but rather writes itself preceded by a #.
 In other words,
-<span class="math notranslate nohighlight">\(\phi_p(\ ) = \# + p\)</span>.</p>
+<span class="math notranslate nohighlight">\(\phifn_p(\ ) = \# + p\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
@@ -831,7 +827,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 empty,  ends up with R1 containing s <em>after</em> whatever
 happened to be in R1 at the start.
 In other words, for all words y,
-<span class="math notranslate nohighlight">\(\phi_s(y) = y + s\)</span></p>
+<span class="math notranslate nohighlight">\(\phifn_s(y) = y + s\)</span></p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">

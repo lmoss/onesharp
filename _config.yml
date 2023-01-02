@@ -31,6 +31,7 @@ sphinx:
              "hash": ["\\mathtt{\\#}"]
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
+             "writeprog": ["\\mathtt{write}"]
              "semantics": ["[\\![#1]\\!]", 1]
              "phifn": ["\\varphi"]
              "Rone": ["R1"]
