@@ -537,23 +537,10 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/universal.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="math notranslate nohighlight">
-\[\newcommand{\hash}{\texttt{#}}
-\renewcommand{\one}{\texttt{1}}
-\newcommand{\diag}{\texttt{diag}}
-\newcommand{\writeprog}{\texttt{write}}
-\renewcommand{\phi}{\varphi}
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\semantics}[1]{[\![ #1]\!]}
-\newcommand{\pair}[1]{\langle #1 \rangle}
-\newcommand\N{\mathbb{N}}
-\newcommand\floor[1]{\lfloor#1\rfloor}
-\newcommand{\bmat}{\left[\begin{array}}
-\newcommand{\emat}{\end{array}\right]}\]</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="universal-programs">
 <h1>Universal Programs<a class="headerlink" href="#universal-programs" title="Permalink to this headline">#</a></h1>
 <p>This lesson will teach you about  <i>universal programs</i>:
-these are programs that take 1# programs as inputs and run
+these are programs that take <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> programs as inputs and run
 them.</p>
 <p>To start, enter the following cell:</p>
 <div class="cell docutils container">
@@ -562,58 +549,6 @@ them.</p>
 !python -m pip install -U setuptools
 !python -m pip install -U git+https://github.com/lmoss/onesharp.git@main
 from onesharp.interpreter.interpreter import *
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: setuptools in /usr/local/lib/python3.7/dist-packages (57.4.0)
-Collecting setuptools
-  Downloading setuptools-65.5.0-py3-none-any.whl (1.2 MB)
-     |████████████████████████████████| 1.2 MB 5.2 MB/s 
-?25hInstalling collected packages: setuptools
-  Attempting uninstall: setuptools
-    Found existing installation: setuptools 57.4.0
-    Uninstalling setuptools-57.4.0:
-      Successfully uninstalled setuptools-57.4.0
-<span class=" -Color -Color-Red">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
-<span class=" -Color -Color-Red">ipython 7.9.0 requires jedi&gt;=0.10, which is not installed.</span>
-Successfully installed setuptools-65.5.0
-Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting git+https://github.com/lmoss/onesharp.git@main
-  Cloning https://github.com/lmoss/onesharp.git (to revision main) to /tmp/pip-req-build-no58ga17
-  Running command git clone -q https://github.com/lmoss/onesharp.git /tmp/pip-req-build-no58ga17
-  Installing build dependencies ... ?25l?25hdone
-  Getting requirements to build wheel ... ?25l?25hdone
-  Installing backend dependencies ... ?25l?25hdone
-    Preparing wheel metadata ... ?25l?25hdone
-Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (from onesharp==0.0.0) (1.21.6)
-Requirement already satisfied: pandas in /usr/local/lib/python3.7/dist-packages (from onesharp==0.0.0) (1.3.5)
-Requirement already satisfied: IPython in /usr/local/lib/python3.7/dist-packages (from onesharp==0.0.0) (7.9.0)
-Requirement already satisfied: pickleshare in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (0.7.5)
-Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (65.5.0)
-Requirement already satisfied: pexpect in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (4.8.0)
-Requirement already satisfied: decorator in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (4.4.2)
-Requirement already satisfied: pygments in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (2.6.1)
-Collecting jedi&gt;=0.10
-  Downloading jedi-0.18.1-py2.py3-none-any.whl (1.6 MB)
-     |████████████████████████████████| 1.6 MB 5.1 MB/s 
-?25hRequirement already satisfied: backcall in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (0.2.0)
-Requirement already satisfied: traitlets&gt;=4.2 in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (5.1.1)
-Requirement already satisfied: prompt-toolkit&lt;2.1.0,&gt;=2.0.0 in /usr/local/lib/python3.7/dist-packages (from IPython-&gt;onesharp==0.0.0) (2.0.10)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /usr/local/lib/python3.7/dist-packages (from jedi&gt;=0.10-&gt;IPython-&gt;onesharp==0.0.0) (0.8.3)
-Requirement already satisfied: wcwidth in /usr/local/lib/python3.7/dist-packages (from prompt-toolkit&lt;2.1.0,&gt;=2.0.0-&gt;IPython-&gt;onesharp==0.0.0) (0.2.5)
-Requirement already satisfied: six&gt;=1.9.0 in /usr/local/lib/python3.7/dist-packages (from prompt-toolkit&lt;2.1.0,&gt;=2.0.0-&gt;IPython-&gt;onesharp==0.0.0) (1.15.0)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.7/dist-packages (from pandas-&gt;onesharp==0.0.0) (2.8.2)
-Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.7/dist-packages (from pandas-&gt;onesharp==0.0.0) (2022.5)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.7/dist-packages (from pexpect-&gt;IPython-&gt;onesharp==0.0.0) (0.7.0)
-Building wheels for collected packages: onesharp
-  Building wheel for onesharp (PEP 517) ... ?25l?25hdone
-  Created wheel for onesharp: filename=onesharp-0.0.0-py3-none-any.whl size=26314 sha256=eb1160fa191419cba7fa2367166bed6950d027b084a34d51ef7d1fb360a1f300
-  Stored in directory: /tmp/pip-ephem-wheel-cache-jdpg71jk/wheels/5e/0e/bb/cde29660b488be4baa97cc5c515869099928ed5c4d38882363
-Successfully built onesharp
-Installing collected packages: jedi, onesharp
-Successfully installed jedi-0.18.1 onesharp-0.0.0
 </pre></div>
 </div>
 </div>
@@ -634,25 +569,21 @@ Successfully installed jedi-0.18.1 onesharp-0.0.0
 <div class="proof definition admonition" id="my-definition">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <div class="definition-content section" id="proof-content">
-<p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if the following holds:
-Let <span class="math notranslate nohighlight">\(p\)</span> be any
-program of
-<span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span>, or indeed any word on <span class="math notranslate nohighlight">\(\{\mathtt{1},\mathtt{\#}\}\)</span>. Let <span class="math notranslate nohighlight">\(x\)</span> be any word on <span class="math notranslate nohighlight">\(\{\mathtt{1},\mathtt{\#}\}\)</span>,
-including possibly the empty word. Then the following two conditions are equivalent:</p>
-<p>(A) If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
-with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
-<p>(B)  If <span class="math notranslate nohighlight">\(u\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other
-registers are empty, then eventually we halt with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
-<p>This means that <i>if</i> running <span class="math notranslate nohighlight">\(p\)</span> on all empty registers
+<p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if</p>
+<div class="math notranslate nohighlight">
+\[\phifn_u(x) \simeq \phifn_x(\ )
+\]</div>
+<p>for all words <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>This means that if running <span class="math notranslate nohighlight">\(x\)</span> on all empty registers
 eventually gives some output in R1 (and all other registers empty),
 then that same output would be the result of running <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span>
 in R1 and all other registers empty.
-And in the other direction, <i>if</i> running <span class="math notranslate nohighlight">\(p\)</span> with
-all empty registers gives some output, say <span class="math notranslate nohighlight">\(x\)</span>,
+And in the other direction, <i>if</i> running <span class="math notranslate nohighlight">\(x\)</span> with
+all empty registers gives some output, say <span class="math notranslate nohighlight">\(y\)</span>,
 in R1 (and all registers
 empty
-at the end), then we would get the same output <span class="math notranslate nohighlight">\(x\)</span> in R1
-when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty.</p>
+at the end), then we would get the same output <span class="math notranslate nohighlight">\(y\)</span> in R1
+when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.</p>
 </div>
 </div><p>Here is a specific example of this. Try running <i>u</i> with 1# 1## in
 R1.  The result is 1#, and this is what happens when we run 1# 1## on all
@@ -1428,8 +1359,8 @@ someone else in the class.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
 <div class="section" id="exercise-content">
-<p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <code class="docutils literal notranslate"><span class="pre">self</span></code>?</p>
-<p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <code class="docutils literal notranslate"><span class="pre">self</span></code> takes 22,376,608 steps, whereas running <code class="docutils literal notranslate"><span class="pre">self</span></code> on empty registers takes 3,322.</p>
+<p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <span class="math notranslate nohighlight">\(\self\)</span>?</p>
+<p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <span class="math notranslate nohighlight">\(\self\)</span> takes 22,376,608 steps, whereas running <span class="math notranslate nohighlight">\(\self\)</span> on empty registers takes 3,322.</p>
 </div>
 </div>
 <div class="exercise admonition" id="universal-exercise-2">
@@ -1438,7 +1369,6 @@ someone else in the class.</p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
 <p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
-<p>This exercise was given earlier, at the end of Lesson 4. But the solution really requires our work on universal programs.</p>
 </div>
 </div>
 <div class="exercise admonition" id="universal-exercise-3">
