@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -124,7 +124,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
-   Getting started with 1#
+   Getting started with
+   <span class="math notranslate nohighlight">
+    \(\one\hash\)
+   </span>
   </a>
  </li>
  <li class="toctree-l1">
@@ -508,18 +511,35 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 </div>
 </div><div class="exercise admonition" id="introOneSharp/tidy-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
 <p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
 </div>
 </div>
 <div class="exercise admonition" id="tidiness">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <div class="section" id="exercise-content">
 <p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to any program of the form</p>
 <p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code><span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
 <p>Show that all three parts of the definition of tidiness are needed in order to show this fact.</p>
+</div>
+</div>
+<div class="exercise admonition" id="back-transfer">
+
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.  Show that there is a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
+<p>(a) <span class="math notranslate nohighlight">\(q\)</span> is strongly equivalent to <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>(b) In <span class="math notranslate nohighlight">\(q\)</span>, every backward-transfer instruction points to the top of the program.  That is, if line <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(\one^k \hash^4\)</span>, then <span class="math notranslate nohighlight">\(k = i-1\)</span>.</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
+<div class="section" id="exercise-content">
+<p>Show that the union of two computably enumerable sets is computably enumerable.</p>
+<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 21</span></a>.]</p>
 </div>
 </div>
 </div>

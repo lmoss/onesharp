@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -568,8 +568,8 @@ title="Print to PDF"
 
 
 <span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#1111&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#11###1&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11111#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="c1">#R3 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
 
 <span class="c1">## For more registers, add lines here like</span>
@@ -586,21 +586,20 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#111111#&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#11###111111#&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Please copy the following <em>program</em> of <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> into the program line of the interpreter above.</p>
+<p>The top line of the interpreter contains the following <em>program</em> of <span class="math notranslate nohighlight">\(\one\hash\)</span>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
-<p>Now enter some words in the first two <em>input registers</em>. These two registers appear in the interpreter as R1 and R2.  The registers hold <em>words</em>.  For us in this course, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.</p>
+<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  Those inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about and programs soon.  But for now, modify the inputs to R1 and R2, but keep the program the same.   Click on the arrow to run the program on the inputs, and look at the <em>output</em> below the interpreter.</p>
+<p>Another way to run the program is to type shift-return on a keyboard. The output is shown below the interpreter, above the current cell.</p>
 <p>The empty word is a perfectly good word, so you could also enter it into R1 or R2 just by leaving the register blank or by entering one or more spaces.</p>
-<p>Next, run your program by clicking the triangle in the upper-left above.  (Another way to run the program is to type shift-return on a keyboard.) The output is shown below the interpreter, above the current cell.</p>
-<p>You should then clear the input and output registers, and then enter some new words in R1 and R2.  Again, click the triangle to run the program.
-You might now enter some words in R3 to see if it makes a difference.</p>
-<p>What you should find after doing this is that the output in R1 at the end is the input in R1 followed by the input in R2. And as a result of the same computation, R2 is emptied out. We usually will say <em>concatenated</em> instead of <em>followed by</em>.</p>
+<p>You can modify <span class="math notranslate nohighlight">\(\Rone\)</span> and <span class="math notranslate nohighlight">\(\Rtwo\)</span> as many times as you like.</p>
+<p>What you should find after doing this is that the output is the input in <span class="math notranslate nohighlight">\(\Rone\)</span> followed by the input in <span class="math notranslate nohighlight">\(\Rtwo\)</span>. We usually will say <em>concatenated</em> instead of <em>followed by</em>.</p>
 <hr class="docutils" />
-<p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it, but the contents of the registers do change. Our first order of business is to understand programs like the one we’ve just seen. It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
+<p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn’t show the step-by-step behavior of the register machine, it only showed the final output.   We’ll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
 <div class="exercise admonition" id="introOneSharp/getting_started-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
@@ -752,6 +751,14 @@ What happens in each register if we run the same program
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Any sequence of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions is a program. A program doesn’t come with an explanation of what “it is supposed to do”.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Words have to be <em>finite</em>, and so programs also must be finite.  Further, each program <span class="math notranslate nohighlight">\(p\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> can only mention finitely many registers.</p>
+<p>(That is, there is a finite set <span class="math notranslate nohighlight">\(F\subseteq \N\)</span> such that if
+<span class="math notranslate nohighlight">\(\one^k \hash\)</span> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
+if  <span class="math notranslate nohighlight">\(\one^k \hash\hash\)</span> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
+and  <span class="math notranslate nohighlight">\(\one^k \hash^5\)</span> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>.)</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="running-programs-in-notebook-cells">
@@ -1178,11 +1185,6 @@ The register contents at the end are shown above.
 <span class="n">onesharp</span><span class="p">(</span><span class="n">clear_1</span><span class="p">,[</span><span class="s1">&#39;1111###1111##########&#39;</span><span class="p">])</span>
 <span class="c1"># You can also run the line above slowly by running</span>
 <span class="c1"># step_by_step(clear_1,[&#39;1111###1111##########&#39;])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
 </pre></div>
 </div>
 </div>

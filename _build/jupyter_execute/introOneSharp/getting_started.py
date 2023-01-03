@@ -41,8 +41,8 @@ def remove_multiple_blanks(my_str):
 
 
 program = '11#####111111###111###1##1111####1#111111####' #@param {type:"string"}
-R1 = '#1111' #@param {type:"string"}
-R2 = '11#' #@param {type:"string"}
+R1 = '#11###1' #@param {type:"string"}
+R2 = '11111#' #@param {type:"string"}
 #R3 = '' #@param {type:"string"}
 
 ## For more registers, add lines here like
@@ -57,25 +57,24 @@ a = [remove_multiple_blanks(x) for x in a]
 onesharp(program,a)
 
 
-# Please copy the following *program* of $\mathtt{1\#}$ into the program line of the interpreter above.
+# The top line of the interpreter contains the following *program* of $\one\hash$:
 # 
 # ```11#####111111###111###1##1111####1#111111####```
 # 
-# Now enter some words in the first two *input registers*. These two registers appear in the interpreter as R1 and R2.  The registers hold *words*.  For us in this course, words are just sequences  composed of the symbols ```1``` and ```#```, such as ```11###11#1``` and ```#1###1###111#11```.
+# The other two lines are the *inputs* to two *registers*.  Those inputs are the same kind of mathematical object as the program: they are *words* on the alphabet $\set{\one,\hash}$.  In this book, words are just sequences  composed of the symbols ```1``` and ```#```, such as ```11###11#1``` and ```#1###1###111#11```.  We'll have more to say about and programs soon.  But for now, modify the inputs to R1 and R2, but keep the program the same.   Click on the arrow to run the program on the inputs, and look at the *output* below the interpreter.
+# 
+# Another way to run the program is to type shift-return on a keyboard. The output is shown below the interpreter, above the current cell.
+# 
 # 
 # The empty word is a perfectly good word, so you could also enter it into R1 or R2 just by leaving the register blank or by entering one or more spaces.
 # 
+# You can modify $\Rone$ and $\Rtwo$ as many times as you like.
 # 
-# Next, run your program by clicking the triangle in the upper-left above.  (Another way to run the program is to type shift-return on a keyboard.) The output is shown below the interpreter, above the current cell.
-# 
-# You should then clear the input and output registers, and then enter some new words in R1 and R2.  Again, click the triangle to run the program.
-#  You might now enter some words in R3 to see if it makes a difference.
-# 
-# What you should find after doing this is that the output in R1 at the end is the input in R1 followed by the input in R2. And as a result of the same computation, R2 is emptied out. We usually will say *concatenated* instead of *followed by*.
+# What you should find after doing this is that the output is the input in $\Rone$ followed by the input in $\Rtwo$. We usually will say *concatenated* instead of *followed by*.
 # 
 # ---
 # 
-# The overall point is that the program ```11#####111111###111###1##1111####1#111111####``` may be run on words which are input in the registers. This program does not change when we run it, but the contents of the registers do change. Our first order of business is to understand programs like the one we've just seen. It turns out that this program is composed of seven instructions. We'll get to the instructions soon, but first we have an exercise for you to try.
+# The overall point is that the program ```11#####111111###111###1##1111####1#111111####``` may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn't show the step-by-step behavior of the register machine, it only showed the final output.   We'll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We'll get to the instructions soon, but first we have an exercise for you to try.
 
 # ```{exercise}
 # Here is another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.
@@ -190,6 +189,15 @@ onesharp(program,a)
 # Any sequence of $\one\hash$ instructions is a program. A program doesn't come with an explanation of what "it is supposed to do".
 # ```
 # 
+
+# ```{important}
+# Words have to be *finite*, and so programs also must be finite.  Further, each program $p$ of $\one\hash$ can only mention finitely many registers. 
+# 
+# (That is, there is a finite set $F\subseteq \N$ such that if
+#  $\one^k \hash$ is an instruction in $p$, then $k\in F$;
+# if  $\one^k \hash\hash$ is an instruction in $p$, then $k\in F$;
+# and  $\one^k \hash^5$ is an instruction in $p$, then $k\in F$.)
+# ```
 
 # # Running programs in notebook cells
 # 

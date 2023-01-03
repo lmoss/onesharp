@@ -34,6 +34,8 @@ sphinx:
              "writeprog": ["\\mathtt{write}"]
              "writetotwo": ["\\mathtt{write}_2"]
              "semantics": ["[\\![#1]\\!]", 1]
+             "moveprog": ["\\mathtt{move}"]
+             "moveprogtwoone": ["\\mathtt{move}_{2,1}"]
              "phifn": ["\\varphi"]
              "Rone": ["R1"]
              "Rtwo": ["R2"]

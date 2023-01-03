@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -124,7 +124,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="introOneSharp/getting_started.html">
-   Getting started with 1#
+   Getting started with
+   <span class="math notranslate nohighlight">
+    \(\one\hash\)
+   </span>
   </a>
  </li>
  <li class="toctree-l1">
@@ -629,7 +632,7 @@ Successfully installed jedi-0.18.1 onesharp-0.0.0
 </div>
 </div>
 <div class="proof definition admonition" id="my-definition">
-<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if the following holds:
 Let <span class="math notranslate nohighlight">\(p\)</span> be any
@@ -1423,7 +1426,7 @@ someone else in the class.</p>
 <h1>Universal programs of more than one argument<a class="headerlink" href="#universal-programs-of-more-than-one-argument" title="Permalink to this headline">#</a></h1>
 <div class="exercise admonition" id="universal-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
 <div class="section" id="exercise-content">
 <p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <code class="docutils literal notranslate"><span class="pre">self</span></code>?</p>
 <p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <code class="docutils literal notranslate"><span class="pre">self</span></code> takes 22,376,608 steps, whereas running <code class="docutils literal notranslate"><span class="pre">self</span></code> on empty registers takes 3,322.</p>
@@ -1431,7 +1434,7 @@ someone else in the class.</p>
 </div>
 <div class="exercise admonition" id="universal-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
 <p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
@@ -1440,7 +1443,7 @@ someone else in the class.</p>
 </div>
 <div class="exercise admonition" id="universal-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses R1 itself (no other registers).
 This exercise requires a trick, since there is no program like <code class="docutils literal notranslate"><span class="pre">diag</span></code> which only uses one register.</p>
