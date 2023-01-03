@@ -24,6 +24,7 @@ parts:
 - caption: Undecidability
   chapters:
   - file: undecidability/haltingProblem
+  - file: undecidability/busyBeaver
 #  - file: tileUnd
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:

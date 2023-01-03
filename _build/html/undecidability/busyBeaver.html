@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The halting problem &#8212; Invitation to Computabitlity</title>
+    <title>The Busy Beaver Problem &#8212; Invitation to Computabitlity</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Self-Replicating Programs" href="../self_writing.html" />
-    <link rel="prev" title="Coding words by numbers" href="../coding.html" />
+    <link rel="prev" title="The halting problem" href="haltingProblem.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -196,9 +196,14 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="haltingProblem.html">
+   The halting problem
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   The halting problem
+   The Busy Beaver Problem
   </a>
  </li>
 </ul>
@@ -272,7 +277,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/undecidability/haltingProblem.ipynb"
+        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/undecidability/busyBeaver.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -332,7 +337,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/haltingProblem.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/busyBeaver.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +365,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/undecidability/haltingProblem.ipynb"
+        <a href="../_sources/undecidability/busyBeaver.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -397,80 +402,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   The halting problem
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#corollaries">
-   Corollaries
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#improvement-for-one-register-programs">
-   Improvement for one-register programs
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The halting problem</h1>
+                <h1>The Busy Beaver Problem</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   The halting problem
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#corollaries">
-   Corollaries
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#improvement-for-one-register-programs">
-   Improvement for one-register programs
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -478,88 +426,52 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/haltingProblem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="the-halting-problem">
-<h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Permalink to this headline">#</a></h1>
-<p>We come to one of the most famous and most basic results in computability theory.</p>
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/busyBeaver.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-busy-beaver-problem">
+<h1>The Busy Beaver Problem<a class="headerlink" href="#the-busy-beaver-problem" title="Permalink to this headline">#</a></h1>
+<p>Let <span class="math notranslate nohighlight">\(BB(n)\)</span> be the  largest number of <span class="math notranslate nohighlight">\(\one\)</span>s produced by
+any <span class="math notranslate nohighlight">\(\one\hash\)</span>-program with <span class="math notranslate nohighlight">\(\leq n\)</span>
+instructions
+which halts properly.</p>
 <div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
 <div class="theorem-content section" id="proof-content">
-<p>There is no program <span class="math notranslate nohighlight">\(p\)</span> such that
-for all words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{lcl}
-\phifn^2_p(x,y) &amp; = &amp; \left\{
-\begin{array}{ll}
-\one &amp; \mbox{if $\phifn_x(y)\dar$}\\
-\hash &amp;  \mbox{if $\phifn_x(y)\uparrow$}
-\end{array}
-\right.
-\end{array}
-\end{split}\]</div>
-</div>
-</div><p>Here is the proof.
-Suppose toward a contradiction that we had such a program <span class="math notranslate nohighlight">\(p\)</span>.
-Modifying <span class="math notranslate nohighlight">\(p\)</span>, we get a program <span class="math notranslate nohighlight">\(q\)</span> so that for all <span class="math notranslate nohighlight">\(a\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-\phifn^1_q(a) &amp; = &amp; \left\{
-\begin{array}{ll}
-\uparrow &amp; \mbox{if $\phifn_a(a)\dar$}\\
-\downarrow&amp;  \mbox{if $\phifn_a(a)\uparrow$}
-\end{array}
-\right.
-\end{array}
-\end{split}\]</div>
-<p>Here’s how this would be done.
-Assume that <span class="math notranslate nohighlight">\(p\)</span> preserves its input.
-Let <span class="math notranslate nohighlight">\(p\)</span> have <span class="math notranslate nohighlight">\(k\)</span> instructions.
-Let</p>
+<p>There is no program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span> such that
+for all <span class="math notranslate nohighlight">\(n\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-q \quadeq \copyprog_{1,2,3} + p +
-\one^3\hash^5
- + \one^2 \hash^3  
- + \one^{k + 2} \hash^4 
+\begin{array}{lcl}
+\phi^2_{\mathtt{beaver}}(\one^n) &amp; = &amp; \one^{BB(n)}
+\end{array}
 \]</div>
-<p>Then <span class="math notranslate nohighlight">\(q\)</span> has the property that we want.
-But now, take <span class="math notranslate nohighlight">\(a\)</span> to be <span class="math notranslate nohighlight">\(q\)</span>.
+</div>
+</div><p>This is the statement for unary encoding of numbers,
+but the same result works for other encodings.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Suppose that the <span class="math notranslate nohighlight">\(\one\hash\)</span> program
+<span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span> computed <span class="math notranslate nohighlight">\(BB\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> be a <span class="math notranslate nohighlight">\(\one\hash\)</span> program  to
+compute <span class="math notranslate nohighlight">\(n \to n^2\)</span>, using unary notation.</p>
+<p>Consider the programs  <span class="math notranslate nohighlight">\(p_{n}\)</span> for <span class="math notranslate nohighlight">\(n\in N\)</span>, given by</p>
+<div class="math notranslate nohighlight">
+\[
+p_n \quadeq (\one\hash)^{n} + \mathtt{square} + 
+\mathtt{beaver} + \one\hash
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\phifn_{p_{n}}(\ )\)</span> halts and outputs <span class="math notranslate nohighlight">\(BB(n^2) + 1\)</span> ones.</p>
+<p>Notice that the number of instructions in <span class="math notranslate nohighlight">\(p_n\)</span> is <em>linear in <span class="math notranslate nohighlight">\(n\)</span></em>.</p>
+<p>Let <span class="math notranslate nohighlight">\(N\)</span> be large enough so that
+<span class="math notranslate nohighlight">\(N^2\)</span> is larger than the number of instructions in <span class="math notranslate nohighlight">\(p_N\)</span>.
 Then</p>
 <div class="math notranslate nohighlight">
-\[
-\phifn_q(q)\dar   \quadiff \phifn_q(q)\uparrow.
-\]</div>
+\[\begin{split}
+\begin{array}{lclclcl}
+BB(N^2) &amp; \geq  &amp; \phifn_{p_N}(\ ) &amp; = &amp; BB(N^2) + 1 \\
+\end{array}
+\end{split}\]</div>
 <p>Contradiction!</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Look up <a class="reference external" href="http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html">this setting of the proof</a> by Geoffrey Pullum in the spirit of Dr. Seuss.</p>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="corollaries">
-<h1>Corollaries<a class="headerlink" href="#corollaries" title="Permalink to this headline">#</a></h1>
-<p>There are a number of corollaries to the basic undecidability result.</p>
-<div class="proof corollary admonition" id="corollary-1">
-<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
-<div class="corollary-content section" id="proof-content">
-<p>The set of programs which halt when run on all empty registers is undecidable.</p>
-</div>
-</div><div class="proof corollary admonition" id="corollary-2">
-<p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
-<div class="corollary-content section" id="proof-content">
-<p>The set of programs which halt when run on themselves is undecidable.</p>
-</div>
-</div></div>
-<div class="tex2jax_ignore mathjax_ignore section" id="improvement-for-one-register-programs">
-<h1>Improvement for one-register programs<a class="headerlink" href="#improvement-for-one-register-programs" title="Permalink to this headline">#</a></h1>
-<p>There is also an improved version of the basic result.</p>
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs which are tidy and which only use one register.</p>
-<div class="proof corollary admonition" id="corollary-3">
-<p class="admonition-title"><span class="caption-number">Corollary 3 </span></p>
-<div class="corollary-content section" id="proof-content">
-<p>The halting problem is undecidable even for programs in <span class="math notranslate nohighlight">\(A\)</span> when run on all emtpy registers.</p>
-</div>
-</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -588,11 +500,11 @@ Then</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../coding.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="haltingProblem.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Coding words by numbers</p>
+            <p class="prev-next-title">The halting problem</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../self_writing.html" title="next page">
