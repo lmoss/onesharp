@@ -480,68 +480,20 @@ from onesharp.interpreter.interpreter import *
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (57.4.0)
-Collecting setuptools
-  Downloading setuptools-65.6.3-py3-none-any.whl (1.2 MB)
-     |████████████████████████████████| 1.2 MB 9.9 MB/s 
-?25hInstalling collected packages: setuptools
-  Attempting uninstall: setuptools
-    Found existing installation: setuptools 57.4.0
-    Uninstalling setuptools-57.4.0:
-      Successfully uninstalled setuptools-57.4.0
-<span class=" -Color -Color-Red">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
-<span class=" -Color -Color-Red">ipython 7.9.0 requires jedi&gt;=0.10, which is not installed.</span>
-Successfully installed setuptools-65.6.3
-Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting git+https://github.com/lmoss/onesharp.git@main
-  Cloning https://github.com/lmoss/onesharp.git (to revision main) to /tmp/pip-req-build-s764209u
-  Running command git clone -q https://github.com/lmoss/onesharp.git /tmp/pip-req-build-s764209u
-  Installing build dependencies ... ?25l?25hdone
-  Getting requirements to build wheel ... ?25l?25hdone
-  Installing backend dependencies ... ?25l?25hdone
-    Preparing wheel metadata ... ?25l?25hdone
-Requirement already satisfied: IPython in /usr/local/lib/python3.8/dist-packages (from onesharp==0.0.0) (7.9.0)
-Requirement already satisfied: pandas in /usr/local/lib/python3.8/dist-packages (from onesharp==0.0.0) (1.3.5)
-Requirement already satisfied: numpy in /usr/local/lib/python3.8/dist-packages (from onesharp==0.0.0) (1.21.6)
-Requirement already satisfied: prompt-toolkit&lt;2.1.0,&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (2.0.10)
-Requirement already satisfied: pygments in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (2.6.1)
-Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (65.6.3)
-Requirement already satisfied: backcall in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (0.2.0)
-Requirement already satisfied: pexpect in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (4.8.0)
-Requirement already satisfied: pickleshare in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (0.7.5)
-Collecting jedi&gt;=0.10
-  Downloading jedi-0.18.2-py2.py3-none-any.whl (1.6 MB)
-     |████████████████████████████████| 1.6 MB 9.8 MB/s 
-?25hRequirement already satisfied: decorator in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (4.4.2)
-Requirement already satisfied: traitlets&gt;=4.2 in /usr/local/lib/python3.8/dist-packages (from IPython-&gt;onesharp==0.0.0) (5.7.1)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /usr/local/lib/python3.8/dist-packages (from jedi&gt;=0.10-&gt;IPython-&gt;onesharp==0.0.0) (0.8.3)
-Requirement already satisfied: six&gt;=1.9.0 in /usr/local/lib/python3.8/dist-packages (from prompt-toolkit&lt;2.1.0,&gt;=2.0.0-&gt;IPython-&gt;onesharp==0.0.0) (1.15.0)
-Requirement already satisfied: wcwidth in /usr/local/lib/python3.8/dist-packages (from prompt-toolkit&lt;2.1.0,&gt;=2.0.0-&gt;IPython-&gt;onesharp==0.0.0) (0.2.5)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;onesharp==0.0.0) (2.8.2)
-Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;onesharp==0.0.0) (2022.6)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /usr/local/lib/python3.8/dist-packages (from pexpect-&gt;IPython-&gt;onesharp==0.0.0) (0.7.0)
-Building wheels for collected packages: onesharp
-  Building wheel for onesharp (PEP 517) ... ?25l?25hdone
-  Created wheel for onesharp: filename=onesharp-0.0.0-py3-none-any.whl size=2204575 sha256=5d959fd0286cb679f735ebf0704595d4e1ccca84f30d5d2c5383beb548899671
-  Stored in directory: /tmp/pip-ephem-wheel-cache-i03k5e32/wheels/cb/13/1a/64ec8142ccf1600c3b99118b5de1c9a0658745edd091e426e7
-Successfully built onesharp
-Installing collected packages: jedi, onesharp
-Successfully installed jedi-0.18.2 onesharp-0.0.0
-</pre></div>
-</div>
-</div>
 </div>
 <p>Here are some examples of what we are after.  if the last line of a program <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>, then that line transfers control outside of <span class="math notranslate nohighlight">\(p\)</span>, but only one line below the end. On the other hand, if a program <span class="math notranslate nohighlight">\(q\)</span> has exactly <span class="math notranslate nohighlight">\(10\)</span> lines, then we do not want line <span class="math notranslate nohighlight">\(8\)</span> to be <code class="docutils literal notranslate"><span class="pre">1111###</span></code>, since executing this line would take us to “line 12”.  So a run of <span class="math notranslate nohighlight">\(q\)</span> which reached line <span class="math notranslate nohighlight">\(8\)</span> would not halt.
 We would prefer to rewrite <span class="math notranslate nohighlight">\(q\)</span> to point to an infinite loop inside of the program.
-(There are reasons that we prefer programs to have explicit infinite loops instead of pointing to unwanted places.  One such reason appears in Exercise 4 below.  Other reasons for this preference will be revealed in due course.) What we are after here is a formal definition of tidiness, something that we will frequently use.</p>
-<p>We say that a program <span class="math notranslate nohighlight">\(p\)</span> is <em>tidy</em> if no instruction can possibly take us outside the program, except for going “one instruction below the end” of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Here is the formal definition:  Suppose that <span class="math notranslate nohighlight">\(p\)</span> has <span class="math notranslate nohighlight">\(N\)</span> lines.  Here are the requirements for <span class="math notranslate nohighlight">\(p\)</span> to be tidy:</p>
+(There are reasons that we prefer programs to have explicit infinite loops instead of pointing to unwanted places.  One such reason appears in <span class="xref std std-ref">on-tidiness</span> below.  Other reasons for this preference will be revealed in due course.)</p>
+<p>Informally, we say that a program <span class="math notranslate nohighlight">\(p\)</span> is <em>tidy</em> if no instruction can possibly take us outside the program, except for going “one instruction below the end” of <span class="math notranslate nohighlight">\(p\)</span>.<br />
+What we are after here is a formal definition of tidiness.</p>
+<div class="attention admonition">
+<p class="admonition-title">Definition</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(p\)</span> is a program with <span class="math notranslate nohighlight">\(N\)</span> lines.  Here are the requirements for <span class="math notranslate nohighlight">\(p\)</span> to be tidy:</p>
 <p>(a) If line <span class="math notranslate nohighlight">\(i\)</span> is a forward transfer instruction
 <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>, then <span class="math notranslate nohighlight">\(i +k \leq N+1\)</span>.</p>
 <p>(b) If line <span class="math notranslate nohighlight">\(i\)</span> is a backward transfer instruction <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">####</span></code>, then <span class="math notranslate nohighlight">\(i-k \geq 1\)</span>.</p>
 <p>(c) If line <span class="math notranslate nohighlight">\(i\)</span> is a case instruction <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, then <span class="math notranslate nohighlight">\(k+2 \leq N\)</span>.</p>
+</div>
 <p>Here is a comment on condition (c).
 Suppose that <span class="math notranslate nohighlight">\(p\)</span> had <span class="math notranslate nohighlight">\(N\)</span> lines, and line <span class="math notranslate nohighlight">\(N\)</span> were a case instruction
 <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>. If Rk stared with a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then executing <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code> would take us to line <span class="math notranslate nohighlight">\(N+3\)</span>, and there is no such line.
@@ -561,7 +513,7 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 <p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/tidy-exercise-2">
+<div class="exercise admonition" id="tidiness">
 
 <p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
