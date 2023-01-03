@@ -41,6 +41,7 @@ sphinx:
              "Rtwo": ["R2"]
              "words": ["\\mbox{words}"]
              ## "Rone": ["\\mbox{register $1$}"]
+             "dar": "\\!\\!\downarrow"	
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof

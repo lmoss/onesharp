@@ -23,7 +23,7 @@ parts:
   - file: t_predicate
 - caption: Undecidability
   chapters:
-  - file: haltUnd
+  - file: undecidability/haltingProblem
 #  - file: tileUnd
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:
