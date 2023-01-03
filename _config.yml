@@ -25,12 +25,16 @@ sphinx:
      mathjax3_config:
         tex:
            macros:
+             "quadiff": ["\\quad\\mbox{iff}\\quad"]
+             "quadeq": ["\\quad =\\quad"]
+             "dar": ["\\downarrow"]
              "N": "\\mathbb{N}"
              "set": ["\\left\\{#1\\right\\}", 1]
              "one": ["\\mathtt{1}"]
              "hash": ["\\mathtt{\\#}"]
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
+             "copyprog": ["\\mathtt{copy}"]
              "writeprog": ["\\mathtt{write}"]
              "writetotwo": ["\\mathtt{write}_2"]
              "semantics": ["[\\![#1]\\!]", 1]
@@ -40,8 +44,6 @@ sphinx:
              "Rone": ["R1"]
              "Rtwo": ["R2"]
              "words": ["\\mbox{words}"]
-             ## "Rone": ["\\mbox{register $1$}"]
-             "dar": "\\!\\!\downarrow"	
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof
