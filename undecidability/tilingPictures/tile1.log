@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  4 JAN 2023 11:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  4 JAN 2023 12:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -823,7 +823,7 @@ exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
 type1/urw/palatino/uplri8a.pfb>
-Output written on tile1.pdf (2 pages, 38138 bytes).
+Output written on tile1.pdf (2 pages, 35163 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
