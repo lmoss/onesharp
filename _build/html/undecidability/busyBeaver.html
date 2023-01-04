@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Busy Beaver Problem &#8212; Invitation to Computabitlity</title>
+    <title>The busy beaver problem &#8212; Invitation to Computabitlity</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,11 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Self-Replicating Programs" href="../self_writing.html" />
+    <link rel="next" title="Tiling" href="tiling.html" />
     <link rel="prev" title="The halting problem" href="haltingProblem.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -203,7 +203,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   The Busy Beaver Problem
+   The busy beaver problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tiling.html">
+   Tiling
   </a>
  </li>
 </ul>
@@ -414,7 +419,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Busy Beaver Problem</h1>
+                <h1>The busy beaver problem</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -428,7 +433,7 @@ title="Print to PDF"
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/busyBeaver.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-busy-beaver-problem">
-<h1>The Busy Beaver Problem<a class="headerlink" href="#the-busy-beaver-problem" title="Permalink to this headline">#</a></h1>
+<h1>The busy beaver problem<a class="headerlink" href="#the-busy-beaver-problem" title="Permalink to this headline">#</a></h1>
 <p>Let <span class="math notranslate nohighlight">\(BB(n)\)</span> be the  largest number of <span class="math notranslate nohighlight">\(\one\)</span>s produced by
 any <span class="math notranslate nohighlight">\(\one\hash\)</span>-program with <span class="math notranslate nohighlight">\(\leq n\)</span>
 instructions
@@ -445,9 +450,7 @@ for all <span class="math notranslate nohighlight">\(n\)</span></p>
 \end{array}
 \]</div>
 </div>
-</div><p>This is the statement for unary encoding of numbers,
-but the same result works for other encodings.</p>
-<div class="proof admonition" id="proof">
+</div><div class="proof admonition" id="proof">
 <p>Proof. Suppose that the <span class="math notranslate nohighlight">\(\one\hash\)</span> program
 <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span> computed <span class="math notranslate nohighlight">\(BB\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> be a <span class="math notranslate nohighlight">\(\one\hash\)</span> program  to
@@ -473,7 +476,14 @@ BB(N^2) &amp; \geq  &amp; \phifn_{p_N}(\ ) &amp; = &amp; BB(N^2) + 1 \\
 </div>
 <div class="exercise admonition" id="undecidability/busyBeaver-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
+<div class="section" id="exercise-content">
+<p>Show that there is no total computable function <span class="math notranslate nohighlight">\(f\colon\N\to\N\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(f(m) \geq BB(m)\)</span>.</p>
+</div>
+</div>
+<div class="exercise admonition" id="undecidability/busyBeaver-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
 <div class="section" id="exercise-content">
 <p>A common estimate for the number of atoms in the universe is <span class="math notranslate nohighlight">\(M = 10^{82}\)</span>.
 Show that <span class="math notranslate nohighlight">\(BB(50) &gt; M\)</span>.</p>
@@ -515,10 +525,10 @@ Show that <span class="math notranslate nohighlight">\(BB(50) &gt; M\)</span>.</
             <p class="prev-next-title">The halting problem</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../self_writing.html" title="next page">
+    <a class='right-next' id="next-link" href="tiling.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Self-Replicating Programs</p>
+        <p class="prev-next-title">Tiling</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
