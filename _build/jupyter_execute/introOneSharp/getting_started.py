@@ -298,9 +298,7 @@ onesharp(clear_1,['1111###1111##########'])
 # If the first symbol of Rn is $\mathtt{\#}$, we delete that symbol and go to the third instruction after the case instruction.
 # 
 
-# # Useful tools
-
-# ### For use in code cells
+# ### Useful command-line tools
 # 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
@@ -311,24 +309,20 @@ onesharp(clear_1,['1111###1111##########'])
 # | ```unparse(p)```   | inverse of ```parse(p)``` |
 # 
 
-# ### For use inside a Jupyter notebook
+# ### Useful operations inside a Jupyter notebook
 # 
-# 1. How and where to save a notebook.
+# 1. Show the Table of Contents, and also hide it.
 # 
-# 2. Show the Table of Contents, and also hide it.
+# 2. Stop a program that is either in an infinite loop or otherwise is going too long.
 # 
-# 3. Stop a program that is either in an infinite loop or otherwise is going too long.
+# 3. Insert code cells above or below the current cell.
 # 
-# 4. Insert code cells above or below the current cell.
+# 4. Insert text cells above or below the current cell.
 # 
-# 5. Insert text cells above or below the current cell.
+# 5. Add a comment to a cell using # as the first character in a line.
 # 
-# 6. Add a comment to a cell using # as the first character in a line.
+# 6. Moving a cell up or down in the notebook.
 # 
-# 7. Moving a cell up or down in the notebook.
+# 7. Delete a cell.
 # 
-# 8. Delete a cell.
-# 
-# 9. Delete the output of a cell.
-# 
-# 10. Open a new notebook.  
+# 8. Open a new notebook.  
