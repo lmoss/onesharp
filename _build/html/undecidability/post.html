@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>When does a program halt? &#8212; Invitation to Computabitlity</title>
+    <title>Post’s Correspondence Problem &#8212; Invitation to Computabitlity</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functions defined by programs" href="functions.html" />
-    <link rel="prev" title="Simple programs" href="move_copy_write.html" />
+    <link rel="next" title="Self-Replicating Programs" href="../self_writing.html" />
+    <link rel="prev" title="Tiling" href="tiling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,9 +121,9 @@ const thebe_selector_output = ".output, .cell_output"
   Text Register Machine Programs
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="getting_started.html">
+  <a class="reference internal" href="../introOneSharp/getting_started.html">
    Getting started with
    <span class="math notranslate nohighlight">
     \(\one\hash\)
@@ -131,22 +131,22 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="move_copy_write.html">
+  <a class="reference internal" href="../introOneSharp/move_copy_write.html">
    Simple programs
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introOneSharp/haltDef.html">
    When does a program halt?
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="functions.html">
+  <a class="reference internal" href="../introOneSharp/functions.html">
    Functions defined by programs
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tidy.html">
+  <a class="reference internal" href="../introOneSharp/tidy.html">
    Tidy programs
   </a>
  </li>
@@ -195,24 +195,24 @@ const thebe_selector_output = ".output, .cell_output"
   Undecidability
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../undecidability/haltingProblem.html">
+  <a class="reference internal" href="haltingProblem.html">
    The halting problem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../undecidability/busyBeaver.html">
+  <a class="reference internal" href="busyBeaver.html">
    The busy beaver problem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../undecidability/tiling.html">
+  <a class="reference internal" href="tiling.html">
    Tiling
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../undecidability/post.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Post’s Correspondence Problem
   </a>
  </li>
@@ -287,7 +287,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/introOneSharp/haltDef.ipynb"
+        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/undecidability/post.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -347,7 +347,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2FintroOneSharp/haltDef.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/post.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -375,7 +375,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/introOneSharp/haltDef.ipynb"
+        <a href="../_sources/undecidability/post.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -412,70 +412,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   When does a program halt?
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#halting-the-formal-definitions">
-   Halting: the formal definitions
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>When does a program halt?</h1>
+                <h1>Post’s Correspondence Problem</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   When does a program halt?
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#halting-the-formal-definitions">
-   Halting: the formal definitions
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -483,57 +436,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/haltDef.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="section" id="when-does-a-program-halt">
-<h1>When does a program halt?<a class="headerlink" href="#when-does-a-program-halt" title="Permalink to this headline">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\one\hash\)</span> has programs which contain <em>infinite loops</em> such as</p>
-<p>1###1####</p>
-<p>This program never finishes. If you run this in an interpreter, you will need to figure out how to stop the execution.    Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
-<p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
-<p>We say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
-<p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control tranfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-</div>
-<p>To see the difference, consider the following two programs:
-<span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\)</span> and <span class="math notranslate nohighlight">\(\one\hash\)</span>.</p>
-<p>The first says “Go forward 2,” and the second “Add <span class="math notranslate nohighlight">\(\one\)</span> to R1.”</p>
-<p>The first halts, while the second halts improperly.</p>
-<div class="exercise admonition" id="on-halting">
-
-<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
-<div class="section" id="exercise-content">
-<p>Which of the following programs halt when run on all empty registers? Which stop improperly? Why?</p>
-<ol class="simple">
-<li><p>11###111###1####</p></li>
-<li><p>11###111###11####</p></li>
-<li><p>11###111###111####</p></li>
-<li><p>1111###1111###1####11###11####</p></li>
-</ol>
-<p>[It would be better to try to solve this problem without running the programs.]</p>
-</div>
-</div>
-<div class="exercise admonition" id="introOneSharp/haltDef-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
-<div class="section" id="exercise-content">
-<p><a class="reference internal" href="#on-halting"><span class="std std-numref">Exercise 12</span></a> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
-<p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
-<p>(b) When started with <span class="math notranslate nohighlight">\(w_2\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
-<p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop inside <span class="math notranslate nohighlight">\(p\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="halting-the-formal-definitions">
-<h1>Halting: the formal definitions<a class="headerlink" href="#halting-the-formal-definitions" title="Permalink to this headline">#</a></h1>
-<p>There are five ways that the run of a program <span class="math notranslate nohighlight">\(p\)</span> on some register contents could halt.</p>
-<ol class="simple">
-<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction.</p></li>
-<li><p>Some instruction of <span class="math notranslate nohighlight">\(p\)</span>, say instruction number <span class="math notranslate nohighlight">\(i\)</span>, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also <span class="math notranslate nohighlight">\(i + k = n + 1\)</span>; and finally that at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach instruction <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction with Rk empty.</p></li>
-<li><p>Instruction <span class="math notranslate nohighlight">\(n-1\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the next-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <span class="math notranslate nohighlight">\(\one\)</span>.</p></li>
-<li><p>Instruction <span class="math notranslate nohighlight">\(n-2\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the second-to-last instruction) is of the form form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <span class="math notranslate nohighlight">\(\hash\)</span>.</p></li>
-</ol>
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/post.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="post-s-correspondence-problem">
+<h1>Post’s Correspondence Problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this headline">#</a></h1>
+<p>We use <span class="math notranslate nohighlight">\(\one\hash\)</span> to prove the undecidability of Post’s Correspondence Problem.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -549,7 +455,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./introOneSharp"
+            path: "./undecidability"
         },
         predefinedOutput: true
     }
@@ -563,17 +469,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="move_copy_write.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="tiling.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Simple programs</p>
+            <p class="prev-next-title">Tiling</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="functions.html" title="next page">
+    <a class='right-next' id="next-link" href="../self_writing.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions defined by programs</p>
+        <p class="prev-next-title">Self-Replicating Programs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
