@@ -7,7 +7,7 @@
 
 #######################################################################################
 # Book settings
-title                       : Invitation to Computabitlity  # The title of the book. Will be placed in the left navbar.
+title                       : Invitation to Computability  # The title of the book. Will be placed in the left navbar.
 author                      : Lawrence S. Moss  # The author of the book
 copyright                   : "2023"  # Copyright year to be placed in the footer
 logo                        : logo.png #was logo.png  # A path to the book logo
