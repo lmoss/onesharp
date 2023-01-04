@@ -1,0 +1,85 @@
+
+\documentclass[12pt]{article}
+
+\thispagestyle{empty}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri}
+
+
+\usepackage{amsmath,amssymb}
+\usepackage{pifont}
+%\input xy
+%\xyoption{all}
+
+
+\usepackage{pxfonts}
+\usepackage{latexsym}
+
+% \beamertemplatetransparentcovereddynamic
+               % overlays that are upcoming are transparent, in
+
+
+%\xyoption{arc}
+
+%\newcommand{\hearts}{\textcolor{red}{\varheartsuit}}
+%\newcommand{\diamonds}{\textcolor{red}{\vardiamondsuit}}
+%\renewcommand{\heart}{\hearts}
+%\renewcommand{\diamond}{\diamonds}
+%\newcommand{\clubs}{\clubsuit}
+
+%\newcommand{\xbar}{\overline{x}}
+\newcommand{\diamonds}{\textcolor{red}{\vardiamondsuit}}
+\newcommand{\monus} {$--$\hspace{-.07in}\raisebox{1.0ex}
+{$\scriptstyle{\bullet}$}\hspace{0in}} %.2
+\newcommand{\divides}{\mbox{\em div}}
+\newcommand{\hash}{\mbox{\tt \#}}
+\newcommand{\one}{\mbox{\tt 1}}
+\newcommand{\addone}{\lozenge}
+\newcommand{\addhash}{\spade}
+\newcommand{\passthrough}{\bigcirc}%{\mbox{\tt 0}}
+%\newcommand{\spade}{\spadesuit}
+%\newcommand{\club}{\clubsuit}
+%\newcommand{\heart}{\heartsuit}
+\newcommand{\leftendmarker}{\talloblong}%{\triangleright}%{\spade}
+\newcommand{\emptyreg}{\Box}%{\diamondsuit}
+\newcommand{\thislineends}{} %%{\textcolor{blue}{\star}}
+\newcommand{\numberone}{\emph{1}}
+\newcommand{\trileft}{\ }
+
+\newcommand{\tvec}{\vec{t}}
+\newcommand{\uvec}{\vec{u}}
+\newcommand{\Tile}{\mbox{\textit{Tile}}}
+
+\newcommand{\inverse}[1]{{#1}}
+
+
+
+%\renewcommand{\dar}{\textcolor{blue}{\star}}
+
+
+\newcommand{\tile}[4]
+{
+ \begin{tikzpicture}
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1.7) node{\protect{$#1$}};  %% north
+\draw (1.6,1) node{\protect{$#4$}}; %% east
+\draw  (1,.3) node{\protect{$#2$}};  %% south
+\draw (.4,1) node{\protect{$#3$}};%% west
+\end{tikzpicture}
+}
+
+\begin{document}
+
+\begin{flushleft}
+\tile{\one}{\one}{\diamonds}{\diamonds}
+\tile{\hash}{\hash}{\diamonds}{\diamonds}
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+\end{flushleft}
+
+\end{document}
+
