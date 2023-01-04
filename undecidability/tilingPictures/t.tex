@@ -1,0 +1,575 @@
+
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+
+\oddsidemargin 0pt
+\evensidemargin 0 pt
+\topmargin -1in
+\headsep 20pt
+\footskip 20pt
+\textheight 8.5in
+\textwidth 6.25in
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri}
+\usepackage{amsmath,amsthm,stmaryrd,ifsym}
+
+\usepackage{amssymb}
+\usepackage{pifont}
+%\input xy
+%\xyoption{all}
+
+
+\usepackage{pxfonts}
+\usepackage{latexsym}
+
+
+\newcommand{\rem}[1]{\relax}
+% \beamertemplatetransparentcovereddynamic
+               % overlays that are upcoming are transparent, in
+
+
+%\xyoption{arc}
+
+%\newcommand{\hearts}{\textcolor{red}{\varheartsuit}}
+%\newcommand{\diamonds}{\textcolor{red}{\vardiamondsuit}}
+%\renewcommand{\heart}{\hearts}
+%\renewcommand{\diamonds}{\diamonds}
+%\newcommand{\clubs}{\clubsuit}
+
+%\newcommand{\xbar}{\overline{x}}
+\newcommand{\spade}{\spadesuit}
+\newcommand{\diamonds}{\textcolor{red}{\vardiamondsuit}}
+\renewcommand{\diamond}{\diamonds}
+\newcommand{\hearts}{\textcolor{red}{\varheartsuit}}
+\newcommand{\heart}{\hearts}
+\newcommand{\monus} {$--$\hspace{-.07in}\raisebox{1.0ex}
+{$\scriptstyle{\bullet}$}\hspace{0in}} %.2
+\newcommand{\divides}{\mbox{\em div}}
+\newcommand{\hash}{\mbox{\tt \#}}
+\newcommand{\one}{\mbox{\tt 1}}
+\newcommand{\addone}{\lozenge}
+\newcommand{\addhash}{\spade}
+\newcommand{\passthrough}{\bigcirc}%{\mbox{\tt 0}}
+%\newcommand{\spade}{\spadesuit}
+%\newcommand{\club}{\clubsuit}
+%\newcommand{\heart}{\heartsuit}
+\newcommand{\leftendmarker}{\talloblong}%{\triangleright}%{\spade}
+\newcommand{\emptyreg}{\Box}%{\diamondsuit}
+\newcommand{\thislineends}{} %%{\textcolor{blue}{\star}}
+\newcommand{\numberone}{\emph{1}}
+\newcommand{\trileft}{\ }
+
+\newcommand{\tvec}{\vec{t}}
+\newcommand{\uvec}{\vec{u}}
+\newcommand{\Tile}{\mbox{\textit{Tile}}}
+
+\newcommand{\inverse}[1]{{#1}}
+
+
+
+%\renewcommand{\dar}{\textcolor{blue}{\star}}
+
+
+\newcommand{\tile}[4]
+{
+ \begin{tikzpicture}
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1.7) node{\protect{$#1$}};  %% north
+\draw (1.6,1) node{\protect{$#4$}}; %% east
+\draw  (1,.3) node{\protect{$#2$}};  %% south
+\draw (.4,1) node{\protect{$#3$}};%% west
+\end{tikzpicture}
+}
+
+\newcommand{\tilegreen}[4]
+ {
+ \begin{tikzpicture}
+  \filldraw[fill=green!20,draw=green!50!black] (0,0)    rectangle ++(2,2);
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1.7) node{\protect{$#1$}};  %% north
+\draw (1.7,1) node{\protect{$#4$}}; %% east
+\draw  (1,.3) node{\protect{$#2$}};  %% south
+\draw (.3,1) node{\protect{$#3$}};%% west
+\end{tikzpicture}
+}
+
+\newcommand{\tilequestion}
+ {\begin{tikzpicture}
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1) node{\protect{?}};
+\end{tikzpicture}
+}
+
+\renewcommand{\spade}{\hearts}
+
+
+
+\begin{document}
+
+%%  pdftocairo  -x 50 -y 50  -H 140  -png tile1.pdf tile14
+%% where tile1.pdf is the source file
+%% tile14.png is the target
+%% using the settings below and going for one line. -H 140
+%% two lines -H 300
+%% three lines -H 450
+%% 
+%% \oddsidemargin 0pt
+%% \evensidemargin 0 pt
+%% \topmargin -1in
+%% \headsep 20pt
+%% \footskip 20pt
+%% \textheight 8.5in
+%% \textwidth 6.25in
+
+
+\begin{flushleft}
+\tile{}{}{}{}
+\tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
+%\tile{\thislineends}{}{\trileft}{}
+%\tile{}{\thislineends}{\thislineends}{}
+\end{flushleft}
+
+
+\begin{flushleft}
+\tile{\one}{\one}{\diamond}{\diamond}
+\tile{\hash}{\hash}{\diamond}{\diamond}
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+\end{flushleft}
+
+
+\begin{flushleft}
+\tile{\one}{\one}{\spade}{\spade}
+\tile{\hash}{\hash}{\spade}{\spade}
+\tile{\hash}{\thislineends}{\spade}{\trileft}
+%\tile{\thislineends}{}{\trileft}{}
+\end{flushleft}
+
+\begin{flushleft}
+\tile{\one}{\one}{\inverse{\one}}{\inverse{\one}}
+\tile{\one}{\hash}{\inverse{\hash}}{\inverse{\one}}
+\tile{\hash}{\one}{\inverse{\one}}{\inverse{\hash}}
+\tile{\hash}{\hash}{\inverse{\hash}}{\inverse{\hash}}
+\tile{\trileft}{\one}{\inverse{\one}}{\inverse{\trileft}}
+\tile{\trileft}{\hash}{\inverse{\hash}}{\inverse{\trileft}}
+\end{flushleft}
+
+\begin{flushleft}
+%\tile{i+n}{i}{\leftendmarker}{\copyright}
+\tile{\one}{\one}{\copyright}{\copyright}
+\tile{\hash}{\hash}{\copyright}{\copyright}
+\tile{\one}{\one}{\copyright}{}
+\tile{\hash}{\hash}{\copyright}{}
+%\tile{}{}{\copyright}{}
+% check to be sure if we need the tile above
+\end{flushleft}
+
+
+\vfil\eject
+
+\begin{flushleft}
+\tile{i+1}{i}{\leftendmarker}{\diamonds} 
+\end{flushleft}
+
+\vfil\eject
+
+\begin{flushleft}
+\tile{i+1}{i}{\leftendmarker}{\spade} 
+\end{flushleft}
+
+
+\vfil\eject
+
+\begin{flushleft}
+ \tile{i+m}{i}{\leftendmarker}{\copyright}
+\end{flushleft}
+
+
+
+
+\vfil\eject
+
+\begin{flushleft}
+ \tile{i-m}{i}{\leftendmarker}{\copyright}
+\end{flushleft}
+
+
+
+
+
+\vfil\eject
+
+
+\begin{flushleft}
+\tile{i+1}{i}{\leftendmarker}{\thislineends} 
+\tile{i+2}{i}{\leftendmarker}{\inverse{\one}}
+\tile{i+3}{i}{\leftendmarker}{\inverse{\hash}}
+\end{flushleft}
+
+\vfil
+\eject
+%% page 9
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+  &
+   \tile{\one}{\one}{\diamond}{\diamond}
+  &
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+  &\tile{\thislineends}{}{\trileft}{}
+\\
+\tile{\numberone}{2}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&  \tile{\one}{\one}{\copyright}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+  &
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+  & \tile{\thislineends}{}{\trileft}{}
+  & \tile{}{}{}{}
+\\
+\tile{\numberone}{2}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&  \tile{\one}{\one}{\copyright}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{}
+\\
+
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+ &
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+& \tile{\thislineends}{}{\trileft}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tile{\numberone}{2}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{}
+&  \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+ &
+ \tile{\thislineends}{}{\trileft}{}
+ & \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
+&
+\tile{\thislineends}{}{\trileft}{}
+ & 
+ \tile{}{}{}{} 
+  & \tile{}{}{}{}
+   & \tile{}{}{}{}
+     & \tile{}{}{}{}
+\end{array}
+$
+\end{flushleft}
+
+\vfil
+\eject
+
+\tile{139}{131}{\leftendmarker}{\copyright}
+
+\vfil
+\eject
+
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{131}{130}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}$
+\end{flushleft}
+
+\vfil
+\eject
+
+
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{139}{131}{\leftendmarker}{\copyright} & 
+\tile{\one}{\one}{\copyright}{\copyright} & \tile{\hash}{\hash}{\copyright}{\copyright} & 
+ \tile{\hash}{\hash}{\copyright}{\copyright} 
+& \tile{\one}{\one}{\copyright}{} &\tile{}{}{}{} \\
+\tile{131}{130}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+%%
+%% page 16, first
+
+\begin{flushleft}
+$
+\begin{array}{lllllllll}
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+%% page 16, second
+
+\begin{flushleft}
+$\tile{25}{24}{\leftendmarker}{\hearts}$
+\end{flushleft}
+
+
+\vfil\eject
+%% page 16, third
+
+\begin{flushleft}
+$
+\begin{array}{lllllllll}
+\tile{25}{24}{\leftendmarker}{\hearts}
+& \tilequestion
+& \tilequestion
+& \tilequestion
+& \tilequestion
+& \tilequestion\\
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+
+%% bottom of 16
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{25}{24}{\leftendmarker}{\heart}
+ & \tile{\one}{\one}{\heart}{\heart}
+  & \tile{\hash}{\hash}{\heart}{\heart}
+ & \tile{\hash}{\hash}{\heart}{\heart}
+  & \tile{\one}{\one}{\heart}{\heart}
+  &\tile{\hash}{}{\heart}{}
+\\
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+
+% could be any
+
+\begin{flushleft}
+$\begin{array}{ccc}
+\tile{25}{24}{\leftendmarker}{}
+
+& \tile{26}{24}{\leftendmarker}{\one}
+&\tile{27}{24}{\leftendmarker}{\hash}
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+
+%%  questions
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{?}{24}{\leftendmarker}{?}&\tilequestion & \tilequestion&\tilequestion&\tilequestion& \tilequestion\\
+%\tile{25}{24}{\leftendmarker}{\heart}\\
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+
+
+\vfil\eject
+
+%% cannot do
+
+\begin{flushleft}
+$
+\begin{array}{lllllllll}
+\tile{?}{24}{\leftendmarker}{?}&\tilequestion &\tilequestion &\tilequestion &\tilequestion & 
+\tile{\hash}{}{\heart}{}
+\\
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+\vfil\eject
+
+
+%% blanks on far right 
+
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{?}{24}{\leftendmarker}{?}&\tilequestion &\tilequestion&\tilequestion&
+\tile{}{\one}{\one}{}& 
+\tile{}{}{}{}
+\\
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+
+\vfil\eject
+
+%%must be
+
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{26}{24}{\leftendmarker}{\one}&
+\tile{\hash}{\one}{\one}{\hash}
+&
+\tile{\hash}{\hash}{\hash}{\hash}
+&
+\tile{\one}{\hash}{\hash}{\one}
+&
+\tile{}{\one}{\one}{}& 
+\tile{}{}{}{}
+\\
+\tile{24}{23}{\leftendmarker}{\diamond}
+& \tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond} 
+& 
+\tile{\one}{\thislineends}{\diamonds}{\trileft}
+&
+\tile{}{}{}{}
+\\
+\end{array}
+$
+\end{flushleft}
+
+
+
+
+
+
+\end{document}
+
+
+
+\vfil\eject
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+
+
+
+
+\vfil\eject
+
+\begin{flushleft}
+
+\end{flushleft}
+
+
+
+
+
