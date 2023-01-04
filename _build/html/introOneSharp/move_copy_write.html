@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -434,24 +434,40 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#move-2-1">
-   move_2_1
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Simple programs
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#move-2-1">
+     move_2_1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-our-simple-loop">
+     Modifying our simple loop
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy">
+     copy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write">
+     write
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifying-our-simple-loop">
-   Modifying our simple loop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy">
-   Copy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write">
-   Write
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-notation-on-words">
+   The
+   <span class="math notranslate nohighlight">
+    \(+\)
+   </span>
+   notation on words
   </a>
  </li>
 </ul>
@@ -473,24 +489,40 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#move-2-1">
-   move_2_1
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Simple programs
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#move-2-1">
+     move_2_1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-our-simple-loop">
+     Modifying our simple loop
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy">
+     copy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write">
+     write
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modifying-our-simple-loop">
-   Modifying our simple loop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copy">
-   Copy
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write">
-   Write
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-notation-on-words">
+   The
+   <span class="math notranslate nohighlight">
+    \(+\)
+   </span>
+   notation on words
   </a>
  </li>
 </ul>
@@ -504,19 +536,6 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/move_copy_write.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="math notranslate nohighlight">
-\[\newcommand{\hash}{\texttt{#}}
-\renewcommand{\one}{\texttt{1}}
-\newcommand{\diag}{\texttt{diag}}
-\newcommand{\writeprog}{\texttt{write}}
-\renewcommand{\phi}{\varphi}
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\semantics}[1]{[\![ #1]\!]}
-\newcommand{\pair}[1]{\langle #1 \rangle}
-\newcommand\N{\mathbb{N}}
-\newcommand\floor[1]{\lfloor#1\rfloor}
-\newcommand{\bmat}{\left[\begin{array}}
-\newcommand{\emat}{\end{array}\right]}\]</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="simple-programs">
 <h1>Simple programs<a class="headerlink" href="#simple-programs" title="Permalink to this headline">#</a></h1>
 <p>We have seen the syntax of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions
@@ -769,7 +788,7 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 </div>
 </div>
 <div class="section" id="copy">
-<h2>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">#</a></h2>
+<h2>copy<a class="headerlink" href="#copy" title="Permalink to this headline">#</a></h2>
 <p>The second program in this notebook is called <code class="docutils literal notranslate"><span class="pre">copy</span></code>.
 Like <code class="docutils literal notranslate"><span class="pre">move</span></code>, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> program is actually an infinite batch of programs.</p>
 <div class="admonition attention">
@@ -798,7 +817,7 @@ Here is our program when m = 1, n = 2, p = 3:<div class="cell docutils container
 </div>
 </div>
 <div class="section" id="write">
-<h2>Write<a class="headerlink" href="#write" title="Permalink to this headline">#</a></h2>
+<h2>write<a class="headerlink" href="#write" title="Permalink to this headline">#</a></h2>
 <p>We construct with
 a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
 the following properties:</p>
@@ -877,13 +896,6 @@ even if  <span class="math notranslate nohighlight">\(x\)</span> is a word which
 
 <p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
 <div class="section" id="exercise-content">
-<p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(p\)</span>.  If we run <span class="math notranslate nohighlight">\(p\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>, which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?</p>
-</div>
-</div>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-6">
-
-<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
-<div class="section" id="exercise-content">
 <p>Modify <span class="math notranslate nohighlight">\(\writeprog\)</span>
 to get a program <span class="math notranslate nohighlight">\(\writetotwo\)</span>
 with the following feature:
@@ -895,6 +907,39 @@ in R2 and all other registers empty; moreover, running
 <span class="math notranslate nohighlight">\(y\)</span>  with R2 empty results in <span class="math notranslate nohighlight">\(x\)</span> back in R2  (not R1) and all
 other registers empty.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-notation-on-words">
+<h1>The <span class="math notranslate nohighlight">\(+\)</span> notation on words<a class="headerlink" href="#the-notation-on-words" title="Permalink to this headline">#</a></h1>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are words, then <span class="math notranslate nohighlight">\(x + y\)</span> is the <em>concatenation</em> of <span class="math notranslate nohighlight">\(x\)</span> followed by <span class="math notranslate nohighlight">\(y\)</span>.  For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\one\hash\one + \hash \hash = \one\hash\one  \hash \hash.
+\]</div>
+<p>This operation is associative: <span class="math notranslate nohighlight">\(x + (y+z) = (x+y) + z\)</span>.</p>
+<p>The <em>empty word</em> <span class="math notranslate nohighlight">\(\eps\)</span> is an identity element for it:
+<span class="math notranslate nohighlight">\(x + \eps = x = \eps + x\)</span>.
+So we have a <a class="reference external" href="https://en.wikipedia.org/wiki/Monoid"><em>monoid</em></a></p>
+<div class="math notranslate nohighlight">
+\[
+(\words, +, \eps)
+\]</div>
+</div>
+</div><p>This means that we can “add” programs (since they are words).  For example, let</p>
+<div class="math notranslate nohighlight">
+\[
+q = \copyprog_{1,2,3} + \moveprog_{2,1}
+\]</div>
+<p>This program <span class="math notranslate nohighlight">\(q\)</span> would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that registers 2 and 3 were empty to begin with, running <span class="math notranslate nohighlight">\(q\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in register <span class="math notranslate nohighlight">\(1\)</span> would give us <span class="math notranslate nohighlight">\(x + x\)</span> in register 1 at the end.</p>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-7">
+
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
+<div class="section" id="exercise-content">
+<p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(p\)</span>.  If we run <span class="math notranslate nohighlight">\(p\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>, which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?</p>
 </div>
 </div>
 </div>

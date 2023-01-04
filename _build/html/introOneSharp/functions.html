@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -544,7 +544,7 @@ run together to make a big word.
 An instruction counts as a program,
 but programs of length <span class="math notranslate nohighlight">\(\geq 2\)</span> are not instructions.</p>
 <div class="proof definition admonition" id="phi-notation">
-<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn_p\)</span>  on words.</p>
@@ -589,15 +589,35 @@ That is, instead of writing</p>
 </div>
 <p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,
 just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in the other notation.</p>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<div class="section" id="exercise-content">
+<p>Show that the following function <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable: <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
+</div>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="partial-functions">
 <h1>Partial functions<a class="headerlink" href="#partial-functions" title="Permalink to this headline">#</a></h1>
+<p>We have mentioned <em>monoids</em> in connection with the <span class="math notranslate nohighlight">\(+\)</span> operation on words.  Here is another monoid.  Let <span class="math notranslate nohighlight">\(P\)</span> be the set of partial functions from words to words.  Let <span class="math notranslate nohighlight">\(id\)</span> be the identity function on words.  Then we have a monoid</p>
+<div class="math notranslate nohighlight">
+\[
+(P, \o, \id)
+\]</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<div class="section" id="exercise-content">
+<p>Find a <a class="reference external" href="https://en.wikipedia.org/wiki/Monoid#Monoid_homomorphisms">monoid homomorphism</a>
+<span class="math notranslate nohighlight">\(h: (\words, + , \eps) \to (P,\o,\id)\)</span>.</p>
+</div>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-of-two-or-more-arguments">
 <h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this headline">#</a></h1>
 <p>A program <span class="math notranslate nohighlight">\(p\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> can also be used as a function of two or more arguments.  Here is the relevant definition.</p>
-<div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples words.</p>
@@ -625,10 +645,17 @@ is <em>undefined</em>.</p>
 <p><span class="math notranslate nohighlight">\(\phifn^0_{\one\hash}(\ ) \simeq \one\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\semantics{\moveprogtwoone}(\one,\hash\hash\one) \simeq
 \one\hash\hash\one\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program</p>
+<div class="math notranslate nohighlight">
+\[
+\clearprog_1 + \clearprog_3 + \moveprog_{2,1}
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\phifn^3(x,y,z) \simeq y\)</span> for all words <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>.
+(Here <span class="math notranslate nohighlight">\(\clearprog_1\)</span> and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> are programs that simply delete all the symbols in those registers.  We have seen <span class="math notranslate nohighlight">\(\clearprog_1\)</span>, and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> is similar.)</p>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-2">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
 <p>For some purposes, the notion of <span class="math notranslate nohighlight">\(\semantics{p}^n\)</span> is not what one wants.  Here is an alternative.  We say that</p>
 <div class="math notranslate nohighlight">
@@ -639,6 +666,27 @@ is <em>undefined</em>.</p>
 <p>(a) Prove that for every <span class="math notranslate nohighlight">\(p\)</span> there is some <span class="math notranslate nohighlight">\(q\)</span> so that <span class="math notranslate nohighlight">\(\semantics{p}^n \simeq \semanticsalt{q}^n\)</span>.</p>
 <p>(b) Prove that for every <span class="math notranslate nohighlight">\(q\)</span> there is some <span class="math notranslate nohighlight">\(p\)</span> so that <span class="math notranslate nohighlight">\(\semantics{p}^n \simeq \semanticsalt{q}^n\)</span>.</p>
 <p>(c) Show that we can go computably from <span class="math notranslate nohighlight">\(p\)</span> to <span class="math notranslate nohighlight">\(q\)</span>, and vice-versa.</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<div class="section" id="exercise-content">
+<p>Here is an example that shows that sometimes <span class="math notranslate nohighlight">\(\semanticsalt{\ }\)</span> is more useful than \semantics{ \ }$.   Suppose we have three computable functions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+f: \words^2 \to \words \\
+g: \words \to \words \\
+h: \words \to \words \\
+\end{array}
+\end{split}\]</div>
+<p>Define a new function <span class="math notranslate nohighlight">\(f: \words^2 \to \words\)</span> by composition in the following form.</p>
+<div class="math notranslate nohighlight">
+\[
+k(x) = f(g(x), h(x))
+\]</div>
+<p>Show that if <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span>, and <span class="math notranslate nohighlight">\(h\)</span>, are all <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable, so is <span class="math notranslate nohighlight">\(k\)</span>.</p>
 </div>
 </div>
 </div>
@@ -652,9 +700,9 @@ is <em>undefined</em>.</p>
 <p class="admonition-title">Important</p>
 <p>Our work will also involve other notions of “computable” besides <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.   For example, we’ll see <em>intuitive computability</em>, <em>Turing maching computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the “<span class="math notranslate nohighlight">\(\one\hash\)</span>” in the name “<span class="math notranslate nohighlight">\(\one\hash\)</span>-computable”. But at this stage, the notion which we’ll study the most is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.</p>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-3">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable, where</p>
 <div class="math notranslate nohighlight">
@@ -668,16 +716,16 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 \end{split}\]</div>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-4">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
 <p>Is the set of <span class="math notranslate nohighlight">\(\one\hash\)</span> programs a <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable set of words?</p>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-5">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that the following function is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable:</p>
 <div class="math notranslate nohighlight">
@@ -691,9 +739,9 @@ f(w) = \left\{
 \end{split}\]</div>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-6">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
 <div class="section" id="exercise-content">
 <p>(a)
 As a parallel to how we defined <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
@@ -704,17 +752,17 @@ As a parallel to how we defined <span class="math notranslate nohighlight">\(\on
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="computably-enumerable-sets">
 <h1>Computably enumerable sets<a class="headerlink" href="#computably-enumerable-sets" title="Permalink to this headline">#</a></h1>
-<div class="proof definition admonition" id="definition-7">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\(\phifn_p\)</span>.
 That is,</p>
 <p><span class="math notranslate nohighlight">\(W_p = \set{x : \phifn_p(x)\downarrow}\)</span>.</p>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq\words\)</span> is <em>computably enumerable</em> if there is some program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(A = W_p\)</span>.</p>
 </div>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-8">
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-11">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that every computable set is computably enumerable.  (As we shall see, the converse is false.). Show also that the family of computably enumerable sets is closed under intersection: if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are computably enumerable, so is <span class="math notranslate nohighlight">\(A\cap B\)</span>.</p>
 </div>

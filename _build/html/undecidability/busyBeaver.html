@@ -51,7 +51,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -466,10 +466,13 @@ compute <span class="math notranslate nohighlight">\(n \to n^2\)</span>, using u
 p_n \quadeq (\one\hash)^{n} + \mathtt{square} + 
 \mathtt{beaver} + \one\hash
 \]</div>
-<p>Then <span class="math notranslate nohighlight">\(\phifn_{p_{n}}(\ )\)</span> halts and outputs <span class="math notranslate nohighlight">\(BB(n^2) + 1\)</span> ones.</p>
-<p>Notice that the number of instructions in <span class="math notranslate nohighlight">\(p_n\)</span> is <em>linear in <span class="math notranslate nohighlight">\(n\)</span></em>.</p>
+<p>Then</p>
+<p><span class="math notranslate nohighlight">\(\phifn_{p_{n}}(\ )\simeq \one^K\)</span>, where <span class="math notranslate nohighlight">\(K = BB(n^2) + 1\)</span>.</p>
+<p>Notice that the number of instructions in <span class="math notranslate nohighlight">\(p_n\)</span> is <em>linear in <span class="math notranslate nohighlight">\(n\)</span></em>.
+In fact, it is <span class="math notranslate nohighlight">\(n + m\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the total number of instructions
+in <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> and <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(N\)</span> be large enough so that
-<span class="math notranslate nohighlight">\(N^2\)</span> is larger than the number of instructions in <span class="math notranslate nohighlight">\(p_N\)</span>.
+<span class="math notranslate nohighlight">\(N^2 &gt; N+m\)</span>.
 Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -481,14 +484,14 @@ BB(N^2) &amp; \geq  &amp; \phifn_{p_N}(\ ) &amp; = &amp; BB(N^2) + 1 \\
 </div>
 <div class="exercise admonition" id="undecidability/busyBeaver-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that there is no total computable function <span class="math notranslate nohighlight">\(f\colon\N\to\N\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(f(m) \geq BB(m)\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="undecidability/busyBeaver-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 36 </span></p>
 <div class="section" id="exercise-content">
 <p>A common estimate for the number of atoms in the universe is <span class="math notranslate nohighlight">\(M = 10^{82}\)</span>.
 Show that <span class="math notranslate nohighlight">\(BB(50) &gt; M\)</span>.</p>

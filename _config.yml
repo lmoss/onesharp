@@ -28,6 +28,9 @@ sphinx:
              "quadiff": ["\\quad\\mbox{iff}\\quad"]
              "quadeq": ["\\quad =\\quad"]
              "dar": ["\\downarrow"]
+             "eps": ["\\varepsilon"]
+             "id": ["id"]
+             "o": ["\\circ"]
              "N": "\\mathbb{N}"
              "set": ["\\left\\{#1\\right\\}", 1]
              "one": ["\\mathtt{1}"]
@@ -35,6 +38,7 @@ sphinx:
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
              "copyprog": ["\\mathtt{copy}"]
+             "clearprog": ["\\mathtt{clear}"]
              "writeprog": ["\\mathtt{write}"]
              "writetotwo": ["\\mathtt{write}_2"]
              "semantics": ["[\\![#1]\\!]", 1]
