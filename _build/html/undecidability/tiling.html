@@ -449,6 +449,16 @@ title="Print to PDF"
    Some observations
   </a>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formal-statement">
+   formal statement
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-converse">
+   the converse
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -486,6 +496,16 @@ title="Print to PDF"
    Some observations
   </a>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formal-statement">
+   formal statement
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-converse">
+   the converse
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -509,6 +529,16 @@ is a finite set <span class="math notranslate nohighlight">\(\TT\)</span> of til
 When we talk about tile sets we always will mean a
 finite,
 pointed tile set.</p>
+<div class="tip admonition">
+<p class="admonition-title">Notation</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets.
+Let <span class="math notranslate nohighlight">\(\Tile\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\TT\)</span>  with the property that
+the
+the first quadrant can be tiled with <span class="math notranslate nohighlight">\(\TT\)</span> in this sense.</p>
+</div>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs with those two properties,
+and let <span class="math notranslate nohighlight">\(B\subseteq A\)</span> be the subset with the additional property that
+<span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
 <p>The main problem  is   whether,
 given a tile
 set  <span class="math notranslate nohighlight">\(\TT\)</span>,
@@ -516,44 +546,22 @@ we we can tile the first quadrant of the plane in such a way that
 <span class="math notranslate nohighlight">\(t_0\)</span> goes on
 the corner,
 and matching edges have the same color.</p>
-<p>Let <span class="math notranslate nohighlight">\(\Tile\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\TT\)</span>  with the property that
-the
-the first quadrant can be tiled with <span class="math notranslate nohighlight">\(\TT\)</span> in this sense.</p>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <div class="theorem-content section" id="proof-content">
-<p>There is a total computable function</p>
-<div class="math notranslate nohighlight">
-\[
-\TT:  A\to  \mbox{pointed tile sets}
-\]</div>
-<p>such that</p>
-<div class="math notranslate nohighlight">
-\[
-\phifn_p(\ ) \uar \quadiff   \TT(p) \mbox{ tiles the quadrant properly}.
-\]</div>
-<p>Thus</p>
-<div class="math notranslate nohighlight">
-\[
-\overline{B}  \leq_m   \Tile.
-\]</div>
-<p>In other words,</p>
-<div class="math notranslate nohighlight">
-\[
-B \leq_m  \overline{\Tile}.
-\]</div>
+<p>There is a total computable function
+<span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>.
+such that
+$<span class="math notranslate nohighlight">\(
+p\in \overline{B} \quadiff   \TT(p) \in \Tile.
+\)</span>$</p>
+<p>Thus, <span class="math notranslate nohighlight">\(B\)</span> is undecidable.</p>
 </div>
 </div><p>In our proof, we are interested in programs <span class="math notranslate nohighlight">\(p\)</span> with the following features:</p>
 <p>(a) <span class="math notranslate nohighlight">\(p\)</span> is tidy.</p>
 <p>(b) <span class="math notranslate nohighlight">\(p\)</span> only uses register 1.</p>
-<div class="tip admonition">
-<p class="admonition-title">Notation</p>
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs with those two properties,
-and let <span class="math notranslate nohighlight">\(B\subseteq A\)</span> be the subset with the additional property that
-<span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(A\)</span> is decidable (easily) and we show that <span class="math notranslate nohighlight">\(B\)</span> is
 is undecidable.</p>
-</div>
 <div class="attention admonition">
 <p class="admonition-title">Our goal</p>
 <p>A computable and total function <span class="math notranslate nohighlight">\(\TT\)</span>
@@ -568,17 +576,24 @@ such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <spa
 Fix such a program <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>We start with 18 tiles that are part of <span class="math notranslate nohighlight">\(\TT(p)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(p\in A\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t1-01.png?raw=1" width="100%" height="100%">
-<p>The rest of <span class="math notranslate nohighlight">\(\TT(p)\)</span> depends on the program <span class="math notranslate nohighlight">\(p\)</span>.  To begin, when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\one\hash\)</span>, we include the tile</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t2-02.png?raw=1" width="100%" height="100%">
-<p>And when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>, we include the tile</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t3-03.png?raw=1" width="100%" height="100%">
-<p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\one^m\hash\hash\hash\)</span> we include</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t4-04.png?raw=1" width="100%" height="100%">
-<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\one^m\hash\hash\hash\hash\)</span> we include</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%">
-<p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <span class="math notranslate nohighlight">\(\one\hash\hash\hash\hash\hash\)</span>, we include the three tiles</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t6-06.png?raw=1" width="100%" height="100%">
-<p>This completes the definition of <span class="math notranslate nohighlight">\(\TT\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\TT\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with $\TT(p).</p>
+<p>The rest of <span class="math notranslate nohighlight">\(\TT(p)\)</span> depends on the program <span class="math notranslate nohighlight">\(p\)</span>.  To begin, when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\one\hash\)</span>, we include the tile
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t2-02.png?raw=1" width="100%" height="100%"></p>
+<p>And when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>, we include the tile
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t3-03.png?raw=1" width="100%" height="100%"></p>
+<p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\one^m\hash\hash\hash\)</span> we include
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t4-04.png?raw=1" width="100%" height="100%"></p>
+<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\one^m\hash\hash\hash\hash\)</span> we include
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%"></p>
+<p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <span class="math notranslate nohighlight">\(\one\hash\hash\hash\hash\hash\)</span>, we include the three tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t6-06.png?raw=1" width="100%" height="100%"></p>
+<p>Notice that <span class="math notranslate nohighlight">\(\TT(p)\)</span> is a finite set of tiles.
+We also want <span class="math notranslate nohighlight">\(\TT(p)\)</span> to be pointed, and we take the green tile above.</p>
+<p>This completes the definition of the function <span class="math notranslate nohighlight">\(\TT\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\TT\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with $\TT(p).</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\TT(\one\hash\one\hash\hash\hash\hash)\)</span>:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t7-07.png?raw=1" width="100%" height="100%">
+</div>
 <p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT(p)\)</span>, then <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="some-observations">
@@ -625,7 +640,7 @@ is the word composed of all symbols on the
 Suppose that row  <span class="math notranslate nohighlight">\(67\)</span> of a tiling using <span class="math notranslate nohighlight">\(\TT(p)\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
 and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\one^8\hash\)</span>.
-In view of the fact that <span class="math notranslate nohighlight">\(131 + 8 = 139\)</span>,
+In view of the fact that 131 + 8 = 139,
 the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
 <p>Thus, row 68 must be the top row below:
@@ -635,7 +650,7 @@ the instruction tile in the first column of row <span class="math notranslate no
 <p>The word encoded in row 68  is <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.
 This is exactly the same as
 the word encoded in row 67.</p>
-<p>We can read the symbol <span class="math notranslate nohighlight">\(\copyright\)</span> as “copy right.”</p>
+<p>Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
 <hr class="docutils" />
 <p>We continue with a second fact along the same lines.
@@ -643,8 +658,8 @@ Suppose that row 4743 of some tiling of the quadrant starts out</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%">
 <p>and instruction 24 of the program is <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.  Then the first tile in row 4744 must be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t12-12.png?raw=1" width="100%" height="100%">
-What are the next tiles in row 4744?</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%">
+What are the next tiles in row 4744?
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%"></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Click for the answer.<div class="sd-summary-down docutils">
@@ -658,26 +673,67 @@ Click for the answer.<div class="sd-summary-down docutils">
 This is exactly the word encoded in row 4743, with # added at the end.</p>
 <p>This shows that we have implemented the 1## instructions correctly.</p>
 <hr class="docutils" />
-<p>Finally, let’s get a third parallel fact but for the case instruction. Suppose again that row 4743 of some tiling of the quadrant starts out</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%">
+<p>Finally, let’s get a third parallel fact but for the case instruction. Suppose again that row 4743 of some tiling of the quadrant starts out
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
 <p>But now uppose that line 24 of the program is the case instruction <span class="math notranslate nohighlight">\(\one\hash\hash\hash\hash\hash\)</span>.
-Then the first tile in row 25 can be any of the three tiles</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"><p>So the situation is
+Then the first tile in row 25 can be any of the three tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"></p>
+<p>So the situation is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t16-16.png?raw=1" width="100%" height="100%"></p>
-<p>We cannot have</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%">
-<p>This is because the symbols in the middle of row <span class="math notranslate nohighlight">\(4744\)</span> have to be <span class="math notranslate nohighlight">\(\one\)</span>, <span class="math notranslate nohighlight">\(\hash\)</span>, or ``blank.’’</p>
-<p>We must have all blanks on the far right, and then next to that tile as shown below:</p>
-<p>Then row  4744 must end up as
+<p>We cannot have the symbol above the blank to be as below
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%"></p>
+<p>This is because the symbols in the middle of row 4744 have to be <span class="math notranslate nohighlight">\(\one\)</span>, <span class="math notranslate nohighlight">\(\hash\)</span>, or ``blank.’’  So there would be no way to match the heart symbol at the end.</p>
+<p>We must have all blanks on the far right, and then next to that a tiles with two <span class="math notranslate nohighlight">\(\one\)</span>s:</p>
+<p>We now know the last tiles before the blank tiles in row 4744:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
 <p>Indeed, the whole row has to be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%"></p>
 <p>The word encoded in row 4744  is <span class="math notranslate nohighlight">\(\hash\hash\one\)</span>.</p>
 <p>This is exactly
 the word encoded in row 4743, with  the first symbol (a <span class="math notranslate nohighlight">\(\one\)</span>) deleted.</p>
-<p>And the instruction to go to is <span class="math notranslate nohighlight">\(26 = 24 + 2\)</span>.
+<p>And the instruction to go to is 26 = 24 + 2.
 So we have implemented <span class="math notranslate nohighlight">\(\one\hash^5\)</span> correctly,
 at least in the case when register <span class="math notranslate nohighlight">\(1\)</span> starts with a <span class="math notranslate nohighlight">\(\one\)</span>.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="formal-statement">
+<h1>formal statement<a class="headerlink" href="#formal-statement" title="Permalink to this headline">#</a></h1>
+<p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\TT(p)\)</span>
+and also the run of <span class="math notranslate nohighlight">\(p\)</span> with nothing in any register.</p>
+<p>For all <span class="math notranslate nohighlight">\(s\)</span>, exactly one of the following two things happen.</p>
+<p>(a) The program halts in <span class="math notranslate nohighlight">\(\leq s\)</span> steps,
+and there is no tiling of the first <span class="math notranslate nohighlight">\(s\)</span> rows of the plane
+(starting with <span class="math notranslate nohighlight">\(s = 0\)</span>).</p>
+<p>(b)
+The program runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps,
+and there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
+And in this case,
+for <span class="math notranslate nohighlight">\(k \leq n\)</span>
+the top edge of the <span class="math notranslate nohighlight">\(k\)</span>th row has
+the line number to be executed in step <span class="math notranslate nohighlight">\(k+1\)</span>
+(or <span class="math notranslate nohighlight">\(n+1\)</span> if the program halts at step <span class="math notranslate nohighlight">\(k\)</span>)
+then the contents of the register,   symbol-by-symbol,
+and then all blanks.</p>
+</div>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="the-converse">
+<h1>the converse<a class="headerlink" href="#the-converse" title="Permalink to this headline">#</a></h1>
+<p>We conclude our work on tiling by showing that
+<span class="math notranslate nohighlight">\(\Tile \leq_m \overline{K}_{empty}\)</span>.
+Given a pointed tile set <span class="math notranslate nohighlight">\(\TT\)</span>,
+make a program  <span class="math notranslate nohighlight">\(f(\TT)\)</span> such that
+running <span class="math notranslate nohighlight">\(f(\TT)\)</span> on all empty registers
+using the <span class="math notranslate nohighlight">\(\mu\)</span>-operator
+to look for some number <span class="math notranslate nohighlight">\(n\)</span>
+such that  <span class="math notranslate nohighlight">\(\TT\)</span> <em>cannot</em> tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
+<p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
+<hr class="docutils" />
+<p>If <span class="math notranslate nohighlight">\(\TT\)</span> has a tiling, the program <span class="math notranslate nohighlight">\(f(\TT)\)</span> never halts.
+So <span class="math notranslate nohighlight">\(f(\TT)\in \overline{B}\)</span>.</p>
+<p>And (crucially) if <span class="math notranslate nohighlight">\(\TT\)</span> has no tiling of the whole quadrant,
+then by an argument using the K”{o}nig Infinity Lemma,
+there is some <span class="math notranslate nohighlight">\(n\)</span> such that
+<span class="math notranslate nohighlight">\(\TT\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
+<p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\TT)}(\ )\downarrow\)</span>.</p>
 </div>
 
     <script type="text/x-thebe-config">
