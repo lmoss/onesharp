@@ -522,6 +522,13 @@ title="Print to PDF"
 <p>In this notebook we prove the undecidability of the tiling problem.</p>
 <p>Recall that in this problem we are given a finite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, and the problem is to determine whether there is a proper tiling of the first quadrant of the plane using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   A <em>tile</em> is a square with <em>colors</em> on the four sides.
 The colors can be anything, of course.</p>
+<p>The main problem  is   whether,
+given a tile
+set  <span class="math notranslate nohighlight">\(\TT\)</span>,
+we we can tile the first quadrant of the plane in such a way that
+<span class="math notranslate nohighlight">\(t_0\)</span> goes on
+the corner,
+and matching edges have the same color.  This is what we mean by a <em>proper</em> tiling of the first quadrant.</p>
 <p>A <em>finite, pointed tile set</em>
 <span class="math notranslate nohighlight">\((\TT,t_0)\)</span>
 is a finite set <span class="math notranslate nohighlight">\(\TT\)</span> of tiles with a fixed <em>distinguished tile</em>
@@ -534,38 +541,31 @@ pointed tile set.</p>
 <p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets.
 Let <span class="math notranslate nohighlight">\(\Tile\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\TT\)</span>  with the property that
 the
-the first quadrant can be tiled with <span class="math notranslate nohighlight">\(\TT\)</span> in this sense.</p>
+the first quadrant can be properly tiled with <span class="math notranslate nohighlight">\(\TT\)</span>.</p>
 </div>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs with those two properties,
 and let <span class="math notranslate nohighlight">\(B\subseteq A\)</span> be the subset with the additional property that
-<span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
-<p>The main problem  is   whether,
-given a tile
-set  <span class="math notranslate nohighlight">\(\TT\)</span>,
-we we can tile the first quadrant of the plane in such a way that
-<span class="math notranslate nohighlight">\(t_0\)</span> goes on
-the corner,
-and matching edges have the same color.</p>
+<span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.
+Then <span class="math notranslate nohighlight">\(A\)</span> is decidable (easily) and we show that <span class="math notranslate nohighlight">\(B\)</span> is
+is undecidable.</p>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>There is a total computable function
-<span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>.
-such that
-$<span class="math notranslate nohighlight">\(
+<span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>
+such that</p>
+<div class="math notranslate nohighlight">
+\[
 p\in \overline{B} \quadiff   \TT(p) \in \Tile.
-\)</span>$</p>
+\]</div>
 <p>Thus, <span class="math notranslate nohighlight">\(B\)</span> is undecidable.</p>
 </div>
 </div><p>In our proof, we are interested in programs <span class="math notranslate nohighlight">\(p\)</span> with the following features:</p>
 <p>(a) <span class="math notranslate nohighlight">\(p\)</span> is tidy.</p>
 <p>(b) <span class="math notranslate nohighlight">\(p\)</span> only uses register 1.</p>
-<p>Then <span class="math notranslate nohighlight">\(A\)</span> is decidable (easily) and we show that <span class="math notranslate nohighlight">\(B\)</span> is
-is undecidable.</p>
 <div class="attention admonition">
 <p class="admonition-title">Our goal</p>
-<p>A computable and total function <span class="math notranslate nohighlight">\(\TT\)</span>
-from programs to (pointed) tile sets
+<p>A computable and total function <span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>
 such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(\TT(p)\)</span>
 <em>can</em> tile the quadrant.</p>
 </div>
@@ -637,7 +637,7 @@ is the word composed of all symbols on the
 <em>after the instruction tile</em> (the first tile in row <span class="math notranslate nohighlight">\(n\)</span>).</p>
 </div>
 </div><p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.
-Suppose that row  <span class="math notranslate nohighlight">\(67\)</span> of a tiling using <span class="math notranslate nohighlight">\(\TT(p)\)</span> is
+Suppose that row 67 of a tiling using <span class="math notranslate nohighlight">\(\TT(p)\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
 and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\one^8\hash\)</span>.
 In view of the fact that 131 + 8 = 139,

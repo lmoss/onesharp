@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  5 JAN 2023 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  5 JAN 2023 13:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1035,7 +1035,32 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [20]
-(./t.aux) ) 
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+[21] (./t.aux) ) 
 Here is how much of TeX's memory you used:
  16491 strings out of 480608
  342602 string characters out of 5903631
@@ -1044,19 +1069,19 @@ Here is how much of TeX's memory you used:
  546986 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,18n,67p,439b,699s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/local
-/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/pxsyc.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/pxfonts/rpcxr.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
-1/urw/palatino/uplri8a.pfb>
-Output written on t.pdf (20 pages, 51359 bytes).
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/pxsyc.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpcxr.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/texmf-dis
+t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts
+/type1/urw/palatino/uplri8a.pfb>
+Output written on t.pdf (21 pages, 52642 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
