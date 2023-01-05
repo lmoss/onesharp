@@ -117,6 +117,18 @@
 \end{tikzpicture}
 }
 
+\newcommand{\centerspot}[1]
+ {\begin{tikzpicture}
+\phantom{\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+}
+\draw  (1,1) node{\protect{#1}};
+\end{tikzpicture}
+}
+
 \renewcommand{\spade}{\hearts}
 
 
@@ -702,7 +714,7 @@ $
  \tile{\one}{\thislineends}{\diamond}{\trileft}
 & \tile{\thislineends}{}{\trileft}{}
   & \tile{}{}{}{}
-    & \tile{}{}{}{}
+    & \tile{}{}{}{} &  &  \centerspot{\one\one}
 \\
 \tile{\numberone}{2}{\leftendmarker}{\copyright}
 &
@@ -710,7 +722,7 @@ $
 &  \tile{}{}{}{}
   & \tile{}{}{}{}
     & \tile{}{}{}{}
-      & \tile{}{}{}{}
+      & \tile{}{}{}{}&  &  \centerspot{\one}
 \\
 \tile{2}{\numberone}{\leftendmarker}{\diamond}
 &
@@ -719,7 +731,7 @@ $
  \tile{\thislineends}{}{\trileft}{}
  & \tile{}{}{}{}
   & \tile{}{}{}{}
-    & \tile{}{}{}{}
+    & \tile{}{}{}{}&  &  \centerspot{\one}
 \\
 \tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
 &
@@ -728,7 +740,7 @@ $
  \tile{}{}{}{} 
   & \tile{}{}{}{}
    & \tile{}{}{}{}
-     & \tile{}{}{}{}
+     & \tile{}{}{}{}&  &  \centerspot{$\varepsilon$}
 \end{array}
 $
 \end{flushleft}
