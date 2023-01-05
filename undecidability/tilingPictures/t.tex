@@ -162,64 +162,84 @@
 
 
 \begin{flushleft}
-\tile{}{}{}{}
-\tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
+$\begin{array}{lllllll}
+\tile{}{}{}{} &
+\tilegreen{\numberone}{start}{\leftendmarker}{\trileft} &
 %\tile{\thislineends}{}{\trileft}{}
 %\tile{}{\thislineends}{\thislineends}{}
+\end{array}$
 \end{flushleft}
 
-
 \begin{flushleft}
-\tile{\one}{\one}{\diamond}{\diamond}
-\tile{\hash}{\hash}{\diamond}{\diamond}
-\tile{\one}{\thislineends}{\diamonds}{\trileft}
+$\begin{array}{lllllll}
+\tile{\one}{\one}{\diamond}{\diamond} &
+\tile{\hash}{\hash}{\diamond}{\diamond}&
+\tile{\one}{\thislineends}{\diamonds}{\trileft}&
+\end{array}$
 \end{flushleft}
 
-
 \begin{flushleft}
-\tile{\one}{\one}{\spade}{\spade}
-\tile{\hash}{\hash}{\spade}{\spade}
-\tile{\hash}{\thislineends}{\spade}{\trileft}
+$\begin{array}{lllllll}
+\tile{\one}{\one}{\spade}{\spade}&
+\tile{\hash}{\hash}{\spade}{\spade}&
+\tile{\hash}{\thislineends}{\spade}{\trileft}&
 %\tile{\thislineends}{}{\trileft}{}
+\end{array}$
 \end{flushleft}
 
+
 \begin{flushleft}
-\tile{\one}{\one}{\inverse{\one}}{\inverse{\one}}
-\tile{\one}{\hash}{\inverse{\hash}}{\inverse{\one}}
-\tile{\hash}{\one}{\inverse{\one}}{\inverse{\hash}}
+$\begin{array}{lllllll}
+\tile{\one}{\one}{\inverse{\one}}{\inverse{\one}}&
+\tile{\one}{\hash}{\inverse{\hash}}{\inverse{\one}}&
+\tile{\hash}{\one}{\inverse{\one}}{\inverse{\hash}}&
 \tile{\hash}{\hash}{\inverse{\hash}}{\inverse{\hash}}
-\tile{\trileft}{\one}{\inverse{\one}}{\inverse{\trileft}}
-\tile{\trileft}{\hash}{\inverse{\hash}}{\inverse{\trileft}}
+\tile{\trileft}{\one}{\inverse{\one}}{\inverse{\trileft}}&
+\tile{\trileft}{\hash}{\inverse{\hash}}{\inverse{\trileft}}&
+\end{array}$
 \end{flushleft}
 
+
 \begin{flushleft}
+$\begin{array}{lllllll}
 %\tile{i+n}{i}{\leftendmarker}{\copyright}
-\tile{\one}{\one}{\copyright}{\copyright}
-\tile{\hash}{\hash}{\copyright}{\copyright}
-\tile{\one}{\one}{\copyright}{}
-\tile{\hash}{\hash}{\copyright}{}
+\tile{\one}{\one}{\copyright}{\copyright}&
+\tile{\hash}{\hash}{\copyright}{\copyright}&
+\tile{\one}{\one}{\copyright}{}&
+\tile{\hash}{\hash}{\copyright}{}&
 %\tile{}{}{\copyright}{}
 % check to be sure if we need the tile above
+\end{array}$
 \end{flushleft}
 
 
 \vfil\eject
 
 \begin{flushleft}
+$\begin{array}{lll}
 \tile{i+1}{i}{\leftendmarker}{\diamonds} 
+\end{array}
+$
 \end{flushleft}
 
 \vfil\eject
 
 \begin{flushleft}
+$\begin{array}{lll}
 \tile{i+1}{i}{\leftendmarker}{\spade} 
+\end{array}
+$
 \end{flushleft}
 
 
 \vfil\eject
 
-\begin{flushleft}
- \tile{i+m}{i}{\leftendmarker}{\copyright}
+\begin{flushleft} 
+$\begin{array}{llll}
+\tile{i+m}{i}{\leftendmarker}{\copyright}
+\end{array}
+$
+
 \end{flushleft}
 
 
@@ -228,7 +248,10 @@
 \vfil\eject
 
 \begin{flushleft}
+$\begin{array}{llll}
  \tile{i-m}{i}{\leftendmarker}{\copyright}
+ \end{array}
+$ 
 \end{flushleft}
 
 
@@ -239,9 +262,11 @@
 
 
 \begin{flushleft}
-\tile{i+1}{i}{\leftendmarker}{\thislineends} 
-\tile{i+2}{i}{\leftendmarker}{\inverse{\one}}
+$\begin{array}{llll}
+\tile{i+1}{i}{\leftendmarker}{\thislineends}  &
+\tile{i+2}{i}{\leftendmarker}{\inverse{\one}} &
 \tile{i+3}{i}{\leftendmarker}{\inverse{\hash}}
+\end{array}$
 \end{flushleft}
 
 \vfil
@@ -330,7 +355,16 @@ $
 \vfil
 \eject
 
+\begin{flushleft}
+$\begin{array}{lllll}
 \tile{139}{131}{\leftendmarker}{\copyright}
+&\phantom{\tile{139}{131}{\leftendmarker}{\copyright}} 
+&\phantom{\tile{139}{131}{\leftendmarker}{\copyright}} 
+&\phantom{\tile{139}{131}{\leftendmarker}{\copyright}} 
+&\phantom{\tile{139}{131}{\leftendmarker}{\copyright}}
+\end{array}
+$
+\end{flushleft}
 
 \vfil
 \eject
@@ -398,7 +432,10 @@ $
 %% page 16, second
 
 \begin{flushleft}
-$\tile{25}{24}{\leftendmarker}{\hearts}$
+$\begin{array}{lllllllll}
+\tile{25}{24}{\leftendmarker}{\hearts}
+\end{array}
+$
 \end{flushleft}
 
 
@@ -563,6 +600,89 @@ $\begin{array}{lllllllll}
 &
 \tile{}{}{}{}
 \\
+\end{array}
+$
+\end{flushleft}
+
+
+\vfil\eject
+
+\begin{flushleft}
+$
+\begin{array}{lllllllll}
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+  &
+   \tile{\one}{\one}{\diamond}{\diamond}
+  &
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+  &\tile{\thislineends}{}{\trileft}{}
+\\
+\tile{\numberone}{2}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&  \tile{\one}{\one}{\copyright}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+  &
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+  & \tile{\thislineends}{}{\trileft}{}
+  & \tile{}{}{}{}
+\\
+\tile{\numberone}{2}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&  \tile{\one}{\one}{\copyright}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{}
+\\
+
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+ &
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+& \tile{\thislineends}{}{\trileft}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tile{\numberone}{2}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{}
+&  \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+ &
+ \tile{\thislineends}{}{\trileft}{}
+ & \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
+&
+\tile{\thislineends}{}{\trileft}{}
+ & 
+ \tile{}{}{}{} 
+  & \tile{}{}{}{}
+   & \tile{}{}{}{}
+     & \tile{}{}{}{}
 \end{array}
 $
 \end{flushleft}
