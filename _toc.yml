@@ -15,8 +15,12 @@ parts:
   - file: sanity
   - file: arithmetic
   - file: primitive_recursion
-#  - flle: two_by_two
-  - file: universal
+
+- caption: Universal Programs
+  chapters:
+#   - flle: two_by_two
+   - file: universal
+
 - caption: The Enumeration Theorem
   chapters:
   - file: coding
