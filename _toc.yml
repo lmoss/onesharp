@@ -10,6 +10,10 @@ parts:
   - file: introOneSharp/functions
   - file: introOneSharp/tidy
 
+- caption: Issues
+  chapters:
+  - file: issues/problems
+
 - caption: More Programs
   chapters:
   - file: sanity
