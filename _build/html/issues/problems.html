@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tools to help write programs" href="../sanity.html" />
+    <link rel="next" title="Whar is coding?" href="coding.html" />
     <link rel="prev" title="Computability" href="issues.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -162,6 +162,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Algorithmic problems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding.html">
+   Whar is coding?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reduction.html">
+   Reduction of one Problem to Another
   </a>
  </li>
 </ul>
@@ -530,8 +540,16 @@ title="Print to PDF"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="tiling-problems">
 <h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this headline">#</a></h1>
-<p>A <em>tile</em> is a square with a color on each side.   For example, here are four tiles:</p>
-<p>A <em>tile set</em> is a finite set of tiles.  Given a <em>tile set</em>, the question we ask is whether it is possible to tile all of the squares in the first quadrant (shown below) in such a way that tiles which share an edge must have the same color on that edge.</p>
+<p>A <em>tile</em> is a square with a color on each side.   For example, here are six tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%"></p>
+<p>A <em>tile set</em> is a finite set of tiles.  Given a <em>tile set</em>, the question we ask is whether it is possible to tile all of the squares in the first quadrant (shown below) in such a way that tiles which share an edge must have the same color on that edge.
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-02.png?raw=1" width="100%" height="100%">
+For our example set of tiles, this is trivial: since we have a tile with grey on all sides, we can just use it on every square of the quadrant.  Of course, this is a special feature of this example.</p>
+<p>A <em>pointed</em> tile set is a tile set that comes with a special tile <span class="math notranslate nohighlight">\(t_0\)</span> called the <em>start tile</em>.  We require that the start tile be placed at the corner of the quadrant.</p>
+<p>For example, we can turn our tile set above into a pointed tile set by selecting as <span class="math notranslate nohighlight">\(t_0\)</span> any of the eight tiles.  Let’s choose the one marked in green below.
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
+Now here is a tiling of the quadrant with this pointed tile set:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-03.png?raw=1" width="100%" height="100%"></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="post-s-correspondence-problem">
 <h1>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this headline">#</a></h1>
@@ -709,10 +727,10 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
             <p class="prev-next-title">Computability</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../sanity.html" title="next page">
+    <a class='right-next' id="next-link" href="coding.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tools to help write programs</p>
+        <p class="prev-next-title">Whar is coding?</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

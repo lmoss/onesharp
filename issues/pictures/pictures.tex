@@ -1,7 +1,8 @@
  % pdftocairo  -x 50 -y 50  -H 270 -f 1 -l 1 -png pictures.pdf 
- % pdftocairo  -x 50 -y 50  -H 600 -f 2 -l 2 -png pictures.pdf 
-
-
+ % pdftocairo  -x 50 -y 50  -H 570 -f 2 -l 2 -png pictures.pdf 
+ % pdftocairo  -x 50 -y 50  -H 610 -f 3 -l 3 -png pictures.pdf 
+ % pdftocairo  -x 50 -y 50  -H 270 -f 4 -l 4 -png pictures.pdf  %% add green tile
+ 
 \documentclass[12pt]{article}
 
 %% see below for how these were made with pdf2cairo
@@ -153,8 +154,9 @@ $\begin{array}{lllll}
 \begin{tikzpicture}[scale=1.3]  
 \filldraw[fill=blue](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
 \filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
-\filldraw[fill=lime] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=magenta] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
 \filldraw[fill=olive] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);
+%\filldraw[fill=green] (\a+\inc,\b+\inc) -- (\a+\side-\inc, \b+\inc) -- (\a+\side-\inc,\b+\side-\inc) -- (\a+\inc,\b+\side-\inc) --  (\a+\inc,\b+\inc);
 \tikzmath{
   \a = -1.5;
   \b = -3;
@@ -561,6 +563,87 @@ $
 
 
 \vfil\eject
+
+
+\begin{flushleft}  
+$\begin{array}{lllll}
+\tikzmath{
+  \a = -3;
+  \b = -3;
+  }
+\begin{tikzpicture}[scale=1.3]  
+\filldraw[fill=blue](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=magenta] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=olive] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);
+\filldraw[fill=green] (\a+\inc,\b+\inc) -- (\a+\side-\inc, \b+\inc) -- (\a+\side-\inc,\b+\side-\inc) -- (\a+\inc,\b+\side-\inc) --  (\a+\inc,\b+\inc);
+\tikzmath{
+  \a = -1.5;
+  \b = -3;
+ } 
+\filldraw[fill=lightgray](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=lightgray] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=lightgray] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = 0;
+  \b = -3;
+ } 
+\filldraw[fill=cyan](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=red] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=blue] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=olive] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = -3;
+  \b =-1.5;
+ } 
+\filldraw[fill=black](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=red] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=black] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=red] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = -1.5;
+  \b = -1.5;
+ } 
+\filldraw[fill=blue](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=yellow] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=cyan] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=olive] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = 0;
+  \b =-1.5;
+ } 
+\filldraw[fill=black](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=yellow] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=black] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=yellow] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = 1.5;
+  \b =-3;
+ } 
+\filldraw[fill=black](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=lightgray] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=red] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = 1.5;
+  \b =-1.5;
+ } 
+\filldraw[fill=black](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=black] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=yellow] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+
+
+
+\end{tikzpicture}
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+
+
 
 
  \begin{flushleft}
