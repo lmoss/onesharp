@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Whar is coding?" href="coding.html" />
+    <link rel="next" title="What is coding?" href="coding.html" />
     <link rel="prev" title="Computability" href="issues.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="coding.html">
-   Whar is coding?
+   What is coding?
   </a>
  </li>
  <li class="toctree-l1">
@@ -582,31 +582,12 @@ A^* &amp; = &amp; A^+ \cup\set{\epsilon}\\
 \end{split}\]</div>
 <p>So <span class="math notranslate nohighlight">\(A^+\)</span> is the set of <em>non-empty</em> words on <span class="math notranslate nohighlight">\(A\)</span>.
 And <span class="math notranslate nohighlight">\(A^*\)</span> adds in the <em>empty word</em> <span class="math notranslate nohighlight">\(\eps\)</span>.</p>
-<p>We are given   a finite set of dominoes,
+<p>We are given   a finite set of <em>dominoes</em>,
 each of which has two non-empty words on it,
 a word <em>on the top</em> and a word <em>on the bottom</em>.</p>
-<p>\begin{flushleft}
-\begin{tikzpicture}[scale=.8]
-\foreach \x in {0,2.5,5,7.5,10,12.5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};
-\draw  (11,1.5) node{abab};  %% north
-\draw  (11,.5) node{ababaa};  %% south</p>
-<p>\draw  (3.5,1.5) node{aaabbb};  %% north
-\draw  (3.5,.5) node{bb};  %% south</p>
-<p>\draw  (6,1.5) node{aab};  %% north
-\draw  (6,.5) node{baab};  %% south</p>
-<p>\draw  (8.5,1.5) node{ba};  %% north
-\draw  (8.5,.5) node{baa};  %% south</p>
-<p>\draw  (1,1.5) node{ab};  %% north
-\draw (1,.5) node{ba}; %% east</p>
-<p>\draw  (13.5,1.5) node{aa};  %% north
-\draw  (13.5,.5) node{a};  %% south
-\end{tikzpicture}
-\end{flushleft}
-We have an unlimited supply of all of these dominoes.</p>
+<p>For example, with <span class="math notranslate nohighlight">\(A = \set{a,b}\)</span>, here is a finite set of dominoes:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-06.png?raw=1" width="100%" height="100%"></p>
+<p>We have an unlimited supply of all of these dominoes.</p>
 <div class="danger admonition">
 <p class="admonition-title">Problem</p>
 <p>Can we place a  finite row of dominoes
@@ -615,43 +596,7 @@ in such a way that the words on the top
 <p>Let’s call this a <em>Post sequence</em>.</p>
 </div>
 <p>For this particular set of dominoes, the answer is <em>Yes</em>:</p>
-<p>\begin{flushleft}
-\begin{tikzpicture}[scale=.7]
-\foreach \x in {0,2.5,5,7.5,10,12.5,15}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (3.5,1.5) node{aaabbb};  %% north
-\draw  (3.5,.5) node{bb};  %% south</p>
-<p>\draw  (6,1.5) node{aab};  %% north
-\draw  (6,.5) node{baab};  %% south</p>
-<p>\draw  (8.5,1.5) node{ba};  %% north
-\draw  (8.5,.5) node{baa};  %% south</p>
-<p>\draw  (1,1.5) node{abab};  %% north
-\draw  (1,.5) node{ababaa};  %% south</p>
-<p>\draw  (11,1.5) node{ab};  %% north
-\draw (11,.5) node{ba}; %% east</p>
-<p>\draw  (13.5,1.5) node{ab};  %% north
-\draw  (13.5,.5) node{ba};  %% south</p>
-<p>\draw  (16,1.5) node{aa};  %% north
-\draw  (16,.5) node{a};  %% south</p>
-<p>\end{tikzpicture}
-\end{flushleft}
-The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
-<p>\begin{flushleft}
-\begin{tikzpicture}
-\foreach \x in {0,2.5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{a};  %% north
-\draw  (1,.5) node{ab};  %% south
-\draw  (3.5,1.5) node{baa};  %% north
-\draw  (3.5,.5) node{aab};  %% south
-\ \end{tikzpicture}
-\end{flushleft}</p>
+<p>The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
 <p>This one has no  Post sequence.    Can you see why?</p>
 <p>But if we add the additional domino
 \begin{flushleft}
@@ -667,21 +612,6 @@ The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaa
 \end{flushleft}
 We get a set of three dominoes which does have a Post sequence.<br />
 Can you find it?</p>
-<p>\begin{flushleft}
-\begin{tikzpicture}
-\foreach \x in {0,2.5,5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{abb};  %% north
-\draw  (1,.5) node{a};  %% south
-\draw  (3.5,1.5) node{b};  %% north
-\draw  (3.5,.5) node{abb};  %% south
-\draw  (5.5,1.5) node{a};  %% north
-\draw  (5.5,.5) node{b};  %% south
-\ \end{tikzpicture}
-\end{flushleft}</p>
 <p>The two shortest Post sequences are of length 75.</p>
 <div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Post, 1946)</p>
@@ -749,7 +679,7 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
     <a class='right-next' id="next-link" href="coding.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Whar is coding?</p>
+        <p class="prev-next-title">What is coding?</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
