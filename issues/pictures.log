@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  10 JAN 2023 23:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  11 JAN 2023 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -439,7 +439,16 @@ File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 s/tikzlibrarypetri.code.tex
 File: tikzlibrarypetri.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymath.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfpu.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
+e.tex))
+\tikz@math@for@depth=\count196
+\tikz@math@dimen=\dimen188
+\tikz@math@toks=\toks28
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
 
@@ -449,65 +458,65 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks28
-\ex@=\dimen188
+\@emptytoks=\toks29
+\ex@=\dimen189
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen189
+\pmbraise@=\dimen190
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count196
+\inf@bad=\count197
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count197
-\leftroot@=\count198
+\uproot@=\count198
+\leftroot@=\count199
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count199
-\DOTSCASE@=\count266
+\classnum@=\count266
+\DOTSCASE@=\count267
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box78
 \strutbox@=\box79
-\big@size=\dimen190
+\big@size=\dimen191
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count267
-\c@MaxMatrixCols=\count268
+\macc@depth=\count268
+\c@MaxMatrixCols=\count269
 \dotsspace@=\muskip16
-\c@parentequation=\count269
-\dspbrk@lvl=\count270
-\tag@help=\toks29
-\row@=\count271
-\column@=\count272
-\maxfields@=\count273
-\andhelp@=\toks30
-\eqnshift@=\dimen191
-\alignsep@=\dimen192
-\tagshift@=\dimen193
-\tagwidth@=\dimen194
-\totwidth@=\dimen195
-\lineht@=\dimen196
-\@envbody=\toks31
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
+\tag@help=\toks30
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
+\andhelp@=\toks31
+\eqnshift@=\dimen192
+\alignsep@=\dimen193
+\tagshift@=\dimen194
+\tagwidth@=\dimen195
+\totwidth@=\dimen196
+\lineht@=\dimen197
+\@envbody=\toks32
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks32
+\mathdisplay@stack=\toks33
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks33
-\thm@bodyfont=\toks34
-\thm@headfont=\toks35
-\thm@notefont=\toks36
-\thm@headpunct=\toks37
+\thm@style=\toks34
+\thm@bodyfont=\toks35
+\thm@headfont=\toks36
+\thm@notefont=\toks37
+\thm@headpunct=\toks38
 \thm@preskip=\skip52
 \thm@postskip=\skip53
 \thm@headsep=\skip54
-\dth@everypar=\toks38
+\dth@everypar=\toks39
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
@@ -520,18 +529,18 @@ Package: ifsym 2000/04/18 I.Kloeckl
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count274
-\calc@Bcount=\count275
-\calc@Adimen=\dimen197
-\calc@Bdimen=\dimen198
+\calc@Acount=\count275
+\calc@Bcount=\count276
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
 \calc@Askip=\skip55
 \calc@Bskip=\skip56
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count276
+\calc@Ccount=\count277
 \calc@Cskip=\skip57
 )
-\c@ifsymcnt=\count277
+\c@ifsymcnt=\count278
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -656,7 +665,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count278
+\l__kernel_color_stack_int=\count279
 \l__pdf_internal_box=\box80
 )
 (./pictures.aux)
@@ -709,17 +718,17 @@ File: ot1pxr.fd 2000/12/14 v1.0
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count279
-\scratchdimen=\dimen199
+\scratchcounter=\count280
+\scratchdimen=\dimen256
 \scratchbox=\box81
-\nofMPsegments=\count280
-\nofMParguments=\count281
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count282
-\MPscratchDim=\dimen256
-\MPnumerator=\count283
-\makeMPintoPDFobject=\count284
-\everyMPtoPDFconversion=\toks40
+\nofMPsegments=\count281
+\nofMParguments=\count282
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count283
+\MPscratchDim=\dimen257
+\MPnumerator=\count284
+\makeMPintoPDFobject=\count285
+\everyMPtoPDFconversion=\toks41
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -729,89 +738,87 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Overfull \hbox (32.40913pt too wide) in paragraph at lines 254--255
-[]  
- []
-
-[1
-
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no ; in font nullfont!
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
+45.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+pxsya on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for U+pxsya on input line 1
+45.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsya.fd
 File: upxsya.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+pxsyb on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for U+pxsyb on input line 1
+45.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsyb.fd
 File: utxsyb.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+pxmia on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for U+pxmia on input line 1
+45.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxmia.fd
 File: upxmia.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+pxsyc on input line 2
-75.
+LaTeX Font Info:    Trying to load font information for U+pxsyc on input line 1
+45.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsyc.fd
 File: upxsyc.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 27
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 14
 5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-Missing character: There is no ; in font nullfont!
- [2]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-LaTeX Font Info:    Trying to load font information for OT1+pxtt on input line 
-304.
+) [1
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ot1pxtt.fd
-File: ot1pxtt.fd 2000/12/14 v1.0
-)
-Missing character: There is no ; in font nullfont!
- [3]
+] [2] [3]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [4]
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (42.40913pt too wide) in paragraph at lines 649--690
+[]$  
+ []
+
+[4{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
 [5]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+LaTeX Font Info:    Trying to load font information for OT1+pxtt on input line 
+743.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ot1pxtt.fd
+File: ot1pxtt.fd 2000/12/14 v1.0
+)
+Missing character: There is no ; in font nullfont!
  [6]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [7]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+
+[7]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [8]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+ [9]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [10]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [11]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -822,7 +829,9 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [9] [10] [11] [12] [13]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [12] [13] [14] [15] [16]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -838,71 +847,59 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [14] [15]
-Missing character: There is no ; in font nullfont!
- [16]
-Missing character: There is no ; in font nullfont!
- [17]
-Missing character: There is no ; in font nullfont!
- [18]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+ [17] [18]
 Missing character: There is no ; in font nullfont!
  [19]
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
  [20]
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+ [21]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-[21]
+[22]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [22]
 Missing character: There is no ; in font nullfont!
  [23]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [24]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
  [25]
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
  [26]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [27]
 Missing character: There is no ; in font nullfont!
@@ -918,15 +915,17 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [30]
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
  [31]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [32]
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
  [33]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [34]
 Missing character: There is no ; in font nullfont!
@@ -934,44 +933,44 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [35]
 Missing character: There is no ; in font nullfont!
+ [36]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-[36]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [37]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [38] [39]
+[37]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+ [38]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+ [39]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [40]
 Missing character: There is no ; in font nullfont!
- [41]
 Missing character: There is no ; in font nullfont!
- [42]
+ [41] [42]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -979,18 +978,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [43]
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
  [44]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [45]
 Missing character: There is no ; in font nullfont!
@@ -998,26 +986,48 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [46] (./pictures.aux) ) 
+ [46]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [47]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [48]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [49]
+(./pictures.aux) ) 
 Here is how much of TeX's memory you used:
- 16471 strings out of 480608
- 342408 string characters out of 5903631
- 576723 words of memory out of 5000000
- 32017 multiletter control sequences out of 15000+600000
+ 17121 strings out of 480608
+ 357177 string characters out of 5903631
+ 595787 words of memory out of 5000000
+ 32658 multiletter control sequences out of 15000+600000
  547411 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,18n,67p,446b,867s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/pxsy.pf
-b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/t
-exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pictures.pdf (46 pages, 67096 bytes).
+ 60i,18n,72p,451b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on pictures.pdf (49 pages, 70377 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 192 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

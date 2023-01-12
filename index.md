@@ -13,7 +13,7 @@ them on a hosting service like CoCalc, Binder, or Google Colab. At the present t
 the best option is to run them on Colab.  For this, one starts by clicking on the button at the top.
 ```
 
-## Status as of December 15, 2022
+## Status as of January 15, 2023
 
 I am in the process of adding materials to the book.  The original [source](https://iulg.sitehost.iu.edu/trm) for the course had 
 much of the material, and the centerpiece was the Javascript interpreter for 1# developed by my former PhD students Robert Rose and 
@@ -25,6 +25,17 @@ in lecture slides.  So much of what I am doing now is revising them and adding t
 Only a tiny fraction of the results here is due to the author.
 Most are standard in the literature.   In time, I willl add proper credits.
 ```
+
+## Wish List
+
+If anyone sees this and wants to help, here are a few things which I would like.
+
+1. These notebooks open on Colab, but doing that loses the LaTeX macros that are in my _conf.yml file.  It also loses the nice "admonition" boxes, like the "Tip" above.   I would like to rectify this,
+and the help on the web doesn't address it.
+
+2. The way I get pictures in discussions such as tiling is very painstaking.  I would like to find some tools that make this easier.
+
+3. I don't yet have things set up to get feedback and correction from readers.
 
 
 ## Using the book
