@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  12 JAN 2023 07:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  12 JAN 2023 07:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -779,7 +779,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (42.40913pt too wide) in paragraph at lines 735--776
+Overfull \hbox (42.40913pt too wide) in paragraph at lines 736--777
 []$  
  []
 
@@ -791,7 +791,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    Trying to load font information for OT1+pxtt on input line 
-829.
+830.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ot1pxtt.fd
 File: ot1pxtt.fd 2000/12/14 v1.0
 )
@@ -1011,10 +1011,10 @@ Missing character: There is no ; in font nullfont!
  [50]
 (./pictures.aux) ) 
 Here is how much of TeX's memory you used:
- 17123 strings out of 480608
- 357201 string characters out of 5903631
- 595786 words of memory out of 5000000
- 32660 multiletter control sequences out of 15000+600000
+ 17122 strings out of 480608
+ 357191 string characters out of 5903631
+ 595912 words of memory out of 5000000
+ 32659 multiletter control sequences out of 15000+600000
  547411 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,18n,72p,451b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1025,7 +1025,7 @@ r/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi.pfb></usr/local
 e/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/
 texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-d
 ist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pictures.pdf (50 pages, 71159 bytes).
+Output written on pictures.pdf (50 pages, 71170 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
