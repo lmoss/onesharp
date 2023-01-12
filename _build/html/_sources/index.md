@@ -58,7 +58,7 @@ and the help on the web doesn't address it.
 
 2. The way I get pictures in discussions such as tiling is very painstaking.  I would like to find some tools that make this easier.
 
-3. Once nice feature of the [Javascript interpreter](http://rrose1.github.io/jsonesharp/) is that one could 
+3. Once nice feature of the [Javascript interpreter for 1#](http://rrose1.github.io/jsonesharp/) is that one could 
 run it slowly.  In this book as it stands, one can't quite do this.  One can run a program "step-by-step", 
 but this means looking at the trace.  It would be nice to have an animation the way the Javascript program 
 had it.  For that matter, someone might want to animate some of the proofs in computability theory which 
