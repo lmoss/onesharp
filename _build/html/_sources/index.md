@@ -37,10 +37,11 @@ at the top. ```
 
 ## Status as of January 15, 2023
 
-I am in the process of adding materials to the book.  The original [source](https://iulg.sitehost.iu.edu/trm) for the course had 
-much of the material, and the centerpiece was the Javascript interpreter for 1# developed by my former PhD students Robert Rose and 
-David Sprunger. In 2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course exists 
-in lecture slides.  So much of what I am doing now is revising them and adding them here.
+I am in the process of adding materials to the book.  The original 
+[source](https://iulg.sitehost.iu.edu/trm) for the course had much of the material, and the centerpiece was 
+the Javascript interpreter for 1# developed by my former PhD students Robert Rose and David Sprunger. In 
+2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course 
+exists in lecture slides.  So much of what I am doing now is revising them and adding them here.
 
 ```{admonition} Credits
 :class: warning
@@ -57,7 +58,13 @@ and the help on the web doesn't address it.
 
 2. The way I get pictures in discussions such as tiling is very painstaking.  I would like to find some tools that make this easier.
 
-3. I don't yet have things set up to get feedback and correction from readers.
+3. Once nice feature of the [Javascript interpreter](http://rrose1.github.io/jsonesharp/) is that one could 
+run it slowly.  In this book as it stands, one can't quite do this.  One can run a program "step-by-step", 
+but this means looking at the trace.  It would be nice to have an animation the way the Javascript program 
+had it.  For that matter, someone might want to animate some of the proofs in computability theory which 
+make use of "movable markers" or other such devices.
+
+4. I don't yet have things set up to get feedback and correction from readers.
 
 
 ## Using the book

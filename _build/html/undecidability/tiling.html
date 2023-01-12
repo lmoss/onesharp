@@ -164,6 +164,16 @@ const thebe_selector_output = ".output, .cell_output"
    Algorithmic problems
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../issues/coding.html">
+   Whar is coding?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../issues/reduction.html">
+   Reduction of one Problem to Another
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -615,6 +625,9 @@ We also want <span class="math notranslate nohighlight">\(\TT(p)\)</span> to be 
 <p>This completes the definition of the function <span class="math notranslate nohighlight">\(\TT\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\TT\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT(p)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
+<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program <span class="math notranslate nohighlight">\(\one\hash\one\hash\hash\hash\hash\)</span>,
+<span class="math notranslate nohighlight">\(\TT(p)\)</span> would have the 18 tiles that come for free, and also the two tiles below:
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%"></p>
 <p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\TT(\one\hash\one\hash\hash\hash\hash)\)</span>:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t7-07.png?raw=1" width="100%" height="100%">
 </div>
