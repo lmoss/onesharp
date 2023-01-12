@@ -33,7 +33,8 @@ So rather than simply read, these chapters are intended to
 be *run*. One way to use them is to save them and then run them locally.  Alternatively, one could open them 
 on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don't have buttons to run 
 it on CoCalc, and the best option is to run them on Colab.  For this, one starts by clicking on the button 
-at the top. ```
+at the top. 
+```
 
 ## Status as of January 15, 2023
 
