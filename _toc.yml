@@ -14,6 +14,8 @@ parts:
   chapters:
   - file: issues/issues
   - file: issues/problems
+  - file: issues/coding
+  - file: issues/reduction
 
 - caption: More Programs
   chapters:
