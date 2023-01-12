@@ -2,7 +2,10 @@
  % pdftocairo  -x 50 -y 50  -H 540 -f 2 -l 2 -png pictures.pdf 
  % pdftocairo  -x 50 -y 50  -H 580 -f 3 -l 3 -png pictures.pdf 
  % pdftocairo  -x 50 -y 50  -H 240 -f 4 -l 4 -png pictures.pdf  %% add green tile
- % pdftocairo  -x 50 -y 50  -H 110 -f 5 -l 5 -png pictures.pdf   % single row
+ % pdftocairo  -x 50 -y 50  -H 110 -f 5 -l 5 -png pictures.pdf   % single row of tiles
+  % pdftocairo  -x 50 -y 50  -H 110 -f 6 -l 6 -png pictures.pdf  % PCP instance
+  
+  
   
 \documentclass[12pt]{article}
 
@@ -17,7 +20,7 @@
 \headsep 20pt
 \footskip 20pt
 \textheight 8.5in
-\textwidth 6.25in
+\textwidth 7.25in
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,automata,backgrounds,petri,math}
@@ -687,48 +690,41 @@ $
 \end{flushleft}
 
 \vfil\eject
- \begin{flushleft}
+
+\begin{flushleft}
 $\begin{array}{l}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=1]
 \foreach \x in {0,2.5,5,7.5,10,12.5}
 \foreach \y in {0}
 {
 \draw (\x, \y)    rectangle ++(2,2);
 };
-\draw  (11,1.5) node{abab};  %% north
-\draw  (11,.5) node{ababaa};  %% south
-%
-\draw  (3.5,1.5) node{aaabbb};  %% north
-\draw  (3.5,.5) node{bb};  %% south
- %
- \draw  (6,1.5) node{aab};  %% north
-\draw  (6,.5) node{baab};  %% south
-%
-\draw  (8.5,1.5) node{ba};  %% north
-\draw  (8.5,.5) node{baa};  %% south
-% \draw  (6,1.7) node{$\one$};  %% north
-%draw (6.7,1) node{$\addone$}; %% east
-%\draw  (6,.3) node{$\one$};  %% south
- %\draw  (5.3,1) node{$\addone$};   %% west
- %
-%\draw  (8.5,1.7) node{$\one$};  %% north
-%\draw (9.2,1) node{$\addhash$}; %% east
-%\draw  (8.5,.3) node{$\one$};  %% south
- %\draw  (7.8,1) node{$\addhash$};   %% west
- %
 \draw  (1,1.5) node{ab};  %% north
 \draw (1,.5) node{ba}; %% east
-%
+
+\draw  (3.5,1.5) node{aaabbb};  %% north
+\draw  (3.5,.5) node{bb};  %% south
+ \draw  (6,1.5) node{aab};  %% north
+\draw  (6,.5) node{baab};  %% south
+
+\draw  (8.5,1.5) node{ba};  %% north
+\draw  (8.5,.5) node{baa};  %% south
+
+
+\draw  (11,1.5) node{abab};  %% north
+\draw  (11,.5) node{ababaa};  %% south
+
 \draw  (13.5,1.5) node{aa};  %% north
 \draw  (13.5,.5) node{a};  %% south
  \end{tikzpicture}
 \end{array}$ 
 \end{flushleft}
 
+\vfil\eject
 
- \begin{flushleft}
+\begin{flushleft}
 $\begin{array}{l}
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=1]
 \foreach \x in {0,2.5,5,7.5,10,12.5,15}
 \foreach \y in {0}
 {
@@ -765,12 +761,48 @@ $\begin{array}{l}
 
 \draw  (16,1.5) node{aa};  %% north
 \draw  (16,.5) node{a};  %% south
-
  \end{tikzpicture}
  \end{array}$ 
 \end{flushleft}
 
+\vfil\eject
 
+\begin{flushleft}
+$\begin{array}{l}
+\begin{tikzpicture}[scale=1]
+\foreach \x in {0,2.5,5,7.5,10,12.5,15}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1.5) node{abab};  %% north
+\draw (1,.5) node{ababaa}; %% east
+
+\draw  (3.5,1.5) node{aaabbb};  %% north
+\draw  (3.5,.5) node{bb};  %% south
+
+ \draw  (6,1.5) node{aab};  %% north
+\draw  (6,.5) node{baab};  %% south
+
+\draw  (8.5,1.5) node{ba};  %% north
+\draw  (8.5,.5) node{baa};  %% south
+
+
+\draw  (11,1.5) node{ab};  %% north
+\draw  (11,.5) node{ba};  %% south
+\draw  (13,1.5) node{ab};  %% north
+\draw  (13,.5) node{ba};  %% south
+
+
+\draw  (15.5,1.5) node{aa};  %% north
+\draw  (15.5,.5) node{a};  %% south
+ \end{tikzpicture}
+\end{array}$ 
+\end{flushleft}
+
+\vfil
+
+%%% ignore the one below
 
  \begin{flushleft}
 $\begin{array}{l}
@@ -818,7 +850,7 @@ $\begin{array}{l}
 
 \vfil\eject
 
- \begin{flushleft}
+\begin{flushleft}
 $\begin{array}{l}
 \begin{tikzpicture}
 \foreach \x in {0,2.5}
