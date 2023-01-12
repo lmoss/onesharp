@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="First steps" href="introOneSharp/getting_started.html" />
@@ -152,8 +154,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="issues/issues.html">
+   Computability
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="issues/problems.html">
-   Post’s correspondence problem
+   Algorithmic problems
   </a>
  </li>
 </ul>
@@ -419,8 +426,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#status-as-of-december-15-2022">
-   Status as of December 15, 2022
+  <a class="reference internal nav-link" href="#status-as-of-january-15-2023">
+   Status as of January 15, 2023
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wish-list">
+   Wish List
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -448,8 +460,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#status-as-of-december-15-2022">
-   Status as of December 15, 2022
+  <a class="reference internal nav-link" href="#status-as-of-january-15-2023">
+   Status as of January 15, 2023
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wish-list">
+   Wish List
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -470,17 +487,28 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="invitation-to-computability">
 <h1>Invitation to Computability<a class="headerlink" href="#invitation-to-computability" title="Permalink to this headline">#</a></h1>
 <p>Lawrence S. Moss</p>
-<p>This is an online textbook on the basics of computability theory, originating in classes given by the author at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is not. It treats the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in computability theory, mathematics, and logic.</p>
-<p>On the other hand, aspects of the presentation are new.  This is mainly due to the online format using Jupyter notebooks.  The first part of the course uses a variant of register machines using two symbols and a “programming language” using those same two symbols, called 1#.  This text comes with a Python interpreter for 1# and with tool support to enable students to learn to write programs.  In addition, it is possible to write explicit universal programs, self-writing programs, and similar artifacts.  So the course is much more explicit than most treatments.   At the same time, it enables one to go further, showing the undecidability of tiling using 1#, and then deriving as a corollary Church’s Theorem that satisfiability in first-order logic is undecidable.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Most of the chapters in the book are <a class="reference external" href="https://docs.jupyter.org/en/latest/index.html">Jupyter notebooks</a>.  So rather than simply
-read, they are intended to be <em>run</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open
-them on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don’t have buttons to run it on CoCalc, and
-the best option is to run them on Colab.  For this, one starts by clicking on the button at the top.</p>
-</div>
-<div class="section" id="status-as-of-december-15-2022">
-<h2>Status as of December 15, 2022<a class="headerlink" href="#status-as-of-december-15-2022" title="Permalink to this headline">#</a></h2>
+<p>This is an online textbook on the basics of computability theory, originating in classes given by the author
+at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is
+not. It treats the basic topics of the subject: the concept of computability, primitive recursion,
+mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in
+computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of
+these results, and so the presentation here will differ, and we will try to make pointers to many of the
+developments in computability theory and computer science that have come from the clasical material.</p>
+<p>We are also living in the wake of several revolutions in society coming from the advent of computers and the
+worldwide web.  This is on my mind front and center as I prepare this book.  It should not be strange that a
+book about computation theory should use up-to-date computational tools. This book uses Python and various
+packages, Jupyter notebooks, <span class="math notranslate nohighlight">\(\LaTeX\)</span>, github, and various tools needed to make Jupyter books.  In the course
+of working on the book I became interested in using all of these tools, mainly as a way of seeing what would
+work in a textbook, and what would not.</p>
+<p>The first part of the book uses a variant of register machines using two symbols and a “programming
+language” using those same two symbols, called 1#.  This text comes with a Python interpreter for 1# and
+with tool support to enable students to learn to write programs.  In addition, it is possible to write
+explicit universal programs, self-writing programs, and similar artifacts.  So the course is much more
+explicit than most treatments.  At the same time, it enables one to go further, showing the undecidability
+of tiling using 1#, and then deriving as a corollary Church’s Theorem that satisfiability in first-order
+logic is undecidable.</p>
+<div class="section" id="status-as-of-january-15-2023">
+<h2>Status as of January 15, 2023<a class="headerlink" href="#status-as-of-january-15-2023" title="Permalink to this headline">#</a></h2>
 <p>I am in the process of adding materials to the book.  The original <a class="reference external" href="https://iulg.sitehost.iu.edu/trm">source</a> for the course had
 much of the material, and the centerpiece was the Javascript interpreter for 1# developed by my former PhD students Robert Rose and
 David Sprunger. In 2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course exists
@@ -490,6 +518,27 @@ in lecture slides.  So much of what I am doing now is revising them and adding t
 <p>Only a tiny fraction of the results here is due to the author.
 Most are standard in the literature.   In time, I willl add proper credits.</p>
 </div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Most of the chapters in the book are <a class="reference external" href="https://docs.jupyter.org/en/latest/index.html">Jupyter
+notebooks</a>.
+(Some others are markdown files.)
+So rather than simply read, these chapters are intended to
+be <em>run</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open them
+on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don’t have buttons to run
+it on CoCalc, and the best option is to run them on Colab.  For this, one starts by clicking on the button
+at the top. ```</p>
+</div>
+<div class="section" id="wish-list">
+<h2>Wish List<a class="headerlink" href="#wish-list" title="Permalink to this headline">#</a></h2>
+<p>If anyone sees this and wants to help, here are a few things which I would like.</p>
+<ol class="simple">
+<li><p>These notebooks open on Colab, but doing that loses the LaTeX macros that are in my _conf.yml file.  It also loses the nice “admonition” boxes, like the “Tip” above.   I would like to rectify this,
+and the help on the web doesn’t address it.</p></li>
+<li><p>The way I get pictures in discussions such as tiling is very painstaking.  I would like to find some tools that make this easier.</p></li>
+<li><p>I don’t yet have things set up to get feedback and correction from readers.</p></li>
+</ol>
 </div>
 <div class="section" id="using-the-book">
 <h2>Using the book<a class="headerlink" href="#using-the-book" title="Permalink to this headline">#</a></h2>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post’s correspondence problem &#8212; Invitation to Computability</title>
+    <title>Algorithmic problems &#8212; Invitation to Computability</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tools to help write programs" href="../sanity.html" />
-    <link rel="prev" title="Tidy programs" href="../introOneSharp/tidy.html" />
+    <link rel="prev" title="Computability" href="issues.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -152,9 +154,14 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="issues.html">
+   Computability
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Post’s correspondence problem
+   Algorithmic problems
   </a>
  </li>
 </ul>
@@ -426,23 +433,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Algorithmic problems
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tiling-problems">
+   Tiling problems
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post-s-correspondence-problem">
+   Post’s correspondence problem
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-problems">
+   Matrix problems
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Post’s correspondence problem</h1>
+                <h1>Algorithmic problems</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Algorithmic problems
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tiling-problems">
+   Tiling problems
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post-s-correspondence-problem">
+   Post’s correspondence problem
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-problems">
+   Matrix problems
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -451,8 +525,154 @@ title="Print to PDF"
               <div>
                 
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/problems.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems">
+<h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this headline">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="tiling-problems">
+<h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this headline">#</a></h1>
+<p>A <em>tile</em> is a square with a color on each side.   For example, here are four tiles:</p>
+<p>A <em>tile set</em> is a finite set of tiles.  Given a <em>tile set</em>, the question we ask is whether it is possible to tile all of the squares in the first quadrant (shown below) in such a way that tiles which share an edge must have the same color on that edge.</p>
+</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="post-s-correspondence-problem">
 <h1>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this headline">#</a></h1>
+<p>An <em>alphabet</em> is just a set <span class="math notranslate nohighlight">\(A\)</span> of symbols.</p>
+<p>Given an alphabet <span class="math notranslate nohighlight">\(A\)</span>, we define</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lcl}
+A^+ &amp; = &amp; \set{a_1 a_2 \cdots a_n : n \in N,  n\geq 0, \mbox{ and } a_i\in A \mbox{ for all $i$}}\\
+A^* &amp; = &amp; A^+ \cup\set{\epsilon}\\
+\end{array}
+\end{split}\]</div>
+<p>So <span class="math notranslate nohighlight">\(A^+\)</span> is the set of <em>non-empty</em> words on <span class="math notranslate nohighlight">\(A\)</span>.
+And <span class="math notranslate nohighlight">\(A^*\)</span> adds in the <em>empty word</em> <span class="math notranslate nohighlight">\(\eps\)</span>.</p>
+<p>We are given   a finite set of dominoes,
+each of which has two non-empty words on it,
+a word <em>on the top</em> and a word <em>on the bottom</em>.</p>
+<p>\begin{flushleft}
+\begin{tikzpicture}[scale=.8]
+\foreach \x in {0,2.5,5,7.5,10,12.5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (11,1.5) node{abab};  %% north
+\draw  (11,.5) node{ababaa};  %% south</p>
+<p>\draw  (3.5,1.5) node{aaabbb};  %% north
+\draw  (3.5,.5) node{bb};  %% south</p>
+<p>\draw  (6,1.5) node{aab};  %% north
+\draw  (6,.5) node{baab};  %% south</p>
+<p>\draw  (8.5,1.5) node{ba};  %% north
+\draw  (8.5,.5) node{baa};  %% south</p>
+<p>\draw  (1,1.5) node{ab};  %% north
+\draw (1,.5) node{ba}; %% east</p>
+<p>\draw  (13.5,1.5) node{aa};  %% north
+\draw  (13.5,.5) node{a};  %% south
+\end{tikzpicture}
+\end{flushleft}
+We have an unlimited supply of all of these dominoes.</p>
+<div class="danger admonition">
+<p class="admonition-title">Problem</p>
+<p>Can we place a  finite row of dominoes
+in such a way that the words on the top
+<em>concatenate to</em> the same thing as the words on the bottom?</p>
+<p>Let’s call this a <em>Post sequence</em>.</p>
+</div>
+<p>For this particular set of dominoes, the answer is <em>Yes</em>:</p>
+<p>\begin{flushleft}
+\begin{tikzpicture}[scale=.7]
+\foreach \x in {0,2.5,5,7.5,10,12.5,15}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};</p>
+<p>\draw  (3.5,1.5) node{aaabbb};  %% north
+\draw  (3.5,.5) node{bb};  %% south</p>
+<p>\draw  (6,1.5) node{aab};  %% north
+\draw  (6,.5) node{baab};  %% south</p>
+<p>\draw  (8.5,1.5) node{ba};  %% north
+\draw  (8.5,.5) node{baa};  %% south</p>
+<p>\draw  (1,1.5) node{abab};  %% north
+\draw  (1,.5) node{ababaa};  %% south</p>
+<p>\draw  (11,1.5) node{ab};  %% north
+\draw (11,.5) node{ba}; %% east</p>
+<p>\draw  (13.5,1.5) node{ab};  %% north
+\draw  (13.5,.5) node{ba};  %% south</p>
+<p>\draw  (16,1.5) node{aa};  %% north
+\draw  (16,.5) node{a};  %% south</p>
+<p>\end{tikzpicture}
+\end{flushleft}
+The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
+<p>\begin{flushleft}
+\begin{tikzpicture}
+\foreach \x in {0,2.5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};</p>
+<p>\draw  (1,1.5) node{a};  %% north
+\draw  (1,.5) node{ab};  %% south
+\draw  (3.5,1.5) node{baa};  %% north
+\draw  (3.5,.5) node{aab};  %% south
+\ \end{tikzpicture}
+\end{flushleft}</p>
+<p>This one has no  Post sequence.    Can you see why?</p>
+<p>But if we add the additional domino
+\begin{flushleft}
+\begin{tikzpicture}
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};</p>
+<p>\draw  (1,1.5) node{bba};  %% north
+\draw  (1,.5) node{ba};  %% south</p>
+<p>\ \end{tikzpicture}
+\end{flushleft}
+We get a set of three dominoes which does have a Post sequence.<br />
+Can you find it?</p>
+<p>\begin{flushleft}
+\begin{tikzpicture}
+\foreach \x in {0,2.5,5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};</p>
+<p>\draw  (1,1.5) node{abb};  %% north
+\draw  (1,.5) node{a};  %% south
+\draw  (3.5,1.5) node{b};  %% north
+\draw  (3.5,.5) node{abb};  %% south
+\draw  (5.5,1.5) node{a};  %% north
+\draw  (5.5,.5) node{b};  %% south
+\ \end{tikzpicture}
+\end{flushleft}</p>
+<p>The two shortest Post sequences are of length 75.</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Post, 1946)</p>
+<div class="theorem-content section" id="proof-content">
+<p>There is no algorithm which,
+when given <em>any</em> finite set of dominoes with two words on each,
+tells <em>in finite time</em>
+whether or not one can find a Post sequence for the given domino set.</p>
+</div>
+</div><p>We are going to see a proof of this result.
+It is very important to understand the statement of
+this kind of result,
+since frequently people get it wrong.
+It does <em>not</em> say that that for each particular domino set
+we cannot tell if there is a Post sequence or not.</p>
+<p>It also doesn’t say that there is no “fact of the matter” whether
+a given domino set has or doesn’t have a Post sequence.</p>
+<p><em>PCP</em> is the set of finite domino sets which have a Post sequence.
+To say <em>PCP is decidable</em> means that <em>there is</em>
+a
+computable function <span class="math notranslate nohighlight">\(f\)</span>
+which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</span> and says Yes or No as to whether
+<span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
+To say <em>PCP is undecidable</em> means that   <em>there is no</em>
+computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="matrix-problems">
+<h1>Matrix problems<a class="headerlink" href="#matrix-problems" title="Permalink to this headline">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -482,11 +702,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../introOneSharp/tidy.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="issues.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tidy programs</p>
+            <p class="prev-next-title">Computability</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../sanity.html" title="next page">

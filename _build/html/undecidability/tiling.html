@@ -155,8 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../issues/issues.html">
+   Computability
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../issues/problems.html">
-   Post’s correspondence problem
+   Algorithmic problems
   </a>
  </li>
 </ul>
@@ -568,7 +573,7 @@ and let <span class="math notranslate nohighlight">\(B\subseteq A\)</span> be th
 Then <span class="math notranslate nohighlight">\(A\)</span> is decidable (easily) and we show that <span class="math notranslate nohighlight">\(B\)</span> is
 is undecidable.</p>
 <div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>There is a total computable function
 <span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>
@@ -607,7 +612,7 @@ Fix such a program <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t6-06.png?raw=1" width="100%" height="100%"></p>
 <p>Notice that <span class="math notranslate nohighlight">\(\TT(p)\)</span> is a finite set of tiles.
 We also want <span class="math notranslate nohighlight">\(\TT(p)\)</span> to be pointed, and we take the green tile above.</p>
-<p>This completes the definition of the function <span class="math notranslate nohighlight">\(\TT\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\TT\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with $\TT(p).</p>
+<p>This completes the definition of the function <span class="math notranslate nohighlight">\(\TT\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\TT\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT(p)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\TT(\one\hash\one\hash\hash\hash\hash)\)</span>:</p>
@@ -630,7 +635,7 @@ every row has to have all blanks after some finite point.</p>
 <p>It would be good to prove this.</p>
 </div>
 <p>A tile has one of the  line number symbols
-(the number 1, 2, \ldots, n, n+1)
+(the number 1, 2, <span class="math notranslate nohighlight">\(\ldots\)</span>, n, n+1)
 on the top
 if and only if that tile is in the first column.
 We call these <em>instruction tiles</em>.</p>
@@ -761,6 +766,20 @@ then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\TT\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\TT)}(\ )\downarrow\)</span>.</p>
+<div class="exercise admonition" id="undecidability/tiling-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
+<div class="section" id="exercise-content">
+<p>In this problem we consider a variant of the tiling problem where the goal is not to tile the entire first quadrant but rather to tile a finite rectangle in a noteworthy way.</p>
+<p>A <em>four-pointed</em> tile set is a tile set <span class="math notranslate nohighlight">\(\TT\)</span> and four elements of it called <span class="math notranslate nohighlight">\(NE\)</span>, <span class="math notranslate nohighlight">\(NW\)</span>, <span class="math notranslate nohighlight">\(SE\)</span>, and <span class="math notranslate nohighlight">\(SW\)</span>.  A finite rectangle is <em>tiled by <span class="math notranslate nohighlight">\(\TT\)</span></em> if there is a tiling in the usual sense with the property that its northwest corner is tiled by <span class="math notranslate nohighlight">\(NW\)</span>, its northeast corner is tiled by <span class="math notranslate nohighlight">\(NE\)</span>, etc.</p>
+<p>Show that the problem of determining whether a four-pointed tile set has a rectangle which is tiled by it is undecidable.</p>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>The original source on tiling is Hao Wang’s paper from 1961 entitled “Proving theorems by pattern recognition—II”, Bell System Technical Journal, 40 (1): 1–41.</p>
+<p>The tiling problem in this paper, and in most of the work in the area, is for tiling the whole plane.   What we did is to consider the first quadrant and pointed tile sets.  So our undecidability result is much easier than the more well-known tiling problem.   That problem was shown to be undecidable by Raphael Robinson in his paper “Undecidability and Nonperiodicity for Tilings of the Plane,” Inventiones Mathematicae, 12(3), 1971 pp. 177–209.   There are newer and simpler proofs of this result as well.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

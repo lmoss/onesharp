@@ -12,6 +12,7 @@ parts:
 
 - caption: Issues
   chapters:
+  - file: issues/issues
   - file: issues/problems
 
 - caption: More Programs
