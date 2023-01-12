@@ -2,7 +2,8 @@
  % pdftocairo  -x 50 -y 50  -H 540 -f 2 -l 2 -png pictures.pdf 
  % pdftocairo  -x 50 -y 50  -H 580 -f 3 -l 3 -png pictures.pdf 
  % pdftocairo  -x 50 -y 50  -H 240 -f 4 -l 4 -png pictures.pdf  %% add green tile
- 
+ % pdftocairo  -x 50 -y 50  -H 90 -f 5 -l 5 -png pictures.pdf   % single row
+  
 \documentclass[12pt]{article}
 
 %% see below for how these were made with pdf2cairo
@@ -644,9 +645,48 @@ $
 
 \vfil\eject
 
+\begin{flushleft}
+$\begin{array}{l}
+\tikzmath{
+  \a = -3;
+  \b = -3;
+  }
+\begin{tikzpicture}[scale=1.3]  
+\filldraw[fill=blue](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=magenta] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=olive] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);
+\filldraw[fill=green] (\a+\inc,\b+\inc) -- (\a+\side-\inc, \b+\inc) -- (\a+\side-\inc,\b+\side-\inc) -- (\a+\inc,\b+\side-\inc) --  (\a+\inc,\b+\inc);
+\tikzmath{
+  \a = -1.5;
+  \b = -3;
+ } 
+\filldraw[fill=lightgray](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=lightgray] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=lightgray] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = 0;
+  \b = -3;
+ } 
+\filldraw[fill=cyan](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=red] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=blue] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=olive] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\tikzmath{
+  \a = 1.5;
+  \b =-3;
+ } 
+\filldraw[fill=black](\a+\side,\b+\side) --(\a+\side-\inc,\b+\side -\inc) --(\a+\inc, \b+\side-\inc)--(\a, \b+\side) --(\a+\side,\b+\side);
+\filldraw[fill=lightgray] (\a+\side,\b) -- (\a+\side-\inc,\b+\inc) -- (\a+\side-\inc,\b+\side -\inc) -- (\a+\side,\b+\side) --(\a+\side,\b) ;  
+\filldraw[fill=lightgray] (\a,\b) -- (\a+\inc,\b+\inc) -- (\a+\side-\inc,\b+\inc)--(\a+\side,\b) --(\a,\b);
+\filldraw[fill=red] (\a,\b+\side)--(\a+\inc,\b-\inc+\side)--(\a+\inc,\b+\inc)--(\a,\b)--(\a,\b+\side);  
+\end{tikzpicture}
+\end{array}
+$
+\end{flushleft}
 
-
-
+\vfil\eject
  \begin{flushleft}
 $\begin{array}{l}
 \begin{tikzpicture}[scale=.6]
