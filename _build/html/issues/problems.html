@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reduction.html">
-   Reduction of one Problem to Another
+   Reduction of one problem to another
   </a>
  </li>
 </ul>
@@ -245,6 +245,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../undecidability/post.html">
    Post’s Correspondence Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../undecidability/church.html">
+   Logic
   </a>
  </li>
 </ul>
@@ -537,6 +542,7 @@ title="Print to PDF"
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/problems.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems">
 <h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this headline">#</a></h1>
+<p>This section is going to have a general discussion of algorithmic problems with examples from ones with a finite search space (like finding paths in a graph) to ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="tiling-problems">
 <h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this headline">#</a></h1>
@@ -598,22 +604,6 @@ in such a way that the words on the top
 <p>For this particular set of dominoes, the answer is <em>Yes</em>:
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-07.png?raw=1" width="100%" height="100%"></p>
 <p>The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
-<p>This one has no  Post sequence.    Can you see why?</p>
-<p>But if we add the additional domino
-\begin{flushleft}
-\begin{tikzpicture}
-\foreach \x in {0}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{bba};  %% north
-\draw  (1,.5) node{ba};  %% south</p>
-<p>\ \end{tikzpicture}
-\end{flushleft}
-We get a set of three dominoes which does have a Post sequence.<br />
-Can you find it?</p>
-<p>The two shortest Post sequences are of length 75.</p>
 <div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Post, 1946)</p>
 <div class="theorem-content section" id="proof-content">
@@ -641,6 +631,8 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="matrix-problems">
 <h1>Matrix problems<a class="headerlink" href="#matrix-problems" title="Permalink to this headline">#</a></h1>
+<p>This section will present problems with <span class="math notranslate nohighlight">\(n\times n\)</span>
+matrices over <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> such as matrix mortality.</p>
 </div>
 
     <script type="text/x-thebe-config">

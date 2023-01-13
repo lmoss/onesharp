@@ -38,7 +38,7 @@ parts:
   - file: undecidability/busyBeaver
   - file: undecidability/tiling
   - file: undecidability/post
-  - file: undecidability/logic
+  - file: undecidability/church
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:
   - file: self_writing
