@@ -51,6 +51,16 @@ the Javascript interpreter for 1# developed by my former PhD students Robert Ros
 2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course 
 exists in lecture slides.  So much of what I am doing now is revising them and adding them here.
 
+There are a number of still-missing chapters:
+models of computation other than register machines,
+ computably enumerable sets, the arithmetic hierarchy, and 
+introductions to complexity theory and Kolmogorov complexity.   
+One nice feature of a project with "continual updates" is that 
+these can come later.
+But the first few chapters have missing discussions as well.
+So the book can't quite be used in a class setting.  
+
+
 ```{admonition} Credits
 :class: warning
 Only a tiny fraction of the results here is due to the author.

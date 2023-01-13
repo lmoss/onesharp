@@ -49,6 +49,7 @@ sphinx:
              "phifn": ["\\varphi"]
              "Tile": ["\\mathit{Tile}"]
              "TT": ["\\mathcal{T}"]
+             "DD": ["\\mathcal{D}"]
              "Rone": ["R1"]
              "Rtwo": ["R2"]
              "words": ["\\mbox{words}"]
