@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post’s Correspondence Problem &#8212; Invitation to Computability</title>
+    <title>Logic &#8212; Invitation to Computability</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Self-Replicating Programs" href="../self_writing.html" />
-    <link rel="prev" title="Tiling" href="tiling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -226,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
   Undecidability
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="haltingProblem.html">
    The halting problem
@@ -242,8 +238,8 @@ const thebe_selector_output = ".output, .cell_output"
    Tiling
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="post.html">
    Post’s Correspondence Problem
   </a>
  </li>
@@ -318,7 +314,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/undecidability/post.ipynb"
+        <a href="https://mybinder.org/v2/gh/lmoss/onesharp/main?urlpath=tree/docs/undecidability/church.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -378,7 +374,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/post.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/church.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -406,7 +402,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/undecidability/post.ipynb"
+        <a href="../_sources/undecidability/church.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -455,7 +451,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Post’s Correspondence Problem</h1>
+                <h1>Logic</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -467,10 +463,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/post.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="post-s-correspondence-problem">
-<h1>Post’s Correspondence Problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this headline">#</a></h1>
-<p>We use <span class="math notranslate nohighlight">\(\one\hash\)</span> to prove the undecidability of Post’s Correspondence Problem.</p>
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/church.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="logic">
+<h1>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">#</a></h1>
+<p>This section is going to contain a proof of Church’s Theorem that satisfyability of first-order logic is undecidable.   This will be a corollary of the undecidability of tiling.  It also will be a place to connect to the Incompleteness Theorem (though this might deserve a section on its own) and to philosophical matters.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -500,20 +496,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="tiling.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tiling</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../self_writing.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Self-Replicating Programs</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
