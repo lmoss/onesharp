@@ -470,10 +470,32 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-more-example-sane-programs">
-   Two more example Sane programs
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tools to help write programs
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-inputs-to-sanity">
+   The inputs to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sanity
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-segments-that-the-tool-can-handle">
+     Examples of segments that the tool can handle:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-more-examples-of-programs-constructed-using-sanity">
+     Two more examples of programs constructed using Sanity
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -494,10 +516,32 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-more-example-sane-programs">
-   Two more example Sane programs
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tools to help write programs
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-inputs-to-sanity">
+   The inputs to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     sanity
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-segments-that-the-tool-can-handle">
+     Examples of segments that the tool can handle:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-more-examples-of-programs-constructed-using-sanity">
+     Two more examples of programs constructed using Sanity
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -562,7 +606,8 @@ Once we have gone through the original <span class="math notranslate nohighlight
 </div>
 </div>
 </div>
-<p>We have 8 <em>lines</em>. But a line is not the same as in instruction: lines 6 and 8 each contain move programs that are bigger than a single instruction.  Lines 2, 4 5, and 6 each begin with a <em>label</em>.  Labels are strings that other parts of the program could point to.  For example, the first line is a case statement 1#####, and it also contains the information that if R1 is empty, we should go to whichever line has the label ‘move_phase’. (That would be the line named ‘move_stuff_around’.) The first line also tells us that if R1 begins with 1 we should (delete is and) go to the line containing ‘first-is_one’.   Note also that ‘goto’ is not a label.</p>
+<p>We have 8 <em>segments</em>. But a segments is not the same what we called a <em>line</em> of a <span class="math notranslate nohighlight">\(\one\hash\)</span> program.  As the name suggests, a segment corresponds to a sequence of lines.
+For example, segments 6 and 8 each contain <code class="docutils literal notranslate"><span class="pre">move</span></code> programs that are bigger than a single instruction.  Segments 2, 4 5, and 6 each begin with a <em>label</em>.  Labels are strings that other parts of the program could point to.  For example, the first segment is a case statement <span class="math notranslate nohighlight">\(\one\hash^5\)</span>, and it also contains the information that if R1 is empty, we should go to whichever segmet has the label “move_phase”. (That would be the segment named ‘move_stuff_around’.) The first segment also tells us that if R1 begins with <span class="math notranslate nohighlight">\(\one\)</span> we should (delete is and) go to the segment containing ‘first-is_one’.   Note also that ‘goto’ is not a label.</p>
 <p>Here is how these lines are used:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,14 +656,35 @@ Once we have gone through the original <span class="math notranslate nohighlight
 </div>
 </div>
 </div>
-<p>Notice that in the last examples we had a line</p>
-<p>[‘empty’, ‘goto’, ‘end’]</p>
-<p>In this, ‘end’ is not a label in any of the four lines.
-Indeed, ‘end’ is a special string in this program.   We can use ‘end’ in connection with ‘goto’, and also in one of the branches of a ‘cases’ statement.</p>
-<p>Other things to know: instead of (for example) 11#, we can write it in words as in the third line below.   Finally, all numbers in this program must be entered without quotes.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-inputs-to-sanity">
+<h1>The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code><a class="headerlink" href="#the-inputs-to-sanity" title="Permalink to this headline">#</a></h1>
+<div class="attention admonition">
+<p class="admonition-title">What may go into a segment?</p>
+<p>A segment is a Python list: it must be surrounded by square brackects.</p>
+<p>A segment can be snippet of 1# code surrounded by quotes.</p>
+<p>A segment can be a Python expression like
+<code class="docutils literal notranslate"><span class="pre">move_3_1</span> <span class="pre">+</span> <span class="pre">move_2_1</span></code>
+that denotes a 1# word.  (These expressions must be defined before you run <code class="docutils literal notranslate"><span class="pre">sanity</span></code>, or you will get an error.)</p>
+<p>A segment can have ‘add1’ or ‘add#’ followed by a number (without quotes).  This number is a register number.</p>
+<p>A segment may be the word ‘cases’ followed by a number and then three labels.</p>
+<p>A segment may optionally begin with a <em>label</em> like ‘top’, or ‘moveback’, and then it either consists of a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code surrounded by single quotes, or a Python expression that denotes a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Labels</p>
+<p>A label may be a word of English, and it may have the underscore symbol, but it should not have spaces.  It must be surrounded by quotes.</p>
+<p>A label must not begin with ‘1’ or ‘#, and it must not be one of the strings ‘goto’, ‘end’, ‘add1’, or ‘add#’.</p>
+<p><em>Labels are optional</em>, except a “cases” instruction
+must have a number and then three labels.   The number is for a register.   So “cases on register 17” would correspond to
+a segment with the number 17 as its third entry.</p>
+<p>Another label which may be used is ‘goto’.
+A use of ‘goto’ must be followed either by a label or the word ‘end’.</p>
+<p>Every label used inside a ‘cases’ or ‘goto’ statement must be the first label in some segment.  Otherwise, <code class="docutils literal notranslate"><span class="pre">sanity</span></code> will raise an error.</p>
+</div>
+<p>Here is another example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">diag_idea</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;cases&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="s1">&#39;hash&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;moveback&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;add1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
@@ -629,7 +695,7 @@ Indeed, ‘end’ is a special string in this program.   We can use ‘end’ in
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;moveback&#39;</span><span class="p">,</span> <span class="n">move</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">move</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span> 
 <span class="p">]</span>
-<span class="n">dg</span> <span class="o">=</span> <span class="n">sanity</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">diag</span> <span class="o">=</span> <span class="n">sanity</span><span class="p">(</span><span class="n">diag_idea</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -646,7 +712,8 @@ Indeed, ‘end’ is a special string in this program.   We can use ‘end’ in
 </div>
 </div>
 </div>
-<p>###Summary: here are some examples of ‘lines’ that the tool can handle:</p>
+<div class="section" id="examples-of-segments-that-the-tool-can-handle">
+<h2>Examples of segments that the tool can handle:<a class="headerlink" href="#examples-of-segments-that-the-tool-can-handle" title="Permalink to this headline">#</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;top&#39;,&#39;cases&#39;,1,&#39;empty&#39;, &#39;one_found&#39;,&#39;hash_found&#39;],
 [&#39;empty&#39;, &#39;goto&#39;, &#39;moveback&#39;],
 [&#39;one_found&#39;, &#39;add1&#39;, 2],
@@ -658,18 +725,9 @@ Indeed, ‘end’ is a special string in this program.   We can use ‘end’ in
 [&#39;moveback&#39;, move(3,1)+move(2,1)]
 </pre></div>
 </div>
-<p>A line can be snippet of 1# code surrounded by quotes.  It can also be a Python expression like</p>
-<p>move(3,1) + move(2,1)</p>
-<p>that denotes a 1# word.</p>
-<p>A line may begin with a <em>label</em> like ‘top’, or ‘moveback’
-A label should not begin with ‘1’ or ‘#, and it should not be one of the strings ‘goto’, ‘end’, ‘add1’, or ‘add#’.</p>
-<p><em>Labels are optional</em>, except a “cases” instruction
-must have a number and then three labels.</p>
-<p>A line also can have the word ‘goto’ followed by a label or ‘end’.</p>
-<p>A line can have ‘add1’ or ‘add#’ followed by a number (without quotes).</p>
-<p>Every label used inside a ‘cases’ or ‘goto’ statement must be the first label in some line.  Otherwise, the program will raise an error.</p>
-<div class="section" id="two-more-example-sane-programs">
-<h2>Two more example Sane programs<a class="headerlink" href="#two-more-example-sane-programs" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="two-more-examples-of-programs-constructed-using-sanity">
+<h2>Two more examples of programs constructed using Sanity<a class="headerlink" href="#two-more-examples-of-programs-constructed-using-sanity" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code cell contains a Sane program which multiplies the contents of</span>

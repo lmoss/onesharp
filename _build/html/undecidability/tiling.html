@@ -582,10 +582,13 @@ Let <span class="math notranslate nohighlight">\(\Tile\)</span> be the set of (c
 the
 the first quadrant can be properly tiled with <span class="math notranslate nohighlight">\(\TT\)</span>.</p>
 </div>
+<p>In our work, we are interested in programs <span class="math notranslate nohighlight">\(p\)</span> with the following features:</p>
+<p>(a) <span class="math notranslate nohighlight">\(p\)</span> is tidy.</p>
+<p>(b) <span class="math notranslate nohighlight">\(p\)</span> only uses register 1.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs with those two properties,
 and let <span class="math notranslate nohighlight">\(B\subseteq A\)</span> be the subset with the additional property that
 <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.
-Then <span class="math notranslate nohighlight">\(A\)</span> is decidable (easily) and we show that <span class="math notranslate nohighlight">\(B\)</span> is
+Then <span class="math notranslate nohighlight">\(A\)</span> is decidable (easily) and we have shown that <span class="math notranslate nohighlight">\(B\)</span> is
 is undecidable.</p>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
@@ -599,10 +602,7 @@ p\in \overline{B} \quadiff   \TT(p) \in \Tile.
 \]</div>
 <p>Thus, <span class="math notranslate nohighlight">\(B\)</span> is undecidable.</p>
 </div>
-</div><p>In our proof, we are interested in programs <span class="math notranslate nohighlight">\(p\)</span> with the following features:</p>
-<p>(a) <span class="math notranslate nohighlight">\(p\)</span> is tidy.</p>
-<p>(b) <span class="math notranslate nohighlight">\(p\)</span> only uses register 1.</p>
-<div class="attention admonition">
+</div><div class="attention admonition">
 <p class="admonition-title">Our goal</p>
 <p>A computable and total function <span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>
 such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(\TT(p)\)</span>
@@ -611,6 +611,24 @@ such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <spa
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-definition-of-tt-p">
 <h1>The definition of <span class="math notranslate nohighlight">\(\TT(p)\)</span><a class="headerlink" href="#the-definition-of-tt-p" title="Permalink to this headline">#</a></h1>
+<p>This section gives the details on the function <span class="math notranslate nohighlight">\(\TT\)</span>.  Before we present it, we need a comment on the set of color which we are going to use.  In our <a class="reference internal" href="../issues/problems.html#content-firsttiles"><span class="std std-ref">earlier work on tiling</span></a>,
+we saw tiles whose sides had actual colors, such as the eight tiles below
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
+Here, we are going to make a change.  For a given program <span class="math notranslate nohighlight">\(p\)</span>, we are going to need <span class="math notranslate nohighlight">\(8 + (n+1)= n + 9\)</span> colors.  Since our eyes can only reliably distinguish a (small) finite number of colors, we are going to use numbers as some of our colors.  (Recall that the “colors” can be anything.)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Further, we have an issue with the numeral <span class="math notranslate nohighlight">\(1\)</span> and the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbol <span class="math notranslate nohighlight">\(\one\)</span>.  In order to not avoid a potential confusion, we
+use two fonts.  The symbol <span class="math notranslate nohighlight">\(1\)</span> is used for the line number in a program, and the symbol <span class="math notranslate nohighlight">\(\one\)</span> is used for the symbol which we put in the registers of our machine.</p>
+</div>
+<p>We are going to use line numbers in <span class="math notranslate nohighlight">\(p\)</span> as colors,
+and so if <span class="math notranslate nohighlight">\(p\)</span> has <span class="math notranslate nohighlight">\(n\)</span> lines, we want <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(n\)</span>
+as colors.  We also want <span class="math notranslate nohighlight">\(n+1\)</span>, since if <span class="math notranslate nohighlight">\(p\)</span> halts we want
+to think of the control as on “line <span class="math notranslate nohighlight">\(n+1\)</span>”.  We also are going to
+use as symbols the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbols <span class="math notranslate nohighlight">\(\one\)</span> and <span class="math notranslate nohighlight">\(\hash\)</span>,
+the card symbols <span class="math notranslate nohighlight">\(\heartsuit\)</span> and <span class="math notranslate nohighlight">\(\diamondsuit\)</span>
+(we use these just as a way to add a color to this page),
+an oblong rectangle, the copyright symbol (a circle with the letter C inside),
+the word “start”, and a blank color (where the side of a square is just left blank).</p>
 <p>We need only worry about defining <span class="math notranslate nohighlight">\(\TT(p)\)</span> for <span class="math notranslate nohighlight">\(p\in A\)</span>.
 Fix such a program <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>We start with 18 tiles that are part of <span class="math notranslate nohighlight">\(\TT(p)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(p\in A\)</span>.</p>
@@ -632,7 +650,9 @@ We also want <span class="math notranslate nohighlight">\(\TT(p)\)</span> to be 
 <p class="admonition-title">Example</p>
 <p>When <span class="math notranslate nohighlight">\(p\)</span> is the program <span class="math notranslate nohighlight">\(\one\hash\one\hash\hash\hash\hash\)</span>,
 <span class="math notranslate nohighlight">\(\TT(p)\)</span> would have the 18 tiles that come for free, and also the two tiles below:
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%"></p>
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
+In these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
+not the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbol <span class="math notranslate nohighlight">\(\one\)</span>.</p>
 <p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\TT(\one\hash\one\hash\hash\hash\hash)\)</span>:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t7-07.png?raw=1" width="100%" height="100%">
 </div>
@@ -640,8 +660,8 @@ We also want <span class="math notranslate nohighlight">\(\TT(p)\)</span> to be 
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="some-observations">
 <h1>Some observations<a class="headerlink" href="#some-observations" title="Permalink to this headline">#</a></h1>
-<p>The only tile with a blank on the left is the all blank tile.</p>
-<p>Thus, if one of the tiles in a given row has
+<p>The only tile with a blank on the left is the all blank tile.
+Thus, if one of the tiles in a given row has
 a blank on the right,
 then forever to its right, all the tiles are blank.</p>
 <p>An easy induction shows the following:
@@ -656,10 +676,11 @@ every row has to have all blanks after some finite point.</p>
 (the number 1, 2, <span class="math notranslate nohighlight">\(\ldots\)</span>, n, n+1)
 on the top
 if and only if that tile is in the first column.
-We call these <em>instruction tiles</em>.</p>
+We call these <em>instruction tiles</em>.  The instruction tiles
+are the only ones with the oblong rectangle.</p>
 <p>If <span class="math notranslate nohighlight">\(p\)</span> has <span class="math notranslate nohighlight">\(n\)</span> instructions,
-then there is no tile with <span class="math notranslate nohighlight">\(n+1\)</span> on the bottom.</p>
-<p>Thus no complete tiling of the first quadrant
+then there is no tile with <span class="math notranslate nohighlight">\(n+1\)</span> on the bottom.
+Thus no complete tiling of the first quadrant
 can have a tile where  <span class="math notranslate nohighlight">\(n+1\)</span> appears on the top.</p>
 <div class="warning admonition">
 <p class="admonition-title">Restatement of our goal</p>
@@ -787,6 +808,13 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <div class="exercise admonition" id="undecidability/tiling-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
+<div class="section" id="exercise-content">
+<p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\TT(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\TT\)</span> to only use a fixed finite set of colors?</p>
+</div>
+</div>
+<div class="exercise admonition" id="undecidability/tiling-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
 <div class="section" id="exercise-content">
 <p>In this problem we consider a variant of the tiling problem where the goal is not to tile the entire first quadrant but rather to tile a finite rectangle in a noteworthy way.</p>
 <p>A <em>four-pointed</em> tile set is a tile set <span class="math notranslate nohighlight">\(\TT\)</span> and four elements of it called <span class="math notranslate nohighlight">\(NE\)</span>, <span class="math notranslate nohighlight">\(NW\)</span>, <span class="math notranslate nohighlight">\(SE\)</span>, and <span class="math notranslate nohighlight">\(SW\)</span>.  A finite rectangle is <em>tiled by <span class="math notranslate nohighlight">\(\TT\)</span></em> if there is a tiling in the usual sense with the property that its northwest corner is tiled by <span class="math notranslate nohighlight">\(NW\)</span>, its northeast corner is tiled by <span class="math notranslate nohighlight">\(NE\)</span>, etc.</p>

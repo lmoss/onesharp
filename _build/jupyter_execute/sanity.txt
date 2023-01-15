@@ -38,7 +38,7 @@ sanity([
     ['hash', 'goto', 'top'],
 ])
 
-d = [
+diag_idea = [
     ['top','cases',1,'empty', 'one','hash'],
     ['empty', 'goto', 'moveback'],
     ['one', 'add1', 2],
@@ -49,7 +49,7 @@ d = [
     ['goto', 'top'],
     ['moveback', move(3,1)+move(2,1)] 
 ]
-dg = sanity(d)
+diag = sanity(diag_idea)
 
 onesharp(dg,['11#'])
 
