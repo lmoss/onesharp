@@ -22,7 +22,10 @@ reverse_idea = [
     ['move_back', move(2,1)]
 ]
 
+# example
+
 rev = sanity(reverse_idea)
+
 # This run 'sanity' on 'reverse_idea', calling the result 'rev'.
 # We can refer to it in the rest of this notebook by 'rev'.
 # For example we can display our new program
