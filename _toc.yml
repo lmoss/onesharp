@@ -19,9 +19,9 @@ parts:
 
 - caption: More Programs
   chapters:
-  - file: sanity
-  - file: arithmetic
-  - file: primitive_recursion
+  - file: more_programs/sanity
+  - file: more_programs/arithmetic
+  - file: more_programs/primitive_recursion
 
 - caption: Universal Programs
   chapters:
