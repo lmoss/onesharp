@@ -481,8 +481,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-our-simple-loop">
-     Modifying our simple loop
+    <a class="reference internal nav-link" href="#modifying-move-2-1">
+     Modifying
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       move_2_1
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -536,8 +541,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-our-simple-loop">
-     Modifying our simple loop
+    <a class="reference internal nav-link" href="#modifying-move-2-1">
+     Modifying
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       move_2_1
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -775,9 +785,9 @@ from onesharp.interpreter.interpreter import *
 <p>The point is that by going around loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
 Similarly, whenever m and n are different numbers, we can build a program <code class="docutils literal notranslate"><span class="pre">move_m_n</span></code>. This program would write the contents of Rm onto the end of Rn, emptying Rm in the process.</p>
 </div>
-<div class="section" id="modifying-our-simple-loop">
-<h2>Modifying our simple loop<a class="headerlink" href="#modifying-our-simple-loop" title="Permalink to this headline">#</a></h2>
-<p>Suppose we want to modify move_2_1 to get move_3_4, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process. Here is a way to do this which shows off some command-line tools that are part of the working environment of this course.</p>
+<div class="section" id="modifying-move-2-1">
+<h2>Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code><a class="headerlink" href="#modifying-move-2-1" title="Permalink to this headline">#</a></h2>
+<p>Suppose we want to modify <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to get <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code>, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process. Here is a way to do this which shows off some command-line tools that are part of the working environment of this course.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>

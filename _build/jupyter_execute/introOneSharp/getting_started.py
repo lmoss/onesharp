@@ -92,6 +92,8 @@ onesharp(program,a)
 # $
 # \one^{15}\hash^4$ abbreviates $\one\one \one \one \one \one \one \one \one \one \one \one \one \one \one \hash\hash\hash\hash 
 # $.
+# 
+# We also write this as 1^15 #^4.
 # ```
 
 # So far, we have seen two *programs* of $\mathtt{1\#}$. Programs are composed of *instructions*. In fact, programs are just sequences of instructions run together. There are only five kinds of $\mathtt{1\#}$ instructions.  Now is the time to introduce them.
@@ -239,7 +241,7 @@ step_by_step('1#11#####1###1###',['1#1','#'])
 # 
 # The second argument to ```step_by_step``` is a list of words.   A list in Python is enclosed by square brackets \[ and \], not by parentheses.  The words that go in the list are used in R1, R2, . . . in that order.  It is understood that any register not represented by any input starts with the empty string.   You can also represent the empty string by ' '.  And the empty list  of registers is denoted by two square brackets with nothing inside,  [  ].
 # 
-# All in all, the examples below show different formats for the input to our function step_by_step.
+# All in all, the examples below show different formats for the input to our function ```step_by_step```.
 # 
 # 
 
@@ -300,6 +302,8 @@ onesharp(clear_1,['1111###1111##########'])
 
 # ### Useful command-line tools
 # 
+# These are Python functions which you can call in a code cell, provide that you have run the very first cell in a notebook, the cell that loads in the relevant definitions.
+# 
 # | Instruction      | Meaning |
 # | ----------- | ----------- |
 # | ```onesharp(p,[r1, . . .,rn])``` | runs the program ```p``` on the list of words  ```[r1, . . .,rn]```     |
@@ -326,3 +330,11 @@ onesharp(clear_1,['1111###1111##########'])
 # 7. Delete a cell.
 # 
 # 8. Open a new notebook.  
+
+# ```{tip}
+# You need to know the commands of $\one\hash$ well to go forward.
+# 
+# You don't need to know much about Python, but it would help to know the basics of strings and lists.  Some exercises will ask you to write Python code, and if you want to solve them you of course would need to know more.
+# 
+# It would be good to read about the basics of Jupyter notebooks.  If you got this far, perhaps you know enough already.
+# ```

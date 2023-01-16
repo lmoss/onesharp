@@ -614,10 +614,10 @@ R2 would have <span class="math notranslate nohighlight">\(w_{n}\cdots w_2 w_1\)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reverse_idea</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;cases&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;move_back&#39;</span><span class="p">,</span> <span class="s1">&#39;found_a_one&#39;</span><span class="p">,</span> <span class="s1">&#39;found_a_sharp&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;found_a_one&#39;</span><span class="p">,</span><span class="s1">&#39;111#&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;cases&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;move_back&#39;</span><span class="p">,</span> <span class="s1">&#39;one_found&#39;</span><span class="p">,</span> <span class="s1">&#39;sharp_found&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;one-found&#39;</span><span class="p">,</span><span class="s1">&#39;111#&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;move_phase&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;found_a_sharp&#39;</span><span class="p">,</span>  <span class="s1">&#39;111##&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;sharp_found&#39;</span><span class="p">,</span>  <span class="s1">&#39;111##&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;move_phase&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;move_phase&#39;</span><span class="p">,</span> <span class="n">move</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">move</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)],</span>
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">],</span>
@@ -635,7 +635,8 @@ For example, segments 6 and 8 each contain <code class="docutils literal notrans
 <p>The workflow in this notebook is that you will need to</p>
 <p>(a) think about things deeply enough to make a correct flowchart</p>
 <p>(b) draw that flowchart, either with pencil and paper or with some tool (as I did here)</p>
-<p>(c) call a Python program called <code class="docutils literal notranslate"><span class="pre">sanity</span></code> on <code class="docutils literal notranslate"><span class="pre">reverse_idea</span></code> to get a <span class="math notranslate nohighlight">\(\one\hash\)</span> program which you can then run.</p>
+<p>(c) make an “idea” for the desired program using the flowchart</p>
+<p>(d) call a Python program called <code class="docutils literal notranslate"><span class="pre">sanity</span></code> on the “idea” to get a <span class="math notranslate nohighlight">\(\one\hash\)</span> program which you can then run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example</span>
@@ -690,6 +691,7 @@ For example, segments 6 and 8 each contain <code class="docutils literal notrans
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-inputs-to-sanity">
 <h1>The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code><a class="headerlink" href="#the-inputs-to-sanity" title="Permalink to this headline">#</a></h1>
+<p>In order to use the tool, we have clarify what we mean by <em>segments</em> and <em>labels</em>.</p>
 <div class="attention admonition">
 <p class="admonition-title">What may go into a segment?</p>
 <p>A segment is a Python list: it must be surrounded by square brackects.</p>
@@ -702,7 +704,7 @@ that denotes a 1# word.  (These expressions must be defined before you run <code
 <p>A segment may optionally begin with a <em>label</em> like ‘top’, or ‘moveback’, and then it either consists of a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code surrounded by single quotes, or a Python expression that denotes a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code</p>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">Labels</p>
+<p class="admonition-title">labels</p>
 <p>A label may be a word of English, and it may have the underscore symbol, but it should not have spaces.  It must be surrounded by quotes.</p>
 <p>A label must not begin with ‘1’ or ‘#, and it must not be one of the strings ‘goto’, ‘end’, ‘add1’, or ‘add#’.</p>
 <p><em>Labels are optional</em>, except a “cases” instruction
@@ -712,10 +714,10 @@ a segment with the number 17 as its third entry.</p>
 A use of ‘goto’ must be followed either by a label or the word ‘end’.</p>
 <p>Every label used inside a ‘cases’ or ‘goto’ statement must be the first label in some segment.  Otherwise, <code class="docutils literal notranslate"><span class="pre">sanity</span></code> will raise an error.</p>
 </div>
-<p>Here is another example</p>
+<p>Here is another example, another derivation of the “diag” program which we have seen earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">diag_idea</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dg_idea</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span><span class="s1">&#39;cases&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span><span class="s1">&#39;hash&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;empty&#39;</span><span class="p">,</span> <span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;moveback&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;add1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
@@ -726,7 +728,7 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;moveback&#39;</span><span class="p">,</span> <span class="n">move</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">move</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span> 
 <span class="p">]</span>
-<span class="n">diag</span> <span class="o">=</span> <span class="n">sanity</span><span class="p">(</span><span class="n">diag_idea</span><span class="p">)</span>
+<span class="n">dg</span> <span class="o">=</span> <span class="n">sanity</span><span class="p">(</span><span class="n">diag_idea</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -923,6 +925,7 @@ The register contents at the end are shown below.
 </table>
 </div></div>
 </div>
+<p>Here is a derivation of a progam that takes the predecessor of a number written in backwards binary (bb) notation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="p">[</span>
@@ -977,42 +980,6 @@ The register contents at the end are shown below.
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;##&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;all_h&#39;</span><span class="p">,</span> <span class="s1">&#39;cases&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
-       <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;1##&#39;</span><span class="o">+</span><span class="n">clear</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span>
-       <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">],</span>
-       <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;11#&#39;</span><span class="p">],</span>
-       <span class="p">[</span><span class="n">move</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">move</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)],</span>
-       <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">],</span>
-       <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;11##&#39;</span><span class="p">],</span>
-       <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;all_h&#39;</span><span class="p">]</span>
-      <span class="p">]</span>
-
-<span class="n">rectify</span><span class="o">=</span><span class="n">sanity</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">rectify</span><span class="p">,[</span><span class="s1">&#39;##1&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;##1&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">rectify</span>
 </pre></div>
 </div>
 </div>

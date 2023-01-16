@@ -12,10 +12,10 @@ from onesharp.programs.compare import compare
 from onesharp.programs.add import add
 
 reverse_idea = [
-    ['top', 'cases', 1, 'move_back', 'found_a_one', 'found_a_sharp'],
-    ['found_a_one','111#'],
+    ['top', 'cases', 1, 'move_back', 'one_found', 'sharp_found'],
+    ['one-found','111#'],
     ['goto', 'move_phase'],
-    ['found_a_sharp',  '111##'],
+    ['sharp_found',  '111##'],
     ['goto', 'move_phase'],
     ['move_phase', move(2,3) + move(3,2)],
     ['goto', 'top'],
@@ -41,7 +41,7 @@ sanity([
     ['hash', 'goto', 'top'],
 ])
 
-diag_idea = [
+dg_idea = [
     ['top','cases',1,'empty', 'one','hash'],
     ['empty', 'goto', 'moveback'],
     ['one', 'add1', 2],
@@ -52,7 +52,7 @@ diag_idea = [
     ['goto', 'top'],
     ['moveback', move(3,1)+move(2,1)] 
 ]
-diag = sanity(diag_idea)
+dg = sanity(diag_idea)
 
 onesharp(dg,['11#'])
 
@@ -180,22 +180,6 @@ p1 = sanity(pred)
 
 
 onesharp(p1,['1#'])
-
-id = [ ['all_h', 'cases', 1, 'a', 'b', 'c'],
-       ['a', '1##'+clear(2)],
-       ['goto', 'end'],
-       ['b', '11#'],
-       [move(1,2)+move(2,1)],
-       ['goto', 'end'],
-       ['c', '11##'],
-       ['goto', 'all_h']
-      ]
-
-rectify=sanity(id)
-
-onesharp(rectify,['##1'])
-
-pr = p1 + rectify
 
 onesharp(pr,['1##'])
 

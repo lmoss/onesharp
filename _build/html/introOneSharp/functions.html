@@ -486,6 +486,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-zero-inputs">
+   Functions of zero inputs
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#characteristic-functions">
    Characteristic functions
   </a>
@@ -527,6 +532,11 @@ title="Print to PDF"
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">
    Functions of two or more arguments
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-zero-inputs">
+   Functions of zero inputs
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -590,7 +600,7 @@ and
 when  we
 run it
 <span class="math notranslate nohighlight">\(p\)</span>  with the word <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty,
-then the register machine
+the register machine
 eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
 registers
 empty.</p>
@@ -761,6 +771,21 @@ k(x) = f(g(x), h(x))
 <p>Show that if <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span>, and <span class="math notranslate nohighlight">\(h\)</span>, are all <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable, so is <span class="math notranslate nohighlight">\(k\)</span>.</p>
 </div>
 </div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="functions-of-zero-inputs">
+<h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Permalink to this headline">#</a></h1>
+<p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.  For the record:</p>
+<p><span class="math notranslate nohighlight">\(\phifn^0_p (\ ) \simeq y\)</span> means that
+<span class="math notranslate nohighlight">\(p\)</span> is a program,
+and
+when  we
+run it
+<span class="math notranslate nohighlight">\(p\)</span>  with
+all registers empty, the register machine
+eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
+registers
+empty.</p>
+<p>For example, <span class="math notranslate nohighlight">\(\phifn_{\one\hash}(\ ) \simeq \one\)</span>.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this headline">#</a></h1>
