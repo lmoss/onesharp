@@ -498,6 +498,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-sanity-work">
+     How does Sanity work?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#further-programs-and-exercises">
      Further programs and exercises
     </a>
@@ -548,6 +553,11 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#examples-of-segments">
      Examples of segments:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-sanity-work">
+     How does Sanity work?
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -602,10 +612,11 @@ This tool makes it easier for someone to organize 1# programs and to write them 
 \[ w = w_1 w_2 \cdots w_n \]</div>
 <p>in R1 and reverses it.<br />
 Here is a <em>flowchart</em> for the program which we’ll write:
-<img src="https://github.com/lmoss/onesharp/blob/main/more_programs/flowchart-1.png?raw=1" width="100%" height="100%">
-Our program will work as follows.   It processes the letters in <span class="math notranslate nohighlight">\(w\)</span> in order, using the loop shown in the top part of the flowchart.</p>
-<p>At the end of the <span class="math notranslate nohighlight">\(i\)</span>th iteration, we’ll have <span class="math notranslate nohighlight">\(w_{i+1}\cdots w_n\)</span> in R1, and its prefix will be in R2 <em>backwards</em>: <span class="math notranslate nohighlight">\(w_{i}\cdots w_2 w_1\)</span>.<br />
-Let’s now consider what happens when we run the <span class="math notranslate nohighlight">\((i+1)\)</span>-st iteration of the loop.  We have cases on the first symbol of R1, and we know that this is <span class="math notranslate nohighlight">\(w_{i+1}\)</span>.   If that first symbol is a <span class="math notranslate nohighlight">\(\one\)</span>, we write it into R3, and then we move R2 onto the end of R3
+<img src="https://github.com/lmoss/onesharp/blob/main/more_programs/flowchart-1.png?raw=1" width="130%" height="200%">
+Our program will work as follows.   It processes the letters in <span class="math notranslate nohighlight">\(w\)</span> in order, using a loop that involves cases on R1.   At the end of the <span class="math notranslate nohighlight">\(i\)</span>th pass through the loop, we’ll have <span class="math notranslate nohighlight">\(w_{i+1}\cdots w_n\)</span> in R1, and its prefix <span class="math notranslate nohighlight">\(w_{i}\cdots w_2 w_1\)</span>
+will be in R2, but it will appear there <em>reversed</em>.
+Thus, after <span class="math notranslate nohighlight">\(n\)</span> passes through the loop, the desired reversal will be in R2.  This is how the flowchart ends.</p>
+<p>Let’s now consider what happens when we run the <span class="math notranslate nohighlight">\((i+1)\)</span>-st iteration of the loop.  We have cases on the first symbol of R1, and we know that this is <span class="math notranslate nohighlight">\(w_{i+1}\)</span>.   If that first symbol is a <span class="math notranslate nohighlight">\(\one\)</span>, we write the same symbol <span class="math notranslate nohighlight">\(\one\)</span> into R3, and then we move R2 onto the end of R3
 (emptying out R2) and then R3 is moved back go R2.  On the assumption that R2 had  <span class="math notranslate nohighlight">\(w_{i}\cdots w_2 w_1\)</span> before this iteration,
 it now has  <span class="math notranslate nohighlight">\(w_{i+1} w_{i}\cdots w_2 w_1\)</span>.   The same thing happens if the first symbol in R1 was <span class="math notranslate nohighlight">\(\hash\)</span>.  Finally, if R1 was empty,
 we would go to the bottom of the flowchart.  In this case,
@@ -614,10 +625,10 @@ R2 would have <span class="math notranslate nohighlight">\(w_{n}\cdots w_2 w_1\)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reverse_idea</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;cases&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;move_back&#39;</span><span class="p">,</span> <span class="s1">&#39;one_found&#39;</span><span class="p">,</span> <span class="s1">&#39;sharp_found&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;one-found&#39;</span><span class="p">,</span><span class="s1">&#39;111#&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="s1">&#39;cases&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;move_back&#39;</span><span class="p">,</span> <span class="s1">&#39;one_found&#39;</span><span class="p">,</span> <span class="s1">&#39;hash_found&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;one_found&#39;</span><span class="p">,</span><span class="s1">&#39;111#&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;move_phase&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;sharp_found&#39;</span><span class="p">,</span>  <span class="s1">&#39;111##&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;hash_found&#39;</span><span class="p">,</span>  <span class="s1">&#39;111##&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;move_phase&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;move_phase&#39;</span><span class="p">,</span> <span class="n">move</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">move</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)],</span>
     <span class="p">[</span><span class="s1">&#39;goto&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">],</span>
@@ -635,7 +646,7 @@ For example, segments 6 and 8 each contain <code class="docutils literal notrans
 <p>The workflow in this notebook is that you will need to</p>
 <p>(a) think about things deeply enough to make a correct flowchart</p>
 <p>(b) draw that flowchart, either with pencil and paper or with some tool (as I did here)</p>
-<p>(c) make an “idea” for the desired program using the flowchart</p>
+<p>(c) make an “idea” for the desired program using the flowchart, an “idea” with special requirements that we discuss below</p>
 <p>(d) call a Python program called <code class="docutils literal notranslate"><span class="pre">sanity</span></code> on the “idea” to get a <span class="math notranslate nohighlight">\(\one\hash\)</span> program which you can then run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -758,6 +769,10 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
 [&#39;moveback&#39;, move(3,1)+move(2,1)]
 </pre></div>
 </div>
+</div>
+<div class="section" id="how-does-sanity-work">
+<h2>How does Sanity work?<a class="headerlink" href="#how-does-sanity-work" title="Permalink to this headline">#</a></h2>
+<p>We aren’t going to discuss this at length (now), but you can read the Python code for it by examining the input box at the top.   Eventually this code will be documented well-enough so that it can be read.  The overall idea is to work with <em>parsed</em> programs, the Python lists that we obtained with [the function ```parse`` that we saw earlier](content:parsing).  The program ```sanity``` consists of manipulations of parses, followed by an application of ```unparse``` which returns us to a <span class="math notranslate nohighlight">\(\one\hash\)</span> program.</p>
 </div>
 <div class="section" id="further-programs-and-exercises">
 <h2>Further programs and exercises<a class="headerlink" href="#further-programs-and-exercises" title="Permalink to this headline">#</a></h2>

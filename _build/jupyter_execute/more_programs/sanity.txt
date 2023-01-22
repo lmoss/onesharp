@@ -12,10 +12,10 @@ from onesharp.programs.compare import compare
 from onesharp.programs.add import add
 
 reverse_idea = [
-    ['top', 'cases', 1, 'move_back', 'one_found', 'sharp_found'],
-    ['one-found','111#'],
+    ['top', 'cases', 1, 'move_back', 'one_found', 'hash_found'],
+    ['one_found','111#'],
     ['goto', 'move_phase'],
-    ['sharp_found',  '111##'],
+    ['hash_found',  '111##'],
     ['goto', 'move_phase'],
     ['move_phase', move(2,3) + move(3,2)],
     ['goto', 'top'],

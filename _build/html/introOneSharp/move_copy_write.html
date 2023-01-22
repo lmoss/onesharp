@@ -204,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../universal.html">
+  <a class="reference internal" href="../universal/universal.html">
    Universal Programs
   </a>
  </li>
@@ -615,7 +615,7 @@ from onesharp.interpreter.interpreter import *
 </div>
 </div>
 <p>The words in the brackets are the contents of registers 1 and 2 when we start.  Again, our program moved the contents of R2 onto the end of R1, emptying R2.  You should want to change the opening contents of R1 and R2 in the cell above before going on.</p>
-<p>It is hard to understand a program of <span class="math notranslate nohighlight">\(\one\hash\)</span>, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
+<p id="content-parsing">It is hard to understand a program of <span class="math notranslate nohighlight">\(\one\hash\)</span>, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
