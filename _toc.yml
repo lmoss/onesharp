@@ -25,8 +25,8 @@ parts:
 
 - caption: Universal Programs
   chapters:
-#   - flle: two_by_two
-   - file: universal
+#   - flle: universal/twoByTwo
+   - file: universal/universal
 
 - caption: The Enumeration Theorem
   chapters:
