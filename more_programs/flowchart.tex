@@ -74,4 +74,69 @@ move\_2\_1};
 %\draw [arrow] (out1) -- (stop);
 
 \end{tikzpicture}
+
+\vfil\eject
+
+\begin{flushleft}
+\begin{tikzpicture}[node distance=2cm]
+\node (start) [startstop] {start: cases on R1};
+\node (firstone) [process,below of=start] {firstone: $\one^2\hash \one\hash^5$};
+\node (oneone) [process,below of=firstone, xshift=-2cm] {one\_one:$\one^2\hash$};
+\node (casesA) [decision,below of=oneone, yshift=-1cm, xshift=-1cm] {cases on R1};
+\node (onehash) [process,right of=casesA,xshift=3cm] {one\_hash: $\one^2\hash^2$};
+\node (casesB) [decision,below of=onehash,yshift=-1cm] {cases on R1};
+%\node (hashone) [process,right of=onehash,xshift=2cm] {$\hash\one$: cases on R1};
+\node (hashhash) [process,right of=casesB,xshift=2cm] {hash\_hash:$\one^2\hash^2$};
+\node (casesC) [decision,below of=hashhash,yshift=-1cm] {cases on R1};
+\node (success) [process,below of=casesC,xshift=2cm] {success: $\one\one\hash\hash\one\hash\hash\hash$};
+\draw [arrow] (start) --node[anchor=east] {$\one$}  (firstone); 
+\draw [arrow] (firstone) -| (oneone);
+\draw [arrow] (firstone) -| (onehash);
+\draw [arrow] (oneone) --  (casesA);
+\draw [arrow]  (casesA) --   (oneone);
+%\draw [arrow]  (casesA) |- node[anchor=east]   {$\one$}  (oneone);
+\draw [arrow]  (casesA) -- node[anchor=south] {$\hash$}  (onehash);
+\draw [arrow] (onehash) -- (casesB);
+\draw [arrow] (hashhash) -- (casesC);
+\draw [arrow]  (casesB) |- node[anchor=east,below] {$\one$} (success);
+\draw [arrow]  (casesB) --  node[anchor=south] {$\hash$} (hashhash);
+%\draw [arrow]  (casesC) |- node[anchor=west,below] {$\one$ }(success);
+\draw [arrow]  (casesC) -| node[anchor=west,right] {$\one$ }(success);
+\draw [arrow] (casesC) -- node[anchor=east] {$\hash$} (hashhash);
+\end{tikzpicture}
+\end{flushleft}
+\end{document}
+
+-| (right) -- (left) |-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}

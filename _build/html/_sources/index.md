@@ -43,7 +43,7 @@ it on CoCalc, and the best option is to run them on Colab.  For this, one starts
 at the top. 
 ```
 
-## Status as of January 15, 2023
+## Status as of March 15, 2023
 
 I am in the process of adding materials to the book.  The original 
 [source](https://iulg.sitehost.iu.edu/trm) for the course had much of the material, and the centerpiece was 
@@ -53,7 +53,7 @@ exists in lecture slides.  So much of what I am doing now is revising them and a
 
 There are a number of still-missing chapters:
 models of computation other than register machines,
- computably enumerable sets, the arithmetic hierarchy, and 
+computably enumerable sets, the arithmetic hierarchy, and 
 introductions to complexity theory and Kolmogorov complexity.   
 One nice feature of a project with "continual updates" is that 
 these can come later.
