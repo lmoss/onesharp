@@ -4,24 +4,24 @@ parts:
 - caption: Text Register Machine Programs
   maxdepth: 1
   chapters:
-  - file: introOneSharp/getting_started
+#  - file: introOneSharp/getting_started
   - file: introOneSharp/move_copy_write
   - file: introOneSharp/haltDef
   - file: introOneSharp/functions
   - file: introOneSharp/tidy
 
-- caption: Issues
-  chapters:
-  - file: issues/issues
-  - file: issues/problems
-  - file: issues/coding
-  - file: issues/reduction
+##- caption: Issues
+##  chapters:
+##  - file: issues/issues
+##  - file: issues/problems
+##  - file: issues/coding
+##  - file: issues/reduction
 
-- caption: More Programs
-  chapters:
-  - file: more_programs/sanity
-  - file: more_programs/arithmetic
-  - file: more_programs/primitive_recursion
+##- caption: More Programs
+##  chapters:
+##  - file: more_programs/sanity
+##  - file: more_programs/arithmetic
+##  - file: more_programs/primitive_recursion
 
 - caption: Universal Programs
   chapters:
