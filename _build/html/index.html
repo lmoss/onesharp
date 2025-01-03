@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitation to Computability &#8212; Invitation to Computability</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="First steps" href="introOneSharp/instructions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/beaver.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="_static/beaver.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Invitation to Computability
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introOneSharp/instructions.html">First steps</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="introOneSharp/move_copy_write.html">Simple programs</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="introOneSharp/haltDef.html">When does a program halt?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="introOneSharp/functions.html">Functions defined by programs</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="introOneSharp/tidy.html">Tidy programs</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="issues/coding.html">What is coding?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="more_programs/sanity.html">Tools to help write programs</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="more_programs/arithmetic.html">Programs for Arithmetic</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="self_writing.html">Self-Replicating Programs</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lmoss/onesharp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Invitation to Computability</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-as-of-march-15-2023">Status as of March 15, 2023</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wish-list">Wish List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="invitation-to-computability">
+<h1>Invitation to Computability<a class="headerlink" href="#invitation-to-computability" title="Permalink to this heading">#</a></h1>
+<p>Lawrence S. Moss</p>
+<p>This is an online textbook on the basics of computability theory, originating in classes given by the author
+at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is
+not. It treats the basic topics of the subject: the concept of computability, primitive recursion,
+mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in
+computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of
+these results, and so the presentation here will differ, and we will try to make pointers to many of the
+developments in computability theory and computer science that have come from the clasical material.</p>
+<p>We are also living in the wake of several revolutions in society coming from the advent of computers and the
+worldwide web.  This is on my mind front and center as I prepare this book.  It should not be strange that a
+book about computation theory should use up-to-date computational tools. This book uses Python and various
+packages, Jupyter notebooks and everything needed to work with them, <span class="math notranslate nohighlight">\(\LaTeX\)</span>, github, and more.  In the
+course of working on the book I became interested in using all of these computational artifacts, mainly as a
+way of seeing what would work in a textbook, and what would not. Since working in this medium is new to me
+(and pretty much everyone), I became as interested in those aspects of the project.  Some of the featues of
+this presentation which are not present in a traditional book are: executable Python code, especially in the
+beginning chapters; and clickable references to discussions and papers both inside and outside of the book
+itself. In time I hope to add abilities to for readers annotate and discuss matters, enabling a community of
+readers.  I am not primarily a computability theorist, and so these features of the work are just as
+compelling to me as the content.</p>
+<p>The first part of the book uses a variant of register machines using two symbols and a “programming
+language” using those same two symbols, called 1#.  This text comes with a Python interpreter for 1# and
+with tool support to enable students to learn to write programs.  In addition, it is possible to write
+explicit universal programs, self-writing programs, and similar artifacts.  So the course is much more
+explicit than most treatments.  At the same time, it enables one to go further, showing the undecidability
+of tiling using 1#, and then deriving as a corollary Church’s Theorem that satisfiability in first-order
+logic is undecidable.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Most of the chapters in the book are <a class="reference external" href="https://docs.jupyter.org/en/latest/index.html">Jupyter
+notebooks</a>.
+(Some others are markdown files.)
+So rather than simply read, these chapters are intended to
+be <em>run</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open them
+on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don’t have buttons to run
+it on CoCalc, and the best option is to run them on Colab.  For this, one starts by clicking on the button
+at the top.</p>
+</div>
+<div class="section" id="status-as-of-march-15-2023">
+<h2>Status as of March 15, 2023<a class="headerlink" href="#status-as-of-march-15-2023" title="Permalink to this heading">#</a></h2>
+<p>I am in the process of adding materials to the book.  The original
+<a class="reference external" href="https://iulg.sitehost.iu.edu/trm">source</a> for the course had much of the material, and the centerpiece was
+the Javascript interpreter for 1# developed by my former PhD students Robert Rose and David Sprunger. In
+2022, I re-wrote the interpreter in Python and turned the website into notebooks.  The rest of the course
+exists in lecture slides.  So much of what I am doing now is revising them and adding them here.</p>
+<p>There are a number of still-missing chapters:
+models of computation other than register machines,
+computably enumerable sets, the arithmetic hierarchy, and
+introductions to complexity theory and Kolmogorov complexity.<br />
+One nice feature of a project with “continual updates” is that
+these can come later.
+But the first few chapters have missing discussions as well.
+So the book can’t quite be used in a class setting.</p>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>Only a tiny fraction of the results here is due to the author.
+Most are standard in the literature.   In time, I willl add proper credits.</p>
+</div>
+</div>
+<div class="section" id="wish-list">
+<h2>Wish List<a class="headerlink" href="#wish-list" title="Permalink to this heading">#</a></h2>
+<p>If anyone sees this and wants to help, here are a few things which I would like.</p>
+<ol class="arabic simple">
+<li><p>These notebooks open on Colab, but doing that loses the LaTeX macros that are in my _conf.yml file.  It also loses the nice “admonition” boxes, like the “Tip” above.   I would like to rectify this,
+and the help on the web doesn’t address it.</p></li>
+<li><p>The way I get pictures in discussions such as tiling is very painstaking.  I would like to find some tools that make this easier.</p></li>
+<li><p>Once nice feature of the <a class="reference external" href="http://rrose1.github.io/jsonesharp/">Javascript interpreter for 1#</a> is that one could
+run it slowly.  In this book as it stands, one can’t quite do this.  One can run a program “step-by-step”,
+but this means looking at the trace.  It would be nice to have an animation the way the Javascript program
+had it.  For that matter, someone might want to animate some of the proofs in computability theory which
+make use of “movable markers” or other such devices.</p></li>
+<li><p>I don’t yet have things set up to get feedback and correction from readers.</p></li>
+</ol>
+</div>
+<div class="section" id="using-the-book">
+<h2>Using the book<a class="headerlink" href="#using-the-book" title="Permalink to this heading">#</a></h2>
+<p>There are a number of ways the book could be used in courses for students in several disciplines.  For computer science students,
+the subject is often taught as an end-of-semester topic in a theory course.  For this, one would need to select the topics
+judiciously and skip some of the beginning material. The book does not currently have much on complexity theory, but this might
+change. For mathematics courses aiming at undecidability results in logic, the book has a fair amount of advanced material, leading
+up to Church’s Theorem on the undecidability of first-order logic.  Overall, there is more than enough material for a course. At the
+same time, the topic of computability has many connections and developments, far too many for an “invitation” book. Instructors
+might prefer to use this book for some of their courses and to provide other material as well.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="introOneSharp/instructions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">First steps</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-as-of-march-15-2023">Status as of March 15, 2023</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wish-list">Wish List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-book">Using the book</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lawrence S. Moss
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

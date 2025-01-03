@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithmic problems &#8212; Invitation to Computability</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'issues/problems';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What is coding?" href="coding.html" />
+    <link rel="prev" title="Computability" href="issues.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/beaver.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/beaver.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Invitation to Computability
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">First steps</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Simple programs</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">When does a program halt?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/tidy.html">Tidy programs</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="coding.html">What is coding?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for Arithmetic</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lmoss/onesharp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fissues/problems.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/issues/problems.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algorithmic problems</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-problems">Matrix problems</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/problems.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems">
+<h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this heading">#</a></h1>
+<p>This section is going to have a general discussion of algorithmic problems with examples from ones with a finite search space (like finding paths in a graph) to ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="tiling-problems">
+<span id="content-firsttiles"></span><h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this heading">#</a></h1>
+<p>A <em>tile</em> is a square with a color on each side.   For example, here are eight tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
+The colors involved are red, black, grey, green, yellow,
+cyan (light blue) and dark blue.</p>
+<p>A <em>tile set</em> is a finite set of tiles.  A <em>pointed</em> tile set is a tile set that comes with a special tile <span class="math notranslate nohighlight">\(t_0\)</span> called the <em>start tile</em>.</p>
+<div class="danger admonition">
+<p class="admonition-title">Problems</p>
+<p>Given a tile set, is it possible to tile all of the squares in the first quadrant in such a way that tiles which share an edge must have the same color on that edge?</p>
+<p>Given a pointed tile set, is it possible to tile the first quadrant satisfying the same condition and also tile the corner of the quadrant with the start tile?</p>
+</div>
+<p>For example, here is a tile set:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-02.png?raw=1" width="100%" height="100%">
+The first question has a trivial answer for this set: since we have a tile with grey on all sides, we can just use it on every square of the quadrant.  Of course, this is a special feature of this example.</p>
+<p>Continuing, we can turn our tile set above into a pointed tile set by selecting as <span class="math notranslate nohighlight">\(t_0\)</span> any of the eight tiles.  Let’s choose the one marked in green below.
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
+Now here is a finite part of a tiling of the quadrant with this pointed tile set:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-03.png?raw=1" width="100%" height="100%">
+We should emphasize that given a (pointed) tile set <span class="math notranslate nohighlight">\(\TT\)</span>, there might or might not be a tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT\)</span>.
+The algorithmic question is to determine from <span class="math notranslate nohighlight">\(\TT\)</span> whether or not there is a tiling of the quadrant as requested.   This means that we want to know in finite time whether or not some infinite task can be completed or not.</p>
+<div class="exercise admonition" id="issues/problems-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(\TT^*\)</span> be the pointed tile set consisting of the tiles in the bottom row of the last set:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-05.png?raw=1" width="100%" height="100%">
+Does the quadrant have a tiling with this set?</p>
+</div>
+</div>
+<div class="exercise admonition" id="issues/problems-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<div class="section" id="exercise-content">
+<p>Construct a (finite) pointed tile set <span class="math notranslate nohighlight">\(\TT\)</span> with the following properties:</p>
+<p>(a) The quadrant can be tiled using <span class="math notranslate nohighlight">\(\TT\)</span> in exactly one way.</p>
+<p>(b) In the tiling of the quadrant, the start tile appears on the main diagonal, and nowhere else.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="post-s-correspondence-problem">
+<h1>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this heading">#</a></h1>
+<p>An <em>alphabet</em> is just a set <span class="math notranslate nohighlight">\(A\)</span> of symbols.</p>
+<p>Given an alphabet <span class="math notranslate nohighlight">\(A\)</span>, we define</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lcl}
+A^+ &amp; = &amp; \set{a_1 a_2 \cdots a_n : n \in N,  n\geq 0, \mbox{ and } a_i\in A \mbox{ for all $i$}}\\
+A^* &amp; = &amp; A^+ \cup\set{\epsilon}\\
+\end{array}
+\end{split}\]</div>
+<p>So <span class="math notranslate nohighlight">\(A^+\)</span> is the set of <em>non-empty</em> words on <span class="math notranslate nohighlight">\(A\)</span>.
+And <span class="math notranslate nohighlight">\(A^*\)</span> adds in the <em>empty word</em> <span class="math notranslate nohighlight">\(\eps\)</span>.</p>
+<p>We are given   a finite set of <em>dominoes</em>,
+each of which has two non-empty words on it,
+a word <em>on the top</em> and a word <em>on the bottom</em>.</p>
+<p>For example, with <span class="math notranslate nohighlight">\(A = \set{a,b}\)</span>, here is a finite set of dominoes:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-06.png?raw=1" width="100%" height="100%"></p>
+<p>We have an unlimited supply of all of these dominoes.</p>
+<div class="danger admonition">
+<p class="admonition-title">Problem</p>
+<p>Can we place a  finite row of dominoes
+in such a way that the words on the top
+<em>concatenate to</em> the same thing as the words on the bottom?</p>
+<p>Let’s call this a <em>Post sequence</em>.</p>
+</div>
+<p>For this particular set of dominoes, the answer is <em>Yes</em>:
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-07.png?raw=1" width="100%" height="100%"></p>
+<p>The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Post, 1946)</p>
+<div class="theorem-content section" id="proof-content">
+<p>There is no algorithm which,
+when given <em>any</em> finite set of dominoes with two words on each,
+tells <em>in finite time</em>
+whether or not one can find a Post sequence for the given domino set.</p>
+</div>
+</div><p>We are going to see a proof of this result.
+It is very important to understand the statement of
+this kind of result,
+since frequently people get it wrong.
+It does <em>not</em> say that that for each particular domino set
+we cannot tell if there is a Post sequence or not.</p>
+<p>It also doesn’t say that there is no “fact of the matter” whether
+a given domino set has or doesn’t have a Post sequence.</p>
+<p><em>PCP</em> is the set of finite domino sets which have a Post sequence.
+To say <em>PCP is decidable</em> means that <em>there is</em>
+a
+computable function <span class="math notranslate nohighlight">\(f\)</span>
+which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</span> and says Yes or No as to whether
+<span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
+To say <em>PCP is undecidable</em> means that   <em>there is no</em>
+computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="matrix-problems">
+<h1>Matrix problems<a class="headerlink" href="#matrix-problems" title="Permalink to this heading">#</a></h1>
+<p>This section will present problems with <span class="math notranslate nohighlight">\(n\times n\)</span>
+matrices over <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> such as matrix mortality.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./issues"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="issues.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Computability</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="coding.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What is coding?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-problems">Matrix problems</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lawrence S. Moss
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
