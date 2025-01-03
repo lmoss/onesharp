@@ -4,7 +4,7 @@ matplotlib
 numpy
 pandas
 ghp-import
-Sphinx==4.4.0
+Sphinx==5.0.2 ## had been 4.4.0
 sphinx-book-theme==0.1.10
 sphinx-comments==0.0.3
 sphinx-copybutton==0.5.0
