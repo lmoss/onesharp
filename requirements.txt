@@ -16,7 +16,7 @@ sphinx-thebe==0.0.10
 sphinx-togglebutton==0.3.0
 sphinxcontrib-applehelp==1.0.2
 sphinxcontrib-bibtex==2.2.1
-sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-devhelp==2.0.0
 sphinxcontrib-htmlhelp==2.0.0
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
