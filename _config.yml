@@ -19,6 +19,7 @@ logo                        : beaver.jpg
 execute:
   execute_notebooks: off # this had been 'force', and I also tried 'auto'
 
+only_build_toc_files: true
 
 sphinx:
   config:
