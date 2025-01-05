@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -459,16 +459,16 @@
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">setuptools</span>
 <span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lmoss</span><span class="o">/</span><span class="n">onesharp</span><span class="o">.</span><span class="n">git</span><span class="nd">@main</span>
-<span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="n">onesharp</span><span class="p">,</span> <span class="n">step_by_step</span>
-<span class="kn">from</span> <span class="nn">onesharp.tools.sanity</span> <span class="kn">import</span> <span class="n">sanity</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="n">onesharp</span><span class="p">,</span> <span class="n">step_by_step</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.tools.sanity</span><span class="w"> </span><span class="kn">import</span> <span class="n">sanity</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">onesharp.tools.sanity</span> <span class="kn">import</span> <span class="n">sanity</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.tools.sanity</span><span class="w"> </span><span class="kn">import</span> <span class="n">sanity</span>
 </pre></div>
 </div>
 </div>
@@ -476,15 +476,15 @@
 <p>The next cell contains functions specific to this notebook, this time pertaining to primitive recursive terms themselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">onesharp.tools.sanity</span> <span class="kn">import</span> <span class="n">sanity</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.tools.sanity</span><span class="w"> </span><span class="kn">import</span> <span class="n">sanity</span>
 
-<span class="k">def</span> <span class="nf">all_equal</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_equal</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
   <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
   <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">==</span> <span class="n">a</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">]</span>
   <span class="k">return</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">arity</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">arity</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="s1">&#39;s_prog&#39;</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;proj&#39;</span><span class="p">:</span>
@@ -504,7 +504,7 @@
     <span class="k">if</span> <span class="n">arity</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">g_list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">all_equal</span><span class="p">([</span><span class="n">arity</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">g_list</span><span class="p">]):</span>
       <span class="k">return</span><span class="p">(</span><span class="n">arity</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>   
 
-<span class="k">def</span> <span class="nf">new_program</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">new_program</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">t</span><span class="o">==</span><span class="s1">&#39;s_prog&#39;</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="n">copy_1_2_3</span><span class="o">+</span> <span class="n">successor_prog</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
   <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;proj&#39;</span><span class="p">:</span>
@@ -525,7 +525,7 @@
     <span class="n">p</span> <span class="o">=</span> <span class="n">compose</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">hs</span><span class="p">,</span><span class="n">k</span><span class="p">,</span> <span class="n">essentially_used</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
     <span class="k">return</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">in_place_program</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">in_place_program</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">t</span><span class="o">==</span><span class="s1">&#39;s_prog&#39;</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="n">copy_1_2_3</span><span class="o">+</span> <span class="n">successor_prog</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
   <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;proj&#39;</span><span class="p">:</span>
@@ -546,7 +546,7 @@
     <span class="n">p</span> <span class="o">=</span> <span class="n">compose</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">hs</span><span class="p">,</span><span class="n">k</span><span class="p">,</span> <span class="n">essentially_used</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
     <span class="k">return</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">essentially_used</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">essentially_used</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">t</span><span class="o">==</span><span class="s1">&#39;s_prog&#39;</span><span class="p">:</span>
       <span class="k">return</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span> <span class="s1">&#39;proj&#39;</span><span class="p">:</span>
@@ -569,8 +569,8 @@
       <span class="n">n2</span> <span class="o">=</span> <span class="n">essentially_used</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
       <span class="n">n</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">])</span> <span class="o">+</span><span class="mi">2</span>
       <span class="k">return</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">def</span> <span class="nf">program</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">program</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
   <span class="n">n</span> <span class="o">=</span> <span class="n">arity</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
   <span class="n">first</span> <span class="o">=</span> <span class="n">in_place_program</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
   <span class="n">second</span> <span class="o">=</span> <span class="n">unparse</span><span class="p">([</span><span class="n">clear_prog</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
@@ -578,7 +578,7 @@
   <span class="k">return</span><span class="p">(</span><span class="n">first</span><span class="o">+</span><span class="n">second</span><span class="o">+</span><span class="n">third</span><span class="p">)</span>
 
 <span class="c1">#@title</span>
-<span class="k">def</span> <span class="nf">syntax_check</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">syntax_check</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="s1">&#39;s_prog&#39;</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;proj&#39;</span><span class="p">:</span>
@@ -673,7 +673,7 @@
 
 <span class="n">ddd</span> <span class="o">=</span> <span class="s1">&#39;1#####111111###111111111###11#####11111111111###1111111111###111111####11#####111111111111111###111111###11111###11#####111###1111111111111####1###1#####111###11####111####11#####1111###11####111####1#&#39;</span>
 <span class="c1">## ddd is used in the compare program just below</span>
-<span class="k">def</span> <span class="nf">compare_prog</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span> <span class="c1">#uses a+1, a+2, a+3</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compare_prog</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span> <span class="c1">#uses a+1, a+2, a+3</span>
   <span class="n">p</span> <span class="o">=</span> <span class="n">copy_prog</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">copy_prog</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span>  <span class="n">bump</span><span class="p">(</span><span class="n">ddd</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> 
   <span class="k">return</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
   <span class="c1"># SHOULD ONLY BE USED WHEN b is not a+1 and not a+2</span>
@@ -683,7 +683,7 @@
   <span class="c1"># This program also writes to R(a+2) and R(a+3).  So when it is </span>
   <span class="c1"># called, all of registers a+1, a+2, and a+3 should be empty</span>
 
-<span class="k">def</span> <span class="nf">successor_prog</span><span class="p">(</span><span class="n">to_increment</span><span class="p">,</span><span class="n">to_use</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">successor_prog</span><span class="p">(</span><span class="n">to_increment</span><span class="p">,</span><span class="n">to_use</span><span class="p">):</span>
   <span class="c1"># gives a program to increment the register &#39;to_increment&#39; by 1, using </span>
   <span class="c1"># the register &#39;to_use&#39;</span>
    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">to_increment</span><span class="p">)</span> <span class="o">+</span> 
@@ -740,15 +740,15 @@
 <span class="c1"># s is an index of the successor function in bb</span>
 <span class="n">successor</span> <span class="o">=</span> <span class="s1">&#39;1#####111###111###1111111111111111111111111###1111111111111111111111111111111111111111###11##1#####111###111111111111111111###1111111111111111111###11#1#####111111###111###11##1111####11#111111####11#####111111###111###1##1111####1#111111####1111111111111111111###11##111111111111111111111####11#1#####111111###111###11##1111####11#111111####11#####111111###111###1##1111####1#111111####1###&#39;</span>
 
-<span class="k">def</span> <span class="nf">maxie</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">maxie</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="p">[]:</span>
     <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
   <span class="n">n</span> <span class="o">=</span> <span class="n">maxie</span><span class="p">([</span><span class="n">height</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">children</span><span class="p">])</span>
   <span class="k">return</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">all_equal</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">all_equal</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">return</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
@@ -758,7 +758,7 @@
     <span class="k">else</span><span class="p">:</span>
       <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="k">def</span> <span class="nf">bump_instr</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bump_instr</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">instruction_type</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;forward&#39;</span><span class="p">,</span><span class="s1">&#39;backward&#39;</span><span class="p">]:</span>  
     <span class="k">return</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span> 
   <span class="k">elif</span> <span class="n">instruction_type</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;add1&#39;</span><span class="p">:</span>  
@@ -770,19 +770,19 @@
   <span class="k">elif</span> <span class="n">instruction_type</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;cases&#39;</span><span class="p">:</span>  
     <span class="n">n</span> <span class="o">=</span> <span class="n">number_help</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
     <span class="k">return</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">amount</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;#####&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">bump</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span><span class="n">amount</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bump</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span><span class="n">amount</span><span class="p">):</span>
   <span class="n">par</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span>
   <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">bump_instr</span><span class="p">(</span><span class="n">instr</span><span class="p">,</span><span class="n">amount</span><span class="p">)</span> <span class="k">for</span> <span class="n">instr</span> <span class="ow">in</span> <span class="n">par</span><span class="p">]</span>
   <span class="k">return</span><span class="p">(</span><span class="n">unparse</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">clear_prog</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_prog</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
    <span class="n">a</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;#####&#39;</span>
    <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;111###&#39;</span>
    <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;1###&#39;</span>
    <span class="n">d</span> <span class="o">=</span> <span class="s1">&#39;111####&#39;</span>
    <span class="k">return</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">move_prog</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">move_prog</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
    <span class="n">a</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;#####&#39;</span>
    <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;111111###&#39;</span>
    <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;111###&#39;</span>
@@ -792,7 +792,7 @@
    <span class="n">g</span> <span class="o">=</span> <span class="s1">&#39;111111####&#39;</span>
    <span class="k">return</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="o">+</span><span class="n">f</span><span class="o">+</span><span class="n">g</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">copy_prog</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">p</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_prog</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">p</span><span class="p">):</span>
    <span class="n">a</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;#####&#39;</span>
    <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;11111111###&#39;</span>
    <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;1111###&#39;</span>
@@ -804,7 +804,7 @@
    <span class="n">g</span> <span class="o">=</span> <span class="s1">&#39;11111111####&#39;</span>
    <span class="k">return</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="o">+</span><span class="n">d1</span><span class="o">+</span><span class="n">e</span><span class="o">+</span><span class="n">f</span><span class="o">+</span><span class="n">f1</span><span class="o">+</span><span class="n">g</span><span class="o">+</span><span class="n">move_prog</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>  
 
-<span class="k">def</span> <span class="nf">proj_prog_official</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span><span class="n">upper</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">proj_prog_official</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span><span class="n">upper</span><span class="p">):</span>
   <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ind</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>    
   <span class="c1">#print(index)</span>
   <span class="n">first_part</span> <span class="o">=</span> <span class="p">[</span><span class="n">clear_prog</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">index</span><span class="p">]</span>
@@ -823,17 +823,17 @@
   <span class="k">else</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="n">done</span><span class="p">)</span>   
 
-<span class="k">def</span> <span class="nf">proj_prog</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span><span class="n">upper</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">proj_prog</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span><span class="n">upper</span><span class="p">):</span>
   <span class="k">return</span><span class="p">(</span><span class="n">copy_prog</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span><span class="n">upper</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">upper</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="c1"># the function below doesn&#39;t seem to be used</span>
-<span class="k">def</span> <span class="nf">copy_all_forward</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_all_forward</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
   <span class="c1"># copies 1 to m, 2 to m+1, . . . n to m+n-1</span>
   <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy_prog</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
   <span class="k">return</span><span class="p">(</span><span class="n">unparse</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="n">outer_fn</span><span class="p">,</span><span class="n">proglist</span><span class="p">,</span><span class="n">argument_number</span><span class="p">,</span><span class="n">used_reg</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compose</span><span class="p">(</span><span class="n">outer_fn</span><span class="p">,</span><span class="n">proglist</span><span class="p">,</span><span class="n">argument_number</span><span class="p">,</span><span class="n">used_reg</span><span class="p">):</span>
   <span class="c1">## note that the outer_fn has to be &#39;in place&#39;!</span>
   <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">proglist</span><span class="p">)</span> <span class="c1"># number of functions</span>
   <span class="c1"># the outer_fn is k-ary</span>
@@ -859,7 +859,7 @@
 <span class="c1"># k is the number of arguments to the function we are building</span>
 <span class="c1">#free is large enough so that neither g nor h use it or any larger register.</span>
 <span class="c1"># g and h are assumed to preserve their inputs</span>
-<span class="k">def</span> <span class="nf">primitive_recursion</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">arity</span><span class="p">,</span><span class="n">used_reg</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">primitive_recursion</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">arity</span><span class="p">,</span><span class="n">used_reg</span><span class="p">):</span>
   <span class="n">free</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">max_register</span><span class="p">(</span><span class="n">g</span><span class="p">),</span><span class="n">max_register</span><span class="p">(</span><span class="n">h</span><span class="p">)])</span><span class="o">+</span><span class="mi">1</span>
   <span class="c1">#free = used_reg +1</span>
   <span class="n">free_plus_one</span> <span class="o">=</span> <span class="n">free</span> <span class="o">+</span> <span class="mi">1</span>

@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -436,13 +436,6 @@
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/instructions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/functions.ipynb&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_parent&quot;</span><span class="o">&gt;&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://colab.research.google.com/assets/colab-badge.svg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Open In Colab&quot;</span><span class="o">/&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="first-steps">
 <h1>First steps<a class="headerlink" href="#first-steps" title="Link to this heading">#</a></h1>
 <p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ above.  Then click on the triangle below.  It should take some time – 35 seconds for me – and then a green check appears on the left.  This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs, and even if you want to look at them it would probably be better not to do so as you learn <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
@@ -450,7 +443,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
 <span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
-<span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -463,14 +456,14 @@
 <p>To begin, here is an <em>interpreter</em> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="c1">## removes the tail of empty registers</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="c1">## removes the tail of empty registers</span>
   <span class="k">if</span> <span class="nb">list</span> <span class="o">==</span> <span class="p">[]:</span>
     <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
   <span class="k">elif</span> <span class="nb">list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="n">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">remove_multiple_blanks</span><span class="p">(</span><span class="n">my_str</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">remove_multiple_blanks</span><span class="p">(</span><span class="n">my_str</span><span class="p">):</span>
    <span class="k">return</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
 
 
