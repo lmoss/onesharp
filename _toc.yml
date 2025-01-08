@@ -33,13 +33,13 @@ parts:
 #  - file: coding
 #  - file: t_predicate
 
-#- caption: Undecidability
-#  chapters:
-#  - file: undecidability/haltingProblem
-#  - file: undecidability/busyBeaver
-#  - file: undecidability/tiling
-#  - file: undecidability/post
-#  - file: undecidability/church
+- caption: Undecidability
+  chapters:
+  - file: undecidability/haltingProblem
+  - file: undecidability/busyBeaver
+  - file: undecidability/tiling
+  - file: undecidability/post
+  - file: undecidability/church
 
 - caption: Self-Writing Programs and the Recursion Theorem
   chapters:
