@@ -68,7 +68,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The halting problem" href="../undecidability/haltingProblem.html" />
-    <link rel="prev" title="Primitive Recursion" href="../more_programs/primitive_recursion.html" />
+    <link rel="prev" title="Self-Replicating Programs" href="../self_writing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -215,6 +215,14 @@
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Universal Programs</a></li>
@@ -234,14 +242,6 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Logic</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -1279,7 +1279,7 @@ someone else in the class.</p>
 <h1>Universal programs of more than one argument<a class="headerlink" href="#universal-programs-of-more-than-one-argument" title="Link to this heading">#</a></h1>
 <div class="exercise admonition" id="universal/universal-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <section id="exercise-content">
 <p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <span class="math notranslate nohighlight">\(\self\)</span>?</p>
 <p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <span class="math notranslate nohighlight">\(\self\)</span> takes 22,376,608 steps, whereas running <span class="math notranslate nohighlight">\(\self\)</span> on empty registers takes 3,322.</p>
@@ -1287,7 +1287,7 @@ someone else in the class.</p>
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
 <p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
@@ -1295,7 +1295,7 @@ someone else in the class.</p>
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses R1 itself (no other registers).
 This exercise requires a trick, since there is no program like <code class="docutils literal notranslate"><span class="pre">diag</span></code> which only uses one register.</p>
@@ -1335,12 +1335,12 @@ This exercise requires a trick, since there is no program like <code class="docu
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../more_programs/primitive_recursion.html"
+       href="../self_writing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Primitive Recursion</p>
+        <p class="prev-next-title">Self-Replicating Programs</p>
       </div>
     </a>
     <a class="right-next"

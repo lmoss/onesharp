@@ -67,7 +67,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'self_writing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Logic" href="undecidability/church.html" />
+    <link rel="next" title="Universal Programs" href="universal/universal.html" />
+    <link rel="prev" title="Primitive Recursion" href="more_programs/primitive_recursion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -214,6 +215,14 @@
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-Replicating Programs</a></li>
+
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="universal/universal.html">Universal Programs</a></li>
@@ -233,14 +242,6 @@
 
 <li class="toctree-l1"><a class="reference internal" href="undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="undecidability/church.html">Logic</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-Replicating Programs</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -462,27 +463,6 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
 <span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
 <span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: No module named pip
-/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: No module named pip
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;python -m pip install -U setuptools&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;python -m pip install -U git+https://github.com/lmoss/onesharp.git@main&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">Dropbox</span><span class="o">/</span><span class="n">invitationBook</span><span class="o">/</span><span class="n">lmoss</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">booksource</span><span class="o">/</span><span class="n">onesharp</span><span class="o">/</span><span class="n">interpreter</span><span class="o">/</span><span class="n">interpreter</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -737,7 +717,7 @@ and extending them.</p>
 to check your work on the interpreter.</p>
 <div class="exercise admonition" id="self_writing-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
 <section id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
@@ -746,7 +726,7 @@ to check your work on the interpreter.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
 <section id="exercise-content">
 <p>Write a program which when started on all empty registers
 writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and also writes <span class="math notranslate nohighlight">\(\hash\)</span> to <span class="math notranslate nohighlight">\(\Rtwo\)</span>.</p>
@@ -754,7 +734,7 @@ writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and
 </div>
 <div class="exercise admonition" id="self_writing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
 <section id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
@@ -764,7 +744,7 @@ In other words, <span class="math notranslate nohighlight">\(\phifn_p(\ ) = p + 
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
 <section id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
@@ -772,7 +752,7 @@ writes the next one in the list into R1.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
 <section id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
@@ -783,7 +763,7 @@ In other words,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
 <section id="exercise-content">
 <p>Write a self-replicating program
 that begins with the program to transfer ahead
@@ -792,7 +772,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 </div>
 <div class="exercise admonition" id="self_writing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
 <section id="exercise-content">
 <p>Write a program s which, when run with R2, R3, etc.
 empty,  ends up with R1 containing s <em>after</em> whatever
@@ -803,7 +783,7 @@ In other words, for all words y,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
@@ -815,7 +795,7 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 </div>
 <div class="exercise admonition" id="self_writing-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
 which trades places with its input in R1.
@@ -829,7 +809,7 @@ before attempting this problem.  But it might be fun to try now.]</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <section id="exercise-content">
 <p>Write two “twin’’ programs s and t with the properties
 that s and t are different programs;
@@ -871,13 +851,22 @@ R1.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="undecidability/church.html"
+       href="more_programs/primitive_recursion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Logic</p>
+        <p class="prev-next-title">Primitive Recursion</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="universal/universal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Universal Programs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
