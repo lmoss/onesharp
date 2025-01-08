@@ -22,7 +22,11 @@ parts:
   - file: more_programs/sanity
   - file: more_programs/arithmetic
   - file: more_programs/primitive_recursion
-
+  
+- caption: Self-Writing Programs and the Recursion Theorem
+  chapters:
+  - file: self_writing
+  
 - caption: Universal Programs
   chapters:
 #   - flle: universal/twoByTwo ### skip this one
@@ -41,9 +45,6 @@ parts:
   - file: undecidability/post
   - file: undecidability/church
 
-- caption: Self-Writing Programs and the Recursion Theorem
-  chapters:
-  - file: self_writing
 
 
 
