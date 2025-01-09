@@ -29,7 +29,7 @@ parts:
   
 - caption: Universal Programs
   chapters:
-#   - flle: universal/twoByTwo ### skip this one
+#   - flle: universal/twoByTwo 
    - file: universal/universal
 
 #- caption: The Enumeration Theorem
