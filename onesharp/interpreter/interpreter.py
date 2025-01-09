@@ -2,6 +2,28 @@ import pandas as pd
 import numpy as np
 from IPython.display import display
 
+class prog_two_registers_input():
+    def __init__(self, 
+                 program = "", 
+                 rone = "", 
+                 rtwo = ""
+                ):
+        self.program = widgets.Text(description = 'program',value = program)
+        self.rone = widgets.Text(description = 'R1',value = rone)
+        self.rtwo = widgets.Text(description = 'R2',value = rtwo)        
+        self.program.on_submit(self.handle_submit)
+        self.rone.on_submit(self.handle_submit)
+        self.rtwo.on_submit(self.handle_submit)
+        display(self.program, self.rone, self.rtwo)
+
+    def handle_submit(self, text):
+        self.v = text.value
+        return self.v
+
+
+
+
+
 def program_checker(str):
     m = len(str)
     x1 = str[m - 1] == '#'
