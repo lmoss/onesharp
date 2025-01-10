@@ -510,7 +510,7 @@ A^* &amp; = &amp; A^+ \cup\set{\epsilon}\\
 \end{array}
 \end{split}\]</div>
 <p>So <span class="math notranslate nohighlight">\(A^+\)</span> is the set of <em>non-empty</em> words on <span class="math notranslate nohighlight">\(A\)</span>.
-And <span class="math notranslate nohighlight">\(A^*\)</span> adds in the <em>empty word</em> <span class="math notranslate nohighlight">\(\eps\)</span>.</p>
+And <span class="math notranslate nohighlight">\(A^*\)</span> adds in the <em>empty word</em> <span class="math notranslate nohighlight">\(\varepsion\)</span>.</p>
 <p>We are given   a finite set of <em>dominoes</em>,
 each of which has two non-empty words on it,
 a word <em>on the top</em> and a word <em>on the bottom</em>.</p>
@@ -585,6 +585,20 @@ matrices over <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> s
     \right] 
 \end{split}\]</div>
 <p>Find a sequence of these (allowing repetitions) whose product is the zero matrix.</p>
+</div>
+</div>
+<div class="exercise admonition" id="issues/problems-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
+<div class="section" id="exercise-content">
+<p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
+(a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>. Show that the following problem is decidable: Given <span class="math notranslate nohighlight">\(S\in A_n\)</span>,
+does <span class="math notranslate nohighlight">\(S\)</span> have a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix?</p></li>
+<li><p>Now consider the a variation on the last part.  Consider the problem whose inputs are a pair consisting of a number <span class="math notranslate nohighlight">\(n\)</span> and some <span class="math notranslate nohighlight">\(S\in A_n\)</span>, and whether we again ask whether <span class="math notranslate nohighlight">\(S\)</span> has a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix.  Does the last part imply that this problem is decidable?  Be sure to give a clear, concise, and convincing answer.
+\end{enumerate}</p></li>
+</ol>
 </div>
 </div>
 </div>
