@@ -207,10 +207,20 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for Arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
+
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+
+
 
 
 </ul>
@@ -233,14 +243,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Logic</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -554,6 +556,37 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 <h1>Matrix problems<a class="headerlink" href="#matrix-problems" title="Permalink to this heading">#</a></h1>
 <p>This section will present problems with <span class="math notranslate nohighlight">\(n\times n\)</span>
 matrices over <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> such as matrix mortality.</p>
+<div class="exercise admonition" id="issues/problems-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<div class="section" id="exercise-content">
+<p>Here are three matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left[ \begin{array}{rrr}
+     0  &amp; -4  &amp; -4\\
+     0  &amp; -3  &amp; -3\\
+     0  &amp; 2  &amp; 2
+    \end{array} 
+    \right] 
+  \qquad
+     \left[ \begin{array}{rrr}
+     1  &amp; 0  &amp; 0\\
+     -2  &amp; 0  &amp; 0\\
+     1  &amp; -1  &amp; -1
+     \end{array} 
+    \right] 
+   \qquad
+     \left[ \begin{array}{rrr}
+     8  &amp; -5  &amp; 7\\
+     -5  &amp; 3  &amp; -5\\
+     0  &amp; 0  &amp; 1
+     \end{array} 
+    \right] 
+\end{split}\]</div>
+<p>Find a sequence of these (allowing repetitions) whose product is the zero matrix.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

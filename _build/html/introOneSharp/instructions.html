@@ -484,19 +484,19 @@ document.write(`
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 
-<span class="k">class</span> <span class="nc">date_input</span><span class="p">():</span>
+<span class="k">class</span> <span class="nc">prog_two_registers_input</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
-                 <span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
-                 <span class="n">month</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
-                 <span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                 <span class="n">program</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+                 <span class="n">rone</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
+                 <span class="n">rtwo</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
                 <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;program&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">year</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R1&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">month</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R2&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">day</span><span class="p">)</span>        
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;program&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">program</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rone</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R1&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">rone</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R2&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">rtwo</span><span class="p">)</span>        
+        <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rone</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rone</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">handle_submit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">value</span>
@@ -513,7 +513,7 @@ document.write(`
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">date_input</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">prog_two_registers_input</span><span class="p">()</span>
 <span class="n">button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Run&quot;</span><span class="p">,</span><span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">)</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
 
@@ -521,7 +521,7 @@ document.write(`
 
 <span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">onesharp</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">value</span><span class="p">,[</span><span class="n">f</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">onesharp</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">value</span><span class="p">,[</span><span class="n">f</span><span class="o">.</span><span class="n">rone</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">f</span><span class="o">.</span><span class="n">rtwo</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="n">button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
@@ -529,7 +529,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "182925b268cc4b4bb84675a9ae90d6ff", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "47a878de51044066a025f9236012fd71", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "c94509a32f3c49e08ce6c01b8d8053b5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "6ed6b5670222459abbc74fc6032fbdb7", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "42ac3680b93c46f5a11a764bb3f6e7c9", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0ee17c753a5146fda7bc9e9a8cb6ff2e", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "2500034a6d1340eb8dc00d332e318ce5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd9f4a9c07004831b734081a1fb60a73", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "5c9db0c0f14e454bb560c8436361cab1", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "0472dbe2a57a4f0ea9c7116492d005f1", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -715,12 +715,10 @@ What happens in each register if we run the same program
 <p>(<code class="docutils literal notranslate"><span class="pre">11#####</span></code>, <code class="docutils literal notranslate"><span class="pre">111111###</span></code>, <code class="docutils literal notranslate"><span class="pre">111###</span></code>, <code class="docutils literal notranslate"><span class="pre">1##</span></code>, <code class="docutils literal notranslate"><span class="pre">1111####</span></code>,  <code class="docutils literal notranslate"><span class="pre">1#</span></code>, <code class="docutils literal notranslate"><span class="pre">111111####</span></code>)</p>
 <p>Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <p>Incidentally, spaces are not significant in the interpreter above, or in the work we’ll turn to shortly.  You may enter programs with spaces.</p>
-<p>Let us emphasize something about programs.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Any sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions run together as a single word is a program.</p>
 <p>Spaces inside do not matter.</p>
-<p>A program doesn’t come with anything else an explanation of what “it is supposed to do”.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -735,7 +733,7 @@ and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <sp
 <h1>Running programs in notebook cells<a class="headerlink" href="#running-programs-in-notebook-cells" title="Permalink to this heading">#</a></h1>
 <p>Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.</p>
 <p>There are two programs that do this.  They are
-<code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> and <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  They both require as inputs a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program followed by a sequence of register words.</p>
+<code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> and <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  They both require as inputs a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program followed by a sequence of  words composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="s1">&#39;1#11#####1###1###&#39;</span><span class="p">,[</span><span class="s1">&#39;1#1&#39;</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">])</span>
@@ -977,21 +975,6 @@ The register contents at the end are shown above.
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clear_1</span> <span class="o">=</span> <span class="s1">&#39;1##### 111### 11#### 111####&#39;</span>
-<span class="n">onesharp</span><span class="p">(</span><span class="n">clear_1</span><span class="p">,[</span><span class="s1">&#39;1111###1111##########&#39;</span><span class="p">])</span>
-<span class="c1"># You can also run the line above slowly by running</span>
-<span class="c1"># step_by_step(clear_1,[&#39;1111###1111##########&#39;])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-full-set-of-instructions-of-1">
 <h1>The full set of instructions of 1#<a class="headerlink" href="#the-full-set-of-instructions-of-1" title="Permalink to this heading">#</a></h1>
@@ -1070,7 +1053,7 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 <p class="admonition-title">Tip</p>
 <p>You need to know the commands of 1# well to go forward.</p>
 <p>You don’t need to know much about Python, but it would help to know the basics of strings and lists.  Some exercises will ask you to write Python code, and if you want to solve them you of course would need to know more.</p>
-<p>It would be good to read about the basics of Jupyter notebooks.  If you got this far, perhaps you know enough already.</p>
+<p>It would be good to read about the basics of Jupyter notebooks.</p>
 </div>
 </div>
 </div>

@@ -207,10 +207,20 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for Arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
+
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+
+
 
 
 </ul>
@@ -233,14 +243,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Logic</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -459,14 +461,14 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/move_copy_write.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="simple-programs">
 <h1>Simple programs<a class="headerlink" href="#simple-programs" title="Permalink to this heading">#</a></h1>
-<p>We have seen the syntax of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions
-<span class="xref myst">in a previous notebook</span>.
+<p>We have seen the syntax of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions
+<a class="reference internal" href="instructions.html"><span class="doc std std-doc">in a previous notebook</span></a>.
 We turn to the simplest programs in the language.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!python -m pip install -U setuptools
-!python -m pip install -U git+https://github.com/lmoss/onesharp.git@main
-from onesharp.interpreter.interpreter import *
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
+<span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -479,7 +481,7 @@ from onesharp.interpreter.interpreter import *
 <p>You can try the program by entering the following line.   In it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;11#&#39;</span><span class="p">,</span><span class="s1">&#39;####1##11111&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;11#&#39;</span><span class="p">,</span><span class="s1">&#39;####1##11111&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -490,10 +492,10 @@ from onesharp.interpreter.interpreter import *
 </div>
 </div>
 <p>The words in the brackets are the contents of registers 1 and 2 when we start.  Again, our program moved the contents of R2 onto the end of R1, emptying R2.  You should want to change the opening contents of R1 and R2 in the cell above before going on.</p>
-<p id="content-parsing">It is hard to understand a program of <span class="math notranslate nohighlight">\(\one\hash\)</span>, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
+<p id="content-parsing">It is hard to understand a program of <code class="docutils literal notranslate"><span class="pre">1#</span></code>, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -506,7 +508,7 @@ from onesharp.interpreter.interpreter import *
 <p>Even better, we can get an parse with glosses, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse_explain</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_explain</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -568,7 +570,7 @@ from onesharp.interpreter.interpreter import *
 <p>The program <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> is a loop, and we can further add to the explanations in the chart.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
 <span class="n">j</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;11#####&#39;</span><span class="p">,</span> <span class="s1">&#39;cases on R2&#39;</span><span class="p">,</span> <span class="p">],</span>
  <span class="p">[</span><span class="s1">&#39;111111###&#39;</span><span class="p">,</span> <span class="s2">&quot;register 2 is empty: go forward 6 to instruction 8 (we&#39;re done)&quot;</span><span class="p">],</span>
  <span class="p">[</span><span class="s1">&#39;111###&#39;</span><span class="p">,</span> <span class="s1">&#39;first symbol is a 1: go forward 3 to instruction 6 (to the tan section)&#39;</span><span class="p">],</span>
@@ -595,64 +597,25 @@ from onesharp.interpreter.interpreter import *
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_2340d_row0_col0, #T_2340d_row0_col1, #T_2340d_row1_col0, #T_2340d_row1_col1, #T_2340d_row2_col0, #T_2340d_row2_col1 {
-  background-color: #FFFFCC;
-}
-#T_2340d_row3_col0, #T_2340d_row3_col1, #T_2340d_row4_col0, #T_2340d_row4_col1 {
-  background-color: #B0E0E6;
-}
-#T_2340d_row5_col0, #T_2340d_row5_col1, #T_2340d_row6_col0, #T_2340d_row6_col1 {
-  background-color: #D4B48C;
-}
-</style>
-<table id="T_2340d_" class="dataframe">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >instruction</th>
-      <th class="col_heading level0 col1" >explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_2340d_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_2340d_row0_col0" class="data row0 col0" >11#####</td>
-      <td id="T_2340d_row0_col1" class="data row0 col1" >cases on R2</td>
-    </tr>
-    <tr>
-      <th id="T_2340d_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_2340d_row1_col0" class="data row1 col0" >111111###</td>
-      <td id="T_2340d_row1_col1" class="data row1 col1" >register 2 is empty: go forward 6 to instruction 8 (we're done)</td>
-    </tr>
-    <tr>
-      <th id="T_2340d_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_2340d_row2_col0" class="data row2 col0" >111###</td>
-      <td id="T_2340d_row2_col1" class="data row2 col1" >first symbol is a 1: go forward 3 to instruction 6 (to the tan section)</td>
-    </tr>
-    <tr>
-      <th id="T_2340d_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_2340d_row3_col0" class="data row3 col0" >1##</td>
-      <td id="T_2340d_row3_col1" class="data row3 col1" >first symbol is a #: add # to R1</td>
-    </tr>
-    <tr>
-      <th id="T_2340d_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_2340d_row4_col0" class="data row4 col0" >1111####</td>
-      <td id="T_2340d_row4_col1" class="data row4 col1" >go backward 4 to instruction 1 (to the top)</td>
-    </tr>
-    <tr>
-      <th id="T_2340d_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_2340d_row5_col0" class="data row5 col0" >1#</td>
-      <td id="T_2340d_row5_col1" class="data row5 col1" >add 1 to R1</td>
-    </tr>
-    <tr>
-      <th id="T_2340d_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_2340d_row6_col0" class="data row6 col0" >111111####</td>
-      <td id="T_2340d_row6_col1" class="data row6 col1" >go backward 6 to instruction 1 (to the top)</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#@title</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">j</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;11#####&#39;</span><span class="p">,</span> <span class="s1">&#39;cases on R2&#39;</span><span class="p">,</span> <span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>  <span class="p">[</span><span class="s1">&#39;111111###&#39;</span><span class="p">,</span> <span class="s2">&quot;register 2 is empty: go forward 6 to instruction 8 (we&#39;re done)&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>  <span class="p">[</span><span class="s1">&#39;111###&#39;</span><span class="p">,</span> <span class="s1">&#39;first symbol is a 1: go forward 3 to instruction 6 (to the tan section)&#39;</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>  <span class="p">[</span><span class="s1">&#39;111111####&#39;</span><span class="p">,</span> <span class="s1">&#39;go backward 6 to instruction 1 (to the top)&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;instruction&quot;</span><span class="p">,</span> <span class="s1">&#39;explanation&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;border&#39;</span><span class="p">:</span> <span class="s1">&#39;1.3px solid green&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>                           <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;magenta&#39;</span><span class="p">})</span>
+
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.</p>
 <p>If the first symbol of R2 is a 1, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a 1 to R1 and return to the very beginning of the program.</p>
@@ -665,7 +628,7 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 <p>Suppose we want to modify <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to get <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code>, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process. Here is a way to do this which shows off some command-line tools that are part of the working environment of this course.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,7 +636,7 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 <p>When you enter the cell above, you get the program <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> as a Python <em>list</em> of instructions. We have seen the explanation of this parse above.  What we want to do in <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code> is to change the overall “case” instruction in the beginning from <code class="docutils literal notranslate"><span class="pre">11#####</span></code> to <code class="docutils literal notranslate"><span class="pre">111#####</span></code>.   And each time our program writes to a register, we want that register to be R4, not R1.  So we make two changes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unparse</span><span class="p">(</span><span class="n">pre_program</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unparse</span><span class="p">(</span><span class="n">pre_program</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -731,7 +694,7 @@ with.</p>
 <p>
 Here is our program when m = 1, n = 2, p = 3:<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">copy_1_2_3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">copy_1_2_3</span>
 </pre></div>
 </div>
 </div>
@@ -753,7 +716,7 @@ other registers empty.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">write</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span>
 </pre></div>
 </div>
 </div>
@@ -766,7 +729,7 @@ other registers empty.</p></li>
 <p>Here is the explicated parse:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parse_explain</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_explain</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
