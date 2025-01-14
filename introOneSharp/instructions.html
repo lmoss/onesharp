@@ -478,19 +478,19 @@
 <p>To begin, here is an <em>interpreter</em> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">prog_two_registers_input</span><span class="p">()</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Run&quot;</span><span class="p">,</span><span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">)</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#11###1&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11111#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="c1">#R3 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+<span class="c1">## For more registers, add lines here like</span>
+<span class="c1">## R4 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
+<span class="c1">## You also must modify the definition of &#39;a&#39; below accordingly.</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">onesharp</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">value</span><span class="p">,[</span><span class="n">f</span><span class="o">.</span><span class="n">rone</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">f</span><span class="o">.</span><span class="n">rtwo</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">R1</span><span class="p">,</span><span class="n">R2</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_multiple_blanks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
 
-<span class="n">button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+<span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
