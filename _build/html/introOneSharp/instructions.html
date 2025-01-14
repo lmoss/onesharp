@@ -441,7 +441,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-notebook-cells">Running programs in notebook cells</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-notebook-code-cells">Running programs in notebook code cells</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-set-of-instructions-of-1">The full set of instructions of 1#</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-operations-inside-a-jupyter-notebook">Useful operations inside a Jupyter notebook</a></li>
@@ -477,10 +477,13 @@ document.write(`
 <p>This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end. The rest of the lesson is a concrete introduction to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <p>If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will want to skim through this lesson quickly.</p>
 <p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
-<p>To begin, here is an <em>interpreter</em> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter</p>
+<p>There are two ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a *markdown code cell’, and the other is by using a <em>displayed interpreter</em>.  Nearly all of the time we use a command in a markdown code cell, but when one starts out with the language a displayed interpreter is probably a better option.  So we are going to start with that.</p>
+<p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
+<span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#11###1&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11111#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="c1">#R3 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
@@ -499,10 +502,14 @@ document.write(`
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">{"model_id": "0ee17c753a5146fda7bc9e9a8cb6ff2e", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "2500034a6d1340eb8dc00d332e318ce5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd9f4a9c07004831b734081a1fb60a73", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "5c9db0c0f14e454bb560c8436361cab1", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "0472dbe2a57a4f0ea9c7116492d005f1", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-<p>The top line of the interpreter contains the following <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code></p>
+<p>The first thing to do is to make everything nicer to look at by  hiding the program above.  To do this, click on the symbol to the left of the word Interpreter.   This should cause the sybmol to rotate, and it also should hide the code and make the display extend across your screen.</p>
+<p>The top line of the interpreter should contain the following <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
-<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  Those inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about and programs soon.  But for now, modify the inputs to R1 and R2, but keep the program the same.   Click on the arrow to run the program on the inputs, and look at the <em>output</em> below the interpreter.</p>
-<p>Another way to run the program is to type shift-return on a keyboard. The output is shown below the interpreter, above the current cell.</p>
+<p>If it does not contain this, feel free to copy and past the program above into the program box in the interpreter.</p>
+<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  The registers are called R1 and R2.   The inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about and programs soon.</p>
+<p>Click on the arrow to run the program on the inputs, and look at the <em>output</em> at the bottom of the interpreter box.</p>
+<p>Instead of clicking on the arrow, you also could type shift-return on a keyboard.  This also will run the program on the inputs.</p>
+<p>Modify the inputs to R1 and R2, but keep the program the same.   Each time, run the program by</p>
 <p>The empty word is a perfectly good word, so you could also enter it into R1 or R2 just by leaving the register blank or by entering one or more spaces.  In fact, spaces are ignored in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <p>You can modify <span class="math notranslate nohighlight">\(R1\)</span> and <span class="math notranslate nohighlight">\(R2\)</span> as many times as you like.</p>
 <p>What you should find after doing this is that the output is the input in <span class="math notranslate nohighlight">\(R1\)</span> followed by the input in <span class="math notranslate nohighlight">\(R2\)</span>. We also will say <em>concatenated</em> instead of <em>followed by</em>.</p>
@@ -665,8 +672,8 @@ if <code class="docutils literal notranslate"><span class="pre">1^k</span> <span
 and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">#####</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>.)</p>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="running-programs-in-notebook-cells">
-<h1>Running programs in notebook cells<a class="headerlink" href="#running-programs-in-notebook-cells" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="running-programs-in-notebook-code-cells">
+<h1>Running programs in notebook code cells<a class="headerlink" href="#running-programs-in-notebook-code-cells" title="Permalink to this heading">#</a></h1>
 <p>Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.</p>
 <p>There are two programs that do this.  They are
 <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> and <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  They both require as inputs a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program followed by a sequence of  words composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
@@ -1060,7 +1067,7 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-notebook-cells">Running programs in notebook cells</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-notebook-code-cells">Running programs in notebook code cells</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-set-of-instructions-of-1">The full set of instructions of 1#</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-operations-inside-a-jupyter-notebook">Useful operations inside a Jupyter notebook</a></li>
