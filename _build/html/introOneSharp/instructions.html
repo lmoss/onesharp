@@ -478,73 +478,9 @@ document.write(`
 <p>If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will want to skim through this lesson quickly.</p>
 <p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
 <p>To begin, here is an <em>interpreter</em> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-
-<span class="k">class</span> <span class="nc">prog_two_registers_input</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
-                 <span class="n">program</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
-                 <span class="n">rone</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
-                 <span class="n">rtwo</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-                <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;program&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">program</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rone</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R1&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">rone</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R2&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">rtwo</span><span class="p">)</span>        
-        <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rone</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rone</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">handle_submit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">value</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter a program and two registers, then press return in any field.&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">date_input</span><span class="p">()</span>
-<span class="c1"># this is from</span>
-<span class="c1"># https://stackoverflow.com/questions/43744999/using-ipython-ipywidget-text-to-create-multiple-variables</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">prog_two_registers_input</span><span class="p">()</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Run&quot;</span><span class="p">,</span><span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;success&#39;</span><span class="p">)</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
-
-<span class="n">display</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">onesharp</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">value</span><span class="p">,[</span><span class="n">f</span><span class="o">.</span><span class="n">rone</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">f</span><span class="o">.</span><span class="n">rtwo</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="n">button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0ee17c753a5146fda7bc9e9a8cb6ff2e", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "2500034a6d1340eb8dc00d332e318ce5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd9f4a9c07004831b734081a1fb60a73", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "5c9db0c0f14e454bb560c8436361cab1", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "0472dbe2a57a4f0ea9c7116492d005f1", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="c1">## removes the tail of empty registers</span>
-  <span class="k">if</span> <span class="nb">list</span> <span class="o">==</span> <span class="p">[]:</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-  <span class="k">elif</span> <span class="nb">list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">remove_multiple_blanks</span><span class="p">(</span><span class="n">my_str</span><span class="p">):</span>
-   <span class="k">return</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
-
-
-<span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#11###1&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11111#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
 <span class="c1">#R3 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
@@ -553,8 +489,6 @@ document.write(`
 <span class="c1">## R4 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
 <span class="c1">## You also must modify the definition of &#39;a&#39; below accordingly.</span>
 
-<span class="c1"># First, we delete the last batch of empty registers</span>
-<span class="c1"># to simplify the output</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">R1</span><span class="p">,</span><span class="n">R2</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_multiple_blanks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
 
@@ -562,6 +496,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0ee17c753a5146fda7bc9e9a8cb6ff2e", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "2500034a6d1340eb8dc00d332e318ce5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "dd9f4a9c07004831b734081a1fb60a73", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "5c9db0c0f14e454bb560c8436361cab1", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "0472dbe2a57a4f0ea9c7116492d005f1", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>The top line of the interpreter contains the following <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
