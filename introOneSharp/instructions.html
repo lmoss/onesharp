@@ -476,38 +476,6 @@
 <p>If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will want to skim through this lesson quickly.</p>
 <p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
 <p>To begin, here is an <em>interpreter</em> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">prog_two_registers_input</span><span class="p">():</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
-                 <span class="n">program</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
-                 <span class="n">rone</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> 
-                 <span class="n">rtwo</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-                <span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;program&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">program</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rone</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R1&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">rone</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;R2&#39;</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">rtwo</span><span class="p">)</span>        
-        <span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rone</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span><span class="o">.</span><span class="n">on_submit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_submit</span><span class="p">)</span>
-        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">program</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rone</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rtwo</span><span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">handle_submit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">value</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter a program and two registers, then press return in any field.&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">date_input</span><span class="p">()</span>
-<span class="c1"># this is from</span>
-<span class="c1"># https://stackoverflow.com/questions/43744999/using-ipython-ipywidget-text-to-create-multiple-variables</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
