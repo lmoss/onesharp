@@ -3,6 +3,18 @@ import numpy as np
 import ipywidgets as widgets
 from IPython.display import display
 
+def end_strip(list): ## removes the tail of empty registers
+  if list == []:
+    return(list)
+  elif list[-1] == '':
+    return(end_strip(list[:-1]))
+  else:
+    return(list)
+
+def remove_multiple_blanks(my_str):
+   return(my_str.replace(" ", ""))
+
+
 class prog_two_registers_input():
     def __init__(self, 
                  program = "", 
