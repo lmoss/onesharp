@@ -470,23 +470,113 @@ them.</p>
 <p>To start, enter the following cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
-<span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">setuptools</span>
-<span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lmoss</span><span class="o">/</span><span class="n">onesharp</span><span class="o">.</span><span class="n">git</span><span class="nd">@main</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
 <span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (75.3.0)
+Collecting git+https://github.com/lmoss/onesharp.git@main
+  Cloning https://github.com/lmoss/onesharp.git (to revision main) to /private/var/folders/kt/458_ttf57hvdmjpsh88m1fzh0000gp/T/pip-req-build-ofvp9nen
+  Running command git clone --filter=blob:none --quiet https://github.com/lmoss/onesharp.git /private/var/folders/kt/458_ttf57hvdmjpsh88m1fzh0000gp/T/pip-req-build-ofvp9nen
+  warning: the following paths have collided (e.g. case-sensitive paths
+  on a case-insensitive filesystem) and only one from the same
+  colliding group is in the working tree:
+
+    &#39;T_predicate.ipynb&#39;
+    &#39;t_predicate.ipynb&#39;
+  Resolved https://github.com/lmoss/onesharp.git to commit 2f618e0578dbcc01d955b019a0145d45417df2e5
+  Installing build dependencies ... ?25ldone
+?25h  Getting requirements to build wheel ... ?25ldone
+?25h  Preparing metadata (pyproject.toml) ... ?25ldone
+?25hRequirement already satisfied: numpy in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from onesharp==0.0.0) (1.24.4)
+Requirement already satisfied: pandas in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from onesharp==0.0.0) (2.0.3)
+Requirement already satisfied: IPython in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from onesharp==0.0.0) (8.12.3)
+Requirement already satisfied: backcall in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.2.0)
+Requirement already satisfied: decorator in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.19.2)
+Requirement already satisfied: matplotlib-inline in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.1.7)
+Requirement already satisfied: pickleshare in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (3.0.48)
+Requirement already satisfied: pygments&gt;=2.4.0 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (2.18.0)
+Requirement already satisfied: stack-data in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.6.3)
+Requirement already satisfied: traitlets&gt;=5 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (5.14.3)
+Requirement already satisfied: typing-extensions in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (4.12.2)
+Requirement already satisfied: pexpect&gt;4.3 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (4.9.0)
+Requirement already satisfied: appnope in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.1.4)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2024.2)
+Requirement already satisfied: tzdata&gt;=2022.1 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2024.2)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;IPython-&gt;onesharp==0.0.0) (0.8.4)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;IPython-&gt;onesharp==0.0.0) (0.7.0)
+Requirement already satisfied: wcwidth in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;IPython-&gt;onesharp==0.0.0) (0.2.13)
+Requirement already satisfied: six&gt;=1.5 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;onesharp==0.0.0) (1.17.0)
+Requirement already satisfied: executing&gt;=1.2.0 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from stack-data-&gt;IPython-&gt;onesharp==0.0.0) (2.1.0)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from stack-data-&gt;IPython-&gt;onesharp==0.0.0) (3.0.0)
+Requirement already satisfied: pure-eval in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from stack-data-&gt;IPython-&gt;onesharp==0.0.0) (0.2.3)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">universal</span>
-<span class="n">u</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">universal</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1#####1###11###11####111111#1#####111###111111###1111111###11111#####1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1###1####111#111111111####111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####111111111111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###111#11111#####1111111111###1###111#####111111###111###1111##1111####1111#111111####11111111111111111111111111111111111111111111111111111111111111####111#####1###11###1111###11111#1111#111111####11111##1111##111#####1111111###1111###1111##11111##11111####1111#1111111####111111111111111111111111111111111111111111111111111111111111111111111111111###111#####1###11###11111###11111#1111#111111#1111111####1111##111#####111111###111###1111##1111####1111#111111####11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111####111#####1###11###1111###1111#11111#111111####11111#11111#1111##111#####111111###111###1111##1111####1111#111111####11111#####11111111###11###1###111111#####111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1###1###11111111####111111#####1111###111#11111#1111####111#####111###111111#111####1#####111111###111###111##1111####111#111111####1111#####111111###111###1##1111####1#111111####111#####111111###111###1##1111####1#111111####111111111111111111111111111111111111111111111111111111111####11#####111###11111###111111111111###11##11##111111####111#11#####1###111###111##11###111#11111111111111####111##11#####11111111111111111111111111111111111111111111111111111111111111111111###1###111##11111#####1###1111111111111111111111####11111#####1111111111111111111111111111###111111111111111111111111111###11111#####111###11###111111111111111111111111111111111111111111111###11#####111111111111111111###111111111###111#11#####1###1###111#111##111##111111111111111111111111111111111111111111111111111111111###111#11#####1###111###111##11###111#111111111111111111####111#111#1111111111111111111111111111111111111111111111###11#####111111111111111111###111111111###111#11#####1###1###111##111##111##11111111111111111111111111111111111###111#11#####1###111###111##11###111#111111111111111111####111#111##111111111111111111111111###11111#####1###1###11111#####1###1###11#####11111111111111111111111###111###111##1111111111111###11#####1###11111###1###11111#111111#111111###11111#11111#111111#111111#1###11#####111111###111###111##1111####111#111111####111#####111111###111###11##1111####11#111111####1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111####11#####1###1###11#####1###1###11#####11111111111111###11###11111111###11#####1###111###1#11111111####1##1111111111####11#####111###11####111####111111#####11###11####1111#####111###11####111####&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1#####1###11###11####111111#1#####111###111111###1111111###11111#####1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1###1####111#111111111####111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####111111111111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###111#11111#####1111111111###1###111#####111111###111###1111##1111####1111#111111####11111111111111111111111111111111111111111111111111111111111111####111#####1###11###1111###11111#1111#111111####11111##1111##111#####1111111###1111###1111##11111##11111####1111#1111111####111111111111111111111111111111111111111111111111111111111111111111111111111###111#####1###11###11111###11111#1111#111111#1111111####1111##111#####111111###111###1111##1111####1111#111111####11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111####111#####1###11###1111###1111#11111#111111####11111#11111#1111##111#####111111###111###1111##1111####1111#111111####11111#####11111111###11###1###111111#####111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1###1###11111111####111111#####1111###111#11111#1111####111#####111###111111#111####1#####111111###111###111##1111####111#111111####1111#####111111###111###1##1111####1#111111####111#####111111###111###1##1111####1#111111####111111111111111111111111111111111111111111111111111111111####11#####111###11111###111111111111###11##11##111111####111#11#####1###111###111##11###111#11111111111111####111##11#####11111111111111111111111111111111111111111111111111111111111111111111###1###111##11111#####1###1111111111111111111111####11111#####1111111111111111111111111111###111111111111111111111111111###11111#####111###11###111111111111111111111111111111111111111111111###11#####111111111111111111###111111111###111#11#####1###1###111#111##111##111111111111111111111111111111111111111111111111111111111###111#11#####1###111###111##11###111#111111111111111111####111#111#1111111111111111111111111111111111111111111111###11#####111111111111111111###111111111###111#11#####1###1###111##111##111##11111111111111111111111111111111111###111#11#####1###111###111##11###111#111111111111111111####111#111##111111111111111111111111###11111#####1###1###11111#####1###1###11#####11111111111111111111111###111###111##1111111111111###11#####1###11111###1###11111#111111#111111###11111#11111#111111#111111#1###11#####111111###111###111##1111####111#111111####111#####111111###111###11##1111####11#111111####1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111####11#####1###1###11#####1###1###11#####11111111111111###11###11111111###11#####1###111###1#11111111####1##1111111111####11#####111###11####111####111111#####11###11####1111#####111###11####111####&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1#####1###11###11####111111#1#####111###111111###1111111###11111#####1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1###1####111#111111111####111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####1111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111###111#11111#####111111111111111111111111111111111111111111111111111111###111111111###111##1#####1111###11###11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###111#11111#####1111111111###1###111#####111111###111###1111##1111####1111#111111####11111111111111111111111111111111111111111111111111111111111111####111#####1###11###1111###11111#1111#111111####11111##1111##111#####1111111###1111###1111##11111##11111####1111#1111111####111111111111111111111111111111111111111111111111111111111111111111111111111###111#####1###11###11111###11111#1111#111111#1111111####1111##111#####111111###111###1111##1111####1111#111111####11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111####111#####1###11###1111###1111#11111#111111####11111#11111#1111##111#####111111###111###1111##1111####1111#111111####11111#####11111111###11###1###111111#####111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1###1###11111111####111111#####1111###111#11111#1111####111#####111###111111#111####1#####111111###111###111##1111####111#111111####1111#####111111###111###1##1111####1#111111####111#####111111###111###1##1111####1#111111####111111111111111111111111111111111111111111111111111111111####11#####111###11111###111111111111###11##11##111111####111#11#####1###111###111##11###111#11111111111111####111##11#####11111111111111111111111111111111111111111111111111111111111111111111###1###111##11111#####1###1111111111111111111111####11111#####1111111111111111111111111111###111111111111111111111111111###11111#####111###11###111111111111111111111111111111111111111111111###11#####111111111111111111###111111111###111#11#####1###1###111#111##111##111111111111111111111111111111111111111111111111111111111###111#11#####1###111###111##11###111#111111111111111111####111#111#1111111111111111111111111111111111111111111111###11#####111111111111111111###111111111###111#11#####1###1###111##111##111##11111111111111111111111111111111111###111#11#####1###111###111##11###111#111111111111111111####111#111##111111111111111111111111###11111#####1###1###11111#####1###1###11#####11111111111111111111111###111###111##1111111111111###11#####1###11111###1###11111#111111#111111###11111#11111#111111#111111#1###11#####111111###111###111##1111####111#111111####111#####111111###111###11##1111####11#111111####1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111####11#####1###1###11#####1###1###11#####11111111111111###11###11111111###11#####1###111###1#11111111####1##1111111111####11#####111###11####111####111111#####11###11####1111#####111###11####111####&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">u</span><span class="p">,[</span><span class="s1">&#39;1#1##1##&#39;</span><span class="p">]),[])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">u</span><span class="p">,[</span><span class="s1">&#39;1#1##&#39;</span><span class="o">+</span><span class="n">u</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1&#39;
 </pre></div>
 </div>
 </div>
