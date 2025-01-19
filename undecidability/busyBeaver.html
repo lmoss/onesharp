@@ -476,14 +476,19 @@ In fact, it is <span class="math notranslate nohighlight">\(n + m\)</span>, wher
 in <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> and <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(N\)</span> be large enough so that
 <span class="math notranslate nohighlight">\(N^2 &gt; N+m\)</span>.
-Then</p>
+Then by definition of <span class="math notranslate nohighlight">\(p_N\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{array}{lclclcl}
-BB(N^2) &amp; \geq  &amp; \phifn_{p_N}(\ ) &amp; = &amp; BB(N^2) + 1 \\
+\begin{array}{lcl}
+|\phifn_{p_N}(\ )| &amp; = &amp; | BB(N^2)| + 1 \\
 \end{array}
 \end{split}\]</div>
-<p>Contradiction!</p>
+<p>Furthermore, the number of instructions in <span class="math notranslate nohighlight">\(p_N\)</span> is <span class="math notranslate nohighlight">\(N+m &gt; N^2\)</span>.   So by definition of <span class="math notranslate nohighlight">\(BB\)</span>, <span class="math notranslate nohighlight">\(BB(N^2)\)</span> is a list of ```1’’’s whose length is at least as long as <span class="math notranslate nohighlight">\([\![ q]\!](\ )\)</span>, for any program of length <span class="math notranslate nohighlight">\(\leq  N^2\)</span>, and <span class="math notranslate nohighlight">\(p_N\)</span> is one such program.  Hence we also have</p>
+<div class="math notranslate nohighlight">
+\[
+BB(N^2)   \geq   |\phifn_{p_N}(\ )|
+\]</div>
+<p>This is a contradiction!</p>
 </div>
 <div class="exercise admonition" id="undecidability/busyBeaver-exercise-1">
 
