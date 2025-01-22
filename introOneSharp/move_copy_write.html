@@ -471,49 +471,6 @@ We turn to the simplest programs in the language.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (75.3.0)
-Collecting git+https://github.com/lmoss/onesharp.git@main
-  Cloning https://github.com/lmoss/onesharp.git (to revision main) to /private/var/folders/kt/458_ttf57hvdmjpsh88m1fzh0000gp/T/pip-req-build-zicec85x
-  Running command git clone --filter=blob:none --quiet https://github.com/lmoss/onesharp.git /private/var/folders/kt/458_ttf57hvdmjpsh88m1fzh0000gp/T/pip-req-build-zicec85x
-  warning: the following paths have collided (e.g. case-sensitive paths
-  on a case-insensitive filesystem) and only one from the same
-  colliding group is in the working tree:
-
-    &#39;T_predicate.ipynb&#39;
-    &#39;t_predicate.ipynb&#39;
-  Resolved https://github.com/lmoss/onesharp.git to commit 29e23c524bb19181fbe0f16954193237f9060116
-  Installing build dependencies ... ?25ldone
-?25h  Getting requirements to build wheel ... ?25ldone
-?25h  Preparing metadata (pyproject.toml) ... ?25ldone
-?25hRequirement already satisfied: numpy in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from onesharp==0.0.0) (1.24.4)
-Requirement already satisfied: pandas in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from onesharp==0.0.0) (2.0.3)
-Requirement already satisfied: IPython in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from onesharp==0.0.0) (8.12.3)
-Requirement already satisfied: backcall in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.2.0)
-Requirement already satisfied: decorator in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.19.2)
-Requirement already satisfied: matplotlib-inline in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.1.7)
-Requirement already satisfied: pickleshare in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.7.5)
-Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (3.0.48)
-Requirement already satisfied: pygments&gt;=2.4.0 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (2.18.0)
-Requirement already satisfied: stack-data in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.6.3)
-Requirement already satisfied: traitlets&gt;=5 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (5.14.3)
-Requirement already satisfied: typing-extensions in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (4.12.2)
-Requirement already satisfied: pexpect&gt;4.3 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (4.9.0)
-Requirement already satisfied: appnope in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.1.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2024.2)
-Requirement already satisfied: tzdata&gt;=2022.1 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2024.2)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;IPython-&gt;onesharp==0.0.0) (0.8.4)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;IPython-&gt;onesharp==0.0.0) (0.7.0)
-Requirement already satisfied: wcwidth in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;IPython-&gt;onesharp==0.0.0) (0.2.13)
-Requirement already satisfied: six&gt;=1.5 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;onesharp==0.0.0) (1.17.0)
-Requirement already satisfied: executing&gt;=1.2.0 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from stack-data-&gt;IPython-&gt;onesharp==0.0.0) (2.1.0)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from stack-data-&gt;IPython-&gt;onesharp==0.0.0) (3.0.0)
-Requirement already satisfied: pure-eval in /Users/lsm/Dropbox/book2025/jupyter-book-demo/.venv/lib/python3.8/site-packages (from stack-data-&gt;IPython-&gt;onesharp==0.0.0) (0.2.3)
-</pre></div>
-</div>
-</div>
 </div>
 <section id="move-2-1">
 <h2>move_2_1<a class="headerlink" href="#move-2-1" title="Link to this heading">#</a></h2>
@@ -548,79 +505,6 @@ Requirement already satisfied: pure-eval in /Users/lsm/Dropbox/book2025/jupyter-
 </div>
 </div>
 <p>Even better, we can get an parse with glosses, as follows:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Jinja2
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">parse_explain</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Jinja2
-  Using cached jinja2-3.1.5-py3-none-any.whl.metadata (2.6 kB)
-Collecting MarkupSafe&gt;=2.0 (from Jinja2)
-  Using cached MarkupSafe-2.1.5-cp38-cp38-macosx_10_9_universal2.whl.metadata (3.0 kB)
-Using cached jinja2-3.1.5-py3-none-any.whl (134 kB)
-Downloading MarkupSafe-2.1.5-cp38-cp38-macosx_10_9_universal2.whl (18 kB)
-Installing collected packages: MarkupSafe, Jinja2
-Successfully installed Jinja2-3.1.5 MarkupSafe-2.1.5
-</pre></div>
-</div>
-<div class="output text_html"><style type="text/css">
-#T_a8fee_row0_col0, #T_a8fee_row0_col1, #T_a8fee_row1_col0, #T_a8fee_row1_col1, #T_a8fee_row2_col0, #T_a8fee_row2_col1, #T_a8fee_row3_col0, #T_a8fee_row3_col1, #T_a8fee_row4_col0, #T_a8fee_row4_col1, #T_a8fee_row5_col0, #T_a8fee_row5_col1, #T_a8fee_row6_col0, #T_a8fee_row6_col1 {
-  background-color: #C9DFEC;
-  text-align: left;
-}
-</style>
-<table id="T_a8fee">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_a8fee_level0_col0" class="col_heading level0 col0" >instruction</th>
-      <th id="T_a8fee_level0_col1" class="col_heading level0 col1" >explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_a8fee_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_a8fee_row0_col0" class="data row0 col0" >11#####</td>
-      <td id="T_a8fee_row0_col1" class="data row0 col1" >cases on R2</td>
-    </tr>
-    <tr>
-      <th id="T_a8fee_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_a8fee_row1_col0" class="data row1 col0" >111111###</td>
-      <td id="T_a8fee_row1_col1" class="data row1 col1" >go forward 6 to instruction 8</td>
-    </tr>
-    <tr>
-      <th id="T_a8fee_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_a8fee_row2_col0" class="data row2 col0" >111###</td>
-      <td id="T_a8fee_row2_col1" class="data row2 col1" >go forward 3 to instruction 6</td>
-    </tr>
-    <tr>
-      <th id="T_a8fee_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_a8fee_row3_col0" class="data row3 col0" >1##</td>
-      <td id="T_a8fee_row3_col1" class="data row3 col1" >add # to R1</td>
-    </tr>
-    <tr>
-      <th id="T_a8fee_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_a8fee_row4_col0" class="data row4 col0" >1111####</td>
-      <td id="T_a8fee_row4_col1" class="data row4 col1" >go backward 4 to instruction 1</td>
-    </tr>
-    <tr>
-      <th id="T_a8fee_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_a8fee_row5_col0" class="data row5 col0" >1#</td>
-      <td id="T_a8fee_row5_col1" class="data row5 col1" >add 1 to R1</td>
-    </tr>
-    <tr>
-      <th id="T_a8fee_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_a8fee_row6_col0" class="data row6 col0" >111111####</td>
-      <td id="T_a8fee_row6_col1" class="data row6 col1" >go backward 6 to instruction 1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-</div>
 <p>The program <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> is a loop, and we can further add to the explanations in the chart.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
