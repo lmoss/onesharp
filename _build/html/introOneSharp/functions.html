@@ -606,20 +606,24 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-of-two-or-more-arguments">
 <h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this heading">#</a></h1>
-<p>A program <span class="math notranslate nohighlight">\(p\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> can also be used as a function of two or more arguments.  Here is the relevant definition.</p>
+<p>A program <span class="math notranslate nohighlight">\(p\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples words.</p>
-<p><span class="math notranslate nohighlight">\(\phifn^n_p (x_1,\ldots, x_n) \simeq y\)</span> means that
+<div class="math notranslate nohighlight">
+\[
+\phifn^n_p (x_1,\ldots, x_n) \simeq y
+\]</div>
+<p>means that
 <span class="math notranslate nohighlight">\(p\)</span> is a program,
 and
 when  we
 run it
-<span class="math notranslate nohighlight">\(p\)</span>  with <span class="math notranslate nohighlight">\(x_i\)</span> in register <span class="math notranslate nohighlight">\(i\)</span> (for <span class="math notranslate nohighlight">\(1\leq i \leq n\)</span>) and all other registers empty,
+<span class="math notranslate nohighlight">\(p\)</span>  with <span class="math notranslate nohighlight">\(x_i\)</span> in  R<span class="math notranslate nohighlight">\(i\)</span> (for <span class="math notranslate nohighlight">\(1\leq i \leq n\)</span>) and all other registers empty,
 then the register machine
-eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
+eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in R1 and all other
 registers
 empty.</p>
 <p>In all other cases
@@ -627,7 +631,7 @@ empty.</p>
 or if <span class="math notranslate nohighlight">\(p\)</span> does not halt when run on <span class="math notranslate nohighlight">\(x\)</span>,
 or if
 <span class="math notranslate nohighlight">\(p\)</span> does halt when run on <span class="math notranslate nohighlight">\(x\)</span>
-but upon halting, not all of the registers besides <span class="math notranslate nohighlight">\(\Rone\)</span> are empty),
+but upon halting, not all of the registers besides R1 are empty),
 then we say that <span class="math notranslate nohighlight">\(\phifn_p (x)\)</span>
 is <em>undefined</em>.</p>
 </div>
@@ -684,14 +688,18 @@ k(x) = f(g(x), h(x))
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-of-zero-inputs">
 <h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Permalink to this heading">#</a></h1>
 <p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.  For the record:</p>
-<p><span class="math notranslate nohighlight">\(\phifn^0_p (\ ) \simeq y\)</span> means that
+<div class="math notranslate nohighlight">
+\[
+\phifn^0_p (\ ) \simeq y
+\]</div>
+<p>means that
 <span class="math notranslate nohighlight">\(p\)</span> is a program,
 and
 when  we
 run it
 <span class="math notranslate nohighlight">\(p\)</span>  with
 all registers empty, the register machine
-eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
+eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in R1 and all other
 registers
 empty.</p>
 <p>For example, <span class="math notranslate nohighlight">\(\phifn_{\one\hash}(\ ) \simeq \one\)</span>.</p>
@@ -700,17 +708,26 @@ empty.</p>
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
-<p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em><span class="math notranslate nohighlight">\(\one\hash\)</span>-computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
+<p>For any set <span class="math notranslate nohighlight">\(A\)</span>, the <em>characteristic function of <span class="math notranslate nohighlight">\(A\)</span></em> is the function <span class="math notranslate nohighlight">\(\chi_A\)</span> given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\chi_A(x) = \left\{ \begin{array}{ll} 1 &amp;\mbox{if $x\in A$} \\  0 &amp;\mbox{if $x\notin A$} \end{array}\right.
+\end{split}\]</div>
+<p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em><code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Our work will also involve other notions of “computable” besides <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.   For example, we’ll see <em>intuitive computability</em>, <em>Turing maching computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the “<span class="math notranslate nohighlight">\(\one\hash\)</span>” in the name “<span class="math notranslate nohighlight">\(\one\hash\)</span>-computable”. But at this stage, the notion which we’ll study the most is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability.</p>
+<p>Our work will also involve other notions of “computable” besides <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability.<br />
+We have already seen
+<em>intuitive computability</em>, and this is not exactly a mathematical concept.
+But we will see <em>Turing maching computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the <code class="docutils literal notranslate"><span class="pre">1#</span></code> in the name “<code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable”.</p>
+<p>The notion which we’ll study the most is <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computability.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <div class="section" id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable, where</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable, where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -733,7 +750,7 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 
 <p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
 <div class="section" id="exercise-content">
-<p>Show that the following function is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable:</p>
+<p>Show that the following function is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 f(w) = \left\{ 
@@ -750,8 +767,8 @@ f(w) = \left\{
 <p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
 <div class="section" id="exercise-content">
 <p>(a)
-As a parallel to how we defined <span class="math notranslate nohighlight">\(\one\hash\)</span>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
-<p>(b) There is a Python program called <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> which takes two arguments, a <span class="math notranslate nohighlight">\(\one\hash\)</span> program and a finite sequence of <span class="math notranslate nohighlight">\(\one\hash\)</span>-words.   Assuming that <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> behaves correctly, show that every <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable function is Python computable.</p>
+As a parallel to how we defined <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
+<p>(b) There is a Python program called <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> which takes two arguments, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>  program and a finite sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> -words.   Assuming that <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> behaves correctly, show that every <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable function is Python computable.</p>
 <p>[Hint: you will need to say clearly what “behaves correctly” means.]</p>
 </div>
 </div>
