@@ -2181,6 +2181,91 @@ $\begin{array}{l}
 
 \vfil\eject
 
+
+
+\newlength{\R}\setlength{\R}{3.5cm}
+
+\[
+\begin{tikzpicture}[bullet/.style={circle, fill, minimum size=2pt,
+              inner sep=2pt, outer sep=0pt},nodes=bullet,    every edge/.style = {draw,->},scale=1.4]
+            
+
+\node (circ1) at (32.73:\R) [bullet,label=right:$1$] {};
+
+\node (circ2) at (65.45:\R) [bullet,label=above:$2$] {};
+
+\node (circ3) at (98.18:\R) [bullet,label=left:$3$] {};
+
+\node (circ4) at (130.9:\R) [bullet,label=left:$4$] {};
+
+\node (circ5) at (163.6:\R) [bullet,label=left:$5$] {};
+
+\node (circ6) at (196.4:\R) [bullet,label=below:$6$] {};
+
+\node (circ7) at (229.09:\R) [bullet,label=right:$7$] {};
+
+\node (circ8) at (261.81:\R) [bullet,label=right:$8$] {};
+
+\node (circ9) at (294.55:\R) [bullet,label=right:$9$] {};
+
+\node (circ10) at (327.27:\R) [bullet,label=right:$10$] {};
+
+\node (circ11) at (360:\R) [bullet,label=right:$11$] {};
+
+\path [->, thick] (circ1)  edge  (circ5);
+
+\path [->, thick] (circ2)  edge  (circ3);
+
+
+\path [->, thick] (circ4)  edge  (circ2);
+
+\path [->, thick] (circ4)  edge  (circ6);
+
+\path [->, thick] (circ4)  edge  (circ7);
+
+
+
+\path [->, thick] (circ4)  edge  (circ9);
+
+\path [->, thick] (circ3)  edge  (circ8);
+
+\path [->, thick] (circ4)  edge  (circ8);
+
+\path [->, thick] (circ4)  edge  (circ11);
+
+\path [->, thick] (circ11)  edge  (circ10);
+
+\path [->, thick] (circ6)  edge  (circ2);
+
+\path [->, thick] (circ8)  edge  (circ7);
+
+\path [->, thick] (circ10)  edge  (circ6);
+
+\path [->, thick] (circ10)  edge  (circ1);
+
+\path [->, thick] (circ9)  edge  (circ2);
+
+
+\path [->, thick] (circ9)  edge  (circ10);
+
+
+\path [->, thick] (circ7)  edge  (circ5);
+
+% \draw [thick] (circ1) to (circ2) to (circ3)  to (circ4) to (circ5) to (circ6) to (circ7)to (circ8) to (circ1)to (circ3) to (circ5) to (circ7) to (circ1) to (circ4) to(circ7) to(circ2) to (circ5) to(circ8) to (circ3) to (circ6);
+
+
+	
+%\draw [->] edge (circ1) (circ5);
+
+
+
+
+\end{tikzpicture} 
+\]
+
+
+
+
 \end{document}
 
 \begin{flushleft}
