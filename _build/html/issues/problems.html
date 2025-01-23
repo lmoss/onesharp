@@ -519,18 +519,18 @@ And <span class="math notranslate nohighlight">\(A^*\)</span> adds in the <em>em
 each of which has two non-empty words on it,
 a word <em>on the top</em> and a word <em>on the bottom</em>.</p>
 <p>For example, with <span class="math notranslate nohighlight">\(A = \set{a,b}\)</span>, here is a finite set of dominoes:
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-06.png?raw=1" width="100%" height="100%"></p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-06NEW.png?raw=1" width="100%" height="100%"></p>
 <p>We have an unlimited supply of all of these dominoes.</p>
 <div class="danger admonition">
 <p class="admonition-title">Problem</p>
 <p>Can we place a  finite row of dominoes
 in such a way that the words on the top
 <em>concatenate to</em> the same thing as the words on the bottom?</p>
-<p>Let’s call this a <em>Post sequence</em>.</p>
+<p>Let’s call this sequence of dominoes a <em>Post sequence</em>, and the common word a <em>Post word</em>.</p>
 </div>
-<p>For this particular set of dominoes, the answer is <em>Yes</em>:
+<p>For this particular set of dominoes, the answer is <em>Yes</em>, there is a Post sequence:
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-07.png?raw=1" width="100%" height="100%"></p>
-<p>The common word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
+<p>The Post word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
 <div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Post, 1946)</p>
 <div class="theorem-content section" id="proof-content">
@@ -558,8 +558,13 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="matrix-problems">
 <h1>Matrix problems<a class="headerlink" href="#matrix-problems" title="Permalink to this heading">#</a></h1>
-<p>This section will present problems with <span class="math notranslate nohighlight">\(n\times n\)</span>
-matrices over <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> such as matrix mortality.</p>
+<p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
+matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> of integers.   It is called the <em>matrix mortality</em> problem.</p>
+<div class="danger admonition">
+<p class="admonition-title">Problem</p>
+<p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>.   Given a finite set <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\times n\)</span> matrices with integer entries, is there a finite product of elements of <span class="math notranslate nohighlight">\(S\)</span>, allowing repeats, whose product is the zero matrix?</p>
+<p>This is the <span class="math notranslate nohighlight">\(n\times n\)</span> <em>matrix mortality problem</em>.</p>
+</div>
 <div class="exercise admonition" id="issues/problems-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
@@ -589,6 +594,7 @@ matrices over <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> s
     \right] 
 \end{split}\]</div>
 <p>Find a sequence of these (allowing repetitions) whose product is the zero matrix.</p>
+<p>In other words, show that the answer to the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality problem for the set three matrices shown above is Yes.</p>
 </div>
 </div>
 <div class="exercise admonition" id="issues/problems-exercise-4">

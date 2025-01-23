@@ -496,18 +496,31 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 </div>
 </div><div class="exercise admonition" id="introOneSharp/tidy-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
 <div class="section" id="exercise-content">
 <p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
 </div>
 </div>
 <div class="exercise admonition" id="tidiness">
 
-<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
 <div class="section" id="exercise-content">
 <p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to any program of the form</p>
 <p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code><span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
 <p>Show that all three parts of the definition of tidiness are needed in order to show this fact.</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be tidy, and assume that <span class="math notranslate nohighlight">\([\![ p ]\!](x) \simeq y\)</span>.
+Show that the following are equivalent:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\([\![ p+q ]\!](x)\downarrow\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ q ]\!](y)\downarrow\)</span>.</p></li>
+<li><p>$[![ q ]!]\o <span class="xref myst">![ p ]!</span>\downarrow.</p></li>
+</ol>
 </div>
 </div>
 <div class="exercise admonition" id="back-transfer">
@@ -519,7 +532,7 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 <p>(b) In <span class="math notranslate nohighlight">\(q\)</span>, every backward-transfer instruction points to the top of the program.  That is, if line <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(\one^k \hash^4\)</span>, then <span class="math notranslate nohighlight">\(k = i-1\)</span>.</p>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/tidy-exercise-4">
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
 <div class="section" id="exercise-content">
