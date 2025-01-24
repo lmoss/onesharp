@@ -461,12 +461,12 @@
 <p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
-<p>We (informally) say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on the inputs, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
+<p>We (informally) say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on those inputs, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
 <p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control tranfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 <p>To see the difference, consider the following two programs:
-<code class="docutils literal notranslate"><span class="pre">11###</span></code> and ```1#111.  Suppose we run them with some fixed but arbitrary word <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
-<p>The first says “Go forward 2,” and the second “Add <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1.”</p>
+<code class="docutils literal notranslate"><span class="pre">11###1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1#11###</span></code>.  Suppose we run them with some fixed but arbitrary word <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
+<p>The first says “Go forward 2,” and the second “Add <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1, and then advance two instructions.”</p>
 <p>The first halts, while the second halts improperly.</p>
 <div class="exercise admonition" id="on-halting">
 

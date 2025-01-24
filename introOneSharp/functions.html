@@ -480,7 +480,7 @@ our words will all be <em>non-empty</em>, unless we say otherwise.</p>
 <em>instructions</em> and <em>programs</em>:</p>
 <p><em>Instructions</em> are single steps
 in programs.</p>
-<p>A <em>program</em> of <span class="math notranslate nohighlight">\(\one\hash\)</span> is just a sequence of
+<p>A <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> is just a sequence of
 instructions,
 run together to make a big word.
 An instruction counts as a program,
@@ -678,6 +678,23 @@ k(x) = f(g(x), h(x))
 <section class="tex2jax_ignore mathjax_ignore" id="functions-of-zero-inputs">
 <h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Link to this heading">#</a></h1>
 <p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<div class="math notranslate nohighlight">
+\[
+\phifn^0_p (\ ) \simeq y
+\]</div>
+<p>means that
+<span class="math notranslate nohighlight">\(p\)</span> is a program,
+and
+when  we
+run it
+<span class="math notranslate nohighlight">\(p\)</span>  with
+all registers empty, the register machine
+eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in R1 and all other
+registers
+empty.</p>
+</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Link to this heading">#</a></h1>
