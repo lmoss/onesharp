@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 JAN 2025 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  24 JAN 2025 07:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1012,10 +1012,10 @@ Missing character: There is no ; in font nullfont!
  [54]
 (./pictures.aux) ) 
 Here is how much of TeX's memory you used:
- 17271 strings out of 480608
- 360005 string characters out of 5903631
- 595919 words of memory out of 5000000
- 32808 multiletter control sequences out of 15000+600000
+ 17269 strings out of 480608
+ 359962 string characters out of 5903631
+ 595918 words of memory out of 5000000
+ 32806 multiletter control sequences out of 15000+600000
  547411 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,18n,76p,451b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1026,7 +1026,7 @@ r/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi.pfb></usr/local
 e/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/
 texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-d
 ist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pictures.pdf (54 pages, 77724 bytes).
+Output written on pictures.pdf (54 pages, 77706 bytes).
 PDF statistics:
  207 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
