@@ -486,14 +486,15 @@ them.</p>
 </div>
 </div>
 </div>
-<p>{prf:definition}
-:label: my-definition</p>
+<div class="attention admonition">
+<p class="admonition-title">Definition</p>
 <p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if</p>
 <div class="math notranslate nohighlight">
 \[\phifn_u(x) \simeq \phifn_x(\ )
 \]</div>
 <p>for all words <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>This means that if running <span class="math notranslate nohighlight">\(x\)</span> on all empty registers eventually gives some output in R1 (and all other registers empty), then that same output would be the result of running <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty. In the other direction, <i>if</i> running <span class="math notranslate nohighlight">\(x\)</span> with all empty registers gives some output, say <span class="math notranslate nohighlight">\(y\)</span>, in R1 (and all registers empty at the end), then we would get the same output <span class="math notranslate nohighlight">\(y\)</span> in R1 when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.</p>
+</div>
 <p>Here is a specific example of this. Try running <i>u</i> with 1# 1## in
 R1.  The result is 1#, and this is what happens when we run 1# 1## on all
 empty registers.  So the universal program <i>u</i> takes 1# 1## and
@@ -550,13 +551,12 @@ program with the smallest number of instructions.  The one above has
 it easier to write a universal program.  So we’ll outline how
 to write a program that is <i>close</i> to a universal program,
 but not quite a universal program.</p>
-<p>
-We'll write a program $u$ that acts like a universal
+<p>We’ll write a program <span class="math notranslate nohighlight">\(u\)</span> that acts like a universal
 program, but only for programs which use only R1, R2, and R3.
-In more detail:
+In more detail:</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be any
-program of <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> which only uses R1, R2, and R3.
-Let <span class="math notranslate nohighlight">\(x\)</span> be any word on our alphabet <span class="math notranslate nohighlight">\(\{\mathtt{1},\mathtt{\#}\}\)</span>,
+program of <code class="docutils literal notranslate"><span class="pre">1#</span></code> which only uses R1, R2, and R3.
+Let <span class="math notranslate nohighlight">\(x\)</span> be any word on our alphabet <code class="docutils literal notranslate"><span class="pre">{1#}</span></code>,
 including possibly the empty word. Then the following are equivalent:</p>
 <p>(A’)
 If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
