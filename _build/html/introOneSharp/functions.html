@@ -444,7 +444,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computably-enumerable-sets">Computably enumerable sets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-sets-and-computably-enumerable-sets">Computable sets and computably enumerable sets</a></li>
 </ul>
 
             </nav>
@@ -460,24 +460,23 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-defined-by-programs">
 <h1>Functions defined by programs<a class="headerlink" href="#functions-defined-by-programs" title="Permalink to this heading">#</a></h1>
-<p>At this point we know what programs of   <span class="math notranslate nohighlight">\(\one\hash\)</span> are and how they work.
+<p>At this point we know what programs of   <code class="docutils literal notranslate"><span class="pre">111</span></code> are and how they work.
 We are interested not just in the programs themselves
 but in <em>what</em> they compute.</p>
-<p>We call the set <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span>  our  <em>alphabet</em>, and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
+<p>We call the set <span class="math notranslate nohighlight">\(\{```1```,```#```\}\)</span>  our  <em>alphabet</em>, and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
 <p>We know that it is odd to call such a small set an “alphabet”,
 even more so when that set doesn’t have any letters in it!
 But this usage is standard, and so we’ll adopt it.
 When used in situations like ours, the word “alphabet”
 just means a set that you use to build words from.</p>
-<p>But if <span class="math notranslate nohighlight">\(\set{\one,\hash}\)</span> is our alphabet, what in
+<p>But if <span class="math notranslate nohighlight">\(\{```1```,```#```\}\)</span> is our alphabet, what in
 the world are our words?!</p>
 <p>Answer:
 A <em>word</em> is just a sequence of  symbols from our alphabet.</p>
-<p>(In contrast to most uses in mathematics and computer science,
+<p>In contrast to most uses in mathematics and computer science,
 our words will all be <em>non-empty</em>, unless we say otherwise.</p>
 <p>Examples of words include
-<span class="math notranslate nohighlight">\(\one\one\hash\)</span>, and also
-<span class="math notranslate nohighlight">\(\hash\hash\hash\)</span>.</p>
+<code class="docutils literal notranslate"><span class="pre">11#11####</span></code> and also the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
 <p>Let us be clear about the difference between
 <em>instructions</em> and <em>programs</em>:</p>
 <p><em>Instructions</em> are single steps
@@ -602,7 +601,8 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 <div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
 <div class="definition-content section" id="proof-content">
-<p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
+<p>:class: tip
+Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -629,7 +629,6 @@ is <em>undefined</em>.</p>
 </div>
 </div><div class="tip admonition">
 <p class="admonition-title">Examples</p>
-<p><span class="math notranslate nohighlight">\(\phifn^0_{\one\hash}(\ ) \simeq \one\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\semantics{\moveprogtwoone}(\one,\hash\hash\one) \simeq
 \one\hash\hash\one\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program</p>
@@ -679,22 +678,7 @@ k(x) = f(g(x), h(x))
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-of-zero-inputs">
 <h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Permalink to this heading">#</a></h1>
-<p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.  For the record:</p>
-<div class="math notranslate nohighlight">
-\[
-\phifn^0_p (\ ) \simeq y
-\]</div>
-<p>means that
-<span class="math notranslate nohighlight">\(p\)</span> is a program,
-and
-when  we
-run it
-<span class="math notranslate nohighlight">\(p\)</span>  with
-all registers empty, the register machine
-eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in R1 and all other
-registers
-empty.</p>
-<p>For example, <span class="math notranslate nohighlight">\(\phifn_{\one\hash}(\ ) \simeq \one\)</span>.</p>
+<p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this heading">#</a></h1>
@@ -735,7 +719,7 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <div class="section" id="exercise-content">
-<p>Is the set of <span class="math notranslate nohighlight">\(\one\hash\)</span> programs a <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable set of words?</p>
+<p>Is the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable set of words?</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-9">
@@ -765,8 +749,9 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="computably-enumerable-sets">
-<h1>Computably enumerable sets<a class="headerlink" href="#computably-enumerable-sets" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="computable-sets-and-computably-enumerable-sets">
+<h1>Computable sets and computably enumerable sets<a class="headerlink" href="#computable-sets-and-computably-enumerable-sets" title="Permalink to this heading">#</a></h1>
+<p>We have seen above the definition of a <em>computable</em> set of words.   We now have a definition which is different but related.  Both concepts are important in computability theory.</p>
 <div class="proof definition admonition" id="definition-11">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <div class="definition-content section" id="proof-content">
@@ -779,7 +764,7 @@ That is,</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
 <div class="section" id="exercise-content">
-<p>Show that every computable set is computably enumerable.  (As we shall see, the converse is false.). Show also that the family of computably enumerable sets is closed under intersection: if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are computably enumerable, so is <span class="math notranslate nohighlight">\(A\cap B\)</span>.</p>
+<p>Show that every computable set is computably enumerable.  (As we shall see, the converse is false.) Show also that the family of computably enumerable sets is closed under intersection: if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are computably enumerable, so is <span class="math notranslate nohighlight">\(A\cap B\)</span>.</p>
 </div>
 </div>
 </div>
@@ -852,7 +837,7 @@ That is,</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computably-enumerable-sets">Computably enumerable sets</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-sets-and-computably-enumerable-sets">Computable sets and computably enumerable sets</a></li>
 </ul>
 
   </nav></div>
