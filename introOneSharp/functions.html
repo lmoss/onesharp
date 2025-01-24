@@ -459,7 +459,7 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="functions-defined-by-programs">
 <h1>Functions defined by programs<a class="headerlink" href="#functions-defined-by-programs" title="Link to this heading">#</a></h1>
-<p>At this point we know what programs of   <code class="docutils literal notranslate"><span class="pre">111</span></code> are and how they work.
+<p>At this point we know what programs of   <code class="docutils literal notranslate"><span class="pre">1#</span></code> are and how they work.
 We are interested not just in the programs themselves
 but in <em>what</em> they compute.</p>
 <p>We call the set <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>  our  <em>alphabet</em>, and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
@@ -543,8 +543,9 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 <h1>Partial functions<a class="headerlink" href="#partial-functions" title="Link to this heading">#</a></h1>
 <p>Suppose we run a program <span class="math notranslate nohighlight">\(p\)</span> with an input word <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.  This run might, or might not, halt.  The first example of this is when <span class="math notranslate nohighlight">\(p\)</span> is a loop <span class="math notranslate nohighlight">\(\one\hash^3\one\hash^4\)</span>.  For this program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span> is <em>undefined</em> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>For other programs <span class="math notranslate nohighlight">\(q\)</span> there might be some programs <span class="math notranslate nohighlight">\(p\)</span> for which <span class="math notranslate nohighlight">\(\phifn_p\)</span> is defined for some but not all input words.</p>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<section class="definition-content" id="proof-content">
 <p>Given words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, we write</p>
 <div class="math notranslate nohighlight">
 \[
@@ -556,8 +557,8 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 \phifn_x(y)\uparrow
 \]</div>
 <p>The <em>domain</em> of <span class="math notranslate nohighlight">\(\phifn_x\)</span> is <span class="math notranslate nohighlight">\(\set{y : \phifn_x(p)\dar}\)</span>.</p>
-</div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-2">
+</section>
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <section id="exercise-content">
@@ -582,7 +583,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 \[
 (P, \o, \id)
 \]</div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-3">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <section id="exercise-content">
@@ -597,11 +598,10 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 <section class="tex2jax_ignore mathjax_ignore" id="functions-of-two-or-more-arguments">
 <h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Link to this heading">#</a></h1>
 <p>A program <span class="math notranslate nohighlight">\(p\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
-<div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<div class="proof definition tip admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
-<p>:class: tip
-Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
+<p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -638,7 +638,7 @@ is <em>undefined</em>.</p>
 <p>Then <span class="math notranslate nohighlight">\(\phifn_p^3(x,y,z) \simeq y\)</span> for all words <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>.
 (Here <span class="math notranslate nohighlight">\(\clearprog_1\)</span> and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> are programs that simply delete all the symbols in those registers.  We have seen <span class="math notranslate nohighlight">\(\clearprog_1\)</span>, and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> is similar.)</p>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-5">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <section id="exercise-content">
@@ -653,7 +653,7 @@ is <em>undefined</em>.</p>
 <p>(c) Show that we can go computably from <span class="math notranslate nohighlight">\(p\)</span> to <span class="math notranslate nohighlight">\(q\)</span>, and vice-versa.</p>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-6">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <section id="exercise-content">
@@ -678,8 +678,9 @@ k(x) = f(g(x), h(x))
 <section class="tex2jax_ignore mathjax_ignore" id="functions-of-zero-inputs">
 <h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Link to this heading">#</a></h1>
 <p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span></p>
+<section class="definition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
 \phifn^0_p (\ ) \simeq y
@@ -694,20 +695,21 @@ all registers empty, the register machine
 eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in R1 and all other
 registers
 empty.</p>
-</div>
 </section>
+</div></section>
 <section class="tex2jax_ignore mathjax_ignore" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Link to this heading">#</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
+<section class="definition-content" id="proof-content">
 <p>For any set <span class="math notranslate nohighlight">\(A\)</span>, the <em>characteristic function of <span class="math notranslate nohighlight">\(A\)</span></em> is the function <span class="math notranslate nohighlight">\(\chi_A\)</span> given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \chi_A(x) = \left\{ \begin{array}{ll} 1 &amp;\mbox{if $x\in A$} \\  0 &amp;\mbox{if $x\notin A$} \end{array}\right.
 \end{split}\]</div>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em><code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
-</div>
-<div class="admonition important">
+</section>
+</div><div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Our work will also involve other notions of “computable” besides <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability.<br />
 We have already seen
@@ -715,7 +717,7 @@ We have already seen
 But we will see <em>Turing maching computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the <code class="docutils literal notranslate"><span class="pre">1#</span></code> in the name “<code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable”.</p>
 <p>The notion which we’ll study the most is <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computability.</p>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-7">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-10">
 
 <p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
 <section id="exercise-content">
@@ -731,14 +733,14 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-8">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-11">
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <section id="exercise-content">
 <p>Is the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable set of words?</p>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-9">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-12">
 
 <p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
 <section id="exercise-content">
@@ -754,7 +756,7 @@ f(w) = \left\{
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-10">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-13">
 
 <p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
 <section id="exercise-content">
@@ -768,15 +770,15 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 <section class="tex2jax_ignore mathjax_ignore" id="computable-sets-and-computably-enumerable-sets">
 <h1>Computable sets and computably enumerable sets<a class="headerlink" href="#computable-sets-and-computably-enumerable-sets" title="Link to this heading">#</a></h1>
 <p>We have seen above the definition of a <em>computable</em> set of words.   We now have a definition which is different but related.  Both concepts are important in computability theory.</p>
-<div class="proof definition admonition" id="definition-11">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
+<div class="proof definition admonition" id="definition-14">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\(\phifn_p\)</span>.
 That is,</p>
 <p><span class="math notranslate nohighlight">\(W_p = \set{x : \phifn_p(x)\downarrow}\)</span>.</p>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq\words\)</span> is <em>computably enumerable</em> if there is some program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(A = W_p\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-12">
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-15">
 
 <p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
 <section id="exercise-content">
