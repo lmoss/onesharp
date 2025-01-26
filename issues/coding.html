@@ -482,6 +482,7 @@ We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span
 \[ 
 \pi(f(s_1, \ldots, s_n)) = \widehat{f}(\pi(s_1),\ldots, \pi(s_n)).
 \]</div>
+<p>An encoding of a structure has a lot of components, but to keep our notation short we usually abbreviate the whole thing by <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 </section>
 </div><p>Another way to say this is that an encoding of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is an isomorphic copy in which all parts of the structure are <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 <div class="tip admonition">
@@ -503,6 +504,23 @@ We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span
 </li>
 </ol>
 <p>This completes the definition.   There are other encodings of the same structure.  For example, we could drop the empty word from <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and adjust the rest of the encoding apparatus.   We also could decide to use <em>binary numbers</em>, and even there we have several options of how to regard binary numbers as <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.</p>
+</div>
+<div class="proof definition admonition" id="coding_what_for">
+<p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Suppose we are given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and an encoding <span class="math notranslate nohighlight">\(\pi\)</span> of it.</p>
+<p>A function <span class="math notranslate nohighlight">\(f: S^n\to S\)</span> is <em>computable relative to the encoding</em> if the isomorphic version of it is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
+<p>A relation <span class="math notranslate nohighlight">\(R\subseteq S^n\)</span> is <em>computable</em> or <em>decidable</em> if its isomorphic version is <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable.</p>
+</section>
+</div><div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let us return to the example of <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> and the unary encoding of it.</p>
+<ol class="arabic simple">
+<li><p>The addition function <span class="math notranslate nohighlight">\(f: N \times N \to N\)</span> is computable, where <span class="math notranslate nohighlight">\(f(n,m) = n+m\)</span>.  A program which shows this is
+{\tt move}<span class="math notranslate nohighlight">\({}_{1,2}\)</span>.</p></li>
+<li><p>As we’ll see later, basically every function encountered in standard mathematics is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p></li>
+<li><p>The following relations are decidable:  <span class="math notranslate nohighlight">\({ n : \mbox{ \)</span>n<span class="math notranslate nohighlight">\( is prime}}\)</span>, <span class="math notranslate nohighlight">\({ (n,m) : \mbox{ \)</span>n<span class="math notranslate nohighlight">\( divides \)</span>m<span class="math notranslate nohighlight">\(}}\)</span>.</p></li>
+</ol>
 </div>
 </section>
 
