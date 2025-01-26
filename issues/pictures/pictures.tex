@@ -2186,10 +2186,10 @@ $\begin{array}{l}
 
 \vfil\eject
 
-
+\usetikzlibrary {arrows.meta}
 
 \newlength{\R}\setlength{\R}{3.5cm}
-
+%\draw [-{Stealth[scale=2]}]
 \[
 \begin{tikzpicture}[bullet/.style={circle, fill, minimum size=2pt,
               inner sep=2pt, outer sep=0pt},nodes=bullet,    every edge/.style = {draw,->},scale=1.4]
@@ -2217,44 +2217,46 @@ $\begin{array}{l}
 
 \node (circ11) at (360:\R) [bullet,label=right:$11$] {};
 
-\path [->, thick] (circ1)  edge  (circ5);
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]   (circ1) -- (circ5);
 
-\path [->, thick] (circ2)  edge  (circ3);
+%\path [->, thick] (circ1)  edge  (circ5);
 
-
-\path [->, thick] (circ4)  edge  (circ2);
-
-\path [->, thick] (circ4)  edge  (circ6);
-
-\path [->, thick] (circ4)  edge  (circ7);
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}] (circ2)  --  (circ3);
 
 
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ4)  -- (circ1);
 
-\path [->, thick] (circ4)  edge  (circ9);
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ4)  --  (circ6);
 
-\path [->, thick] (circ3)  edge  (circ8);
-
-\path [->, thick] (circ4)  edge  (circ8);
-
-\path [->, thick] (circ4)  edge  (circ11);
-
-\path [->, thick] (circ11)  edge  (circ10);
-
-\path [->, thick] (circ6)  edge  (circ2);
-
-\path [->, thick] (circ8)  edge  (circ7);
-
-\path [->, thick] (circ10)  edge  (circ6);
-
-\path [->, thick] (circ10)  edge  (circ1);
-
-\path [->, thick] (circ9)  edge  (circ2);
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ4)  -- (circ7);
 
 
-\path [->, thick] (circ9)  edge  (circ10);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ4)   --   (circ9);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ3)   --   (circ8);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}] (circ4)   --   (circ8);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ4)   -- (circ11);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ11)   --   (circ10);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ6)  --   (circ2);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ8)   --   (circ7);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}] (circ10)   --  (circ6);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}] (circ10)   --   (circ1);
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}] (circ9)   --   (circ2);
 
 
-\path [->, thick] (circ7)  edge  (circ5);
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ9)   --  (circ10);
+
+
+\draw[arrows = {-Stealth[length=10pt, inset=5pt]}]  (circ7)   --   (circ5);
 
 % \draw [thick] (circ1) to (circ2) to (circ3)  to (circ4) to (circ5) to (circ6) to (circ7)to (circ8) to (circ1)to (circ3) to (circ5) to (circ7) to (circ1) to (circ4) to(circ7) to(circ2) to (circ5) to(circ8) to (circ3) to (circ6);
 
