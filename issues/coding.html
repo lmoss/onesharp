@@ -491,14 +491,18 @@ We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span
 \[
 \mathcal{N}  = (N, 0,s)
 \]</div>
-<p>be the most basic version of the natural numbers.  Here <span class="math notranslate nohighlight">\(N = \{0,1,2,\ldots\}\)</span>, <span class="math notranslate nohighlight">\(0\)</span> is a constant (a function symbol with <span class="math notranslate nohighlight">\(n_0 = 0\)</span> and with value <span class="math notranslate nohighlight">\(0\)</span>, and <span class="math notranslate nohighlight">\(s(n)= n+1\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>be the most basic version of the natural numbers.  Here <span class="math notranslate nohighlight">\(N = \{0,1,2,\ldots\}\)</span>, <span class="math notranslate nohighlight">\(0\)</span> is a constant (a function symbol with <span class="math notranslate nohighlight">\(n_0 = 0\)</span> and with value <span class="math notranslate nohighlight">\(0\)</span>), and <span class="math notranslate nohighlight">\(s(n)= n+1\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>We next define one particular encoding of this structure which we’ll call the <em>unary encoding</em>.</p>
-<ol class="arabic simple">
-<li><p>We take <span class="math notranslate nohighlight">\(\widehat{S} = \{ ```1```, ```11```, ```111```, \ldots\}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\pi(```1```^{n}) = n -1\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\widehat{0} = ```1```\)</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">\widehat{s}(</span></code>1<code class="docutils literal notranslate"><span class="pre">{}^n)</span> <span class="pre">=</span> </code>1```^{n+1}$.</p></li>
+<ol class="arabic">
+<li><p>We take <span class="math notranslate nohighlight">\(\widehat{S} = \{\varepsilon, \mbox{\tt 1}, \mbox{\tt 11}, \mbox{\tt 111}, \ldots\}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi(\mbox{\tt 1}^n) = n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\widehat{0} = \varepsilon\)</span>.</p></li>
+<li><div class="highlight-\widehat{s}(\mbox{\tt notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
 </ol>
+<p>This completes the definition.   There are other encodings of the same structure.  For example, we could drop the empty word from <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and adjust the rest of the encoding apparatus.   We also could decide to use <em>binary numbers</em>, and even there we have several options of how to regard binary numbers as <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.</p>
 </div>
 </section>
 
