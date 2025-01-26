@@ -205,6 +205,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computatble functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 </ul>
@@ -449,6 +450,7 @@
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k">The halting set K</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and Proof</a></li>
 </ul>
 
             </nav>
@@ -752,15 +754,38 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
-\mbox{Prog} &amp; = &amp; \mbox{the programs of} {\tt 1#}\\
-K_0 &amp; = &amp; \mbox{the programs of} {\tt 1#} \mbox{which halt when run on the all empty registers}\\
-K &amp; = &amp; \mbox{the programs of} {\tt 1#} \mbox{which halt when run on themselves} \\
-Fin &amp; = &amp; \mbox{the programs of} {\tt 1#} \mbox{such that the domain of $[\![p]\]$ is finite} \\   
-Inf &amp; = &amp; \mbox{the programs of} {\tt 1#} \mbox{such that the domain of $[\![p]\]$ is infinite} \\      
-Tot &amp; = &amp; \mbox{the program of} {\tt 1#} \mbox{such that $[\![p]\!]$ is a total function} \\ 
+\mbox{Prog} &amp; = &amp; \mbox{the programs} \\
+K_0 &amp; = &amp; \mbox{the programs which halt when run on the all empty registers}\\
+K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
+Fin &amp; = &amp; \mbox{the programs $p# such that the domain of $[\![p]\]$ is finite} \\   
+Inf &amp; = &amp; \mbox{the programs $p# such that the domain of $[\![p]\]$ is infinite} \\      
+Tot &amp; = &amp; \mbox{the program  $p# such that $[\![p]\!]$ is a total function} \\ 
 Equiv &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="truth-and-proof">
+<h1>Truth and Proof<a class="headerlink" href="#truth-and-proof" title="Link to this heading">#</a></h1>
+<p>We would like to ask about the set of <em>sentences in the language of ordinary mathematics</em> and as about the problem of deciding whether a given sentence is true or not.</p>
+<p>There are a few reasons why we are not going to directly do this.</p>
+<ol class="arabic simple">
+<li><p>We really would like to ask about sentences in natural language which are mathematically clear, and this is not so easy to describe mathematically in the first place.</p></li>
+<li><p>Even if we could do this, we still have the problem that for some important sentences <span class="math notranslate nohighlight">\(S\)</span>, it is not exactly clear what it means for <span class="math notranslate nohighlight">\(S\)</span> to be true.  For example, we have sentences about sets such as the <em>Continuum Hypothesis</em> where it is disputed whether they are intuitively true or not, or whether this even makes sense to ask about.</p></li>
+</ol>
+<p>Given these problems, there are two ways to <em>back off</em> in order to ask and answer related questions.</p>
+<ol class="arabic simple">
+<li><p>We could fix a first-order structure of some importance in mathematics and only look at the sentences in <em>first order logic</em> which are pertinent to that structure.  The canonical choice here would be the structure</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{N} = (N, 0, 1, +, \times)
+\]</div>
+<p>of the natural numbers with the operations shown above.     But we could also ask about other structures, such as the same one with only <span class="math notranslate nohighlight">\(+\)</span>, or a <em>model of the axioms of set theory</em>, or some fragment of set theory.</p>
+<ol class="arabic simple" start="2">
+<li><p>We could replace <em>truth</em> by <em>provability</em> in our discussion above.  Given some set <span class="math notranslate nohighlight">\(T\)</span> of axioms, especially some set <span class="math notranslate nohighlight">\(T\)</span> with importance in the foundations of mathematics (like standard set theory), we can ask about provability from <span class="math notranslate nohighlight">\(T\)</span>.   Is the set of provable sentences decidable?   We could also ask this when <span class="math notranslate nohighlight">\(T\)</span> is the empty set; this means we would be asking about the set of sentences provable by <em>pure logic alone</em>, without any axioms.<br />
+This, too, is an interesting thing to do.</p></li>
+</ol>
+<p>We are going to investigate both of these ``back off’’ questions in some detail.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -837,6 +862,7 @@ Equiv &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongl
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k">The halting set K</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and Proof</a></li>
 </ul>
 
   </nav></div>
