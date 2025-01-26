@@ -63,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/coding';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -176,11 +178,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Simple programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">When does a program halt?</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
+
 
 
 
@@ -198,6 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is coding?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 </ul>
@@ -205,10 +210,20 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for Arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
+
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+
+
 
 
 </ul>
@@ -231,14 +246,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Logic</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -439,7 +446,38 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/coding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="what-is-coding">
 <h1>What is coding?<a class="headerlink" href="#what-is-coding" title="Permalink to this heading">#</a></h1>
+<p>At this point, we have seen a bit about one particular model of computation, leading to the definition of a <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable function.   We also saw some mathematically natural algorithmic problems having to do with graphs, tiling, dominoes, and matricies.  What we want to do at this point is to connect these two discussions.
+We also want to say in a more formal way what it means for one or another algorithmic problem to be decidable or undecidable.</p>
+<div class="proof definition admonition" id="structure">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>A <em>structure</em> is a tuyple</p>
+<div class="math notranslate nohighlight">
+\[ 
+\mathcal{S} = (S,R_1, \ldots, R_n, f_1, \ldots, f_m)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is a set, <span class="math notranslate nohighlight">\(R_1, \ldots, R_n\)</span> are relations on <span class="math notranslate nohighlight">\(S\)</span>, each of some finite number
+<span class="math notranslate nohighlight">\(n_R\geq 1\)</span> of variables, and <span class="math notranslate nohighlight">\(f_1, \ldots, f_m\)</span> are functions on <span class="math notranslate nohighlight">\(S\)</span>, each of some finite number
+<span class="math notranslate nohighlight">\(n_f \geq 0\)</span> of variables.   Note that we allow <span class="math notranslate nohighlight">\(n_f = 0\)</span>, and in this case <span class="math notranslate nohighlight">\(f\)</span> is called a <em>constant symbol</em>.</p>
 </div>
+</div><p>This is the standard notion of a <em>first-order structure</em> from mathematical logic.</p>
+<p>The kinds of problems that interest us are where we are given a type of mathematical problem represented by a <em>structure</em> <span class="math notranslate nohighlight">\(S\)</span>, and a <em>target set</em> <span class="math notranslate nohighlight">\(T\subseteq S\)</span>.  We are interested to know whether a given <span class="math notranslate nohighlight">\(s\in S\)</span> belongs to <span class="math notranslate nohighlight">\(T\)</span> or not.</p>
+<div class="proof definition admonition" id="coding">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>Given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-<em>encoding</em> of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> consists of</p>
+<ol class="arabic simple">
+<li><p>A set <span class="math notranslate nohighlight">\(\widehat{S} \subset Words\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words. <span class="math notranslate nohighlight">\(\widehat{S}\)</span> must be decidable.</p></li>
+<li><p>A function <span class="math notranslate nohighlight">\(\pi: S \to \widehat{S}\)</span> called the <em>coding map</em>.</p></li>
+<li><p>For each relation <span class="math notranslate nohighlight">\(R\subseteq S^n\)</span> a relation <span class="math notranslate nohighlight">\(\widehat{R}\subseteq (\widehat{S})^n\)</span>.
+We require that</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 
+R(s_1, \ldots, s_n) \mbox{ iff} \widehat{R}(\pi(s_1),\ldots, \pi(s_n)).
+\]</div>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
