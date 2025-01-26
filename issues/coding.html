@@ -62,6 +62,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/coding';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -442,6 +444,62 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/coding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="what-is-coding">
 <h1>What is coding?<a class="headerlink" href="#what-is-coding" title="Link to this heading">#</a></h1>
+<p>At this point, we have seen a bit about one particular model of computation, leading to the definition of a <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable function.   We also saw some mathematically natural algorithmic problems having to do with graphs, tiling, dominoes, and matricies.  What we want to do at this point is to connect these two discussions.
+We also want to say in a more formal way what it means for one or another algorithmic problem to be decidable or undecidable.</p>
+<div class="proof definition admonition" id="structure">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
+<section class="definition-content" id="proof-content">
+<p>A <em>structure</em> is a tuple</p>
+<div class="math notranslate nohighlight">
+\[ 
+\mathcal{S} = (S,R_1, \ldots, R_n, f_1, \ldots, f_m)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is a set, <span class="math notranslate nohighlight">\(R_1, \ldots, R_n\)</span> are relations on <span class="math notranslate nohighlight">\(S\)</span>, each of some finite number
+<span class="math notranslate nohighlight">\(n_R\geq 1\)</span> of variables, and <span class="math notranslate nohighlight">\(f_1, \ldots, f_m\)</span> are functions on <span class="math notranslate nohighlight">\(S\)</span>, each of some finite number
+<span class="math notranslate nohighlight">\(n_f \geq 0\)</span> of variables.   Note that we allow <span class="math notranslate nohighlight">\(n_f = 0\)</span>, and in this case <span class="math notranslate nohighlight">\(f\)</span> is called a <em>constant symbol</em>.</p>
+</section>
+</div><p>This is the standard notion of a <em>first-order structure</em> from mathematical logic.</p>
+<p>The kinds of problems that interest us are where we are given a type of mathematical problem represented by a <em>structure</em> <span class="math notranslate nohighlight">\(S\)</span>, and a <em>target set</em> <span class="math notranslate nohighlight">\(T\subseteq S\)</span>.  We are interested to know whether a given <span class="math notranslate nohighlight">\(s\in S\)</span> belongs to <span class="math notranslate nohighlight">\(T\)</span> or not.</p>
+<div class="proof definition admonition" id="coding">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-<em>encoding</em> of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> consists of</p>
+<ol class="arabic simple">
+<li><p>A set <span class="math notranslate nohighlight">\(\widehat{S} \subset Words\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words. <span class="math notranslate nohighlight">\(\widehat{S}\)</span> must be decidable.</p></li>
+<li><p>A one-to-one function <span class="math notranslate nohighlight">\(\pi: S \to \widehat{S}\)</span> called the <em>coding map</em>.</p></li>
+<li><p>For each relation <span class="math notranslate nohighlight">\(R\subseteq S^n\)</span> a relation <span class="math notranslate nohighlight">\(\widehat{R}\subseteq (\widehat{S})^n\)</span>.
+We require that <span class="math notranslate nohighlight">\(\widehat{R}\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.  We also require that</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 
+R(s_1, \ldots, s_n) \mbox{ iff } \widehat{R}(\pi(s_1),\ldots, \pi(s_n)).
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p>For each function <span class="math notranslate nohighlight">\(f: S^n\to S\)</span> a function <span class="math notranslate nohighlight">\(\widehat{f}:  (\widehat{S})^n\to \widehat{S}\)</span>.
+We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.  We also require that</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 
+\pi(f(s_1, \ldots, s_n)) = \widehat{f}(\pi(s_1),\ldots, \pi(s_n)).
+\]</div>
+</section>
+</div><p>Another way to say this is that an encoding of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is an isomorphic copy in which all parts of the structure are <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{N}  = (N, 0,s)
+\]</div>
+<p>be the most basic version of the natural numbers.  Here <span class="math notranslate nohighlight">\(N = \{0,1,2,\ldots\}\)</span>, <span class="math notranslate nohighlight">\(0\)</span> is a constant (a function symbol with <span class="math notranslate nohighlight">\(n_0 = 0\)</span> and with value <span class="math notranslate nohighlight">\(0\)</span>, and <span class="math notranslate nohighlight">\(s(n)= n+1\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>We next define one particular encoding of this structure which we’ll call the <em>unary encoding</em>.</p>
+<ol class="arabic simple">
+<li><p>We take <span class="math notranslate nohighlight">\(\widehat{S} = \{ ```1```, ```11```, ```111```, \ldots\}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi(```1```^{n}) = n -1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\widehat{0} = ```1```\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\widehat{s}(</span></code>1<code class="docutils literal notranslate"><span class="pre">{}^n)</span> <span class="pre">=</span> </code>1```^{n+1}$.</p></li>
+</ol>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
