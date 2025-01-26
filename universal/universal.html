@@ -1277,13 +1277,27 @@ someone else in the class.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
 <section id="exercise-content">
-<p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
-<p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
+<p>Show that the sets <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(K_0\)</span> are computably enumerable, where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+K &amp; = &amp; \{ p : [\![ p ]\!](p)\downarrow}\\
+K_0 &amp; = &amp; \{ p : [\![ p ]\!]()\downarrow}\\
+\end{array}
+\end{split}\]</div>
 </section>
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
+<section id="exercise-content">
+<p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
+<p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
+</section>
+</div>
+<div class="exercise admonition" id="universal/universal-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses R1 itself (no other registers).
 This exercise requires a trick, since there is no program like <code class="docutils literal notranslate"><span class="pre">diag</span></code> which only uses one register.</p>
