@@ -494,15 +494,12 @@ We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span
 \]</div>
 <p>be the most basic version of the natural numbers.  Here <span class="math notranslate nohighlight">\(N = \{0,1,2,\ldots\}\)</span>, <span class="math notranslate nohighlight">\(0\)</span> is a constant (a function symbol with <span class="math notranslate nohighlight">\(n_0 = 0\)</span> and with value <span class="math notranslate nohighlight">\(0\)</span>), and <span class="math notranslate nohighlight">\(s(n)= n+1\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>We next define one particular encoding of this structure which we’ll call the <em>unary encoding</em>.</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>We take <span class="math notranslate nohighlight">\(\widehat{S} = \{\varepsilon, {\tt 1}, {\tt 11}, {\tt 111}, \ldots\}\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\pi({\tt 1}^n) = n\)</span>.   That is, <span class="math notranslate nohighlight">\(\pi(\varepsilon) = 0\)</span>, <span class="math notranslate nohighlight">\(\pi({\tt 1}) = 1\)</span>,
 <span class="math notranslate nohighlight">\(\pi({\tt 11}) = 2\)</span>, etc.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\widehat{0} = \varepsilon\)</span>.</p></li>
-<li><div class="highlight-$\widehat{s}({\tt notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</li>
+<li><p><span class="math notranslate nohighlight">\(\widehat{s}({\tt 1}^n) = {\tt 1}^{n+1}\)</span>.</p></li>
 </ol>
 <p>This completes the definition.   There are other encodings of the same structure.  For example, we could drop the empty word from <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and adjust the rest of the encoding apparatus.   We also could decide to use <em>binary numbers</em>, and even there we have several options of how to regard binary numbers as <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.</p>
 </div>
@@ -539,7 +536,7 @@ Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 <li><p>Find a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encoding of <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p></li>
 <li><p>Show that the addition function on the integers is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable relative to your encoding.</p></li>
 </ol>
-<p>This might be messy and/or tedious, because you have to exhibit ``1#``` programs as part of the encoding and also to represent addition.  It is fine to be hand-wavy here.  Soon we will have tools to make it easier to actually write programs.  And for something tedious, it is usually sufficient to convince yourself that you <em>could</em> write the program.</p>
+<p>This might be messy and/or tedious, because you have to exhibit <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs as part of the encoding and also to represent addition.  It is fine to be hand-wavy here.  Soon we will have tools to make it easier to actually write programs.  And for something tedious, it is usually sufficient to convince yourself that you <em>could</em> write the program.</p>
 </section>
 </div>
 </section>
