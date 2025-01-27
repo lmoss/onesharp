@@ -472,9 +472,9 @@ we we can tile the first quadrant of the plane in such a way that
 the corner,
 and matching edges have the same color.  This is what we mean by a <em>proper</em> tiling of the first quadrant.</p>
 <p>A <em>finite, pointed tile set</em>
-<span class="math notranslate nohighlight">\((\TT,t_0)\)</span>
-is a finite set <span class="math notranslate nohighlight">\(\TT\)</span> of tiles with a fixed <em>distinguished tile</em>
-<span class="math notranslate nohighlight">\(t_0\in\TT\)</span>.
+<span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>
+is a finite set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of tiles with a fixed <em>distinguished tile</em>
+<span class="math notranslate nohighlight">\(t_0\in\mathcal{T}\)</span>.
 When we talk about tile sets we always will mean a
 finite,
 pointed tile set.</p>
@@ -507,8 +507,8 @@ p\in \overline{B} \quadiff   \mathcal{T}(p) \in \Tile.
 </section>
 </div><div class="attention admonition">
 <p class="admonition-title">Our goal</p>
-<p>A computable and total function <span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>
-such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(\TT(p)\)</span>
+<p>A computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
+such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
 <em>can</em> tile the quadrant.</p>
 </div>
 </section>
@@ -557,10 +557,11 @@ We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
 In these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
 not the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbol <span class="math notranslate nohighlight">\(\one\)</span>.</p>
-<p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\TT(\one\hash\one\hash\hash\hash\hash)\)</span>:</p>
+<p>Here is a finite part of a tiling of the first quadrant with
+<span class="math notranslate nohighlight">\(\mathcal{T}\)</span>(<code class="docutils literal notranslate"><span class="pre">1#1####</span></code>):</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t7-07.png?raw=1" width="100%" height="100%">
 </div>
-<p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT(p)\)</span>, then <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
+<p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="some-observations">
 <h1>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h1>
