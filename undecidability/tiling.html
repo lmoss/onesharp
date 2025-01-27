@@ -520,7 +520,7 @@ we saw tiles whose sides had actual colors, such as the eight tiles below
 Here, we are going to make a change.  For a given program <span class="math notranslate nohighlight">\(p\)</span>, we are going to need <span class="math notranslate nohighlight">\(8 + (n+1)= n + 9\)</span> colors.  Since our eyes can only reliably distinguish a (small) finite number of colors, we are going to use numbers as some of our colors.  (Recall that the “colors” can be anything.)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Further, we have an issue with the numeral <span class="math notranslate nohighlight">\(1\)</span> and the <code class="docutils literal notranslate"><span class="pre">1#</span></code> symbol <code class="docutils literal notranslate"><span class="pre">1</span></code>.  In order to not avoid a potential confusion, we
+<p>Further, we have an issue with the numeral <span class="math notranslate nohighlight">\(1\)</span> and the <code class="docutils literal notranslate"><span class="pre">1#</span></code> symbol <code class="docutils literal notranslate"><span class="pre">1</span></code>.  In order to avoid a potential confusion, we
 use two fonts.  The symbol <span class="math notranslate nohighlight">\(1\)</span> is used for the line number in a program, and the symbol <code class="docutils literal notranslate"><span class="pre">1</span></code> is used for the symbol which we put in the registers of our machine.</p>
 </div>
 <p>We are going to use line numbers in <span class="math notranslate nohighlight">\(p\)</span> as colors,
@@ -552,7 +552,7 @@ We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span
 <p>This completes the definition of the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program <span class="math notranslate nohighlight">\(\one\hash\one\hash\hash\hash\hash\)</span>,
+<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program  <code class="docutils literal notranslate"><span class="pre">1#1####</span></code>, ,
 <span class="math notranslate nohighlight">\(\TT(p)\)</span> would have the 18 tiles that come for free, and also the two tiles below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
 In these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
