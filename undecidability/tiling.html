@@ -589,10 +589,10 @@ can have a tile where  <span class="math notranslate nohighlight">\(n+1\)</span>
 <p class="admonition-title">Restatement of our goal</p>
 <p><span class="math notranslate nohighlight">\(p\)</span> runs forever (on all empty registers)
 if and only if
-<span class="math notranslate nohighlight">\(\TT(p)\)</span> can tile the first quadrant.</p>
+<span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the first quadrant.</p>
 <p><span class="math notranslate nohighlight">\(p\)</span> halts (on all empty registers)
 if and only if
-<span class="math notranslate nohighlight">\(\TT(p)\)</span> cannot tile the first quadrant.</p>
+<span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
 </div>
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
@@ -610,24 +610,24 @@ This shows part a tiling, together with the words encoded in the first four rows
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.
 Suppose that row 67 of a tiling using <span class="math notranslate nohighlight">\(\TT(p)\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
-and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\one^8\hash\hash\hash\)</span>.
+and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8```###```.
 In view of the fact that 131 + 8 = 139,
-the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
+the instruction tile in the first column of row \)</span>68$ is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
 <p>Thus, row 68 must be the top row below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
 <div class="tip admonition">
 <p class="admonition-title">The point</p>
-<p>The word encoded in row 68  is <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.
+<p>The word encoded in row 68  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
 This is exactly the same as
 the word encoded in row 67.</p>
 <p>Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
 <hr class="docutils" />
-<p>A similar remark applies for instructions in <span class="math notranslate nohighlight">\(p\)</span> which are back-transfers <span class="math notranslate nohighlight">\(\one^k\hash^4\)</span>.</p>
+<p>A similar remark applies for instructions in <span class="math notranslate nohighlight">\(p\)</span> which are back-transfers <code class="docutils literal notranslate"><span class="pre">1####</span></code>.</p>
 <hr class="docutils" />
-<p>We continue with facts along the same lines for the instructions
-<span class="math notranslate nohighlight">\(\one\hash\)</span> and <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.  Since the lines of argument are similar, we only discuss the second of these.
+<p>We continue with facts along the same lines for the instructions <code class="docutils literal notranslate"><span class="pre">1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
+Since the lines of argument are similar, we only discuss the second of these.
 Suppose that row 4743 of some tiling of the quadrant starts out
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
 <p>and instruction 24 of the program is <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.  Then the first tile in row 4744 must be
@@ -668,7 +668,7 @@ at least in the case when register <span class="math notranslate nohighlight">\(
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
-<p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\TT(p)\)</span>
+<p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
 and also the run of <span class="math notranslate nohighlight">\(p\)</span> with nothing in any register.</p>
 <p>For all <span class="math notranslate nohighlight">\(s\)</span>, exactly one of the following two things happen.</p>
 <p>(a) The program halts in <span class="math notranslate nohighlight">\(\leq s\)</span> steps,
