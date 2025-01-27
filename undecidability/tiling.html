@@ -461,12 +461,12 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/tiling.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tiling">
 <h1>Tiling<a class="headerlink" href="#tiling" title="Link to this heading">#</a></h1>
-<p>In this notebook we prove the undecidability of the tiling problem.</p>
-<p>Recall that in this problem we are given a finite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, and the problem is to determine whether there is a proper tiling of the first quadrant of the plane using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   A <em>tile</em> is a square with <em>colors</em> on the four sides.
+<p>In this section we prove the undecidability of the tiling problem.<br />
+We are given a finite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, and the problem is to determine whether there is a proper tiling of the first quadrant of the plane using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   A <em>tile</em> is a square with <em>colors</em> on the four sides.
 The colors can be anything, of course.</p>
 <p>The main problem  is   whether,
 given a tile
-set  <span class="math notranslate nohighlight">\(\TT\)</span>,
+set  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
 we we can tile the first quadrant of the plane in such a way that
 <span class="math notranslate nohighlight">\(t_0\)</span> goes on
 the corner,
@@ -481,9 +481,9 @@ pointed tile set.</p>
 <div class="tip admonition">
 <p class="admonition-title">Notation</p>
 <p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets.
-Let <span class="math notranslate nohighlight">\(\Tile\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\TT\)</span>  with the property that
+Let <span class="math notranslate nohighlight">\(\Tile\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
 the
-the first quadrant can be properly tiled with <span class="math notranslate nohighlight">\(\TT\)</span>.</p>
+the first quadrant can be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
 </div>
 <p>In our work, we are interested in programs <span class="math notranslate nohighlight">\(p\)</span> with the following features:</p>
 <p>(a) <span class="math notranslate nohighlight">\(p\)</span> is tidy.</p>
@@ -514,14 +514,14 @@ such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <spa
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-mathcal-t-p">
 <h1>The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span><a class="headerlink" href="#the-definition-of-mathcal-t-p" title="Link to this heading">#</a></h1>
-<p>This section gives the details on the function <span class="math notranslate nohighlight">\(\TT\)</span>.  Before we present it, we need a comment on the set of color which we are going to use.  In our <a class="reference internal" href="#content:firstTiles"><span class="xref myst">earlier work on tiling</span></a>,
+<p>This section gives the details on the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  Before we present it, we need a comment on the set of color which we are going to use.  In our <a class="reference internal" href="#content:firstTiles"><span class="xref myst">earlier work on tiling</span></a>,
 we saw tiles whose sides had actual colors, such as the eight tiles below
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
 Here, we are going to make a change.  For a given program <span class="math notranslate nohighlight">\(p\)</span>, we are going to need <span class="math notranslate nohighlight">\(8 + (n+1)= n + 9\)</span> colors.  Since our eyes can only reliably distinguish a (small) finite number of colors, we are going to use numbers as some of our colors.  (Recall that the “colors” can be anything.)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Further, we have an issue with the numeral <span class="math notranslate nohighlight">\(1\)</span> and the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbol <span class="math notranslate nohighlight">\(\one\)</span>.  In order to not avoid a potential confusion, we
-use two fonts.  The symbol <span class="math notranslate nohighlight">\(1\)</span> is used for the line number in a program, and the symbol <span class="math notranslate nohighlight">\(\one\)</span> is used for the symbol which we put in the registers of our machine.</p>
+<p>Further, we have an issue with the numeral <span class="math notranslate nohighlight">\(1\)</span> and the <code class="docutils literal notranslate"><span class="pre">1#</span></code> symbol <code class="docutils literal notranslate"><span class="pre">1</span></code>.  In order to not avoid a potential confusion, we
+use two fonts.  The symbol <span class="math notranslate nohighlight">\(1\)</span> is used for the line number in a program, and the symbol <code class="docutils literal notranslate"><span class="pre">1</span></code> is used for the symbol which we put in the registers of our machine.</p>
 </div>
 <p>We are going to use line numbers in <span class="math notranslate nohighlight">\(p\)</span> as colors,
 and so if <span class="math notranslate nohighlight">\(p\)</span> has <span class="math notranslate nohighlight">\(n\)</span> lines, we want <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(n\)</span>
@@ -609,7 +609,7 @@ is the word composed of all symbols on the
 This shows part a tiling, together with the words encoded in the first four rows (on the right).
 </div>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.
-Suppose that row 67 of a tiling using <span class="math notranslate nohighlight">\(\TT(p)\)</span> is
+Suppose that row 67 of a tiling using <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
 and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8```###```.
 In view of the fact that 131 + 8 = 139,
@@ -631,7 +631,7 @@ the word encoded in row 67.</p>
 Since the lines of argument are similar, we only discuss the second of these.
 Suppose that row 4743 of some tiling of the quadrant starts out
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
-<p>and instruction 24 of the program is <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.  Then the first tile in row 4744 must be
+<p>and instruction 24 of the program is <code class="docutils literal notranslate"><span class="pre">1##</span></code>. Then the first tile in row 4744 must be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t12-12.png?raw=1" width="100%" height="100%">
 What are the next tiles in row 4744?
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%"></p>
@@ -710,7 +710,7 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 
 <p class="admonition-title"><span class="caption-number">Exercise 66 </span></p>
 <section id="exercise-content">
-<p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\TT(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\TT\)</span> to only use a fixed finite set of colors?</p>
+<p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
 <div class="exercise admonition" id="undecidability/tiling-exercise-3">
