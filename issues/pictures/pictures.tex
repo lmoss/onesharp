@@ -14,6 +14,8 @@
  
   % pdftocairo  -x 50 -y 50  -H 580 -f 55 -l 55 -png pictures.pdf 
   
+    % pdftocairo  -x 50 -y 50  -H 540 -f 56 -l 56 -png pictures.pdf 
+  
 \documentclass[12pt]{article}
 
 %% see below for how these were made with pdf2cairo
@@ -2591,20 +2593,43 @@ $
 
 
 
-
-
-\end{document}
-
-\begin{flushleft}
-$\begin{array}l}
-
-\end{array}$
-\end{flushleft}
-
 \vfil\eject
 
+\begin{flushleft}
+\begin{tikzpicture}
+ \def\radius{1.4cm}
+  \pgfmathsetseed{1040}
+  \draw
+    plot[
+       %smooth cycle,
+       samples=500,
+       domain=0:360*1.4,
+       variable=\t,
+    ]
+      (\t + rand*5:{\radius*(1 + rand*.125)})
+  ;
+\coordinate (O) at (0,0);
+\coordinate (1) at (0,.5);
+\coordinate (2) at (0,1);
+
+\draw (2) circle (3.5);
+\draw (1) circle (2.5);
+%\draw (O) circle (1.5);
+
+\node at (0,3.75) {\small Not-even-in-principle};
+\node at (0,3.25) {\small Computable};
 
 
+\node at (0,2.25) {\small In Principle};
+\node at (0,1.75) {\small Computable};
+
+\node at (0,0.35) {\small In Practice};
+\node at (0, -.15) {\small Computable};
+\node at (0,-.55) {\small As of Now};
+\end{tikzpicture}
+\end{flushleft}
+
+\end{document}
 
 \begin{flushleft}
 $\begin{array}l}

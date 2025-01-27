@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  26 JAN 2025 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  26 JAN 2025 19:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1017,26 +1017,26 @@ File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfarrowlinewidth=\dimen261
 )
 \R=\skip58
- [54] [55] (./pictures.aux) ) 
+ [54] [55] [56] (./pictures.aux) ) 
 Here is how much of TeX's memory you used:
- 17591 strings out of 480608
- 368756 string characters out of 5903631
- 608043 words of memory out of 5000000
- 33124 multiletter control sequences out of 15000+600000
- 547411 words of font info for 73 fonts, out of 8000000 for 9000
+ 18705 strings out of 480608
+ 398076 string characters out of 5903631
+ 638695 words of memory out of 5000000
+ 34236 multiletter control sequences out of 15000+600000
+ 548826 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,18n,76p,451b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvip
-s/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/px
-sy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pictures.pdf (55 pages, 79961 bytes).
+{/usr/local/texlive/2020/texmf-dist/fonts/enc
+/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfon
+ts/pxsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi
+.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on pictures.pdf (56 pages, 87217 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
+ 214 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
