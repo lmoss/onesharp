@@ -639,31 +639,32 @@ What are the next tiles in row 4744?
 <span class="sd-summary-text">Click for the answer.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t14-14.png?raw=1" width="100%" height="100%">
 </div>
-</details><p>The word encoded in row 4744 is 1##1#.
-This is exactly the word encoded in row 4743, with # added at the end.</p>
-<p>This shows that we have implemented the 1## instructions correctly.</p>
+</details><p>The word encoded in row 4744 is <code class="docutils literal notranslate"><span class="pre">1##1#</span></code>.
+This is exactly the word encoded in row 4743, with <code class="docutils literal notranslate"><span class="pre">#</span></code> added at the end.</p>
+<p>This shows that we have implemented the <code class="docutils literal notranslate"><span class="pre">1##</span></code> instructions correctly.</p>
 <hr class="docutils" />
 <p>Finally, let’s get one last parallel fact, this time for the case instruction. Suppose again that row 4743 of some tiling of the quadrant starts out
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
-<p>But now uppose that line 24 of the program is the case instruction <span class="math notranslate nohighlight">\(\one\hash\hash\hash\hash\hash\)</span>.
+<p>But now uppose that line 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>
 Then the first tile in row 25 can be any of the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"></p>
 <p>So the situation is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t16-16.png?raw=1" width="100%" height="100%"></p>
 <p>We cannot have the symbol above the blank to be as below
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%"></p>
-<p>This is because the symbols in the middle of row 4744 have to be <span class="math notranslate nohighlight">\(\one\)</span>, <span class="math notranslate nohighlight">\(\hash\)</span>, or ``blank.’’  So there would be no way to match the heart symbol at the end.</p>
-<p>We must have all blanks on the far right, and then next to that a tiles with two <span class="math notranslate nohighlight">\(\one\)</span>s:</p>
+<p>This is because the symbols in the middle of row 4744 have to be
+<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, or ``blank.’’ So there would be no way to match the heart symbol at the end.</p>
+<p>We must have all blanks on the far right, and then next to that a tiles with two <code class="docutils literal notranslate"><span class="pre">1</span></code>s:</p>
 <p>We now know the last tiles before the blank tiles in row 4744:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
 <p>Indeed, the whole row has to be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%"></p>
-<p>The word encoded in row 4744  is <span class="math notranslate nohighlight">\(\hash\hash\one\)</span>.</p>
+<p>The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##</span></code>.</p>
 <p>This is exactly
-the word encoded in row 4743, with  the first symbol (a <span class="math notranslate nohighlight">\(\one\)</span>) deleted.</p>
+the word encoded in row 4743, with  the first symbol (a <code class="docutils literal notranslate"><span class="pre">1</span></code>) deleted.</p>
 <p>And the instruction to go to is 26 = 24 + 2.
-So we have implemented <span class="math notranslate nohighlight">\(\one\hash^5\)</span> correctly,
-at least in the case when register <span class="math notranslate nohighlight">\(1\)</span> starts with a <span class="math notranslate nohighlight">\(\one\)</span>.</p>
+So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
+at least in the case when register <span class="math notranslate nohighlight">\(1\)</span> starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
@@ -689,21 +690,21 @@ and then all blanks.</p>
 <h1>The converse<a class="headerlink" href="#the-converse" title="Link to this heading">#</a></h1>
 <p>We conclude our work on tiling by showing that
 <span class="math notranslate nohighlight">\(\Tile \leq_m \overline{K}_{empty}\)</span>.
-Given a pointed tile set <span class="math notranslate nohighlight">\(\TT\)</span>,
-make a program  <span class="math notranslate nohighlight">\(f(\TT)\)</span> such that
-running <span class="math notranslate nohighlight">\(f(\TT)\)</span> on all empty registers
+Given a pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
+make a program  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> such that
+running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on all empty registers
 using the <span class="math notranslate nohighlight">\(\mu\)</span>-operator
 to look for some number <span class="math notranslate nohighlight">\(n\)</span>
-such that  <span class="math notranslate nohighlight">\(\TT\)</span> <em>cannot</em> tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
+such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em>cannot</em> tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
 <hr class="docutils" />
-<p>If <span class="math notranslate nohighlight">\(\TT\)</span> has a tiling, the program <span class="math notranslate nohighlight">\(f(\TT)\)</span> never halts.
-So <span class="math notranslate nohighlight">\(f(\TT)\in \overline{B}\)</span>.</p>
-<p>And (crucially) if <span class="math notranslate nohighlight">\(\TT\)</span> has no tiling of the whole quadrant,
+<p>If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has a tiling, the program <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> never halts.
+So <span class="math notranslate nohighlight">\(f(\mathcal{T})\in \overline{B}\)</span>.</p>
+<p>And (crucially) if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
 then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
-<span class="math notranslate nohighlight">\(\TT\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
-<p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\TT)}(\ )\downarrow\)</span>.</p>
+<span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
+<p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\mathcal{T})}(\ )\downarrow\)</span>.</p>
 <div class="exercise admonition" id="undecidability/tiling-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 65 </span></p>
