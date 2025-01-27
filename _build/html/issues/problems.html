@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/problems';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What is coding?" href="coding.html" />
+    <link rel="next" title="Computatble functions on encoded structures" href="coding.html" />
     <link rel="prev" title="Computability" href="issues.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -203,7 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="coding.html">What is coding?</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computatble functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
@@ -445,10 +447,9 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#below-i-get-us-started-on-this-by-reviewing-a-bit-on-lists-and-matrices-in-python">Below I get us started on this by reviewing a bit on lists and matrices in Python</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k">The halting set K</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 
             </nav>
@@ -620,8 +621,7 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </ol>
 </div>
 </div>
-<div class="section" id="below-i-get-us-started-on-this-by-reviewing-a-bit-on-lists-and-matrices-in-python">
-<h2>Below I get us started on this by reviewing a bit on lists and matrices in Python<a class="headerlink" href="#below-i-get-us-started-on-this-by-reviewing-a-bit-on-lists-and-matrices-in-python" title="Permalink to this heading">#</a></h2>
+<p>In the cells below I get us started on this by reviewing a bit on lists and matrices in Python</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1"># this is a 3x3 matrix; it&#39;s a list of 3 lists of length 3 of numbers</span>
@@ -745,6 +745,47 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </div>
 </div>
 </div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-halting-set-k">
+<h1>The halting set K<a class="headerlink" href="#the-halting-set-k" title="Permalink to this heading">#</a></h1>
+<p>We also want to study a few problems related to <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.   These include</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+\mbox{Prog} &amp; = &amp; \mbox{the set of programs} \\
+\mbox{Tidy} &amp; = &amp; \mbox{the set of tidy programs} \\
+K_0 &amp; = &amp; \mbox{the programs which halt when run on the all empty registers}\\
+K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
+\textit{Fin} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is finite} \\   
+\textit{Inf} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is infinite} \\      
+\textit{Tot} &amp; = &amp; \mbox{the program  $p$ such that $[\![p]\!]$ is a total function} \\ 
+\textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
+\end{array}
+\end{split}\]</div>
+<p>Of course, there are many other sets that we could define.   We want to know whether they are computable or not.</p>
+<p>We also could ask whether they are computably enumerable or not.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="truth-and-proof">
+<h1>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Permalink to this heading">#</a></h1>
+<p>We would like to ask about the set of <em>sentences in the language of ordinary mathematics</em> and as about the problem of deciding whether a given sentence is true or not.</p>
+<p>There are a few reasons why we are not going to directly do this.</p>
+<ol class="arabic simple">
+<li><p>We really would like to ask about sentences in natural language which are mathematically clear, and this is not so easy to describe mathematically in the first place.</p></li>
+<li><p>Even if we could do this, we still have the problem that for some important sentences <span class="math notranslate nohighlight">\(S\)</span>, it is not exactly clear what it means for <span class="math notranslate nohighlight">\(S\)</span> to be true.  For example, we have sentences about sets such as the <em>Continuum Hypothesis</em> where it is disputed whether they are intuitively true or not, or whether this even makes sense to ask about.</p></li>
+</ol>
+<p>Given these problems, there are two ways to <em>back off</em> in order to ask and answer related questions.</p>
+<ol class="arabic simple">
+<li><p>We could fix a first-order structure of some importance in mathematics and only look at the sentences in <em>first order logic</em> which are pertinent to that structure.  The canonical choice here would be the structure</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{N} = (N, 0, 1, +, \times)
+\]</div>
+<p>of the natural numbers with the operations shown above.     But we could also ask about other structures, such as the same one with only <span class="math notranslate nohighlight">\(+\)</span>, or a <em>model of the axioms of set theory</em>, or some fragment of set theory.</p>
+<ol class="arabic simple" start="2">
+<li><p>We could replace <em>truth</em> by <em>provability</em> in our discussion above.  Given some set <span class="math notranslate nohighlight">\(T\)</span> of axioms, especially some set <span class="math notranslate nohighlight">\(T\)</span> with importance in the foundations of mathematics (like standard set theory), we can ask about provability from <span class="math notranslate nohighlight">\(T\)</span>.   Is the set of provable sentences decidable?   We could also ask this when <span class="math notranslate nohighlight">\(T\)</span> is the empty set; this means we would be asking about the set of sentences provable by <em>pure logic alone</em>, without any axioms.<br />
+This, too, is an interesting thing to do.</p></li>
+</ol>
+<p>We are going to investigate both of these <em>back off</em> questions in some detail.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -791,7 +832,7 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What is coding?</p>
+        <p class="prev-next-title">Computatble functions on encoded structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -814,10 +855,9 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#below-i-get-us-started-on-this-by-reviewing-a-bit-on-lists-and-matrices-in-python">Below I get us started on this by reviewing a bit on lists and matrices in Python</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k">The halting set K</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 
   </nav></div>

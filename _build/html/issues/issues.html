@@ -176,11 +176,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Simple programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">When does a program halt?</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
+
 
 
 
@@ -198,17 +200,30 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="coding.html">What is coding?</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computatble functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for Arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
+
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+
+
 
 
 </ul>
@@ -231,14 +246,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Logic</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
-
-
-
-
 </ul>
 
     </div>
@@ -435,7 +442,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concrete-and-abstract-models-of-computation">Concrete and Abstract Models of Computation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of Computation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. Infinite</a></li>
 </ul>
 
@@ -452,9 +459,14 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/issues.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="computability">
 <h1>Computability<a class="headerlink" href="#computability" title="Permalink to this heading">#</a></h1>
+<p>We now turn to some of the main issues that drive our subject.   First of all, there is the matter of <em>giving a mathematical definition to the intuitive concept of computability</em>.   To see one of the issues, consider the diagram below.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-56.png?raw=1" width="100%" height="100%"><p>The inside region represents what could be “computed” at the time of this writing.  It is marked by a jagged boundary, since this border depends on the sofware and hardware, and on top of that it is time-dependent.  It is very hard to have a detailed and useful scientific study of such a concept.  Of more interest is the red boundary, the division between mathematical matters which are “in principle” computable, and those which are out of this boundary.  What we mean by “in principle” here is that we want to set aside all considerations of time and space limitations, except that everything must take only finitely many steps, and use only finitely much space.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="concrete-and-abstract-models-of-computation">
-<h1>Concrete and Abstract Models of Computation<a class="headerlink" href="#concrete-and-abstract-models-of-computation" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="models-of-computation">
+<h1>Models of Computation<a class="headerlink" href="#models-of-computation" title="Permalink to this heading">#</a></h1>
+<p>Even with the distinction between “in practice” and “in principle” computability, and even with our decsion to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
+<p>First, we will provide a very concrete definition of computability based on a <em>machine model</em>.  We have already begun this with our introduction of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and its associated notion of <em>functions computed by programs</em>.   There are other ways to do just this, and the machine models involved have names like <em>Turing machine</em> or <em>register machine</em>.   (Our <em>text register machine</em> is of course very close to an ordinary register machine; the main difference is that we have an alphabet with two symbols instead of just one, and our language of instructions and programs is identical to the language of words stored in the registers.   We will see later what differences come to.)</p>
+<p>Second, we argue that in a very real sense, it doesn’t matter which concrete model of computation one works with, “it comes to the same thing”.  This is the second part of the <em>Church-Turing Thesis</em>.  One way to make this concrete is to take computability on the natural numbers as a sort of reference point, and then check that all of the concrete models give the same notion of computable partial functions.   It would take quite some work to provide the evidence that all of the models of computation lead to the same class of computable partial functions of numbers, and so we are not going to do much of it.  The first part of this same <em>Church-Turing Thesis</em> is that this class of computable partial functions of numbers is the correct formalization of the intuitive notion of a computable function.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="finite-vs-infinite">
 <h1>Finite vs. Infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h1>
@@ -524,7 +536,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concrete-and-abstract-models-of-computation">Concrete and Abstract Models of Computation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of Computation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. Infinite</a></li>
 </ul>
 
