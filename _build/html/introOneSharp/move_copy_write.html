@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple programs &#8212; Invitation to Computability</title>
+    <title>Basic programs &#8212; Invitation to Computability</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/move_copy_write';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="When does a program halt?" href="haltDef.html" />
+    <link rel="next" title="Halting" href="haltDef.html" />
     <link rel="prev" title="First steps" href="instructions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,9 +179,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simple programs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="haltDef.html">When does a program halt?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions defined by programs</a></li>
 
@@ -203,7 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">What is coding?</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
@@ -431,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simple programs</h1>
+    <h1>Basic programs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,7 +443,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Simple programs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basic programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1">move_2_1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-move-2-1">Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">copy</a></li>
@@ -462,8 +464,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/move_copy_write.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="simple-programs">
-<h1>Simple programs<a class="headerlink" href="#simple-programs" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="basic-programs">
+<h1>Basic programs<a class="headerlink" href="#basic-programs" title="Permalink to this heading">#</a></h1>
 <p>We have seen the syntax of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions
 <a class="reference internal" href="instructions.html"><span class="doc std std-doc">in a previous notebook</span></a>.
 We turn to the simplest programs in the language.</p>
@@ -879,7 +881,7 @@ q = \copyprog_{1,2,3} + \moveprog_{2,1}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">When does a program halt?</p>
+        <p class="prev-next-title">Halting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -898,7 +900,7 @@ q = \copyprog_{1,2,3} + \moveprog_{2,1}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Simple programs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basic programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1">move_2_1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-move-2-1">Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">copy</a></li>

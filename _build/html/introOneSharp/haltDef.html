@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>When does a program halt? &#8212; Invitation to Computability</title>
+    <title>Halting &#8212; Invitation to Computability</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Functions defined by programs" href="functions.html" />
-    <link rel="prev" title="Simple programs" href="move_copy_write.html" />
+    <link rel="prev" title="Basic programs" href="move_copy_write.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,9 +179,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Simple programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">When does a program halt?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Halting</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions defined by programs</a></li>
 
@@ -203,7 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">What is coding?</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
@@ -431,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>When does a program halt?</h1>
+    <h1>Halting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,7 +443,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">When does a program halt?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Halting</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definitions">Halting: the formal definitions</a></li>
 </ul>
 
@@ -456,8 +458,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/haltDef.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="section" id="when-does-a-program-halt">
-<h1>When does a program halt?<a class="headerlink" href="#when-does-a-program-halt" title="Permalink to this heading">#</a></h1>
+<div class="section" id="halting">
+<h1>Halting<a class="headerlink" href="#halting" title="Permalink to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">1#</span></code> has programs which contain <em>infinite loops</em> such as</p>
 <p><code class="docutils literal notranslate"><span class="pre">111###111####</span></code></p>
 <p>This program never finishes. If you run this in an interpreter, you will need to figure out how to stop the execution.    Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
@@ -546,7 +548,7 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Simple programs</p>
+        <p class="prev-next-title">Basic programs</p>
       </div>
     </a>
     <a class="right-next"
@@ -573,7 +575,7 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">When does a program halt?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Halting</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definitions">Halting: the formal definitions</a></li>
 </ul>
 
