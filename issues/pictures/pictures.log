@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  26 JAN 2025 20:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  26 JAN 2025 21:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1021,7 +1021,7 @@ File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 Here is how much of TeX's memory you used:
  18705 strings out of 480608
  398076 string characters out of 5903631
- 638856 words of memory out of 5000000
+ 638906 words of memory out of 5000000
  34236 multiletter control sequences out of 15000+600000
  548826 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1033,7 +1033,7 @@ ts/pxsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts/rpxi
 usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/loc
 al/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pictures.pdf (56 pages, 87294 bytes).
+Output written on pictures.pdf (56 pages, 87352 bytes).
 PDF statistics:
  214 PDF objects out of 1000 (max. 8388607)
  148 compressed objects within 2 object streams
