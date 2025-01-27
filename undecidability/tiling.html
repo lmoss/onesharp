@@ -442,7 +442,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-tt-p">The definition of <span class="math notranslate nohighlight">\(\TT(p)\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-converse">The converse</a></li>
@@ -497,11 +497,11 @@ is undecidable.</p>
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>There is a total computable function
-<span class="math notranslate nohighlight">\(\TT:  A\to  \mathbb{T}\)</span>
+<span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
 such that</p>
 <div class="math notranslate nohighlight">
 \[
-p\in \overline{B} \quadiff   \TT(p) \in \Tile.
+p\in \overline{B} \quadiff   \mathcal{T}(p) \in \Tile.
 \]</div>
 <p>Thus, <span class="math notranslate nohighlight">\(B\)</span> is undecidable.</p>
 </section>
@@ -512,8 +512,8 @@ such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <spa
 <em>can</em> tile the quadrant.</p>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-tt-p">
-<h1>The definition of <span class="math notranslate nohighlight">\(\TT(p)\)</span><a class="headerlink" href="#the-definition-of-tt-p" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-mathcal-t-p">
+<h1>The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span><a class="headerlink" href="#the-definition-of-mathcal-t-p" title="Link to this heading">#</a></h1>
 <p>This section gives the details on the function <span class="math notranslate nohighlight">\(\TT\)</span>.  Before we present it, we need a comment on the set of color which we are going to use.  In our <a class="reference internal" href="#content:firstTiles"><span class="xref myst">earlier work on tiling</span></a>,
 we saw tiles whose sides had actual colors, such as the eight tiles below
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
@@ -532,23 +532,24 @@ the card symbols <span class="math notranslate nohighlight">\(\heartsuit\)</span
 (we use these just as a way to add a color to this page),
 an oblong rectangle, the copyright symbol (a circle with the letter C inside),
 the word “start”, and a blank color (where the side of a square is just left blank).</p>
-<p>We need only worry about defining <span class="math notranslate nohighlight">\(\TT(p)\)</span> for <span class="math notranslate nohighlight">\(p\in A\)</span>.
+<p>We need only worry about defining <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> for <span class="math notranslate nohighlight">\(p\in A\)</span>.
 Fix such a program <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>We start with 18 tiles that are part of <span class="math notranslate nohighlight">\(\TT(p)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(p\in A\)</span>.</p>
+<p>We start with 18 tiles that are part of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(p\in A\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t1-01.png?raw=1" width="100%" height="100%">
-<p>The rest of <span class="math notranslate nohighlight">\(\TT(p)\)</span> depends on the program <span class="math notranslate nohighlight">\(p\)</span>.  To begin, when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\one\hash\)</span>, we include the tile
+<p>The rest of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> depends on the program <span class="math notranslate nohighlight">\(p\)</span>.  To begin, when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>, we include the tile
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t2-02.png?raw=1" width="100%" height="100%"></p>
-<p>And when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>, we include the tile
+<p>And when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1##</span></code>,  we include the tile
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t3-03.png?raw=1" width="100%" height="100%"></p>
-<p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\one^m\hash\hash\hash\)</span> we include
+<p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code> we include
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t4-04.png?raw=1" width="100%" height="100%"></p>
-<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\one^m\hash\hash\hash\hash\)</span> we include
+<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is   <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span>```###`` we include
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%"></p>
-<p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <span class="math notranslate nohighlight">\(\one\hash\hash\hash\hash\hash\)</span>, we include the three tiles
+<p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>,
+we include the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t6-06.png?raw=1" width="100%" height="100%"></p>
-<p>Notice that <span class="math notranslate nohighlight">\(\TT(p)\)</span> is a finite set of tiles.
-We also want <span class="math notranslate nohighlight">\(\TT(p)\)</span> to be pointed, and we take the green tile above.</p>
-<p>This completes the definition of the function <span class="math notranslate nohighlight">\(\TT\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\TT\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT(p)\)</span>.</p>
+<p>Notice that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is a finite set of tiles.
+We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> to be pointed, and we take the green tile above.</p>
+<p>This completes the definition of the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>When <span class="math notranslate nohighlight">\(p\)</span> is the program <span class="math notranslate nohighlight">\(\one\hash\one\hash\hash\hash\hash\)</span>,
@@ -707,14 +708,14 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\mathcal{T})}(\ )\downarrow\)</span>.</p>
 <div class="exercise admonition" id="undecidability/tiling-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 65 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 66 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\TT(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\TT\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
 <div class="exercise admonition" id="undecidability/tiling-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 66 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 67 </span></p>
 <section id="exercise-content">
 <p>In this problem we consider a variant of the tiling problem where the goal is not to tile the entire first quadrant but rather to tile a finite rectangle in a noteworthy way.</p>
 <p>A <em>four-pointed</em> tile set is a tile set <span class="math notranslate nohighlight">\(\TT\)</span> and four elements of it called <span class="math notranslate nohighlight">\(NE\)</span>, <span class="math notranslate nohighlight">\(NW\)</span>, <span class="math notranslate nohighlight">\(SE\)</span>, and <span class="math notranslate nohighlight">\(SW\)</span>.  A finite rectangle is <em>tiled by <span class="math notranslate nohighlight">\(\TT\)</span></em> if there is a tiling in the usual sense with the property that its northwest corner is tiled by <span class="math notranslate nohighlight">\(NW\)</span>, its northeast corner is tiled by <span class="math notranslate nohighlight">\(NE\)</span>, etc.</p>
@@ -794,7 +795,7 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-tt-p">The definition of <span class="math notranslate nohighlight">\(\TT(p)\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-converse">The converse</a></li>

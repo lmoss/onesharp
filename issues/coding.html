@@ -535,6 +535,14 @@ where <span class="math notranslate nohighlight">\(W\)</span> is the set of all 
 
 <p class="admonition-title"><span class="caption-number">Exercise 36 </span></p>
 <section id="exercise-content">
+<p>Show that if <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is a structure which has a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encoding, then every finite subset of <span class="math notranslate nohighlight">\(S\)</span> is computable.</p>
+<p>[Use <span class="xref std std-ref">prf:proposition</span>]</p>
+</section>
+</div>
+<div class="exercise admonition" id="issues/coding-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
+<section id="exercise-content">
 <p>The structure <span class="math notranslate nohighlight">\(\mathbb{Z} = (Z,0, s, p)\)</span> of integers has</p>
 <div class="math notranslate nohighlight">
 \[
@@ -550,9 +558,9 @@ Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 <p>This might be messy and/or tedious, because you have to exhibit <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs as part of the encoding and also to represent addition.  It is fine to be hand-wavy here.  Soon we will have tools to make it easier to actually write programs.  And for something tedious, it is usually sufficient to convince yourself that you <em>could</em> write the program.</p>
 </section>
 </div>
-<div class="exercise admonition" id="issues/coding-exercise-5">
+<div class="exercise admonition" id="issues/coding-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
 <section id="exercise-content">
 <p>If we want to discuss whether <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix mortality is decidable, or whether <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality is decidable, it is natural to propose <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encodings.  Let’s do this for <span class="math notranslate nohighlight">\(2\times 2\)</span> matricies.<br />
 Consider</p>
@@ -560,16 +568,16 @@ Consider</p>
 \[
 (\mathcal{M}_2, 0, {\sf times}),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{M}_2\)</span> is the set of <span class="math notranslate nohighlight">\(2\times 2\)</span> integer matrices, <span class="math notranslate nohighlight">\(0\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> zero matrix, and <span class="math notranslate nohighlight">\({\sf times}(M,N) = M\times N\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{M}_2\)</span> is the set of <span class="math notranslate nohighlight">\(2\times 2\)</span> integer matrices, <span class="math notranslate nohighlight">\(0\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> zero matrix, and {\sf times}<span class="math notranslate nohighlight">\((M,N) = M\times N\)</span>.</p>
 <ol class="arabic simple">
 <li><p>A computable encoding of this structure includes a computable subset <span class="math notranslate nohighlight">\(\widehat{S}\subseteq Words\)</span>, and an injection <span class="math notranslate nohighlight">\(\pi: \mathcal{M}_2\to \widehat{S}\)</span>.   Find such <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>.  (As always, there are many choices.)</p></li>
 <li><p>What are the rest of the requirements on a computable encoding of this structure?   You don’t need to give the program which corresponds to {\sf Times}, since that would be quite tedious.</p></li>
 </ol>
 </section>
 </div>
-<div class="exercise admonition" id="issues/coding-exercise-6">
+<div class="exercise admonition" id="issues/coding-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> be the set of finite graphs whose set of vertices is of the form <span class="math notranslate nohighlight">\(\{1,2, \ldots, n\}\)</span> for some <span class="math notranslate nohighlight">\(n\)</span>.  We make this into a structure.  There are no relations or functions, just the set by itself.  What is an encoding of this structure?   What does it mean to say that the subset <span class="math notranslate nohighlight">\(C\)</span> of graphs which contain a cycle is a decidable set relative to an encoding?</p>
 </section>
