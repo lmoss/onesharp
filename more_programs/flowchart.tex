@@ -5,6 +5,8 @@
 \newcommand{\hash}{\mbox{\tt \#}}
 \newcommand{\one}{\mbox{\tt 1}}
 
+
+
 \tikzstyle{startstop} = [rectangle, rounded corners, 
 minimum width=3cm, 
 minimum height=1cm,
@@ -45,6 +47,8 @@ fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 \begin{document}
 
+
+\begin{flushleft}
 \begin{tikzpicture}[node distance=2cm]
 
 
@@ -55,10 +59,10 @@ fill=green!30]
 \node (moveback) [process, below of=dec1, yshift=-0.5cm] {move\_back: \\
 move\_2\_1};
 
-\node (onefound) [process, right of=dec1,above of= dec1,xshift=2cm, yshift=.5cm] {one\_found: $\one\hash\hash\hash$};
+\node (onefound) [process, right of=dec1,above of= dec1,xshift=2cm, yshift=.5cm] {one\_found: $\one\one\one\hash$};
 %\node (out1) [io, below of=pro2a] {Output};
 \node (stop) [startstop, below of=moveback] {stop};
-\node (hashfound) [process, right of=dec1, below of= dec1,xshift=2cm, yshift=-.5cm] {hash\_found: $\one\one\hash\hash\hash$};
+\node (hashfound) [process, right of=dec1, below of= dec1,xshift=2cm, yshift=-.5cm] {sharp\_found: $\one\one\one\hash\hash$};
 \node (doublemove) [longprocess, right of=dec1, xshift = 4cm] {move\_phase: \\ move\_2\_3 + move\_3\_2};
 \draw [arrow] (start) -- (dec1);
 %\draw [arrow] (in1) -- (pro1);
@@ -74,7 +78,7 @@ move\_2\_1};
 %\draw [arrow] (out1) -- (stop);
 
 \end{tikzpicture}
-
+\end{flushleft}
 \vfil\eject
 
 \begin{flushleft}
