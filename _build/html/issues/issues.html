@@ -63,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/issues';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -177,9 +179,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Simple programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">When does a program halt?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
 
@@ -229,6 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal Programs</a></li>
 
 
@@ -470,6 +473,16 @@ document.write(`
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="finite-vs-infinite">
 <h1>Finite vs. Infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h1>
+<p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
+<p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
+<p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
+<div class="proof proposition admonition" id="proposition-0">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<div class="proposition-content section" id="proof-content">
+<p>Every finite set is decidable.</p>
+</div>
+</div><p>The proof basically comes down to a <em>table look-up</em>.</p>
+<p>For many, this result is uninspiring, even wrong somehow.  So it is worthwhile to understand both the result itself and the objections.</p>
 </div>
 
     <script type="text/x-thebe-config">
