@@ -503,7 +503,8 @@ We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span
 <li><p><span class="math notranslate nohighlight">\(\widehat{0} = \varepsilon\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\widehat{s}({\tt 1}^n) = {\tt 1}^{n+1}\)</span>.</p></li>
 </ol>
-<p>This completes the definition.   There are other encodings of the same structure.  For example, we could drop the empty word from <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and adjust the rest of the encoding apparatus.   We also could decide to use <em>binary numbers</em>, and even there we have several options of how to regard binary numbers as <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.</p>
+<p>This completes the definition.  We must check that <span class="math notranslate nohighlight">\(\hat{s}\)</span> is computable, but this is easy: a program for it is <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<p>There are other encodings of this same structure <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.  For example, we could drop the empty word from <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and adjust the rest of the encoding apparatus.   We also could decide to use <em>binary numbers</em>, and even there we have several options of how to regard binary numbers as <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.</p>
 </div>
 <div class="proof definition admonition" id="coding_what_for">
 <p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
@@ -548,7 +549,7 @@ where <span class="math notranslate nohighlight">\(W\)</span> is the set of all 
 \[
 Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 \]</div>
-<p>We take <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(p\)</span> to be the <em>successor</em> and <em>predecessor</em> functions on the integers:  <span class="math notranslate nohighlight">\(s(n) = n+1\)</span> and <span class="math notranslate nohighlight">\(p(n) = n - 1\)</span>.</p>
+<p>Here <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(p\)</span> are the <em>successor</em> and <em>predecessor</em> functions on the integers:  <span class="math notranslate nohighlight">\(s(n) = n+1\)</span> and <span class="math notranslate nohighlight">\(p(n) = n - 1\)</span>.</p>
 <p>Your problems:</p>
 <ol class="arabic simple">
 <li><p>Find a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encoding of <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p></li>
