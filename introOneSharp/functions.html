@@ -218,11 +218,11 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
 
@@ -602,7 +602,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="functions-of-two-or-more-arguments">
 <h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Link to this heading">#</a></h1>
-<p>A program <span class="math notranslate nohighlight">\(p\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
+<p>A program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
 <div class="proof definition tip admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
@@ -804,9 +804,10 @@ That is,</p>
 <p>They are <em>strongly equivalent</em> if whenever they are started on the same words in all registers, if one halts so does the other, and all register contents are the same at the halt.</p>
 <p>The are <em>equivalent as one-place functions</em> if <span class="math notranslate nohighlight">\([\![p]\!]\)</span> and <span class="math notranslate nohighlight">\([\![q]\!]\)</span> are the same partial function.
 That is, for all <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\([\![p]\!](x) \simeq [\![q]\!](x)\)</span>.</p>
+<p>More generally, we could define the notion of <em>equivalent as <span class="math notranslate nohighlight">\(n\)</span>-place functions</em> for all natural numbers <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">1###</span></code> and <code class="docutils literal notranslate"><span class="pre">1###1###</span></code> are not equal, but they are strongly equivalent (and thus equivalent as one-place functions).</p>
-<p>For an example of programs <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> which are equivalent as one-place functions but not strongly equivalent, let <span class="math notranslate nohighlight">\(p\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">clear</span></code><span class="math notranslate nohighlight">\({}_2\)</span><code class="docutils literal notranslate"><span class="pre">+</span> </code>#```.</p>
+<p>For an example of programs <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> which are equivalent as one-place functions but not strongly equivalent, let <span class="math notranslate nohighlight">\(p\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">#</span></code>.</p>
 </section>
 
     <script type="text/x-thebe-config">
