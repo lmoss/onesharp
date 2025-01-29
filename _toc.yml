@@ -23,7 +23,7 @@ parts:
   - file: more_programs/arithmetic
   - file: more_programs/primitive_recursion
   
-- caption: Self-Writing Programs and the Recursion Theorem
+- caption: The Recursion Theorem
   chapters:
   - file: self_writing
   
