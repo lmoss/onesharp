@@ -196,7 +196,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: several notions</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
@@ -211,7 +211,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
 
@@ -564,22 +564,45 @@ Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 
 <p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
 <section id="exercise-content">
-<p>If we want to discuss whether <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix mortality is decidable, or whether <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality is decidable, it is natural to propose <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encodings.  Let’s do this for <span class="math notranslate nohighlight">\(2\times 2\)</span> matricies.<br />
-Consider</p>
+<p>Let <span class="math notranslate nohighlight">\(P\)</span> be the set of pairs <span class="math notranslate nohighlight">\((p,q)\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words.   We consider the structure</p>
 <div class="math notranslate nohighlight">
 \[
-(\mathcal{M}_2, 0, {\sf times}),
+\mathcal{P} = (P, a_1, a_{\#}, b_1, b_{\#})
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{M}_2\)</span> is the set of <span class="math notranslate nohighlight">\(2\times 2\)</span> integer matrices, <span class="math notranslate nohighlight">\(0\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> zero matrix, and {\sf times}<span class="math notranslate nohighlight">\((M,N) = M\times N\)</span>.</p>
-<ol class="arabic simple">
-<li><p>A computable encoding of this structure includes a computable subset <span class="math notranslate nohighlight">\(\widehat{S}\subseteq Words\)</span>, and an injection <span class="math notranslate nohighlight">\(\pi: \mathcal{M}_2\to \widehat{S}\)</span>.   Find such <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>.  (As always, there are many choices.)</p></li>
-<li><p>What are the rest of the requirements on a computable encoding of this structure?   You don’t need to give the program which corresponds to {\sf Times}, since that would be quite tedious.</p></li>
-</ol>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{array}{lcl} 
+a_1(p,q)  &amp; =  &amp; (p + ```1```, q)\\
+a_{\#} (p,q)  &amp; =  &amp; (p + ```#```, q)\\
+b_1(p,q)  &amp; =  &amp; (p , q + ```1```)\\
+b_{\#} (p,q)  &amp; =  &amp; (p, q + ```#```)\\
+\end{array}
+\end{split}\]</div>
+<p>Find a computable encoding of this structure.</p>
 </section>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
+<section id="exercise-content">
+<p>If we want to discuss whether <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix mortality is decidable, or whether <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality is decidable, it is natural to propose <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encodings.  Let’s do this for <span class="math notranslate nohighlight">\(2\times 2\)</span> matricies.<br />
+Consider</p>
+<div class="math notranslate nohighlight">
+\[
+(\mathcal{M}_2, 0, \mbox{\sf times}),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{M}_2\)</span> is the set of <span class="math notranslate nohighlight">\(2\times 2\)</span> integer matrices, <span class="math notranslate nohighlight">\(0\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> zero matrix, and {\sf times}<span class="math notranslate nohighlight">\((M,N) = M\times N\)</span>.</p>
+<ol class="arabic simple">
+<li><p>A computable encoding of this structure includes a computable subset <span class="math notranslate nohighlight">\(\widehat{S}\subseteq Words\)</span>, and an injection <span class="math notranslate nohighlight">\(\pi: \mathcal{M}_2\to \widehat{S}\)</span>.   Find such <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>.  (As always, there are many choices.)</p></li>
+<li><p>What are the rest of the requirements on a computable encoding of this structure?   You don’t need to give the program which corresponds to
+<span class="math notranslate nohighlight">\(\mbox{\sf Times}\)</span>, since that would be quite tedious.</p></li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="issues/coding-exercise-8">
+
+<p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> be the set of finite graphs whose set of vertices is of the form <span class="math notranslate nohighlight">\(\{1,2, \ldots, n\}\)</span> for some <span class="math notranslate nohighlight">\(n\)</span>.  We make this into a structure.  There are no relations or functions, just the set by itself.  What is an encoding of this structure?   What does it mean to say that the subset <span class="math notranslate nohighlight">\(C\)</span> of graphs which contain a cycle is a decidable set relative to an encoding?</p>
 </section>
