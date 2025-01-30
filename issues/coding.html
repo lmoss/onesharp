@@ -573,10 +573,10 @@ Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{array}{lcl} 
-a_1(p,q)  &amp; =  &amp; (p + \mbox{\tt 1}, q)\\
-a_{\#} (p,q)  &amp; =  &amp; (p +\mbox{\tt #}, q)\\
-b_1(p,q)  &amp; =  &amp; (p , q + \mbox{\tt 1})\\
-b_{\#} (p,q)  &amp; =  &amp; (p, q + \mbox{\tt #})\\
+a_1(p,q)  &amp; =  &amp; (p + 1, q)\\
+a_{\#} (p,q)  &amp; =  &amp; (p +\# , q)\\
+b_1(p,q)  &amp; =  &amp; (p , q + 1)\\
+b_{\#} (p,q)  &amp; =  &amp; (p, q + \# )\\
 \end{array}
 \end{split}\]</div>
 <p>Find a computable encoding of this structure.</p>
@@ -590,13 +590,13 @@ b_{\#} (p,q)  &amp; =  &amp; (p, q + \mbox{\tt #})\\
 Consider</p>
 <div class="math notranslate nohighlight">
 \[
-(\mathcal{M}_2, 0, \mbox{\sf times}),
+(\mathcal{M}_2, 0, times),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{M}_2\)</span> is the set of <span class="math notranslate nohighlight">\(2\times 2\)</span> integer matrices, <span class="math notranslate nohighlight">\(0\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> zero matrix, and {\sf times}<span class="math notranslate nohighlight">\((M,N) = M\times N\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{M}_2\)</span> is the set of <span class="math notranslate nohighlight">\(2\times 2\)</span> integer matrices, <span class="math notranslate nohighlight">\(0\)</span> is the <span class="math notranslate nohighlight">\(2\times 2\)</span> zero matrix, and <span class="math notranslate nohighlight">\(times(M,N) = M\times N\)</span>.</p>
 <ol class="arabic simple">
 <li><p>A computable encoding of this structure includes a computable subset <span class="math notranslate nohighlight">\(\widehat{S}\subseteq Words\)</span>, and an injection <span class="math notranslate nohighlight">\(\pi: \mathcal{M}_2\to \widehat{S}\)</span>.   Find such <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>.  (As always, there are many choices.)</p></li>
 <li><p>What are the rest of the requirements on a computable encoding of this structure?   You don’t need to give the program which corresponds to
-<span class="math notranslate nohighlight">\(\mbox{\sf Times}\)</span>, since that would be quite tedious.</p></li>
+<span class="math notranslate nohighlight">\(times\)</span>, since that would be quite tedious.</p></li>
 </ol>
 </section>
 </div>
