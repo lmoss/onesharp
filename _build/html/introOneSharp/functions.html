@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
 
@@ -223,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-replicating programs</a></li>
 
 
 
@@ -809,7 +809,8 @@ That is, for all <span class="math notranslate nohighlight">\(x\)</span>, <span 
 <p>More generally, we could define the notion of <em>equivalent as <span class="math notranslate nohighlight">\(n\)</span>-place functions</em> for all natural numbers <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">1###</span></code> and <code class="docutils literal notranslate"><span class="pre">1###1###</span></code> are not equal, but they are strongly equivalent (and thus equivalent as one-place functions).</p>
-<p>For an example of programs <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> which are equivalent as one-place functions but not strongly equivalent, let <span class="math notranslate nohighlight">\(p\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">#</span></code>.</p>
+<p>For an example of programs <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> which are equivalent as one-place functions but not strongly equivalent, let <span class="math notranslate nohighlight">\(p\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">1#</span></code>.
+Running <span class="math notranslate nohighlight">\(q\)</span> when R1 and R2 both have <code class="docutils literal notranslate"><span class="pre">1</span></code> results in a halting computation where R1 has <code class="docutils literal notranslate"><span class="pre">11</span></code> and R2 is empty.  But running <span class="math notranslate nohighlight">\(p\)</span> this way preserves R2.</p>
 </div>
 
     <script type="text/x-thebe-config">

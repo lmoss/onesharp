@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Computability &#8212; Invitation to Computability</title>
+    <title>Computability: several notions &#8212; Invitation to Computability</title>
   
   
   
@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: several notions</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
@@ -210,20 +210,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">Tools to help write programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-Replicating Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-replicating programs</a></li>
 
 
 
@@ -434,7 +434,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Computability</h1>
+    <h1>Computability: several notions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -444,9 +444,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of Computation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. Infinite</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: several notions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 </ul>
 
             </nav>
@@ -460,19 +460,19 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/issues.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="computability">
-<h1>Computability<a class="headerlink" href="#computability" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="computability-several-notions">
+<h1>Computability: several notions<a class="headerlink" href="#computability-several-notions" title="Permalink to this heading">#</a></h1>
 <p>We now turn to some of the main issues that drive our subject.   First of all, there is the matter of <em>giving a mathematical definition to the intuitive concept of computability</em>.   To see one of the issues, consider the diagram below.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-56.png?raw=1" width="100%" height="100%"><p>The inside region represents what could be “computed” at the time of this writing.  It is marked by a jagged boundary, since this border depends on the sofware and hardware, and on top of that it is time-dependent.  It is very hard to have a detailed and useful scientific study of such a concept.  Of more interest is the red boundary, the division between mathematical matters which are “in principle” computable, and those which are out of this boundary.  What we mean by “in principle” here is that we want to set aside all considerations of time and space limitations, except that everything must take only finitely many steps, and use only finitely much space.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="models-of-computation">
-<h1>Models of Computation<a class="headerlink" href="#models-of-computation" title="Permalink to this heading">#</a></h1>
+<h1>Models of computation<a class="headerlink" href="#models-of-computation" title="Permalink to this heading">#</a></h1>
 <p>Even with the distinction between “in practice” and “in principle” computability, and even with our decsion to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
 <p>First, we will provide a very concrete definition of computability based on a <em>machine model</em>.  We have already begun this with our introduction of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and its associated notion of <em>functions computed by programs</em>.   There are other ways to do just this, and the machine models involved have names like <em>Turing machine</em> or <em>register machine</em>.   (Our <em>text register machine</em> is of course very close to an ordinary register machine; the main difference is that we have an alphabet with two symbols instead of just one, and our language of instructions and programs is identical to the language of words stored in the registers.   We will see later what differences come to.)</p>
 <p>Second, we argue that in a very real sense, it doesn’t matter which concrete model of computation one works with, “it comes to the same thing”.  This is the second part of the <em>Church-Turing Thesis</em>.  One way to make this concrete is to take computability on the natural numbers as a sort of reference point, and then check that all of the concrete models give the same notion of computable partial functions.   It would take quite some work to provide the evidence that all of the models of computation lead to the same class of computable partial functions of numbers, and so we are not going to do much of it.  The first part of this same <em>Church-Turing Thesis</em> is that this class of computable partial functions of numbers is the correct formalization of the intuitive notion of a computable function.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="finite-vs-infinite">
-<h1>Finite vs. Infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h1>
+<h1>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h1>
 <p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
 <p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
@@ -548,9 +548,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of Computation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. Infinite</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: several notions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 </ul>
 
   </nav></div>

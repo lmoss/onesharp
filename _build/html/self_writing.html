@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Self-Replicating Programs &#8212; Invitation to Computability</title>
+    <title>Self-replicating programs &#8212; Invitation to Computability</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Two-by-Two Encoding" href="universal/twoByTwo.html" />
-    <link rel="prev" title="Primitive Recursion" href="more_programs/primitive_recursion.html" />
+    <link rel="prev" title="Primitive recursion" href="more_programs/primitive_recursion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: several notions</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
@@ -210,20 +210,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="more_programs/sanity.html">Tools to help write programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_programs/sanity.html">A tool to help write programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="more_programs/arithmetic.html">Programs for arithmetic</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="more_programs/primitive_recursion.html">Primitive Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Self-Writing Programs and the Recursion Theorem</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-Replicating Programs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-replicating programs</a></li>
 
 
 
@@ -434,7 +434,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Self-Replicating Programs</h1>
+    <h1>Self-replicating programs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -444,7 +444,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-Replicating Programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-replicating programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
@@ -463,7 +463,7 @@ document.write(`
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/self_writing.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="self-replicating-programs">
-<h1>Self-Replicating Programs<a class="headerlink" href="#self-replicating-programs" title="Permalink to this heading">#</a></h1>
+<h1>Self-replicating programs<a class="headerlink" href="#self-replicating-programs" title="Permalink to this heading">#</a></h1>
 <p>A self-writing replicating program is one which outputs itself, starting with all registers empty.
 At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter to spit out the program that is inside it. And anyways, it would seem that typically, a program is usually longer than its output. So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
 <p>In order to get a program which writes itself, one must use some sort of trick or clever idea. Our goal is to explain one such clever idea, and then to see other applications of it as we go. Before you understand it, the idea will seem to be a trick, or even a fluke: we have a program, and it just so happens to output itself. But as we come to understand it better, the trick becomes tamed into a general method.</p>
@@ -481,9 +481,9 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 <div class="tex2jax_ignore mathjax_ignore section" id="diag">
 <h1>Diag<a class="headerlink" href="#diag" title="Permalink to this heading">#</a></h1>
 <p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word x in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
-<p>Running that last program on all empty registers gives the same thing as running x on itself:</p>
-<p><span class="math notranslate nohighlight">\([\![x]\!](x)\)</span></p>
-<p>in R1, assuming that <span class="math notranslate nohighlight">\([\![x]\!](x)\)</span> is defined.</p>
+<p>Running that last program on all empty registers gives the same thing as running x on itself:
+<span class="math notranslate nohighlight">\([\![x]\!](x)\)</span>.</p>
+<p>Thus, $<span class="math notranslate nohighlight">\([\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\](x)\)</span>.</p>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,7 +724,7 @@ and extending them.</p>
 to check your work on the interpreter.</p>
 <div class="exercise admonition" id="self_writing-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
 <div class="section" id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
@@ -733,7 +733,7 @@ to check your work on the interpreter.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which when started on all empty registers
 writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and also writes <span class="math notranslate nohighlight">\(\hash\)</span> to <span class="math notranslate nohighlight">\(\Rtwo\)</span>.</p>
@@ -741,7 +741,7 @@ writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and
 </div>
 <div class="exercise admonition" id="self_writing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
@@ -751,7 +751,7 @@ In other words, <span class="math notranslate nohighlight">\(\phifn_p(\ ) = p + 
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
 <div class="section" id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
@@ -759,7 +759,7 @@ writes the next one in the list into R1.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
@@ -770,7 +770,7 @@ In other words,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a self-replicating program
 that begins with the program to transfer ahead
@@ -779,7 +779,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 </div>
 <div class="exercise admonition" id="self_writing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program s which, when run with R2, R3, etc.
 empty,  ends up with R1 containing s <em>after</em> whatever
@@ -790,7 +790,7 @@ In other words, for all words y,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
@@ -802,7 +802,7 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 </div>
 <div class="exercise admonition" id="self_writing-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
 which trades places with its input in R1.
@@ -816,7 +816,7 @@ before attempting this problem.  But it might be fun to try now.]</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
 <div class="section" id="exercise-content">
 <p>Write two “twin’’ programs s and t with the properties
 that s and t are different programs;
@@ -863,7 +863,7 @@ R1.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Primitive Recursion</p>
+        <p class="prev-next-title">Primitive recursion</p>
       </div>
     </a>
     <a class="right-next"
@@ -890,7 +890,7 @@ R1.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-Replicating Programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-replicating programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
