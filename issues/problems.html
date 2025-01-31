@@ -611,13 +611,32 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 
 <p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
 <section id="exercise-content">
-<p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
-(a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
-<ol class="arabic simple">
-<li><p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>. Show that the following problem is decidable: Given <span class="math notranslate nohighlight">\(S\in A_n\)</span>,
-does <span class="math notranslate nohighlight">\(S\)</span> have a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix?</p></li>
-<li><p>Now consider the a variation on the last part.  Consider the problem whose inputs are pairs <span class="math notranslate nohighlight">\((n,S\)</span> consisting of a number <span class="math notranslate nohighlight">\(n\)</span> and some <span class="math notranslate nohighlight">\(S\in A_n\)</span>.  We again ask whether <span class="math notranslate nohighlight">\(S\)</span> has a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix.  Does the last part imply that this problem is decidable?  Be sure to give a clear, concise, and convincing answer.</p></li>
-</ol>
+<p>Here are three matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left[ \begin{array}{rrr}
+     0  &amp; -4  &amp; -4\\
+     0  &amp; -3  &amp; -3\\
+     0  &amp; 2  &amp; 2
+    \end{array} 
+    \right] 
+  \qquad
+     \left[ \begin{array}{rrr}
+     1  &amp; 0  &amp; 0\\
+     -2  &amp; 0  &amp; 0\\
+     1  &amp; -1  &amp; -1
+     \end{array} 
+    \right] 
+   \qquad
+     \left[ \begin{array}{rrr}
+     8  &amp; -5  &amp; 7\\
+     -5  &amp; 3  &amp; -5\\
+     0  &amp; 0  &amp; 1
+     \end{array} 
+    \right] 
+\end{split}\]</div>
+<p>Find a sequence of these (allowing repetitions) whose product is the zero matrix.</p>
+<p>In other words, show that the answer to the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality problem for the set of three matrices shown above is Yes.</p>
 </section>
 </div>
 <p>In the cells below I get us started on this by reviewing a bit on lists and matrices in Python</p>
@@ -655,6 +674,19 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </pre></div>
 </div>
 </div>
+</div>
+<div class="exercise admonition" id="issues/problems-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
+<section id="exercise-content">
+<p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
+(a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>. Show that the following problem is decidable: Given <span class="math notranslate nohighlight">\(S\in A_n\)</span>,
+does <span class="math notranslate nohighlight">\(S\)</span> have a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix?</p></li>
+<li><p>Now consider the a variation on the last part.  Consider the problem whose inputs are pairs <span class="math notranslate nohighlight">\((n,S\)</span> consisting of a number <span class="math notranslate nohighlight">\(n\)</span> and some <span class="math notranslate nohighlight">\(S\in A_n\)</span>.  We again ask whether <span class="math notranslate nohighlight">\(S\)</span> has a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix.  Does the last part imply that this problem is decidable?  Be sure to give a clear, concise, and convincing answer.</p></li>
+</ol>
+</section>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-halting-set-k">
