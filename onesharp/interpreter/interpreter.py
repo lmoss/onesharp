@@ -417,6 +417,17 @@ def sanity(line_list):
   u1 = [resolve(i,t1) for i in range(n)] 
   return(unparse(u1))
 
+def list_multiply(x):
+    if x == []: 
+        return(identity_3) # the empty product should be the 3x3 identity
+    else:
+        a = x[0] # this gives the head of the input list
+        b = list_multiply(x[1:]) # this multiplies the tail of the input
+        return np.dot(a,b)
+
+zero_3 = [[0,0,0],[0,0,0],[0,0,0]]
+identity_3 = [[1,0,0],[0,1,0],[0,0,1]]
+
 
 
 length = '1#####1111111###11####11#1#####111###111111####111####11#####111111###111###1##1111####1#111111####'
