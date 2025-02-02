@@ -68,8 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'self_writing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Two-by-Two Encoding" href="universal/twoByTwo.html" />
-    <link rel="prev" title="Primitive recursion" href="more_programs/primitive_recursion.html" />
+    <link rel="next" title="The halting problem" href="undecidability/haltingProblem.html" />
+    <link rel="prev" title="Universal Programs" href="universal/universal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -221,18 +221,18 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="universal/universal.html">Universal Programs</a></li>
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-replicating programs</a></li>
 
 
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="universal/twoByTwo.html">Two-by-Two Encoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="universal/universal.html">Universal Programs</a></li>
 
 
 </ul>
@@ -480,10 +480,14 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"></div>
 <div class="tex2jax_ignore mathjax_ignore section" id="diag">
 <h1>Diag<a class="headerlink" href="#diag" title="Permalink to this heading">#</a></h1>
-<p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word x in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
+<p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
 <p>Running that last program on all empty registers gives the same thing as running x on itself:
 <span class="math notranslate nohighlight">\([\![x]\!](x)\)</span>.</p>
-<p>Thus, $<span class="math notranslate nohighlight">\([\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\](x)\)</span>.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\!](x)
+\]</div>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,14 +638,12 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 </table>
 </div></div>
 </div>
-<p>The three branches of the case instruction at the top take us to move3,1 (if R1 is empty), to the blue sub-program if the first symbol of R1 is a 1, and to the brown sub-program if that symbol is a #. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a 1 is removed from R1, what goes into R3 is the program which would write a 1 in R1 (this is 1#). And each time a # is removed from R1, what goes into R3 is the program which would write a # in R1 (this is 1##).</p>
+<p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
 <p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
 Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\(\semantics{\writeprog}(x)\)</span> in R3.
-Then
-move R3 back to the now-empty R1.
+Then move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
 The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
-<p>The tables below show the important feature of <code class="docutils literal notranslate"><span class="pre">diag</span></code>. You should memorize it as soon as possible for use below and in the next lesson.</p>
 <p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></div>
 <div class="tex2jax_ignore mathjax_ignore section" id="self">
@@ -724,7 +726,7 @@ and extending them.</p>
 to check your work on the interpreter.</p>
 <div class="exercise admonition" id="self_writing-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <div class="section" id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
@@ -733,7 +735,7 @@ to check your work on the interpreter.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which when started on all empty registers
 writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and also writes <span class="math notranslate nohighlight">\(\hash\)</span> to <span class="math notranslate nohighlight">\(\Rtwo\)</span>.</p>
@@ -741,7 +743,7 @@ writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and
 </div>
 <div class="exercise admonition" id="self_writing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
@@ -751,7 +753,7 @@ In other words, <span class="math notranslate nohighlight">\(\phifn_p(\ ) = p + 
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
 <div class="section" id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
@@ -759,7 +761,7 @@ writes the next one in the list into R1.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program p which when started on all empty registers
 doesn’t
@@ -770,7 +772,7 @@ In other words,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a self-replicating program
 that begins with the program to transfer ahead
@@ -779,7 +781,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 </div>
 <div class="exercise admonition" id="self_writing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program s which, when run with R2, R3, etc.
 empty,  ends up with R1 containing s <em>after</em> whatever
@@ -790,7 +792,7 @@ In other words, for all words y,
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
@@ -802,7 +804,7 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 </div>
 <div class="exercise admonition" id="self_writing-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
 which trades places with its input in R1.
@@ -816,7 +818,7 @@ before attempting this problem.  But it might be fun to try now.]</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
 <div class="section" id="exercise-content">
 <p>Write two “twin’’ programs s and t with the properties
 that s and t are different programs;
@@ -858,20 +860,20 @@ R1.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="more_programs/primitive_recursion.html"
+       href="universal/universal.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Primitive recursion</p>
+        <p class="prev-next-title">Universal Programs</p>
       </div>
     </a>
     <a class="right-next"
-       href="universal/twoByTwo.html"
+       href="undecidability/haltingProblem.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Two-by-Two Encoding</p>
+        <p class="prev-next-title">The halting problem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

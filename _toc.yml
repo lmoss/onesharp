@@ -23,15 +23,17 @@ parts:
   - file: more_programs/arithmetic
   - file: more_programs/primitive_recursion
   
-- caption: The Recursion Theorem
-  chapters:
-  - file: self_writing
-  
+
 - caption: Universal Programs
   chapters:
    - file: universal/twoByTwo 
    - file: universal/universal
 
+- caption: The Recursion Theorem
+  chapters:
+  - file: self_writing
+  
+  
 #- caption: The Enumeration Theorem
 #  chapters:
 #  - file: coding
