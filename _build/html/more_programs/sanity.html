@@ -221,18 +221,18 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal Programs</a></li>
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-replicating programs</a></li>
 
 
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal Programs</a></li>
 
 
 </ul>
@@ -578,6 +578,7 @@ For example, segments 6 and 8 each contain <code class="docutils literal notrans
 <div class="tex2jax_ignore mathjax_ignore section" id="the-inputs-to-sanity">
 <h1>The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code><a class="headerlink" href="#the-inputs-to-sanity" title="Permalink to this heading">#</a></h1>
 <p>In order to use the tool, we have clarify what we mean by <em>segments</em> and <em>labels</em>.</p>
+<p>A segment in sanity is one of the lists in square brackets.</p>
 <div class="attention admonition">
 <p class="admonition-title">What may go into a segment?</p>
 <p>A segment is a Python list: it must be surrounded by square brackects.</p>
@@ -588,6 +589,10 @@ that denotes a 1# word.  (These expressions must be defined before you run <code
 <p>A segment can have ‘add1’ or ‘add#’ followed by a number (without quotes).  This number is a register number.</p>
 <p>A segment may be the word ‘cases’ followed by a number and then three labels.</p>
 <p>A segment may optionally begin with a <em>label</em> like ‘top’, or ‘moveback’, and then it either consists of a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code surrounded by single quotes, or a Python expression that denotes a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Important note</p>
+<p><em>Please note</em>: to move or copy registers with numbers <span class="math notranslate nohighlight">\(\geq 4\)</span>, you should do <code class="docutils literal notranslate"><span class="pre">move(m,n)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">move_m_n</span></code>.</p>
 </div>
 <div class="attention admonition">
 <p class="admonition-title">labels</p>
