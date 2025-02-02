@@ -357,7 +357,7 @@ def move(src, dst):
   p += '11111 1####'    # Go backward six
   return p
    
-def copy_prog(n,m,p):
+def copy(n,m,p):
    a = ones(n) + '#####'
    b = '11111111###'
    c = '1111###'
