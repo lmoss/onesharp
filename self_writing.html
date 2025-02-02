@@ -481,7 +481,11 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 <p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word x in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
 <p>Running that last program on all empty registers gives the same thing as running x on itself:
 <span class="math notranslate nohighlight">\([\![x]\!](x)\)</span>.</p>
-<p>Thus, $<span class="math notranslate nohighlight">\([\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\](x)\)</span>.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\!](x)
+\]</div>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
