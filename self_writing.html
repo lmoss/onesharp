@@ -478,7 +478,7 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="diag">
 <h1>Diag<a class="headerlink" href="#diag" title="Link to this heading">#</a></h1>
-<p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word x in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
+<p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
 <p>Running that last program on all empty registers gives the same thing as running x on itself:
 <span class="math notranslate nohighlight">\([\![x]\!](x)\)</span>.</p>
 <p>Thus,</p>
@@ -636,14 +636,12 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 </table>
 </div></div>
 </div>
-<p>The three branches of the case instruction at the top take us to move3,1 (if R1 is empty), to the blue sub-program if the first symbol of R1 is a 1, and to the brown sub-program if that symbol is a #. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a 1 is removed from R1, what goes into R3 is the program which would write a 1 in R1 (this is 1#). And each time a # is removed from R1, what goes into R3 is the program which would write a # in R1 (this is 1##).</p>
+<p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
 <p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
 Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\(\semantics{\writeprog}(x)\)</span> in R3.
-Then
-move R3 back to the now-empty R1.
+Then move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
 The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
-<p>The tables below show the important feature of <code class="docutils literal notranslate"><span class="pre">diag</span></code>. You should memorize it as soon as possible for use below and in the next lesson.</p>
 <p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="self">
