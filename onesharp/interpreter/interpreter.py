@@ -340,6 +340,13 @@ def parse_explain(prog):
     display(df.style.pipe(make_pretty))
     #display(df)
 
+def clear(n):
+   a = ones(n) + '#####'
+   b = '111###'
+   c = '1###'
+   d = '111####'
+   return(a+b+c+d)
+
 def move(src, dst):
   p = ones(src)+'#####' # Cases on register ``src''
   p += '11111 1###'     # Go forward six
@@ -350,6 +357,18 @@ def move(src, dst):
   p += '11111 1####'    # Go backward six
   return p
    
+def copy_prog(n,m,p):
+   a = ones(n) + '#####'
+   b = '11111111###'
+   c = '1111###'
+   d = ones(m)+'##'
+   d1 = ones(p) + '##'
+   e = '11111####'
+   f = ones(m)+'#'
+   f1 = ones(p) + '#'
+   g = '11111111####'
+   return(a+b+c+d+d1+e+f+f1+g+move(p,n)) 
+
 def findme(pair,pair_list): 
   x = [i for i in range(len(pair_list)) if pair_list[i][0]==pair[1]]
   return x[0]
