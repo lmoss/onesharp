@@ -448,11 +448,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-unboundedly-many-registers-into-one">Coding unboundedly many registers into one</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-remark-on-the-beige-and-green-sub-programs">A remark on the beige and green sub-programs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-add-instructions">Implementing add# instructions</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
 </ul>
 
@@ -470,9 +466,8 @@
 <section class="tex2jax_ignore mathjax_ignore" id="universal-programs">
 <h1>Universal Programs<a class="headerlink" href="#universal-programs" title="Link to this heading">#</a></h1>
 <p>We discuss <i>universal programs</i>:
-these are programs that take programs as inputs and run
-them.</p>
-<p>To start, enter the following cell:</p>
+these are programs that take a program as an inputs and (act as if they) run
+the input program.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
@@ -504,7 +499,7 @@ them.</p>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
 <p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash) \simeq \one\)</span> because <span class="math notranslate nohighlight">\([\![\one\hash]\!](\ )\simeq \one\)</span>.</p>
-<p><span class="math notranslate nohighlight">\([\![u]\!](\one)\uparrow\)</span>  because <span class="math notranslate nohighlight">\(\one\)</span> is not a program.</p>
+<p><span class="math notranslate nohighlight">\([\![u]\!](\one)\!\uparrow\)</span>  because <span class="math notranslate nohighlight">\(\one\)</span> is not a program.</p>
 </div>
 <div class="admonition-more-examples admonition">
 <p class="admonition-title">More examples</p>
@@ -514,19 +509,16 @@ them.</p>
 </div>
 <section id="let-s-write-a-universal-program">
 <h2>Let’s write a universal program<a class="headerlink" href="#let-s-write-a-universal-program" title="Link to this heading">#</a></h2>
-<p>
-The next goal is for you to write a universal program
-yourself, either alone or with others.   
-The next sections guide you, using a series of exercises.
-<br>
-<p>
-We hasten to make two remarks: first of all, it would be more
-instructive for you to forget about the rest of this lesson 
-entirely and to just write your own universal program.   But 
- most readers would probably appreciate the hints and will find
-enough of a challenge in the construction of a long working program.
-<p>Second, the sections to come do not guide you to write a program thatt
-is <i>exactly</i> like <i>u</i> above.   The program <i>u</i>
+<p>The next goal is for you to write a universal program
+yourself, either alone or with others.<br />
+The next sections guide you, using a series of exercises.</p>
+<p>We hasten to make two remarks: first of all, it would be more
+instructive for you to forget about the rest of this lesson
+entirely and to just write your own universal program.   But
+most readers would probably appreciate the hints and will find
+enough of a challenge in the construction of a long working program.</p>
+<p>Second, the sections to come do not guide you to write a program that
+is <em>exactly</em> like <span class="math notranslate nohighlight">\(u\)</span> above.   The program <span class="math notranslate nohighlight">\(u\)</span>
 above was designed to be as short as possible.
 In fact, we leave you with a challenge: write a universal
 program with the smallest number of instructions.  The one above has
@@ -1132,7 +1124,7 @@ would not have remained empty in the tables.
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click here for a suggestion on how groups of students could joint write a universal program.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">I have done this many times in my classes, and while everyone instructor and every class will be different, here is one idea.</p>
+<p class="sd-card-text">Every instructor and every class will be different, here is one plan that has worked for me.</p>
 <p class="sd-card-text">Make groups of 4 or 5 people.  If someone prefer to work alone,
 then it would be ok to do so, but I think it would be better to work with others.</p>
 <p>
@@ -1159,7 +1151,7 @@ the various parts.  You should say clearly what the parts do, and also give some
 examples of how they run.   If you have made flowcharts, it would be good
 to hand those in as well.  
 <li> You should test your overall program.  It would be good to run
-your program on 1#,  on <i>diag</i>, and on <i>1#1## + u</i>.
+your program on 1#,  on <i>self</i>, and on <i>1#1## + u</i>.
 <li>  At various points, you will be tempted to worry about what would happen
 if the input program isn't tidy.    (For example, what should your
 program do if the input program is just 1111#### ?)
@@ -1176,36 +1168,7 @@ the input program only uses R1, R2, and R3.  You should get a program
  someone else.    
 </ol>  
 </div>
-</details><section id="a-remark-on-the-beige-and-green-sub-programs">
-<h2>A remark on the beige and green sub-programs<a class="headerlink" href="#a-remark-on-the-beige-and-green-sub-programs" title="Link to this heading">#</a></h2>
-<p>The way I have described things makes the green sub-programs
-a little harder than they have to be.   That is, if we have an instruction in
-R3, say 111###, the first thing to do would seem to be to work with it
-in order to decide which kind of instruction it is.  (In this case,
-the instruction is
-a transfer instruction, of course.)    Now you certainly can write the
-green sub-program to start out by <i>parsing</i> the instruction in R3
-and then working on a case-by-case basis.   However, this is not
-the only way to do things.   If you are careful with the
-beige program, the one that gives the <i>n</i>th instruction in the
-input program, then the parsing could be done automatically.
-What I mean here is that the beige program could be written in
-such a way that it incorporates the parsing as it goes.
-<br></p>
-<p>
-If you are successful in getting a beige program that does what
-we want, then this would be <strong>much</strong> more work
-than all of the rest combined. <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
-<section id="implementing-add-instructions">
-<h2>Implementing add# instructions<a class="headerlink" href="#implementing-add-instructions" title="Link to this heading">#</a></h2>
-<p>To see how some of this would work, we want to discuss how add1 instructions like 1##, 11##, etc. are implemented.</p>
-<p>When we execute such a instruction, we’ll assume as above that R4 contains the encoded contents of all the registers. We’ll also assume that R5 contains a number in unary, call it m. We want a sub-program that will update R4 by adding 1§# onto the end of the mth encoded register. Here is such a program:</p>
-<p>11111##### 1### 1### 1### 1111##### 1111111111111111### 1111111### 111111## 1111##### 1### 1### 111111## 111111111111### 111111# 1111##### 1### 111### 111111## 11111111111111#### 111111# 1111111111111111#### 111111## 111111## 1### 11111##### 111111111### 1### 111111##### 111111111111111111111111#### 111### 1111111## 1111#### 1111111# 111111#### 111111##### 111111### 11111111### 111111##### 1### 1### 1### 1111111# 1111111## 111111111### 1111111# 111111##### 1### 111### 1111111## 111111111111111#### 1111111# 11111111111111111#### 1111111## 1111111## 1111 ##### 111111### 111### 1111111## 1111#### 1111111# 111111#### 1111111 ##### 111111### 111### 1111## 1111#### 1111# 111111####</p>
-<p>You should try it out to make sure that it works right. Some good test cases would include the case when R4 is empty, as it would be in the beginning of a run.</p>
-<p>So far, we have described how add# instructions would be implemented in a universal program. All of the same work goes for add1 instructions, of course, with just a few changes.</p>
-<p>It would take a bit more work to handle the case instructions, but again, this is pretty similar.</p>
-</section>
-</section>
+</details><img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="universal-programs-of-more-than-one-argument">
 <h1>Universal programs of more than one argument<a class="headerlink" href="#universal-programs-of-more-than-one-argument" title="Link to this heading">#</a></h1>
 <div class="proof theorem admonition" id="theorem-0">
@@ -1329,11 +1292,7 @@ This exercise requires a trick, since there is no program like <code class="docu
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-unboundedly-many-registers-into-one">Coding unboundedly many registers into one</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-remark-on-the-beige-and-green-sub-programs">A remark on the beige and green sub-programs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-add-instructions">Implementing add# instructions</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
 </ul>
 
