@@ -497,28 +497,18 @@ the first quadrant can be properly tiled with <span class="math notranslate nohi
 <p class="admonition-title"><span class="caption-number">Proposition 4 </span></p>
 <section class="proposition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(A\)</span> is decidable and <span class="math notranslate nohighlight">\(B\)</span> is undecidable.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-
-
-
-
- 
-
-
-```{prf:theorem}
-
-There is a total computable function
-$\mathcal{T}:  A\to  \mathbb{T}$
-such that 
-
-$$
+</section>
+</div><div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 5 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>There is a total computable function
+<span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
+such that</p>
+<div class="math notranslate nohighlight">
+\[
 p\in \overline{B} \quadiff   \mathcal{T}(p) \in \Tile.
-$$
-
-Thus, $B$ is undecidable.   Indeed $\overline{K}\leq_m  \Tile$.
-</pre></div>
-</div>
+\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(B\)</span> is undecidable.   Indeed <span class="math notranslate nohighlight">\(\overline{K}\leq_m  \Tile\)</span>.</p>
 </section>
 </div><div class="attention admonition">
 <p class="admonition-title">Our goal</p>
@@ -611,7 +601,7 @@ if and only if
 if and only if
 <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
 </div>
-<div class="proof definition admonition" id="definition-1">
+<div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
 <section class="definition-content" id="proof-content">
 <p>The <em>word encoded in row <span class="math notranslate nohighlight">\(n\)</span></em>
@@ -685,7 +675,7 @@ at least in the case when register <span class="math notranslate nohighlight">\(
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
-<div class="proof proposition admonition" id="proposition-2">
+<div class="proof proposition admonition" id="proposition-3">
 <p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
@@ -725,14 +715,14 @@ then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\mathcal{T})}(\ )\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-3">
+<div class="exercise admonition" id="undecidability/tiling-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 68 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-4">
+<div class="exercise admonition" id="undecidability/tiling-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 69 </span></p>
 <section id="exercise-content">
