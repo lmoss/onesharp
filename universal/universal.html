@@ -483,27 +483,17 @@ them.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Definition</span>
-<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">attention</span>
-
-<span class="n">A</span> <span class="n">word</span> <span class="err">$</span><span class="n">u</span><span class="err">$</span> <span class="ow">is</span> <span class="o">*</span><span class="n">universal</span><span class="o">*</span> <span class="k">if</span>
-
-<span class="err">$$</span>
-<span class="p">[</span>\<span class="o">![</span>u<span class="o">]</span><span class="se">\!</span><span class="o">]</span><span class="w"> </span><span class="o">(</span>x<span class="o">)</span><span class="w"> </span><span class="se">\s</span>imeq<span class="w"> </span><span class="o">[</span><span class="se">\!</span><span class="o">[</span>u<span class="o">]</span><span class="se">\!</span><span class="o">](</span><span class="se">\ </span><span class="o">)</span>
-<span class="err">$$</span>
-
-<span class="k">for</span> <span class="nb">all</span> <span class="n">words</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span><span class="o">.</span>
-<span class="err">```</span>
-
-<span class="n">This</span> <span class="n">means</span> <span class="n">that</span> <span class="k">if</span> <span class="n">running</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span> <span class="n">on</span> <span class="nb">all</span> <span class="n">empty</span> <span class="n">registers</span> <span class="n">eventually</span> <span class="n">gives</span> <span class="n">some</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">R1</span> <span class="p">(</span><span class="ow">and</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">registers</span> <span class="n">are</span> <span class="n">empty</span><span class="p">),</span> <span class="n">then</span> <span class="n">that</span> <span class="n">same</span> <span class="n">output</span> <span class="n">would</span> <span class="n">be</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">running</span> <span class="err">$</span><span class="n">u</span><span class="err">$</span> <span class="k">with</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="ow">in</span> <span class="n">R1</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">registers</span> <span class="n">empty</span><span class="o">.</span> <span class="n">In</span> <span class="n">the</span> <span class="n">other</span> <span class="n">direction</span><span class="p">,</span> <span class="o">*</span><span class="k">if</span><span class="o">*</span> <span class="n">running</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">empty</span> <span class="n">registers</span> <span class="n">gives</span> <span class="n">some</span> <span class="n">output</span><span class="p">,</span> <span class="n">say</span> <span class="err">$</span><span class="n">y</span><span class="err">$</span><span class="p">,</span> <span class="ow">in</span> <span class="n">R1</span> <span class="p">(</span><span class="ow">and</span> <span class="nb">all</span> <span class="n">registers</span> <span class="n">empty</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span><span class="p">),</span> <span class="n">then</span> <span class="n">we</span> <span class="n">would</span> <span class="n">get</span> <span class="n">the</span> <span class="n">same</span> <span class="n">output</span> <span class="err">$</span><span class="n">y</span><span class="err">$</span> <span class="ow">in</span> <span class="n">R1</span> <span class="n">when</span> <span class="n">we</span> <span class="n">run</span> <span class="err">$</span><span class="n">u</span><span class="err">$</span> <span class="k">with</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span> <span class="ow">in</span> <span class="n">R1</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">registers</span> <span class="n">empty</span><span class="o">.</span>
-
-<span class="n">Let</span><span class="s1">&#39;s take a look at such a program and try it out.</span>
-</pre></div>
+<div class="attention admonition">
+<p class="admonition-title">Definition</p>
+<p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if</p>
+<div class="math notranslate nohighlight">
+\[
+[\![u]\!] (x) \simeq [\![u]\!](\ )
+\]</div>
+<p>for all words <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
-</div>
-</div>
+<p>This means that if running <span class="math notranslate nohighlight">\(x\)</span> on all empty registers eventually gives some output in R1 (and all other registers are empty), then that same output would be the result of running <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty. In the other direction, <em>if</em> running <span class="math notranslate nohighlight">\(x\)</span> with all empty registers gives some output, say <span class="math notranslate nohighlight">\(y\)</span>, in R1 (and all registers empty at the end), then we would get the same output <span class="math notranslate nohighlight">\(y\)</span> in R1 when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.</p>
+<p>Let’s take a look at such a program and try it out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">universal</span>
@@ -520,7 +510,7 @@ them.</p>
 <p class="admonition-title">More examples</p>
 <p>You might try to figure out what the next two should be and then confirm your guesses by running them.</p>
 <p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash\one\hash\hash)\)</span></p>
-<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash \one\hash\hash \one\hash \one\hash \hash  \one\hash \hash)\)</span></p>
+<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash \one\hash\hash \one\hash \one\hash \hash  \one\hash \hash+ u)\)</span></p>
 </div>
 <section id="let-s-write-a-universal-program">
 <h2>Let’s write a universal program<a class="headerlink" href="#let-s-write-a-universal-program" title="Link to this heading">#</a></h2>
@@ -572,7 +562,7 @@ back and drop this simplification to get a program which is truly
 universal.</p>
 <p>At this point, we are ready to sketch a method for you to
 write a universal program subject to this simplification.</p>
-<p>We are going to use registers as follows:</p>
+<p>We are going to use <i>pseudo-registers</i> as follows:</p>
  <CENTER>
 <TABLE BORDER  Cellpadding="3">
  <TR><TD BGCOLOR="#B0E0E6">R1: the input program <i>p</i>  </TD>   </tr>
@@ -581,9 +571,9 @@ write a universal program subject to this simplification.</p>
 </tr>
  <TR><TD BGCOLOR="#B0E0E6">R3: the <i>n</i>th instruction of <i>p</i>    
 </TD>   </tr>
- <TR><TD BGCOLOR="#B0E0E6">R4: the contents of R1   </TD>   </tr>
- <TR><TD BGCOLOR="#B0E0E6">R5: the contents of R2  </TD>   </tr>
- <TR><TD BGCOLOR="#B0E0E6">R6: the contents of R3  </TD>   </tr>
+ <TR><TD BGCOLOR="#B0E0E6">R4: the contents of the real R1   </TD>   </tr>
+ <TR><TD BGCOLOR="#B0E0E6">R5: the contents of the real R2  </TD>   </tr>
+ <TR><TD BGCOLOR="#B0E0E6">R6: the contents of the real R3  </TD>   </tr>
 </table>
 </center>
 <br><p>
@@ -614,8 +604,8 @@ to be the prorgram <center>
 </center>
 <br>
 <p>
-Now to make life easier, we'll write out this program and indicate
-the instruction numbers above them:
+Let's parse this program and number the 
+instructions:
 <center>
 <TABLE BORDER  Cellpadding="3">
 <tr>
@@ -1031,20 +1021,15 @@ The beige columns alternate with the green ones.
 The purpose of the beige program is to take the input program
 (in R1) and the next instruction number (R2), and to
 look up the appropriate  
-instruction and put it into R3.  This is similar to a program
-which we saw earlier on.  But we need to be sure that the contents
-of R1 and R2 are not destroyed at the end.  (So you will probably need
-to use registers beyond R6 for all of this.)    The way to understand
+instruction and put it into R3.  But we need to be sure that the contents
+of R1 and R2 are not destroyed at the end.     The way to understand
 the beige columns is that they tell the contents of the various registers
 at the <strong>beginning</strong> of the operation of the "beige
 sub-program".  You will need to write that sub-program.
-It is a fairly straightforward modification of a program which you
-already have seen, the one that gives the <i>n</i>the instruction of
-an input program.   But there are some differences: you need to be
-sure that the output goes in R3, that the input is preserved, and that
-if the contents of R2 is one more than the length of the input program in R1,
-then the program "knows" about this and transfers over to the yellow sub-program
-shown at the end.
+It is a fairly straightforward modification of a program which
+takes an input program <i>q<\i> and a number <i>n<\i> and gives the <i>n</i>th instruction of
+<i>q<\i>.   But you need to be
+sure that the output goes in R3, and that the input is preserved.
 <br><p>
 The main action of the steps is done in the green columns;
 more precisely, 
@@ -1052,13 +1037,13 @@ the columns shown are the <strong>beginnings</strong> of the
 "green" sub-program, and then the results of that sub-program
 are the beige columns which follow.
 The exact action depends on what kind of instruction is in R3 in 
-the given green column.  For example, if R3 has 11#, then
+the given green column.  For example, if R3 has `≈, then
 in the next beige column we add a # to R5 (not R2: it is R5
 that models what is in R2 of the <i>real</i> machine when we run 
-program).   We also must add 1 to  R2 in simulating the execution
-of  11#, since after 11#, we go to the very next instruction.
+program).   We also must add ```1``` to  R2 in simulating the execution
+of ```11#```, since after ```11#```, we go to the very next instruction.
 This is how the green columns work when we execute an instruction
-11#.   The other cases are left for you to think about.
+```11#```.   The other cases are left for you to think about.
 Note also that each time the green sub-program runs, R3 is emptied 
 at the end.
 <br><p>
