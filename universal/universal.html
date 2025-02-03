@@ -443,7 +443,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Universal Programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-plan-for-this-lesson">The plan for this lesson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-write-a-universal-program">Let’s write a universal program</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification">Simplification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-unboundedly-many-registers-into-one">Coding unboundedly many registers into one</a></li>
 </ul>
@@ -469,8 +469,8 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/universal/universal.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="universal-programs">
 <h1>Universal Programs<a class="headerlink" href="#universal-programs" title="Link to this heading">#</a></h1>
-<p>This lesson will teach you about  <i>universal programs</i>:
-these are programs that take <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> programs as inputs and run
+<p>We discuss <i>universal programs</i>:
+these are programs that take programs as inputs and run
 them.</p>
 <p>To start, enter the following cell:</p>
 <div class="cell docutils container">
@@ -485,70 +485,63 @@ them.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Definition</span>
+<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">attention</span>
+
+<span class="n">A</span> <span class="n">word</span> <span class="err">$</span><span class="n">u</span><span class="err">$</span> <span class="ow">is</span> <span class="o">*</span><span class="n">universal</span><span class="o">*</span> <span class="k">if</span>
+
+<span class="err">$$</span>
+<span class="p">[</span>\<span class="o">![</span>u<span class="o">]</span><span class="se">\!</span><span class="o">]</span><span class="w"> </span><span class="o">(</span>x<span class="o">)</span><span class="w"> </span><span class="se">\s</span>imeq<span class="w"> </span><span class="o">[</span><span class="se">\!</span><span class="o">[</span>u<span class="o">]</span><span class="se">\!</span><span class="o">](</span><span class="se">\ </span><span class="o">)</span>
+<span class="err">$$</span>
+
+<span class="k">for</span> <span class="nb">all</span> <span class="n">words</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span><span class="o">.</span>
+<span class="err">```</span>
+
+<span class="n">This</span> <span class="n">means</span> <span class="n">that</span> <span class="k">if</span> <span class="n">running</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span> <span class="n">on</span> <span class="nb">all</span> <span class="n">empty</span> <span class="n">registers</span> <span class="n">eventually</span> <span class="n">gives</span> <span class="n">some</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">R1</span> <span class="p">(</span><span class="ow">and</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">registers</span> <span class="n">are</span> <span class="n">empty</span><span class="p">),</span> <span class="n">then</span> <span class="n">that</span> <span class="n">same</span> <span class="n">output</span> <span class="n">would</span> <span class="n">be</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">running</span> <span class="err">$</span><span class="n">u</span><span class="err">$</span> <span class="k">with</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="ow">in</span> <span class="n">R1</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">registers</span> <span class="n">empty</span><span class="o">.</span> <span class="n">In</span> <span class="n">the</span> <span class="n">other</span> <span class="n">direction</span><span class="p">,</span> <span class="o">*</span><span class="k">if</span><span class="o">*</span> <span class="n">running</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span> <span class="k">with</span> <span class="nb">all</span> <span class="n">empty</span> <span class="n">registers</span> <span class="n">gives</span> <span class="n">some</span> <span class="n">output</span><span class="p">,</span> <span class="n">say</span> <span class="err">$</span><span class="n">y</span><span class="err">$</span><span class="p">,</span> <span class="ow">in</span> <span class="n">R1</span> <span class="p">(</span><span class="ow">and</span> <span class="nb">all</span> <span class="n">registers</span> <span class="n">empty</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span><span class="p">),</span> <span class="n">then</span> <span class="n">we</span> <span class="n">would</span> <span class="n">get</span> <span class="n">the</span> <span class="n">same</span> <span class="n">output</span> <span class="err">$</span><span class="n">y</span><span class="err">$</span> <span class="ow">in</span> <span class="n">R1</span> <span class="n">when</span> <span class="n">we</span> <span class="n">run</span> <span class="err">$</span><span class="n">u</span><span class="err">$</span> <span class="k">with</span> <span class="err">$</span><span class="n">x</span><span class="err">$</span> <span class="ow">in</span> <span class="n">R1</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">registers</span> <span class="n">empty</span><span class="o">.</span>
+
+<span class="n">Let</span><span class="s1">&#39;s take a look at such a program and try it out.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">universal</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="attention admonition">
-<p class="admonition-title">Definition</p>
-<p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if</p>
-<div class="math notranslate nohighlight">
-\[\phifn_u(x) \simeq \phifn_x(\ )
-\]</div>
-<p>for all words <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>This means that if running <span class="math notranslate nohighlight">\(x\)</span> on all empty registers eventually gives some output in R1 (and all other registers are empty), then that same output would be the result of running <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty. In the other direction, <i>if</i> running <span class="math notranslate nohighlight">\(x\)</span> with all empty registers gives some output, say <span class="math notranslate nohighlight">\(y\)</span>, in R1 (and all registers empty at the end), then we would get the same output <span class="math notranslate nohighlight">\(y\)</span> in R1 when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.</p>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash) \simeq \one\)</span> because <span class="math notranslate nohighlight">\([\![\one\hash]\!](\ )\simeq \one\)</span>.</p>
+<p><span class="math notranslate nohighlight">\([\![u]\!](\one)\uparrow\)</span>  because <span class="math notranslate nohighlight">\(\one\)</span> is not a program.</p>
 </div>
-<p>Here is a specific example of this. Try running <i>u</i> with 1# 1## in
-R1.  The result is 1#, and this is what happens when we run 1# 1## on all
-empty registers.  So the universal program <i>u</i> takes 1# 1## and
-simulates a run of that program. <br> <p> For another example,
-suppose we start <i>u</i> with <i>self</i> in R1
-(and all other registers empty).  You can check for yourself that
-we eventually get <i>self</i> in R1.
-(Note: the computation might take several minutes.)<br />
-This confirms the basic
-property because running <i>self</i> with all registers empty
-gives <i>self</i>.<br />
-<br></p>
+<div class="admonition-more-examples admonition">
+<p class="admonition-title">More examples</p>
+<p>You might try to figure out what the next two should be and then confirm your guesses by running them.</p>
+<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash\one\hash\hash)\)</span></p>
+<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash \one\hash\hash \one\hash \one\hash \hash  \one\hash \hash)\)</span></p>
+</div>
+<section id="let-s-write-a-universal-program">
+<h2>Let’s write a universal program<a class="headerlink" href="#let-s-write-a-universal-program" title="Link to this heading">#</a></h2>
 <p>
-We can even run  <i>u</i> on programs that contain <i>u</i> itself.
-For this, we return to our first example, concerning the word 1# 1##.
-As we know, 
-<br><p><center>
- &phi;<sub><i>u</i></sub>(1# 1##) = 1#.
-</center><br><p>
-Recall also that 
-<br><p><center>
- &phi;<sub><i>write</i></sub>(1# 1##) = 1# 1## 1# 1## 1##
-</center><br><p>
-It follows that 
- <br><p><center>
- &phi;<sub>1# 1## 1# 1## 1## + <i>u</i></sub>( ) = 1#.
-</center><br><p>
-And from this we conclude that 
-<br><p><center>
- &phi;<sub><i>u</i></sub>(1# 1## 1# 1## 1## + <i>u</i>) = 1#
-</center><br><p>
-This is something you can try for yourself.   
-<section id="the-plan-for-this-lesson">
-<h2>The plan for this lesson<a class="headerlink" href="#the-plan-for-this-lesson" title="Link to this heading">#</a></h2>
-<p>
-The goal of this lesson is for you to write a universal program
-yourself.   The next sections guide you, using a series of exercises.
+The next goal is for you to write a universal program
+yourself, either alone or with others.   
+The next sections guide you, using a series of exercises.
 <br>
 <p>
 We hasten to make two remarks: first of all, it would be more
 instructive for you to forget about the rest of this lesson 
-entirely and to just write your own universal program.   But this
+entirely and to just write your own universal program.   But 
  most readers would probably appreciate the hints and will find
 enough of a challenge in the construction of a long working program.
-Second, the sections to come do not guide you to write a program thatt
-is <i>exactly</i> like <i>u</i> above.   The  <i>u</i> 
+<p>Second, the sections to come do not guide you to write a program thatt
+is <i>exactly</i> like <i>u</i> above.   The program <i>u</i>
 above was designed to be as short as possible.
 In fact, we leave you with a challenge: write a universal
-program with the smallest number of instructions.  The one above has 
-300.</section>
+program with the smallest number of instructions.  The one above has
+300.</p>
+</section>
 <section id="simplification">
 <h2>Simplification<a class="headerlink" href="#simplification" title="Link to this heading">#</a></h2>
 <p>We are going to simplify the requirements in order to make
@@ -556,7 +549,7 @@ it easier to write a universal program.  So we’ll outline how
 to write a program that is <i>close</i> to a universal program,
 but not quite a universal program.</p>
 <p>We’ll write a program <span class="math notranslate nohighlight">\(u\)</span> that acts like a universal
-program, but only for programs which use only R1, R2, and R3.
+program, but <em>only for programs which use only R1, R2, and R3</em>.
 In more detail:</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be any
 program of <code class="docutils literal notranslate"><span class="pre">1#</span></code> which only uses R1, R2, and R3.
@@ -571,8 +564,8 @@ registers, then eventually we halt with <span class="math notranslate nohighligh
 <p>Once again, the work of this section sketches a construction of
 such a program <span class="math notranslate nohighlight">\(u\)</span>.   You will need to do much of the work yourself
 in actually getting the program from the sketch.  And even when we
-have <span class="math notranslate nohighlight">\(u\)</span>, it will not be quite what we want for this lesson overall,
-because <span class="math notranslate nohighlight">\(u\)</span> will only behave right on programs which use the first
+have <span class="math notranslate nohighlight">\(u\)</span>, it will not be what we really want, since
+the resulting program <span class="math notranslate nohighlight">\(u\)</span> will only behave right on programs which use the first
 three registers.<br />
 Later on, we’ll come
 back and drop this simplification to get a program which is truly
@@ -1151,9 +1144,11 @@ would not have remained empty in the tables.
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="project">
 <h1>Project<a class="headerlink" href="#project" title="Link to this heading">#</a></h1>
-<p>Here is a suggestion on how groups of students could joint write a universal program.
-I have done this many times in my classes, and while everyone instructor and every class will be different, here is one idea.</p>
-<p>Make groups of 4 or 5 people.  If someone prefer to work alone,
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click here for a suggestion on how groups of students could joint write a universal program.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">I have done this many times in my classes, and while everyone instructor and every class will be different, here is one idea.</p>
+<p class="sd-card-text">Make groups of 4 or 5 people.  If someone prefer to work alone,
 then it would be ok to do so, but I think it would be better to work with others.</p>
 <p>
 <br>
@@ -1181,43 +1176,22 @@ to hand those in as well.
 <li> You should test your overall program.  It would be good to run
 your program on 1#,  on <i>diag</i>, and on <i>1#1## + u</i>.
 <li>  At various points, you will be tempted to worry about what would happen
-if the input program does <i>not</i> halt.    (For example, what should your
+if the input program isn't tidy.    (For example, what should your
 program do if the input program is just 1111#### ?)
 Strictly speaking, the universal program should itself diverge on this input.
 But for our purposes, it's fine to ignore this point.
   You need not worry about this at all, only about the case
-when the input program really does halt. 
+when the input program is tidy. 
 <li>  Above, we worked with the simplifying assumption that
 the input program only uses R1, R2, and R3.  You should get a program
 <i>u</i> that woks on all input programs.   
-<li>  Your final draft should say who did what.
 <li>
   It is important to write well.   
  Your goal should be to write something that could be understood by
- someone else in the class.    
+ someone else.    
 </ol>  
-<hr>
-<h3>A remark on the beige and green sub-programs</h3>
-<p>
-The way I have described things makes the green sub-programs
-a little harder than they have to be.   That is, if we have an instruction in 
-R3, say 111###, the first thing to do would seem to be to work with it
-in order to decide which kind of instruction it is.  (In this case, 
-the instruction is
-a transfer instruction, of course.)    Now you certainly can write the 
-green sub-program to start out by <i>parsing</i> the instruction in R3
-and then working on a case-by-case basis.   However, this is not
-the only way to do things.   If you are careful with the
-beige program, the one that gives the <i>n</i>th instruction in the
-input program, then the parsing could be done automatically.
-What I mean here is that the beige program could be written in 
-such a way that it incorporates the parsing as it goes.
-<br>
-<p>
-If you are successful in getting a beige program that does what
-we want, then this would be <strong>much</strong> more work
-than all of the rest combined.   
-<section id="a-remark-on-the-beige-and-green-sub-programs">
+</div>
+</details><section id="a-remark-on-the-beige-and-green-sub-programs">
 <h2>A remark on the beige and green sub-programs<a class="headerlink" href="#a-remark-on-the-beige-and-green-sub-programs" title="Link to this heading">#</a></h2>
 <p>The way I have described things makes the green sub-programs
 a little harder than they have to be.   That is, if we have an instruction in
@@ -1236,26 +1210,7 @@ such a way that it incorporates the parsing as it goes.
 <p>
 If you are successful in getting a beige program that does what
 we want, then this would be <strong>much</strong> more work
-than all of the rest combined. <p>The group overall will need to turn in a program along with an explanation of
-the various parts.  You should say clearly what the parts do, and also give some
-examples of how they run.   If you have made flowcharts, it would be good
-to hand those in as well.</p>
-<p>You should test your overall program.  It would be good to run
-your program on 1#,  on <i>diag</i>, and on <i>1#1## + u</i>.</p>
-<p>At various points, you will be tempted to worry about what would happen
-if the input program does <i>not</i> halt.    (For example, what should your
-program do if the input program is just 1111#### ?)
-Strictly speaking, the universal program should itself diverge on this input.
-But for our purposes, it’s fine to ignore this point.
-You need not worry about this at all, only about the case
-when the input program really does halt.</p>
-<p>Above, we worked with the simplifying assumption that
-the input program only uses R1, R2, and R3.  You should get a program
-<em>u</em> that woks on all input programs.</p>
-<p>Your final draft should say who did what.</p>
-<p>It is important to write well.    Your goal should be to write something that could be understood by
-someone else in the class.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
+than all of the rest combined. <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
 <section id="implementing-add-instructions">
 <h2>Implementing add# instructions<a class="headerlink" href="#implementing-add-instructions" title="Link to this heading">#</a></h2>
 <p>To see how some of this would work, we want to discuss how add1 instructions like 1##, 11##, etc. are implemented.</p>
@@ -1375,7 +1330,7 @@ This exercise requires a trick, since there is no program like <code class="docu
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Universal Programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-plan-for-this-lesson">The plan for this lesson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-write-a-universal-program">Let’s write a universal program</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification">Simplification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coding-unboundedly-many-registers-into-one">Coding unboundedly many registers into one</a></li>
 </ul>
