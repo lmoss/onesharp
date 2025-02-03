@@ -176,10 +176,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">First steps</a></li>
 
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
@@ -570,10 +566,9 @@ write a universal program subject to this simplification.</p>
 </center>
 <br><p>
 That is, we are going to <strong>simulate</strong> the 
-computation of a register machine on a program $p$ by
-using six registers.   Our universal program $u$ is 
-what does the simulation, and it works step-by-step.  That is,
-$u$ mimics what a register machine would really do.
+computation of a register machine on a program <i>p</i> by
+using six registers.   Our universal program <i>u</i> 
+mimics what a register machine would do.
 The only difference is that one step of a real register machine
 would be done by *many* steps of our universal program.
 <p>The registers above hold what is sometimes called a <strong>snapshot
@@ -651,7 +646,7 @@ instructions:
 <p>
 What we are going to show is tables of what the various
 registers show after different parts of a run of a universal program
-<i>u</i> on this program $\mathtt{1\#\#}$ + <i>write</i>.
+<i>u</i> on this program 1# + <i>write</i>.
 We hasten to add that the universal program exhibited above
 does <i>not</i> conform to the tables. (This is because
 registers work differently in it.  Also,  the program
@@ -999,7 +994,15 @@ and concluding
 As promised, here are some words of explanation.
 <br><p>
 As you can see, there are four different colors of the columns.
-The colors indicate the <strong>sub-programs</strong> of <i>u</i>.
+ <CENTER>
+<TABLE BORDER  Cellpadding="3">
+         <TR><TD BGCOLOR="#F5F5DC">orange: starting out    </td></tr>
+         <TR><td BGCOLOR="#66FF99">beige: find the <i>n</i>th instruction of the program   </td></tr>
+         <TR><TD BGCOLOR="#F5F5DC">green: execute the action in R3     </td></tr>
+         <TR><td BGCOLOR="#FFFFOO">yellow: finishing up    </td></tr>
+</table>
+</center>
+<p>The colors indicate the <strong>sub-programs</strong> of <i>u</i>.
 The columns themselves indicate the register contents when one
 of the sub-programs <strong>begins</strong>.
 <br><p>
@@ -1009,60 +1012,60 @@ So it adds a 1 to R2, indicating that at the
 very beginning of the execution of
 the input program, the instruction to look at first is instruction 1.
 <br><p>
-The beige columns alternate with the green ones.
+The beige columns alternate with the green columns.
 The purpose of the beige program is to take the input program
 (in R1) and the next instruction number (R2), and to
-look up the appropriate  
+look up the appropriate<br />
 instruction and put it into R3.  But we need to be sure that the contents
 of R1 and R2 are not destroyed at the end.     The way to understand
 the beige columns is that they tell the contents of the various registers
-at the <strong>beginning</strong> of the operation of the "beige
-sub-program".  You will need to write that sub-program.
+at the <strong>beginning</strong> of the operation of the “beige
+sub-program”.  You will need to write that sub-program.
 It is a fairly straightforward modification of a program which
 takes an input program <i>q</i> and a number <i>n</i> and gives the <i>n</i>th instruction of
 <i>q</i>.   But you need to be
 sure that the output goes in R3, and that the input is preserved.
 <br><p>
 The main action of the steps is done in the green columns;
-more precisely, 
+more precisely,
 the columns shown are the <strong>beginnings</strong> of the
-"green" sub-program, and then the results of that sub-program
+“green” sub-program, and then the results of that sub-program
 are the beige columns which follow.
-The exact action depends on what kind of instruction is in R3 in 
+The exact action depends on what kind of instruction is in R3 in
 the given green column.  For example, if R3 has `≈, then
 in the next beige column we add a # to R5 (not R2: it is R5
-that models what is in R2 of the <i>real</i> machine when we run 
-program).   We also must add ```1``` to  R2 in simulating the execution
-of ```11#```, since after ```11#```, we go to the very next instruction.
+that models what is in R2 of the <i>real</i> machine when we run
+program).   We also must add 1 to  R2 in simulating the execution
+of 11#, since after 11#, we go to the very next instruction.
 This is how the green columns work when we execute an instruction
-```11#```.   The other cases are left for you to think about.
-Note also that each time the green sub-program runs, R3 is emptied 
+11#.   The other cases are left for you to think about.
+Note also that each time the green sub-program runs, R3 is emptied
 at the end.
 <br><p>
 The last column color is the yellow one at the very end.
 Before the yellow one starts up, the beige program
-has determined (in some sense) that 
-  our program $p$ has 18 instructions and we have 
-  come to a point where we ask for instruction 19.  Thus, 
-  the input program has halted.   We therefore want to
-  take the contents of R1 as run by the input program
-  (this is the word in R4), and  move this to R1.
-  Also, we would like to clear out the contents of
-  whichever registers are not empty.  We do this so that 
-  the program we are writing will itself come to a good halt
-  on its input.
-<br>
+has determined (in some sense) that
+our program <span class="math notranslate nohighlight">\(p\)</span> has 18 instructions and we have
+come to a point where we ask for instruction 19.  Thus,
+the input program has halted.   We therefore want to
+take the contents of R1 as run by the input program
+(this is the word in R4), and  move this to R1.
+Also, we would like to clear out the contents of
+whichever registers are not empty.  We do this so that
+the program we are writing will itself come to a good halt
+on its input.
+<br></p>
 <p>
 It might seem silly to have R1 unchanged throughout.
 But this isn't really what is happening at all.
 In the course of the beige subprograms, parts of R1 are copied
 to other registers, and the copied back.   So at the 
 <i>end</i> of the beige sub-programs, we have the original
-program $p$ back in R1.   
+program <i>p</i> back in R1.   
 <br><p>
 Similarly, it might seem weird to have R6 completely unused
-in running a universal program on $p$.  This is due
-to the fact that our program $p$ only uses R1 and R2.
+in running a universal program on <i>p</i>.  This is due
+to the fact that our program <i>p</i> only uses R1 and R2.
 If we worked with an example program that used R3, then R6
 would not have remained empty in the tables.
 </section>

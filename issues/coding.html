@@ -176,10 +176,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">First steps</a></li>
 
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
@@ -450,7 +446,7 @@
 <p>At this point, we have seen a bit about one particular model of computation, leading to the definition of a <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable function.   We also saw some mathematically natural algorithmic problems having to do with graphs, tiling, dominoes, and matricies.  What we want to do at this point is to connect these two discussions.
 We also want to say in a more formal way what it means for one or another algorithmic problem to be decidable or undecidable.</p>
 <div class="proof definition admonition" id="structure">
-<p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
 <section class="definition-content" id="proof-content">
 <p>A <em>structure</em> is a tuple</p>
 <div class="math notranslate nohighlight">
@@ -464,7 +460,7 @@ We also want to say in a more formal way what it means for one or another algori
 </div><p>This is the standard notion of a <em>first-order structure</em> from mathematical logic.</p>
 <p>The kinds of problems that interest us are where we are given a type of mathematical problem represented by a <em>structure</em> <span class="math notranslate nohighlight">\(S\)</span>, and a <em>target set</em> <span class="math notranslate nohighlight">\(T\subseteq S\)</span>.  We are interested to know whether a given <span class="math notranslate nohighlight">\(s\in S\)</span> belongs to <span class="math notranslate nohighlight">\(T\)</span> or not.</p>
 <div class="proof definition admonition" id="coding">
-<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-<em>encoding</em> of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> consists of</p>
 <ol class="arabic simple">
@@ -509,7 +505,7 @@ And <span class="math notranslate nohighlight">\(\hat{s}\)</span> is also comput
 <p>There are other encodings of this same structure <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.  For example, we could drop the empty word from <span class="math notranslate nohighlight">\(\widehat{S}\)</span> and adjust the rest of the encoding apparatus.   We also could decide to use <em>binary numbers</em>, and even there we have several options of how to regard binary numbers as <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.</p>
 </div>
 <div class="proof definition admonition" id="coding_what_for">
-<p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Suppose we are given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and an encoding <span class="math notranslate nohighlight">\(\pi\)</span> of it.</p>
 <p>A function <span class="math notranslate nohighlight">\(f: S^n\to S\)</span> is <em>computable relative to the encoding</em> if the isomorphic version of it is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
