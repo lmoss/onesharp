@@ -458,23 +458,17 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/tiling.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tiling">
 <h1>Tiling<a class="headerlink" href="#tiling" title="Link to this heading">#</a></h1>
-<p>In this section we prove the undecidability of the tiling problem.<br />
-We are given a finite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, and the problem is to determine whether there is a proper tiling of the first quadrant of the plane using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   A <em>tile</em> is a square with <em>colors</em> on the four sides.
-The colors can be anything, of course.</p>
-<p>The main problem  is   whether,
-given a tile
-set  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
-we we can tile the first quadrant of the plane in such a way that
-<span class="math notranslate nohighlight">\(t_0\)</span> goes on
-the corner,
-and matching edges have the same color.  This is what we mean by a <em>proper</em> tiling of the first quadrant.</p>
-<p>A <em>finite, pointed tile set</em>
+<p>A <em>tile</em> is a square with <em>colors</em> on the four sides.
+The colors can be anything, of course.
+A <em>finite, pointed tile set</em>
 <span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>
 is a finite set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of tiles with a fixed <em>distinguished tile</em>
 <span class="math notranslate nohighlight">\(t_0\in\mathcal{T}\)</span>.
-When we talk about tile sets we always will mean a
+When we talk about tile sets in this section, we always will mean a
 finite,
 pointed tile set.</p>
+<p>Given a finite pointed tile set <span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>, the problem is to determine whether there is a proper tiling of the first quadrant of the plane using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  We must use <span class="math notranslate nohighlight">\(t_0\)</span> on the corner
+and matching edges must have the same color.  This is what we mean by a <em>proper</em> tiling of the first quadrant.</p>
 <div class="tip admonition">
 <p class="admonition-title">Notation</p>
 <p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets.
