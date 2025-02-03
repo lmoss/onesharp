@@ -587,7 +587,7 @@ large chart.   This chart shows just one example
 of how a universal program could work, when we take
 <span class="math notranslate nohighlight">\(p\)</span>
 to be the prorgram <center>
-<span class="math notranslate nohighlight">\(\mathtt{1\#\#}\)</span>  + <i>write </i></p>
+<span class="math notranslate nohighlight">\( p = \mathtt{1\#\#}\)</span>  + <i>write =  </i></p>
 </center>
 <br>
 <p>
@@ -658,7 +658,7 @@ Here are the tables; we'll have some words below about them.
  <left>
 <TABLE BORDER  Cellpadding="3">
  <TR><TD BGCOLOR="#B0E0E6">R1: the input program <i>p</i>  </TD>   
-<TD BGCOLOR="#FF8COO">  p  </TD>
+<TD BGCOLOR="#FF8COO">   <i>p</i>  </TD>
          <TD BGCOLOR="#F5F5DC">  <i>p</i> </td>
          <TD BGCOLOR="#66FF99">  <i>p</i> </td>
          <TD BGCOLOR="#F5F5DC">  <i>p</i> </td>
@@ -996,10 +996,11 @@ As promised, here are some words of explanation.
 As you can see, there are four different colors of the columns.
  <CENTER>
 <TABLE BORDER  Cellpadding="3">
-         <TR><TD BGCOLOR="#F5F5DC">orange: starting out    </td></tr>
-         <TR><td BGCOLOR="#66FF99">beige: find the <i>n</i>th instruction of the program   </td></tr>
-         <TR><TD BGCOLOR="#F5F5DC">green: execute the action in R3     </td></tr>
-         <TR><td BGCOLOR="#FFFFOO">yellow: finishing up    </td></tr>
+         <TR><TD BGCOLOR="#F5F5DC">orange: starting out by pre-processing, etc.    </td></tr>
+         <TR><td BGCOLOR="#F5F5DC">beige: put into R3 the <i>n</i>th instruction of the program in R1   </td></tr>
+         <TR><td BGCOLOR="#F5F5DC">beige: where R2 has 1<sup><i>n</i></sup>   </td></tr>
+         <TR><TD BGCOLOR="#66FF99">green: execute the action in R3     </td></tr>
+         <TR><td BGCOLOR="#FFFFOO">yellow: finishing up by moving and clearing   </td></tr>
 </table>
 </center>
 <p>The colors indicate the <strong>sub-programs</strong> of <i>u</i>.
