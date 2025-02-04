@@ -512,7 +512,7 @@
 </tbody>
 </table>
 </div>
-<p>Then we run this program <code class="docutils literal notranslate"> <span class="pre">move_1_2</span> <span class="pre">+</span> <span class="pre">[[write]](q)</span> <span class="pre">+</span> <span class="pre">p</span></code> on <code class="docutils literal notranslate"><span class="pre">r</span></code> in R1</p>
+<p>We get the program <code class="docutils literal notranslate"> <span class="pre">move_1_2</span> <span class="pre">+</span> <span class="pre">[[write]](q)</span> <span class="pre">+</span> <span class="pre">p</span></code>.  We run this program on <code class="docutils literal notranslate"><span class="pre">r</span></code> in R1</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -527,7 +527,7 @@
 <td><p>r</p></td>
 <td><p></p></td>
 <td><p>q</p></td>
-<td><p><a class="reference internal" href="#q,r"><span class="xref myst">p</span></a></p></td>
+<td><p>[p ] (q,r)</p></td>
 </tr>
 <tr class="row-odd"><td><p>R2</p></td>
 <td><p></p></td>
@@ -540,22 +540,6 @@
 </div>
 <p>This concludes the verification.</p>
 </div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{l||l|l|l|l|l|l}
- &amp; \mbox{at the} &amp; \mbox{after} &amp; \mbox{after} &amp; \mbox{after}  &amp; \mbox{after} &amp; \mbox{after}\\
- &amp; \mbox{start}&amp;
- \writee &amp; \move_{1,2}&amp;
-\semantics{\writeprog}(\move_{1,2}) &amp; \move_{2,1} &amp;\semantics{\writeprog}(\div)\\ \hline
-R1 &amp; \one\one\one  &amp;  \one\hash\one\hash\one\hash  &amp;  &amp;  \move_{1,2}&amp;  \move_{1,2} + (\one\hash)^3&amp;  \move_{1,2} + (\one\hash)^3  \\ 
-&amp;     &amp;  &amp;   &amp; &amp;  &amp; \quad\quad\quad+\div\\
-  &amp;  &amp;     &amp;      &amp; &amp; &amp; \\
-   R2 &amp;  &amp;     &amp;  \one\hash\one\hash\one\hash   &amp;  \one\hash\one\hash\one\hash  &amp; &amp; \\
-    &amp;     &amp;  &amp;   &amp; &amp;  &amp;\\
-R3 &amp;     &amp;  &amp;   &amp; &amp; &amp; \\
-       &amp;     &amp;  &amp;   &amp; &amp;  &amp;\\
-\end{array}
-\end{split}\]</div>
 </section>
 
     <script type="text/x-thebe-config">
