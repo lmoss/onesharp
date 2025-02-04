@@ -466,7 +466,7 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/instructions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="first-steps">
 <h1>First steps<a class="headerlink" href="#first-steps" title="Link to this heading">#</a></h1>
-<p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ above.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs, and even if you want to look at them it would probably be better not to do so as you learn <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ above.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
@@ -475,85 +475,12 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (75.3.0)
-<span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of pyodbc: Invalid version: &#39;4.0.0-unsupported&#39;</span>
-<span class=" -Color -Color-Red">ERROR: Exception:</span>
-<span class=" -Color -Color-Red">Traceback (most recent call last):</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/cli/base_command.py&quot;, line 106, in _run_wrapper</span>
-<span class=" -Color -Color-Red">    status = _inner_run()</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/cli/base_command.py&quot;, line 97, in _inner_run</span>
-<span class=" -Color -Color-Red">    return self.run(options, args)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/cli/req_command.py&quot;, line 67, in wrapper</span>
-<span class=" -Color -Color-Red">    return func(self, options, args)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/commands/install.py&quot;, line 484, in run</span>
-<span class=" -Color -Color-Red">    installed_versions[distribution.canonical_name] = distribution.version</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/metadata/pkg_resources.py&quot;, line 192, in version</span>
-<span class=" -Color -Color-Red">    return parse_version(self._dist.version)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_vendor/packaging/version.py&quot;, line 56, in parse</span>
-<span class=" -Color -Color-Red">    return Version(version)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_vendor/packaging/version.py&quot;, line 202, in __init__</span>
-<span class=" -Color -Color-Red">    raise InvalidVersion(f&quot;Invalid version: {version!r}&quot;)</span>
-<span class=" -Color -Color-Red">pip._vendor.packaging.version.InvalidVersion: Invalid version: &#39;4.0.0-unsupported&#39;</span>
-Collecting git+https://github.com/lmoss/onesharp.git@main
-  Cloning https://github.com/lmoss/onesharp.git (to revision main) to /private/var/folders/kt/458_ttf57hvdmjpsh88m1fzh0000gp/T/pip-req-build-opw810gh
-  Running command git clone --filter=blob:none --quiet https://github.com/lmoss/onesharp.git /private/var/folders/kt/458_ttf57hvdmjpsh88m1fzh0000gp/T/pip-req-build-opw810gh
-  warning: the following paths have collided (e.g. case-sensitive paths
-  on a case-insensitive filesystem) and only one from the same
-  colliding group is in the working tree:
-
-    &#39;T_predicate.ipynb&#39;
-    &#39;t_predicate.ipynb&#39;
-  Resolved https://github.com/lmoss/onesharp.git to commit 70f8cb7e55c7ce4a8f3805d0a46d35b88a85680b
-  Installing build dependencies ... ?25ldone
-?25h  Getting requirements to build wheel ... ?25ldone
-?25h  Preparing metadata (pyproject.toml) ... ?25ldone
-?25hRequirement already satisfied: numpy in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from onesharp==0.0.0) (1.23.1)
-Requirement already satisfied: pandas in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from onesharp==0.0.0) (1.1.3)
-Requirement already satisfied: IPython in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from onesharp==0.0.0) (7.19.0)
-Requirement already satisfied: setuptools&gt;=18.5 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (75.3.0)
-Requirement already satisfied: jedi&gt;=0.10 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.17.1)
-Requirement already satisfied: decorator in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (4.4.2)
-Requirement already satisfied: pickleshare in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.7.5)
-Requirement already satisfied: traitlets&gt;=4.2 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (5.14.3)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (3.0.8)
-Requirement already satisfied: pygments in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (2.18.0)
-Requirement already satisfied: backcall in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.2.0)
-Requirement already satisfied: pexpect&gt;4.3 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (4.8.0)
-Requirement already satisfied: appnope in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from IPython-&gt;onesharp==0.0.0) (0.1.0)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from pandas-&gt;onesharp==0.0.0) (2020.1)
-Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from jedi&gt;=0.10-&gt;IPython-&gt;onesharp==0.0.0) (0.7.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;IPython-&gt;onesharp==0.0.0) (0.6.0)
-Requirement already satisfied: wcwidth in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;IPython-&gt;onesharp==0.0.0) (0.2.5)
-Requirement already satisfied: six&gt;=1.5 in /Users/lsm/opt/anaconda3/lib/python3.8/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas-&gt;onesharp==0.0.0) (1.15.0)
-<span class=" -Color -Color-Yellow">WARNING: Error parsing dependencies of pyodbc: Invalid version: &#39;4.0.0-unsupported&#39;</span>
-<span class=" -Color -Color-Red">ERROR: Exception:</span>
-<span class=" -Color -Color-Red">Traceback (most recent call last):</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/cli/base_command.py&quot;, line 106, in _run_wrapper</span>
-<span class=" -Color -Color-Red">    status = _inner_run()</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/cli/base_command.py&quot;, line 97, in _inner_run</span>
-<span class=" -Color -Color-Red">    return self.run(options, args)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/cli/req_command.py&quot;, line 67, in wrapper</span>
-<span class=" -Color -Color-Red">    return func(self, options, args)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/commands/install.py&quot;, line 484, in run</span>
-<span class=" -Color -Color-Red">    installed_versions[distribution.canonical_name] = distribution.version</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_internal/metadata/pkg_resources.py&quot;, line 192, in version</span>
-<span class=" -Color -Color-Red">    return parse_version(self._dist.version)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_vendor/packaging/version.py&quot;, line 56, in parse</span>
-<span class=" -Color -Color-Red">    return Version(version)</span>
-<span class=" -Color -Color-Red">  File &quot;/Users/lsm/opt/anaconda3/lib/python3.8/site-packages/pip/_vendor/packaging/version.py&quot;, line 202, in __init__</span>
-<span class=" -Color -Color-Red">    raise InvalidVersion(f&quot;Invalid version: {version!r}&quot;)</span>
-<span class=" -Color -Color-Red">pip._vendor.packaging.version.InvalidVersion: Invalid version: &#39;4.0.0-unsupported&#39;</span>
-
-</pre></div>
-</div>
-</div>
 </div>
 <p>Welcome to our first tutorial lesson on
 <code class="docutils literal notranslate"><span class="pre">1#</span></code>. You will learn the basics of the language here and also see some small programs.</p>
-<p>This lesson is written on a lower level than the lessons which come after it. The only abstract concept comes at the end. The rest of the lesson is a concrete introduction to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
-<p>If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will want to skim through this lesson quickly.</p>
+<p>This lesson is written on a lower level than the lessons which come after it. It is a very concrete introduction to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
+If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will
+find this material easy.</p>
 <p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
 <section id="the-1-interpreter">
 <h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter<a class="headerlink" href="#the-1-interpreter" title="Link to this heading">#</a></h2>
