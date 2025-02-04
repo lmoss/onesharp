@@ -473,9 +473,6 @@
 <th class="head"><p>move_2_1</p></th>
 <th class="head"><p>write</p></th>
 <th class="head"><p>move_1_2</p></th>
-<th class="head"><p><a class="reference internal" href="#move_1_2"><span class="xref myst">[write]</span></a></p></th>
-<th class="head"><p>move_2_1</p></th>
-<th class="head"><p>move_3_1</p></th>
 </tr>
 </thead>
 <tbody>
@@ -483,21 +480,15 @@
 <td><p>p</p></td>
 <td><p></p></td>
 <td><p>q</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[wr]](q)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></td>
 <td><p></p></td>
-<td><p>move_1_2</p></td>
-<td><p>move_1_2 +  <code class="docutils literal notranslate"><span class="pre">[[wr]](q)</span></code></p></td>
-<td><p>move_1_2 + [wr(q)] + p</p></td>
 </tr>
 <tr class="row-odd"><td><p>R2</p></td>
 <td><p>q</p></td>
 <td><p>q</p></td>
 <td><p></p></td>
 <td><p></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[wr]](q)</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[wr]](q)</span></code></p></td>
-<td><p></p></td>
-<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>R3</p></td>
 <td><p></p></td>
@@ -505,13 +496,14 @@
 <td><p>p</p></td>
 <td><p>p</p></td>
 <td><p>p</p></td>
-<td><p>p</p></td>
-<td><p></p></td>
-<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>|      |  <a class="reference internal" href="#move_1_2"><span class="xref myst">[write]</span></a> | move_2_1 |                            move_3_1 |
+| —–|——-|———-|———-|———-|———-|———————|———-|————————————-|
+| R1   |  move_1_2        |  move_1_2 +  <code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code>|   move_1_2 + <code class="docutils literal notranslate"><span class="pre">[[write]](q)'''</span> <span class="pre">+</span> <span class="pre">p</span> <span class="pre">|</span> <span class="pre">|</span> <span class="pre">R2</span>&#160;&#160; <span class="pre">|</span>&#160;&#160;&#160; <span class="pre">|</span>&#160;&#160;&#160; <span class="pre">q</span>&#160;&#160;&#160;&#160; <span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">|</span>&#160; </code><a class="reference internal" href="#q"><span class="xref myst">[write]</span></a><code class="docutils literal notranslate">&#160; <span class="pre">|</span>&#160; </code><a class="reference internal" href="#q"><span class="xref myst">[write]</span></a>```         |                     |                          |
+| R3   |       |    p     |    p     |     p    |     p    |         p           |                     |                          |</p>
 <p>We get the program <code class="docutils literal notranslate"> <span class="pre">move_1_2</span> <span class="pre">+</span> <span class="pre">[[write]](q)</span> <span class="pre">+</span> <span class="pre">p</span></code>.  We run this program on <code class="docutils literal notranslate"><span class="pre">r</span></code> in R1</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -527,7 +519,7 @@
 <td><p>r</p></td>
 <td><p></p></td>
 <td><p>q</p></td>
-<td><p>[p ] (q,r)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[[p]](q,r)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>R2</p></td>
 <td><p></p></td>
