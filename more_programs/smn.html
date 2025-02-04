@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reduction of one problem to another &#8212; Invitation to Computability</title>
+    <title>The s-m-n Theorem &#8212; Invitation to Computability</title>
   
   
   
@@ -64,11 +64,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'issues/reduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'more_programs/smn';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A tool to help write programs" href="../more_programs/sanity.html" />
-    <link rel="prev" title="Computatble functions on encoded structures" href="coding.html" />
+    <link rel="next" title="Two-by-Two Encoding" href="../universal/twoByTwo.html" />
+    <link rel="prev" title="Primitive recursion" href="primitive_recursion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -191,33 +191,33 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: several notions</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="coding.html">Computatble functions on encoded structures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sanity.html">A tool to help write programs</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="arithmetic.html">Programs for arithmetic</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="primitive_recursion.html">Primitive recursion</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -324,7 +324,7 @@
       
       
       
-      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fissues/reduction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fmore_programs/smn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +354,7 @@
       
       
       
-      <li><a href="../_sources/issues/reduction.ipynb" target="_blank"
+      <li><a href="../_sources/more_programs/smn.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,7 +428,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Reduction of one problem to another</h1>
+    <h1>The s-m-n Theorem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,45 +442,60 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/reduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="reduction-of-one-problem-to-another">
-<h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Link to this heading">#</a></h1>
-<p><strong>definitions and interesting examples are yet to come</strong></p>
-<div class="exercise admonition" id="issues/reduction-exercise-0">
-
-<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
-<section id="exercise-content">
-<p>The <em>Pointed PCP Problem</em> (PPCP) is like Post’s Correspondence Problem (PCP) except we have a designated domino <span class="math notranslate nohighlight">\(d_0\)</span> which must be used as the first domino in a match.</p>
-<p>Let <span class="math notranslate nohighlight">\(PCP\)</span> be the set of PCP instances for which there exists a match, and let <span class="math notranslate nohighlight">\(PPCP\)</span> be the set of PPCP instances for which there is a match.</p>
-<p>(a) Prove that <span class="math notranslate nohighlight">\(PPCP \leq_m PCP\)</span>.</p>
-<p>(b) Prove that <span class="math notranslate nohighlight">\(PCP \leq_m PPCP\)</span>.</p>
+  <section id="the-s-m-n-theorem">
+<h1>The s-m-n Theorem<a class="headerlink" href="#the-s-m-n-theorem" title="Link to this heading">#</a></h1>
+<div class="proof lemma admonition" id="lemma-0">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> be natural numbers.</p>
+<p>There is a program <span class="math notranslate nohighlight">\(s^m_n\)</span> such that for all <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![s^m_n]\!](q_1,\ldots, q_m)]\!](r_1,\ldots, r_n)
+\simeq
+[\![ p]\!](r_1,\ldots, r_n,q_1,\ldots, q_m)
+\]</div>
 </section>
+</div><p>Here is the statement in words:</p>
+<p>If we start running  <span class="math notranslate nohighlight">\(s^m_n\)</span>  with</p>
+<p><span class="math notranslate nohighlight">\(p\)</span> in R1,
+<span class="math notranslate nohighlight">\(q_1\)</span>  in R2,  and <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span> in R<span class="math notranslate nohighlight">\((m+1)\)</span></p>
+<p>then we  get a word <span class="math notranslate nohighlight">\(x\)</span> in R1 (and all other registers empty).</p>
+<p>\</p>
+<p>If we then run <span class="math notranslate nohighlight">\(x\)</span>  with <span class="math notranslate nohighlight">\(r_1\)</span> in R1,<span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span> in R<span class="math notranslate nohighlight">\(n\)</span>,</p>
+<p>we would get the
+same thing
+as</p>
+<p>running the original <span class="math notranslate nohighlight">\(p\)</span> with</p>
+<p><span class="math notranslate nohighlight">\(q_1\)</span> in R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span> in R<span class="math notranslate nohighlight">\(m\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(r_1\)</span> in R<span class="math notranslate nohighlight">\((m+1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_m\)</span> in   R<span class="math notranslate nohighlight">\((m+n)\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example: <span class="math notranslate nohighlight">\(s^1_1\)</span></p>
+<p>We take <span class="math notranslate nohighlight">\(s^1_1\)</span> to be</p>
+<div class="highlight-move_1_3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
-<section id="exercise-content">
-<p>Suppose we consider a version of the tiling problem.
-We are again given a pointed tile set.  But instead of tiling the first quadrant we only need to tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis”.  Let’s call this problem <span class="math notranslate nohighlight">\(Tile_1\)</span>.
-Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decidable.</p>
-</section>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
-<section id="exercise-content">
-<p>Yet another version of tiling.  Given a pointed tile set, can we tile <em>the bottom two rows</em> of the quadrant?   Let’s call this problem <span class="math notranslate nohighlight">\(Tile_2\)</span>.   Show that <span class="math notranslate nohighlight">\(Tile_1 \leq_m Tile_2\)</span>, and also that
-<span class="math notranslate nohighlight">\(Tile_2 \leq_m Tile_1\)</span>.</p>
-</section>
+<p>Then we verify that this works by making tables of what happens after each of the sub-programs above.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
-<section id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
-<p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as straightforward.</p>
-</section>
-</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l||l|l|l|l|l|l}
+ &amp; \mbox{at the} &amp; \mbox{after} &amp; \mbox{after} &amp; \mbox{after}  &amp; \mbox{after} &amp; \mbox{after}\\
+ &amp; \mbox{start}&amp;
+ \writee &amp; \move_{1,2}&amp;
+\semantics{\writeprog}(\move_{1,2}) &amp; \move_{2,1} &amp;\semantics{\writeprog}(\div)\\ \hline
+R1 &amp; \one\one\one  &amp;  \one\hash\one\hash\one\hash  &amp;  &amp;  \move_{1,2}&amp;  \move_{1,2} + (\one\hash)^3&amp;  \move_{1,2} + (\one\hash)^3  \\ 
+&amp;     &amp;  &amp;   &amp; &amp;  &amp; \quad\quad\quad+\div\\
+  &amp;  &amp;     &amp;      &amp; &amp; &amp; \\
+   R2 &amp;  &amp;     &amp;  \one\hash\one\hash\one\hash   &amp;  \one\hash\one\hash\one\hash  &amp; &amp; \\
+    &amp;     &amp;  &amp;   &amp; &amp;  &amp;\\
+R3 &amp;     &amp;  &amp;   &amp; &amp; &amp; \\
+       &amp;     &amp;  &amp;   &amp; &amp;  &amp;\\
+\end{array}
+\end{split}\]</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -496,7 +511,7 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
         },
         kernelOptions: {
             name: "python3",
-            path: "./issues"
+            path: "./more_programs"
         },
         predefinedOutput: true
     }
@@ -514,20 +529,20 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="coding.html"
+       href="primitive_recursion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computatble functions on encoded structures</p>
+        <p class="prev-next-title">Primitive recursion</p>
       </div>
     </a>
     <a class="right-next"
-       href="../more_programs/sanity.html"
+       href="../universal/twoByTwo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A tool to help write programs</p>
+        <p class="prev-next-title">Two-by-Two Encoding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
