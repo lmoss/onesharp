@@ -814,11 +814,11 @@ q = \copyprog_{1,2,3} + \moveprog_{2,1}
 <p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
 <section id="exercise-content">
 <ol class="arabic simple">
-<li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(p\)</span>.  If we run <span class="math notranslate nohighlight">\(p\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>, which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>
+<li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(q\)</span>.  If we run <span class="math notranslate nohighlight">\(q\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>, which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
-[\![[\![ p]\!](x)]\!](y) = x + y \quad \mbox{ or } \quad [\![[\![ p]\!](x)]\!](y) = y + x
+[\![[\![\mbox{\tt write}]\!](x)]\!](y) = x + y \quad \mbox{ or } \quad [\![[\![\mbox{\tt write}]\!](x)]\!](y) = y + x
 \]</div>
 <ol class="arabic simple" start="2">
 <li><p>Now let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">copy_1_3_4</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>. Find an equation satisfied by <span class="math notranslate nohighlight">\(p\)</span>. That is, fill in the blank</p></li>
