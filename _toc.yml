@@ -22,6 +22,7 @@ parts:
   - file: more_programs/sanity
   - file: more_programs/arithmetic
   - file: more_programs/primitive_recursion
+  - file: more_programs/smn
   
 
 - caption: Universal Programs
