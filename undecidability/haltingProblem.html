@@ -457,7 +457,7 @@
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/haltingProblem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-halting-problem">
 <h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h1>
-<p>We come to one of the most famous and most basic results in computability theory.</p>
+<p>We come to one of the most famous and most basic results in computability theory, the <em>undecidability of the halting problem</em>, first proved by Turing in 1936.</p>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -514,7 +514,22 @@ Then</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="corollaries">
 <h1>Corollaries<a class="headerlink" href="#corollaries" title="Link to this heading">#</a></h1>
-<p>There are a number of corollaries to the basic undecidability result.</p>
+<p>There are a number of corollaries to the basic undecidability result.
+Let us begin by recalling the sets of that we mentioned earlier:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+\mbox{Prog} &amp; = &amp; \mbox{the set of programs} \\
+\mbox{Tidy} &amp; = &amp; \mbox{the set of tidy programs} \\
+K_0 &amp; = &amp; \mbox{the programs which halt when run on the all empty registers}\\
+K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
+\textit{Fin} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is finite} \\   
+\textit{Inf} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is infinite} \\      
+\textit{Tot} &amp; = &amp; \mbox{the program  $p$ such that $[\![p]\!]$ is a total function} \\ 
+\textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
+\end{array}
+\end{split}\]</div>
+<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of Theorem <span class="xref std std-ref">Turings-theorem</span>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
 <div class="proof corollary admonition" id="corollary-1">
 <p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
 <section class="corollary-content" id="proof-content">
