@@ -175,10 +175,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">First steps</a></li>
 
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
@@ -221,18 +217,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-replicating programs</a></li>
 
 
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal Programs</a></li>
 
 
 </ul>
@@ -493,7 +490,7 @@ run together to make a big word.
 An instruction counts as a program,
 but programs of length <span class="math notranslate nohighlight">\(\geq 2\)</span> are not instructions.</p>
 <div class="proof definition admonition" id="phi-notation">
-<p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn_p\)</span>  on words.</p>
@@ -540,7 +537,7 @@ That is, instead of writing</p>
 just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in the other notation.</p>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that the following function <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable: <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
 </div>
@@ -551,7 +548,7 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 <p>Suppose we run a program <span class="math notranslate nohighlight">\(p\)</span> with an input word <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.  This run might, or might not, halt.  The first example of this is when <span class="math notranslate nohighlight">\(p\)</span> is a loop <span class="math notranslate nohighlight">\(\one\hash^3\one\hash^4\)</span>.  For this program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span> is <em>undefined</em> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>For other programs <span class="math notranslate nohighlight">\(q\)</span> there might be some programs <span class="math notranslate nohighlight">\(p\)</span> for which <span class="math notranslate nohighlight">\(\phifn_p\)</span> is defined for some but not all input words.</p>
 <div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Given words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, we write</p>
 <div class="math notranslate nohighlight">
@@ -567,7 +564,7 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 </div>
 </div><div class="exercise admonition" id="introOneSharp/functions-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
 <p>Find a program <span class="math notranslate nohighlight">\(q\)</span> so that <span class="math notranslate nohighlight">\(\phi_q(x)\downarrow\)</span> iff the number of symbols in <span class="math notranslate nohighlight">\(x\)</span> is an even number.</p>
 </div>
@@ -592,7 +589,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 \]</div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <div class="section" id="exercise-content">
 <p>Find three programs <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span>, and <span class="math notranslate nohighlight">\(r\)</span> such that <span class="math notranslate nohighlight">\([\![p]\!](q)\)</span>, <span class="math notranslate nohighlight">\([\![[\![p]\!](q)]\!](r)\)</span>, <span class="math notranslate nohighlight">\([\![q]\!](r)\)</span>, and <span class="math notranslate nohighlight">\([\![p]\!]([\![q]\!](r))\)</span> are all defined, and yet</p>
 <div class="math notranslate nohighlight">
@@ -606,7 +603,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 <h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this heading">#</a></h1>
 <p>A program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
 <div class="proof definition tip admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 5 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words.</p>
@@ -647,7 +644,7 @@ is <em>undefined</em>.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <div class="section" id="exercise-content">
 <p>For some purposes, the notion of <span class="math notranslate nohighlight">\(\semantics{p}^n\)</span> is not what one wants.  Here is an alternative.  We say that</p>
 <div class="math notranslate nohighlight">
@@ -662,7 +659,7 @@ is <em>undefined</em>.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
 <p>Here is an example that shows that sometimes <span class="math notranslate nohighlight">\(\semanticsalt{\ }\)</span> is more useful than <span class="math notranslate nohighlight">\(\semantics{ \ }\)</span>.   Suppose we have three computable functions:</p>
 <div class="math notranslate nohighlight">
@@ -686,7 +683,7 @@ k(x) = f(g(x), h(x))
 <h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Permalink to this heading">#</a></h1>
 <p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
 <div class="proof definition admonition" id="definition-8">
-<p class="admonition-title"><span class="caption-number">Definition 5 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
 <div class="definition-content section" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
@@ -707,7 +704,7 @@ empty.</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-9">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>For any set <span class="math notranslate nohighlight">\(A\)</span>, the <em>characteristic function of <span class="math notranslate nohighlight">\(A\)</span></em> is the function <span class="math notranslate nohighlight">\(\chi_A\)</span> given by</p>
 <div class="math notranslate nohighlight">
@@ -731,7 +728,7 @@ But we will see <em>Turing maching computability</em>, <em>Python computability<
 </div>
 </div><div class="exercise admonition" id="introOneSharp/functions-exercise-11">
 
-<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable, where</p>
 <div class="math notranslate nohighlight">
@@ -747,14 +744,14 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-12">
 
-<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
 <div class="section" id="exercise-content">
 <p>Is the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable set of words?</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-13">
 
-<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that the following function is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable:</p>
 <div class="math notranslate nohighlight">
@@ -770,7 +767,7 @@ f(w) = \left\{
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-14">
 
-<p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
 <div class="section" id="exercise-content">
 <p>(a)
 As a parallel to how we defined <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
@@ -783,7 +780,7 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 <h1>Computable sets and computably enumerable sets<a class="headerlink" href="#computable-sets-and-computably-enumerable-sets" title="Permalink to this heading">#</a></h1>
 <p>We have seen above the definition of a <em>computable</em> set of words.   We now have a definition which is different but related.  Both concepts are important in computability theory.</p>
 <div class="proof definition admonition" id="definition-15">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\(\phifn_p\)</span>.
 That is,</p>
@@ -792,7 +789,7 @@ That is,</p>
 </div>
 </div><div class="exercise admonition" id="introOneSharp/functions-exercise-16">
 
-<p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that every computable set is computably enumerable.  (As we shall see, the converse is false.) Show also that the family of computably enumerable sets is closed under intersection: if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are computably enumerable, so is <span class="math notranslate nohighlight">\(A\cap B\)</span>.</p>
 </div>

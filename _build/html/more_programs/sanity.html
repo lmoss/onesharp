@@ -175,10 +175,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">First steps</a></li>
 
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
@@ -224,7 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 </ul>
@@ -582,10 +579,11 @@ For example, segments 6 and 8 each contain <code class="docutils literal notrans
 <div class="attention admonition">
 <p class="admonition-title">What may go into a segment?</p>
 <p>A segment is a Python list: it must be surrounded by square brackects.</p>
-<p>A segment can be snippet of 1# code surrounded by quotes.</p>
+<p>A segment can be snippet of <code class="docutils literal notranslate"><span class="pre">1#</span></code> code surrounded by quotes.</p>
 <p>A segment can be a Python expression like
 <code class="docutils literal notranslate"><span class="pre">move_3_1</span> <span class="pre">+</span> <span class="pre">move_2_1</span></code>
-that denotes a 1# word.  (These expressions must be defined before you run <code class="docutils literal notranslate"><span class="pre">sanity</span></code>, or you will get an error.)</p>
+that denotes a <code class="docutils literal notranslate"><span class="pre">1#</span></code> word.  (These expressions must be defined before you run <code class="docutils literal notranslate"><span class="pre">sanity</span></code>, or you will get an error.)</p>
+<p>For numbers <span class="math notranslate nohighlight">\(\geq 4\)</span>, use <code class="docutils literal notranslate"><span class="pre">move(m,n)</span></code> instead.</p>
 <p>A segment can have ‘add1’ or ‘add#’ followed by a number (without quotes).  This number is a register number.</p>
 <p>A segment may be the word ‘cases’ followed by a number and then three labels.</p>
 <p>A segment may optionally begin with a <em>label</em> like ‘top’, or ‘moveback’, and then it either consists of a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code surrounded by single quotes, or a Python expression that denotes a snippet of <span class="math notranslate nohighlight">\(\one\hash\)</span> code</p>
@@ -638,7 +636,7 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
 </div>
 <div class="section" id="examples-of-segments">
 <h2>Examples of segments:<a class="headerlink" href="#examples-of-segments" title="Permalink to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;top&#39;,&#39;cases&#39;,1,&#39;empty&#39;, &#39;one_found&#39;,&#39;hash_found&#39;],
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;top&#39;,&#39;cases&#39;,1,&#39;empty&#39;, &#39;one_found&#39;,&#39;sharp_found&#39;],
 [&#39;empty&#39;, &#39;goto&#39;, &#39;moveback&#39;],
 [&#39;one_found&#39;, &#39;add1&#39;, 2],
 [&#39;111#111##&#39;],
@@ -652,7 +650,7 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
 </div>
 <div class="section" id="how-does-sanity-work">
 <h2>How does Sanity work?<a class="headerlink" href="#how-does-sanity-work" title="Permalink to this heading">#</a></h2>
-<p>We aren’t going to discuss this at length (now), but you can read the Python code for it by examining the input box at the top.   Eventually this code will be documented well-enough so that it can be read.  The overall idea is to work with <em>parsed</em> programs, the Python lists that we obtained with <a class="reference internal" href="../introOneSharp/move_copy_write.html#content-parsing"><span class="std std-ref">the function <code class="docutils literal notranslate"><span class="pre">parse</span></code> that we saw earlier</span></a>.  The program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> consists of manipulations of parses, followed by an application of <code class="docutils literal notranslate"><span class="pre">unparse</span></code> which returns us to a <span class="math notranslate nohighlight">\(\one\hash\)</span> program.</p>
+<p>We aren’t going to discuss this at length (now), but you can read the Python code for it by examining the input box at the top.   Eventually this code will be documented well-enough so that it can be read.  The overall idea is to work with <em>parsed</em> programs, the Python lists that we obtained with <a class="reference internal" href="../introOneSharp/move_copy_write.html#content-parsing"><span class="std std-ref">the function <code class="docutils literal notranslate"><span class="pre">parse</span></code> that we saw earlier</span></a>.  The program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> consists of manipulations of parses, followed by an application of <code class="docutils literal notranslate"><span class="pre">unparse</span></code> which returns us to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.</p>
 </div>
 <div class="section" id="further-programs-and-exercises">
 <h2>Further programs and exercises<a class="headerlink" href="#further-programs-and-exercises" title="Permalink to this heading">#</a></h2>
