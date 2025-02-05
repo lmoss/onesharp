@@ -997,6 +997,12 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 </tbody>
 </table>
 </div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>There is an important difference between the inputs to the interpreter and the inputs to the command-line program <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.</p>
+<p>In the interpreter, the programs and input words are understood to be strings of symbols.  One need not put quotes around them.  In fact, doing so would give an error.</p>
+<p>On the other hand, in the command-line tool, we need to take care to indicate (to the Python program that is being executed) that we are dealing with strings.  So we need to puth quotes around the programs and the input words.  (Alternatively, we could name a program by using an assignment statement, but in that statement we again need the quotes.)  Also, in the second argument of <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>, we need to use a list of words.  This is a sequence of strings (again with quotes) enclosed in square brackets and separated by commas.</p>
+</div>
 </section>
 <section id="useful-operations-inside-a-jupyter-notebook">
 <h2>Useful operations inside a Jupyter notebook<a class="headerlink" href="#useful-operations-inside-a-jupyter-notebook" title="Link to this heading">#</a></h2>
