@@ -471,7 +471,11 @@
 \]</div>
 <p>We take <span class="math notranslate nohighlight">\(s^1_1\)</span> to be</p>
 <p><code class="docutils literal notranslate"><span class="pre">move_1_3</span> <span class="pre">+</span> <span class="pre">move_2_1</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_1_2</span> <span class="pre">+</span> <span class="pre">[[write]](move_1_2)</span> <span class="pre">+</span> <span class="pre">move_2_1</span>&#160; <span class="pre">+</span> <span class="pre">move_3_1</span></code></p>
-<p>Then we verify that this works by making tables of what happens after each of the sub-programs above.</p>
+<p>Before we check that this works, here is a comment on the difference between <code class="docutils literal notranslate"><span class="pre">write</span></code> and <code class="docutils literal notranslate"><span class="pre">[[write]](move_1_2)</span></code>.
+The program <code class="docutils literal notranslate"><span class="pre">write</span></code> takes whatever word <span class="math notranslate nohighlight">\(x\)</span> is in R1 and, using R2 as a temporary register, returns a program which
+would write <span class="math notranslate nohighlight">\(x\)</span> after whatever is in R1.   The program <code class="docutils literal notranslate"><span class="pre">[[write]](move_1_2)</span></code> puts the program <code class="docutils literal notranslate"><span class="pre">move_1_2</span></code> after whatever
+is in R1.</p>
+<p>We verify that this works by making tables of what happens after each of the sub-programs above.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -507,7 +511,8 @@
 </tbody>
 </table>
 </div>
-<p>Continuing below:</p>
+<p>The reason for starting with <code class="docutils literal notranslate"><span class="pre">move_1_3</span></code> is that <code class="docutils literal notranslate"><span class="pre">write</span></code> uses R2, so we need that register to be empty before executing <code class="docutils literal notranslate"><span class="pre">write</span></code></p>
+<p>Continuing:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
