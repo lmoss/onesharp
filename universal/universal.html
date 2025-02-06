@@ -226,6 +226,7 @@
 
 
 
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -449,6 +450,7 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-project">Group project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extra-property-of-the-universal-program">An extra property of the universal program</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-more-register-than-the-inputs">Only one more register than the inputs</a></li>
 </ul>
 
             </nav>
@@ -1243,6 +1245,32 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 <p>We may take <span class="math notranslate nohighlight">\(u\)</span> to have the following property: when run on a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the word in R1 is not empty at any point other than at the very end.</p>
 </div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="only-one-more-register-than-the-inputs">
+<h1>Only one more register than the inputs<a class="headerlink" href="#only-one-more-register-than-the-inputs" title="Link to this heading">#</a></h1>
+<p>The work in this section can be used to prove the following result.</p>
+<div class="proof proposition admonition" id="proposition-5">
+<p class="admonition-title"><span class="caption-number">Proposition 4 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>For every <span class="math notranslate nohighlight">\(n\)</span> and every program <span class="math notranslate nohighlight">\(p\)</span>, there is a program <span class="math notranslate nohighlight">\(q\)</span> such that</p>
+<ol class="arabic simple">
+<li><p>For all words <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+[\![p]\!] (x_1, \ldots, x_n) \simeq [\![q]\!] (x_1, \ldots, x_n) 
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(q\)</span> uses R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, R<span class="math notranslate nohighlight">\(n\)</span>, R<span class="math notranslate nohighlight">\((n+1)\)</span>, and no other registers</p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> may be obtained computably from <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Taking <span class="math notranslate nohighlight">\(n = 0\)</span>, it shows that when running a register machine program <span class="math notranslate nohighlight">\(p\)</span> on no inputs, we may assume that the program uses only one register.   In particular,  we have an undecidability result:</p>
+<div class="proof proposition admonition" id="proposition-6">
+<p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>The halting problem for register machine programs that only use R1 is undecidable.</p>
+</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -1318,6 +1346,7 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-project">Group project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extra-property-of-the-universal-program">An extra property of the universal program</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-more-register-than-the-inputs">Only one more register than the inputs</a></li>
 </ul>
 
   </nav></div>
