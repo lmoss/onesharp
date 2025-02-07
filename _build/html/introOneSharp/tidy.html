@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">First steps</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
@@ -216,11 +217,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 
@@ -459,7 +462,7 @@ document.write(`
 <div class="section" id="tidy-programs">
 <h1>Tidy programs<a class="headerlink" href="#tidy-programs" title="Permalink to this heading">#</a></h1>
 <p>We next come to an important definition concerning programs.
-When a program is executed, each line either transers control to another line, or to some “line” outside the program.  If line k is an instruction of the form <code class="docutils literal notranslate"><span class="pre">1^k#</span></code> or <code class="docutils literal notranslate"><span class="pre">1^k##</span></code>, then after line k is executed we go to line k + 1.  Of course, both of these statements assume that there is a line k + 1.  If line k is the last line of the program, then “line k+1” does not exist.  But in this case, we say that the program has <em>halted</em>.</p>
+When a program is executed, each line either transers control to another line, or to some “line” outside the program.  If line k is an instruction of the form <code class="docutils literal notranslate"><span class="pre">1^k#</span></code> or <code class="docutils literal notranslate"><span class="pre">1^k##</span></code>, then after line k is executed we go to line k + 1.  Of course, both of these statements assume that there <em>is</em> a line k + 1.  If line k is the last line of the program, then “line k+1” does not exist.  But in this case, we say that the program has <em>halted</em>.</p>
 <p>A similar statement holds for the transfer instructions.
 If line k is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code>, then after line k is executed we go to line k + m, provided there is such a line in the program.  If the program has N lines and k + m = N+1, then after line k is executed, the program has <em>halted</em>.  If k + m &gt; N+1, then the program has not halted; it is <em>stuck</em>.</p>
 <div class="cell docutils container">
@@ -503,43 +506,52 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 <p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
 </div>
 </div>
-<div class="exercise admonition" id="tidiness">
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
+<div class="section" id="exercise-content">
+<p>Prove that every program is strongly equivalent to a program in which the none of the last three instructions are case instructions <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#^5</span></code>.</p>
+<p>(I need to write out the solution in full here.)</p>
+</div>
+</div>
+<div class="exercise admonition" id="tidiness">
+
+<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
 <div class="section" id="exercise-content">
 <p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to any program of the form</p>
 <p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code><span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
 <p>Show that all three parts of the definition of tidiness are needed in order to show this fact.</p>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/tidy-exercise-3">
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
 <div class="section" id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be tidy, and assume that <span class="math notranslate nohighlight">\([\![ p ]\!](x) \simeq y\)</span>.
+<p>Let <span class="math notranslate nohighlight">\(q\)</span> be tidy, and assume that <span class="math notranslate nohighlight">\([\![ p ]\!](x) \simeq y\)</span>.
 Show that the following are equivalent:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\([\![ p+q ]\!](x)\downarrow\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\([\![ q ]\!](y)\downarrow\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(([\![ q ]\!]\circ [\![ p ]\!])(x)\downarrow\)</span>.</p></li>
 </ol>
+<p>(Joshua Burns) Show that in general we need <span class="math notranslate nohighlight">\(q\)</span> to be tidy to have (1)<span class="math notranslate nohighlight">\(\Rightarrow\)</span>(2).</p>
 </div>
 </div>
 <div class="exercise admonition" id="back-transfer">
 
-<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.  Show that there is a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
 <p>(a) <span class="math notranslate nohighlight">\(q\)</span> is strongly equivalent to <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>(b) In <span class="math notranslate nohighlight">\(q\)</span>, every backward-transfer instruction points to the top of the program.  That is, if line <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(\one^k \hash^4\)</span>, then <span class="math notranslate nohighlight">\(k = i-1\)</span>.</p>
 </div>
 </div>
-<div class="exercise admonition" id="introOneSharp/tidy-exercise-5">
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that the union of two computably enumerable sets is computably enumerable.</p>
-<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 28</span></a>.]</p>
+<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 29</span></a>.]</p>
 </div>
 </div>
 </div>

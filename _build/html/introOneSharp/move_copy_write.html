@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">First steps</a></li>
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
@@ -216,11 +217,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 
@@ -658,7 +661,7 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 Like <code class="docutils literal notranslate"><span class="pre">move</span></code>, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> program is actually an infinite batch of programs.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>The difference between <i>moving</i> and <i>copying</i>
+<p>The difference between <i>move</i> and <i>copy</i>
 for us is that when a register’s contents are moved, the
 register is left empty; but if the contents are copied,
 then the register is left at the end with exactly what it had
@@ -810,7 +813,7 @@ q = \copyprog_{1,2,3} + \moveprog_{2,1}
 <p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
 <div class="section" id="exercise-content">
 <ol class="arabic simple">
-<li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(q\)</span>.  If we run <span class="math notranslate nohighlight">\(q\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>, which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>
+<li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(q\)</span>. Suppose that we run <span class="math notranslate nohighlight">\(q\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>.  Which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[

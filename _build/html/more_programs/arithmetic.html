@@ -173,6 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">First steps</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
@@ -214,11 +215,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="primitive_recursion.html">Primitive recursion</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 
@@ -703,28 +706,28 @@ This is φbump(compare,4)
 <p>The parts of the program that are shaded red are special to the multiplication algorithm. The point is that if we wish to write a program for something similar, we could keep the outside “shell” and just modify the red lines above. Your first exercise below asks you to do just that.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="more_programs/arithmetic-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <div class="section" id="exercise-content">
 <p>Modify the multiplication program to compute exponentiation. This would be a program <code class="docutils literal notranslate"><span class="pre">exp</span></code> with the following property: when started with the bb representation of m in R1 and n in R2, the program eventually halts with the bb representation of mn in R1.</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <div class="section" id="exercise-content">
 <p>In our work on multiplication, we assumed addition and worked with it to get multiplication. Now forget about our program for addition, and using only the program <code class="docutils literal notranslate"><span class="pre">succ</span></code> for the successor function, construct a program for addition.</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which, when started with n in bb in R1, gives n! in R1. [Here n! is the factorial function. Remember that 0! = 1 and (n+1)! = (n+1) x n!.]</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
 <div class="section" id="exercise-content">
 <p>Write two programs which convert back and forth from unary to binary representation.</p>
 </div>

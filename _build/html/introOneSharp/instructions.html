@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">First steps</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
@@ -216,11 +217,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 
@@ -448,6 +451,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#another-interpreter-for-web-browsers">Another interpreter for web browsers</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-set-of-instructions-of-1">The full set of instructions of 1#</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
@@ -926,8 +930,13 @@ The register contents at the end are shown above.
 </div>
 </div>
 </div>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
 </div>
+</div>
+<div class="section" id="another-interpreter-for-web-browsers">
+<h1>Another interpreter for web browsers<a class="headerlink" href="#another-interpreter-for-web-browsers" title="Permalink to this heading">#</a></h1>
+<p>Here is <a class="reference external" href="https://rrose1.github.io/jsonesharp/">another interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code></a>, written by my former PhD students Robert Rose and David Sprunger.</p>
+<p>This is very pretty and fun, but it doesn’t always work in contemporary browsers.  I would like someone who knows Javascript and iPython to help with getting it to do better in the notebook format.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
 <div class="section" id="reference">
 <h1>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h1>
 <div class="section" id="the-full-set-of-instructions-of-1">
@@ -991,6 +1000,12 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 </tr>
 </tbody>
 </table>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>There is an important difference between the inputs to the interpreter and the inputs to the command-line program <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.</p>
+<p>In the interpreter, the programs and input words are understood to be strings of symbols.  One need not put quotes around them.  In fact, doing so would give an error.</p>
+<p>On the other hand, in the command-line tool, we need to take care to indicate (to the Python program that is being executed) that we are dealing with strings.  So we need to puth quotes around the programs and the input words.  (Alternatively, we could name a program by using an assignment statement, but in that statement we again need the quotes.)  Also, in the second argument of <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>, we need to use a list of words.  This is a sequence of strings (again with quotes) enclosed in square brackets and separated by commas.</p>
+</div>
 </div>
 <div class="section" id="useful-operations-inside-a-jupyter-notebook">
 <h2>Useful operations inside a Jupyter notebook<a class="headerlink" href="#useful-operations-inside-a-jupyter-notebook" title="Permalink to this heading">#</a></h2>
@@ -1091,6 +1106,7 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#another-interpreter-for-web-browsers">Another interpreter for web browsers</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-set-of-instructions-of-1">The full set of instructions of 1#</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>

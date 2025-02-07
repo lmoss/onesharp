@@ -175,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">First steps</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
@@ -216,11 +217,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 
@@ -476,8 +479,6 @@ just means a set that you use to build words from.</p>
 the world are our words?!</p>
 <p>Answer:
 A <em>word</em> is just a sequence of  symbols from our alphabet.</p>
-<p>In contrast to most uses in mathematics and computer science,
-our words will all be <em>non-empty</em>, unless we say otherwise.</p>
 <p>Examples of words include
 <code class="docutils literal notranslate"><span class="pre">11#11####</span></code> and also the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
 <p>Let us be clear about the difference between
@@ -641,6 +642,15 @@ is <em>undefined</em>.</p>
 \]</div>
 <p>Then <span class="math notranslate nohighlight">\(\phifn_p^3(x,y,z) \simeq y\)</span> for all words <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>.
 (Here <span class="math notranslate nohighlight">\(\clearprog_1\)</span> and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> are programs that simply delete all the symbols in those registers.  We have seen <span class="math notranslate nohighlight">\(\clearprog_1\)</span>, and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> is similar.)</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> do not come with an “arity”.  It is natural to think of a program as a function of the registers <span class="math notranslate nohighlight">\(i\)</span> such that <code class="docutils literal notranslate"><span class="pre">1^i</span> <span class="pre">#^5</span></code> is an instruction in it.  But our definitions do not require this.  They allow every program to be used as a function of one or more numbers of variables.   For example if <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">clear_3</span></code>, then we have</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\([\![ p ]\!](1) = 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ p ]\!](\#,1) = \#\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ p ]\!](1,\#,1) = 1\)</span>.</p></li>
+</ol>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-6">
 
