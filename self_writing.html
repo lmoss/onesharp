@@ -648,8 +648,9 @@ The official version of <code class="docutils literal notranslate"><span class="
 <p>We now define a self-writing program, <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <p>The idea is to apply the program <code class="docutils literal notranslate"><span class="pre">diag</span></code> to diag itself.
 This might seem like a strange thing to do. But as we’ll see, it gives us exactly what we’re looking for.
-When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <span class="math notranslate nohighlight">\(\phifn_{\writeprog}(\diag) + \diag\)</span> in R1.
-This, then, is <span class="math notranslate nohighlight">\(\self\)</span>: the program which would write out <code class="docutils literal notranslate"><span class="pre">diag</span></code> followed by <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself.</p>
+When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <code class="docutils literal notranslate"><span class="pre">[\!</span> <span class="pre">write\!](diag)</span> <span class="pre">+</span> <span class="pre">diag</span></code> in R1.
+This, then, is <span class="math notranslate nohighlight">\(\self\)</span>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
+the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
 After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.
 But running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> gives us <code class="docutils literal notranslate"><span class="pre">self</span></code>, by definition.</p>
@@ -658,7 +659,7 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
 <p><span class="math notranslate nohighlight">\(
-[\![self]\!] (\ ) = [\![ diag]\!](diag) \simeq self
+[\![self]\!] (\ ) = [\![  [\![ diag]\!](diag)]\!]( ) =   [\![ diag]\!](diag) \simeq self
 \)</span>.</p>
 </div>
 <div class="cell docutils container">
