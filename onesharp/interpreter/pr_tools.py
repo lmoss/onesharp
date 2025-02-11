@@ -1,4 +1,4 @@
-def ones(n):
+def oneone(n):
   return(unparse(['1' for i in range(n)])) 
 
 def all_equal(list):
@@ -209,49 +209,49 @@ def compare_prog(a,b): #uses a+1, a+2, a+3
 def successor_prog(to_increment,to_use):
   # gives a program to increment the register 'to_increment' by 1, using 
   # the register 'to_use'
-   p = (ones(to_increment) + 
+   p = (oneone(to_increment) + 
      '#####' + 
      '111###' +
      '111###' +
      '1111111111111111111111111###'+
      '1111111111111111111111111111111111111111###' +
-     ones(to_use) + '##' + 
-     ones(to_increment) + '#####' + 
+     oneone(to_use) + '##' + 
+     oneone(to_increment) + '#####' + 
      '111###' +
      '111111111111111111###' +
      '1111111111111111111###' +
-     ones(to_use) + '#' + 
-     ones(to_increment) + '#####' + 
+     oneone(to_use) + '#' + 
+     oneone(to_increment) + '#####' + 
      '111111###' +
      '111###' +
-     ones(to_use) + '##' + 
+     oneone(to_use) + '##' + 
      '1111####' +
-     ones(to_use) + '#' + 
+     oneone(to_use) + '#' + 
      '111111####' +
-     ones(to_use) + '#####' + 
+     oneone(to_use) + '#####' + 
      '111111###' +
      '111###' +
-     ones(to_increment) + '##' + 
+     oneone(to_increment) + '##' + 
      '1111####' +
-     ones(to_increment) + '#' +  
+     oneone(to_increment) + '#' +  
      '111111####' +
      '1111111111111111111###'  +
-     ones(to_use) + '##' +  
+     oneone(to_use) + '##' +  
      '111111111111111111111####' +
-     ones(to_use) + '#' +  
-     ones(to_increment) + '#####' +  
+     oneone(to_use) + '#' +  
+     oneone(to_increment) + '#####' +  
      '111111###' +
      '111###' +
-     ones(to_use) + '##' +  
+     oneone(to_use) + '##' +  
      '1111####' +
-     ones(to_use) + '#' + 
+     oneonoe(to_use) + '#' + 
      '111111####' +
-     ones(to_use) + '#####' +  
+     oneone(to_use) + '#####' +  
      '111111###' +
      '111###' +
-     ones(to_increment) + '##' +  
+     oneone(to_increment) + '##' +  
      '1111####' +
-     ones(to_increment) + '#' + 
+     oneone(to_increment) + '#' + 
      '111111####' +
      '1###'
      )
@@ -286,44 +286,44 @@ def bump_instr(inst, amount):
     return(inst) 
   elif instruction_type(inst) == 'add1':  
     n = number_help(inst)
-    return(ones(n+amount)+'#')
+    return(oneone(n+amount)+'#')
   elif instruction_type(inst) == 'add#':  
     n = number_help(inst)
-    return(ones(n+amount)+'##')
+    return(oneone(n+amount)+'##')
   elif instruction_type(inst) == 'cases':  
     n = number_help(inst)
-    return(ones(n+amount)+'#####')
+    return(oneone(n+amount)+'#####')
 def bump(prog,amount):
   par = parse(prog)
   t = [bump_instr(instr,amount) for instr in par]
   return(unparse(t))
 
 def clear_prog(n):
-   a = ones(n) + '#####'
+   a = oneone(n) + '#####'
    b = '111###'
    c = '1###'
    d = '111####'
    return(a+b+c+d)
 
 def move_prog(n,m):
-   a = ones(n) + '#####'
+   a = oneone(n) + '#####'
    b = '111111###'
    c = '111###'
-   d = ones(m)+'##'
+   d = oneone(m)+'##'
    e = '1111####'
-   f = ones(m)+'#'
+   f = oneone(m)+'#'
    g = '111111####'
    return(a+b+c+d+e+f+g)
 
 def copy_prog(n,m,p):
-   a = ones(n) + '#####'
+   a = oneone(n) + '#####'
    b = '11111111###'
    c = '1111###'
-   d = ones(m)+'##'
-   d1 = ones(p) + '##'
+   d = oneone(m)+'##'
+   d1 = oneone(p) + '##'
    e = '11111####'
-   f = ones(m)+'#'
-   f1 = ones(p) + '#'
+   f = oneone(m)+'#'
+   f1 = oneone(p) + '#'
    g = '11111111####'
    return(a+b+c+d+d1+e+f+f1+g+move_prog(p,n))  
 
@@ -389,7 +389,7 @@ def primitive_recursion(g,h,arity,used_reg):
   plan = [['top',move_prog(arity,free) +
                g + 
                move_prog(arity,arity+1) + 
-               ones(arity) + '##' ],
+               oneone(arity) + '##' ],
           [compare_prog(free,arity)],
           ['decision', 'cases', free_plus_one, 'main_loop','clear_out_free', 'end' ],
           ['clear_out_free', clear_prog(free)],
