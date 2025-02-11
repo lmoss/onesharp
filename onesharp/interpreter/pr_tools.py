@@ -1,5 +1,5 @@
 def oneone(n):
-  return(unparse(['1' for i in range(n)])) 
+  return '1'* n
 
 def all_equal(list):
   a = list[0]
