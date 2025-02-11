@@ -92,7 +92,8 @@ def essentially_used(t):
       n2 = essentially_used(h)
       n = max([n1,n2]) +2
       return(n)
-import sys
+#import sys
+
 def program(t):
   n = arity(t)
   first = in_place_program(t)
