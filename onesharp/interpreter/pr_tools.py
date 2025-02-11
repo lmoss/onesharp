@@ -1,4 +1,4 @@
-
+!from onesharp.interpreter.interpreter import ones
 
 def all_equal(list):
   a = list[0]
