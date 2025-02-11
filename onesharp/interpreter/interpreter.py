@@ -3,6 +3,11 @@ import numpy as np
 import ipywidgets as widgets
 from IPython.display import display
 
+
+from .interpreter import ones # Import the ones function from the interpreter module
+
+
+
 def end_strip(list): ## removes the tail of empty registers
   if list == []:
     return(list)
