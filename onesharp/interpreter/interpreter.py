@@ -730,7 +730,7 @@ def successor_prog(to_increment,to_use):
      '111###' +
      oneone(to_use) + '##' +  
      '1111####' +
-     oneonoe(to_use) + '#' + 
+     oneone(to_use) + '#' + 
      '111111####' +
      oneone(to_use) + '#####' +  
      '111111###' +
