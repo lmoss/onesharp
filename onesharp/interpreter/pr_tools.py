@@ -1,4 +1,5 @@
-!from onesharp.interpreter.interpreter import ones
+def ones(n):
+  return(unparse(['1' for i in range(n)])) 
 
 def all_equal(list):
   a = list[0]
