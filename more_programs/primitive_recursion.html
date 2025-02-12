@@ -217,6 +217,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Primitive recursion</a></li>
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -442,7 +443,8 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Primitive recursion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-terms-and-the-functions-which-they-denote">Primitive recursive terms, and the functions which they denote</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions">Primitive recursive functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-for-primitive-recursive-functions">Terms for primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-primitive-recursive-terms-and-functions">Examples of primitive recursive terms and functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
@@ -479,15 +481,9 @@
 </div>
 </div>
 </div>
-<p>Here is the tree for addition:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/add_syntax_tree.png?raw=1" style="width: 25vw; min-width: 130px;">
-<p>The tree for multiplication is built on top of the one for addition:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_prelim_syntax_tree.png?raw=1" width="40%" height="40%"><p>But we could exhibit a single tree for multiplication that “goes all the way” and uses as leaves only the basic building blocks of primitive recursive functions:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_full_syntax_tree.png?raw=1" width="70%" height="70%"><p>Here is the tree for exponentiation built on top of multiplication:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_prelim_syntax_tree.png?raw=1" width="70%" height="70%"><p>As always, we could take things all the way and make one big tree that shows how to build exponentiation from zero, successor, and the projections, using composition and primitive recursion.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_syntax_tree.png?raw=1" width="70%" height="70%"></section>
-<section class="tex2jax_ignore mathjax_ignore" id="primitive-recursive-terms-and-the-functions-which-they-denote">
-<h1>Primitive recursive terms, and the functions which they denote<a class="headerlink" href="#primitive-recursive-terms-and-the-functions-which-they-denote" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="primitive-recursive-functions">
+<h1>Primitive recursive functions<a class="headerlink" href="#primitive-recursive-functions" title="Link to this heading">#</a></h1>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p><em>Primitive recursive functions</em> are functions <span class="math notranslate nohighlight">\(N^k\to N\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the set of natural numbers.   So there are primitive functions of arity <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, etc.  There are also primitive recursive functions of arity <span class="math notranslate nohighlight">\(0\)</span> (for a technical reason.)</p>
@@ -499,11 +495,21 @@
 <p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j: this is the ith projection on j variables.
 For example,</p>
 </div>
-<p><a class="reference internal" href="#3,6,5,7,9,13"><span class="xref myst">proj, 4, 6</span></a> = 7.</p>
+<p>[proj, 4, 6] (3,6,5,7,9,13) = 7.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>Every primitive recursive term has an <em>arity</em>, and if <span class="math notranslate nohighlight">\(t\)</span> is of arity <span class="math notranslate nohighlight">\(k\)</span>, then <span class="math notranslate nohighlight">\(t\)</span> denotes a function <span class="math notranslate nohighlight">\(N^k\to N\)</span>.  Technically, we should distinguish between the terms and the functions which they denote (just as we were careful to do with programs), but we usually will not do this.</p>
+<p>Every primitive recursive functio has an <em>arity</em>, and if <span class="math notranslate nohighlight">\(t\)</span> is of arity <span class="math notranslate nohighlight">\(k\)</span>, then <span class="math notranslate nohighlight">\(t\)</span> denotes a function <span class="math notranslate nohighlight">\(N^k\to N\)</span>.</p>
+<p>Here is the tree for addition:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/add_syntax_tree.png?raw=1" style="width: 15vw; min-width: 100px;">
+<p>The tree for multiplication is built on top of the one for addition:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_prelim_syntax_tree.png?raw=1" width="40%" height="40%"><p>But we could exhibit a single tree for multiplication that “goes all the way” and uses as leaves only the basic building blocks of primitive recursive functions:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_full_syntax_tree.png?raw=1" width="70%" height="70%"><p>Here is the tree for exponentiation built on top of multiplication:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_prelim_syntax_tree.png?raw=1" width="70%" height="70%"><p>As always, we could take things all the way and make one big tree that shows how to build exponentiation from zero, successor, and the projections, using composition and primitive recursion.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_syntax_tree.png?raw=1" width="70%" height="70%"></section>
+<section class="tex2jax_ignore mathjax_ignore" id="terms-for-primitive-recursive-functions">
+<h1>Terms for primitive recursive functions<a class="headerlink" href="#terms-for-primitive-recursive-functions" title="Link to this heading">#</a></h1>
+<p>Technically, we should distinguish between the terms and the functions which they denote (just as we were careful to do with programs), but we usually will not do this.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p>The two term constructors are</p>
@@ -834,7 +840,8 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Primitive recursion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-terms-and-the-functions-which-they-denote">Primitive recursive terms, and the functions which they denote</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions">Primitive recursive functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-for-primitive-recursive-functions">Terms for primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-primitive-recursive-terms-and-functions">Examples of primitive recursive terms and functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
