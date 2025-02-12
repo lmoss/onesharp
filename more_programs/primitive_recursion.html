@@ -731,8 +731,10 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_prime</span> <span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">running_total_of_pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]]</span>
 <span class="n">prime_prog</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">is_prime</span><span class="p">)</span>
 
-<span class="c1"># Gives output 1 if the input is a prime,</span>
-<span class="c1"># and gives output # if the output is not a prime.</span>
+<span class="c1"># Gives output 1 if the input is a prime, and gives output # if the output is not a prime.</span>
+<span class="c1"># It&#39;s wrong on 1.</span>
+
+<span class="c1"># This takes several minutes in full, but in one minute you can see the first 10 or 11.</span>
 
 <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;#1&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;##1&#39;</span><span class="p">,</span> 
              <span class="s1">&#39;1#1&#39;</span><span class="p">,</span> <span class="s1">&#39;#11&#39;</span><span class="p">,</span> <span class="s1">&#39;111&#39;</span><span class="p">,</span> <span class="s1">&#39;###1&#39;</span><span class="p">,</span> 
