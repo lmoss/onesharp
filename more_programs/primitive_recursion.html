@@ -488,19 +488,14 @@
 <p><code class="docutils literal notranslate"><span class="pre">z</span></code> : this is the one-place function with value 0.</p>
 <p><code class="docutils literal notranslate"><span class="pre">z_empty</span></code>: this is the zero-place function with value 0.</p>
 <p><code class="docutils literal notranslate"><span class="pre">s</span></code> : this is the one-place successor function: <span class="math notranslate nohighlight">\(f(n) = n+1\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j: this is the ith projection on j variables.
-For example,</p>
-</div>
-<p>[proj, 4, 6] (3,6,5,7,9,13) = 7.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j: this is the ith projection on j variables.</p>
 <p>Every primitive recursive function <span class="math notranslate nohighlight">\(f\)</span> has a fixed <em>arity</em>. That is, if <span class="math notranslate nohighlight">\(f\)</span> has arity <span class="math notranslate nohighlight">\(k\)</span>, then  <span class="math notranslate nohighlight">\(f: N^k\to N\)</span>.</p>
 <p>The way to understand the definition is that primitive recursive functions come with <em>trees</em> that show how they are built from the basic primitive recursive functions using the constructors of composition and primitive recursion.</p>
+</div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>Here is the tree for a primitive recursive function:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/add_syntax_tree.png?raw=1" style="width: 15vw; min-width: 100px;">
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/add_syntax_tree.png?raw=1"  width="200" height="200">
 <p>Now we claim that this tree denotes the addition function <span class="math notranslate nohighlight">\(f(m,n) = m+n\)</span>.  To see this, we first note that the <em>comp</em> node denotes</p>
 <div class="math notranslate nohighlight">
 \[
@@ -528,7 +523,7 @@ f(m,n+1)  &amp; = &amp; g(m,n,f(m,n)) &amp; = &amp; f(m,n) + 1
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>Here is the tree for exponentiation built on top of multiplication:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_prelim_syntax_tree.png?raw=1"  width="200" height="200">
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_prelim_syntax_tree.png?raw=1"  width="250" height="250">
 <p>As always, we could take things all the way and make one big tree that shows how to build exponentiation from zero, successor, and the projections, using composition and primitive recursion.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_syntax_tree.png?raw=1" width="70%" height="70%">
 </div>
