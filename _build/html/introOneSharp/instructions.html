@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Basic programs" href="move_copy_write.html" />
-    <link rel="prev" title="Invitation to Computability" href="../index.html" />
+    <link rel="prev" title="Reduction of one problem to another" href="../issues/reduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,7 +171,22 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">First steps</a></li>
 
@@ -189,21 +204,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tidy.html">Tidy programs</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
@@ -214,6 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
@@ -527,7 +528,7 @@ find this material easy.</p>
 <p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn’t show the step-by-step behavior of the register machine, it only showed the final output.   We’ll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
 <p>Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
 </div>
@@ -633,7 +634,7 @@ find this material easy.</p>
 <p>The ‘cases’ instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.</p>
 <div class="exercise admonition" id="try-to-figure">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <div class="section" id="exercise-content">
 <p>Again, start with <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty. What happens in each register if we run <code class="docutils literal notranslate"><span class="pre">111##</span></code>?
 Try to figure this out for yourself, and then check your work by actually running the program.</p>
@@ -641,7 +642,7 @@ Try to figure this out for yourself, and then check your work by actually runnin
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <div class="section" id="exercise-content">
 <p>As before, start with <span class="math notranslate nohighlight">\(\one\)</span> in R1 and R2, <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> in R3, and the other registers empty.
 What happens in each register if we run the same program
@@ -650,7 +651,7 @@ What happens in each register if we run the same program
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty.</p>
 </div>
@@ -659,7 +660,7 @@ What happens in each register if we run the same program
 <div class="section" id="what-are-programs">
 <h2>What are programs?<a class="headerlink" href="#what-are-programs" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>A <em>program</em> is a sequence of instructions run together.</p>
 </div>
@@ -933,7 +934,7 @@ The register contents at the end are shown above.
 <div class="section" id="another-interpreter-for-web-browsers">
 <h2>Another interpreter for web browsers<a class="headerlink" href="#another-interpreter-for-web-browsers" title="Permalink to this heading">#</a></h2>
 <p>Here is <a class="reference external" href="https://rrose1.github.io/jsonesharp/">another interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code></a>, written by my former PhD students Robert Rose and David Sprunger.</p>
-<p>This is very pretty and fun, but it doesn’t always work in contemporary browsers.  I would like someone who knows Javascript and iPython to help with getting it to do better in the notebook format.</p>
+<p>This is very pretty and fun, there were reports that contemporary browsers had trouble with one of the JavaScript lines.  I would like someone who knows Javascript and iPython to help with getting it to do better in the notebook format.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
 </div>
 <div class="section" id="reference">
@@ -1027,7 +1028,7 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <div class="section" id="exercise-content">
 <p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
 </div>
@@ -1066,12 +1067,12 @@ Registers are processed as queues: symbols enter on the right and exit on the le
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="../issues/reduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Invitation to Computability</p>
+        <p class="prev-next-title">Reduction of one problem to another</p>
       </div>
     </a>
     <a class="right-next"

@@ -171,7 +171,22 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">First steps</a></li>
 
@@ -189,21 +204,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tidy.html">Tidy programs</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
@@ -216,11 +216,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
 
 
 
@@ -473,7 +476,7 @@ document.write(`
 <p>The first halts, while the second halts improperly.</p>
 <div class="exercise admonition" id="on-halting">
 
-<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
 <div class="section" id="exercise-content">
 <p>Which of the following programs halt when run on all empty registers? Which stop improperly? Why?</p>
 <ol class="arabic simple">
@@ -487,9 +490,9 @@ document.write(`
 </div>
 <div class="exercise admonition" id="introOneSharp/haltDef-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
 <div class="section" id="exercise-content">
-<p><a class="reference internal" href="#on-halting"><span class="std std-numref">Exercise 13</span></a> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
+<p><a class="reference internal" href="#on-halting"><span class="std std-numref">Exercise 28</span></a> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
 <p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
 <p>(b) When started with <span class="math notranslate nohighlight">\(w_2\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
 <p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop inside <span class="math notranslate nohighlight">\(p\)</span>.</p>

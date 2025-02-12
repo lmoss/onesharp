@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Algorithmic problems" href="problems.html" />
-    <link rel="prev" title="Tidy programs" href="../introOneSharp/tidy.html" />
+    <link rel="prev" title="Invitation to Computability" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,13 +171,24 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: several notions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">First steps</a></li>
-
-
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
@@ -193,21 +204,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/tidy.html">Tidy programs</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: several notions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="coding.html">Computatble functions on encoded structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
@@ -220,19 +216,23 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../self_writing.html">Self-replicating programs</a></li>
 
 
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two Encoding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal Programs</a></li>
 
 
 </ul>
@@ -477,7 +477,7 @@ document.write(`
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
 <p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
 <div class="proof proposition admonition" id="proposition-0">
-<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
 <div class="proposition-content section" id="proof-content">
 <p>Every finite set is decidable.</p>
 </div>
@@ -516,12 +516,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../introOneSharp/tidy.html"
+       href="../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tidy programs</p>
+        <p class="prev-next-title">Invitation to Computability</p>
       </div>
     </a>
     <a class="right-next"
