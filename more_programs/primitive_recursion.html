@@ -572,20 +572,20 @@ arity of the term
 </div>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
-<p>add = [pr,[proj,1,1], [comp, s, [proj, 3,3]]]
-mul = [pr, z, [comp, add,[proj, 3,3],[proj, 1, 3]] ]
-exp = [pr, [comp, s, z], [comp, mul, [proj, 3,3],[proj, 1, 3]] ]
-pred = [pr, z_empty, [proj,1,2]]
-monus = [pr, [proj, 1,1], [comp, pred, [proj,3,3]]]
-two_place_fn_value_one = [comp, s,[comp,z,[proj,1,2]]]<br />
-zero_place_fn_value_one = [comp, s, z_empty]<br />
-sgn =[pr, z_empty,two_place_fn_value_one]
-sgn_bar =[pr, zero_place_fn_value_one, [comp,z,[proj,1,2]]]
-chi_greater = [comp,sgn, monus] ## characteristic function of &gt;
-chi_lesser_or_equal = [comp,sgn_bar, monus] #|characteristic function of (&gt; or =)
-chi_lesser = [comp,chi_greater,[proj,2,2],[proj,1,2]] ## characteristic function of &lt;
-chi_greater_or_equal = [comp, chi_lesser_or_equal,[proj,2,2],[proj,1,2]] ## characteristic function of &gt;=
-chi_equals = [comp, mul, chi_lesser_or_equal, chi_greater_or_equal ]</p>
+<p>add = [pr,[proj,1,1], [comp, s, [proj, 3,3]]]</p>
+<p>mul = [pr, z, [comp, add,[proj, 3,3],[proj, 1, 3]] ]</p>
+<p>exp = [pr, [comp, s, z], [comp, mul, [proj, 3,3],[proj, 1, 3]] ]</p>
+<p>pred = [pr, z_empty, [proj,1,2]]</p>
+<p>monus = [pr, [proj, 1,1], [comp, pred, [proj,3,3]]]</p>
+<p>two_place_fn_value_one = [comp, s,[comp,z,[proj,1,2]]]</p>
+<p>zero_place_fn_value_one = [comp, s, z_empty]</p>
+<p>sgn =[pr, z_empty,two_place_fn_value_one]</p>
+<p>sgn_bar =[pr, zero_place_fn_value_one, [comp,z,[proj,1,2]]]</p>
+<p>chi_greater = [comp,sgn, monus] ## characteristic function of &gt;</p>
+<p>chi_lesser_or_equal = [comp,sgn_bar, monus] #|characteristic function of (&gt; or =)</p>
+<p>chi_lesser = [comp,chi_greater,[proj,2,2],[proj,1,2]] ## characteristic function of &lt;</p>
+<p>chi_greater_or_equal = [comp, chi_lesser_or_equal,[proj,2,2],[proj,1,2]] ## characteristic function of &gt;=</p>
+<p>chi_equals = [comp, mul, chi_lesser_or_equal, chi_greater_or_equal ]</p>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="converting-pr-terms-to-1-programs">
