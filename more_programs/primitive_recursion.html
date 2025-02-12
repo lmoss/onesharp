@@ -555,8 +555,10 @@ f(m,n+1)  &amp; = &amp; g(m,n,f(m,n)) &amp; = &amp; f(m,n) + 1
 For numbers <span class="math notranslate nohighlight">\(\overline{x} = x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-[comp, f, g_1, . . . , g_k](\overline{x}) =
+\begin{array}{lcl}
+[comp, f, g_1, . . . , g_k](\overline{x})  &amp; = &amp;
 f(g_1(\overline{x}), \ldots, g_k(\overline{x})).
+\end{array}
 \]</div>
 <p>For the primitive recursive terms
 <code class="docutils literal notranslate"><span class="pre">[pr,</span> <span class="pre">f,</span> <span class="pre">g]</span></code>, we require that there is a number <span class="math notranslate nohighlight">\(n\)</span> such that
@@ -565,8 +567,10 @@ arity of the term
 <code class="docutils literal notranslate"><span class="pre">[pr,</span> <span class="pre">f,</span> <span class="pre">g]</span></code> is <span class="math notranslate nohighlight">\(n\)</span>.  Its denotation is the function with the following properties:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-[pr, f, g](\overline{x},0) = f(\overline{x})\\
-[pr, f, g](\overline{x},m+1) = g(\overline{x},m,[pr, f, g](\overline{x},m))\\
+\begin{array}{lcl}
+[pr, f, g](\overline{x},0) &amp; = &amp; f(\overline{x})\\
+[pr, f, g](\overline{x},m+1) &amp; =  &amp; g(\overline{x},m,[pr, f, g](\overline{x},m))\\
+\end{array}
 \end{split}\]</div>
 </div>
 </section>
