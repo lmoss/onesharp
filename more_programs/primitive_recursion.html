@@ -446,9 +446,8 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions">Primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-for-primitive-recursive-functions">Terms for primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-functions-in-this-notebook">Other functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-prime-primitive-recursive-term">Testing the ‘prime’ primitive recursive term</a></li>
 </ul>
 </li>
 </ul>
@@ -520,9 +519,9 @@ f(m,n+1)  &amp; = &amp; g(m,n,f(m,n)) &amp; = &amp; f(m,n) + 1
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>The tree for multiplication is built on top of the one for addition:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_prelim_syntax_tree.png?raw=1" width="40%" height="40%">
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_prelim_syntax_tree.png?raw=1"  width="200" height="160">
 <p>But we could exhibit a single tree for multiplication that “goes all the way” and uses as leaves only the basic building blocks of primitive recursive functions:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_full_syntax_tree.png?raw=1" width="70%" height="70%">
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_full_syntax_tree.png?raw=1"  width="200" height="160">
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -628,10 +627,8 @@ arity of the term
 </div>
 </div>
 </div>
-<section id="basic-functions-in-this-notebook">
-<h2>Basic functions in this notebook<a class="headerlink" href="#basic-functions-in-this-notebook" title="Link to this heading">#</a></h2>
-<p>As you can see, you enter terms as ordinary Python strings.
-In particular, you can assign terms to variables, just as we have been doing with programs.</p>
+<section id="other-functions-in-this-notebook">
+<h2>Other functions in this notebook<a class="headerlink" href="#other-functions-in-this-notebook" title="Link to this heading">#</a></h2>
 <p>Here are some other functions in this notebook:</p>
 <p><code class="docutils literal notranslate"><span class="pre">arity(t)</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">program(t)</span></code></p>
@@ -644,23 +641,14 @@ In particular, you can assign terms to variables, just as we have been doing wit
 </section>
 <section id="syntax-check">
 <h2>Syntax check<a class="headerlink" href="#syntax-check" title="Link to this heading">#</a></h2>
-<p>If you want to see a primitive recursive term written out “all the way”, you can just enter it.</p>
 <p>You can enter a line like the ones below to check that an expression really is a term, or to find an error.</p>
 <p>The output can be long because the function <code class="docutils literal notranslate"><span class="pre">syntax_check</span></code> is recursive, and thus reports information about all the subterms of whatever you enter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(exp)</span>
 
-<span class="c1">#syntax_check(mul)</span>
+<span class="n">syntax_check</span><span class="p">(</span><span class="n">mul</span><span class="p">)</span>
 <span class="c1">#syntax_check([comp, mul, mul])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The Python function <code class="docutils literal notranslate"><span class="pre">program(t)</span></code> compiles a primitive recursive term to a 1# program.  You can look at these by entering, e.g., <code class="docutils literal notranslate"><span class="pre">program(add)</span></code>.   Then you can run these programs just as we have been doing all along.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">chi_equals</span><span class="p">),[</span><span class="s1">&#39;1#1&#39;</span><span class="p">,</span><span class="s1">&#39;##1&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -738,24 +726,15 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># End of the work on prime(n)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Checking to see if the first 15 number are prime or not</span>
 
-<span class="n">prime</span> <span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">running_total_of_pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]]</span>
-<span class="n">prime_prog</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">prime</span><span class="p">)</span>
+<span class="n">is_prime</span> <span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">running_total_of_pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]]</span>
+<span class="n">prime_prog</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">is_prime</span><span class="p">)</span>
 
 <span class="c1"># Gives output 1 if the input is a prime,</span>
 <span class="c1"># and gives output # if the output is not a prime.</span>
 
-</pre></div>
-</div>
-</div>
-</div>
-<img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"></section>
-<section id="testing-the-prime-primitive-recursive-term">
-<h2>Testing the ‘prime’ primitive recursive term<a class="headerlink" href="#testing-the-prime-primitive-recursive-term" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;#1&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;##1&#39;</span><span class="p">,</span> 
+<span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;#1&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;##1&#39;</span><span class="p">,</span> 
              <span class="s1">&#39;1#1&#39;</span><span class="p">,</span> <span class="s1">&#39;#11&#39;</span><span class="p">,</span> <span class="s1">&#39;111&#39;</span><span class="p">,</span> <span class="s1">&#39;###1&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;1##1&#39;</span><span class="p">,</span> <span class="s1">&#39;#1#1&#39;</span><span class="p">,</span> <span class="s1">&#39;11#1&#39;</span><span class="p">,</span> <span class="s1">&#39;##11&#39;</span><span class="p">,</span> 
              <span class="s1">&#39;1#11&#39;</span><span class="p">,</span> <span class="s1">&#39;#111&#39;</span><span class="p">,</span> <span class="s1">&#39;1111&#39;</span><span class="p">]</span>
@@ -842,9 +821,8 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions">Primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-for-primitive-recursive-functions">Terms for primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-functions-in-this-notebook">Other functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-prime-primitive-recursive-term">Testing the ‘prime’ primitive recursive term</a></li>
 </ul>
 </li>
 </ul>
