@@ -445,7 +445,7 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Primitive recursion</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions">Primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-for-primitive-recursive-functions">Terms for primitive recursive functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-primitive-recursive-terms-and-functions">Examples of primitive recursive terms and functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a><ul class="nav section-nav flex-column">
@@ -488,10 +488,10 @@
 <p class="admonition-title">Definition</p>
 <p><em>Primitive recursive functions</em> are functions <span class="math notranslate nohighlight">\(N^k\to N\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the set of natural numbers.   So there are primitive functions of arity <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, etc.  There are also primitive recursive functions of arity <span class="math notranslate nohighlight">\(0\)</span> (for a technical reason.)</p>
 <p><em>Primitive recursive terms</em> are terms that denote primitive recursive functions.</p>
-<p>We start with <em>basic primitive recursive function terms</em>, as shown below:</p>
-<p><code class="docutils literal notranslate"><span class="pre">z</span></code> : this denotes the one-place function with value 0.</p>
-<p><code class="docutils literal notranslate"><span class="pre">z_empty</span></code>: this denotes the zero-place function with value 0.</p>
-<p><code class="docutils literal notranslate"><span class="pre">s</span></code> : this denotes the one-place successor function: <span class="math notranslate nohighlight">\(f(n) = n+1\)</span>.</p>
+<p>We start with <em>basic primitive recursive functions</em>, as shown below:</p>
+<p><code class="docutils literal notranslate"><span class="pre">z</span></code> : this is the one-place function with value 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">z_empty</span></code>: this is the zero-place function with value 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">s</span></code> : this is the one-place successor function: <span class="math notranslate nohighlight">\(f(n) = n+1\)</span>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j: this is the ith projection on j variables.
 For example,</p>
 </div>
@@ -499,14 +499,43 @@ For example,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>Every primitive recursive functio has an <em>arity</em>, and if <span class="math notranslate nohighlight">\(t\)</span> is of arity <span class="math notranslate nohighlight">\(k\)</span>, then <span class="math notranslate nohighlight">\(t\)</span> denotes a function <span class="math notranslate nohighlight">\(N^k\to N\)</span>.</p>
-<p>Here is the tree for addition:</p>
+<p>Every primitive recursive function <span class="math notranslate nohighlight">\(f\)</span> has a fixed <em>arity</em>. That is, if <span class="math notranslate nohighlight">\(f\)</span> has arity <span class="math notranslate nohighlight">\(k\)</span>, then  <span class="math notranslate nohighlight">\(f: N^k\to N\)</span>.</p>
+<p>The way to understand the definition is that primitive recursive functions come with <em>trees</em> that show how they are built from the basic primitive recursive functions using the constructors of composition and primitive recursion.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Here is the tree for a primitive recursive function:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/add_syntax_tree.png?raw=1" style="width: 15vw; min-width: 100px;">
+<p>Now we claim that this tree denotes the addition function <span class="math notranslate nohighlight">\(f(m,n) = m+n\)</span>.  To see this, we first note that the <em>comp</em> node denotes</p>
+<div class="math notranslate nohighlight">
+\[
+g(x,y,z) = s(pr^3_3(x,y,z)) = s(z)
+\]</div>
+<p>Then the top of our tree denotes the function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lclcl}
+f(m,n) &amp; = &amp;  prog^1_1(n) &amp; = &amp; n\\
+f(m,n+1)  &amp; = &amp; g(m,n,f(m,n)) &amp; = &amp; f(m,n) + 1
+\end{array}
+\end{split}\]</div>
+<p>Then an easy induction shows that <span class="math notranslate nohighlight">\(f(m,n) = m+n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>We presented this as if we drew the tree first and then figured out which function it denoted.  In practice, of course, one goest the other way: start with a function of interest, and then craft a tree for it.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>The tree for multiplication is built on top of the one for addition:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_prelim_syntax_tree.png?raw=1" width="40%" height="40%"><p>But we could exhibit a single tree for multiplication that “goes all the way” and uses as leaves only the basic building blocks of primitive recursive functions:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_full_syntax_tree.png?raw=1" width="70%" height="70%"><p>Here is the tree for exponentiation built on top of multiplication:</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_prelim_syntax_tree.png?raw=1" width="70%" height="70%"><p>As always, we could take things all the way and make one big tree that shows how to build exponentiation from zero, successor, and the projections, using composition and primitive recursion.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_syntax_tree.png?raw=1" width="70%" height="70%"></section>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_prelim_syntax_tree.png?raw=1" width="40%" height="40%">
+<p>But we could exhibit a single tree for multiplication that “goes all the way” and uses as leaves only the basic building blocks of primitive recursive functions:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/mul_full_syntax_tree.png?raw=1" width="70%" height="70%">
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Here is the tree for exponentiation built on top of multiplication:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_prelim_syntax_tree.png?raw=1" width="70%" height="70%">
+<p>As always, we could take things all the way and make one big tree that shows how to build exponentiation from zero, successor, and the projections, using composition and primitive recursion.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/exp_syntax_tree.png?raw=1" width="70%" height="70%">
+</div>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="terms-for-primitive-recursive-functions">
 <h1>Terms for primitive recursive functions<a class="headerlink" href="#terms-for-primitive-recursive-functions" title="Link to this heading">#</a></h1>
 <p>Technically, we should distinguish between the terms and the functions which they denote (just as we were careful to do with programs), but we usually will not do this.</p>
@@ -535,10 +564,8 @@ arity of the term
 \end{split}\]</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="examples-of-primitive-recursive-terms-and-functions">
-<h1>Examples of primitive recursive terms and functions<a class="headerlink" href="#examples-of-primitive-recursive-terms-and-functions" title="Link to this heading">#</a></h1>
-<p>You can assign names to them, as shown below. The main functions in the notebook are</p>
-<p>You might look over the following example of terms before reading what to do with them.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="converting-pr-terms-to-1-programs">
+<h1>Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs<a class="headerlink" href="#converting-pr-terms-to-1-programs" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
@@ -842,7 +869,7 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Primitive recursion</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions">Primitive recursive functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-for-primitive-recursive-functions">Terms for primitive recursive functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-primitive-recursive-terms-and-functions">Examples of primitive recursive terms and functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a><ul class="nav section-nav flex-column">
