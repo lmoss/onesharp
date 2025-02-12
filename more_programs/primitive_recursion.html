@@ -538,9 +538,15 @@ f(m,n+1)  &amp; = &amp; g(m,n,f(m,n)) &amp; = &amp; f(m,n) + 1
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="terms-for-primitive-recursive-functions">
 <h1>Terms for primitive recursive functions<a class="headerlink" href="#terms-for-primitive-recursive-functions" title="Link to this heading">#</a></h1>
-<p>Technically, we should distinguish between the terms and the functions which they denote (just as we were careful to do with programs), but we usually will not do this.</p>
+<p>We want to distinguish between the trees and the functions which they denote (just as we were careful to do with programs).</p>
+<p>Our next step is to “squash” the trees in order to make <em>PR terms</em>.   These are syntactic objects, they are basically just a representation of the trees that we have seen.  Here is a formal definition.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
+<p>We define PR terms together with their arities, and also their denotations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">z</span></code> : this is the term of arity <span class="math notranslate nohighlight">\(1\)</span>.   It’s denotation is the constant function  with value 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">z_empty</span></code>: this is the zero-place function with value 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">s</span></code> : this is the one-place successor function: <span class="math notranslate nohighlight">\(f(n) = n+1\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j: this is the ith projection on j variables.</p>
 <p>The two term constructors are</p>
 <p><code class="docutils literal notranslate"><span class="pre">[comp,</span> <span class="pre">f,</span> <span class="pre">g_1,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">,</span> <span class="pre">g_k]</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">[pr,</span> <span class="pre">f,</span> <span class="pre">g]</span></code></p>
