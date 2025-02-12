@@ -448,7 +448,6 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-prime-primitive-recursive-term">Testing the ‘prime’ primitive recursive term</a></li>
 </ul>
 </li>
@@ -570,22 +569,39 @@ arity of the term
 \end{array}
 \end{split}\]</div>
 </div>
-<div class="admonition-examples admonition">
-<p class="admonition-title">Examples</p>
-<p>add = [pr,[proj,1,1], [comp, s, [proj, 3,3]]]</p>
-<p>mul = [pr, z, [comp, add,[proj, 3,3],[proj, 1, 3]] ]</p>
-<p>exp = [pr, [comp, s, z], [comp, mul, [proj, 3,3],[proj, 1, 3]] ]</p>
-<p>pred = [pr, z_empty, [proj,1,2]]</p>
-<p>monus = [pr, [proj, 1,1], [comp, pred, [proj,3,3]]]</p>
-<p>two_place_fn_value_one = [comp, s,[comp,z,[proj,1,2]]]</p>
-<p>zero_place_fn_value_one = [comp, s, z_empty]</p>
-<p>sgn =[pr, z_empty,two_place_fn_value_one]</p>
-<p>sgn_bar =[pr, zero_place_fn_value_one, [comp,z,[proj,1,2]]]</p>
-<p>chi_greater = [comp,sgn, monus] ## characteristic function of &gt;</p>
-<p>chi_lesser_or_equal = [comp,sgn_bar, monus] #|characteristic function of (&gt; or =)</p>
-<p>chi_lesser = [comp,chi_greater,[proj,2,2],[proj,1,2]] ## characteristic function of &lt;</p>
-<p>chi_greater_or_equal = [comp, chi_lesser_or_equal,[proj,2,2],[proj,1,2]] ## characteristic function of &gt;=</p>
-<p>chi_equals = [comp, mul, chi_lesser_or_equal, chi_greater_or_equal ]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">add</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
+
+<span class="n">mul</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">add</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="p">]</span>
+
+<span class="n">exp</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="p">]</span>
+
+<span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z_empty</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="n">monus</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
+
+<span class="n">two_place_fn_value_one</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,[</span><span class="n">comp</span><span class="p">,</span><span class="n">z</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>  
+
+<span class="n">zero_place_fn_value_one</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">z_empty</span><span class="p">]</span>  
+
+<span class="n">sgn</span> <span class="o">=</span><span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z_empty</span><span class="p">,</span><span class="n">two_place_fn_value_one</span><span class="p">]</span>
+
+<span class="n">sgn_bar</span> <span class="o">=</span><span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">zero_place_fn_value_one</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">z</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
+
+<span class="n">chi_greater</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">## characteristic function of &gt;</span>
+
+<span class="n">chi_lesser_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">#|characteristic function of (&gt; or =)</span>
+
+<span class="n">chi_lesser</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">chi_greater</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">## characteristic function of &lt;</span>
+
+<span class="n">chi_greater_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">chi_lesser_or_equal</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">## characteristic function of &gt;=</span>
+
+<span class="n">chi_equals</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="n">chi_lesser_or_equal</span><span class="p">,</span> <span class="n">chi_greater_or_equal</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="converting-pr-terms-to-1-programs">
@@ -641,9 +657,6 @@ In particular, you can assign terms to variables, just as we have been doing wit
 </div>
 </div>
 </div>
-</section>
-<section id="how-to-run-insepct-the-terms-and-run-the-1-programs">
-<h2>How to run insepct the terms and run the 1# programs.<a class="headerlink" href="#how-to-run-insepct-the-terms-and-run-the-1-programs" title="Link to this heading">#</a></h2>
 <p>The Python function <code class="docutils literal notranslate"><span class="pre">program(t)</span></code> compiles a primitive recursive term to a 1# program.  You can look at these by entering, e.g., <code class="docutils literal notranslate"><span class="pre">program(add)</span></code>.   Then you can run these programs just as we have been doing all along.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,30 +719,9 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># exercise 5d and 5e</span>
-
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">proper_divisor</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">h_proper</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
 
-<span class="c1">#print(arity(proper_divisor))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;11&#39;,&#39;11&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;11&#39;,&#39;#11&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;11&#39;,&#39;1##1&#39;]))</span>
-
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;1&#39;,&#39;111&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;#1&#39;,&#39;111&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;11&#39;,&#39;111&#39;]))</span>
-
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;##1&#39;,&#39;111&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;1#1&#39;,&#39;111&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;#11&#39;,&#39;111&#39;]))</span>
-<span class="c1">#print(onesharp(program(proper_divisor),[&#39;111&#39;,&#39;111&#39;]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">pd_inverse_zero</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">proper_divisor</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 <span class="n">pd_inverse</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="n">pd_inverse_zero</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">greater_than_one</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
 
@@ -852,7 +844,6 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-prime-primitive-recursive-term">Testing the ‘prime’ primitive recursive term</a></li>
 </ul>
 </li>
