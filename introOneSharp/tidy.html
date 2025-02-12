@@ -67,7 +67,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/tidy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computability: several notions" href="../issues/issues.html" />
+    <link rel="next" title="A tool to help write programs" href="../more_programs/sanity.html" />
     <link rel="prev" title="Functions defined by programs" href="functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -172,7 +172,22 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">First steps</a></li>
 
@@ -189,21 +204,6 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tidy programs</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -492,20 +492,20 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 <section class="tex2jax_ignore mathjax_ignore" id="strong-equivalence-to-tidy-programs">
 <h1>Strong equivalence to tidy programs<a class="headerlink" href="#strong-equivalence-to-tidy-programs" title="Link to this heading">#</a></h1>
 <div class="proof proposition admonition" id="proposition-0">
-<p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Every program is strongly equivalent to a tidy program.</p>
 </section>
 </div><div class="exercise admonition" id="introOneSharp/tidy-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
 <section id="exercise-content">
 <p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
 </section>
 </div>
 <div class="exercise admonition" id="introOneSharp/tidy-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
 <section id="exercise-content">
 <p>Prove that every program is strongly equivalent to a program in which the none of the last three instructions are case instructions <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#^5</span></code>.</p>
 <p>(I need to write out the solution in full here.)</p>
@@ -513,7 +513,7 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 </div>
 <div class="exercise admonition" id="tidiness">
 
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
 <section id="exercise-content">
 <p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to any program of the form</p>
 <p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code><span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
@@ -522,7 +522,7 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 </div>
 <div class="exercise admonition" id="introOneSharp/tidy-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(q\)</span> be tidy, and assume that <span class="math notranslate nohighlight">\([\![ p ]\!](x) \simeq y\)</span>.
 Show that the following are equivalent:</p>
@@ -536,7 +536,7 @@ Show that the following are equivalent:</p>
 </div>
 <div class="exercise admonition" id="back-transfer">
 
-<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.  Show that there is a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
 <p>(a) <span class="math notranslate nohighlight">\(q\)</span> is strongly equivalent to <span class="math notranslate nohighlight">\(p\)</span>.</p>
@@ -545,10 +545,10 @@ Show that the following are equivalent:</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/tidy-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
 <section id="exercise-content">
 <p>Show that the union of two computably enumerable sets is computably enumerable.</p>
-<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 29</span></a>.]</p>
+<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 44</span></a>.]</p>
 </section>
 </div>
 </section>
@@ -593,11 +593,11 @@ Show that the following are equivalent:</p>
       </div>
     </a>
     <a class="right-next"
-       href="../issues/issues.html"
+       href="../more_programs/sanity.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computability: several notions</p>
+        <p class="prev-next-title">A tool to help write programs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
