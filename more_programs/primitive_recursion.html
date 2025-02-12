@@ -573,41 +573,37 @@ arity of the term
 \end{array}
 \end{split}\]</div>
 </div>
+<div class="admonition-examples admonition">
+<p class="admonition-title">Examples</p>
+<p>add = [pr,[proj,1,1], [comp, s, [proj, 3,3]]]
+mul = [pr, z, [comp, add,[proj, 3,3],[proj, 1, 3]] ]
+exp = [pr, [comp, s, z], [comp, mul, [proj, 3,3],[proj, 1, 3]] ]
+pred = [pr, z_empty, [proj,1,2]]
+monus = [pr, [proj, 1,1], [comp, pred, [proj,3,3]]]
+two_place_fn_value_one = [comp, s,[comp,z,[proj,1,2]]]<br />
+zero_place_fn_value_one = [comp, s, z_empty]<br />
+sgn =[pr, z_empty,two_place_fn_value_one]
+sgn_bar =[pr, zero_place_fn_value_one, [comp,z,[proj,1,2]]]
+chi_greater = [comp,sgn, monus] ## characteristic function of &gt;
+chi_lesser_or_equal = [comp,sgn_bar, monus] #|characteristic function of (&gt; or =)
+chi_lesser = [comp,chi_greater,[proj,2,2],[proj,1,2]] ## characteristic function of &lt;
+chi_greater_or_equal = [comp, chi_lesser_or_equal,[proj,2,2],[proj,1,2]] ## characteristic function of &gt;=
+chi_equals = [comp, mul, chi_lesser_or_equal, chi_greater_or_equal ]</p>
+</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="converting-pr-terms-to-1-programs">
 <h1>Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs<a class="headerlink" href="#converting-pr-terms-to-1-programs" title="Link to this heading">#</a></h1>
+<p>In a code cell, we can take the PR terms defined above and convert them to <code class="docutils literal notranslate"><span class="pre">1#</span></code> code using the Python function <code class="docutils literal notranslate"><span class="pre">program</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
-<span class="c1">#onesharp(program(add), [&#39;11&#39;,&#39;#1#1&#39;])</span>
-
-<span class="n">mul</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">add</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="p">]</span>
-<span class="n">q</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">mul</span><span class="p">)</span>
-<span class="c1">#onesharp(q, [&#39;11&#39;,&#39;1#1&#39;])</span>
-
-<span class="n">exp</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="p">]</span>
-<span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z_empty</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
-<span class="n">monus</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
-
-<span class="n">two_place_fn_value_one</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,[</span><span class="n">comp</span><span class="p">,</span><span class="n">z</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>  
-<span class="n">zero_place_fn_value_one</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">z_empty</span><span class="p">]</span>  
-
-<span class="n">sgn</span> <span class="o">=</span><span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z_empty</span><span class="p">,</span><span class="n">two_place_fn_value_one</span><span class="p">]</span>
-<span class="n">sgn_bar</span> <span class="o">=</span><span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">zero_place_fn_value_one</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">z</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
-
-<span class="n">chi_greater</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">## characteristic function of &gt;</span>
-<span class="n">chi_lesser_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">#|characteristic function of (&gt; or =)</span>
-<span class="n">chi_lesser</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">chi_greater</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">## characteristic function of &lt;</span>
-<span class="n">chi_greater_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">chi_lesser_or_equal</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">## characteristic function of &gt;=</span>
-
-<span class="c1">## solution to exercise 5a below</span>
-<span class="n">chi_equals</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="n">chi_lesser_or_equal</span><span class="p">,</span> <span class="n">chi_greater_or_equal</span> <span class="p">]</span>
-
-<span class="c1">#print(arity(pred))</span>
-<span class="c1">#predProg = print(program(pred))</span>
-<span class="c1">#onesharp(program(exp),[&#39;1#1&#39;,&#39;11&#39;])</span>
-<span class="c1">#onesharp(program([comp, pred, [proj,2,2]]), [&#39;11&#39;,&#39;#1#1&#39;])</span>
-<span class="c1">#print(successor)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">program</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">add</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;#1#1&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
