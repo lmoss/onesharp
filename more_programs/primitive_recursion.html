@@ -644,10 +644,10 @@ arity of the term
 <p>The output can be long because the function <code class="docutils literal notranslate"><span class="pre">syntax_check</span></code> is recursive, and thus reports information about all the subterms of whatever you enter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(exp)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mul</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">syntax_check</span><span class="p">(</span><span class="n">mul</span><span class="p">)</span>
-<span class="c1">#syntax_check([comp, mul, mul])</span>
 </pre></div>
 </div>
 </div>
@@ -655,7 +655,7 @@ arity of the term
 <p><img alt="" src="https://github.com/lmoss/onesharp/blob/main/images/drum.png?raw=1" /></p>
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### exercise 5b below</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">g</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">chi_equals</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span> 
 <span class="c1"># g tells if first x third = second</span>
 <span class="c1">#print(arity(g))</span>
