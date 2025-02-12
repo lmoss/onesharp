@@ -448,10 +448,7 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-going-to-change-exercise-5-c-a-little">I am going to change exercise 5(c) a little.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-prime-primitive-recursive-term">Testing the ‘prime’ primitive recursive term</a></li>
 </ul>
 </li>
@@ -683,15 +680,11 @@ In particular, you can assign terms to variables, just as we have been doing wit
 </div>
 </div>
 </div>
-<section id="i-am-going-to-change-exercise-5-c-a-little">
-<h3>I am going to change exercise 5(c) a little.<a class="headerlink" href="#i-am-going-to-change-exercise-5-c-a-little" title="Link to this heading">#</a></h3>
-<p>I will get h_proper so that h_proper(m,p,n) = 1 if m &gt; 1 and for some q &lt;= n,
+<p>The next box will get h_proper so that h_proper(m,p,n) = 1 if m &gt; 1 and for some q &lt;= n,
 q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporates information about the “&gt;1” conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## exercise 5c below</span>
-
-
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">g3</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">g3</span><span class="p">)</span>
 <span class="n">onesharp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;11111&#39;</span><span class="p">])</span>
@@ -753,24 +746,6 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;#1&#39;</span><span class="p">,</span><span class="s1">&#39;#1&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;11&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;##1&#39;</span><span class="p">,</span><span class="s1">&#39;##1&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;1#1&#39;</span><span class="p">,</span><span class="s1">&#39;1#1&#39;</span><span class="p">]))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;#11&#39;</span><span class="p">,</span><span class="s1">&#39;#11&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;111&#39;</span><span class="p">,</span><span class="s1">&#39;111&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;###1&#39;</span><span class="p">,</span><span class="s1">&#39;###1&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;1##1&#39;</span><span class="p">,</span><span class="s1">&#39;1##1&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;#1#1&#39;</span><span class="p">,</span><span class="s1">&#39;#1#1&#39;</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">running_total_of_pd_inverse</span><span class="p">),[</span><span class="s1">&#39;11#1&#39;</span><span class="p">,</span><span class="s1">&#39;11#1&#39;</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># End of the work on prime(n)</span>
 
 <span class="n">prime</span> <span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">running_total_of_pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]]</span>
@@ -784,7 +759,6 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"></section>
-</section>
 <section id="testing-the-prime-primitive-recursive-term">
 <h2>Testing the ‘prime’ primitive recursive term<a class="headerlink" href="#testing-the-prime-primitive-recursive-term" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -878,10 +852,7 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-pr-terms-to-1-programs">Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-functions-in-this-notebook">Basic functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-am-going-to-change-exercise-5-c-a-little">I am going to change exercise 5(c) a little.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-insepct-the-terms-and-run-the-1-programs">How to run insepct the terms and run the 1# programs.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-prime-primitive-recursive-term">Testing the ‘prime’ primitive recursive term</a></li>
 </ul>
 </li>
