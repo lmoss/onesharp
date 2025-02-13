@@ -452,7 +452,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-are">Primitive recursive are …</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majorized-by-the-ackermann-function">Majorized by the Ackermann function</a></li>
@@ -594,7 +594,7 @@ arity of the term
 
 <span class="n">chi_greater</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">## characteristic function of &gt;</span>
 
-<span class="n">chi_lesser_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">#|characteristic function of (&gt; or =)</span>
+<span class="n">chi_lesser_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1"># characteristic function of (&lt; or =)</span>
 
 <span class="n">chi_lesser</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">chi_greater</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">## characteristic function of &lt;</span>
 
@@ -754,8 +754,8 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="primitive-recursive-are">
-<h1>Primitive recursive are …<a class="headerlink" href="#primitive-recursive-are" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="primitive-recursive-functions-are">
+<h1>Primitive recursive functions are …<a class="headerlink" href="#primitive-recursive-functions-are" title="Link to this heading">#</a></h1>
 <p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>recursion</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
 <p>(1) Prove <span class="math notranslate nohighlight">\(P(f)\)</span> when <span class="math notranslate nohighlight">\(f\)</span> is one of the basic primitive recursive functions.</p>
 <p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
@@ -909,7 +909,7 @@ A(x,y) &lt; A(r, \max(x,y))
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-are">Primitive recursive are …</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majorized-by-the-ackermann-function">Majorized by the Ackermann function</a></li>
