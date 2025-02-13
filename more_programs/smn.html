@@ -447,9 +447,9 @@
                   
   <section id="the-s-m-n-theorem">
 <h1>The s-m-n Theorem<a class="headerlink" href="#the-s-m-n-theorem" title="Link to this heading">#</a></h1>
-<p>This section contains one of the most widely-used technical results in computability theory,<a class="reference internal" href="#smn">Lemma 1</a> below.</p>
+<p>This section contains one of the most widely-used technical results in computability theory,<a class="reference internal" href="#smn">Lemma 2</a> below.</p>
 <div class="proof lemma admonition" id="smn">
-<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 2 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> be natural numbers.</p>
 <p>There is a program <span class="math notranslate nohighlight">\(s^m_n\)</span> such that for all <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span>,</p>
@@ -469,7 +469,7 @@
 <p>If we then run <span class="math notranslate nohighlight">\(x\)</span>  with <span class="math notranslate nohighlight">\(r_1\)</span> in R1,<span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span> in R<span class="math notranslate nohighlight">\(n\)</span>, we would get the same thing as running the original <span class="math notranslate nohighlight">\(p\)</span> with
 <span class="math notranslate nohighlight">\(q_1\)</span> in R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span> in R<span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span> in R<span class="math notranslate nohighlight">\((m+1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_m\)</span> in R<span class="math notranslate nohighlight">\((m+n)\)</span>.</p>
 </section>
-</div><p>We are not going to prove <a class="reference internal" href="#smn">Lemma 1</a> in full, but we do want to give all the details on what is probably the most important special case, when <span class="math notranslate nohighlight">\(m = n = 1\)</span>.</p>
+</div><p>We are not going to prove <a class="reference internal" href="#smn">Lemma 2</a> in full, but we do want to give all the details on what is probably the most important special case, when <span class="math notranslate nohighlight">\(m = n = 1\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example: <span class="math notranslate nohighlight">\(s^1_1\)</span></p>
 <p>We seek a program <span class="math notranslate nohighlight">\(s^1_1\)</span> so that</p>
@@ -581,7 +581,7 @@ We run this program on <code class="docutils literal notranslate"><span class="p
 <p>This concludes the verification.</p>
 </div>
 <div class="proof lemma admonition" id="smn2">
-<p class="admonition-title"><span class="caption-number">Lemma 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For each <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <code class="docutils literal notranslate"><span class="pre">[[s^m_n]]</span></code> is a primitive recursive function.</p>
 <p>Also, there is a primitive recursive function <span class="math notranslate nohighlight">\(f:N\times N\to Words\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(m,n) = s^m_n\)</span>.</p>
