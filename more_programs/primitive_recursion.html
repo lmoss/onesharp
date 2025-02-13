@@ -452,7 +452,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-primitive-recursive-functions-proved-by-recursion">Properties of primitive recursive functions proved by recursion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-primitive-recursive-functions-proved-by-induction">Properties of primitive recursive functions proved by induction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totality">Totality</a></li>
 </ul>
 </li>
@@ -758,8 +758,8 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="properties-of-primitive-recursive-functions-proved-by-recursion">
-<h1>Properties of primitive recursive functions proved by recursion<a class="headerlink" href="#properties-of-primitive-recursive-functions-proved-by-recursion" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="properties-of-primitive-recursive-functions-proved-by-induction">
+<h1>Properties of primitive recursive functions proved by induction<a class="headerlink" href="#properties-of-primitive-recursive-functions-proved-by-induction" title="Link to this heading">#</a></h1>
 <p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>recursion</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
 <p>(1) Prove <span class="math notranslate nohighlight">\(P(f)\)</span> when <span class="math notranslate nohighlight">\(f\)</span> is one of the basic primitive recursive functions.</p>
 <p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
@@ -780,7 +780,7 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <p>Every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 </section>
 </div><p>We have seen examples in this notebook which illustrate that we can go from a primitive recursive term <span class="math notranslate nohighlight">\(t\)</span> to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program that computes in under the bb encoding, this result ought to be believable without further argument.   In a sense, the precise statement and the method of proof are more important than the actual proof.</p>
-<p>Our last proof by recursion on the PR functions pertains to the <em>Ackermann function</em> <span class="math notranslate nohighlight">\(A(x,y)\)</span> defined as follows:</p>
+<p>Our last proof by induction on the PR functions pertains to the <em>Ackermann function</em> <span class="math notranslate nohighlight">\(A(x,y)\)</span> defined as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A(x,y)\quadeq \left\{
@@ -797,10 +797,25 @@ A(x,y)\quadeq \left\{
 <p>For every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> there is a number <span class="math notranslate nohighlight">\(r\)</span> such that for all <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_k\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-f(\overline{x}) \leq A(r, \max_i x_i)
+f(x_1, \ldots, x_k) &lt; A(r, \max_i x_i)
 \]</div>
 </section>
-</div></section>
+</div><p>This lemma is proved by induction on the PR functions.  I won’t give this here, but you can find a short note that does the details on our Canvas page.  Assuming this lemma, we can then easily infer what we really want:</p>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The Ackermann function <span class="math notranslate nohighlight">\(A(x,y): N^2\to N\)</span> is not primitive recursive.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Assume toward a contradiction that <span class="math notranslate nohighlight">\(A(x,y)\)</span> were primitive recursive.  By the lemma, we have a number <span class="math notranslate nohighlight">\(r\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+A(x,y) &lt; A(r, \max(x,y))
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.   In particular, taking <span class="math notranslate nohighlight">\(x = r = y\)</span>, we have <span class="math notranslate nohighlight">\(A(r,r) &lt; A(r,r)\)</span>.</p>
+<p>Contradiction!</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -877,7 +892,7 @@ f(\overline{x}) \leq A(r, \max_i x_i)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-primitive-recursive-functions-proved-by-recursion">Properties of primitive recursive functions proved by recursion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-primitive-recursive-functions-proved-by-induction">Properties of primitive recursive functions proved by induction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totality">Totality</a></li>
 </ul>
 </li>
