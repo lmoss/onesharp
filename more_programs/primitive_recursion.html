@@ -454,6 +454,8 @@
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-primitive-recursive-functions-proved-by-induction">Properties of primitive recursive functions proved by induction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totality">Totality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computability-by-a-1-program">Computability by a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#they-are-majorized-by-ackermann-function">They are majorized by Ackermann function</a></li>
 </ul>
 </li>
 </ul>
@@ -774,12 +776,18 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </section>
 </div><p>So here <span class="math notranslate nohighlight">\(P(f)\)</span> is “<span class="math notranslate nohighlight">\(f\)</span> is a total function”.</p>
 <p>It is clear that all of the basic primitive recursive functions are total, and it is also easy to see that the composition of total functions is total.   So we are left with the closure of total functions under primitive recursion.</p>
+</section>
+<section id="computability-by-a-1-program">
+<h2>Computability by a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program<a class="headerlink" href="#computability-by-a-1-program" title="Link to this heading">#</a></h2>
 <div class="proof theorem admonition" id="theorem-1">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 </section>
 </div><p>We have seen examples in this notebook which illustrate that we can go from a primitive recursive term <span class="math notranslate nohighlight">\(t\)</span> to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program that computes in under the bb encoding, this result ought to be believable without further argument.   In a sense, the precise statement and the method of proof are more important than the actual proof.</p>
+</section>
+<section id="they-are-majorized-by-ackermann-function">
+<h2>They are majorized by Ackermann function<a class="headerlink" href="#they-are-majorized-by-ackermann-function" title="Link to this heading">#</a></h2>
 <p>Our last proof by induction on the PR functions pertains to the <em>Ackermann function</em> <span class="math notranslate nohighlight">\(A(x,y)\)</span> defined as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -894,6 +902,8 @@ A(x,y) &lt; A(r, \max(x,y))
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-primitive-recursive-functions-proved-by-induction">Properties of primitive recursive functions proved by induction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totality">Totality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computability-by-a-1-program">Computability by a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#they-are-majorized-by-ackermann-function">They are majorized by Ackermann function</a></li>
 </ul>
 </li>
 </ul>
