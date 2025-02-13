@@ -758,7 +758,7 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <h1>Primitive recursive are …<a class="headerlink" href="#primitive-recursive-are" title="Link to this heading">#</a></h1>
 <p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>recursion</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
 <p>(1) Prove <span class="math notranslate nohighlight">\(P(f)\)</span> when <span class="math notranslate nohighlight">\(f\)</span> is one of the basic primitive recursive functions.</p>
-<p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
+<p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
 <p>(3) Assume <span class="math notranslate nohighlight">\(P(f)\)</span> and <span class="math notranslate nohighlight">\(P(g)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([pr, f, g])\)</span>.</p>
 <p>We present the main examples:</p>
 <section id="total">
@@ -790,7 +790,7 @@ f(\overline{x}) = y \quad \mbox{ iff }\quad \langle\!\langle p \rangle\!\rangle(
 </ol>
 <div class="math notranslate nohighlight">
 \[
-f(\overline{x}) = y \quad \mbox{ iff }\quad [\![ q ]\!] p \rangle\!\rangle(bb(x_1), \ldots, bb(x_n)) = bb(y)
+f(\overline{x}) = y \quad \mbox{ iff }\quad [\![ q ]\!](bb(x_1), \ldots, bb(x_n)) = bb(y)
 \]</div>
 </section>
 </div><p>Part 1 refers to programs which <em>preserve their inputs</em>.  We prove this part by induction on the primitive recursive function <span class="math notranslate nohighlight">\(f\)</span>.  Then we infer 2 from it by “cleaning up”.  Doing things this way is like <em>strengthening an induction hypothesis</em>, a widely-used trick in mathematics.</p>
