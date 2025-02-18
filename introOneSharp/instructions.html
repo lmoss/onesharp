@@ -444,11 +444,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-interpreter-for-web-browsers">Another interpreter for web browsers</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="visible nav section-nav flex-column">
@@ -488,9 +487,11 @@
 If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will
 find this material easy.</p>
 <p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
-<section id="the-1-interpreter">
-<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter<a class="headerlink" href="#the-1-interpreter" title="Link to this heading">#</a></h2>
+<section id="the-1-interpreter-in-a-separate-window-or-in-this-page">
+<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page<a class="headerlink" href="#the-1-interpreter-in-a-separate-window-or-in-this-page" title="Link to this heading">#</a></h2>
 <p>There are two ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a *markdown code cell’, and the other is by using a <em>displayed interpreter</em>.  Nearly all of the time we use a command in a markdown code cell, but when one starts out with the language a displayed interpreter is probably a better option.  So we are going to start with that.</p>
+<p>Here is <a class="reference external" href="https://rrose1.github.io/jsonesharp/">a web interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code></a>, written by my former PhD students Robert Rose and David Sprunger.</p>
+<p>There is also an interpreter which can be run right on this page.   The choice is yours.  The web interpreter above has a nice <em>slow evaluation</em> feature which the one below lacks.</p>
 <p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
@@ -928,17 +929,7 @@ The register contents at the end are shown above.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1&#39;
-</pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="another-interpreter-for-web-browsers">
-<h2>Another interpreter for web browsers<a class="headerlink" href="#another-interpreter-for-web-browsers" title="Link to this heading">#</a></h2>
-<p>Here is <a class="reference external" href="https://rrose1.github.io/jsonesharp/">another interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code></a>, written by my former PhD students Robert Rose and David Sprunger.</p>
-<p>This is very pretty and fun, there were reports that contemporary browsers had trouble with one of the JavaScript lines.  I would like someone who knows Javascript and iPython to help with getting it to do better in the notebook format.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
 </section>
 <section id="reference">
@@ -1108,11 +1099,10 @@ Registers are processed as queues: symbols enter on the right and exit on the le
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-interpreter-for-web-browsers">Another interpreter for web browsers</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="visible nav section-nav flex-column">

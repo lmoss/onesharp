@@ -1,6 +1,8 @@
 # Invitation to Computability 
 
-Lawrence S. Moss
+
+
+The book has moved to [this location](https://lmoss.github.io/onesharp)
 
 This is an online textbook on the basics of computability theory, originating in classes given by the author 
 at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is 
