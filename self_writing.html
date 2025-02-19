@@ -639,7 +639,7 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 </div>
 <p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
 <p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
-Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\(\semantics{\writeprog}(x)\)</span> in R3.
+Move x from R1 into R2, and also put <code class="docutils literal notranslate"><span class="pre">[[write]](x)</span></code> into R3.
 Then move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
 The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
@@ -651,7 +651,7 @@ The official version of <code class="docutils literal notranslate"><span class="
 <p>The idea is to apply the program <code class="docutils literal notranslate"><span class="pre">diag</span></code> to diag itself.
 This might seem like a strange thing to do. But as we’ll see, it gives us exactly what we’re looking for.
 When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <code class="docutils literal notranslate"><span class="pre">[\!</span> <span class="pre">write\!](diag)</span> <span class="pre">+</span> <span class="pre">diag</span></code> in R1.
-This, then, is <span class="math notranslate nohighlight">\(\self\)</span>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
+This, then, is <code class="docutils literal notranslate"><span class="pre">self</span></code>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
 the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
 After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.
@@ -728,7 +728,7 @@ could take <span class="math notranslate nohighlight">\(s\)</span> to be <span c
 \[
 [\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x  =  [\![ write]\!](x)+ y
 \]</div>
-<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to do more.  But in reality it’s easier, since our equation (*) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(diag\)</span>!</p>
+<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to do more.  But in reality it’s easier, since the second equation (**) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(diag\)</span>!</p>
 <p>To conclude: we take <span class="math notranslate nohighlight">\(y = diag\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
 We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ write]\!](diag)+ diag = [\![ diag]\!](diag)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
@@ -754,7 +754,7 @@ to check your work on the interpreter.</p>
 <p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <section id="exercise-content">
 <p>Write a program which when started on all empty registers
-writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and also writes <span class="math notranslate nohighlight">\(\hash\)</span> to <span class="math notranslate nohighlight">\(\Rtwo\)</span>.</p>
+writes itself to R1 and also writes <code class="docutils literal notranslate"><span class="pre">#</span></code> to R2.</p>
 </section>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-2">
@@ -763,8 +763,8 @@ writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and
 <section id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
-write itself to <span class="math notranslate nohighlight">\(\Rone\)</span> but rather writes itself followed by a <span class="math notranslate nohighlight">\(\hash\)</span>.
-In other words, <span class="math notranslate nohighlight">\(\phifn_p(\ ) = p + \hash\)</span>.</p>
+write itself to R1 but rather writes itself followed by a <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+In other words, <span class="math notranslate nohighlight">\([\![ p]\!\](\ ) =  p + \# \)</span>.</p>
 </section>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
@@ -779,11 +779,10 @@ writes the next one in the list into R1.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
 <section id="exercise-content">
-<p>Write a program p which when started on all empty registers
+<p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
-write itself to R1 but rather writes itself preceded by a #.
-In other words,
-<span class="math notranslate nohighlight">\(\phifn_p(\ ) = \# + p\)</span>.</p>
+write itself to R1 but rather writes itself preceded by a <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+In other words, <span class="math notranslate nohighlight">\([\![ p]\!\](\ ) = \# +p\)</span>.</p>
 </section>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
@@ -799,11 +798,10 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 
 <p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
 <section id="exercise-content">
-<p>Write a program s which, when run with R2, R3, etc.
-empty,  ends up with R1 containing s <em>after</em> whatever
+<p>Write a program <span class="math notranslate nohighlight">\(s\)</span> which, when run with R2, R3, etc.
+empty,  ends up with R1 containing <span class="math notranslate nohighlight">\(s\)</span> <em>after</em> whatever
 happened to be in R1 at the start.
-In other words, for all words y,
-<span class="math notranslate nohighlight">\(\phifn_s(y) = y + s\)</span></p>
+In other words, for all words <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\([\![ s]\!\](y) = y+s\)</span>.</p>
 </section>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
