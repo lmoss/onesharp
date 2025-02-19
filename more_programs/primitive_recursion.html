@@ -757,11 +757,11 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="primitive-recursive-functions-are">
 <h1>Primitive recursive functions are …<a class="headerlink" href="#primitive-recursive-functions-are" title="Link to this heading">#</a></h1>
-<p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>recursion</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
+<p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>induction</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
 <p>(1) Prove <span class="math notranslate nohighlight">\(P(f)\)</span> when <span class="math notranslate nohighlight">\(f\)</span> is one of the basic primitive recursive functions.</p>
 <p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
 <p>(3) Assume <span class="math notranslate nohighlight">\(P(f)\)</span> and <span class="math notranslate nohighlight">\(P(g)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([pr, f, g])\)</span>.</p>
-<p>We present the main examples:</p>
+<p>We turn to examples of proof by induction on the primitive recursive functions:</p>
 <section id="total">
 <h2>Total<a class="headerlink" href="#total" title="Link to this heading">#</a></h2>
 <div class="proof theorem admonition" id="theorem-0">
