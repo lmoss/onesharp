@@ -697,58 +697,39 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <h1>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Link to this heading">#</a></h1>
 <p>We offer another presentation of the idea behind diag and self.</p>
 <p>Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.</p>
-<p>Let’s say that you just have on glimmer of an idea, that <span class="math notranslate nohighlight">\(s\)</span> should be of the following form:</p>
-<p>First, a program <span class="math notranslate nohighlight">\(x\)</span> should be written to R1.</p>
-<p>Second, a program <span class="math notranslate nohighlight">\(y\)</span> should be run with <span class="math notranslate nohighlight">\(x\)</span> in R1 (and everything else empty).</p>
-<p>So running <span class="math notranslate nohighlight">\(x\)</span> on nothing will give
-<span class="math notranslate nohighlight">\([\![ x]\!](y)\)</span> in R1 at the end.</p>
-<p>We therefore want to find <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> so that</p>
+<p>Let’s say that you just have on glimmer of an idea, that when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run a program <span class="math notranslate nohighlight">\(y\)</span> on it.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> should be <span class="math notranslate nohighlight">\(s\)</span>.
+So in effect, we want to solve a <em>system of equations</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+s &amp; = &amp; [\![ write]\!](x)+ y\\
+[\![ s]\!](\ ) &amp; = &amp; [\![ y]\!](x)\\
+[\![ [\![ y]\!](x) ]\!](\ ) &amp; = &amp; s \\
+\end{array}
+\end{split}\]</div>
+<p>The second of these follows from the first, of course.  Putting together the first and third gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+[\![ [\![ y]\!](x) ]\!](\ ) &amp; = &amp; [\![ write]\!](x)+ y \\
+\end{array}
+\end{split}\]</div>
+<p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> that we like that meets these requirements, since then we
+could take <span class="math notranslate nohighlight">\(s\)</span> to be <span class="math notranslate nohighlight">\([\![ write]\!](x)+ y\)</span>.</p>
+<p>Now here is where things become interesting.   Instead of simply finding <em>some</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> satisfying the last equation, let’s find some <span class="math notranslate nohighlight">\(y\)</span> such that for <em>all</em> <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-s= [\![ write]\!](x)+ y.
+[\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x, \quad (*)
 \]</div>
-<p>and</p>
+<p>and then set <span class="math notranslate nohighlight">\(x = y\)</span>.
+Doing this would arrange that</p>
 <div class="math notranslate nohighlight">
 \[
-[\![ x]\!](\ ) = [\![ write]\!](x??) + x.
+[\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x  =  [\![ write]\!](x)+ y
 \]</div>
-<p>So</p>
-<div class="math notranslate nohighlight">
-\[
-s = [\![ write]\!](x) + y
-\]</div>
-<p>Then</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ s]\!]( ) = [\![ x]\!](y)
-\]</div>
-<p>and <span class="math notranslate nohighlight">\([\![ x]\!](y) = s\)</span>.
-We are free to find any <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> that we like that meets these requirements.
-Wouldn’t it be nice if <span class="math notranslate nohighlight">\(x = y\)</span>? So why don’t we just try to find <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(x\)</span> so that</p>
-<div class="math notranslate nohighlight">
-\[
-s = [\![ x]\!](x)
-\]</div>
-<p>and also</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ x]\!](x) = x.
-\]</div>
-<p>Now it is clear that if we find <span class="math notranslate nohighlight">\(x\)</span> we then can determine s automatically, using the first equation. We only need to have <span class="math notranslate nohighlight">\(x\)</span> be a program with the property that</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ x]\!](x) = [\![ write]\!](x) + x.
-\]</div>
-<p>But again, we are free to make x be any program we like. We might as well make <span class="math notranslate nohighlight">\(x\)</span> have the property that for all <span class="math notranslate nohighlight">\(z\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ x]\!](z) = [\![ write]\!](z) + z.
-\]</div>
-<p>If we do this, then it automatically will hold that <span class="math notranslate nohighlight">\([\![ x]\!](x) = [\![ write]\!](x) + x\)</span>.</p>
-<p>And now things are much easier. It is not hard to write <span class="math notranslate nohighlight">\(x\)</span> so that
-<span class="math notranslate nohighlight">\([\![ x]\!](z) = [\![ write]\!](z) + z\)</span>
-for all <span class="math notranslate nohighlight">\(z\)</span>; this is <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
-<p>Finally, the reasoning we did in this small discussion shows that we can get a self replicating program by setting <span class="math notranslate nohighlight">\(s = [\![ diag]\!](diag)\)</span>.</p>
+<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to do more.  But in reality it’s easier, since our equation (*) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(diag\)</span>!</p>
+<p>To conclude: we take <span class="math notranslate nohighlight">\(y = diag\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
+We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s = [\![ diag]\!](diag)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
