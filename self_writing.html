@@ -704,38 +704,38 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <p>We therefore want to find <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> so that</p>
 <div class="math notranslate nohighlight">
 \[
-s= [\~[ write]\!](x)+ y.
+s= [\![ write]\!](x)+ y.
 \]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[
-[\~[ x]\!](\ ) = [\~[ write]\!](x??) + x.
+[\![ x]\!](\ ) = [\![ write]\!](x??) + x.
 \]</div>
 <p>s= φwrite(x) + y, φs( ) = φx(y )
-and <span class="math notranslate nohighlight">\([\~[ x]\!](y) = s\)</span>.
+and <span class="math notranslate nohighlight">\([\![ x]\!](y) = s\)</span>.
 We are free to find any <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> that we like that meets these requirements.
 Wouldn’t it be nice if <span class="math notranslate nohighlight">\(x = y\)</span>? So why don’t we just try to find <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(x\)</span> so that</p>
 <p>s= φwrite(x) + x,
 and also</p>
 <div class="math notranslate nohighlight">
 \[
-[\~[ x]\!](x) = x.
+[\![ x]\!](x) = x.
 \]</div>
 <p>Now it is clear that if we find x we then can determine s automatically, using the first equation. We only need to have <span class="math notranslate nohighlight">\(x\)</span> be a program with the property that</p>
 <div class="math notranslate nohighlight">
 \[
-[\~[ x]\!](x) = [\~[ write]\!](x) + x.
+[\![ x]\!](x) = [\![ write]\!](x) + x.
 \]</div>
 <p>But again, we are free to make x be any program we like. We might as well make <span class="math notranslate nohighlight">\(x\)</span> have the property that for all <span class="math notranslate nohighlight">\(z\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-[\~[ x]\!](z) = [\~[ write]\!](z) + z.
+[\![ x]\!](z) = [\![ write]\!](z) + z.
 \]</div>
 <p>If we do this, then it automatically will hold that <span class="math notranslate nohighlight">\([\~[ x]\!](x) = [\~[ write]\!](x) + x\)</span>.</p>
 <p>And now things are much easier. It is not hard to write <span class="math notranslate nohighlight">\(x\)</span> so that
-<span class="math notranslate nohighlight">\([\~[ x]\!](z) = [\~[ write]\!](z) + z\)</span>
+<span class="math notranslate nohighlight">\([\![ x]\!](z) = [\![ write]\!](z) + z\)</span>
 for all <span class="math notranslate nohighlight">\(z\)</span>; this is <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
-<p>Finally, the reasoning we did in this small discussion shows that we can get a self replicating program by setting <span class="math notranslate nohighlight">\(s = [\~[ diag]\!](diag)\)</span>.</p>
+<p>Finally, the reasoning we did in this small discussion shows that we can get a self replicating program by setting <span class="math notranslate nohighlight">\(s = [\![ diag]\!](diag)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
