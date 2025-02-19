@@ -452,7 +452,7 @@
 <p class="admonition-title"><span class="caption-number">Lemma 2 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> be natural numbers.</p>
-<p>There is a program <span class="math notranslate nohighlight">\(s^m_n\)</span> such that for all <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span>,</p>
+<p>There is a program <span class="math notranslate nohighlight">\(s^m_n\)</span> such that for all words <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 [\![ [\![s^m_n]\!](p, q_1,\ldots, q_m)]\!](r_1,\ldots, r_n)
@@ -584,7 +584,13 @@ We run this program on <code class="docutils literal notranslate"><span class="p
 <p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For each <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <code class="docutils literal notranslate"><span class="pre">[[s^m_n]]</span></code> is a primitive recursive function.</p>
-<p>Also, there is a primitive recursive function <span class="math notranslate nohighlight">\(f:N\times N\to Words\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(m,n) = s^m_n\)</span>.</p>
+<p>Also, there is a primitive recursive function <span class="math notranslate nohighlight">\(f:N\times N\to Words\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(m,n)\)</span> has the property defining <span class="math notranslate nohighlight">\(s^m_n\)</span>.   That is,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![f(m,n)]\!](p, q_1,\ldots, q_m)]\!](r_1,\ldots, r_n)
+\simeq
+[\![ p]\!](q_1,\ldots, q_m,r_1,\ldots, r_n)
+\]</div>
 </section>
 </div></section>
 
