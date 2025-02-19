@@ -646,9 +646,9 @@ is <em>undefined</em>.</p>
 <p class="admonition-title">Attention</p>
 <p>Programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> do not come with an “arity”.  It is natural to think of a program as a function of the registers <span class="math notranslate nohighlight">\(i\)</span> such that <code class="docutils literal notranslate"><span class="pre">1^i</span> <span class="pre">#^5</span></code> is an instruction in it.  But our definitions do not require this.  They allow every program to be used as a function of one or more numbers of variables.   For example if <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">clear_3</span></code>, then we have</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\([\![ p ]\!](1) = 1\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![ p ]\!](\#,1) = \#\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![ p ]\!](1,\#,1) = 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ p ]\!]^1(1) = 1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ p ]\!]^2(\#,1) = \#\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ p ]\!]^3(1,\#,1) = 1\)</span>.</p></li>
 </ol>
 </div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-6">
