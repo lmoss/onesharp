@@ -700,7 +700,8 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <p>Let’s say that you just have on glimmer of an idea, that <span class="math notranslate nohighlight">\(s\)</span> should be of the following form:</p>
 <p>First, a program <span class="math notranslate nohighlight">\(x\)</span> should be written to R1.</p>
 <p>Second, a program <span class="math notranslate nohighlight">\(y\)</span> should be run with <span class="math notranslate nohighlight">\(x\)</span> in R1 (and everything else empty).</p>
-<p>So running <span class="math notranslate nohighlight">\(x\)</span> on nothing will give &amp;phixy in R1 at the end.</p>
+<p>So running <span class="math notranslate nohighlight">\(x\)</span> on nothing will give
+<span class="math notranslate nohighlight">\([\![ x]\!](y)\)</span> in R1 at the end.</p>
 <p>We therefore want to find <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> so that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -711,17 +712,28 @@ s= [\![ write]\!](x)+ y.
 \[
 [\![ x]\!](\ ) = [\![ write]\!](x??) + x.
 \]</div>
-<p>s= φwrite(x) + y, φs( ) = φx(y )
-and <span class="math notranslate nohighlight">\([\![ x]\!](y) = s\)</span>.
+<p>So
+$<span class="math notranslate nohighlight">\(
+s = [\![ write]\!](x) + y
+\)</span>$</p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ s]\!]( ) = [\![ x]\!](y)
+\]</div>
+<p>and <span class="math notranslate nohighlight">\([\![ x]\!](y) = s\)</span>.
 We are free to find any <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> that we like that meets these requirements.
 Wouldn’t it be nice if <span class="math notranslate nohighlight">\(x = y\)</span>? So why don’t we just try to find <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(x\)</span> so that</p>
-<p>s= φwrite(x) + x,
-and also</p>
+<div class="math notranslate nohighlight">
+\[
+s = [\![ x]\!](x)
+\]</div>
+<p>and also</p>
 <div class="math notranslate nohighlight">
 \[
 [\![ x]\!](x) = x.
 \]</div>
-<p>Now it is clear that if we find x we then can determine s automatically, using the first equation. We only need to have <span class="math notranslate nohighlight">\(x\)</span> be a program with the property that</p>
+<p>Now it is clear that if we find <span class="math notranslate nohighlight">\(x4 we then can determine s automatically, using the first equation. We only need to have \)</span>x$ be a program with the property that</p>
 <div class="math notranslate nohighlight">
 \[
 [\![ x]\!](x) = [\![ write]\!](x) + x.
