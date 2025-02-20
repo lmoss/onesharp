@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="The halting problem" href="undecidability/haltingProblem.html" />
-    <link rel="prev" title="Universal programs" href="universal/universal.html" />
+    <link rel="prev" title="The T predicate" href="mu/T_predicate.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,7 +171,22 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: several notions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="issues/coding.html">Computable functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/reduction.html">Reduction of one problem to another</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introOneSharp/instructions.html">First steps</a></li>
 
@@ -189,21 +204,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="introOneSharp/tidy.html">Tidy programs</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: several notions</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="issues/coding.html">Computatble functions on encoded structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="issues/reduction.html">Reduction of one problem to another</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="more_programs/sanity.html">A tool to help write programs</a></li>
@@ -216,6 +216,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="more_programs/primitive_recursion.html">Primitive recursion</a></li>
 
 
+
+
 <li class="toctree-l1"><a class="reference internal" href="more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -226,6 +228,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mu/T_predicate.html">The T predicate</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="current nav bd-sidenav">
@@ -639,7 +645,7 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 </div>
 <p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
 <p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
-Move x from R1 into R2, and also put <span class="math notranslate nohighlight">\(\semantics{\writeprog}(x)\)</span> in R3.
+Move x from R1 into R2, and also put <code class="docutils literal notranslate"><span class="pre">[[write]](x)</span></code> into R3.
 Then move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
 The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
@@ -651,7 +657,7 @@ The official version of <code class="docutils literal notranslate"><span class="
 <p>The idea is to apply the program <code class="docutils literal notranslate"><span class="pre">diag</span></code> to diag itself.
 This might seem like a strange thing to do. But as we’ll see, it gives us exactly what we’re looking for.
 When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <code class="docutils literal notranslate"><span class="pre">[\!</span> <span class="pre">write\!](diag)</span> <span class="pre">+</span> <span class="pre">diag</span></code> in R1.
-This, then, is <span class="math notranslate nohighlight">\(\self\)</span>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
+This, then, is <code class="docutils literal notranslate"><span class="pre">self</span></code>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
 the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
 After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.
@@ -664,7 +670,7 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 [\![self]\!] (\ ) = [\![  [\![ diag]\!](diag)]\!]( ) =   [\![ diag]\!](diag) \simeq self
 \)</span>.</p>
 </div>
-<p>You can watch the calculation by entering <code class="docutils literal notranslate"><span class="pre">self</span></code> in <a class="reference external" href="https://rrose1.github.io/jsonesharp/">the Javascript interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code></a>.</p>
+<p>You can watch the calculation by entering <code class="docutils literal notranslate"><span class="pre">self</span></code> in <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span>
@@ -696,26 +702,41 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <div class="tex2jax_ignore mathjax_ignore section" id="the-idea-in-english">
 <h1>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Permalink to this heading">#</a></h1>
 <p>We offer another presentation of the idea behind diag and self.</p>
-<p>Let’s suppose that you want to write a self-replicating program, say s, from scratch.</p>
-<p>Let’s say that you just have on glimmer of an idea, that s should be of the following form:</p>
-<p>First, a program x should be written to R1.</p>
-<p>Second, a program y should be run (with x in R1 and everything else empty).</p>
-<p>So running x on nothing will give &amp;phixy in R1 at the end.</p>
-<p>We therefore want to find s, x, and y so that</p>
-<p>s= φwrite(x) + y, φs( ) = φx(y )
-and
-φx(y) = s
-We are free to find any s, x, and y that we like that meets these requirements. Wouldn’t it be nice if x = y? So why don’t we just try to find s and x so that</p>
-<p>s= φwrite(x) + x,
-and also
-φx(x) = s
-Now it is clear that if we find x we then can determine s automatically, using the first equation. We only need to have x be a program with the property that</p>
-<p>φx(x) = φwrite(x) + x,
-But again, we are free to make x be any program we like. We might as well make x have the property that for all z,</p>
-<p>φx(z) = φwrite(z) + z,
-since if we do this, then it automatically will hold that φx(x) = φwrite(x) + x.</p>
-<p>And now things are much easier. It is not hard to write x so that φx(z) = φwrite(z) + z for all z; this is diag.
-Finally, the reasoning we did in this small discussion shows that we can get a self replicating program by setting s = φx(x).</p>
+<p>Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.</p>
+<p>Let’s say that you just have on glimmer of an idea, that when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run a program <span class="math notranslate nohighlight">\(y\)</span> on it.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> should be <span class="math notranslate nohighlight">\(s\)</span>.
+So in effect, we want to solve a <em>system of equations</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+s &amp; = &amp; [\![ write]\!](x)+ y\\
+[\![ s]\!](\ ) &amp; = &amp; [\![ y]\!](x)\\
+[\![ [\![ y]\!](x) ]\!](\ ) &amp; = &amp; s \\
+\end{array}
+\end{split}\]</div>
+<p>The second of these follows from the first, of course.  Putting together the first and third gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+[\![ [\![ y]\!](x) ]\!](\ ) &amp; = &amp; [\![ write]\!](x)+ y  \quad (*)\\
+\end{array}
+\end{split}\]</div>
+<p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies (*), since then we
+could take <span class="math notranslate nohighlight">\(s\)</span> to be <span class="math notranslate nohighlight">\([\![ write]\!](x)+ y\)</span>.</p>
+<p>Now here is where things become interesting.   Instead of simply finding <em>any old</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> satisfying the last equation, let’s find some <span class="math notranslate nohighlight">\(y\)</span> such that for <em>all</em> <span class="math notranslate nohighlight">\(x\)</span>, we have the following different condition:</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x, \quad (**)
+\]</div>
+<p>and then set <span class="math notranslate nohighlight">\(x = y\)</span>.
+(Note that (*) and (**) are different due to the last symbol in each.)</p>
+<p>If find <span class="math notranslate nohighlight">\(y\)</span> to make (**) hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span> and thus have (*), because</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x  =  [\![ write]\!](x)+ y
+\]</div>
+<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to satisfy a more stringent condition.  But in reality it’s easier, since the second equation (**) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(diag\)</span>!</p>
+<p>To conclude: we take <span class="math notranslate nohighlight">\(y = diag\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
+We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ write]\!](diag)+ diag = [\![ diag]\!](diag)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></div>
 <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
@@ -727,7 +748,7 @@ and extending them.</p>
 to check your work on the interpreter.</p>
 <div class="exercise admonition" id="self_writing-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
 <div class="section" id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
@@ -736,25 +757,25 @@ to check your work on the interpreter.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which when started on all empty registers
-writes itself to <span class="math notranslate nohighlight">\(\Rone\)</span> and also writes <span class="math notranslate nohighlight">\(\hash\)</span> to <span class="math notranslate nohighlight">\(\Rtwo\)</span>.</p>
+writes itself to R1 and also writes <code class="docutils literal notranslate"><span class="pre">#</span></code> to R2.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
-write itself to <span class="math notranslate nohighlight">\(\Rone\)</span> but rather writes itself followed by a <span class="math notranslate nohighlight">\(\hash\)</span>.
-In other words, <span class="math notranslate nohighlight">\(\phifn_p(\ ) = p + \hash\)</span>.</p>
+write itself to R1 but rather writes itself followed by a <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+In other words, <span class="math notranslate nohighlight">\([\![ p]\!](\ ) =  p + \# \)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
 <div class="section" id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
@@ -762,18 +783,17 @@ writes the next one in the list into R1.</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
 <div class="section" id="exercise-content">
-<p>Write a program p which when started on all empty registers
+<p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
-write itself to R1 but rather writes itself preceded by a #.
-In other words,
-<span class="math notranslate nohighlight">\(\phifn_p(\ ) = \# + p\)</span>.</p>
+write itself to R1 but rather writes itself preceded by a <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+In other words, <span class="math notranslate nohighlight">\([\![ p]\!](\ ) = \# +p\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a self-replicating program
 that begins with the program to transfer ahead
@@ -782,18 +802,17 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 </div>
 <div class="exercise admonition" id="self_writing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
 <div class="section" id="exercise-content">
-<p>Write a program s which, when run with R2, R3, etc.
-empty,  ends up with R1 containing s <em>after</em> whatever
+<p>Write a program <span class="math notranslate nohighlight">\(s\)</span> which, when run with R2, R3, etc.
+empty,  ends up with R1 containing <span class="math notranslate nohighlight">\(s\)</span> <em>after</em> whatever
 happened to be in R1 at the start.
-In other words, for all words y,
-<span class="math notranslate nohighlight">\(\phifn_s(y) = y + s\)</span></p>
+In other words, for all words <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\([\![ s]\!](y) = y+s\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
@@ -805,7 +824,7 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 </div>
 <div class="exercise admonition" id="self_writing-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
 which trades places with its input in R1.
@@ -819,13 +838,14 @@ before attempting this problem.  But it might be fun to try now.]</p>
 </div>
 <div class="exercise admonition" id="self_writing-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <div class="section" id="exercise-content">
-<p>Write two “twin’’ programs s and t with the properties
-that s and t are different programs;
-running s with all registers empty gives t in R1; and
-running t with all registers empty gives s in
+<p>Write two “twin’’ programs <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> with the properties
+that <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are different programs;
+running <span class="math notranslate nohighlight">\(s\)</span> with all registers empty gives <span class="math notranslate nohighlight">\(t\)</span> in R1; and
+running <span class="math notranslate nohighlight">\(t\)</span> with all registers empty gives <span class="math notranslate nohighlight">\(s\)</span> in
 R1.</p>
+<p>“Different” here means that <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are not symbol-for-symbol the same.</p>
 </div>
 </div>
 </div>
@@ -861,12 +881,12 @@ R1.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="universal/universal.html"
+       href="mu/T_predicate.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Universal programs</p>
+        <p class="prev-next-title">The T predicate</p>
       </div>
     </a>
     <a class="right-next"

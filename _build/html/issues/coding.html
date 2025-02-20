@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Computatble functions on encoded structures &#8212; Invitation to Computability</title>
+    <title>Computable functions on encoded structures &#8212; Invitation to Computability</title>
   
   
   
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -217,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -227,6 +228,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -432,7 +437,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Computatble functions on encoded structures</h1>
+    <h1>Computable functions on encoded structures</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -447,8 +452,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/coding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="computatble-functions-on-encoded-structures">
-<h1>Computatble functions on encoded structures<a class="headerlink" href="#computatble-functions-on-encoded-structures" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="computable-functions-on-encoded-structures">
+<h1>Computable functions on encoded structures<a class="headerlink" href="#computable-functions-on-encoded-structures" title="Permalink to this heading">#</a></h1>
 <p>At this point, we have seen a bit about one particular model of computation, leading to the definition of a <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable function.   We also saw some mathematically natural algorithmic problems having to do with graphs, tiling, dominoes, and matricies.  What we want to do at this point is to connect these two discussions.
 We also want to say in a more formal way what it means for one or another algorithmic problem to be decidable or undecidable.</p>
 <div class="proof definition admonition" id="structure">
@@ -529,7 +534,7 @@ And <span class="math notranslate nohighlight">\(\hat{s}\)</span> is also comput
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
 <div class="section" id="exercise-content">
 <p>Check that the structure <span class="math notranslate nohighlight">\(\mathcal{W} = (W,\varepsilon, \)</span>{\tt 1}, {\tt #},<span class="math notranslate nohighlight">\(+)\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words is decidable,
 where <span class="math notranslate nohighlight">\(W\)</span> is the set of all <code class="docutils literal notranslate"><span class="pre">1#</span></code> words; <span class="math notranslate nohighlight">\(\varepsilon\)</span>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">#</span></code> are the evident constants, and <span class="math notranslate nohighlight">\(+\)</span> is the function of two arguments giving their concantenation.</p>
@@ -538,7 +543,7 @@ where <span class="math notranslate nohighlight">\(W\)</span> is the set of all 
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
 <div class="section" id="exercise-content">
 <p>Show that if <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is a structure which has a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encoding, then every finite subset of <span class="math notranslate nohighlight">\(S\)</span> is computable.</p>
 <p>[Use <span class="xref std std-ref">proposition_finite_computable</span>]</p>
@@ -546,7 +551,7 @@ where <span class="math notranslate nohighlight">\(W\)</span> is the set of all 
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
 <div class="section" id="exercise-content">
 <p>The structure <span class="math notranslate nohighlight">\(\mathbb{Z} = (Z,0, s, p)\)</span> of integers has</p>
 <div class="math notranslate nohighlight">
@@ -564,7 +569,7 @@ Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(P\)</span> be the set of pairs <span class="math notranslate nohighlight">\((p,q)\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words.   We consider the structure</p>
 <div class="math notranslate nohighlight">
@@ -586,7 +591,7 @@ b_{\#} (p,q)  &amp; =  &amp; (p, q + \# )\\
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
 <div class="section" id="exercise-content">
 <p>If we want to discuss whether <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix mortality is decidable, or whether <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality is decidable, it is natural to propose <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encodings.  Let’s do this for <span class="math notranslate nohighlight">\(2\times 2\)</span> matricies.<br />
 Consider</p>
@@ -604,7 +609,7 @@ Consider</p>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> be the set of finite graphs whose set of vertices is of the form <span class="math notranslate nohighlight">\(\{1,2, \ldots, n\}\)</span> for some <span class="math notranslate nohighlight">\(n\)</span>.  We make this into a structure.  There are no relations or functions, just the set by itself.  What is an encoding of this structure?   What does it mean to say that the subset <span class="math notranslate nohighlight">\(C\)</span> of graphs which contain a cycle is a decidable set relative to an encoding?</p>
 </div>

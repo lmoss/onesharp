@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -217,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -227,6 +228,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -445,11 +450,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-interpreter-for-web-browsers">Another interpreter for web browsers</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="visible nav section-nav flex-column">
@@ -489,9 +493,12 @@ document.write(`
 If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will
 find this material easy.</p>
 <p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
-<div class="section" id="the-1-interpreter">
-<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter<a class="headerlink" href="#the-1-interpreter" title="Permalink to this heading">#</a></h2>
+<div class="section" id="the-1-interpreter-in-a-separate-window-or-in-this-page">
+<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page<a class="headerlink" href="#the-1-interpreter-in-a-separate-window-or-in-this-page" title="Permalink to this heading">#</a></h2>
 <p>There are two ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a *markdown code cell’, and the other is by using a <em>displayed interpreter</em>.  Nearly all of the time we use a command in a markdown code cell, but when one starts out with the language a displayed interpreter is probably a better option.  So we are going to start with that.</p>
+<p>Here is <a href="https://rrose1.github.io/jsonesharp/" target="_blank">an online interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
+It was written in JavaScript by my former PhD students Robert Rose and David Sprunger.</p>
+<p>There is also an interpreter which can be run right on this page.   The choice is yours.  The web interpreter above has a nice <em>slow evaluation</em> feature which the one below lacks.</p>
 <p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
@@ -528,7 +535,7 @@ find this material easy.</p>
 <p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn’t show the step-by-step behavior of the register machine, it only showed the final output.   We’ll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <div class="section" id="exercise-content">
 <p>Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
 </div>
@@ -634,7 +641,7 @@ find this material easy.</p>
 <p>The ‘cases’ instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.</p>
 <div class="exercise admonition" id="try-to-figure">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
 <p>Again, start with <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty. What happens in each register if we run <code class="docutils literal notranslate"><span class="pre">111##</span></code>?
 Try to figure this out for yourself, and then check your work by actually running the program.</p>
@@ -642,7 +649,7 @@ Try to figure this out for yourself, and then check your work by actually runnin
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <div class="section" id="exercise-content">
 <p>As before, start with <span class="math notranslate nohighlight">\(\one\)</span> in R1 and R2, <span class="math notranslate nohighlight">\(\mathtt{1\#}\)</span> in R3, and the other registers empty.
 What happens in each register if we run the same program
@@ -651,7 +658,7 @@ What happens in each register if we run the same program
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty.</p>
 </div>
@@ -924,17 +931,7 @@ The register contents at the end are shown above.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1&#39;
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="another-interpreter-for-web-browsers">
-<h2>Another interpreter for web browsers<a class="headerlink" href="#another-interpreter-for-web-browsers" title="Permalink to this heading">#</a></h2>
-<p>Here is <a class="reference external" href="https://rrose1.github.io/jsonesharp/">another interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code></a>, written by my former PhD students Robert Rose and David Sprunger.</p>
-<p>This is very pretty and fun, there were reports that contemporary browsers had trouble with one of the JavaScript lines.  I would like someone who knows Javascript and iPython to help with getting it to do better in the notebook format.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
 </div>
 <div class="section" id="reference">
@@ -1028,7 +1025,7 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
 <p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
 </div>
@@ -1100,11 +1097,10 @@ Registers are processed as queues: symbols enter on the right and exit on the le
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-interpreter-for-web-browsers">Another interpreter for web browsers</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="visible nav section-nav flex-column">

@@ -1,7 +1,5 @@
 # Invitation to Computability 
 
-Lawrence S. Moss
-
 This is an online textbook on the basics of computability theory, originating in classes given by the author 
 at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is 
 not. It treats the basic topics of the subject: the concept of computability, primitive recursion, 

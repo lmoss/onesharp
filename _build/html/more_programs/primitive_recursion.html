@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computatble functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -217,6 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -227,6 +228,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -453,6 +458,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majorized-by-the-ackermann-function">Majorized by the Ackermann function</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -469,12 +480,11 @@ document.write(`
 <div class="tex2jax_ignore mathjax_ignore section" id="primitive-recursion">
 <h1>Primitive recursion<a class="headerlink" href="#primitive-recursion" title="Permalink to this heading">#</a></h1>
 <p>At this point, we have primarily discussed <code class="docutils literal notranslate"><span class="pre">1#</span></code> computability for functions of words.  Secondarily, we turned to computability of functions of numbers.  We say “secondarily” here, becasuse the definition was indirect: to define computability of functions on numbers, we went through the somewhat artificial device of <code class="docutils literal notranslate"><span class="pre">1#</span></code>.   Since functions of numbers are so much more important than functions of words (at least to mathematics), we want to shift the focus in the subject.   We start with a re-consideration of what it means to “compute in a simple sort of way” on thge natural numbers.   Fairly soon, however, we return to <code class="docutils literal notranslate"><span class="pre">1#</span></code> to connect it to what we do here.</p>
-<p>What I have here works: entering a primitive recursive term in the correct syntax, we can translate that term to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program. The work here is sub-optimal in the sense that the 1# program associated to a term uses way more registers than what seems to be necessary.  For example the program to determine whether or not an input number is prime uses 57 registers.   On top of that, the programs that come from this implementation are very slow.  My guess is that one or two applications of <em>memoization</em> should produce better <code class="docutils literal notranslate"><span class="pre">1#</span></code> code.  But I don’t really know this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!python -m pip install -U setuptools
-!python -m pip install -U git+https://github.com/lmoss/onesharp.git@main
-from onesharp.interpreter.interpreter import *
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
+<span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
+<span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -536,11 +546,11 @@ f(m,n+1)  &amp; = &amp; g(m,n,f(m,n)) &amp; = &amp; f(m,n) + 1
 <p>Our next step is to “squash” the trees in order to make <em>PR terms</em>.   These are syntactic objects, they are basically just a representation of the trees that we have seen.  Here is a formal definition.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
-<p>We define PR terms together with their arities, and also their denotations.</p>
-<p><code class="docutils literal notranslate"><span class="pre">z</span></code> : this is the term of arity <span class="math notranslate nohighlight">\(1\)</span>.   It’s denotation is the constant function  with value 0.</p>
-<p><code class="docutils literal notranslate"><span class="pre">z_empty</span></code>: this is the zero-place function with value 0.</p>
-<p><code class="docutils literal notranslate"><span class="pre">s</span></code> : this is the one-place successor function: <span class="math notranslate nohighlight">\(f(n) = n+1\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j: this is the ith projection on j variables.</p>
+<p>We define PR terms <span class="math notranslate nohighlight">\(t\)</span> together with their arities, and also their denotations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">z</span></code> : this is the term of arity <span class="math notranslate nohighlight">\(1\)</span>.   It’s denotation <span class="math notranslate nohighlight">\(den(t)\)</span> is the constant function  with value 0.  That is <span class="math notranslate nohighlight">\(den(z)(n) = 0\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">z_empty</span></code>: the denotation is the zero-place function with value 0.</p>
+<p><code class="docutils literal notranslate"><span class="pre">s</span></code> : <span class="math notranslate nohighlight">\(den(s)\)</span> is the one-place successor function: <span class="math notranslate nohighlight">\(den(s)(n) = n+1\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[proj,</span> <span class="pre">i,</span> <span class="pre">j]</span></code> with i &lt;= j:  We take <span class="math notranslate nohighlight">\(den([proj,i,j])\)</span> to be the ith projection on j variables.</p>
 <p>The two term constructors are</p>
 <p><code class="docutils literal notranslate"><span class="pre">[comp,</span> <span class="pre">f,</span> <span class="pre">g_1,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">,</span> <span class="pre">g_k]</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">[pr,</span> <span class="pre">f,</span> <span class="pre">g]</span></code></p>
@@ -569,8 +579,7 @@ arity of the term
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">add</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span>
 
 <span class="n">mul</span> <span class="o">=</span> <span class="p">[</span><span class="n">pr</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">add</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="p">]</span>
 
@@ -590,7 +599,7 @@ arity of the term
 
 <span class="n">chi_greater</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">## characteristic function of &gt;</span>
 
-<span class="n">chi_lesser_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1">#|characteristic function of (&gt; or =)</span>
+<span class="n">chi_lesser_or_equal</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="n">monus</span><span class="p">]</span> <span class="c1"># characteristic function of (&lt; or =)</span>
 
 <span class="n">chi_lesser</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">chi_greater</span><span class="p">,[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1">## characteristic function of &lt;</span>
 
@@ -605,27 +614,30 @@ arity of the term
 <div class="tex2jax_ignore mathjax_ignore section" id="converting-pr-terms-to-1-programs">
 <h1>Converting PR terms to <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs<a class="headerlink" href="#converting-pr-terms-to-1-programs" title="Permalink to this heading">#</a></h1>
 <p>In a code cell, we can take the PR terms defined above and convert them to <code class="docutils literal notranslate"><span class="pre">1#</span></code> code using the Python function <code class="docutils literal notranslate"><span class="pre">program</span></code>.</p>
+<p>Please note that I am using the <a class="reference internal" href="arithmetic.html"><span class="doc std std-doc">bb-representation of numbers</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">program</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">program</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We also can check the programs out on examples.   For this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">add</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;#1#1&#39;</span><span class="p">])</span>  <span class="c1"># 3 + 10 = 13</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">add</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;#1#1&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">exp</span><span class="p">),[</span><span class="s1">&#39;111&#39;</span><span class="p">,</span><span class="s1">&#39;##1&#39;</span><span class="p">])</span> <span class="c1"># this calculates 7^4 = 2401. Note that bin(2401) = 100101100001</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">(</span><span class="n">exp</span><span class="p">),[</span><span class="s1">&#39;111&#39;</span><span class="p">,</span><span class="s1">&#39;111&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Entering a primitive recursive term in the correct syntax, we can translate that term to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program. The work here is sub-optimal in the sense that the 1# program associated to a term uses way more registers than what seems to be necessary.  For example the program to determine whether or not an input number is prime uses 57 registers.   On top of that, the programs that come from this implementation are very slow.  My guess is that one or two applications of <em>memoization</em> should produce better <code class="docutils literal notranslate"><span class="pre">1#</span></code> code.  But I don’t really know this.</p>
 <div class="section" id="other-functions-in-this-notebook">
 <h2>Other functions in this notebook<a class="headerlink" href="#other-functions-in-this-notebook" title="Permalink to this heading">#</a></h2>
 <p>Here are some other functions in this notebook:</p>
@@ -634,7 +646,8 @@ arity of the term
 <p><code class="docutils literal notranslate"><span class="pre">in_place_program(t)</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The in_place_programs in this notebook do not halt in the sense   Instead, they <em>preserve their inputs</em>.</p>
+<p>The in_place_programs in this notebook do not <em>halt</em> according to [our earlier definition][haltDef.ipynb].
+Instead, they <em>preserve their inputs</em>.</p>
 </div>
 <p>For example, run the program associated with <em>add</em> below as shown below it.  (That is, take away the # from the beginning of the lines after the definition. The 2 inputs are preserved and the result goes in register 3.)</p>
 </div>
@@ -644,10 +657,10 @@ arity of the term
 <p>The output can be long because the function <code class="docutils literal notranslate"><span class="pre">syntax_check</span></code> is recursive, and thus reports information about all the subterms of whatever you enter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(exp)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mul</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">syntax_check</span><span class="p">(</span><span class="n">mul</span><span class="p">)</span>
-<span class="c1">#syntax_check([comp, mul, mul])</span>
 </pre></div>
 </div>
 </div>
@@ -655,8 +668,7 @@ arity of the term
 <p><img alt="" src="https://github.com/lmoss/onesharp/blob/main/images/drum.png?raw=1" /></p>
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### exercise 5b below</span>
-<span class="n">g</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">chi_equals</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">chi_equals</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]]]</span> 
 <span class="c1"># g tells if first x third = second</span>
 <span class="c1">#print(arity(g))</span>
 <span class="c1">#print(onesharp(program(g),[&#39;11&#39;,&#39;1##1&#39;,&#39;11&#39;]))</span>
@@ -684,8 +696,7 @@ arity of the term
 q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporates information about the “&gt;1” conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">g3</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g3</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">g3</span><span class="p">)</span>
 <span class="n">onesharp</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;11111&#39;</span><span class="p">])</span>
 <span class="n">k1</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">add</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> 
@@ -709,8 +720,7 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <h2>Checking to see if the first 15 numbers are prime or not<a class="headerlink" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">proper_divisor</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">h_proper</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proper_divisor</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">h_proper</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
 
 <span class="n">pd_inverse_zero</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">proper_divisor</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="n">proj</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 <span class="n">pd_inverse</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">mul</span><span class="p">,</span> <span class="n">pd_inverse_zero</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">greater_than_one</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]]</span>
@@ -720,19 +730,19 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
                                 <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]]]</span>
 <span class="c1">#print(arity([comp, add, [proj, 2,2], pd_inverse]))                                  </span>
 <span class="c1">#print(arity(running_total_of_pd_inverse))</span>
-
-
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_prime</span> <span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">running_total_of_pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_prime</span> <span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">,</span><span class="n">sgn_bar</span><span class="p">,</span> <span class="p">[</span><span class="n">comp</span><span class="p">,</span> <span class="n">running_total_of_pd_inverse</span><span class="p">,</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">proj</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]]</span>
 <span class="n">prime_prog</span> <span class="o">=</span> <span class="n">program</span><span class="p">(</span><span class="n">is_prime</span><span class="p">)</span>
 
-<span class="c1"># Gives output 1 if the input is a prime,</span>
-<span class="c1"># and gives output # if the output is not a prime.</span>
+<span class="c1"># Gives output 1 if the input is a prime, and gives output # if the output is not a prime.</span>
+<span class="c1"># It&#39;s wrong on 1.</span>
+
+<span class="c1"># This takes several minutes in full, but in one minute you can see the first 10 or 11.</span>
 
 <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;#1&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;##1&#39;</span><span class="p">,</span> 
              <span class="s1">&#39;1#1&#39;</span><span class="p">,</span> <span class="s1">&#39;#11&#39;</span><span class="p">,</span> <span class="s1">&#39;111&#39;</span><span class="p">,</span> <span class="s1">&#39;###1&#39;</span><span class="p">,</span> 
@@ -748,6 +758,91 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="primitive-recursive-functions-are">
+<h1>Primitive recursive functions are …<a class="headerlink" href="#primitive-recursive-functions-are" title="Permalink to this heading">#</a></h1>
+<p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>induction</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
+<p>(1) Prove <span class="math notranslate nohighlight">\(P(f)\)</span> when <span class="math notranslate nohighlight">\(f\)</span> is one of the basic primitive recursive functions.</p>
+<p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
+<p>(3) Assume <span class="math notranslate nohighlight">\(P(f)\)</span> and <span class="math notranslate nohighlight">\(P(g)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([pr, f, g])\)</span>.</p>
+<p>We turn to examples of proof by induction on the primitive recursive functions:</p>
+<div class="section" id="total">
+<h2>Total<a class="headerlink" href="#total" title="Permalink to this heading">#</a></h2>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Every primitive recursive function is total.</p>
+</div>
+</div><p>So here <span class="math notranslate nohighlight">\(P(f)\)</span> is “<span class="math notranslate nohighlight">\(f\)</span> is a total function”.</p>
+<p>It is clear that all of the basic primitive recursive functions are total, and it is also easy to see that the composition of total functions is total.   So we are left with the closure of total functions under primitive recursion.</p>
+</div>
+<div class="section" id="computable-by-1-programs">
+<h2>Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs<a class="headerlink" href="#computable-by-1-programs" title="Permalink to this heading">#</a></h2>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>Every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
+<p>In more detail:</p>
+<ol class="arabic simple">
+<li><p>For every primitive recursive  <span class="math notranslate nohighlight">\(f:N^k \to N\)</span>, there is a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program <span class="math notranslate nohighlight">\(p\)</span> such that for all <span class="math notranslate nohighlight">\(\overline{x} \in N^k\)</span>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f(\overline{x}) = y \quad \mbox{ iff }\quad \langle\!\langle p \rangle\!\rangle(bb(x_1), \ldots, bb(x_n)) = bb(y)
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>For every primitive recursive  <span class="math notranslate nohighlight">\(f:N^k \to N\)</span>, there is a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program <span class="math notranslate nohighlight">\(q\)</span> such that for all <span class="math notranslate nohighlight">\(\overline{x} \in N^k\)</span>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+f(\overline{x}) = y \quad \mbox{ iff }\quad [\![ q ]\!](bb(x_1), \ldots, bb(x_n)) = bb(y)
+\]</div>
+</div>
+</div><p>Part 1 refers to programs which <em>preserve their inputs</em>.  We prove this part by induction on the primitive recursive function <span class="math notranslate nohighlight">\(f\)</span>.  Then we infer 2 from it by “cleaning up”.  Doing things this way is like <em>strengthening an induction hypothesis</em>, a widely-used trick in mathematics.</p>
+</div>
+<div class="section" id="majorized-by-the-ackermann-function">
+<h2>Majorized by the Ackermann function<a class="headerlink" href="#majorized-by-the-ackermann-function" title="Permalink to this heading">#</a></h2>
+<p>Our last proof by induction on the PR functions pertains to the <em>Ackermann function</em> <span class="math notranslate nohighlight">\(A(x,y)\)</span> defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A(x,y)\quadeq \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{split}\]</div>
+<div class="proof lemma admonition" id="lemma-2">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<div class="lemma-content section" id="proof-content">
+<p>For every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> there is a number <span class="math notranslate nohighlight">\(r\)</span> such that for all <span class="math notranslate nohighlight">\(x_1, \ldots, x_k\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_1, \ldots, x_k) &lt; A(r, \max_i x_i)
+\]</div>
+</div>
+</div><p>This lemma is proved by induction on the PR functions.</p>
+<p>For the base cases of <span class="math notranslate nohighlight">\(z\)</span> and the projections, we can take <span class="math notranslate nohighlight">\(r=0\)</span>.
+For the successor function, we can take <span class="math notranslate nohighlight">\(r = 1\)</span>.</p>
+<p>Consider a composition, say <code class="docutils literal notranslate"><span class="pre">[comp,</span> <span class="pre">f,</span> <span class="pre">g_1,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">,</span> <span class="pre">g_k]</span></code>.  By induction hypothesis, we have numbers <span class="math notranslate nohighlight">\(r_i\)</span>
+for <span class="math notranslate nohighlight">\(g_i\)</span> (for <span class="math notranslate nohighlight">\(1\leq i \leq k\)</span>), and we also have a number <span class="math notranslate nohighlight">\(s\)</span> for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>I won’t give this here, but you can find a short note that does the details on our Canvas page.  Assuming this lemma, we can then easily infer what we really want:</p>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
+<div class="theorem-content section" id="proof-content">
+<p>The Ackermann function <span class="math notranslate nohighlight">\(A(x,y): N^2\to N\)</span> is not primitive recursive.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Assume toward a contradiction that <span class="math notranslate nohighlight">\(A(x,y)\)</span> were primitive recursive.  By the lemma, we have a number <span class="math notranslate nohighlight">\(r\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+A(x,y) &lt; A(r, \max(x,y))
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.   In particular, taking <span class="math notranslate nohighlight">\(x = r = y\)</span>, we have <span class="math notranslate nohighlight">\(A(r,r) &lt; A(r,r)\)</span>.</p>
+<p>Contradiction!</p>
 </div>
 </div>
 </div>
@@ -822,6 +917,12 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-functions-in-this-notebook">Other functions in this notebook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-check">Syntax check</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majorized-by-the-ackermann-function">Majorized by the Ackermann function</a></li>
 </ul>
 </li>
 </ul>
