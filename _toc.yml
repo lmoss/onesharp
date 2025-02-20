@@ -33,6 +33,10 @@ parts:
    - file: universal/twoByTwo 
    - file: universal/universal
 
+- caption: Computable Functions of Numbers
+  chapters:
+   - file: T_predicate
+
 - caption: The Recursion Theorem
   chapters:
   - file: self_writing
