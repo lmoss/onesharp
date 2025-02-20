@@ -445,12 +445,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-encode-a-word-on-1-say-a1-a-n-by-1-a-1-1-a-2-1-a-n">We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-encode-a-sequence-of-words-by-adding-the-separator-after-the-enconding-of-each-word-in-the-sequence">We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-encode-a-snapshot-by-taking-a-number-n-and-turning-it-into-unary-notation-and-then-following-it-by-a-sequence-encoding-some-words-the-idea-is-that-the-number-n-should-be-an-instruction-number-in-a-program-and-the-encoded-words-should-be-the-conents-of-the-registers">We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
 </ul>
@@ -840,17 +835,11 @@
 <section id="snapshot-and-trace">
 <h2>Snapshot and trace<a class="headerlink" href="#snapshot-and-trace" title="Link to this heading">#</a></h2>
 <p>To start, review the definitons of <em>snapshot</em> and <em>trace</em>.</p>
-<section id="we-encode-a-word-on-1-say-a1-a-n-by-1-a-1-1-a-2-1-a-n">
-<h3>We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.<a class="headerlink" href="#we-encode-a-word-on-1-say-a1-a-n-by-1-a-1-1-a-2-1-a-n" title="Link to this heading">#</a></h3>
-<p>That is, we put the symbol 1 between all symbols of the word that we want to encode.</p>
-</section>
-<section id="we-encode-a-sequence-of-words-by-adding-the-separator-after-the-enconding-of-each-word-in-the-sequence">
-<h3>We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.<a class="headerlink" href="#we-encode-a-sequence-of-words-by-adding-the-separator-after-the-enconding-of-each-word-in-the-sequence" title="Link to this heading">#</a></h3>
-</section>
-<section id="we-encode-a-snapshot-by-taking-a-number-n-and-turning-it-into-unary-notation-and-then-following-it-by-a-sequence-encoding-some-words-the-idea-is-that-the-number-n-should-be-an-instruction-number-in-a-program-and-the-encoded-words-should-be-the-conents-of-the-registers">
-<h3>We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.<a class="headerlink" href="#we-encode-a-snapshot-by-taking-a-number-n-and-turning-it-into-unary-notation-and-then-following-it-by-a-sequence-encoding-some-words-the-idea-is-that-the-number-n-should-be-an-instruction-number-in-a-program-and-the-encoded-words-should-be-the-conents-of-the-registers" title="Link to this heading">#</a></h3>
+<p>We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.
+That is, we put the symbol 1 between all symbols of the word that we want to encode.</p>
+<p>We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.</p>
+<p>We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
-</section>
 <section id="new-interface">
 <h2>New interface<a class="headerlink" href="#new-interface" title="Link to this heading">#</a></h2>
 <p>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.</p>
@@ -1400,12 +1389,7 @@ The output is ##11.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-encode-a-word-on-1-say-a1-a-n-by-1-a-1-1-a-2-1-a-n">We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-encode-a-sequence-of-words-by-adding-the-separator-after-the-enconding-of-each-word-in-the-sequence">We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-encode-a-snapshot-by-taking-a-number-n-and-turning-it-into-unary-notation-and-then-following-it-by-a-sequence-encoding-some-words-the-idea-is-that-the-number-n-should-be-an-instruction-number-in-a-program-and-the-encoded-words-should-be-the-conents-of-the-registers">We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
 </ul>
