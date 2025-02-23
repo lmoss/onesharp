@@ -551,8 +551,10 @@ such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> c
 <p>The reason that our set <span class="math notranslate nohighlight">\(A\)</span> above is a set of <em>tidy</em> programs is that we want <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span> to imply that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers takes infinitely many steps.   We do not have <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span> merely due a bad transfer instruction.</p>
 <p>Let us now discuss why we take <span class="math notranslate nohighlight">\(A\)</span> to be a set of programs which only use R1.   In the case that <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>,
 we want a run of <span class="math notranslate nohighlight">\(p\)</span> to give rise to a tiling of the entire quadrant.  The idea is that the rows of the tiling should look like the contents of the register step-by-step.   Moreover, we would like the leftmost entry in each row to encode the instruction number that is being executed.</p>
-<p>Here is an example which we shall mention at several points in the rest of this discussion.  We take <span class="math notranslate nohighlight">\(p\)</span> to be the program  <code class="docutils literal notranslate"><span class="pre">1#1##1####</span></code>.  Clearly <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.  We want the tiling of the quadrant to resemble</p>
+<p>Here is an example which we shall mention at several points in the rest of this discussion.  We take <span class="math notranslate nohighlight">\(p\)</span> to be the program  <code class="docutils literal notranslate"><span class="pre">1#1##1####</span></code>.  Clearly <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.  We want the bottom 8 rows of the tiling of the quadrant to resemble</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-23.png?raw=1" width="100%" height="100%">
+<p>We say <em>resemble</em> here because what is shown above is not a set of tiles in the first place: there are no colors on the edges.  But our details below are an elaboration of this idea.   It might be fun for you to work out your own elaboration at this point before looking below.   But if you want to see how our definitions will work, you can look at
+<code class="xref prf prf-ref docutils literal notranslate"> <span class="pre">example-formal-tiling</span></code>.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-mathcal-t-p">
@@ -593,8 +595,9 @@ we include the three tiles
 <p>Notice that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is a finite set of tiles.
 We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> to be pointed, and we take the green tile above.</p>
 <p>This completes the definition of the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Example</p>
+<div class="proof example admonition" id="example-formal-tiling">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
 <p>When <span class="math notranslate nohighlight">\(p\)</span> is the program  <code class="docutils literal notranslate"><span class="pre">1#1####</span></code>,<br />
 <span class="math notranslate nohighlight">\(\TT(p)\)</span> would have the 18 tiles that come for free, and also the two tiles below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
@@ -603,8 +606,8 @@ not the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbol <
 <p>Here is a finite part of a tiling of the first quadrant with
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>(<code class="docutils literal notranslate"><span class="pre">1#1####</span></code>):</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t7-07.png?raw=1" width="100%" height="100%">
-</div>
-<p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
+</section>
+</div><p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="some-observations">
 <h1>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h1>
@@ -639,7 +642,7 @@ if and only if
 if and only if
 <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
 </div>
-<div class="proof definition admonition" id="definition-1">
+<div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
 <section class="definition-content" id="proof-content">
 <p>The <em>word encoded in row <span class="math notranslate nohighlight">\(n\)</span></em>
@@ -713,7 +716,7 @@ at least in the case when register <span class="math notranslate nohighlight">\(
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
-<div class="proof proposition admonition" id="proposition-2">
+<div class="proof proposition admonition" id="proposition-3">
 <p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
@@ -753,14 +756,14 @@ then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\mathcal{T})}(\ )\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-3">
+<div class="exercise admonition" id="undecidability/tiling-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 67 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-4">
+<div class="exercise admonition" id="undecidability/tiling-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 68 </span></p>
 <section id="exercise-content">
