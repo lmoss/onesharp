@@ -527,16 +527,17 @@ K^1 \leq_m \overline{K}^{\mathbb{T}}.
 \[
 \overline{K}^1 \leq_m K^{\mathbb{T}}.
 \]</div>
+<p>Here is the main result in this section:</p>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
 <section class="theorem-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(\overline{K}\leq_m  \Tile\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\overline{K}\leq_m  {K}^{\mathbb{T}}\)</span>.</p>
 <p>That is, there is a total computable function
 <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
 such that</p>
 <div class="math notranslate nohighlight">
 \[
-p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in \Tile.
+p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in {K}^{\mathbb{T}}
 \]</div>
 <p>As a result, <span class="math notranslate nohighlight">\(\Tile\)</span> is undecidable.</p>
 </section>
@@ -690,7 +691,7 @@ in row 4743, with <code class="docutils literal notranslate"><span class="pre">#
 <hr class="docutils" />
 <p>Finally, let’s get one last parallel fact, this time for the case instruction. Suppose again that row 4743 of some tiling of the quadrant starts out
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
-<p>But now uppose that line 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>
+<p>But now suppose that line 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>
 Then the first tile in row 25 can be any of the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"></p>
 <p>So the situation is
@@ -704,12 +705,12 @@ Then the first tile in row 25 can be any of the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
 <p>Indeed, the whole row has to be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%"></p>
-<p>The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##</span></code>.</p>
+<p>The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##1</span></code>.</p>
 <p>This is exactly
 the word encoded in row 4743, with  the first symbol (a <code class="docutils literal notranslate"><span class="pre">1</span></code>) deleted.</p>
 <p>And the instruction to go to is 26 = 24 + 2.
 So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
-at least in the case when register <span class="math notranslate nohighlight">\(1\)</span> starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+at least in the case when the register starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
@@ -737,7 +738,7 @@ and then all blanks.</p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
 <p>We conclude our work on tiling by showing that
-<span class="math notranslate nohighlight">\(\Tile \leq_m \overline{K}_{empty}\)</span>.
+<span class="math notranslate nohighlight">\(\oveline{K}^{\mathbb{T}} \leq_m {K}_{empty}\)</span>.
 Given a pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
 make a program  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> such that
 running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on all empty registers
@@ -747,7 +748,7 @@ such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em
 <p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
 <hr class="docutils" />
 <p>If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has a tiling, the program <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> never halts.
-So <span class="math notranslate nohighlight">\(f(\mathcal{T})\in \overline{B}\)</span>.</p>
+So $f(\mathcal{T})\in {K}^{\mathbb{T}}</p>
 <p>And (crucially) if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
 then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
