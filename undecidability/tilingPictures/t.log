@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2025 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2025 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -729,35 +729,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-10.
+12.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+pxsya on input line 2
-10.
+12.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsya.fd
 File: upxsya.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+pxsyb on input line 2
-10.
+12.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsyb.fd
 File: utxsyb.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+pxmia on input line 2
-10.
+12.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxmia.fd
 File: upxmia.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+pxsyc on input line 2
-10.
+12.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsyc.fd
 File: upxsyc.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 21
-0.
+2.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -766,7 +766,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    Trying to load font information for OT1+pxtt on input line 
-220.
+222.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ot1pxtt.fd
 File: ot1pxtt.fd 2000/12/14 v1.0
@@ -784,7 +784,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    Trying to load font information for TS1+pxr on input line 2
-51.
+53.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ts1pxr.fd
 File: ts1pxr.fd 2000/12/14 v1.0
@@ -1064,7 +1064,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (29.45087pt too wide) in paragraph at lines 741--779
+Overfull \hbox (29.45087pt too wide) in paragraph at lines 743--781
 []$  
  []
 
@@ -1200,7 +1200,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (29.45087pt too wide) in paragraph at lines 977--1015
+Overfull \hbox (29.45087pt too wide) in paragraph at lines 979--1017
 []$  
  []
 
@@ -1223,7 +1223,7 @@ dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2020/texmf-di
 st/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/texmf-dist/font
 s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
 /urw/palatino/uplri8a.pfb>
-Output written on t.pdf (25 pages, 61479 bytes).
+Output written on t.pdf (25 pages, 61477 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream
