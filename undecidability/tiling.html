@@ -500,10 +500,13 @@ the
 the first quadrant can be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  Thus, the complement set
 <span class="math notranslate nohighlight">\(\overline{K}^{\mathbb{T}}\)</span> is the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
 the
-the first quadrant \textit{cannot} be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
+the first quadrant <em>cannot</em> be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Review</p>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Our goal</p>
 <p>We are going to use a result from before, <a class="reference internal" href="../universal/universal.html#one-register-halting">Proposition 5</a>.
 That result concerned two sets:</p>
 <div class="math notranslate nohighlight">
@@ -513,17 +516,16 @@ A &amp; = &amp; \mbox{the set of register machine programs which are tidy and wh
 K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
 \end{array}
 \end{split}\]</div>
-<p><code class="xref prf prf-ref docutils literal notranslate"><span class="pre">my-proposition</span></code></p>
 <p>Clearly <span class="math notranslate nohighlight">\(A\)</span> is decidable.  What we saw in <a class="reference internal" href="../universal/universal.html#one-register-halting">Proposition 5</a>
 is that <span class="math notranslate nohighlight">\(K_0 \leq_m K^1\)</span>, and hence <span class="math notranslate nohighlight">\(K^1\)</span> is also undecidable.    What we are going to show here is that</p>
 <div class="math notranslate nohighlight">
 \[
-K^1 \leq_m \overline{K}^{\mathbb{T}}
+K^1 \leq_m \overline{K}^{\mathbb{T}}.
 \]</div>
 <p>Equivalently,</p>
 <div class="math notranslate nohighlight">
 \[
-\overline{K}^1 \leq_m K^{\mathbb{T}}
+\overline{K}^1 \leq_m K^{\mathbb{T}}.
 \]</div>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
@@ -534,16 +536,29 @@ K^1 \leq_m \overline{K}^{\mathbb{T}}
 such that</p>
 <div class="math notranslate nohighlight">
 \[
-p\in \overline{B} \quadiff   \mathcal{T}(p) \in \Tile.
+p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in \Tile.
 \]</div>
 <p>As a result, <span class="math notranslate nohighlight">\(\Tile\)</span> is undecidable.</p>
 </section>
 </div></div>
-<div class="attention admonition">
-<p class="admonition-title">Our goal</p>
-<p>A computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
-such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
-<em>can</em> tile the quadrant.</p>
+<p>In words, we are going to define a computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
+such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![\p]\!](\ )\!\!\downarrow\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## The idea</span>
+
+<span class="n">The</span> <span class="n">reason</span> <span class="n">that</span> <span class="n">our</span> <span class="nb">set</span> <span class="err">$</span><span class="n">A</span><span class="err">$</span> <span class="n">above</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="o">*</span><span class="n">tidy</span><span class="o">*</span> <span class="n">programs</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">we</span> <span class="n">want</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span>\<span class="n">p</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span>\ <span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">uparrow</span><span class="err">$</span> <span class="n">to</span> <span class="n">imply</span> <span class="n">that</span> <span class="n">running</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="n">on</span> <span class="n">empty</span> <span class="n">registers</span> <span class="n">takes</span> <span class="n">infinitely</span> <span class="n">many</span> <span class="n">steps</span><span class="o">.</span>   <span class="n">We</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">have</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span>\<span class="n">p</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span>\ <span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">uparrow</span><span class="err">$</span> <span class="n">merely</span> <span class="n">due</span> <span class="n">a</span> <span class="n">bad</span> <span class="n">transfer</span> <span class="n">instruction</span><span class="o">.</span>   
+
+<span class="n">Let</span> <span class="n">us</span> <span class="n">now</span> <span class="n">discuss</span> <span class="n">why</span> <span class="n">we</span> <span class="n">take</span> <span class="err">$</span><span class="n">A</span><span class="err">$</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">programs</span> <span class="n">which</span> <span class="n">only</span> <span class="n">use</span> <span class="n">R1</span><span class="o">.</span>   <span class="n">In</span> <span class="n">the</span> <span class="n">case</span> <span class="n">that</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span>\<span class="n">p</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span>\ <span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">downarrow</span><span class="err">$</span><span class="p">,</span>
+<span class="n">we</span> <span class="n">want</span> <span class="n">a</span> <span class="n">run</span> <span class="n">of</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="n">to</span> <span class="n">give</span> <span class="n">rise</span> <span class="n">to</span> <span class="n">a</span> <span class="n">tiling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">quadrant</span><span class="o">.</span>  <span class="n">The</span> <span class="n">idea</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">the</span> <span class="n">rows</span> <span class="n">of</span> <span class="n">the</span> <span class="n">tiling</span> <span class="n">should</span> <span class="n">look</span> <span class="n">like</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">the</span> <span class="n">register</span> <span class="n">step</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">step</span><span class="o">.</span>   <span class="n">Moreover</span><span class="p">,</span> <span class="n">we</span> <span class="n">would</span> <span class="n">like</span> <span class="n">the</span> <span class="n">leftmost</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">each</span> <span class="n">row</span> <span class="n">to</span> <span class="n">encode</span> <span class="n">the</span> <span class="n">instruction</span> <span class="n">number</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">executed</span><span class="o">.</span>
+
+<span class="n">Here</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">example</span> <span class="n">which</span> <span class="n">we</span> <span class="n">shall</span> <span class="n">mention</span> <span class="n">at</span> <span class="n">several</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">rest</span> <span class="n">of</span> <span class="n">this</span> <span class="n">discussion</span><span class="o">.</span>  <span class="n">We</span> <span class="n">take</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="n">to</span> <span class="n">be</span> <span class="n">the</span> <span class="n">program</span>  <span class="err">```</span><span class="mi">1</span><span class="c1">#1##1####```.  Clearly $[\![\p]\!](\ )\!\!\uparrow$.  We want the tiling of the quadrant to resemble</span>
+
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/idea-19.png?raw=1&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="o">&gt;</span>
+
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-mathcal-t-p">
