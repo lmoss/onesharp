@@ -504,18 +504,18 @@ the first quadrant \textit{cannot} be properly tiled with <span class="math notr
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Review</p>
-<p>We are going to use a result from before,</p>
-</div>
-<p>That result concerned two sets:</p>
+<p>We are going to use a result from before, <a class="reference internal" href="../universal/universal.html#one-register-halting">Proposition 5</a>.
+That result concerned two sets:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
 A &amp; = &amp; \mbox{the set of register machine programs which are tidy and which only use R1}\\
-K^1 &amp; = &amp; \{ p in A : [\![p]\!](\ )\!\!downarrow\}\\
+K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
 \end{array}
 \end{split}\]</div>
-<p>Clearly <span class="math notranslate nohighlight">\(A\)</span> is decidable.  What we saw in</p>
-<p>is that <span class="math notranslate nohighlight">\(K_0 \leq_m K^1\)</span>, and hence <span class="math notranslate nohighlight">\(K^1\)</span> is also undecidable.    What we are going to show here is that</p>
+<p><code class="xref prf prf-ref docutils literal notranslate"><span class="pre">my-proposition</span></code></p>
+<p>Clearly <span class="math notranslate nohighlight">\(A\)</span> is decidable.  What we saw in <a class="reference internal" href="../universal/universal.html#one-register-halting">Proposition 5</a>
+is that <span class="math notranslate nohighlight">\(K_0 \leq_m K^1\)</span>, and hence <span class="math notranslate nohighlight">\(K^1\)</span> is also undecidable.    What we are going to show here is that</p>
 <div class="math notranslate nohighlight">
 \[
 K^1 \leq_m \overline{K}^{\mathbb{T}}
@@ -538,7 +538,8 @@ p\in \overline{B} \quadiff   \mathcal{T}(p) \in \Tile.
 \]</div>
 <p>As a result, <span class="math notranslate nohighlight">\(\Tile\)</span> is undecidable.</p>
 </section>
-</div><div class="attention admonition">
+</div></div>
+<div class="attention admonition">
 <p class="admonition-title">Our goal</p>
 <p>A computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
 such that <span class="math notranslate nohighlight">\(p\notin B\)</span>   <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
