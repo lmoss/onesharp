@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2025 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2025 12:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,6 +1119,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
  [23] (./t.aux) ) 
 Here is how much of TeX's memory you used:
  16504 strings out of 480608
@@ -1138,7 +1139,7 @@ ve/2020/texmf-dist/fonts/type1/public/pxfonts/rpxmi.pfb></usr/local/texlive/202
 ist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
 1/urw/palatino/uplri8a.pfb>
-Output written on t.pdf (23 pages, 57015 bytes).
+Output written on t.pdf (23 pages, 57023 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
