@@ -461,7 +461,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea">The idea</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
@@ -542,24 +545,15 @@ p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in \Tile.
 </section>
 </div></div>
 <p>In words, we are going to define a computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
-such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![\p]\!](\ )\!\!\downarrow\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## The idea</span>
-
-<span class="n">The</span> <span class="n">reason</span> <span class="n">that</span> <span class="n">our</span> <span class="nb">set</span> <span class="err">$</span><span class="n">A</span><span class="err">$</span> <span class="n">above</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="o">*</span><span class="n">tidy</span><span class="o">*</span> <span class="n">programs</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">we</span> <span class="n">want</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span>\<span class="n">p</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span>\ <span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">uparrow</span><span class="err">$</span> <span class="n">to</span> <span class="n">imply</span> <span class="n">that</span> <span class="n">running</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="n">on</span> <span class="n">empty</span> <span class="n">registers</span> <span class="n">takes</span> <span class="n">infinitely</span> <span class="n">many</span> <span class="n">steps</span><span class="o">.</span>   <span class="n">We</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">have</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span>\<span class="n">p</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span>\ <span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">uparrow</span><span class="err">$</span> <span class="n">merely</span> <span class="n">due</span> <span class="n">a</span> <span class="n">bad</span> <span class="n">transfer</span> <span class="n">instruction</span><span class="o">.</span>   
-
-<span class="n">Let</span> <span class="n">us</span> <span class="n">now</span> <span class="n">discuss</span> <span class="n">why</span> <span class="n">we</span> <span class="n">take</span> <span class="err">$</span><span class="n">A</span><span class="err">$</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">programs</span> <span class="n">which</span> <span class="n">only</span> <span class="n">use</span> <span class="n">R1</span><span class="o">.</span>   <span class="n">In</span> <span class="n">the</span> <span class="n">case</span> <span class="n">that</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span>\<span class="n">p</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span>\ <span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">downarrow</span><span class="err">$</span><span class="p">,</span>
-<span class="n">we</span> <span class="n">want</span> <span class="n">a</span> <span class="n">run</span> <span class="n">of</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="n">to</span> <span class="n">give</span> <span class="n">rise</span> <span class="n">to</span> <span class="n">a</span> <span class="n">tiling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">quadrant</span><span class="o">.</span>  <span class="n">The</span> <span class="n">idea</span> <span class="ow">is</span> <span class="n">that</span> <span class="n">the</span> <span class="n">rows</span> <span class="n">of</span> <span class="n">the</span> <span class="n">tiling</span> <span class="n">should</span> <span class="n">look</span> <span class="n">like</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">the</span> <span class="n">register</span> <span class="n">step</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">step</span><span class="o">.</span>   <span class="n">Moreover</span><span class="p">,</span> <span class="n">we</span> <span class="n">would</span> <span class="n">like</span> <span class="n">the</span> <span class="n">leftmost</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">each</span> <span class="n">row</span> <span class="n">to</span> <span class="n">encode</span> <span class="n">the</span> <span class="n">instruction</span> <span class="n">number</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">executed</span><span class="o">.</span>
-
-<span class="n">Here</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">example</span> <span class="n">which</span> <span class="n">we</span> <span class="n">shall</span> <span class="n">mention</span> <span class="n">at</span> <span class="n">several</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">rest</span> <span class="n">of</span> <span class="n">this</span> <span class="n">discussion</span><span class="o">.</span>  <span class="n">We</span> <span class="n">take</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="n">to</span> <span class="n">be</span> <span class="n">the</span> <span class="n">program</span>  <span class="err">```</span><span class="mi">1</span><span class="c1">#1##1####```.  Clearly $[\![\p]\!](\ )\!\!\uparrow$.  We want the tiling of the quadrant to resemble</span>
-
-<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/idea-19.png?raw=1&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="o">&gt;</span>
-
-</pre></div>
-</div>
-</div>
-</div>
+such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
+<section id="the-idea">
+<h2>The idea<a class="headerlink" href="#the-idea" title="Link to this heading">#</a></h2>
+<p>The reason that our set <span class="math notranslate nohighlight">\(A\)</span> above is a set of <em>tidy</em> programs is that we want <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span> to imply that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers takes infinitely many steps.   We do not have <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span> merely due a bad transfer instruction.</p>
+<p>Let us now discuss why we take <span class="math notranslate nohighlight">\(A\)</span> to be a set of programs which only use R1.   In the case that <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>,
+we want a run of <span class="math notranslate nohighlight">\(p\)</span> to give rise to a tiling of the entire quadrant.  The idea is that the rows of the tiling should look like the contents of the register step-by-step.   Moreover, we would like the leftmost entry in each row to encode the instruction number that is being executed.</p>
+<p>Here is an example which we shall mention at several points in the rest of this discussion.  We take <span class="math notranslate nohighlight">\(p\)</span> to be the program  <code class="docutils literal notranslate"><span class="pre">1#1##1####</span></code>.  Clearly <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.  We want the tiling of the quadrant to resemble</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-23.png?raw=1" width="100%" height="100%">
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-mathcal-t-p">
 <h1>The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span><a class="headerlink" href="#the-definition-of-mathcal-t-p" title="Link to this heading">#</a></h1>
@@ -601,7 +595,7 @@ We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span
 <p>This completes the definition of the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program  <code class="docutils literal notranslate"><span class="pre">1#1####</span></code>, ,
+<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program  <code class="docutils literal notranslate"><span class="pre">1#1####</span></code>,<br />
 <span class="math notranslate nohighlight">\(\TT(p)\)</span> would have the 18 tiles that come for free, and also the two tiles below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
 In these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
@@ -846,7 +840,10 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea">The idea</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
