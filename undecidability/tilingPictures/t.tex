@@ -3,7 +3,7 @@
 
 %% see below for how these were made with pdf2cairo
 
-\pagestyle{empty}
+%\pagestyle{empty}
 
 
 \oddsidemargin 0pt
@@ -75,6 +75,33 @@
 %\renewcommand{\dar}{\textcolor{blue}{\star}}
 
 
+\newcommand{\tileidea}[1]
+{
+ \begin{tikzpicture}
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1) node{\protect{$#1$}};  
+\end{tikzpicture}
+}
+
+\newcommand{\tileideagreen}[1]
+{
+ \begin{tikzpicture}
+  \filldraw[fill=green!20,draw=green!50!black] (0,0)    rectangle ++(2,2);
+\foreach \x in {0}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+\draw  (1,1) node{\protect{$#1$}};  
+\end{tikzpicture}
+}
+
+
+
 \newcommand{\tile}[4]
 {
  \begin{tikzpicture}
@@ -89,6 +116,8 @@
 \draw (.4,1) node{\protect{$#3$}};%% west
 \end{tikzpicture}
 }
+
+
 
 \newcommand{\tilegreen}[4]
  {
@@ -753,6 +782,106 @@ $\begin{array}{llll}
 \tile{1}{2}{\leftendmarker}{\copyright} &
 \end{array}$
 \end{flushleft}
+
+
+\vfil\eject
+
+\newcommand\YUGE{\fontsize{48}{60}\selectfont}
+
+\newcommand{\bigone}{\YUGE{\one}}
+\newcommand{\bighash}{\YUGE{\hash}}
+\newcommand{\bignumberone}{\YUGE{\mbox{1}}}
+\newcommand{\bignumbertwo}{\YUGE{\mbox{2}}}
+\newcommand{\bignumberthree}{\YUGE{\mbox{3}}}
+%\newcommand{\one}{\mbox{\tt 1}}
+
+
+
+ 
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\\
+\tileidea{\bignumbertwo}
+%{\numberone}{2}{\leftendmarker}{\copyright}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+%\tile{\one}{\one}{\copyright}{}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+& \tileidea{\bigone}
+%      & \tile{}{}{}{}
+\\
+\tileidea{\bignumberone}
+%{\numberone}{2}{\leftendmarker}{\copyright}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+%\tile{\one}{\one}{\copyright}{}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+    & \tile{}{}{}{}
+%      & \tile{}{}{}{}
+
+\\
+\tileidea{\bignumberthree}
+%{\numberone}{2}{\leftendmarker}{\copyright}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+%\tile{\one}{\one}{\copyright}{}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+    & \tile{}{}{}{}
+%      & \tile{}{}{}{}
+\\
+\tileidea{\bignumbertwo}
+%{\numberone}{2}{\leftendmarker}{\copyright}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+%\tile{\one}{\one}{\copyright}{}
+& \tileidea{\bigone}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+%      & \tile{}{}{}{}
+\\
+\tileidea{\bignumberone}
+%{\numberone}{2}{\leftendmarker}{\copyright}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+%\tile{\one}{\one}{\copyright}{}
+&  \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+%      & \tile{}{}{}{}
+\\
+\tileidea{\bignumberthree}
+%{\numberone}{2}{\leftendmarker}{\copyright}
+& \tileidea{\bigone}
+& \tileidea{\bighash}
+%\tile{\one}{\one}{\copyright}{}
+&  \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+%      & \tile{}{}{}{}
+\\
+\tileidea{\bignumbertwo}
+&
+\tileidea{\bigone}
+ &
+ \tile{\thislineends}{}{\trileft}{}
+ & \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tileideagreen{\bignumberone}
+ & 
+ \tile{}{}{}{} 
+  & \tile{}{}{}{}
+   & \tile{}{}{}{}
+     & \tile{}{}{}{}
+\end{array}
+$
+\end{flushleft}
+
+
 
 \end{document}
 
