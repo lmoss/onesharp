@@ -598,14 +598,14 @@ We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span
 <div class="proof example admonition" id="example-formal-tiling">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
 <section class="example-content" id="proof-content">
-<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program  <code class="docutils literal notranslate"><span class="pre">1#1####</span></code>,<br />
+<p>When <span class="math notranslate nohighlight">\(p\)</span> is the program  <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>,<br />
 <span class="math notranslate nohighlight">\(\TT(p)\)</span> would have the 18 tiles that come for free, and also the three tiles below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
 In these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
 not the <span class="math notranslate nohighlight">\(\one\hash\)</span> symbol <span class="math notranslate nohighlight">\(\one\)</span>.</p>
 <p>Here is a finite part of a tiling of the first quadrant with
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>(<code class="docutils literal notranslate"><span class="pre">1#1####</span></code>):</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t7-07.png?raw=1" width="100%" height="100%">
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t24.png?raw=1" width="100%" height="100%">
 </section>
 </div><p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
 </section>
@@ -650,12 +650,14 @@ is the word composed of all symbols on the
 <em>tops</em> of the tiles in row <span class="math notranslate nohighlight">\(n\)</span> from the bottom, starting
 <em>after the instruction tile</em> (the first tile in row <span class="math notranslate nohighlight">\(n\)</span>).</p>
 </section>
-</div><div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
+</div><div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t25.png?raw=1" width="100%" height="100%">
-This shows part a tiling, together with the words encoded in the bottom four rows (on the right).
-</div>
-<div class="tip admonition">
+Again we take $p$ to be our example program ```1#1##11####```.
+We see part a tiling, together with the words encoded in the bottom four rows (on the right).
+</section>
+</div><div class="tip admonition">
 <p class="admonition-title">Observation/Example</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  (In this point, <span class="math notranslate nohighlight">\(p\)</span> is not the example program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.)
 Suppose that row 67 of a tiling using <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is
@@ -715,7 +717,7 @@ at least in the case when register <span class="math notranslate nohighlight">\(
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
-<div class="proof proposition admonition" id="proposition-3">
+<div class="proof proposition admonition" id="proposition-4">
 <p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
@@ -755,14 +757,14 @@ then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>In this case <span class="math notranslate nohighlight">\(\semantics{f(\mathcal{T})}(\ )\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-4">
+<div class="exercise admonition" id="undecidability/tiling-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 67 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-5">
+<div class="exercise admonition" id="undecidability/tiling-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 68 </span></p>
 <section id="exercise-content">
