@@ -199,6 +199,12 @@
 (base) lsm@lsmroots-Air tilingPictures % pdftocairo  -x 50 -y 50  -H 300 -f 17 -l 17 -png t.pdf t17
 (base) lsm@lsmroots-Air tilingPictures % pdftocairo  -x 50 -y 50  -H 300 -f 18 -l 18 -png t.pdf t18
 (base) lsm@lsmroots-Air tilingPictures % pdftocairo  -x 50 -y 50  -H 300 -f 19 -l 19 -png t.pdf t19
+%pdftocairo  -x 50 -y 50  -H 140 -f 22 -l 22 -png t.pdf t22
+%pdftocairo  -x 50 -y 50  -H 1200 -f 23 -l 23 -png t.pdf
+%pdftocairo  -x 50 -y 50  -H 1200 -f 24 -l 24 -png t.pdf
+%pdftocairo  -x 50 -y 50  -H 640 -f 25 -l 25 -png t.pdf
+
+
 }
 
 
@@ -779,7 +785,9 @@ $
 \begin{flushleft}
 $\begin{array}{llll}
 \tile{2}{1}{\leftendmarker}{\diamond}  &
-\tile{1}{2}{\leftendmarker}{\copyright} &
+%\tile{1}{2}{\leftendmarker}{\copyright} &
+\tile{3}{2}{\leftendmarker}{\heart} &
+\tile{1}{3}{\leftendmarker}{\copyright} 
 \end{array}$
 \end{flushleft}
 
@@ -790,7 +798,7 @@ $\begin{array}{llll}
 
 \newcommand{\bigone}{\YUGE{\one}}
 \newcommand{\bighash}{\YUGE{\hash}}
-\newcommand{\bignumberone}{\YUGE{\mbox{1}}}
+\newcommand{\bignumberone}{\YUGE{\mbox{\emph{1}}}}
 \newcommand{\bignumbertwo}{\YUGE{\mbox{2}}}
 \newcommand{\bignumberthree}{\YUGE{\mbox{3}}}
 %\newcommand{\one}{\mbox{\tt 1}}
@@ -882,7 +890,133 @@ $\begin{array}{lllllllll}
 $
 \end{flushleft}
 
+\vfil\eject
 
+\begin{flushleft}
+$\begin{array}{lllllllll}
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\one}{\diamond}{\diamond}
+&
+ \tile{\hash}{\hash}{\diamond}{\diamond}
+  &
+   \tile{\one}{\one}{\diamond}{\diamond}
+  &
+ \tile{\hash}{\hash}{\diamond}{\diamond}
+  &\tile{\one}{}{\diamond}{}
+\\
+\tile{\numberone}{3}{\leftendmarker}{\copyright}
+&
+\tile{\one}{\one}{\copyright}{\copyright}
+&
+\tile{\hash}{\hash}{\copyright}{\copyright}
+& \tile{\one}{\one}{\copyright}{\copyright}
+  & \tile{\hash}{\hash}{\copyright}{}
+    & \tile{}{}{}{}
+\\
+\tile{3}{2}{\leftendmarker}{\heart}
+&
+ \tile{\one}{\one}{\heart}{\heart}
+&
+ \tile{\hash}{\hash}{\heart}{\heart}
+  &
+ \tile{\one}{\one}{\heart}{\heart}
+  & \tile{\hash}{}{\heart}{}
+  & \tile{}{}{}{}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+\tile{\one}{\one}{\diamond}{\diamond}
+&  \tile{\hash}{\hash}{\diamond}{\diamond}
+  & \tile{\one}{}{\diamond}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{}
+\\
+
+\tile{\numberone}{3}{\leftendmarker}{\copyright}
+&
+ \tile{\one}{\one}{\copyright}{\copyright}
+ &
+ \tile{\hash}{\hash}{\copyright}{}
+& \tile{\thislineends}{}{\trileft}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tile{3}{2}{\leftendmarker}{\heart}
+&
+\tile{\one}{\one}{\heart}{\heart}
+&  \tile{\hash}{\thislineends}{\heart}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\hash}{\thislineends}{\diamond}{\trileft}
+ &
+ \tile{\thislineends}{}{\trileft}{}
+ & \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+\\
+\tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
+&
+\tile{\thislineends}{}{\trileft}{}
+ & 
+ \tile{}{}{}{} 
+  & \tile{}{}{}{}
+   & \tile{}{}{}{}
+     & \tile{}{}{}{}
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+
+
+
+\begin{flushleft}
+$
+\begin{array}{lllllllll}
+\tile{\numberone}{3}{\leftendmarker}{\copyright}
+&
+ \tile{\one}{\one}{\copyright}{\copyright}
+ &
+ \tile{\hash}{\hash}{\copyright}{}
+& \tile{\thislineends}{}{\trileft}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}  &&  \centerspot{\one\hash}
+\\
+\tile{3}{2}{\leftendmarker}{\heart}
+&
+\tile{\one}{\one}{\heart}{\heart}
+&  \tile{\hash}{\thislineends}{\heart}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}
+      & \tile{}{}{}{} & & \centerspot{\one\hash}
+\\
+\tile{2}{\numberone}{\leftendmarker}{\diamond}
+&
+ \tile{\one}{\thislineends}{\diamond}{\trileft}
+ &
+ \tile{\thislineends}{}{\trileft}{}
+ & \tile{}{}{}{}
+  & \tile{}{}{}{}
+    & \tile{}{}{}{}&  &  \centerspot{\one}
+\\
+\tilegreen{\numberone}{start}{\leftendmarker}{\trileft}
+&
+\tile{\thislineends}{}{\trileft}{}
+ & 
+ \tile{}{}{}{} 
+  & \tile{}{}{}{}
+   & \tile{}{}{}{}
+     & \tile{}{}{}{}&  &  \centerspot{$\varepsilon$}
+\end{array}
+$
+\end{flushleft}
+
+\vfil\eject
 
 \end{document}
 
