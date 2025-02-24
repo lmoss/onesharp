@@ -59,6 +59,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'mu/T_predicate';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -459,6 +461,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
@@ -478,6 +481,36 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/mu/T_predicate.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-t-predicate">
 <h1>The T predicate<a class="headerlink" href="#the-t-predicate" title="Link to this heading">#</a></h1>
+<section id="encoding-sequences-of-words-as-words">
+<h2>Encoding sequences of words as words<a class="headerlink" href="#encoding-sequences-of-words-as-words" title="Link to this heading">#</a></h2>
+<p>We start by defining a specific encoding map</p>
+<div class="math notranslate nohighlight">
+\[
+c: Words^* \to Words
+\]</div>
+<p>Here is how our map words first, we define a map</p>
+<div class="math notranslate nohighlight">
+\[
+b : Words \to Words
+\]</div>
+<p>by</p>
+<div class="math notranslate nohighlight">
+\[
+b(w_1 w_2 \cdots w_k)  =  {\tt 1}c_1 {\tt 2} c_2 \cdots  {\tt 1}c_k 
+\]</div>
+<p>Then we take</p>
+<div class="math notranslate nohighlight">
+\[
+c(v_1, \ldots, v_r) = b(v_1){\tt \#\#} b(v_2)\cdots b(v_r) {\tt \#\#}
+\]</div>
+</section>
+<section id="snapshot-and-trace">
+<h2>Snapshot and trace<a class="headerlink" href="#snapshot-and-trace" title="Link to this heading">#</a></h2>
+<p>To start, review the definitons of <em>snapshot</em> and <em>trace</em>.</p>
+<p>We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.
+That is, we put the symbol 1 between all symbols of the word that we want to encode.</p>
+<p>We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.</p>
+<p>We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
@@ -846,13 +879,6 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="snapshot-and-trace">
-<h2>Snapshot and trace<a class="headerlink" href="#snapshot-and-trace" title="Link to this heading">#</a></h2>
-<p>To start, review the definitons of <em>snapshot</em> and <em>trace</em>.</p>
-<p>We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.
-That is, we put the symbol 1 between all symbols of the word that we want to encode.</p>
-<p>We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.</p>
-<p>We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
 <section id="new-interface">
 <h2>New interface<a class="headerlink" href="#new-interface" title="Link to this heading">#</a></h2>
@@ -1402,6 +1428,7 @@ The output is ##11.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
