@@ -361,3 +361,50 @@ copy_1_2_3 = '1#####11111111###1111###11##111##11111####11#111#11111111####111##
 copy_1_2_4 ='1#####11111111###1111###11##1111##11111####11#1111#11111111####1111#####111111###111###1##1111####1#111111####'
 copy_1_3_4='1#####11111111###1111###111##1111##11111####111#1111#11111111####1111#####111111###111###1##1111####1#111111####'
 copy_2_3_4 = '11#####11111111###1111###111##1111##11111####111#1111#11111111####1111#####111111###111###11##1111####11#111111####'
+
+
+def snapshot_check(w):  ## tells True or False if the input is a snapshot
+  index = w.index('##')
+  front = w[:index] ## divide the string by the first occurrence of ##
+  back = w[index:]
+  first_truth_value = all([(x == '1') for x in front]) 
+  ## first_truth_value tells if all symbols in the front are 1
+  j = len(back)
+  indices_of_sharp = [(2*i) for i in range(j//2) if back[2*i]=='#']
+  second_truth_value = all([(back[1 + i] == '#') for i in indices_of_sharp])
+  ## the second truth value tells the separators ## are done correctly 
+  return(first_truth_value and second_truth_value)
+
+def halting_snapshot_check(p,w):  
+  ## tells True or False if the input is a snapshot
+  # which suggests that the program p has halted properly
+  # So we check that p is a program, 
+  # that the number at the front of w is 1 + (the number of instructions in p),
+  # and that in w, all registers after R1 are empty
+  parsed_p = parse(p)
+  N = len(parsed_p)
+  #print('N =' + str(N))
+  index = w.index('##')
+  front = w[:index] ## divide the string by the first occurrence of ##
+  #print('len front = '+ str(len(front)))
+  length_check = (N + 1 == len(front))
+  #print(length_check)
+  back = w[index:]
+  first_truth_value = all([(x == '1') for x in front]) 
+  ## first_truth_value tells if all symbols in the front are 1
+  j = len(back)
+  indices_of_sharp = [(2*i) for i in range(j//2) if back[2*i]=='#']
+  second_truth_value = all([(back[1 + i] == '#') for i in indices_of_sharp])
+  ## the second truth value tells the separators ## are done correctly 
+  w2 = back[2:]
+  #print('w2' +w2)
+  index2 =w2.index('##') 
+  #print(index2)
+  back2 = w2[index2:]
+  #print(back2)
+  emptiness_check = all(x=='#' for x in back2)
+  #print(emptiness_check)
+  return(first_truth_value and second_truth_value and length_check and emptiness_check)
+
+
+
