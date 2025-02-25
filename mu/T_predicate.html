@@ -539,7 +539,7 @@ d: (Words^*)^* \to Words
 <p>by</p>
 <div class="math notranslate nohighlight">
 \[
-d(r_1,\ldots, r_n  = {\tt \# 1} \quad c(r_1)\quad  {\tt \# 1} \quad  c(r_2)\quad  \cdots\quad  {\tt \# 1} \quad  c(r_n)
+d(r_1,\ldots, r_n )  = {\tt \# 1} \quad c(r_1)\quad  {\tt \# 1} \quad  c(r_2)\quad  \cdots\quad  {\tt \# 1} \quad  c(r_n)
 \]</div>
 <p>That is, we encode sequences of words using <span class="math notranslate nohighlight">\(c\)</span> from above, and then we use <span class="math notranslate nohighlight">\({\tt \# 1}\)</span> as a separator between such encondings.</p>
 </section>
@@ -1033,7 +1033,13 @@ n &amp; = &amp; (2^{|n|} -1) +  \sum_{i &lt; |n|}  (n)_i \cdot 2^i
 g(n) =  s^{-1}(f(s(n))
 \]</div>
 <p>We go back similarly.</p>
-<p>We are especially interested in this when <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\([\![p]\!]]\)</span> for some program <span class="math notranslate nohighlight">\(p\)</span>, and when <span class="math notranslate nohighlight">\(f:N\to N\)</span> is primitive recursive.</p>
+<p>We are especially interested in this when <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\([\![p]\!]\)</span> for some program <span class="math notranslate nohighlight">\(p\)</span>, and when <span class="math notranslate nohighlight">\(f:N\to N\)</span> is primitive recursive.</p>
+<p>So given a program <span class="math notranslate nohighlight">\(p\)</span>, we define a partial function <span class="math notranslate nohighlight">\(\varphi_p: N\to N\)</span>
+by</p>
+<div class="math notranslate nohighlight">
+\[
+\varphi_p(n) =  s^{-1}([\![p]\!](s(n))).
+\]</div>
 <div class="highlight-{key notranslate"><div class="highlight"><pre><span></span>
 If $w$ is any ```1#```-word, and if $v$ is a subword of $w$, or even a word which is smaller in length than $w$, then 
 
