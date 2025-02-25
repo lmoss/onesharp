@@ -915,139 +915,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <p>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#title Text Register Machine &lt;br&gt; The entries for the program and registers must be words on the alphabet {1,#}, without quotes.</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="c1">## removes the tail of empty registers</span>
-  <span class="k">if</span> <span class="nb">list</span> <span class="o">==</span> <span class="p">[]:</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-  <span class="k">elif</span> <span class="nb">list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">end_strip</span><span class="p">(</span><span class="nb">list</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">remove_multiple_blanks</span><span class="p">(</span><span class="n">my_str</span><span class="p">):</span>
-   <span class="k">return</span><span class="p">(</span><span class="n">my_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
-
-
-<span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;1#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;1#1#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R3</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-
-<span class="c1">## For more registers, add lines here like</span>
-<span class="c1">## R4 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
-<span class="c1">## You also must modify the definition of &#39;a&#39; below accordingly.</span>
-
-<span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;step by step with snapshots and trace&#39;</span> <span class="c1">#@param [&quot;output only&quot;, &quot;step by step&quot;,&quot;step by step with snapshots and trace&quot;]</span>
-
-<span class="c1"># First, we delete the last batch of empty registers</span>
-<span class="c1"># to simplify the output </span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">R1</span><span class="p">,</span><span class="n">R2</span><span class="p">,</span><span class="n">R3</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_multiple_blanks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
-
-<span class="n">non_empty_registers</span> <span class="o">=</span> <span class="n">end_strip</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;output only&#39;</span><span class="p">:</span>
-  <span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">,</span><span class="n">non_empty_registers</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;step by step&#39;</span><span class="p">:</span>
-  <span class="n">step_by_step</span><span class="p">(</span><span class="n">program</span><span class="p">,</span><span class="n">non_empty_registers</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;step by step with snapshots and trace&#39;</span><span class="p">:</span>
-  <span class="n">step_by_step_with_snapshots</span><span class="p">(</span><span class="n">program</span><span class="p">,</span><span class="n">non_empty_registers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First, here is the program:
-</pre></div>
-</div>
-<div class="output text_html"><style type="text/css">
-#T_4d406_row0_col0, #T_4d406_row0_col1 {
-  background-color: #C9DFEC;
-  text-align: left;
-}
-</style>
-<table id="T_4d406_" class="dataframe">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >instruction</th>
-      <th class="col_heading level0 col1" >explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_4d406_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_4d406_row0_col0" class="data row0 col0" >1#</td>
-      <td id="T_4d406_row0_col1" class="data row0 col1" >add 1 to R1</td>
-    </tr>
-  </tbody>
-</table>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The computation starts with the register contents shown below.
-The registers include those those which you entered as part of the input
-and also others mentioned in the input program.
-</pre></div>
-</div>
-<div class="output text_html"><style type="text/css">
-#T_90296_row0_col0 {
-  background-color: #FFFFCC;
-  text-align: left;
-}
-</style>
-<table id="T_90296_" class="dataframe">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >contents</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_90296_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_90296_row0_col0" class="data row0 col0" >1#1#</td>
-    </tr>
-  </tbody>
-</table>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The formal snapshot is 1##111#111###
-
-
-Step 1:
-Execute instruction 1: add 1 to R1.
-The computation then halts properly because the control is just below the last line of the program,
-and because all registers other than R1 are empty.
-</pre></div>
-</div>
-<div class="output text_html"><style type="text/css">
-#T_803e5_row0_col0 {
-  background-color: #FFFFCC;
-  text-align: left;
-}
-</style>
-<table id="T_803e5_" class="dataframe">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >contents</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_803e5_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_803e5_row0_col0" class="data row0 col0" >1#1#1</td>
-    </tr>
-  </tbody>
-</table>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The formal snapshot is 11##111#111#11##
-
-The trace is shown below:
-1##111#111####111##111#111#11###1
-
-The output is 1#1#1.
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you want to expand the interface to handle more than three registers, open the code and look around.</p>
-<p>You can also run things in the notebook cells as we have been doing it.  See below for an example of how we would see the snapshots in a step_by_step execution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">step_by_step_with_snapshots</span><span class="p">(</span><span class="s1">&#39;1#1#&#39;</span><span class="p">,[</span><span class="s1">&#39;##&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1175,7 +1043,7 @@ The output is ##11.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">step_by_step_with_snapshots</span><span class="p">(</span><span class="n">diag</span><span class="p">,[</span><span class="s1">&#39;1#&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
