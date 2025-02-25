@@ -698,7 +698,7 @@ s_1, \ldots, s_{\ell}
 <div class="proof definition admonition" id="def-upshot">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
 <section class="definition-content" id="proof-content">
-<p>If <span class="math notranslate nohighlight">\(Snapshotseq(z)\)</span>, say
+<p>If <span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span>, say
 <span class="math notranslate nohighlight">\(z\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -709,7 +709,7 @@ s_3 \quad    {\tt \# 1}    \quad
   {\tt \# 1}   \quad  s_{\ell}
 \]</div>
 <p>then <span class="math notranslate nohighlight">\(upshot(z)\)</span> is the word in R1 in the last snapshot, <span class="math notranslate nohighlight">\(s_{\ell}\)</span>.</p>
-<p>If <span class="math notranslate nohighlight">\(\neg Snapshotseq(z)\)</span>, then</p>
+<p>If <span class="math notranslate nohighlight">\(\neg Snapshot-seq(z)\)</span>, then</p>
 <p>we (don’t care about the result and) set
 <span class="math notranslate nohighlight">\(upshot(z)={\tt \#}\)</span>.</p>
 </section>
@@ -1051,7 +1051,18 @@ $$
 <div class="proof theorem admonition" id="theorem-T-numbers">
 <p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>There is a primitive recursive relation of numbers <span class="math notranslate nohighlight">\(T(p,x,z)\)</span></p>
+<p>There is a primitive recursive relation of numbers <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>  so that for all numbers <span class="math notranslate nohighlight">\(p\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\varphi_p(x)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>.</p>
+<p>Therefore, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\varphi_p(x) \simeq upshot (\mu z. T(p,x,z))
+\]</div>
+</section>
+</div><div class="proof corollary admonition" id="corollary-T-numbers">
+<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Every <span class="math notranslate nohighlight">\(\mu\)</span>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is primitive recursive.</p>
 </section>
 </div></section>
 </section>
