@@ -463,10 +463,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-bits">Accessing bits</a></li>
 </ul>
@@ -541,21 +538,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(b(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
 <span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
 </section>
-</div><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s_inverse</span><span class="p">(</span><span class="s1">&#39;11###111#1&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
+</div></section>
 <section id="new-interface">
 <h2>New interface<a class="headerlink" href="#new-interface" title="Link to this heading">#</a></h2>
 <p>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.</p>
@@ -566,82 +549,14 @@ But we want a definition of a snapshot encoding that does not refer to a program
 </div>
 </div>
 </div>
-<section id="we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">
-<h3>We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.<a class="headerlink" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snapshot_check</span><span class="p">(</span><span class="s1">&#39;111##1#11#1111##&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">:])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1#1#&#39;</span><span class="p">))</span>
-<span class="n">halting_snapshot_check</span><span class="p">(</span><span class="s1">&#39;1#1#&#39;</span><span class="p">,</span><span class="s1">&#39;111##1#1#1111##1###&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 4, 5]
-[&#39;1#&#39;, &#39;1#&#39;]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1#&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
-<span class="n">first_index</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">reversed_list</span> <span class="o">=</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">first_index_in_reversed</span> <span class="o">=</span> <span class="n">reversed_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">last_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">first_index_in_reversed</span>
-<span class="n">last_index</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[:</span><span class="n">last_index</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1#&#39;, &#39;&#39;, &#39;1&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1#1#&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">first_index</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">reversed_list</span> <span class="o">=</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">reversed_list</span><span class="p">)</span>
-<span class="n">first_index_in_reversed</span> <span class="o">=</span> <span class="n">reversed_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">last_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">first_index_in_reversed</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">last_index</span><span class="p">)</span>
-<span class="n">non_empty_registers</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="n">last_index</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">non_empty_registers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1#1#&#39;, &#39;11&#39;, &#39;&#39;, &#39;#&#39;, &#39;&#39;]
-[&#39;&#39;, &#39;#&#39;, &#39;&#39;, &#39;11&#39;, &#39;1#1#&#39;]
-4
-[&#39;1#1#&#39;, &#39;11&#39;, &#39;&#39;, &#39;#&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
 <section id="shortlex-ordering-of-words">
 <h2>Shortlex ordering of words<a class="headerlink" href="#shortlex-ordering-of-words" title="Link to this heading">#</a></h2>
 <p>Our next order of business is to rework everything which we have seen from words to numbers.   This involves an encoding.  So we start with a bijection <span class="math notranslate nohighlight">\(s: N \to Words\)</span>.</p>
@@ -924,16 +839,31 @@ rem(a,b) &amp;  = &amp;  (\mu r &lt; b).(\exists q)(a = qb + r)\\
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>We have the following formulas</p>
-<p>For all <span class="math notranslate nohighlight">\(n\)</span>,
-$$</p>
-<p>\begin{array}{lcl}
-s(n) &amp; = &amp;  (n)<em>{|n| - 1} (n)</em>{|n|-2} \cdots (n)_1 (n)<em>0\ \
-n &amp; = &amp; (2^{|n|} -1) +  \sum</em>{i &lt; |n|}  (n)_i \cdot 2^i
+<p>For all <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+s(n) &amp; = &amp;  (n)_{|n| - 1} (n)_{|n|-2} \cdots (n)_1 (n)_0\\ \\
+n &amp; = &amp; (2^{|n|} -1) +  \sum_{i &lt; |n|}  (n)_i \cdot 2^i 
 \end{array}
-$$</p>
+\end{split}\]</div>
 <p>In these formulas, we <em>identify</em> <code class="docutils literal notranslate"><span class="pre">#</span></code> and the number <span class="math notranslate nohighlight">\(0\)</span>.</p>
 </div>
+<div class="proof example admonition" id="exaample-101">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(n = 101\)</span>.</p>
+<p>Note that <span class="math notranslate nohighlight">\(2^7  = 128 &gt; 101\)</span>, and <span class="math notranslate nohighlight">\(7\)</span> is the smallest with this property.</p>
+<p>Therefore <span class="math notranslate nohighlight">\(|n| = 7-1 = 6\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,2) = 0\)</span>.  And <span class="math notranslate nohighlight">\(0 &lt; 2^0\)</span></p>
+<p><span class="math notranslate nohighlight">\(rem(102,4) = 2\)</span>. And <span class="math notranslate nohighlight">\(2 \geq 2^1\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,8) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 \geq 4\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,16) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 8\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,32) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 16\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,64) = 42\)</span>. And <span class="math notranslate nohighlight">\(42 \geq 32\)</span>.</p>
+<p>So we see that <span class="math notranslate nohighlight">\(s(101) = 1 0 0 1 1 0 =\)</span>  <code class="docutils literal notranslate"><span class="pre">1##11#</span></code>.</p>
 </section>
+</div></section>
 </section>
 </section>
 
@@ -1003,10 +933,7 @@ $$</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-bits">Accessing bits</a></li>
 </ul>
