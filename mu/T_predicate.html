@@ -855,36 +855,48 @@ rem(a,b) &amp;  = &amp;  (\mu r &lt; b).(\exists q)(a = qb + r)\\
 </tbody>
 </table>
 </div>
-<p>import math</p>
-<p>def log2int(x):
-return(math.frexp(x)[1] - 1)</p>
-<p>def length(n):
-return(log2int(n+1))</p>
-<p>def index(n,m): ## this is what I write as (n)_m
-a = (n+1)%(2**(m+1))
-b = 2**m
-if a &lt; b:
-return(0)
-else:
-return(1)</p>
-<p>def convert_numeral_to_onesharp(x):
-if x == 0:
-return(‘#’)
-else:
-return(‘1’)</p>
-<p>def s(n):
-k = length(n)<br />
-s = [convert_numeral_to_onesharp(index(n,k-i-1)) for i in range(k)]
-t = “”.join(s)
-return(t)</p>
-<p>def s_inverse(w):
-n = len(w)
-a = (2<strong>n - 1)
-b = [(2</strong> (n-i-1)) for i in range(n) if (w[i] == ‘1’)]
-c = sum(b)
-d = c+a
-return(d)</p>
 <p>Here are some Python programs about this encoding.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">log2int</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">frexp</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">log2int</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span> <span class="c1">## this is what I write as (n)_m</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">m</span>
+  <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_numeral_to_onesharp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+     <span class="k">return</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
+   <span class="k">else</span><span class="p">:</span>
+     <span class="k">return</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>    
+
+<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  
+  <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">convert_numeral_to_onesharp</span><span class="p">(</span><span class="n">index</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> 
+  <span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> 
+  <span class="k">return</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">s_inverse</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="o">**</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">)]</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">a</span>
+  <span class="k">return</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">143</span><span class="p">))</span>
@@ -908,6 +920,18 @@ return(d)</p>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We have the following formulas</p>
+<p>For all <span class="math notranslate nohighlight">\(n\)</span>,
+$$</p>
+<p>\begin{array}{lcl}
+s(n) &amp; = &amp;  (n)<em>{|n| - 1} (n)</em>{|n|-2} \cdots (n)_1 (n)<em>0\ \
+n &amp; = &amp; (2^{|n|} -1) +  \sum</em>{i &lt; |n|}  (n)_i \cdot 2^i
+\end{array}
+$$</p>
+<p>In these formulas, we <em>identify</em> <code class="docutils literal notranslate"><span class="pre">#</span></code> and the number <span class="math notranslate nohighlight">\(0\)</span>.</p>
 </div>
 </section>
 </section>
