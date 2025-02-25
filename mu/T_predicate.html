@@ -528,49 +528,20 @@ c(w_1, \ldots, w_r) = {\tt 1} b(w1){\tt \#\#} b(w_2)\cdots b(w_r)
 \]</div>
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
-</div><p>Here are some Python programs about this encoding.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">log2int</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-  <span class="k">return</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">frexp</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-  <span class="k">return</span><span class="p">(</span><span class="n">log2int</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">):</span> <span class="c1">## this is what I write as (n)_m</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">m</span>
-  <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
-    <span class="k">return</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">convert_numeral_to_onesharp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-   <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-     <span class="k">return</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)</span>
-   <span class="k">else</span><span class="p">:</span>
-     <span class="k">return</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>    
-
-<span class="k">def</span><span class="w"> </span><span class="nf">s</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-  <span class="n">k</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  
-  <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">convert_numeral_to_onesharp</span><span class="p">(</span><span class="n">index</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> 
-  <span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> 
-  <span class="k">return</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">s_inverse</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="o">**</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">)]</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-  <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">a</span>
-  <span class="k">return</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+</div></section>
+<section id="encoding-snapshots">
+<h2>Encoding snapshots<a class="headerlink" href="#encoding-snapshots" title="Link to this heading">#</a></h2>
+<p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
+But we want a definition of a snapshot encoding that does not refer to a program or to anything else.</p>
+<div class="proof definition admonition" id="def-snapshot">
+<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
+<section class="definition-content" id="proof-content">
+<p>An <em>encoded snapshot</em> is a word of the form</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> <span class="math notranslate nohighlight">\(c(w_1, w_2, \ldots, w_{\ell})\)</span></p>
+<p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(b(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
+<span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
+</section>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
 </pre></div>
@@ -584,20 +555,7 @@ c(w_1, \ldots, w_r) = {\tt 1} b(w1){\tt \#\#} b(w_2)\cdots b(w_r)
 </div>
 </div>
 </div>
-</section>
-<section id="encoding-snapshots">
-<h2>Encoding snapshots<a class="headerlink" href="#encoding-snapshots" title="Link to this heading">#</a></h2>
-<p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
-But we want a definition of a snapshot encoding that does not refer to a program or to anything else.</p>
-<div class="proof definition admonition" id="def-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
-<section class="definition-content" id="proof-content">
-<p>An <em>encoded snapshot</em> is a word of the form</p>
-<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> <span class="math notranslate nohighlight">\(c(w_1, w_2, \ldots, w_{\ell})\)</span></p>
-<p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(b(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
-<span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
-</section>
-</div><img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
+<img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
 <section id="new-interface">
 <h2>New interface<a class="headerlink" href="#new-interface" title="Link to this heading">#</a></h2>
 <p>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.</p>
@@ -896,6 +854,60 @@ rem(a,b) &amp;  = &amp;  (\mu r &lt; b).(\exists q)(a = qb + r)\\
 </tr>
 </tbody>
 </table>
+</div>
+<p>import math</p>
+<p>def log2int(x):
+return(math.frexp(x)[1] - 1)</p>
+<p>def length(n):
+return(log2int(n+1))</p>
+<p>def index(n,m): ## this is what I write as (n)_m
+a = (n+1)%(2**(m+1))
+b = 2**m
+if a &lt; b:
+return(0)
+else:
+return(1)</p>
+<p>def convert_numeral_to_onesharp(x):
+if x == 0:
+return(‘#’)
+else:
+return(‘1’)</p>
+<p>def s(n):
+k = length(n)<br />
+s = [convert_numeral_to_onesharp(index(n,k-i-1)) for i in range(k)]
+t = “”.join(s)
+return(t)</p>
+<p>def s_inverse(w):
+n = len(w)
+a = (2<strong>n - 1)
+b = [(2</strong> (n-i-1)) for i in range(n) if (w[i] == ‘1’)]
+c = sum(b)
+d = c+a
+return(d)</p>
+<p>Here are some Python programs about this encoding.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="mi">143</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s_inverse</span><span class="p">(</span><span class="s1">&#39;##11#1&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">(</span><span class="n">s_inverse</span><span class="p">(</span><span class="s1">&#39;##11#1&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">index</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="c1">## this will print (14)_0, (14)_1, (14)_2, (14)_3, (14)_4  </span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
