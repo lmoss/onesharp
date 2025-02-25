@@ -523,7 +523,7 @@ b(a_1 a_2 \cdots a_k)  =  {\tt 1}\quad a_1\quad  {\tt 1} \quad a_2 \quad \cdots 
 <p>Then for a sequence of words we take</p>
 <div class="math notranslate nohighlight">
 \[
-c(w_1, \ldots, w_r) = {\tt \#\#} \quad b(w_1)\quad {\tt \#\#} \quad b(w_2)\quad  \cdots\quad b(w_r)
+c(w_1, \ldots, w_r) = {\tt \#\#} \quad b(w_1)\quad {\tt \#\#} \quad b(w_2)\quad  \cdots {\tt \#\#} \quad b(w_r)
 \]</div>
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
@@ -553,7 +553,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <p>An <em>encoded snapshot</em> is a word of the form</p>
 <div class="math notranslate nohighlight">
 \[
-{\tt 1}^k \quad c(w_1, w_2, \ldots, w_{\ell})
+{\tt 1}^k \quad {\tt \#\#} \quad c(w_1, w_2, \ldots, w_{\ell})
 \]</div>
 <p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(b(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
 <span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
@@ -580,7 +580,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <section id="definitions-leading-up-to-t">
 <h2>Definitions leading up to T<a class="headerlink" href="#definitions-leading-up-to-t" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="def-follows">
-<p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
 <section class="definition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
@@ -594,28 +594,8 @@ Follows(p,s_1,s_2)
 <li><p><span class="math notranslate nohighlight">\(s_2\)</span> is the snapshot that would follow after <span class="math notranslate nohighlight">\(s_1\)</span> according to what <span class="math notranslate nohighlight">\(p\)</span> says.</p></li>
 </ol>
 </section>
-</div><div class="proof definition admonition" id="def-follows">
+</div><div class="proof definition admonition" id="def-suitable">
 <p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
-<section class="definition-content" id="proof-content">
-<div class="math notranslate nohighlight">
-\[
-Suitable(p,s)
-\]</div>
-<p>means</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(Program(p)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Snapshot(s)\)</span></p></li>
-<li><p>The number of registers represented in <span class="math notranslate nohighlight">\(s\)</span> is the  maximum register number that <span class="math notranslate nohighlight">\(p\)</span> deals with, or <span class="math notranslate nohighlight">\(1\)</span> if <span class="math notranslate nohighlight">\(p\)</span> does not mention any registers at all.</p></li>
-</ol>
-</section>
-</div><p>In other words,  if</p>
-<div class="math notranslate nohighlight">
-\[
-s  ={\tt 1}^n \quad +\quad {\tt \#} {\tt \#}  \quad+ \quad code(w_1,\ldots,w_k) 
-\\]</div>
-<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<div class="proof definition admonition" id="def-suitable">
-<p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Suitable(p,s)\)</span> means</p>
 <ol class="arabic simple">
@@ -628,10 +608,11 @@ s  ={\tt 1}^n \quad +\quad {\tt \#} {\tt \#}  \quad+ \quad code(w_1,\ldots,w_k)
 \[
 s  =  1^n \quad +\quad {\tt \#\#} \quad+ \quad code({w_1,. . .,w_k}) 
 \]</div>
-<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.   That is, <span class="math notranslate nohighlight">\(k\)</span> is largest so that <span class="math notranslate nohighlight">\(p\)</span> contains <span class="math notranslate nohighlight">\(1^k\#\)</span> or <span class="math notranslate nohighlight">\(1^k\#\#\)</span> or $1^k #^5#.</p>
+<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.   That is, <span class="math notranslate nohighlight">\(k\)</span> is largest so that <span class="math notranslate nohighlight">\(p\)</span> contains <span class="math notranslate nohighlight">\(1^k \#\)</span> or
+<span class="math notranslate nohighlight">\(1^k \#\#\)</span> or <span class="math notranslate nohighlight">\(1^k \#^5\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="def-starting-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Starting-snapshot(p,w, s)\)</span> means</p>
 <ol class="arabic simple">
@@ -646,7 +627,7 @@ w = code({w_1,\ldots, w_k})
 <p>and <span class="math notranslate nohighlight">\(s\)</span> represents the snapshot where <span class="math notranslate nohighlight">\(w_1\)</span> is in R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(w_k\)</span> is in Rk.</p>
 </section>
 </div><div class="proof definition admonition" id="def-halting-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Halting-snapshot(p, s)\)</span> means</p>
 <ol class="arabic simple">
@@ -656,7 +637,7 @@ w = code({w_1,\ldots, w_k})
 </ol>
 </section>
 </div><div class="proof definition admonition" id="def-snapshot-seq">
-<p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span> means
 that
@@ -672,7 +653,7 @@ s_3 \quad    {\tt \# 1} \quad
 <p>where <span class="math notranslate nohighlight">\(Snapshot(s_i)\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="def-T">
-<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(T(p,x,z)\)</span> means</p>
 <ol class="arabic simple">
@@ -696,7 +677,7 @@ s_1, \ldots, s_{\ell}
 </section>
 </div><p>We need one more gadget, a function  called  <span class="math notranslate nohighlight">\(upshot\)</span>.</p>
 <div class="proof definition admonition" id="def-upshot">
-<p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
 <section class="definition-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span>, say
 <span class="math notranslate nohighlight">\(z\)</span> is</p>
@@ -717,7 +698,7 @@ s_3 \quad    {\tt \# 1}    \quad
 <p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For all words <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\([\![ p]\!](x)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>.</p>
-<p>Moreover, <span class="math notranslate nohighlight">\(T\)</span> is primitive recursive, and hence <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable and total.</p>
+<p>Moreover, <span class="math notranslate nohighlight">\(T\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable and total.</p>
 <p>Indeed, all of the “helper functions” above are also <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable and total.</p>
 </section>
 </div><img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
@@ -744,7 +725,7 @@ s_3 \quad    {\tt \# 1}    \quad
 <td><p><code class="docutils literal notranslate"><span class="pre">##</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>4</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">##</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#1</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>5</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1#</span></code></p></td>
@@ -786,7 +767,7 @@ s_3 \quad    {\tt \# 1}    \quad
 <p>The idea now is to take all of the machinery which we have built in this notebook and use <span class="math notranslate nohighlight">\(s\)</span> and its inverse <span class="math notranslate nohighlight">\(s^{-1}\)</span> to transfer them to numbers.  In the other direction, we want to take all of the primitive recursive functions of numbers and transfer them to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <section id="accessing-bits">
 <h3>Accessing bits<a class="headerlink" href="#accessing-bits" title="Link to this heading">#</a></h3>
-<p>We next define two functions on the natural numbers.  The first is called <span class="math notranslate nohighlight">\(|n|\)</span>, and it gives the number of characters in <span class="math notranslate nohighlight">\(s(n)\)</span>.</p>
+<p>We next define three functions on the natural numbers.  The first is called <span class="math notranslate nohighlight">\(|n|\)</span>, and it gives the number of characters in <span class="math notranslate nohighlight">\(s(n)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
 |n| = \biggl( \mu x \leq n +1. \ (2^x  &gt; n + 1)\biggr) - 1.
@@ -807,6 +788,7 @@ rem(a,b) &amp;  = &amp;  (\mu r &lt; b).(\exists q)(a = qb + r)\\
 \end{array}
 \right.
 \end{split}\]</div>
+<p>Since all of the quantifiers and <span class="math notranslate nohighlight">\(\mu\)</span>-operators are bounded, these functions are primitive recursive.</p>
 <p>Here is a table of the values of this function for small numbers.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
