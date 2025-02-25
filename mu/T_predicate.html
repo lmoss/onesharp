@@ -714,7 +714,7 @@ s_3 \quad    {\tt \# 1}    \quad
 <span class="math notranslate nohighlight">\(upshot(z)={\tt \#}\)</span>.</p>
 </section>
 </div><div class="proof theorem admonition" id="theorem-T">
-<p class="admonition-title"><span class="caption-number">Theorem 6 </span> (Orthogonal-Projection-Theorem)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For all words <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\([\![ p]\!](x)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>.</p>
 <p>Moreover, <span class="math notranslate nohighlight">\(T\)</span> is primitive recursive, and hence <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable and total.</p>
@@ -1026,6 +1026,14 @@ n &amp; = &amp; (2^{|n|} -1) +  \sum_{i &lt; |n|}  (n)_i \cdot 2^i
 <p><span class="math notranslate nohighlight">\(rem(102,64) = 42\)</span>. And <span class="math notranslate nohighlight">\(42 \geq 32\)</span>.</p>
 <p>So we see that <span class="math notranslate nohighlight">\(s(101) = 1 0 0 1 1 0 =\)</span>  <code class="docutils literal notranslate"><span class="pre">1##11#</span></code>.</p>
 </div>
+<p>Here is how we take a function from words to words and associate a function from numbers to numbers.</p>
+<p>Given <span class="math notranslate nohighlight">\(f: Words \to Words\)</span>, we associate <span class="math notranslate nohighlight">\(g: N \to N\)</span> by  <span class="math notranslate nohighlight">\(g = s^{-1}\circ f \circ s\)</span>.  That is,</p>
+<div class="math notranslate nohighlight">
+\[
+g(n) =  s^{-1}(f(s(n))
+\]</div>
+<p>We go back similarly.</p>
+<p>We are especially interested in this when <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\([\![p]\!]]\)</span> for some program <span class="math notranslate nohighlight">\(p\)</span>, and when <span class="math notranslate nohighlight">\(f:N\to N\)</span> is primitive recursive.</p>
 <div class="highlight-{key notranslate"><div class="highlight"><pre><span></span>
 If $w$ is any ```1#```-word, and if $v$ is a subword of $w$, or even a word which is smaller in length than $w$, then 
 
@@ -1034,7 +1042,12 @@ s^{-1}(v) &lt; s^{-1}(w).
 $$
 </pre></div>
 </div>
+<div class="proof theorem admonition" id="theorem-T-numbers">
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>There is a primitive recursive relation of numbers <span class="math notranslate nohighlight">\(T(p,x,z)\)</span></p>
 </section>
+</div></section>
 </section>
 </section>
 
