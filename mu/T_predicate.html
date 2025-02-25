@@ -561,7 +561,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <section id="definitions-leading-up-to-t">
 <h2>Definitions leading up to T<a class="headerlink" href="#definitions-leading-up-to-t" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="def-follows">
-<p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
 <section class="definition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
@@ -571,12 +571,71 @@ Follows(p,s_1,s_2)
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(Program(p)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Snapshot(s_1)\)</span> and <span class="math notranslate nohighlight">\(Snapshot(s_2)\)</span></p></li>
-<li><p>The <span class="math notranslate nohighlight">\(n\)</span> involved in <span class="math notranslate nohighlight">\(s_1\)</span></p></li>
-</ol>
-<p>(the number <span class="math notranslate nohighlight">\(1^n\)</span> at the start of <span class="math notranslate nohighlight">\(s_1\)</span>)
-is <span class="math notranslate nohighlight">\(\leq\)</span> the length of <span class="math notranslate nohighlight">\(p\)</span>;</p>
-<ol class="arabic simple" start="4">
+<li><p>The <span class="math notranslate nohighlight">\(n\)</span> involved in <span class="math notranslate nohighlight">\(s_1\)</span> (the number <span class="math notranslate nohighlight">\(1^n\)</span> at the start of <span class="math notranslate nohighlight">\(s_1\)</span>) is <span class="math notranslate nohighlight">\(\leq\)</span> the length of <span class="math notranslate nohighlight">\(p\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(s_2\)</span> is the snapshot that would follow after <span class="math notranslate nohighlight">\(s_1\)</span> according to what <span class="math notranslate nohighlight">\(p\)</span> says.</p></li>
+</ol>
+</section>
+</div><div class="proof definition admonition" id="def-follows">
+<p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
+<section class="definition-content" id="proof-content">
+<div class="math notranslate nohighlight">
+\[
+Suitable(p,s)
+\]</div>
+<p>means</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Program(p)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Snapshot(s)\)</span></p></li>
+<li><p>The number of registers represented in <span class="math notranslate nohighlight">\(s\)</span> is the  maximum register number that <span class="math notranslate nohighlight">\(p\)</span> deals with, or <span class="math notranslate nohighlight">\(1\)</span> if <span class="math notranslate nohighlight">\(p\)</span> does not mention any registers at all.</p></li>
+</ol>
+</section>
+</div><p>In other words,  if</p>
+<div class="math notranslate nohighlight">
+\[
+s  = \overbrace{{1 1 \cdots 1}}^n \quad +\quad {\tt \#} {\tt \#}  \quad+ \quad code(w_1,\ldots,w_k) 
+\\]</div>
+<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="proof definition admonition" id="def-suitable">
+<p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
+<section class="definition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(Suitable(p,s)\)</span> means</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Program(p)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Snapshot(s)\)</span></p></li>
+<li><p>The number of registers represented in <span class="math notranslate nohighlight">\(s\)</span> is the  maximum register number that <span class="math notranslate nohighlight">\(p\)</span> deals with, or <span class="math notranslate nohighlight">\(1\)</span> if <span class="math notranslate nohighlight">\(p\)</span> does not mention any registers at all.</p></li>
+</ol>
+<p>In other words,  if</p>
+<div class="math notranslate nohighlight">
+\[
+s  =  1^n \quad +\quad {\tt \#\#} \quad+ \quad code({w_1,. . .,w_k}) 
+\]</div>
+<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="def-starting-snapshot">
+<p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
+<section class="definition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(Starting-snapshot(p,w, s)\)</span> means</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Suitable(p,s)\)</span>,  and thus <span class="math notranslate nohighlight">\(Program(p)\)</span>  and <span class="math notranslate nohighlight">\(Snapshot(s)\)</span></p></li>
+</ol>
+<p>2.The instruction number <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(w\)</span> is a coded word-of-words</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+w = code({w_1,\ldots, w_k})
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(s\)</span> represents the snapshot where <span class="math notranslate nohighlight">\(w_1\)</span> is in R1, \ldots<span class="math notranslate nohighlight">\(, \)</span>w_k$ is in Rk.</p>
+</section>
+</div><div class="proof definition admonition" id="def-halting-snapshot">
+<p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
+<section class="definition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(Halting-snapshot(p, s)\)</span> means</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Suitable(p,s)\)</span>,  and thus <span class="math notranslate nohighlight">\(Program(p)\)</span>  and <span class="math notranslate nohighlight">\(Snapshot(s)\)</span></p></li>
+<li><p>The instruction number <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1+ m\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+<li><p>The registers coded in <span class="math notranslate nohighlight">\(s\)</span> are all empty, except possibly for R1.</p></li>
 </ol>
 </section>
 </div><img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
