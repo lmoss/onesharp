@@ -483,6 +483,9 @@ document.write(`
 <h1>The T predicate<a class="headerlink" href="#the-t-predicate" title="Link to this heading">#</a></h1>
 <section id="encoding-sequences-of-words-as-words">
 <h2>Encoding sequences of words as words<a class="headerlink" href="#encoding-sequences-of-words-as-words" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="def-encode-sequences">
+<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<section class="definition-content" id="proof-content">
 <p>We start by defining a specific encoding map</p>
 <div class="math notranslate nohighlight">
 \[
@@ -498,7 +501,7 @@ b : Words \to Words
 \[
 b(w_1 w_2 \cdots w_k)  =  {\tt 1}c_1 {\tt 1} c_2 \cdots  {\tt 1}c_k 
 \]</div>
-<p>In other words, we put a {\tt 1} after each letter in the input word.</p>
+<p>In other words, we put a <span class="math notranslate nohighlight">\({\tt 1}\)</span> before each letter in the input word.</p>
 <p>Then for a sequence of words we take</p>
 <div class="math notranslate nohighlight">
 \[
@@ -506,15 +509,16 @@ c(v_1, \ldots, v_r) = {\tt 1} b(v_1){\tt \#\#} b(v_2)\cdots b(v_r)
 \]</div>
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
+</div></section>
 <section id="encoding-snapshots">
 <h2>Encoding snapshots<a class="headerlink" href="#encoding-snapshots" title="Link to this heading">#</a></h2>
 <p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
 But we want a definition of a snapshot encoding that does not refer to a program or to anything else.</p>
 <div class="proof definition admonition" id="def-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
 <p>An <em>encoded snapshot</em> is a word of the form</p>
-<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> c(w_1, w_2, \ldots, w_{\ell})</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> <span class="math notranslate nohighlight">\(c(w_1, w_2, \ldots, w_{\ell})\)</span></p>
 <p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(c(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
 <span class="math notranslate nohighlight">\(c(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(c(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
 </section>
