@@ -481,6 +481,11 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/mu/T_predicate.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-t-predicate">
 <h1>The T predicate<a class="headerlink" href="#the-t-predicate" title="Link to this heading">#</a></h1>
+<p>If someone claims that <span class="math notranslate nohighlight">\([\![p]\!](x)\!\!\downarrow\)</span>, what evidence could they bring to prove their point?   In this section we develop an answer.  We provide a notion of a <em>trace</em> of a computation.  Here are the main points.   First, traces are finite words; they cannot be infinite objects.  Second, there is a total computable relation <span class="math notranslate nohighlight">\(T(p,x,z)\)</span> such that if <span class="math notranslate nohighlight">\([\![p]\!](x)\!\!\downarrow\)</span>,
+then there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>.  But if <span class="math notranslate nohighlight">\([\![p]\!](x)\!\!\uparrow\)</span>, then there is no such <span class="math notranslate nohighlight">\(z\)</span>.  This relation <span class="math notranslate nohighlight">\(T(p,x,z)\)</span> is called the <em>T-predicate</em>.</p>
+<p>Carrying out the definition of <span class="math notranslate nohighlight">\(T(p,x,z)\)</span> requires us to make a number of secondary definitions.  Some of the discussion is technical because we need to code sequences of words by single words.   Please do not get bogged down by the technical details; the ideas are more important, and they are actually easier to grasp without the details of the coding.  In other words, the details are important, but they should not get in the way of understanding the ideas.</p>
+<p>The foregoing paragraphs were about computation in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.   After we do this work, we want to port the discussion from words to numbers.  This again leads us to a mountain of details about coding.  We show that the numerical version of <span class="math notranslate nohighlight">\(T\)</span> is primitive recursive.   This leads to the a real result proved using the <span class="math notranslate nohighlight">\(T\)</span>-predicate, the fact that every partial <span class="math notranslate nohighlight">\(\mu\)</span>-recursive function of
+numbers is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 <section id="encoding-sequences-of-words-as-words">
 <h2>Encoding sequences of words as words<a class="headerlink" href="#encoding-sequences-of-words-as-words" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="def-encode-sequences">
@@ -499,13 +504,13 @@ b : Words \to Words
 <p>by</p>
 <div class="math notranslate nohighlight">
 \[
-b(w_1 w_2 \cdots w_k)  =  {\tt 1}c_1 {\tt 1} c_2 \cdots  {\tt 1}c_k 
+b(a_1 a_2 \cdots a_k)  =  {\tt 1}a_1 {\tt 1} a_2 \cdots  {\tt 1}a_k 
 \]</div>
-<p>In other words, we put a <span class="math notranslate nohighlight">\({\tt 1}\)</span> before each letter in the input word.</p>
+<p>In other words, we put a <span class="math notranslate nohighlight">\({\tt 1}\)</span> before each letter in the input word <span class="math notranslate nohighlight">\(a_1 a_2 \cdots a_k\)</span>.</p>
 <p>Then for a sequence of words we take</p>
 <div class="math notranslate nohighlight">
 \[
-c(v_1, \ldots, v_r) = {\tt 1} b(v_1){\tt \#\#} b(v_2)\cdots b(v_r)
+c(w_1, \ldots, w_r) = {\tt 1} b(w1){\tt \#\#} b(w_2)\cdots b(w_r)
 \]</div>
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
