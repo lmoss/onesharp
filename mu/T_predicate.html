@@ -462,6 +462,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-sequences-of-words-as-words">Encoding sequences of (sequences of words) as words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-leading-up-to-t">Definitions leading up to T</a></li>
@@ -527,6 +528,21 @@ c(w_1, \ldots, w_r) = {\tt 1} b(w1){\tt \#\#} b(w_2)\cdots b(w_r)
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
 </div></section>
+<section id="encoding-sequences-of-sequences-of-words-as-words">
+<h2>Encoding sequences of (sequences of words) as words<a class="headerlink" href="#encoding-sequences-of-sequences-of-words-as-words" title="Link to this heading">#</a></h2>
+<p>We also need an encoding of <em>sequences of sequences of words</em>.   (But fear not, we do not need to further in this direction.)
+We define</p>
+<div class="math notranslate nohighlight">
+\[
+d: (Words^*)^* \to Words
+\]</div>
+<p>by</p>
+<div class="math notranslate nohighlight">
+\[
+d(r_1,\ldots, r_n  = {\tt \# 1} c(r_1){\tt \# 1} c(r_2)\cdots {\tt \# 1} c(r_n)
+\]</div>
+<p>That is, we encode sequences of words using <span class="math notranslate nohighlight">\(c\)</span> from above, and then we use <span class="math notranslate nohighlight">\({\tt \# 1}\)</span> as a separator between such encondings.</p>
+</section>
 <section id="encoding-snapshots">
 <h2>Encoding snapshots<a class="headerlink" href="#encoding-snapshots" title="Link to this heading">#</a></h2>
 <p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
@@ -609,7 +625,7 @@ s  = \overbrace{{1 1 \cdots 1}}^n \quad +\quad {\tt \#} {\tt \#}  \quad+ \quad c
 \[
 s  =  1^n \quad +\quad {\tt \#\#} \quad+ \quad code({w_1,. . .,w_k}) 
 \]</div>
-<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.   That is, <span class="math notranslate nohighlight">\(k\)</span> is largest so that <span class="math notranslate nohighlight">\(p\)</span> contains <span class="math notranslate nohighlight">\(1^k\#\)</span> or <span class="math notranslate nohighlight">\(1^k\#\#\)</span> or $1^k #^5#.</p>
 </section>
 </div><div class="proof definition admonition" id="def-starting-snapshot">
 <p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
@@ -617,9 +633,7 @@ s  =  1^n \quad +\quad {\tt \#\#} \quad+ \quad code({w_1,. . .,w_k})
 <p><span class="math notranslate nohighlight">\(Starting-snapshot(p,w, s)\)</span> means</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(Suitable(p,s)\)</span>,  and thus <span class="math notranslate nohighlight">\(Program(p)\)</span>  and <span class="math notranslate nohighlight">\(Snapshot(s)\)</span></p></li>
-</ol>
-<p>2.The instruction number <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<ol class="arabic simple" start="3">
+<li><p>The instruction number <span class="math notranslate nohighlight">\(n\)</span> in <span class="math notranslate nohighlight">\(s\)</span> is <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(w\)</span> is a coded word-of-words</p></li>
 </ol>
 <div class="math notranslate nohighlight">
@@ -639,7 +653,7 @@ w = code({w_1,\ldots, w_k})
 </ol>
 </section>
 </div><div class="proof definition admonition" id="def-snapshot-seq">
-<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span> means
 that
@@ -654,7 +668,7 @@ s_3 \quad    {\tt \# 1} \quad
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(Snapshot(s_i)\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="def-snapshot-seq">
+</div><div class="proof definition admonition" id="def-T">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(T(p,x,z)\)</span> means</p>
@@ -1048,6 +1062,7 @@ n &amp; = &amp; (2^{|n|} -1) +  \sum_{i &lt; |n|}  (n)_i \cdot 2^i
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-sequences-of-words-as-words">Encoding sequences of (sequences of words) as words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-leading-up-to-t">Definitions leading up to T</a></li>
