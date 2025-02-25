@@ -1017,15 +1017,16 @@ g(n) =  s^{-1}(f(s(n))
 by</p>
 <div class="math notranslate nohighlight">
 \[
-\varphi_p(n) =  s^{-1}([\![p]\!](s(n))).
+\varphi_p(n) =  s^{-1}\biggl([\![s(p)]\!](s(n))\biggr).
 \]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If <span class="math notranslate nohighlight">\(w\)</span> is any <code class="docutils literal notranslate"><span class="pre">1#</span></code>-word, and if <span class="math notranslate nohighlight">\(v\)</span> is a subword of <span class="math notranslate nohighlight">\(w\)</span>, or even a word which is smaller in length than <span class="math notranslate nohighlight">\(w\)</span>, then</p>
+<p>If <span class="math notranslate nohighlight">\(w\)</span> is any <code class="docutils literal notranslate"><span class="pre">1#</span></code>-word, and if <span class="math notranslate nohighlight">\(v\)</span> is a subword of <span class="math notranslate nohighlight">\(w\)</span>, or even a word which is smaller in length than <span class="math notranslate nohighlight">\(w\)</span>, then as numbers</p>
 <div class="math notranslate nohighlight">
 \[
 s^{-1}(v) &lt; s^{-1}(w).
 \]</div>
+<p>This is important because it leads to the fact that various functions are primitive recursive.</p>
 </div>
 <div class="proof theorem admonition" id="theorem-T-numbers">
 <p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
@@ -1039,11 +1040,23 @@ s^{-1}(v) &lt; s^{-1}(w).
 \]</div>
 </section>
 </div><div class="proof corollary admonition" id="corollary-T-numbers">
-<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Every <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-computable.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(f:N\to N\)</span> be computable by the program <span class="math notranslate nohighlight">\(p\)</span>.  This means that for all numbers <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+f(n)\simeq  s^{-1}\biggl([\![ p]\!](s(n))).
+\]</div>
+</div>
+<div class="proof corollary admonition" id="corollary-T-numbers">
+<p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
 <section class="corollary-content" id="proof-content">
 <p>Every <span class="math notranslate nohighlight">\(\mu\)</span>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 </section>
-</div><p>To prove the corollary, we need <em>induction on the set of <span class="math notranslate nohighlight">\(\mu\)</span>-computable functions</em></p>
+</div><p>To prove this corollary, we need <em>induction on the set of <span class="math notranslate nohighlight">\(\mu\)</span>-computable functions</em>.</p>
 </section>
 </section>
 </section>
