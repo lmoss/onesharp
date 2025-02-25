@@ -638,6 +638,40 @@ w = code({w_1,\ldots, w_k})
 <li><p>The registers coded in <span class="math notranslate nohighlight">\(s\)</span> are all empty, except possibly for R1.</p></li>
 </ol>
 </section>
+</div><div class="proof definition admonition" id="def-snapshot-seq">
+<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
+<section class="definition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span> means
+that
+<span class="math notranslate nohighlight">\(z\)</span> is a word of the form</p>
+<div class="math notranslate nohighlight">
+\[
+s_1 \quad    {\tt \# 1} \quad
+s_2 \quad   {\tt \# 1} \quad
+s_3 \quad    {\tt \# 1} \quad
+\cdots\quad
+  {\tt \# 1} \quad  s_n
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(Snapshot(s_i)\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="def-snapshot-seq">
+<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
+<section class="definition-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(T(p,x,z)\)</span> means</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Program(p)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span>,  say  <span class="math notranslate nohighlight">\(z\)</span> represents
+[ s_1, \ldots, s_{\ell} ]</p></li>
+<li><p><span class="math notranslate nohighlight">\(Starting-snapshot(p,w, s_1)\)</span>,</p></li>
+</ol>
+<p>where <span class="math notranslate nohighlight">\(w\)</span> is the code of <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, the one-element sequence <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(s_1\)</span> is the first snapshot represented in <span class="math notranslate nohighlight">\(z\)</span></p>
+<ol class="arabic simple" start="5">
+<li><p>For all <span class="math notranslate nohighlight">\(1 \leq i \leq \ell\)</span>,
+<span class="math notranslate nohighlight">\(Suitable(p,s_i)\)</span></p></li>
+<li><p>For all <span class="math notranslate nohighlight">\(1 \leq i &lt; ]ell\)</span>,  <span class="math notranslate nohighlight">\(Follows(p,s_i,s_{i+1})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Halting-snapshot(p, s_{\ell})\)</span></p></li>
+</ol>
+</section>
 </div><img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
 <section id="shortlex-ordering-of-words">
 <h2>Shortlex ordering of words<a class="headerlink" href="#shortlex-ordering-of-words" title="Link to this heading">#</a></h2>
