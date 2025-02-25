@@ -462,7 +462,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
 </ul>
@@ -496,22 +496,29 @@ b : Words \to Words
 <p>by</p>
 <div class="math notranslate nohighlight">
 \[
-b(w_1 w_2 \cdots w_k)  =  {\tt 1}c_1 {\tt 2} c_2 \cdots  {\tt 1}c_k 
+b(w_1 w_2 \cdots w_k)  =  {\tt 1}c_1 {\tt 1} c_2 \cdots  {\tt 1}c_k 
 \]</div>
-<p>Then we take</p>
+<p>In other words, we put a {\tt 1} after each letter in the input word.</p>
+<p>Then for a sequence of words we take</p>
 <div class="math notranslate nohighlight">
 \[
-c(v_1, \ldots, v_r) = b(v_1){\tt \#\#} b(v_2)\cdots b(v_r) {\tt \#\#}
+c(v_1, \ldots, v_r) = {\tt 1} b(v_1){\tt \#\#} b(v_2)\cdots b(v_r)
 \]</div>
+<p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
-<section id="snapshot-and-trace">
-<h2>Snapshot and trace<a class="headerlink" href="#snapshot-and-trace" title="Link to this heading">#</a></h2>
-<p>To start, review the definitons of <em>snapshot</em> and <em>trace</em>.</p>
-<p>We encode a word on {1,#}, say a1, … a_n by 1 a_1 1 a_2 … 1 a_n.
-That is, we put the symbol 1 between all symbols of the word that we want to encode.</p>
-<p>We encode a sequence of words by adding the separator ## after the enconding of each word in the sequence.</p>
-<p>We encode a snapshot by taking a number n and turning it into unary notation, and then following it by a sequence encoding some words.  The idea is that the number n should be an instruction number in a program, and the encoded words should be the conents of the registers.</p>
-<div class="cell docutils container">
+<section id="encoding-snapshots">
+<h2>Encoding snapshots<a class="headerlink" href="#encoding-snapshots" title="Link to this heading">#</a></h2>
+<p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
+But we want a definition of a snapshot encoding that does not refer to a program or to anything else.</p>
+<div class="proof definition admonition" id="def-snapshot">
+<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<section class="definition-content" id="proof-content">
+<p>An <em>encoded snapshot</em> is a word of the form</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> c(w_1, w_2, \ldots, w_{\ell})</p>
+<p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(c(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
+<span class="math notranslate nohighlight">\(c(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(c(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
+</section>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1429,7 +1436,7 @@ The output is ##11.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-and-trace">Snapshot and trace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
 </ul>
