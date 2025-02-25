@@ -479,6 +479,10 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/mu/T_predicate.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p>#&#64;title
+!python -m pip install -U setuptools
+!python -m pip install -U git+https://github.com/lmoss/onesharp.git&#64;main
+from onesharp.interpreter.with_traces import *</p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-t-predicate">
 <h1>The T predicate<a class="headerlink" href="#the-t-predicate" title="Link to this heading">#</a></h1>
 <p>If someone claims that <span class="math notranslate nohighlight">\([\![p]\!](x)\!\!\downarrow\)</span>, what evidence could they bring to prove their point?   In this section we develop an answer.  We provide a notion of a <em>trace</em> of a computation.  Here are the main points.   First, traces are finite words; they cannot be infinite objects.  Second, there is a total computable relation <span class="math notranslate nohighlight">\(T(p,x,z)\)</span> such that if <span class="math notranslate nohighlight">\([\![p]\!](x)\!\!\downarrow\)</span>,
