@@ -467,7 +467,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-bits">Accessing bits</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1392,26 +1395,196 @@ The output is ##11.
 <section id="shortlex-ordering-of-words">
 <h2>Shortlex ordering of words<a class="headerlink" href="#shortlex-ordering-of-words" title="Link to this heading">#</a></h2>
 <p>Our next order of business is to rework everything which we have seen from words to numbers.   This involves an encoding.  So we start with a bijection <span class="math notranslate nohighlight">\(s: N \to Words\)</span>.</p>
-<p>| <span class="math notranslate nohighlight">\(n\)</span>     | <span class="math notranslate nohighlight">\(s(n)\)</span> |
-| B——- | ———– |
-| 0      | <span class="math notranslate nohighlight">\(\varepsilon\)</span>       |
-| 1   | <code class="docutils literal notranslate"><span class="pre">#</span></code>      |
-| 2  | <code class="docutils literal notranslate"><span class="pre">1</span></code>     |
-| 3  |<code class="docutils literal notranslate"><span class="pre">##</span></code>      |
-| 4  | <code class="docutils literal notranslate"><span class="pre">##</span></code> |
-| 5   | <code class="docutils literal notranslate"><span class="pre">1#</span></code>      |
-| 6  | <code class="docutils literal notranslate"><span class="pre">11</span></code>     |
-| 7  |<code class="docutils literal notranslate"><span class="pre">###</span></code>      |
-| 8  | <code class="docutils literal notranslate"><span class="pre">##1</span></code> |
-| 9  | <code class="docutils literal notranslate"><span class="pre">#1#</span></code> |
-| 10  | <code class="docutils literal notranslate"><span class="pre">#11</span></code> |
-| 11 | <code class="docutils literal notranslate"><span class="pre">1##</span></code>|
-| 12 | <code class="docutils literal notranslate"><span class="pre">1#1</span></code> |
-| 13 | <code class="docutils literal notranslate"><span class="pre">11#</span></code> |
-| 14 | <code class="docutils literal notranslate"><span class="pre">111</span></code>|
-| 15 | <code class="docutils literal notranslate"><span class="pre">####</span></code> |</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(s(n)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">##</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">##</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1#</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">###</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">##1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#1#</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#11</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1##</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1#1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11#</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">111</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">####</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Being a bijection, this function <span class="math notranslate nohighlight">\(s\)</span> has an inverse <span class="math notranslate nohighlight">\(s^{-1}\)</span>.</p>
 <p>The idea now is to take all of the machinery which we have built in this notebook and use <span class="math notranslate nohighlight">\(s\)</span> and its inverse <span class="math notranslate nohighlight">\(s^{-1}\)</span> to transfer them to numbers.  In the other direction, we want to take all of the primitive recursive functions of numbers and transfer them to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<section id="accessing-bits">
+<h3>Accessing bits<a class="headerlink" href="#accessing-bits" title="Link to this heading">#</a></h3>
+<p>We next define</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(s(n)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(|n|\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\((n)_0\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\((n)_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\((n)_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\varepsilon\)</span></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span></code></p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">##</span></code></p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#1</span></code></p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1#</span></code></p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11</span></code></p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">###</span></code></p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">##1</span></code></p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#1#</span></code></p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#11</span></code></p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1##</span></code></p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1#1</span></code></p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">11#</span></code></p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">111</span></code></p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">####</span></code></p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 
@@ -1485,7 +1658,10 @@ The output is ##11.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-also-want-to-check-that-various-relations-leading-up-to-the-t-predicate-are-computable-this-part-is-work-in-progress-with-the-results-obtained-so-far-shown-below">We also want to check that various relations leading up to the T predicate are computable.  This part is work in progress, with the results obtained so far shown below.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-bits">Accessing bits</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
