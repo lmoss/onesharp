@@ -523,7 +523,7 @@ b(a_1 a_2 \cdots a_k)  =  {\tt 1}\quad a_1\quad  {\tt 1} \quad a_2 \quad \cdots 
 <p>Then for a sequence of words we take</p>
 <div class="math notranslate nohighlight">
 \[
-c(w_1, \ldots, w_r) = {\tt 1} \quad b(w1)\quad {\tt \#\#} \quad b(w_2)\quad  \cdots\quad b(w_r)
+c(w_1, \ldots, w_r) = {\tt \#\#} \quad b(w_1)\quad {\tt \#\#} \quad b(w_2)\quad  \cdots\quad b(w_r)
 \]</div>
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
@@ -539,7 +539,7 @@ d: (Words^*)^* \to Words
 <p>by</p>
 <div class="math notranslate nohighlight">
 \[
-d(r_1,\ldots, r_n  = {\tt \# 1} c(r_1){\tt \# 1} c(r_2)\cdots {\tt \# 1} c(r_n)
+d(r_1,\ldots, r_n  = {\tt \# 1} \quad c(r_1)\quad  {\tt \# 1} \quad  c(r_2)\quad  \cdots\quad  {\tt \# 1} \quad  c(r_n)
 \]</div>
 <p>That is, we encode sequences of words using <span class="math notranslate nohighlight">\(c\)</span> from above, and then we use <span class="math notranslate nohighlight">\({\tt \# 1}\)</span> as a separator between such encondings.</p>
 </section>
@@ -551,7 +551,10 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
 <p>An <em>encoded snapshot</em> is a word of the form</p>
-<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> \quad <span class="math notranslate nohighlight">\(c(w_1, w_2, \ldots, w_{\ell})\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+{\tt 1}^k \quad c(w_1, w_2, \ldots, w_{\ell})
+\]</div>
 <p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(b(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
 <span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
 </section>
@@ -608,7 +611,7 @@ Suitable(p,s)
 </div><p>In other words,  if</p>
 <div class="math notranslate nohighlight">
 \[
-s  = \overbrace{{1 1 \cdots 1}}^n \quad +\quad {\tt \#} {\tt \#}  \quad+ \quad code(w_1,\ldots,w_k) 
+s  ={\tt 1}^n \quad +\quad {\tt \#} {\tt \#}  \quad+ \quad code(w_1,\ldots,w_k) 
 \\]</div>
 <p>then <span class="math notranslate nohighlight">\(k\)</span> is the largest register mentioned in the program <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <div class="proof definition admonition" id="def-suitable">
@@ -640,7 +643,7 @@ s  =  1^n \quad +\quad {\tt \#\#} \quad+ \quad code({w_1,. . .,w_k})
 \[
 w = code({w_1,\ldots, w_k})
 \]</div>
-<p>and <span class="math notranslate nohighlight">\(s\)</span> represents the snapshot where <span class="math notranslate nohighlight">\(w_1\)</span> is in R1, \ldots<span class="math notranslate nohighlight">\(, \)</span>w_k$ is in Rk.</p>
+<p>and <span class="math notranslate nohighlight">\(s\)</span> represents the snapshot where <span class="math notranslate nohighlight">\(w_1\)</span> is in R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(w_k\)</span> is in Rk.</p>
 </section>
 </div><div class="proof definition admonition" id="def-halting-snapshot">
 <p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
@@ -674,15 +677,20 @@ s_3 \quad    {\tt \# 1} \quad
 <p><span class="math notranslate nohighlight">\(T(p,x,z)\)</span> means</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(Program(p)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span>,  say  <span class="math notranslate nohighlight">\(z\)</span> represents
-[ s_1, \ldots, s_{\ell} ]</p></li>
+<li><p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span>,  say  <span class="math notranslate nohighlight">\(z\)</span> represents</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+s_1, \ldots, s_{\ell}
+\]</div>
+<ol class="arabic simple" start="3">
 <li><p><span class="math notranslate nohighlight">\(Starting-snapshot(p,w, s_1)\)</span>,</p></li>
 </ol>
 <p>where <span class="math notranslate nohighlight">\(w\)</span> is the code of <span class="math notranslate nohighlight">\(\langle x\rangle\)</span>, the one-element sequence <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(s_1\)</span> is the first snapshot represented in <span class="math notranslate nohighlight">\(z\)</span></p>
 <ol class="arabic simple" start="5">
 <li><p>For all <span class="math notranslate nohighlight">\(1 \leq i \leq \ell\)</span>,
 <span class="math notranslate nohighlight">\(Suitable(p,s_i)\)</span></p></li>
-<li><p>For all <span class="math notranslate nohighlight">\(1 \leq i &lt; ]ell\)</span>,  <span class="math notranslate nohighlight">\(Follows(p,s_i,s_{i+1})\)</span></p></li>
+<li><p>For all <span class="math notranslate nohighlight">\(1 \leq i &lt; \ell\)</span>,  <span class="math notranslate nohighlight">\(Follows(p,s_i,s_{i+1})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Halting-snapshot(p, s_{\ell})\)</span></p></li>
 </ol>
 </section>
@@ -704,6 +712,13 @@ s_3 \quad    {\tt \# 1}    \quad
 <p>If <span class="math notranslate nohighlight">\(\neg Snapshotseq(z)\)</span>, then</p>
 <p>we (don’t care about the result and) set
 <span class="math notranslate nohighlight">\(upshot(z)={\tt \#}\)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-T">
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span> (Orthogonal-Projection-Theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>For all words <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\([\![ p]\!](x)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>.</p>
+<p>Moreover, <span class="math notranslate nohighlight">\(T\)</span> is primitive recursive, and hence <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable and total.</p>
+<p>Indeed, all of the “helper functions” above are also <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable and total.</p>
 </section>
 </div><img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
 <section id="shortlex-ordering-of-words">
