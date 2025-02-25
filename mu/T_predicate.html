@@ -517,13 +517,13 @@ b : Words \to Words
 <p>by</p>
 <div class="math notranslate nohighlight">
 \[
-b(a_1 a_2 \cdots a_k)  =  {\tt 1}a_1 {\tt 1} a_2 \cdots  {\tt 1}a_k 
+b(a_1 a_2 \cdots a_k)  =  {\tt 1}\quad a_1\quad  {\tt 1} \quad a_2 \quad \cdots \quad  {\tt 1}\quad a_k 
 \]</div>
 <p>In other words, we put a <span class="math notranslate nohighlight">\({\tt 1}\)</span> before each letter in the input word <span class="math notranslate nohighlight">\(a_1 a_2 \cdots a_k\)</span>.</p>
 <p>Then for a sequence of words we take</p>
 <div class="math notranslate nohighlight">
 \[
-c(w_1, \ldots, w_r) = {\tt 1} b(w1){\tt \#\#} b(w_2)\cdots b(w_r)
+c(w_1, \ldots, w_r) = {\tt 1} \quad b(w1)\quad {\tt \#\#} \quad b(w_2)\quad  \cdots\quad b(w_r)
 \]</div>
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
@@ -551,7 +551,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
 <p>An <em>encoded snapshot</em> is a word of the form</p>
-<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> <span class="math notranslate nohighlight">\(c(w_1, w_2, \ldots, w_{\ell})\)</span></p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^k\)</span> \quad <span class="math notranslate nohighlight">\(c(w_1, w_2, \ldots, w_{\ell})\)</span></p>
 <p>That is, it is a finite sequence of <code class="docutils literal notranslate"><span class="pre">1</span></code>s followed by <code class="docutils literal notranslate"><span class="pre">##</span></code> followed by <span class="math notranslate nohighlight">\(b(w_1)\)</span> for some word <span class="math notranslate nohighlight">\(w_1\)</span>, then <code class="docutils literal notranslate"><span class="pre">###</span></code>, then
 <span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
 </section>
@@ -685,6 +685,25 @@ s_3 \quad    {\tt \# 1} \quad
 <li><p>For all <span class="math notranslate nohighlight">\(1 \leq i &lt; ]ell\)</span>,  <span class="math notranslate nohighlight">\(Follows(p,s_i,s_{i+1})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(Halting-snapshot(p, s_{\ell})\)</span></p></li>
 </ol>
+</section>
+</div><p>We need one more gadget, a function  called  <span class="math notranslate nohighlight">\(upshot\)</span>.</p>
+<div class="proof definition admonition" id="def-upshot">
+<p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
+<section class="definition-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(Snapshotseq(z)\)</span>, say
+<span class="math notranslate nohighlight">\(z\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+s_1\quad    {\tt \# 1}  \quad
+s_2 \quad   {\tt \# 1} \quad
+s_3 \quad    {\tt \# 1}    \quad
+\cdots\quad
+  {\tt \# 1}   \quad  s_{\ell}
+\]</div>
+<p>then <span class="math notranslate nohighlight">\(upshot(z)\)</span> is the word in R1 in the last snapshot, <span class="math notranslate nohighlight">\(s_{\ell}\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(\neg Snapshotseq(z)\)</span>, then</p>
+<p>we (don’t care about the result and) set
+<span class="math notranslate nohighlight">\(upshot(z)={\tt \#}\)</span>.</p>
 </section>
 </div><img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
 <section id="shortlex-ordering-of-words">
@@ -991,7 +1010,14 @@ n &amp; = &amp; (2^{|n|} -1) +  \sum_{i &lt; |n|}  (n)_i \cdot 2^i
 <p><span class="math notranslate nohighlight">\(rem(102,32) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 16\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(rem(102,64) = 42\)</span>. And <span class="math notranslate nohighlight">\(42 \geq 32\)</span>.</p>
 <p>So we see that <span class="math notranslate nohighlight">\(s(101) = 1 0 0 1 1 0 =\)</span>  <code class="docutils literal notranslate"><span class="pre">1##11#</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">:::</span></code></p>
+</div>
+<div class="highlight-{key notranslate"><div class="highlight"><pre><span></span>
+If $w$ is any ```1#```-word, and if $v$ is a subword of $w$, or even a word which is smaller in length than $w$, then 
+
+$$
+s^{-1}(v) &lt; s^{-1}(w).
+$$
+</pre></div>
 </div>
 </section>
 </section>
