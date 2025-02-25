@@ -1031,8 +1031,8 @@ s^{-1}(v) &lt; s^{-1}(w).
 <div class="proof theorem admonition" id="theorem-T-numbers">
 <p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>There is a primitive recursive relation of numbers <span class="math notranslate nohighlight">\(T(p,x,z)\)</span>  so that for all numbers <span class="math notranslate nohighlight">\(p\)</span>,</p>
-<p><span class="math notranslate nohighlight">\(\varphi_p(n)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T(p,n,z)\)</span>.</p>
+<p>There is a primitive recursive relation of numbers <span class="math notranslate nohighlight">\(T_{numbers}(p,x,z)\)</span>  so that for all numbers <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\varphi_p(n)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T_{numbers}(p,n,z)\)</span>.</p>
 </section>
 </div><div class="proof corollary admonition" id="corollary-T-numbers">
 <p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
@@ -1040,8 +1040,7 @@ s^{-1}(v) &lt; s^{-1}(w).
 <p>Every <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-computable.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. In this proof, we are going to need to distinguish between <span class="math notranslate nohighlight">\(T_{words}\)</span> and <span class="math notranslate nohighlight">\(T_{numbers}\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(f:N\to N\)</span> be computable by the program <span class="math notranslate nohighlight">\(p\)</span>.  So <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\varphi_{s(p)}\)</span>.  This means that for all numbers <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<p>Proof. Let <span class="math notranslate nohighlight">\(f:N\to N\)</span> be computable by the program <span class="math notranslate nohighlight">\(p\)</span>.  So <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\varphi_{s(p)}\)</span>.  This means that for all numbers <span class="math notranslate nohighlight">\(n\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 f(n)\simeq  s^{-1}\biggl([\![ p]\!](s(n))\biggr).
