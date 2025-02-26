@@ -507,162 +507,6 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 [\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\!](x)
 \]</div>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
-<span class="n">j</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;1#####&#39;</span><span class="p">,</span> <span class="s1">&#39;cases on R1&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;11111111111###&#39;</span><span class="p">,</span> <span class="s1">&#39;go forward 11 to instruction 13 (the start of move_3_1)&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111111###&#39;</span><span class="p">,</span> <span class="s1">&#39;go forward 6 to instruction 9 (the tan part)&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;11##&#39;</span><span class="p">,</span> <span class="s1">&#39;R1 started with #: add # to R2&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111#&#39;</span><span class="p">,</span> <span class="s1">&#39;add 1 to R3&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111##&#39;</span><span class="p">,</span> <span class="s1">&#39;add # to R3&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111##&#39;</span><span class="p">,</span> <span class="s1">&#39;add # to R3&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;1111111####&#39;</span><span class="p">,</span> <span class="s1">&#39;go backward 7 to instruction 1&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;11#&#39;</span><span class="p">,</span> <span class="s1">&#39;R1 started with 1: add 1 to R2&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111#&#39;</span><span class="p">,</span> <span class="s1">&#39;add 1 to R3&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111##&#39;</span><span class="p">,</span> <span class="s1">&#39;add # to R3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;1111####&#39;</span><span class="p">,</span> <span class="s1">&#39;go backward 4 to instruction 8&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111#####&#39;</span><span class="p">,</span> <span class="s1">&#39;move_3_1 (from the first lesson)&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111#####&#39;</span><span class="p">,</span> <span class="s1">&#39;move_2_1 (from the first lesson)&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
- <span class="p">]</span>
-
- 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;instruction&quot;</span><span class="p">,</span> <span class="s1">&#39;explanation&#39;</span><span class="p">,</span><span class="s1">&#39;number&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;border&#39;</span><span class="p">:</span> <span class="s1">&#39;1.3px solid green&#39;</span><span class="p">,</span>
-                          <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;magenta&#39;</span><span class="p">})</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;text-align&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">})</span>
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># !!! we want this!</span>
-<span class="c1">#df.style.apply(lambda x: [&quot;background-color: red&quot;]*n if x[&#39;instruction&#39;]== &#39;Reading&#39; else [&quot;background-color: white&quot;]*n, axis = 1)</span>
-<span class="c1">#df.style.apply(lambda x: [&quot;background-color: #B0E0E6&quot;]*n if x[&#39;instruction&#39;] in [&#39;1##&#39;,&#39;1111####&#39;] elif [&quot;background-color: #D4B48C&quot;]*n if x[&#39;instruction&#39;] in [&#39;1#&#39;,&#39;111111####&#39;] else [&quot;background-color: #FFFFCC&quot;]*n, axis = 1)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background-color: #B0E0E6&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;instruction&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;1##&#39;</span><span class="p">,</span><span class="s1">&#39;1111####&#39;</span><span class="p">]</span>  <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;background-color: #FFFFCC&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_columns</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> 
-               <span class="p">[</span><span class="s2">&quot;background-color: #B0E0E6&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span> 
-               <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;background-color: tan&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
-               <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;background-color: #FFFFCC&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_e9946_row0_col0, #T_e9946_row0_col1, #T_e9946_row0_col2, #T_e9946_row1_col0, #T_e9946_row1_col1, #T_e9946_row1_col2, #T_e9946_row2_col0, #T_e9946_row2_col1, #T_e9946_row2_col2, #T_e9946_row12_col0, #T_e9946_row12_col1, #T_e9946_row12_col2, #T_e9946_row13_col0, #T_e9946_row13_col1, #T_e9946_row13_col2 {
-  background-color: #FFFFCC;
-}
-#T_e9946_row3_col0, #T_e9946_row3_col1, #T_e9946_row3_col2, #T_e9946_row4_col0, #T_e9946_row4_col1, #T_e9946_row4_col2, #T_e9946_row5_col0, #T_e9946_row5_col1, #T_e9946_row5_col2, #T_e9946_row6_col0, #T_e9946_row6_col1, #T_e9946_row6_col2, #T_e9946_row7_col0, #T_e9946_row7_col1, #T_e9946_row7_col2 {
-  background-color: #B0E0E6;
-}
-#T_e9946_row8_col0, #T_e9946_row8_col1, #T_e9946_row8_col2, #T_e9946_row9_col0, #T_e9946_row9_col1, #T_e9946_row9_col2, #T_e9946_row10_col0, #T_e9946_row10_col1, #T_e9946_row10_col2, #T_e9946_row11_col0, #T_e9946_row11_col1, #T_e9946_row11_col2 {
-  background-color: tan;
-}
-</style>
-<table id="T_e9946_" class="dataframe">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >instruction</th>
-      <th class="col_heading level0 col1" >explanation</th>
-      <th class="col_heading level0 col2" >number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_e9946_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_e9946_row0_col0" class="data row0 col0" >1#####</td>
-      <td id="T_e9946_row0_col1" class="data row0 col1" >cases on R1</td>
-      <td id="T_e9946_row0_col2" class="data row0 col2" >0</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_e9946_row1_col0" class="data row1 col0" >11111111111###</td>
-      <td id="T_e9946_row1_col1" class="data row1 col1" >go forward 11 to instruction 13 (the start of move_3_1)</td>
-      <td id="T_e9946_row1_col2" class="data row1 col2" >1</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_e9946_row2_col0" class="data row2 col0" >111111###</td>
-      <td id="T_e9946_row2_col1" class="data row2 col1" >go forward 6 to instruction 9 (the tan part)</td>
-      <td id="T_e9946_row2_col2" class="data row2 col2" >2</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_e9946_row3_col0" class="data row3 col0" >11##</td>
-      <td id="T_e9946_row3_col1" class="data row3 col1" >R1 started with #: add # to R2</td>
-      <td id="T_e9946_row3_col2" class="data row3 col2" >3</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_e9946_row4_col0" class="data row4 col0" >111#</td>
-      <td id="T_e9946_row4_col1" class="data row4 col1" >add 1 to R3</td>
-      <td id="T_e9946_row4_col2" class="data row4 col2" >4</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_e9946_row5_col0" class="data row5 col0" >111##</td>
-      <td id="T_e9946_row5_col1" class="data row5 col1" >add # to R3</td>
-      <td id="T_e9946_row5_col2" class="data row5 col2" >5</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_e9946_row6_col0" class="data row6 col0" >111##</td>
-      <td id="T_e9946_row6_col1" class="data row6 col1" >add # to R3</td>
-      <td id="T_e9946_row6_col2" class="data row6 col2" >6</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row7" class="row_heading level0 row7" >8</th>
-      <td id="T_e9946_row7_col0" class="data row7 col0" >1111111####</td>
-      <td id="T_e9946_row7_col1" class="data row7 col1" >go backward 7 to instruction 1</td>
-      <td id="T_e9946_row7_col2" class="data row7 col2" >7</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row8" class="row_heading level0 row8" >9</th>
-      <td id="T_e9946_row8_col0" class="data row8 col0" >11#</td>
-      <td id="T_e9946_row8_col1" class="data row8 col1" >R1 started with 1: add 1 to R2</td>
-      <td id="T_e9946_row8_col2" class="data row8 col2" >8</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row9" class="row_heading level0 row9" >10</th>
-      <td id="T_e9946_row9_col0" class="data row9 col0" >111#</td>
-      <td id="T_e9946_row9_col1" class="data row9 col1" >add 1 to R3</td>
-      <td id="T_e9946_row9_col2" class="data row9 col2" >9</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row10" class="row_heading level0 row10" >11</th>
-      <td id="T_e9946_row10_col0" class="data row10 col0" >111##</td>
-      <td id="T_e9946_row10_col1" class="data row10 col1" >add # to R3</td>
-      <td id="T_e9946_row10_col2" class="data row10 col2" >10</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row11" class="row_heading level0 row11" >12</th>
-      <td id="T_e9946_row11_col0" class="data row11 col0" >1111####</td>
-      <td id="T_e9946_row11_col1" class="data row11 col1" >go backward 4 to instruction 8</td>
-      <td id="T_e9946_row11_col2" class="data row11 col2" >11</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row12" class="row_heading level0 row12" >13</th>
-      <td id="T_e9946_row12_col0" class="data row12 col0" >111#####</td>
-      <td id="T_e9946_row12_col1" class="data row12 col1" >move_3_1 (from the first lesson)</td>
-      <td id="T_e9946_row12_col2" class="data row12 col2" >12</td>
-    </tr>
-    <tr>
-      <th id="T_e9946_level0_row13" class="row_heading level0 row13" >14</th>
-      <td id="T_e9946_row13_col0" class="data row13 col0" >111#####</td>
-      <td id="T_e9946_row13_col1" class="data row13 col1" >move_2_1 (from the first lesson)</td>
-      <td id="T_e9946_row13_col2" class="data row13 col2" >13</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-</div>
-<p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
-<p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
-Move x from R1 into R2, and also put <code class="docutils literal notranslate"><span class="pre">[[write]](x)</span></code> into R3.
-Then move R3 back to the now-empty R1.
-Finally, move R2 onto the end of R1.
-The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
-<p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
 <P>
 <CENTER>
 <TABLE CELLPADDING="3">
@@ -701,7 +545,14 @@ the top)</TD> </TR>
              <TD> move<sub>2,1</sub></TD><td> from Lesson 1 </td></TR>
 </TABLE>        
 </CENTER>
-<p><img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
+<p><p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
+<p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
+Move x from R1 into R2, and also put <code class="docutils literal notranslate"><span class="pre">[[write]](x)</span></code> into R3.
+Then move R3 back to the now-empty R1.
+Finally, move R2 onto the end of R1.
+The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
+<p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="self">
 <h1>Self<a class="headerlink" href="#self" title="Link to this heading">#</a></h1>
 <p>We now define a self-writing program, <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
