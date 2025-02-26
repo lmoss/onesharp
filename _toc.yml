@@ -36,6 +36,7 @@ parts:
 - caption: Computable Functions of Numbers
   chapters:
    - file: mu/T_predicate
+   - file: mu/mu
 
 - caption: The Recursion Theorem
   chapters:
