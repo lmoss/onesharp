@@ -497,13 +497,13 @@ for all words <span class="math notranslate nohighlight">\(x\)</span> and <span 
 \end{array}
 \end{split}\]</div>
 </section>
-</div><p>Here is the proof.
-Suppose toward a contradiction that we had such a program <span class="math notranslate nohighlight">\(p\)</span>.
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose toward a contradiction that we had such a program <span class="math notranslate nohighlight">\(p\)</span>.
 Modifying <span class="math notranslate nohighlight">\(p\)</span>, we get a program <span class="math notranslate nohighlight">\(q\)</span> so that for all <span class="math notranslate nohighlight">\(a\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
-\phifn^1_q(a) &amp; = &amp; \left\{
+\varphi_q(a) &amp; = &amp; \left\{
 \begin{array}{ll}
 \uparrow &amp; \mbox{if $[\![a]\!](a)\dar$}\\
 \downarrow&amp;  \mbox{if $[\![a]\!](a)\uparrow$}
@@ -511,7 +511,8 @@ Modifying <span class="math notranslate nohighlight">\(p\)</span>, we get a prog
 \right.
 \end{array}
 \end{split}\]</div>
-<p>Here’s how this would be done.
+<p>In words, running <span class="math notranslate nohighlight">\(q\)</span> on <span class="math notranslate nohighlight">\(a\)</span> diverges iff running <span class="math notranslate nohighlight">\(a\)</span> on itself converges, and vice-versa.   And this holds for all <span class="math notranslate nohighlight">\(a\)</span>.  So in particular it holds for <span class="math notranslate nohighlight">\(q\)</span>.   And this leads to a contradiction, as we shall see formally just below.</p>
+<p>Here’s how this one would actually get <span class="math notranslate nohighlight">\(q\)</span> from <span class="math notranslate nohighlight">\(p\)</span>.
 Assume that <span class="math notranslate nohighlight">\(p\)</span> preserves its input.
 Let <span class="math notranslate nohighlight">\(p\)</span> have <span class="math notranslate nohighlight">\(k\)</span> instructions.
 Let</p>
@@ -530,6 +531,7 @@ Then</p>
 [\![q]\!](q)\dar   \quadiff [\![q]\!](q)\uparrow.
 \]</div>
 <p>Contradiction!</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Look up <a class="reference external" href="http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html">this setting of the proof</a> by Geoffrey Pullum in the spirit of Dr. Seuss.</p>
