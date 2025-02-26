@@ -21,7 +21,7 @@ parts:
 
 
 - caption: More Programs
-  sections:
+  chapters:
   - file: more_programs/sanity
   - file: more_programs/arithmetic
   - file: more_programs/primitive_recursion
@@ -29,9 +29,9 @@ parts:
   
 
 - caption: Universal Programs
-  chapters:
-   - file: universal/twoByTwo 
-   - file: universal/universal
+  chapters:  
+  - file: universal/twoByTwo 
+  - file: universal/universal
 
 - caption: Computable Functions of Numbers
   chapters:
