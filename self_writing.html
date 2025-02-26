@@ -252,7 +252,6 @@
 
 
 
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -464,8 +463,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-replicating programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
 
@@ -600,9 +601,8 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 </div>
 </div>
 <p>The run of <code class="docutils literal notranslate"><span class="pre">self</span></code> on empty registers takes 14,204 steps to output itself.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-idea-in-english">
-<h1>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Link to this heading">#</a></h1>
+<section id="the-idea-in-english">
+<h2>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Link to this heading">#</a></h2>
 <p>We offer another presentation of the idea behind diag and self.</p>
 <p>Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.</p>
 <p>Let’s say that you just have on glimmer of an idea, that when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run a program <span class="math notranslate nohighlight">\(y\)</span> on it.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> should be <span class="math notranslate nohighlight">\(s\)</span>.
@@ -640,6 +640,7 @@ could take <span class="math notranslate nohighlight">\(s\)</span> to be <span c
 <p>To conclude: we take <span class="math notranslate nohighlight">\(y = diag\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
 We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ write]\!](diag)+ diag = [\![ diag]\!](diag)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <p>The rest of this lesson consists of exercises that allow
@@ -818,8 +819,10 @@ R1.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-replicating programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
 
