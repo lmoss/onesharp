@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reduction of one problem to another &#8212; Invitation to Computability</title>
+    <title>Mu-recursive functions &#8212; Invitation to Computability</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'issues/reduction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'mu/mu';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="First steps" href="../introOneSharp/instructions.html" />
-    <link rel="prev" title="Computable functions on encoded structures" href="coding.html" />
+    <link rel="next" title="Self-replicating programs" href="../self_writing.html" />
+    <link rel="prev" title="The T predicate" href="T_predicate.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,19 +184,19 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: several notions</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -242,9 +242,9 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T_predicate.html">The T predicate</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mu-recursive functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -338,7 +338,7 @@
       
       
       
-      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fissues/reduction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fmu/mu.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +368,7 @@
       
       
       
-      <li><a href="../_sources/issues/reduction.ipynb" target="_blank"
+      <li><a href="../_sources/mu/mu.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -450,7 +450,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Reduction of one problem to another</h1>
+    <h1>Mu-recursive functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -464,44 +464,61 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/reduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="reduction-of-one-problem-to-another">
-<h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Link to this heading">#</a></h1>
-<p><strong>definitions and interesting examples are yet to come</strong></p>
-<div class="exercise admonition" id="issues/reduction-exercise-0">
+  <section class="tex2jax_ignore mathjax_ignore" id="mu-recursive-functions">
+<h1>Mu-recursive functions<a class="headerlink" href="#mu-recursive-functions" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">prf</span><span class="p">:</span><span class="n">theorem</span><span class="p">}</span>
+<span class="p">:</span><span class="n">label</span><span class="p">:</span> <span class="n">theorem</span><span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="n">numbers</span>
 
-<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
-<section id="exercise-content">
-<p>The <em>Pointed PCP Problem</em> (PPCP) is like Post’s Correspondence Problem (PCP) except we have a designated domino <span class="math notranslate nohighlight">\(d_0\)</span> which must be used as the first domino in a match.</p>
-<p>Let <span class="math notranslate nohighlight">\(PCP\)</span> be the set of PCP instances for which there exists a match, and let <span class="math notranslate nohighlight">\(PPCP\)</span> be the set of PPCP instances for which there is a match.</p>
-<p>(a) Prove that <span class="math notranslate nohighlight">\(PPCP \leq_m PCP\)</span>.</p>
-<p>(b) Prove that <span class="math notranslate nohighlight">\(PCP \leq_m PPCP\)</span>.</p>
-</section>
+<span class="n">There</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">primitive</span> <span class="n">recursive</span> <span class="n">relation</span> <span class="n">of</span> <span class="n">numbers</span> <span class="err">$</span><span class="n">T_</span><span class="p">{</span><span class="n">numbers</span><span class="p">}(</span><span class="n">p</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">)</span><span class="err">$</span>  <span class="n">so</span> <span class="n">that</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">numbers</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="ow">and</span> <span class="err">$</span><span class="n">n</span><span class="err">$</span><span class="p">,</span>
+
+<span class="err">$</span>\<span class="n">varphi_p</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>\<span class="err">!</span>\<span class="err">!</span>\<span class="n">downarrow</span><span class="err">$</span> <span class="k">if</span> <span class="ow">and</span> <span class="n">only</span> <span class="k">if</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">some</span> <span class="err">$</span><span class="n">z</span><span class="err">$</span> <span class="n">such</span> <span class="n">that</span> <span class="err">$</span><span class="n">T_</span><span class="p">{</span><span class="n">numbers</span><span class="p">}(</span><span class="n">p</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">z</span><span class="p">)</span><span class="err">$</span><span class="o">.</span>
+
+<span class="p">:::</span>
+
+</pre></div>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
-<section id="exercise-content">
-<p>Suppose we consider a version of the tiling problem.
-We are again given a pointed tile set.  But instead of tiling the first quadrant we only need to tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis”.  Let’s call this problem <span class="math notranslate nohighlight">\(Tile_1\)</span>.
-Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decidable.</p>
-</section>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
-<section id="exercise-content">
-<p>Yet another version of tiling.  Given a pointed tile set, can we tile <em>the bottom two rows</em> of the quadrant?   Let’s call this problem <span class="math notranslate nohighlight">\(Tile_2\)</span>.   Show that <span class="math notranslate nohighlight">\(Tile_1 \leq_m Tile_2\)</span>, and also that
-<span class="math notranslate nohighlight">\(Tile_2 \leq_m Tile_1\)</span>.</p>
-</section>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
-<section id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
-<p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as straightforward.</p>
+<div class="proof corollary admonition" id="corollary-T-numbers">
+<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Every <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-computable.</p>
 </section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(f:N\to N\)</span> be computable by the program <span class="math notranslate nohighlight">\(p\)</span>.  So <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\varphi_{s(p)}\)</span>.  This means that for all numbers <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+f(n)\simeq  s^{-1}\biggl([\![ p]\!](s(n))\biggr).
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(f(n)\!\!\downarrow\)</span>, then there is some number <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span>. In this case, we can find <span class="math notranslate nohighlight">\(f(n)\)</span> by looking through all numbers <span class="math notranslate nohighlight">\(z\)</span>, starting with <span class="math notranslate nohighlight">\(z =0\)</span>, and checking whether or not  <span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span>.  Since <span class="math notranslate nohighlight">\(T_{numbers}\)</span> is primitive recursive, for each <span class="math notranslate nohighlight">\(n\)</span> we do get a value in finite time.  If and when we find some <span class="math notranslate nohighlight">\(z\)</span> such that
+<span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span>, we use the <span class="math notranslate nohighlight">\(upshot\)</span> function to give the value of <span class="math notranslate nohighlight">\(\varphi_{s(p)}(n)\)</span>.
+In other words,</p>
+<div class="math notranslate nohighlight">
+\[
+\varphi_p(x) \simeq upshot (\mu z. T(p,n,z))
+\]</div>
+<p>We can do all of this with a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-program.   We use the primitive recursiveness of <span class="math notranslate nohighlight">\(T_{numbers}\)</span>.</p>
+<p>This equation also holds in the case that <span class="math notranslate nohighlight">\(f(n)\!\!\uparrow\)</span>.  For this time, we can still look for <span class="math notranslate nohighlight">\(z\)</span> so that <span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span> but we never find one.   And so the computation of the program which we defined also goes on forever.</p>
+</div>
+<div class="proof theorem admonition" id="theorem-T-numbers">
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Every <span class="math notranslate nohighlight">\(\mu\)</span>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. We use <em>induction on the set of <span class="math notranslate nohighlight">\(\mu\)</span>-computable functions</em>.</p>
+<p>We have seen the base cases when we showed that primitive recursive functions are <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.  The induction steps for composition and primitive recursion are basically the same as what we have seen as well.   The interesting induction step is for the <span class="math notranslate nohighlight">\(\mu\)</span>-construct.  Suppose that</p>
+<div class="math notranslate nohighlight">
+\[
+f(n) \simeq \mu x. g(n,x) \simeq 0
+\]</div>
+<p>By induction hypothesis, <span class="math notranslate nohighlight">\(g(n,x)\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.  So we have a program <span class="math notranslate nohighlight">\(p\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+g(n,x) \simeq s^{-1}\biggl([\![ p ]\!](s(x))\biggr)
+\]</div>
 </div>
 </section>
 
@@ -518,7 +535,7 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
         },
         kernelOptions: {
             name: "python3",
-            path: "./issues"
+            path: "./mu"
         },
         predefinedOutput: true
     }
@@ -536,20 +553,20 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="coding.html"
+       href="T_predicate.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computable functions on encoded structures</p>
+        <p class="prev-next-title">The T predicate</p>
       </div>
     </a>
     <a class="right-next"
-       href="../introOneSharp/instructions.html"
+       href="../self_writing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">First steps</p>
+        <p class="prev-next-title">Self-replicating programs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
