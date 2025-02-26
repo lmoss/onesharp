@@ -462,9 +462,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-sequences-of-words-as-words">Encoding sequences of (sequences of words) as words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding">Encoding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-of-words-as-words">Sequences of words as words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-of-sequences-of-words-as-words">Sequences of (sequences of words) as words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshots">Snapshots</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-leading-up-to-t">Definitions leading up to T</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a><ul class="nav section-nav flex-column">
@@ -501,8 +504,11 @@ then there is some <span class="math notranslate nohighlight">\(z\)</span> such 
 <p>Carrying out the definition of <span class="math notranslate nohighlight">\(T(p,x,z)\)</span> requires us to make a number of secondary definitions.  Some of the discussion is technical because we need to code sequences of words by single words.   Please do not get bogged down by the technical details; the ideas are more important, and they are actually easier to grasp without the details of the coding.  In other words, the details are important, but they should not get in the way of understanding the ideas.</p>
 <p>The foregoing paragraphs were about computation in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.   After we do this work, we want to port the discussion from words to numbers.  This again leads us to a mountain of details about coding.  We show that the numerical version of <span class="math notranslate nohighlight">\(T\)</span> is primitive recursive.   This leads to the a real result proved using the <span class="math notranslate nohighlight">\(T\)</span>-predicate, the fact that every partial <span class="math notranslate nohighlight">\(\mu\)</span>-recursive function of
 numbers is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
-<section id="encoding-sequences-of-words-as-words">
-<h2>Encoding sequences of words as words<a class="headerlink" href="#encoding-sequences-of-words-as-words" title="Link to this heading">#</a></h2>
+<section id="encoding">
+<h2>Encoding<a class="headerlink" href="#encoding" title="Link to this heading">#</a></h2>
+<p>We need several levels of encoding, taking ever more complicated types of objects into <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words.</p>
+<section id="sequences-of-words-as-words">
+<h3>Sequences of words as words<a class="headerlink" href="#sequences-of-words-as-words" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="def-encode-sequences">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
 <section class="definition-content" id="proof-content">
@@ -530,8 +536,8 @@ c(w_1, \ldots, w_r) = {\tt \#\#} \quad b(w_1)\quad {\tt \#\#} \quad b(w_2)\quad 
 <p>We understand that <span class="math notranslate nohighlight">\(c(\varepsilon) = {\tt \#\#}\)</span>.</p>
 </section>
 </div></section>
-<section id="encoding-sequences-of-sequences-of-words-as-words">
-<h2>Encoding sequences of (sequences of words) as words<a class="headerlink" href="#encoding-sequences-of-sequences-of-words-as-words" title="Link to this heading">#</a></h2>
+<section id="sequences-of-sequences-of-words-as-words">
+<h3>Sequences of (sequences of words) as words<a class="headerlink" href="#sequences-of-sequences-of-words-as-words" title="Link to this heading">#</a></h3>
 <p>We also need an encoding of <em>sequences of sequences of words</em>.   (But fear not, we do not need to further in this direction.)
 We define</p>
 <div class="math notranslate nohighlight">
@@ -545,8 +551,8 @@ d(r_1,\ldots, r_n )  = {\tt \# 1} \quad c(r_1)\quad  {\tt \# 1} \quad  c(r_2)\qu
 \]</div>
 <p>That is, we encode sequences of words using <span class="math notranslate nohighlight">\(c\)</span> from above, and then we use <span class="math notranslate nohighlight">\({\tt \# 1}\)</span> as a separator between such encondings.</p>
 </section>
-<section id="encoding-snapshots">
-<h2>Encoding snapshots<a class="headerlink" href="#encoding-snapshots" title="Link to this heading">#</a></h2>
+<section id="snapshots">
+<h3>Snapshots<a class="headerlink" href="#snapshots" title="Link to this heading">#</a></h3>
 <p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
 But we want a definition of a snapshot encoding that does not refer to a program or to anything else.</p>
 <div class="proof definition admonition" id="def-snapshot">
@@ -561,6 +567,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <span class="math notranslate nohighlight">\(b(w_2)\)</span> for some word <span class="math notranslate nohighlight">\(w_2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, and finally <span class="math notranslate nohighlight">\(b(w_{\ell})\)</span> for some word <span class="math notranslate nohighlight">\(w_{\ell}\)</span>.</p>
 </section>
 </div></section>
+</section>
 <section id="new-interface">
 <h2>New interface<a class="headerlink" href="#new-interface" title="Link to this heading">#</a></h2>
 <p>Here is a new interface for running program which includes a “mode” capability that includes the option of seeing all the snapshots and the overall trace.</p>
@@ -784,6 +791,9 @@ rem(a,b) &amp;  = &amp;  (\mu r &lt; b).(\exists q)(a = qb + r)\\
 \right.
 \end{array}
 \end{split}\]</div>
+<p>For all <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(|n|\)</span> is the number of symbols in the string <span class="math notranslate nohighlight">\(s(n)\)</span>.   The expression above gives a formula for it.
+For all non-zero <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(rem(a,b)\)</span> gives the remainder when <span class="math notranslate nohighlight">\(a\)</span> is divided by <span class="math notranslate nohighlight">\(b\)</span>.  When <span class="math notranslate nohighlight">\(a = 0\)</span>, <span class="math notranslate nohighlight">\(rem(a,b) = 0\)</span>
+as well.  When <span class="math notranslate nohighlight">\(a &gt;0\)</span> and <span class="math notranslate nohighlight">\(b = 0\)</span>,???</p>
 <p>Since all of the quantifiers and <span class="math notranslate nohighlight">\(\mu\)</span>-operators are bounded, these functions are primitive recursive.</p>
 <p>Here is a table of the values of this function for small numbers.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1096,9 +1106,12 @@ by</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-words-as-words">Encoding sequences of words as words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-sequences-of-sequences-of-words-as-words">Encoding sequences of (sequences of words) as words</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-snapshots">Encoding snapshots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding">Encoding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-of-words-as-words">Sequences of words as words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences-of-sequences-of-words-as-words">Sequences of (sequences of words) as words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshots">Snapshots</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-interface">New interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-leading-up-to-t">Definitions leading up to T</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shortlex-ordering-of-words">Shortlex ordering of words</a><ul class="nav section-nav flex-column">
