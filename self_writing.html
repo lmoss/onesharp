@@ -663,7 +663,45 @@ Then move R3 back to the now-empty R1.
 Finally, move R2 onto the end of R1.
 The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
 <p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
+<P>
+<CENTER>
+<TABLE CELLPADDING="3">
+        <TR BGCOLOR="#FFFFCC">
+                <TD>1#####</TD> <TD>Cases on R1</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>11111111111###</TD> <TD>Go forward 11:
+                  to move<sub>3,1</sub> part</TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>111111###</TD><TD>Go forward 6:
+to the brown part</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11##</TD> <TD>Add # to R2</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111#</TD> <TD>Add 1 to R3: 1## adds # to R1</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111##</TD> <TD>Add # to R3</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111##</TD> <TD>Add # to R3</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>1111111####</TD> <TD>Go backward 7 (to
+the top)</TD> </TR>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11#</TD> <TD>Add 1 to R2</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111#</TD> <TD>Add 1 to R3: 1# adds 1 to R1</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111##</TD> <TD>Add # to R3</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11111111111####</TD> <TD>Go backward 11
+(to the top)</TD>  
+        </TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD> move<sub>3,1</sub></TD><td> from Lesson 1</td></TR>
+        <TR BGCOLOR="#FFFFCC">
+             <TD> move<sub>2,1</sub></TD><td> from Lesson 1 </td></TR>
+</TABLE>        
+</CENTER>
+<p><img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="self">
 <h1>Self<a class="headerlink" href="#self" title="Link to this heading">#</a></h1>
 <p>We now define a self-writing program, <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>

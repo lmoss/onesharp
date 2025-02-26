@@ -471,6 +471,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-bits">Accessing bits</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-point-of-all-of-this-coding">The point of all of this coding</a></li>
 </ul>
             </nav>
         </div>
@@ -993,15 +994,27 @@ n &amp; = &amp; (2^{|n|} -1) +  \sum_{i &lt; |n|}  (n)_i \cdot 2^i
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Let <span class="math notranslate nohighlight">\(n = 101\)</span>.  Note that <span class="math notranslate nohighlight">\(2^7  = 128 &gt; 101\)</span>, and <span class="math notranslate nohighlight">\(7\)</span> is the smallest with this property.  Therefore <span class="math notranslate nohighlight">\(|n| = 7-1 = 6\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(rem(102,2) = 0\)</span>.  And <span class="math notranslate nohighlight">\(0 &lt; 2^0\)</span></p>
-<p><span class="math notranslate nohighlight">\(rem(102,4) = 2\)</span>. And <span class="math notranslate nohighlight">\(2 \geq 2^1\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(rem(102,8) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 \geq 4\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(rem(102,16) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 8\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(rem(102,32) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 16\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(rem(102,64) = 42\)</span>. And <span class="math notranslate nohighlight">\(42 \geq 32\)</span>.</p>
-<p>So we see that <span class="math notranslate nohighlight">\(s(101) = 1 0 0 1 1 0 =\)</span>  <code class="docutils literal notranslate"><span class="pre">1##11#</span></code>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,2) = 0\)</span>.  And <span class="math notranslate nohighlight">\(0 &lt; 2^0\)</span>, so <span class="math notranslate nohighlight">\((102)_0 = 0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,4) = 2\)</span>. And <span class="math notranslate nohighlight">\(2 \geq 2^1\)</span>, so <span class="math notranslate nohighlight">\((102)_1 = 1\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,8) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 \geq 4\)</span>, so <span class="math notranslate nohighlight">\((102)_2 = 1\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,16) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 8\)</span>, so <span class="math notranslate nohighlight">\((102)_3 = 0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,32) = 6\)</span>. And <span class="math notranslate nohighlight">\(6 &lt; 16\)</span>, so <span class="math notranslate nohighlight">\((102)_4 = 0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(rem(102,64) = 42\)</span>. And <span class="math notranslate nohighlight">\(42 \geq 32\)</span>, so <span class="math notranslate nohighlight">\((102)_5 = 1\)</span>.</p>
+<p>So we see that <span class="math notranslate nohighlight">\(s(101) = 1 0 0 1 1 0 \)</span>.  Trading in <span class="math notranslate nohighlight">\(0\)</span> for <span class="math notranslate nohighlight">\(\#\)</span>, we get  <code class="docutils literal notranslate"><span class="pre">1##11#</span></code>.</p>
 </div>
-<p>Here is how we take a function from words to words and associate a function from numbers to numbers.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If <span class="math notranslate nohighlight">\(w\)</span> is any <code class="docutils literal notranslate"><span class="pre">1#</span></code>-word, and if <span class="math notranslate nohighlight">\(v\)</span> is a subword of <span class="math notranslate nohighlight">\(w\)</span>, or even a word which is smaller in length than <span class="math notranslate nohighlight">\(w\)</span>, then as numbers</p>
+<div class="math notranslate nohighlight">
+\[s^{-1}(v) &lt; s^{-1}(w).
+\]</div>
+<p>This is important because it leads to the fact that various functions are primitive recursive.</p>
+</div>
+</section>
+</section>
+<section id="the-point-of-all-of-this-coding">
+<h2>The point of all of this coding<a class="headerlink" href="#the-point-of-all-of-this-coding" title="Link to this heading">#</a></h2>
+<p>What want to associate functions on words with functions on numbers, and vice-versa.  Here is how we take a function from words to words and associate a function from numbers to numbers.</p>
 <p>Given <span class="math notranslate nohighlight">\(f: Words \to Words\)</span>, we associate <span class="math notranslate nohighlight">\(g: N \to N\)</span> by  <span class="math notranslate nohighlight">\(g = s^{-1}\circ f \circ s\)</span>.  That is,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1015,16 +1028,7 @@ by</p>
 \[
 \varphi_p(n) =  s^{-1}\biggl([\![s(p)]\!](s(n))\biggr).
 \]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If <span class="math notranslate nohighlight">\(w\)</span> is any <code class="docutils literal notranslate"><span class="pre">1#</span></code>-word, and if <span class="math notranslate nohighlight">\(v\)</span> is a subword of <span class="math notranslate nohighlight">\(w\)</span>, or even a word which is smaller in length than <span class="math notranslate nohighlight">\(w\)</span>, then as numbers</p>
-<div class="math notranslate nohighlight">
-\[
-s^{-1}(v) &lt; s^{-1}(w).
-\]</div>
-<p>This is important because it leads to the fact that various functions are primitive recursive.</p>
-</div>
-</section>
+<p>In our next section, we’ll see that the functions <span class="math notranslate nohighlight">\(\varphi_p\)</span>, as <span class="math notranslate nohighlight">\(p\)</span> ranges over <span class="math notranslate nohighlight">\(N\)</span>, are exactly the <span class="math notranslate nohighlight">\(\mu\)</span>-computable functions.  Our definition takes them to be the coded versions of the <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable functions.</p>
 </section>
 </section>
 
@@ -1101,6 +1105,7 @@ s^{-1}(v) &lt; s^{-1}(w).
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-bits">Accessing bits</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-point-of-all-of-this-coding">The point of all of this coding</a></li>
 </ul>
   </nav></div>
 
