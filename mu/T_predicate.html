@@ -767,18 +767,14 @@ s_3 \quad    {\tt \# 1}    \quad
 <h3>Accessing bits<a class="headerlink" href="#accessing-bits" title="Link to this heading">#</a></h3>
 <p>We next define three functions on the natural numbers.  The first is called <span class="math notranslate nohighlight">\(|n|\)</span>, and it gives the number of characters in <span class="math notranslate nohighlight">\(s(n)\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[
-|n| = \biggl( \mu x \leq n +1. \ (2^x  &gt; n + 1)\biggr) - 1.
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split} 
+\[\begin{split}
 \begin{array}{lcl}
+|n| &amp;= &amp; \biggl( \mu x \leq n +1. \ (2^x  &gt; n + 1)\biggr) - 1.
+\\ \\
 rem(a,b) &amp;  = &amp;  (\mu r &lt; b).(\exists q)(a = qb + r)\\
 &amp;  = &amp;  (\mu r &lt; b).(\exists q \leq a)(a = qb + r)\\
-\end{array}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+\\
+\\
 (n)_{m} =\left\{
 \begin{array}{ll}
 0 &amp; if\ rem(n+1,2^{m+1}) &lt;  2^m   \\
