@@ -21,7 +21,7 @@ parts:
 
 
 - caption: More Programs
-  chapters:
+  sections:
   - file: more_programs/sanity
   - file: more_programs/arithmetic
   - file: more_programs/primitive_recursion
