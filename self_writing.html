@@ -559,7 +559,7 @@ The official version of <code class="docutils literal notranslate"><span class="
 <p>We now define a self-writing program, <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <p>The idea is to apply the program <code class="docutils literal notranslate"><span class="pre">diag</span></code> to diag itself.
 This might seem like a strange thing to do. But as we’ll see, it gives us exactly what we’re looking for.
-When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <code class="docutils literal notranslate"><span class="pre">[\!</span> <span class="pre">write\!](diag)</span> <span class="pre">+</span> <span class="pre">diag</span></code> in R1.
+When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">write]](diag)</span> <span class="pre">+</span> <span class="pre">diag</span></code> in R1.
 This, then, is <code class="docutils literal notranslate"><span class="pre">self</span></code>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
 the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
@@ -576,7 +576,10 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <p>You can watch the calculation by entering <code class="docutils literal notranslate"><span class="pre">self</span></code> in <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">code</span><span class="o">-</span><span class="n">cell</span><span class="p">}</span> <span class="n">ipython3</span>
+<span class="p">:</span><span class="n">tags</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;scroll-output&quot;</span><span class="p">]</span>
+<span class="bp">self</span>
+<span class="err">```</span>
 </pre></div>
 </div>
 </div>
@@ -631,7 +634,7 @@ could take <span class="math notranslate nohighlight">\(s\)</span> to be <span c
 \]</div>
 <p>and then set <span class="math notranslate nohighlight">\(x = y\)</span>.
 (Note that (*) and (**) are different due to the last symbol in each.)</p>
-<p>If find <span class="math notranslate nohighlight">\(y\)</span> to make (**) hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span> and thus have (*), because</p>
+<p>If we find <span class="math notranslate nohighlight">\(y\)</span> to make (**) hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span> and thus have (*), because</p>
 <div class="math notranslate nohighlight">
 \[
 [\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x  =  [\![ write]\!](x)+ y
