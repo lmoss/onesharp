@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The busy beaver problem" href="busyBeaver.html" />
-    <link rel="prev" title="Mu-recursive functions" href="../mu/mu.html" />
+    <link rel="prev" title="The Recursion Theorem" href="../recThm/recursion_theorem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -245,6 +245,14 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../recThm/self_writing.html">Self-replicating programs</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="current nav bd-sidenav">
@@ -474,7 +482,7 @@ document.write(`
 <h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h1>
 <p>We come to one of the most famous and most basic results in computability theory, the <em>undecidability of the halting problem</em>, first proved by Turing in 1936.</p>
 <div class="proof theorem admonition" id="Turings-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>There is no program <span class="math notranslate nohighlight">\(p\)</span> such that
 for all words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>,</p>
@@ -546,7 +554,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
-<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 9</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
+<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 10</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
 <div class="proof corollary admonition" id="corollary-1">
 <p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
 <section class="corollary-content" id="proof-content">
@@ -569,7 +577,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 </section>
 </div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
 <section id="exercise-content">
 <p>The language <span class="math notranslate nohighlight">\(\one\hash\)</span> has infinitely many instructions: the instructions are the words <span class="math notranslate nohighlight">\(\one^k \hash^{\ell}\)</span>, where <span class="math notranslate nohighlight">\(k\in \N\)</span> and <span class="math notranslate nohighlight">\(1\leq \ell\leq 5\)</span>.</p>
 <p>For each finite set <span class="math notranslate nohighlight">\(F\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions, we can consider <span class="math notranslate nohighlight">\(H_F\)</span>, the set of programs <span class="math notranslate nohighlight">\(p\)</span> built using the instructions of <span class="math notranslate nohighlight">\(F\)</span> (and no others) such that <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
@@ -610,12 +618,12 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../mu/mu.html"
+       href="../recThm/recursion_theorem.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Mu-recursive functions</p>
+        <p class="prev-next-title">The Recursion Theorem</p>
       </div>
     </a>
     <a class="right-next"

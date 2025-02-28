@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mu-recursive functions &#8212; Invitation to Computability</title>
+    <title>The Recursion Theorem &#8212; Invitation to Computability</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'mu/mu';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'recThm/recursion_theorem';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Self-replicating programs" href="../recThm/self_writing.html" />
-    <link rel="prev" title="The T predicate" href="T_predicate.html" />
+    <link rel="next" title="The halting problem" href="../undecidability/haltingProblem.html" />
+    <link rel="prev" title="Self-replicating programs" href="self_writing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -242,17 +242,17 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="T_predicate.html">The T predicate</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mu-recursive functions</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../recThm/self_writing.html">Self-replicating programs</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="self_writing.html">Self-replicating programs</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Recursion Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -338,7 +338,7 @@
       
       
       
-      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fmu/mu.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2FrecThm/recursion_theorem.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +368,7 @@
       
       
       
-      <li><a href="../_sources/mu/mu.ipynb" target="_blank"
+      <li><a href="../_sources/recThm/recursion_theorem.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -439,7 +439,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -450,11 +452,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mu-recursive functions</h1>
+    <h1>The Recursion Theorem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof-of-the-second-recursion-theorem">Kleene’s proof of the Second Recursion Theorem</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -464,53 +474,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mu-recursive-functions">
-<h1>Mu-recursive functions<a class="headerlink" href="#mu-recursive-functions" title="Link to this heading">#</a></h1>
-<div class="proof theorem admonition" id="theorem-T-numbers">
-<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/recThm/recursion_theorem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="the-recursion-theorem">
+<h1>The Recursion Theorem<a class="headerlink" href="#the-recursion-theorem" title="Link to this heading">#</a></h1>
+<p>This section generalizes what we just saw on self-writing programs to prove one of the cornerstone results of computability theory, Kleene’s Second Recursion Theorem.</p>
+<div class="proof theorem admonition" id="recursion_theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>There is a primitive recursive relation of numbers <span class="math notranslate nohighlight">\(T_{numbers}(p,x,z)\)</span>  so that for all numbers <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(n\)</span>,</p>
-<p><span class="math notranslate nohighlight">\(\varphi_p(n)\!\!\downarrow\)</span> if and only if there is some <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T_{numbers}(p,n,z)\)</span>.</p>
-</section>
-</div><div class="proof corollary admonition" id="corollary-T-numbers">
-<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
-<section class="corollary-content" id="proof-content">
-<p>Every <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-computable.</p>
+<p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Let <span class="math notranslate nohighlight">\(f:N\to N\)</span> be computable by the program <span class="math notranslate nohighlight">\(p\)</span>.  So <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\varphi_{s(p)}\)</span>.  This means that for all numbers <span class="math notranslate nohighlight">\(n\)</span>,</p>
+<p>Proof. We first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-f(n)\simeq  s^{-1}\biggl([\![ p]\!](s(n))\biggr).
+[\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
 \]</div>
-<p>If <span class="math notranslate nohighlight">\(f(n)\!\!\downarrow\)</span>, then there is some number <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span>. In this case, we can find <span class="math notranslate nohighlight">\(f(n)\)</span> by looking through all numbers <span class="math notranslate nohighlight">\(z\)</span>, starting with <span class="math notranslate nohighlight">\(z =0\)</span>, and checking whether or not  <span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span>.  Since <span class="math notranslate nohighlight">\(T_{numbers}\)</span> is primitive recursive, for each <span class="math notranslate nohighlight">\(n\)</span> we do get a value in finite time.  If and when we find some <span class="math notranslate nohighlight">\(z\)</span> such that
-<span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span>, we use the <span class="math notranslate nohighlight">\(upshot\)</span> function to give the value of <span class="math notranslate nohighlight">\(\varphi_{s(p)}(n)\)</span>.
-In other words,</p>
+<p>Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to see that for all <span class="math notranslate nohighlight">\(r\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\varphi_p(x) \simeq upshot (\mu z. T(p,n,z))
+[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)
 \]</div>
-<p>We can do all of this with a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-program.   We use the primitive recursiveness of <span class="math notranslate nohighlight">\(T_{numbers}\)</span>.</p>
-<p>This equation also holds in the case that <span class="math notranslate nohighlight">\(f(n)\!\!\uparrow\)</span>.  For this time, we can still look for <span class="math notranslate nohighlight">\(z\)</span> so that <span class="math notranslate nohighlight">\(T_{numbers}(s(p),n,z)\)</span> but we never find one.   And so the computation of the program which we defined also goes on forever.</p>
+<p>So if we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!](\hat{q})\)</span>, we see that</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ q^* ]\!](r) = [\![p]\!](q^*,r)
+\]</div>
+<p>This is the desired equation.   Now to get <span class="math notranslate nohighlight">\(\hat{q}\)</span>, we take</p>
+<p><code class="docutils literal notranslate"><span class="pre">diag</span> <span class="pre">+</span> <span class="pre">move_1_2</span> <span class="pre">+[[write]](move_1_4)</span> <span class="pre">+</span> <span class="pre">move_2_1</span>&#160; <span class="pre">+</span> <span class="pre">[[write]](move_4,2</span> <span class="pre">+</span> <span class="pre">p)</span></code></p>
+<p>and we check that this only mentions R1, R2, and R3.   Then for all <span class="math notranslate nohighlight">\(p\)</span> which also mentions only those registers,</p>
+<p><code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">\hat{q}</span> <span class="pre">]](p)</span> <span class="pre">=</span> <span class="pre">move_1_4</span> <span class="pre">+[[diag]](p)</span> <span class="pre">+</span> <span class="pre">move_4_2</span> <span class="pre">+</span> <span class="pre">p</span></code></p>
 </div>
-<div class="proof theorem admonition" id="theorem-T-numbers">
-<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>Every <span class="math notranslate nohighlight">\(\mu\)</span>-computable function <span class="math notranslate nohighlight">\(f: N\to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
+<section id="kleene-s-proof-of-the-second-recursion-theorem">
+<h2>Kleene’s proof of the Second Recursion Theorem<a class="headerlink" href="#kleene-s-proof-of-the-second-recursion-theorem" title="Link to this heading">#</a></h2>
 </section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. We use <em>induction on the set of <span class="math notranslate nohighlight">\(\mu\)</span>-computable functions</em>.</p>
-<p>We have seen the base cases when we showed that primitive recursive functions are <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.  The induction steps for composition and primitive recursion are basically the same as what we have seen as well.   The interesting induction step is for the <span class="math notranslate nohighlight">\(\mu\)</span>-construct.  Suppose that</p>
-<div class="math notranslate nohighlight">
-\[
-f(n) \simeq \mu x. g(n,x) \simeq 0
-\]</div>
-<p>By induction hypothesis, <span class="math notranslate nohighlight">\(g(n,x)\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.  So we have a program <span class="math notranslate nohighlight">\(p\)</span> so that</p>
-<div class="math notranslate nohighlight">
-\[
-g(n,x) \simeq s^{-1}\biggl([\![ p ]\!](s(x))\biggr)
-\]</div>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -526,7 +522,7 @@ g(n,x) \simeq s^{-1}\biggl([\![ p ]\!](s(x))\biggr)
         },
         kernelOptions: {
             name: "python3",
-            path: "./mu"
+            path: "./recThm"
         },
         predefinedOutput: true
     }
@@ -544,20 +540,20 @@ g(n,x) \simeq s^{-1}\biggl([\![ p ]\!](s(x))\biggr)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="T_predicate.html"
+       href="self_writing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The T predicate</p>
+        <p class="prev-next-title">Self-replicating programs</p>
       </div>
     </a>
     <a class="right-next"
-       href="../recThm/self_writing.html"
+       href="../undecidability/haltingProblem.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Self-replicating programs</p>
+        <p class="prev-next-title">The halting problem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -567,6 +563,21 @@ g(n,x) \simeq s^{-1}\biggl([\![ p ]\!](s(x))\biggr)
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof-of-the-second-recursion-theorem">Kleene’s proof of the Second Recursion Theorem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
