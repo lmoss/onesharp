@@ -484,7 +484,7 @@ document.write(`
 <p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. We first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<p>Proof. We first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
 <div class="math notranslate nohighlight">
 \[
 [\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
@@ -509,6 +509,18 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
 \[
 [\![\hat{q}]\!](p) = move(1,4) +[\![diag]\!](p) + move(4,2) + p
 \]</div>
+<p>In particular,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![\hat{q}]\!](\hat{q}) = move(1,4) +[\![diag]\!](\hat{q}) + move(4,2) + p
+\]</div>
+<p>Then a routine calculation shows</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![\hat{q}]\!](p)]\!] (r)  = [\![ [\![diag]\!](\hat{q}) ]\!](r)
+\]</div>
+<p>(It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions on the the first three registers.)
+This last equation was our goal, and so we are done.</p>
 </div>
 <section id="kleene-s-proof-of-the-second-recursion-theorem">
 <h2>Kleene’s proof of the Second Recursion Theorem<a class="headerlink" href="#kleene-s-proof-of-the-second-recursion-theorem" title="Link to this heading">#</a></h2>
