@@ -41,6 +41,7 @@ parts:
 - caption: The Recursion Theorem
   chapters:
   - file: self_writing
+  - file: recursion_theorem
   
   
 #- caption: The Enumeration Theorem
