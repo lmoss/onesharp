@@ -500,9 +500,15 @@ document.write(`
 [\![ q^* ]\!](r) = [\![p]\!](q^*,r)
 \]</div>
 <p>This is the desired equation.   Now to get <span class="math notranslate nohighlight">\(\hat{q}\)</span>, we take</p>
-<p><code class="docutils literal notranslate"><span class="pre">diag</span> <span class="pre">+</span> <span class="pre">move_1_2</span> <span class="pre">+[[write]](move_1_4)</span> <span class="pre">+</span> <span class="pre">move_2_1</span>&#160; <span class="pre">+</span> <span class="pre">[[write]](move_4,2</span> <span class="pre">+</span> <span class="pre">p)</span></code></p>
-<p>and we check that this only mentions R1, R2, and R3.   Then for all <span class="math notranslate nohighlight">\(p\)</span> which also mentions only those registers,</p>
-<p><code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">\hat{q}</span> <span class="pre">]](p)</span> <span class="pre">=</span> <span class="pre">move_1_4</span> <span class="pre">+[[diag]](p)</span> <span class="pre">+</span> <span class="pre">move_4_2</span> <span class="pre">+</span> <span class="pre">p</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,2) + p)
+\]</div>
+<p>This only mentions R1, R2, and R3.   (R3 is mentioned in <span class="math notranslate nohighlight">\(diag\)</span>.) Then for all <span class="math notranslate nohighlight">\(p\)</span> which also mentions only those registers,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![\hat{q}]\!](p) = move_1_4 +[\![diag]\!](p) + move(4,2) + p
+\]</div>
 </div>
 <section id="kleene-s-proof-of-the-second-recursion-theorem">
 <h2>Kleene’s proof of the Second Recursion Theorem<a class="headerlink" href="#kleene-s-proof-of-the-second-recursion-theorem" title="Link to this heading">#</a></h2>
