@@ -40,8 +40,8 @@ parts:
 
 - caption: The Recursion Theorem
   chapters:
-  - file: self_writing
-  - file: recursion_theorem
+  - file: recThm/self_writing
+  - file: recThm/recursion_theorem
   
   
 #- caption: The Enumeration Theorem
