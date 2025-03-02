@@ -550,10 +550,11 @@ the top)</TD> </TR>
 <p><p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1#</span></code>). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
 <div class="tip admonition">
 <p class="admonition-title">Important</p>
-<p>We often will use the following fact:
-$<span class="math notranslate nohighlight">\(
+<p>We often will use the following fact:</p>
+<div class="math notranslate nohighlight">
+\[
 [\![ [\![ {\tt diag} ]\!](x)]\!](y) \simeq [\![ x ]\!](y+x).
-\)</span>$</p>
+\]</div>
 <p>Also our program <span class="math notranslate nohighlight">\({\tt diag}\)</span> uses only R1, R2, and R3.</p>
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
