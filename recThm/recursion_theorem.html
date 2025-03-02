@@ -483,22 +483,19 @@ document.write(`
 <section class="theorem-content" id="proof-content">
 <p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
 </section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. We first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
+</div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!](\hat{q})\)</span>.
+So we first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
 <div class="math notranslate nohighlight">
 \[
 [\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
 \]</div>
-<p>(eqn:goal)</p>
-<p>Our goal is <code class="xref eq docutils literal notranslate"><span class="pre">eqn:goal</span></code></p>
 <p>Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to see that for all <span class="math notranslate nohighlight">\(r\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-recursion-theorem">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-recursion-theorem" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
-</div>
-<p>So if we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that</p>
+<p>When we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that</p>
 <div class="math notranslate nohighlight">
 \[
-[\![ q^* ]\!](r) = [\![p]\!] (q^*,r)
+[\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r)
 \]</div>
 <p>This is the desired equation.   Now to get <span class="math notranslate nohighlight">\(\hat{q}\)</span>, we take</p>
 <div class="math notranslate nohighlight">
@@ -513,12 +510,9 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
 <p>In particular,</p>
 <div class="math notranslate nohighlight">
 \[
-[\![\hat{q}]\!](\hat{q}) = move(1,4) +[\![diag]\!](\hat{q}) + move(4,2) + p
+[\![\hat{q}]\!] (\hat{q}) = move(1,4) +[\![diag]\!] (\hat{q}) + move(4,2) + p
 \]</div>
-<p>Then a routine calculation shows that <a class="reference internal" href="#equation-eq-recursion-theorem">(1)</a> above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions on the the first three registers.)  This last equation was our goal, and so we are done.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p>Then a routine calculation shows that <a class="reference internal" href="#equation-eq-recursion-theorem">(1)</a> above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions only the the first three registers.)  This last equation was our goal, and so we are done.</p>
 <section id="kleene-s-proof-of-the-second-recursion-theorem">
 <h2>Kleene’s proof of the Second Recursion Theorem<a class="headerlink" href="#kleene-s-proof-of-the-second-recursion-theorem" title="Link to this heading">#</a></h2>
 </section>
