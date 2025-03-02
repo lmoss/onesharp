@@ -693,15 +693,15 @@ Here is our program when m = 1, n = 2, p = 3:<div class="cell docutils container
 <div class="section" id="write">
 <h2>write<a class="headerlink" href="#write" title="Permalink to this heading">#</a></h2>
 <p>We construct with
-a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
+a program <span class="math notranslate nohighlight">\(write\)</span> with
 the following properties:</p>
 <ol class="arabic simple">
-<li><p>When <span class="math notranslate nohighlight">\(\writeprog\)</span> is started with <span class="math notranslate nohighlight">\(x\)</span> in R1
+<li><p>When <span class="math notranslate nohighlight">\(write\)</span> is started with <span class="math notranslate nohighlight">\(x\)</span> in R1
 and R2 empty, we eventually halt  with a
 word <span class="math notranslate nohighlight">\(y\)</span>
-in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty.</p></li>
+in R1 and all other registers empty.</p></li>
 <li><p>Then <span class="math notranslate nohighlight">\(y\)</span> is a program, and running
-<span class="math notranslate nohighlight">\(y\)</span> with <span class="math notranslate nohighlight">\(\Rone\)</span> empty results in <span class="math notranslate nohighlight">\(x\)</span> back in <span class="math notranslate nohighlight">\(\Rone\)</span> and all
+<span class="math notranslate nohighlight">\(y\)</span> with R1 empty results in <span class="math notranslate nohighlight">\(x\)</span> back in R1 and all
 other registers empty.</p></li>
 </ol>
 <p>In the notation from <a class="reference internal" href="functions.html"><span class="doc std std-doc">a little later</span></a>, we have</p>
@@ -760,7 +760,7 @@ the top)</TD> </TR>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-</CENTER><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
+</CENTER><p>It should be emphasized that <span class="math notranslate nohighlight">\(write\)</span> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
