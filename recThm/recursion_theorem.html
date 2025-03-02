@@ -490,10 +490,9 @@ document.write(`
 [\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
 \]</div>
 <p>Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to see that for all <span class="math notranslate nohighlight">\(r\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\quad (*)
-\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-recursion-theorem">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-recursion-theorem" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\quad (*)\]</div>
+</div>
 <p>So if we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!](\hat{q})\)</span>, we see that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -514,7 +513,9 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
 \[
 [\![\hat{q}]\!](\hat{q}) = move(1,4) +[\![diag]\!](\hat{q}) + move(4,2) + p
 \]</div>
-<p>Then a routine calculation shows that (*) above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions on the the first three registers.)  This last equation was our goal, and so we are done.</p>
+<p>Then a routine calculation shows that <a class="reference internal" href="#equation-eq-recursion-theorem">(1)</a> above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions on the the first three registers.)  This last equation was our goal, and so we are done.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 <section id="kleene-s-proof-of-the-second-recursion-theorem">
 <h2>Kleene’s proof of the Second Recursion Theorem<a class="headerlink" href="#kleene-s-proof-of-the-second-recursion-theorem" title="Link to this heading">#</a></h2>
