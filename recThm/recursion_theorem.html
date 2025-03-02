@@ -592,7 +592,7 @@ Then for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 gcd(x,y) &amp; = &amp; 
 \left\{
 \begin{array}{ll}
-0 &amp; \mbox{if $x|y$} \\
+x &amp; \mbox{if $y=0$} \\
 \gcd(y, rem(x,y))) &amp; \mbox{otherwise}
 \end{array}
 \right.
@@ -623,6 +623,41 @@ gcd(x,y) = \mbox{the largest $z \leq x,y$ such that $z | x$ and $z| y$}
 \]</div>
 <p>Indeed, this is the usual <em>definition</em> of the function <span class="math notranslate nohighlight">\(gcd\)</span>, whereas the recursive expression comes later.  But suppose that we started with the recursion.  Better yet, suppose that we modified it to change <span class="math notranslate nohighlight">\(rem\)</span> to some other two-place computable function, say <span class="math notranslate nohighlight">\(a(x,y)\)</span>.  Then it would not be so clear that the modified funciton were computable.</p>
 <p>Turning to <span class="math notranslate nohighlight">\(a(x,y)\)</span> itself, we have argued that it is not primitive recursive in the first place.  Now is the time to check that it is computable and also total.  Finally, <span class="math notranslate nohighlight">\(collatz(n)\)</span> is computable, as we shall see shortly.  Put more accurately, there is a computable partial function that satisfies the recursion equation for <span class="math notranslate nohighlight">\(collatz\)</span> that we see above.   The issue is that we do not know whether the computable partial function that we are going to see is total or not.</p>
+<p>The details which show that all three example functions are computable are similar.  We illustrate with <span class="math notranslate nohighlight">\(A(x,y)\)</span>.
+Let <span class="math notranslate nohighlight">\(f\)</span> be a total computable function so that for all programs <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(f(p)\)</span> is a program with the property that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+[\![ f(p)]\!](x,y) &amp; = &amp; \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+[\![p]\!](x-1,1)
+ &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ [\![ p]\!]\biggl(x-1,
+ [\![p]\!](x,y-1)
+ \biggr\)
+ &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{split}\]</div>
+<p>It should be clear how to get a computable <span class="math notranslate nohighlight">\(f\)</span> with this property, using the universal function.</p>
+<p>Now by <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>, there is some <span class="math notranslate nohighlight">\(p^*\)</span> such that <span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![f(p^*)]\!]\)</span>.
+This function would satisfy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+[\![ p^*]\!](x,y) &amp; = &amp; \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+[\![p]\!](x-1,1)
+ &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ [\![ p]\!]\biggl(x-1,
+ [\![p]\!](x,y-1)
+ \biggr\)
+ &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{split}\]</div>
+<p>In other words, it would satisfy the same recursion equations as <span class="math notranslate nohighlight">\(gcd\)</span>.</p>
+<p>$</p>
 </section>
 </section>
 
