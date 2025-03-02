@@ -823,10 +823,10 @@ So we have a <a class="reference external" href="https://en.wikipedia.org/wiki/M
 </div><p>This means that we can “add” programs (since they are words).  For example, let</p>
 <div class="math notranslate nohighlight">
 \[
-q = \copyprog_{1,2,3} + \moveprog_{2,1}
+q =\mbox{copy}_{1,2,3} + \mbox{move}_{2,1}
 \]</div>
 <p>This program <span class="math notranslate nohighlight">\(q\)</span> would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that registers 2 and 3 were empty to begin with, running <span class="math notranslate nohighlight">\(q\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in register <span class="math notranslate nohighlight">\(1\)</span> would give us <span class="math notranslate nohighlight">\(x + x\)</span> in register 1 at the end.</p>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-7">
+<div class="exercise admonition" id="pre-diag">
 
 <p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
 <section id="exercise-content">
@@ -838,14 +838,14 @@ q = \copyprog_{1,2,3} + \moveprog_{2,1}
 [\![[\![\mbox{write}]\!](x)]\!](y) = x + y \quad \mbox{ or } \quad [\![[\![\mbox{write}]\!](x)]\!](y) = y + x
 \]</div>
 <ol class="arabic simple" start="2">
-<li><p>Now let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">copy_1_3_4</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>. Find an equation satisfied by <span class="math notranslate nohighlight">\(p\)</span>. That is, fill in the blank</p></li>
+<li><p>Now let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>. Find an equation satisfied by <span class="math notranslate nohighlight">\(p\)</span>. That is, fill in the blank</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
 [\![ p]\!](x) = \underline{\qquad\qquad\qquad}
 \]</div>
 <ol class="arabic simple" start="3">
-<li><p>Now fill in another blank, where <span class="math notranslate nohighlight">\(p\)</span> again is <code class="docutils literal notranslate"><span class="pre">copy_1_3_4</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>:</p></li>
+<li><p>Now fill in another blank, where <span class="math notranslate nohighlight">\(p\)</span> again is <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[

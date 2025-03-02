@@ -500,14 +500,14 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="diag">
 <h1>Diag<a class="headerlink" href="#diag" title="Link to this heading">#</a></h1>
-<p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span></p>
-<p>Running that last program on all empty registers gives the same thing as running x on itself:
+<p>We begin with a program which we’ll call <code class="docutils literal notranslate"><span class="pre">diag</span></code>. When <code class="docutils literal notranslate"><span class="pre">diag</span></code> is run with a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the result is <span class="math notranslate nohighlight">\([\![ {\tt write} ]\!](x) + x\)</span>.   Then, running that last program on all empty registers gives the same thing as running x on itself:
 <span class="math notranslate nohighlight">\([\![x]\!](x)\)</span>.</p>
 <p>Thus,</p>
 <div class="math notranslate nohighlight">
 \[
 [\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\!](x)
 \]</div>
+<p>We have already seen such a program: <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>  See <a class="reference internal" href="../introOneSharp/tidy.html#back-transfer"><span class="std std-numref">Exercise 43</span></a>.</p>
 <p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
 <P>
 <CENTER>
