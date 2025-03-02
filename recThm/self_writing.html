@@ -507,8 +507,8 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 \[
 [\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\!](x)
 \]</div>
-<p>We have already seen such a program: <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>  See <a class="reference internal" href="../introOneSharp/tidy.html#back-transfer"><span class="std std-numref">Exercise 43</span></a>.</p>
-<p>Here is the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>:</p>
+<p>We have already seen such a program: <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>  See <a class="reference internal" href="../introOneSharp/move_copy_write.html#pre-diag"><span class="std std-numref">Exercise 26</span></a>.   However, we want a slightly different program, only because it is a little shorter.</p>
+<p>We take <code class="docutils literal notranslate"><span class="pre">diag</span></code> to be the program shown below.</p>
 <P>
 <CENTER>
 <TABLE CELLPADDING="3">
@@ -547,13 +547,15 @@ the top)</TD> </TR>
              <TD> move<sub>2,1</sub></TD><td> from Lesson 1 </td></TR>
 </TABLE>        
 </CENTER>
-<p><p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is 1#). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
-<p>It might help to say things a bit differently on this. So here is an informal description of what diag is doing:
-Move x from R1 into R2, and also put <code class="docutils literal notranslate"><span class="pre">[[write]](x)</span></code> into R3.
-Then move R3 back to the now-empty R1.
-Finally, move R2 onto the end of R1.
-The official version of <code class="docutils literal notranslate"><span class="pre">diag</span></code> is a very slightly shortened version of this.</p>
-<p>Running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on a word <code class="docutils literal notranslate"><span class="pre">x</span></code> and then running that on the empty register yields the same thing as running <code class="docutils literal notranslate"><span class="pre">x</span></code> on iself.</p>
+<p><p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1#</span></code>). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Important</p>
+<p>We often will use the following fact:
+$<span class="math notranslate nohighlight">\(
+[\![ [\![ {\tt diag} ]\!](x)]\!](y) \simeq [\![ x ]\!](y+x).
+\)</span>$</p>
+<p>Also our program <span class="math notranslate nohighlight">\({\tt diag}\)</span> uses only R1, R2, and R3.</p>
+</div>
 <img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="self">
 <h1>Self<a class="headerlink" href="#self" title="Link to this heading">#</a></h1>
