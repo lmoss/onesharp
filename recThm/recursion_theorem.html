@@ -463,6 +463,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof">Kleene’s proof</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recusion-theorem">Another form of the Recusion Theorem</a></li>
 </ul>
             </nav>
         </div>
@@ -481,7 +482,10 @@ document.write(`
 <div class="proof theorem admonition" id="recursion_theorem">
 <p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,
+$<span class="math notranslate nohighlight">\(
+[\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r)
+\)</span>$</p>
 </section>
 </div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!](\hat{q})\)</span>.
 So we first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
@@ -527,6 +531,15 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
 \]</div>
 <p>And then a routine calculation shows that this works: taking <span class="math notranslate nohighlight">\(q^* = [\![s^1_1]\!] (p',p')\)</span> gives a program with the desired equation <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
 </section>
+<section id="another-form-of-the-recusion-theorem">
+<h2>Another form of the Recusion Theorem<a class="headerlink" href="#another-form-of-the-recusion-theorem" title="Link to this heading">#</a></h2>
+<div class="proof theorem admonition" id="recursion_theorem_2">
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>For every total computable <span class="math notranslate nohighlight">\(f: Words \to Words\)</span> there is a program <span class="math notranslate nohighlight">\(p\)</span> so that
+<span class="math notranslate nohighlight">\([\![p]\!]  = [\![f(p)]\!]\)</span>.</p>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -594,6 +607,7 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof">Kleene’s proof</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recusion-theorem">Another form of the Recusion Theorem</a></li>
 </ul>
   </nav></div>
 
