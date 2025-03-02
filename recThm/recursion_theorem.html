@@ -464,6 +464,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof">Kleene’s proof</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recusion-theorem">Another form of the Recusion Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computability-of-functions-defined-by-recursion">Computability of functions defined by recursion</a></li>
 </ul>
             </nav>
         </div>
@@ -478,7 +479,7 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/recThm/recursion_theorem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="the-recursion-theorem">
 <h1>The Recursion Theorem<a class="headerlink" href="#the-recursion-theorem" title="Link to this heading">#</a></h1>
-<p>This section generalizes what we just saw on self-writing programs to prove one of the cornerstone results of computability theory, Kleene’s Second Recursion Theorem.</p>
+<p>This section generalizes <a class="reference internal" href="self_writing.html"><span class="std std-doc">the existence of self-writing programs</span></a> to prove one of the cornerstone results of computability theory, Kleene’s Second Recursion Theorem.</p>
 <div class="proof theorem admonition" id="recursion_theorem">
 <p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -537,19 +538,91 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
 <div class="proof theorem admonition" id="recursion_theorem_2">
 <p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>For every total computable <span class="math notranslate nohighlight">\(f: Words \to Words\)</span> there is a program <span class="math notranslate nohighlight">\(p\)</span> so that
-<span class="math notranslate nohighlight">\([\![p]\!]  = [\![f(p)]\!]\)</span>.</p>
+<p>For every computable <span class="math notranslate nohighlight">\(f: Words \to Words\)</span> there is a program <span class="math notranslate nohighlight">\(p^*\)</span> so that
+<span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![f(p^*)]\!]\)</span>.</p>
 </section>
 </div><p>Here is the proof.   Let <span class="math notranslate nohighlight">\(y\)</span> be a program which computes <span class="math notranslate nohighlight">\(f\)</span>. That is, for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 f(x) = [\![y]\!](x)
 \]</div>
-<p>So we need some <span class="math notranslate nohighlight">\(p\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<p>Let <span class="math notranslate nohighlight">\(z\)</span> be a program so that for all <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(\semantics{z}(p,r) = [\![ [\! [y]\!](p) ]\!] (r)\)</span>.
+For example,  <span class="math notranslate nohighlight">\(z\)</span> could be</p>
 <div class="math notranslate nohighlight">
 \[
-[\![p]\!](r)  = [\! [\![y]\!](p) ]\!] (r)
+move(2,k) + y + move(k,2) + u_1
 \]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is large enough so that <span class="math notranslate nohighlight">\(y\)</span> does not mention Rk, and <span class="math notranslate nohighlight">\(u_1\)</span> is as in
+<a class="reference external" href="https://lmoss.github.io/onesharp/universal/universal.html#universal-programs-of-more-than-one-argument">our work on the universal program</a>.</p>
+<p>By <a class="reference internal" href="#recursion_theorem">Theorem 9</a>, we have some <span class="math notranslate nohighlight">\(p^*\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+[\![p^*]\!](r)  = [\![ [\! [z]\!](p^*) ]\!] (r) = [\![ [\! [y]\!](p^*) ]\!] (r) =   [\![f(p^*)]\!](r).
+\]</div>
+<p>This completes the proof.</p>
+<p>Here is a corollary which illustrates the power of this form of the Recursion Theorem.</p>
+<div class="proof corollary admonition" id="corollary-2">
+<p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>There is a word <span class="math notranslate nohighlight">\(p^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\([\![p^*]\!](r) = r + p^*\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Take <span class="math notranslate nohighlight">\(f\)</span> to be <span class="math notranslate nohighlight">\([\![write]\!]\)</span>.  Then <span class="math notranslate nohighlight">\(f\)</span> is total.  By <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>, let <span class="math notranslate nohighlight">\(p^*\)</span> be such that
+<span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![ [\![write]\!](p^*) ]\!]\)</span>.
+Then for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![p^*]\!](r)  =  [\![ [\![write]\!](p^*) ]\!] (r) = r + p^*
+\]</div>
+</div>
+<div class="exercise admonition" id="recThm/recursion_theorem-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
+<section id="exercise-content">
+<p>Show that <a class="reference internal" href="#recursion_theorem">Theorem 9</a> follows from <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>.</p>
+</section>
+</div>
+</section>
+<section id="computability-of-functions-defined-by-recursion">
+<h2>Computability of functions defined by recursion<a class="headerlink" href="#computability-of-functions-defined-by-recursion" title="Link to this heading">#</a></h2>
+<p>One important application of the Recursion Theorem is that functions may be defined by recursion in ways that go beyond primitive recursion.  Here is what we have in mind.   Consider the following three function definitions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+gcd(x,y) &amp; = &amp; 
+\left\{
+\begin{array}{ll}
+0 &amp; \mbox{if $x|y$} \\
+\gcd(y, rem(x,y))) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\\ 
+\\
+A(x,y) &amp; = &amp; \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\\
+\\
+collatz(n) &amp; = &amp;  \left\{ \begin{array}{ll} 
+1 &amp;\mbox{if $n \leq 1$} \\
+1 + collatz(n/2) &amp; \mbox{if $n\geq 2$ is even } \\
+ 1 + collatz(3n) &amp; \mbox{if $n\geq 3$ is odd} 
+ \end{array}\right.
+\end{array}
+\end{split}\]</div>
+<p>In the first of these, <span class="math notranslate nohighlight">\(rem(x,y)\)</span> is the remainder when <span class="math notranslate nohighlight">\(y\)</span> is divided by <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>In all three function definitions, the right-hand side includes calls to the same function which is being defined, but those calls are more complicated than what is allowed by primitive recursion.  So from the form in which we have written them, it is not clear from first principles that any of these are computable in the first place.</p>
+<p>In the case of <span class="math notranslate nohighlight">\(gcd\)</span>, we can reformulate the function to see that it is primitive recursive:</p>
+<div class="math notranslate nohighlight">
+\[
+gcd(x,y) = \mbox{the largest $z \leq x,y$ such that $z | x$ and $z| y$}
+\]</div>
+<p>Indeed, this is the usual <em>definition</em> of the function <span class="math notranslate nohighlight">\(gcd\)</span>, whereas the recursive expression comes later.  But suppose that we started with the recursion.  Better yet, suppose that we modified it to change <span class="math notranslate nohighlight">\(rem\)</span> to some other two-place computable function, say <span class="math notranslate nohighlight">\(a(x,y)\)</span>.  Then it would not be so clear that the modified funciton were computable.</p>
+<p>Turning to <span class="math notranslate nohighlight">\(a(x,y)\)</span> itself, we have argued that it is not primitive recursive in the first place.  Now is the time to check that it is computable and also total.  Finally, <span class="math notranslate nohighlight">\(collatz(n)\)</span> is computable, as we shall see shortly.  Put more accurately, there is a computable partial function that satisfies the recursion equation for <span class="math notranslate nohighlight">\(collatz\)</span> that we see above.   The issue is that we do not know whether the computable partial function that we are going to see is total or not.</p>
 </section>
 </section>
 
@@ -619,6 +692,7 @@ f(x) = [\![y]\!](x)
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof">Kleene’s proof</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recusion-theorem">Another form of the Recusion Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computability-of-functions-defined-by-recursion">Computability of functions defined by recursion</a></li>
 </ul>
   </nav></div>
 
