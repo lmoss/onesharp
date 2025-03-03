@@ -259,6 +259,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The halting problem</a></li>
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="busyBeaver.html">The busy beaver problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tiling.html">Tiling</a></li>
 
@@ -464,10 +465,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
 </ul>
 
             </nav>
@@ -539,43 +538,36 @@ Then</p>
 <p class="admonition-title">Tip</p>
 <p>Look up <a class="reference external" href="http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html">this setting of the proof</a> by Geoffrey Pullum in the spirit of Dr. Seuss.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">tip</span><span class="p">}</span>
-<span class="n">If</span> <span class="n">you</span> <span class="n">have</span> <span class="n">read</span> <span class="n">the</span> <span class="p">(</span><span class="n">section</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Recursion</span> <span class="n">Theorem</span><span class="p">)[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">lmoss</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">onesharp</span><span class="o">/</span><span class="n">recThm</span><span class="o">/</span><span class="n">recursion_theorem</span><span class="o">.</span><span class="n">html</span><span class="p">],</span> <span class="n">you</span> <span class="n">might</span> <span class="n">enjoy</span> <span class="n">a</span> <span class="n">shorter</span> <span class="n">proof</span> <span class="n">of</span> <span class="n">this</span> <span class="n">result</span><span class="o">.</span>
-
-<span class="n">Assume</span> <span class="n">towards</span> <span class="n">a</span> <span class="n">contradiction</span> <span class="n">that</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">program</span> <span class="err">$</span><span class="n">p</span><span class="err">$</span> <span class="k">as</span> <span class="n">above</span><span class="o">.</span>  <span class="n">Then</span> <span class="n">we</span> <span class="n">easily</span> <span class="n">modify</span> <span class="n">it</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">program</span> <span class="err">$</span><span class="n">q</span><span class="err">$</span> <span class="n">so</span> <span class="n">that</span>
-
-<span class="err">$$</span>
-\<span class="n">begin</span><span class="p">{</span><span class="n">array</span><span class="p">}{</span><span class="n">lcl</span><span class="p">}</span>
-<span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">q</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">=</span> <span class="o">&amp;</span> \<span class="n">left</span>\<span class="p">{</span>
-\<span class="n">begin</span><span class="p">{</span><span class="n">array</span><span class="p">}{</span><span class="n">ll</span><span class="p">}</span>
-<span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;</span> \<span class="n">mbox</span><span class="p">{</span><span class="k">if</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">dar</span><span class="err">$</span><span class="p">}</span>\\
-\<span class="n">downarrow</span><span class="o">&amp;</span>  \<span class="n">mbox</span><span class="p">{</span><span class="k">if</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">uparrow</span><span class="err">$</span><span class="p">}</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">array</span><span class="p">}</span>
-\<span class="n">right</span><span class="o">.</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">array</span><span class="p">}</span>
-<span class="err">$$</span>
-
-<span class="n">By</span> <span class="p">{</span><span class="n">prf</span><span class="p">:</span><span class="n">ref</span><span class="p">}</span><span class="err">`</span><span class="n">recursion_theorem</span><span class="err">`</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">some</span> <span class="err">$</span><span class="n">x</span><span class="o">^*</span><span class="err">$</span> <span class="n">so</span> <span class="n">that</span> <span class="k">for</span> <span class="nb">all</span> <span class="err">$</span><span class="n">y</span><span class="err">$</span><span class="p">,</span>  
-
-<span class="err">$$</span>
-\<span class="n">begin</span><span class="p">{</span><span class="n">array</span><span class="p">}{</span><span class="n">lcl</span><span class="p">}</span>
-<span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">=</span> <span class="o">&amp;</span> \<span class="n">left</span>\<span class="p">{</span>
-\<span class="n">begin</span><span class="p">{</span><span class="n">array</span><span class="p">}{</span><span class="n">ll</span><span class="p">}</span>
-<span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;</span> \<span class="n">mbox</span><span class="p">{</span><span class="k">if</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">dar</span><span class="err">$</span><span class="p">}</span>\\
-\<span class="n">downarrow</span><span class="o">&amp;</span>  \<span class="n">mbox</span><span class="p">{</span><span class="k">if</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">uparrow</span><span class="err">$</span><span class="p">}</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">array</span><span class="p">}</span>
-\<span class="n">right</span><span class="o">.</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">array</span><span class="p">}</span>
-<span class="err">$$</span>
-
-<span class="n">Now</span> <span class="n">we</span> <span class="n">cannot</span> <span class="n">have</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">uparrow</span><span class="err">$</span><span class="p">,</span> <span class="n">since</span> <span class="k">if</span> <span class="n">we</span> <span class="n">did</span><span class="p">,</span> <span class="n">we</span> <span class="n">would</span> <span class="n">also</span> <span class="n">have</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">downarrow</span><span class="err">$</span> <span class="n">by</span> <span class="n">the</span> <span class="n">second</span> <span class="n">line</span> <span class="n">above</span><span class="o">.</span>  <span class="n">So</span><span class="p">,</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">downarrow</span><span class="err">$</span><span class="o">.</span>  <span class="n">But</span> <span class="n">then</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span>\<span class="n">simeq</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">x</span><span class="o">^*</span><span class="p">]</span>\<span class="err">!</span><span class="p">](</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="err">$</span><span class="p">,</span> <span class="ow">and</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">impossible</span><span class="o">.</span>
-
-<span class="err">```</span>
-</pre></div>
-</div>
-</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have read the
+<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/recursion_theorem.html">section on the Recursion Theorem</a>, you might enjoy a shorter proof of this result.</p>
+<p>Assume towards a contradiction that there is a program <span class="math notranslate nohighlight">\(p\)</span> as above.  Then we easily modify it to get a program <span class="math notranslate nohighlight">\(q\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+[\![q]\!](x,y) &amp; = &amp; \left\{
+\begin{array}{ll}
+[\![x]\!](y) + 1 &amp; \mbox{if $[\![x]\!](y)\dar$}\\
+\downarrow&amp;  \mbox{if $[\![x]\!](y)\uparrow$}
+\end{array}
+\right.
+\end{array}
+\end{split}\]</div>
+<p>By <a class="reference internal" href="../recThm/recursion_theorem.html#recursion_theorem">Theorem 9</a>, there is some <span class="math notranslate nohighlight">\(x^*\)</span> so that for all <span class="math notranslate nohighlight">\(y\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+[\![x^*]\!](y) &amp; = &amp; \left\{
+\begin{array}{ll}
+[\![x^*]\!](y) + 1 &amp; \mbox{if $[\![x^*]\!](y)\!\!\downarrow$}\\
+\downarrow&amp;  \mbox{if $[\![x^*]\!](y)\!\!\uparrow$}
+\end{array}
+\right.
+\end{array}
+\end{split}\]</div>
+<p>Now we cannot have <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\uparrow\)</span>, since if we did, we would also have <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\downarrow\)</span> by the second line above.  So, <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\downarrow\)</span>.  But then by the first line,
+<span class="math notranslate nohighlight">\([\![x^*]\!](y)\simeq [\![x^*]\!](y) + 1\)</span>, and this is impossible.</p>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="corollaries">
@@ -626,16 +618,19 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 <p>Find a finite set <span class="math notranslate nohighlight">\(F\)</span> such that <span class="math notranslate nohighlight">\(H_F\)</span> is undecidable.</p>
 </section>
 </div>
-<section id="rice-s-theorem">
-<h2>Rice’s Theorem<a class="headerlink" href="#rice-s-theorem" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rice-s-theorem">
+<h1>Rice’s Theorem<a class="headerlink" href="#rice-s-theorem" title="Link to this heading">#</a></h1>
 <div class="proof theorem admonition" id="Rices-theorem">
 <p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(S\)</span> be any set of programs closed under strong equivalence: if <span class="math notranslate nohighlight">\(x\in S\)</span> and <span class="math notranslate nohighlight">\(x\)</span> is strongly equivalent to <span class="math notranslate nohighlight">\(y\)</span>, then <span class="math notranslate nohighlight">\(y\in S\)</span>.
-If <span class="math notranslate nohighlight">\(S\)</span> is decidable, then <span class="math notranslate nohighlight">\(S\)</span> is either the empty set or the set of all programs.</p>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be any set of programs, and assume that <span class="math notranslate nohighlight">\(S\)</span> is
+closed under <em>equivalence of words as one-place functions</em>: if <span class="math notranslate nohighlight">\(x\in S\)</span>, and if
+<span class="math notranslate nohighlight">\([\![x]\!]\)</span> and <span class="math notranslate nohighlight">\([\![y]\!]\)</span> are the same partial function,
+then <span class="math notranslate nohighlight">\(y\in S\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(S\)</span> is decidable, then <span class="math notranslate nohighlight">\(S\)</span> is either the empty set or the set of all programs.</p>
 </section>
 </div></section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -703,10 +698,8 @@ If <span class="math notranslate nohighlight">\(S\)</span> is decidable, then <s
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
 </ul>
 
   </nav></div>
