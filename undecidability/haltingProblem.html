@@ -630,7 +630,22 @@ closed under <em>equivalence of words as one-place functions</em>: if <span clas
 then <span class="math notranslate nohighlight">\(y\in S\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(S\)</span> is decidable, then <span class="math notranslate nohighlight">\(S\)</span> is either the empty set or the set of all programs.</p>
 </section>
-</div></section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. If not, we can fix programs <span class="math notranslate nohighlight">\(p\in S\)</span> and <span class="math notranslate nohighlight">\(q\notin S\)</span>, and we also can fix a program <span class="math notranslate nohighlight">\(s\)</span> which computes the characteristic function of <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Now let
+$<span class="math notranslate nohighlight">\(
+\begin{array}{lcl}
+f(x) &amp; = &amp; \left{
+\begin{array}{ll} [\![q]\!](x) &amp;\mbox{if  \)</span> <a class="reference internal" href="#x"><span class="xref myst">![s]!</span></a>\simeq 1<span class="math notranslate nohighlight">\(}
+\\
+ [\![p]\!](x) &amp;\mbox{if  \)</span> <a class="reference internal" href="#x"><span class="xref myst">![s]!</span></a>\simeq #<span class="math notranslate nohighlight">\(}
+\end{array}
+\right.
+\end{array}
+\)</span>$</p>
+<p>Let <span class="math notranslate nohighlight">\(x^*\)</span> be such that <span class="math notranslate nohighlight">\([\![x^*]\!] = [\![f(x^*)]\!]\)</span>.</p>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
