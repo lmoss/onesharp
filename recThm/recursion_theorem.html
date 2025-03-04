@@ -522,16 +522,16 @@ diag + move(1,2) + [\![write]\!](move(1,4)) +  move(2,1) + [\![write]\!](move(4,
 <p>Then a routine calculation shows that <a class="reference internal" href="#equation-eq-recursion-theorem">(1)</a> above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions only the the first three registers.)  This last equation was our goal, and so we are done.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example: quines derived from the Recursion Theorem</p>
-<p>Take <span class="math notranslate nohighlight">\(p\)</span> to be a program computing the first projection on two variables, so <span class="math notranslate nohighlight">\([\![ p ]\!](q,r) \simeq q\)</span>. for all <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(r\)</span>.  By the Recursion Theorem, there is some <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
+<p>Take <span class="math notranslate nohighlight">\(p\)</span> to be a program computing the first projection on two variables, so <span class="math notranslate nohighlight">\([\![ p ]\!](q,r) \simeq q\)</span> for all <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(r\)</span>.  By the Recursion Theorem, there is some <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-[\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r) \simeq q^*
+[\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r) \simeq q^*.
 \]</div>
 <p>In particular, <span class="math notranslate nohighlight">\([\![ q^* ]\!](\ )\simeq q^*\)</span>.</p>
 </div>
 <section id="kleene-s-proof">
 <h2>Kleene’s proof<a class="headerlink" href="#kleene-s-proof" title="Link to this heading">#</a></h2>
-<p>The proof above begins with the idea that the program <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!] (\hat{q})\)</span>.   The original proof, due to Kleene, goes a little differently.   It starts with the idea that <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form</p>
+<p>The proof of <a class="reference internal" href="#recursion_theorem">Theorem 9</a> above begins with the idea that the program <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!] (\hat{q})\)</span>.   The original proof, due to Kleene, goes a little differently.   It starts with the idea that <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form</p>
 <div class="math notranslate nohighlight">
 \[
 [\![s^1_1]\!] (p',p')
