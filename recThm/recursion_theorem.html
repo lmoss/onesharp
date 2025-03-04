@@ -686,7 +686,39 @@ This function would satisfy</p>
 \end{array}
 \right.
 \end{split}\]</div>
-<p>In other words, it would satisfy the same recursion equations as <span class="math notranslate nohighlight">\(gcd\)</span>.</p>
+<p>In other words, it would satisfy the same recursion equations as <span class="math notranslate nohighlight">\(gcd\)</span>.  Now it is a separate mathematical fact that the function <span class="math notranslate nohighlight">\(gcd\)</span> is the unique function that satisfies the recursion equations above.   Then the uniqueness implies that <span class="math notranslate nohighlight">\(gcd = [\![p^*]\!]\)</span>.   And since we already know that <span class="math notranslate nohighlight">\(gcd\)</span> is computable (even primitive recursive), the treatment using the Recursion Theorem does not add much.</p>
+<p>(On the other hand, it <em>does</em> add a complexity fact.  Indeed, the Euclidean algorithm is known to be the best,  in some precise (but technical) sense.)</p>
+<p>Now we turn to <span class="math notranslate nohighlight">\(A(x,y)\)</span>.  In this case, what we have seen with the Recursion Theorem implies that there is a computable function that satisfies the recursion equations of <span class="math notranslate nohighlight">\(A(x,y)\)</span>.   It does not imply that there is a unique such function.  However, a separate result would indeed show that.    Here is a way to state that result.   Suppose we have two functions <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>,
+and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+A(x,y) &amp; = &amp; \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{array}
+\qquad\qquad
+\begin{array}{lcl}
+B(x,y) &amp; = &amp; \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ B(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ B(x-1,B(x,y-1)) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{array}
+\end{split}\]</div>
+<p>We would prove by induction on <span class="math notranslate nohighlight">\(x\)</span> that</p>
+<div class="math notranslate nohighlight">
+\[
+\mbox{for all $y$, $A(x,y)=B(x,y)$}
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(x = 0\)</span>, we have <span class="math notranslate nohighlight">\(A(0,y) = y+1 = B(0,y)\)</span>.</p>
+<p>Assuming our result for <span class="math notranslate nohighlight">\(x\)</span>, we show our goal statement by induction on <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </section>
 </section>
 
