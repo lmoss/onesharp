@@ -731,7 +731,13 @@ A(x+1,0 ) = A(x,1) = B(x,1) = B(x+1,0)
 A(x+1,y+1) = A(x,A(x+1,y)) = B(x,A(x+1,y)) = B(x,B(x+1,y)) = B(x+1,y+1)
 \]</div>
 <p>Finally, we come to the Collatz function.   The Recursion Theorem implies that there is a computable funcction satisfying the recursion equations for <span class="math notranslate nohighlight">\(collatz\)</span>.   It does not tell us that this function is total.  Indeed, the totality of this function is equivalent to the Collatz conjecture, and this is an open question.    We also do not know whether there is just one partial function that satisfies the recursion equations, but this, too, is equivalent to the Collatz conjecture.</p>
-<p>It is also easy to think of examples where there are more than one partial function satisfying a set of recursion equations.</p>
+<p>It is also easy to think of examples where there are more than one partial function satisfying a set of recursion equations.
+One is</p>
+<div class="math notranslate nohighlight">
+\[
+Bad(x)  \simeq Bad(x+1)
+\]</div>
+<p>Here all of the constant functions are solutions (and vice-versa).  The most natural solution would seem to be the empty function, and surely this is what our way of proving the Recursion Theorem would give.</p>
 </section>
 </section>
 
