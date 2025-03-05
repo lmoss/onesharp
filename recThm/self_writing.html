@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Self-replicating programs &#8212; Invitation to Computability</title>
+    <title>Self-writing programs &#8212; Invitation to Computability</title>
   
   
   
@@ -248,7 +248,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-replicating programs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-writing programs</a></li>
 
 
 
@@ -452,7 +452,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Self-replicating programs</h1>
+    <h1>Self-writing programs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,7 +462,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-replicating programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-writing programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
@@ -482,8 +482,8 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/recThm/self_writing.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="self-replicating-programs">
-<h1>Self-replicating programs<a class="headerlink" href="#self-replicating-programs" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="self-writing-programs">
+<h1>Self-writing programs<a class="headerlink" href="#self-writing-programs" title="Link to this heading">#</a></h1>
 <p>A self-writing replicating program is one which outputs itself, starting with all registers empty.
 At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter to spit out the program that is inside it. And anyways, it would seem that typically, a program is usually longer than its output. So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
 <p>In order to get a program which writes itself, one must use some sort of trick or clever idea. Our goal is to explain one such clever idea, and then to see other applications of it as we go. Before you understand it, the idea will seem to be a trick, or even a fluke: we have a program, and it just so happens to output itself. But as we come to understand it better, the trick becomes tamed into a general method.</p>
@@ -816,7 +816,7 @@ R1.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-replicating programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-writing programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
