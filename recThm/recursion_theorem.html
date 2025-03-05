@@ -727,9 +727,14 @@ A(x+1,0 ) = A(x,1) = B(x,1) = B(x+1,0)
 \]</div>
 <p>And assuming <span class="math notranslate nohighlight">\(A(x+1,y) = B(x+1, y)\)</span>, we have</p>
 <div class="math notranslate nohighlight">
-\[
-A(x+1,y+1) = A(x,A(x+1,y)) = B(x,A(x+1,y)) = B(x,B(x+1,y)) = B(x+1,y+1)
-\]</div>
+\[\begin{split}
+\begin{array}{lcll}
+A(x+1,y+1) &amp; = &amp; A(x,A(x+1,y)) &amp; \mbox{by def of $A$} \\
+&amp; = &amp; B(x,A(x+1,y))&amp; \mbox{by induction hypothesis on $x$} \\
+&amp; = &amp; B(x,B(x+1,y)) &amp; \mbox{by induction hypothesis on $y$} \\
+&amp; = &amp; B(x+1,y+1)&amp; \mbox{by def of $B$} \\
+\end{array}
+\end{split}\]</div>
 <p>Finally, we come to the Collatz function.   The Recursion Theorem implies that there is a computable funcction satisfying the recursion equations for <span class="math notranslate nohighlight">\(collatz\)</span>.   It does not tell us that this function is total.  Indeed, the totality of this function is equivalent to the Collatz conjecture, and this is an open question.    We also do not know whether there is just one partial function that satisfies the recursion equations, but this, too, is equivalent to the Collatz conjecture.</p>
 <p>It is also easy to think of examples where there are more than one partial function satisfying a set of recursion equations.
 One is</p>
