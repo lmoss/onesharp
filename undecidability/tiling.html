@@ -265,7 +265,6 @@
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="church.html">Logic</a></li>
 </ul>
@@ -467,8 +466,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-behind-the-construction">Ideas behind the construction</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reverse-inequality">The reverse inequality</a></li>
 </ul>
@@ -606,9 +607,9 @@ not the <code class="docutils literal notranslate"><span class="pre">1#</span></
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-24.png?raw=1" width="100%" height="100%">
 </section>
 </div><p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="some-observations">
-<h1>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h1>
+<section id="some-observations">
+<h2>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h2>
+<p>We continue with some observations which are used in verifying that our construction works (see <a class="reference internal" href="#tiling_works">Proposition 6</a>).</p>
 <p>The only tile with a blank on the left is the all blank tile.
 Thus, if one of the tiles in a given row has
 a blank on the right,
@@ -713,9 +714,10 @@ the word encoded in row 4743, with  the first symbol (a <code class="docutils li
 So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
 at least in the case when the register starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
 <h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
-<div class="proof proposition admonition" id="proposition-4">
+<div class="proof proposition admonition" id="tiling_works">
 <p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
@@ -842,8 +844,10 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-behind-the-construction">Ideas behind the construction</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-mathcal-t-p">The definition of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reverse-inequality">The reverse inequality</a></li>
 </ul>
