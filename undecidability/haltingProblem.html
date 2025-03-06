@@ -507,7 +507,7 @@ Modifying <span class="math notranslate nohighlight">\(p\)</span>, we get a prog
 [\![q]\!](a) &amp; = &amp; \left\{
 \begin{array}{ll}
 \uparrow &amp; \mbox{if $[\![a]\!](a)\dar$}\\
-\downarrow&amp;  \mbox{if $[\![a]\!](a)\uparrow$}
+\hash &amp;  \mbox{if $[\![a]\!](a)\uparrow$}
 \end{array}
 \right.
 \end{array}
@@ -560,7 +560,7 @@ Then</p>
 [\![x^*]\!](y) &amp; = &amp; \left\{
 \begin{array}{ll}
 [\![x^*]\!](y) + 1 &amp; \mbox{if $[\![x^*]\!](y)\!\!\downarrow$}\\
-{\tt 1} w&amp;  \mbox{if $[\![x^*]\!](y)\!\!\uparrow$}
+{\tt 1} &amp;  \mbox{if $[\![x^*]\!](y)\!\!\uparrow$}
 \end{array}
 \right.
 \end{array}
@@ -649,8 +649,11 @@ f(x) &amp; = &amp; \left\{
 So since <span class="math notranslate nohighlight">\(q\notin S\)</span>, we have <span class="math notranslate nohighlight">\(f(x^*)\notin S\)</span>.  This contradicts <span class="math notranslate nohighlight">\(S\)</span> being closed.   So we have a contradiction
 in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we have a similar contradiction in case <span class="math notranslate nohighlight">\(x^*\notin S\)</span>.</p>
 </div>
-<p>Rice’s Theorem implies that the sets {\sf Fin}, <span class="math notranslate nohighlight">\(\mbox{\sf Inf}\)</span>, and <span class="math notranslate nohighlight">\(\mbox{sf Tot}\)</span> are all undecidable.</p>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-6">
+<div class="proof corollary admonition" id="corollary-6">
+<p class="admonition-title"><span class="caption-number">Corollary 6 </span> (The following sets are undecidable: <span class="math notranslate nohighlight">\(Fin\)</span>, <span class="math notranslate nohighlight">\(Inf\)</span>, and <span class="math notranslate nohighlight">\(Tot\)</span>.)</p>
+<section class="corollary-content" id="proof-content">
+</section>
+</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 66 </span></p>
 <section id="exercise-content">
@@ -658,7 +661,7 @@ in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we
 <span class="math notranslate nohighlight">\(S\)</span> is the set of programs <span class="math notranslate nohighlight">\(p\)</span> which, when run on all empty registers at some point write <code class="docutils literal notranslate"><span class="pre">1</span></code> into R2.</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-7">
+<div class="exercise admonition" id="undecidability/haltingProblem-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 67 </span></p>
 <section id="exercise-content">
