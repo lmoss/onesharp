@@ -548,7 +548,7 @@ Then</p>
 [\![q]\!](x,y) &amp; = &amp; \left\{
 \begin{array}{ll}
 [\![x]\!](y) + 1 &amp; \mbox{if $[\![x]\!](y)\dar$}\\
-\downarrow&amp;  \mbox{if $[\![x]\!](y)\uparrow$}
+{\tt 1} &amp;  \mbox{if $[\![x]\!](y)\uparrow$}
 \end{array}
 \right.
 \end{array}
@@ -560,7 +560,7 @@ Then</p>
 [\![x^*]\!](y) &amp; = &amp; \left\{
 \begin{array}{ll}
 [\![x^*]\!](y) + 1 &amp; \mbox{if $[\![x^*]\!](y)\!\!\downarrow$}\\
-\downarrow&amp;  \mbox{if $[\![x^*]\!](y)\!\!\uparrow$}
+{\tt 1} w&amp;  \mbox{if $[\![x^*]\!](y)\!\!\uparrow$}
 \end{array}
 \right.
 \end{array}
@@ -578,7 +578,7 @@ Let us begin by recalling the sets of that we mentioned earlier:</p>
 \begin{array}{lcl}
 \mbox{Prog} &amp; = &amp; \mbox{the set of programs} \\
 \mbox{Tidy} &amp; = &amp; \mbox{the set of tidy programs} \\
-K_0 &amp; = &amp; \mbox{the programs which halt when run on the all empty registers}\\
+K_0 &amp; = &amp; \mbox{the programs which halt when run on all empty registers}\\
 K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Fin} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is finite} \\   
 \textit{Inf} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is infinite} \\      
@@ -649,7 +649,7 @@ f(x) &amp; = &amp; \left\{
 So since <span class="math notranslate nohighlight">\(q\notin S\)</span>, we have <span class="math notranslate nohighlight">\(f(x^*)\notin S\)</span>.  This contradicts <span class="math notranslate nohighlight">\(S\)</span> being closed.   So we have a contradiction
 in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we have a similar contradiction in case <span class="math notranslate nohighlight">\(x^*\notin S\)</span>.</p>
 </div>
-<p>Rice’s Theorem implies that the sets <span class="math notranslate nohighlight">\(\mbox{\sf Fin}\)</span>, <span class="math notranslate nohighlight">\(\mbox{\sf Inf}\)</span>, and <span class="math notranslate nohighlight">\(\mbox{sf Tot}\)</span> are all undecidable.</p>
+<p>Rice’s Theorem implies that the sets {\sf Fin}, <span class="math notranslate nohighlight">\(\mbox{\sf Inf}\)</span>, and <span class="math notranslate nohighlight">\(\mbox{sf Tot}\)</span> are all undecidable.</p>
 <div class="exercise admonition" id="undecidability/haltingProblem-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 66 </span></p>
