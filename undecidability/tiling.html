@@ -622,6 +622,8 @@ every row has to have all blanks after some finite point.</p>
 <p class="admonition-title">Tip</p>
 <p>It would be good to prove this.</p>
 </div>
+<p>If the copyright symbol <span class="math notranslate nohighlight">\(\copyright\)</span> appears on the east or west edge of a tile, then all tiles in that rown must have
+either <span class="math notranslate nohighlight">\(\copyright\)</span> or blank on their east and west.</p>
 <p>A tile has one of the  line number symbols
 (the number 1, 2, <span class="math notranslate nohighlight">\(\ldots\)</span>, n, n+1)
 on the top
@@ -665,8 +667,16 @@ and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</sp
 In view of the fact that 131 + 8 = 139,
 the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
-<p>Thus, row 68 must be the top row below:
+<p>We claim that row 68 must be the top row below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
+<p>There are a few steps to this verification.<br />
+To see why, note that the last tile on the bottom row has a blank on its north edge.<br />
+So the sixth tile on the top row has to have a blank on its
+south edge. There are three choices for that tile: the all blank tile, and two others wich have either
+hearts or diamonds on the west.  These last two are impossible.   So the sixth tile in our first row
+is all blank.  Thus all tiles to its east in that row are blank.  As for the tiles to the west, we
+show by induction on <span class="math notranslate nohighlight">\(i\leq 6\)</span> that the <span class="math notranslate nohighlight">\((6-i)\)</span>th tile in the top row is the one we show in the picture.
+This conlcudes our claim.</p>
 <p>The word encoded in row 68  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
 This is exactly the same as
 the word encoded in row 67.</p>
