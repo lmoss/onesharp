@@ -463,6 +463,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-behind-the-construction">Ideas behind the construction</a></li>
 </ul>
 </li>
@@ -495,18 +496,18 @@ The colors can be anything, of course.
 A <em>finite, pointed tile set</em>
 <span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>
 is a finite set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of tiles with a fixed <em>distinguished tile</em>
-<span class="math notranslate nohighlight">\(t_0\in\mathcal{T}\)</span>.
-When we talk about tile sets in this section, we always will mean a
-finite,
-pointed tile set.</p>
-<p>Given a finite pointed tile set <span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>, the problem is to determine whether there is a proper tiling of the first quadrant of the plane using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  We must use <span class="math notranslate nohighlight">\(t_0\)</span> on the corner
-and matching edges must have the same color.  This is what we mean by a <em>proper</em> tiling of the first quadrant.</p>
+<span class="math notranslate nohighlight">\(t_0\in\mathcal{T}\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Notation</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets.
+<p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets <span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>.
 Let <span class="math notranslate nohighlight">\(K^{\mathbb{T}}\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
-the
-the first quadrant can be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  Thus, the complement set
+there is a <em>proper tiling</em> of
+the first quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  (<em>Proper</em> here means that <span class="math notranslate nohighlight">\(t_0\)</span> goes in the bottom-left corner,
+and all neighboring edges of tiles have the same color.)</p>
+<p>When we talk about tile sets in this section, we always will mean a
+finite,
+pointed tile set.  And when we talk about a tiling, we always mean a proper tiling.</p>
+<p>The complement set
 <span class="math notranslate nohighlight">\(\overline{K}^{\mathbb{T}}\)</span> is the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
 the
 the first quadrant <em>cannot</em> be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
@@ -518,7 +519,7 @@ That result concerned two sets:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
-A &amp; = &amp; \mbox{the set of register machine programs which are tidy and which only use R1}\\
+A &amp; = &amp; \mbox{the set of tidy register machine programs}\\
 K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
 \end{array}
 \end{split}\]</div>
@@ -550,6 +551,21 @@ p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in {K}^{\mathbb{T}}
 </div></div>
 <p>In words, we are going to define a computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
 such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.</p>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.  The universal function <span class="math notranslate nohighlight">\(u\)</span> from earlier had the property that the following are equivalent:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![u]\!](p)\!\!\downarrow\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ [\![write]\!](p)\!]+ u\!](\ )\!\!\downarrow\)</span>.</p></li>
+</ol>
+<p>Moreover, we can computably replace <span class="math notranslate nohighlight">\( [\![write]\!](p)+ u\)</span> by a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
+<ol class="arabic simple" start="4">
+<li><p><span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span> if and only if <span class="math notranslate nohighlight">\([\![ [\![write]\!](p)\!]+ u\!](\ )\!\!\downarrow\)</span>.</p></li>
+<li><p>The only register mentioned in <span class="math notranslate nohighlight">\(q\)</span> is R1.</p></li>
+<li><p>When we run <span class="math notranslate nohighlight">\(q\)</span> on all empty registers, if at any point R1 becomes empty, then the overall run converges.</p></li>
+</ol>
+</section>
 <section id="ideas-behind-the-construction">
 <h2>Ideas behind the construction<a class="headerlink" href="#ideas-behind-the-construction" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program that only uses R1.   In the case that <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>,
@@ -853,6 +869,7 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tiling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-behind-the-construction">Ideas behind the construction</a></li>
 </ul>
 </li>
