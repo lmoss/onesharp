@@ -564,6 +564,10 @@ such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> c
 <li><p>When we run <span class="math notranslate nohighlight">\(q\)</span> on all empty registers, if at any point R1 becomes empty, then the overall run converges.</p></li>
 </ol>
 <p>The details on <span class="math notranslate nohighlight">\(q\)</span> come from  <a class="reference internal" href="../universal/universal.html#one-more-register-halting">Proposition 4</a>.  We take <span class="math notranslate nohighlight">\(n = 0\)</span>, and the program <span class="math notranslate nohighlight">\(p\)</span> that we use in  <a class="reference internal" href="../universal/universal.html#one-more-register-halting">Proposition 4</a> is <span class="math notranslate nohighlight">\( [\![write]\!](p)+ u\)</span>.   Then points 4 and 5 are stated in  <a class="reference internal" href="../universal/universal.html#one-more-register-halting">Proposition 4</a>.  As for point 6, it is a technical detail which is either satisfied by any program <span class="math notranslate nohighlight">\(q\)</span> as above, or it is easy to arrange.   In more detail, the program <span class="math notranslate nohighlight">\(q\)</span> involves a <span class="math notranslate nohighlight">\(2\times 2\)</span> encoding of a finite collection of registers into R1, and then a simulaton of the universal program <span class="math notranslate nohighlight">\(u\)</span>.  That program <span class="math notranslate nohighlight">\(u\)</span> had the property that at all point in the run, some register or other was non-empty; this was either true, or easily arranged.  Then the simulated program has the same property, except possibly at the very end when it ‘cleaned everything up’.  And for that, point 6 would have to be checked carefully.</p>
+<div class="attention admonition">
+<p class="admonition-title">Assumption</p>
+<p>We are going to replace <span class="math notranslate nohighlight">\(p\)</span> by <span class="math notranslate nohighlight">\(q\)</span>.   That is, we <em>assume</em> from now on that <span class="math notranslate nohighlight">\(p\)</span> has properties 4, 5, and 6 above.</p>
+</div>
 </section>
 <section id="ideas-behind-the-construction">
 <h2>Ideas behind the construction<a class="headerlink" href="#ideas-behind-the-construction" title="Link to this heading">#</a></h2>
@@ -741,6 +745,8 @@ the word encoded in row 4743, with  the first symbol (a <code class="docutils li
 <p>And the instruction to go to is 26 = 24 + 2.
 So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
 at least in the case when the register starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Similar work applies when  the register starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
+<p>Now what happens when the register is empty?   In this case, our overall assumptions</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
@@ -760,6 +766,8 @@ And in this case, the <span class="math notranslate nohighlight">\(n\)</span>th 
 the word encoded in the <span class="math notranslate nohighlight">\(k\)</span>th row is the contents of the register.</p>
 </section>
 </div><p>The proof is by induction on <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><a class="reference internal" href="#tiling_works">Proposition 6</a>
+leads to the proof of the main result in this section, <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">tiling_undecidability</span></code>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
