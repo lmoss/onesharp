@@ -746,7 +746,7 @@ the word encoded in row 4743, with  the first symbol (a <code class="docutils li
 So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
 at least in the case when the register starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>Similar work applies when  the register starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
-<p>Now what happens when the register is empty?   In this case, our overall assumptions</p>
+<p>Now what happens when the register is empty?   In this case, our overall assumptions say that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers is going to converge.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
@@ -755,15 +755,15 @@ at least in the case when the register starts with a <code class="docutils liter
 <p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
-and also the run of <span class="math notranslate nohighlight">\(p\)</span> with nothing in any register.</p>
-<p>For all <span class="math notranslate nohighlight">\(n\geq 0\)</span>, exactly one of the following two things happen.</p>
-<p>(a) The program halts in <span class="math notranslate nohighlight">\(\leq n\)</span> steps,
-and there is no tiling of rows <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>(b)
-The program runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps,
-and there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
-And in this case, the <span class="math notranslate nohighlight">\(n\)</span>th row starts with the line number executed in step <span class="math notranslate nohighlight">\(n+1\)</span>, and
-the word encoded in the <span class="math notranslate nohighlight">\(k\)</span>th row is the contents of the register.</p>
+and also the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers.</p>
+<p>If the run converges, then <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the plane.</p>
+<p>Otherwise, for all <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<ol class="arabic simple">
+<li><p>The run goes on for <span class="math notranslate nohighlight">\(n\)</span> steps.</p></li>
+<li><p>There is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
+The <span class="math notranslate nohighlight">\(n\)</span>th row starts with the line number executed in step <span class="math notranslate nohighlight">\(n+1\)</span>, and
+the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register in that step.</p></li>
+</ol>
 </section>
 </div><p>The proof is by induction on <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><a class="reference internal" href="#tiling_works">Proposition 6</a>
