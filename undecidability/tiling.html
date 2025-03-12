@@ -758,38 +758,23 @@ and also the run of <span class="math notranslate nohighlight">\(p\)</span> on e
 <p>Otherwise, for all <span class="math notranslate nohighlight">\(n\)</span> the following are equivalent:</p>
 <ol class="arabic simple">
 <li><p>The run goes on for at least <span class="math notranslate nohighlight">\(n\)</span> steps without halting.</p></li>
-<li><p>There is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
+<li><p>There is a (unique) tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
 The <span class="math notranslate nohighlight">\(n\)</span>th row starts with an instruction tile bearing <span class="math notranslate nohighlight">\(i(n)\)</span> on the bottom and <span class="math notranslate nohighlight">\(i(n+1)\)</span> on the top,
 and the
 the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps.</p></li>
 </ol>
 </section>
-</div><p>For all <span class="math notranslate nohighlight">\(n\geq 0\)</span>, exactly one of the following two things happen.</p>
-<ol class="arabic simple">
-<li><p>The program halts in <span class="math notranslate nohighlight">\(\leq n\)</span> steps,<br />
-and there is no tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the plane</p></li>
-</ol>
-<p>(starting with <span class="math notranslate nohighlight">\(s = 0\)</span>).</p>
-<p>\</p>
-<p>\item[<span class="math notranslate nohighlight">\(\tri\)</span>]
-The program runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps,</p>
-<p>and there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-We prove this by induction on $n$.  For $n = 0$, both statements are true. The unique tiling of row $0$ is the starting tile followed by all blanks.
-
-All of the work is in verifying the induction step.   So assume the equivalence of 1 and 2 for $n$; we prove it for $n+1$.
-
-
-
-
-For the first part, note that no instruction tile has $M+1$ on the bottom, where $M$ is the number of instructions in $p$.
-
-The proof of the second point is by induction on $n$.
-
-{prf:ref}`tiling_works`
-leads to the proof of the main result in this section, {prf:ref}`tiling_undecidability`.
-</pre></div>
-</div>
+</div><p>We prove this by induction on <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n = 0\)</span>, both statements are true. The unique tiling of row <span class="math notranslate nohighlight">\(0\)</span> is the starting tile followed by all blanks.</p>
+<p>All of the work is in verifying the induction step.   So assume the equivalence of 1 and 2 for <span class="math notranslate nohighlight">\(n\)</span>; we prove it for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
+<p>First, assume that <span class="math notranslate nohighlight">\(p\)</span> does not run for at least <span class="math notranslate nohighlight">\(n+1\)</span> steps.   Then either it does not run for at least <span class="math notranslate nohighlight">\(n\)</span> steps, or else
+it does run for at least <span class="math notranslate nohighlight">\(n\)</span> steps, and then halts on step <span class="math notranslate nohighlight">\(n+1\)</span>.    In the first case, by induction hypothesis, there is no tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
+So there is no tiling of the first <span class="math notranslate nohighlight">\(n+1\)</span> rows, either.  In the second case, the instruction tile in row <span class="math notranslate nohighlight">\(n\)</span> has <span class="math notranslate nohighlight">\(K+1\)</span> on the top row.  In this case,
+there is no way to continue the tiling, because there is no tile with <span class="math notranslate nohighlight">\(K+1\)</span> on the bottom.  So there is no tiling of the first <span class="math notranslate nohighlight">\(n+1\)</span> rows.</p>
+<p>Second, assume that <span class="math notranslate nohighlight">\(p\)</span> does run for at least <span class="math notranslate nohighlight">\(n+1\)</span> steps.  Then it runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps.   By (2), we have a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
+We need to see that we have a unique tiling of row <span class="math notranslate nohighlight">\(n+1\)</span>.   Consider the instruction tile in row <span class="math notranslate nohighlight">\(n\)</span>.  By induction hypothesis, the number at the bottom
+of this tile is <span class="math notranslate nohighlight">\(i(n)\)</span>, and the number at the top is <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  Now <span class="math notranslate nohighlight">\(i(n+1)\)</span> cannot be <span class="math notranslate nohighlight">\(K+1\)</span>, since if it were, the program <span class="math notranslate nohighlight">\(p\)</span> could not run for <span class="math notranslate nohighlight">\(n+1\)</span> steps.</p>
+<p><a class="reference internal" href="#tiling_works">Lemma 4</a>
+leads to the proof of the main result in this section, <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">tiling_undecidability</span></code>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
