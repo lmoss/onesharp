@@ -265,6 +265,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="church.html">Logic</a></li>
 </ul>
@@ -472,6 +473,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-lemma">Main lemma</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reverse-inequality">The reverse inequality</a></li>
 </ul>
 
@@ -780,18 +782,21 @@ at least in the case when the register starts with a <code class="docutils liter
 <p>Similar work applies when  the register starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
 <p>Now what happens when the register is empty?   In this case, our overall assumptions say that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers is going to converge.</p>
 </div>
-<hr class="docutils" />
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="proof-of-the-theorem">
+<h1>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h1>
 <p><a class="reference internal" href="#tiling_works">Lemma 4</a>
 leads to the proof of the main result in this section, <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">tiling_undecidability</span></code>.</p>
 <p>We now turn to the proof.</p>
 <div class="warning admonition">
 <p class="admonition-title">Reminder of what we are proving.</p>
-<p><span class="math notranslate nohighlight">\(p\)</span> runs forever (on all empty registers)
-if and only if
+<p>If <span class="math notranslate nohighlight">\(p\)</span> runs forever (on all empty registers), then
 <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the first quadrant.</p>
-<p><span class="math notranslate nohighlight">\(p\)</span> halts (on all empty registers)
-if and only if
+<p>If <span class="math notranslate nohighlight">\(p\)</span> halts (on all empty registers) at some point, then
 <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
+<hr class="docutils" />
+<p>For the first statement, the lemma implies that for all <span class="math notranslate nohighlight">\(n\)</span>, there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the quadrant.  From the uniqueness, if <span class="math notranslate nohighlight">\(n &lt; m\)</span>, then the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows has to be a restriction of the tiling of the first <span class="math notranslate nohighlight">\(m\)</span> rows.   It follows that we can take the union over <span class="math notranslate nohighlight">\(n\)</span> of the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.  This will be a tiling of the entire quadrant.</p>
+<p>For the second statement, suppose towards a contradiction that the run of <span class="math notranslate nohighlight">\(p\)</span> halts in <span class="math notranslate nohighlight">\(n+1\)</span> steps and yet <span class="math notranslate nohighlight">\(\TT(p)\)</span> can tile the quadrant.</p>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
@@ -910,6 +915,7 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-lemma">Main lemma</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reverse-inequality">The reverse inequality</a></li>
 </ul>
 
