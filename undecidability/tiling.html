@@ -746,6 +746,7 @@ at least in the case when the register starts with a <code class="docutils liter
 <section class="proposition-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
 and also the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers.</p>
+<p>We start counting the rows with row <span class="math notranslate nohighlight">\(0\)</span>.  (So in a tiling of the quadrant the first tile in row <span class="math notranslate nohighlight">\(0\)</span> is the start tile.)</p>
 <p>If the run converges, then <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the plane.</p>
 <p>Otherwise, for all <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <ol class="arabic simple">
@@ -754,6 +755,24 @@ and also the run of <span class="math notranslate nohighlight">\(p\)</span> on e
 The <span class="math notranslate nohighlight">\(n\)</span>th row starts with the line number executed in step <span class="math notranslate nohighlight">\(n+1\)</span>, and
 the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register in that step.</p></li>
 </ol>
+<p>For all <span class="math notranslate nohighlight">\(n\geq 0\)</span>, exactly one of the following two things happen.</p>
+<ol class="arabic simple">
+<li><p>The program halts in <span class="math notranslate nohighlight">\(\leq n\)</span> steps,<br />
+and there is no tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the plane</p></li>
+</ol>
+<p>(starting with <span class="math notranslate nohighlight">\(s = 0\)</span>).</p>
+<p>\</p>
+<p>\item[<span class="math notranslate nohighlight">\(\tri\)</span>]
+The program runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps,</p>
+<p>and there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.</p>
+<p>\</p>
+<p>For <span class="math notranslate nohighlight">\(k \leq n\)</span>,</p>
+<p>the top edge of the <span class="math notranslate nohighlight">\(k\)</span>th row has</p>
+<p>the line number to be executed in step <span class="math notranslate nohighlight">\(k+1\)</span></p>
+<p>(or <span class="math notranslate nohighlight">\(n+1\)</span> if the program halts at step <span class="math notranslate nohighlight">\(k\)</span>),</p>
+<p>then the contents of the register,   symbol-by-symbol,</p>
+<p>and then all blanks.</p>
+<p>\end{itemize}</p>
 </section>
 </div><p>For the first part, note that no instruction tile has <span class="math notranslate nohighlight">\(M+1\)</span> on the bottom, where <span class="math notranslate nohighlight">\(M\)</span> is the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>The proof of the second point is by induction on <span class="math notranslate nohighlight">\(n\)</span>.</p>
