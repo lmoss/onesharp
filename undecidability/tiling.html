@@ -471,7 +471,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-lemma">Main lemma</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reverse-inequality">The reverse inequality</a></li>
 </ul>
 
@@ -621,7 +621,7 @@ not the <code class="docutils literal notranslate"><span class="pre">1#</span></
 </div><p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
 <section id="some-observations">
 <h2>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h2>
-<p>We continue with some observations which are used in verifying that our construction works (see <a class="reference internal" href="#tiling_works">Proposition 6</a>).</p>
+<p>We continue with some observations which are used in verifying that our construction works (see <a class="reference internal" href="#tiling_works">Lemma 4</a>).</p>
 <p>The only tile with a blank on the left is the all blank tile.
 Thus, if one of the tiles in a given row has
 a blank on the right,
@@ -739,23 +739,32 @@ at least in the case when the register starts with a <code class="docutils liter
 <p>Now what happens when the register is empty?   In this case, our overall assumptions say that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers is going to converge.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="formal-statement">
-<h1>Formal statement<a class="headerlink" href="#formal-statement" title="Link to this heading">#</a></h1>
-<div class="proof proposition admonition" id="tiling_works">
-<p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
-<section class="proposition-content" id="proof-content">
+<section class="tex2jax_ignore mathjax_ignore" id="main-lemma">
+<h1>Main lemma<a class="headerlink" href="#main-lemma" title="Link to this heading">#</a></h1>
+<p>Before we state our main lemma, we need some terminology about the rows in a tiling and about the step numbers in the run of a program.
+We start counting the rows with row <span class="math notranslate nohighlight">\(0\)</span>.  (So in a tiling of the quadrant the first tile in row <span class="math notranslate nohighlight">\(0\)</span> is the start tile.)</p>
+<p>For a program <span class="math notranslate nohighlight">\(p\)</span>, “step 0” gets us ready before step <span class="math notranslate nohighlight">\(1\)</span>.  In step <span class="math notranslate nohighlight">\(1\)</span>, we execute the first instruction of <span class="math notranslate nohighlight">\(p\)</span>.   In each step <span class="math notranslate nohighlight">\(n\)</span>, we execute
+instruction <span class="math notranslate nohighlight">\(i(n)\)</span>, and we also calculate the next instruction to execute, <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  We always have <span class="math notranslate nohighlight">\(0\leq i(n)\leq K+1\)</span>, where <span class="math notranslate nohighlight">\(K\)</span> is the
+number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>For example, let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
+We have <span class="math notranslate nohighlight">\(i(0) = 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 2\)</span>, <span class="math notranslate nohighlight">\(i(3) = 3\)</span>, <span class="math notranslate nohighlight">\(i(4) = 1\)</span>, <span class="math notranslate nohighlight">\(i(5) = 2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>.</p>
+<p>For another, let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">1#1##</span></code>.  Then <span class="math notranslate nohighlight">\(i(0)= 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 3\)</span>.  The number of instructions in <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(K =2\)</span>,
+and so <span class="math notranslate nohighlight">\(i(2) = K+1\)</span>.</p>
+<div class="proof lemma admonition" id="tiling_works">
+<p class="admonition-title"><span class="caption-number">Lemma 4 </span></p>
+<section class="lemma-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
 and also the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers.</p>
-<p>We start counting the rows with row <span class="math notranslate nohighlight">\(0\)</span>.  (So in a tiling of the quadrant the first tile in row <span class="math notranslate nohighlight">\(0\)</span> is the start tile.)</p>
-<p>If the run converges, then <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the plane.</p>
-<p>Otherwise, for all <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<p>Otherwise, for all <span class="math notranslate nohighlight">\(n\)</span> the following are equivalent:</p>
 <ol class="arabic simple">
-<li><p>The run goes on for <span class="math notranslate nohighlight">\(n\)</span> steps.</p></li>
+<li><p>The run goes on for at least <span class="math notranslate nohighlight">\(n\)</span> steps without halting.</p></li>
 <li><p>There is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
-The <span class="math notranslate nohighlight">\(n\)</span>th row starts with the line number executed in step <span class="math notranslate nohighlight">\(n+1\)</span>, and
-the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register in that step.</p></li>
+The <span class="math notranslate nohighlight">\(n\)</span>th row starts with an instruction tile bearing <span class="math notranslate nohighlight">\(i(n)\)</span> on the bottom and <span class="math notranslate nohighlight">\(i(n+1)\)</span> on the top,
+and the
+the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps.</p></li>
 </ol>
-<p>For all <span class="math notranslate nohighlight">\(n\geq 0\)</span>, exactly one of the following two things happen.</p>
+</section>
+</div><p>For all <span class="math notranslate nohighlight">\(n\geq 0\)</span>, exactly one of the following two things happen.</p>
 <ol class="arabic simple">
 <li><p>The program halts in <span class="math notranslate nohighlight">\(\leq n\)</span> steps,<br />
 and there is no tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the plane</p></li>
@@ -765,19 +774,22 @@ and there is no tiling of the first <span class="math notranslate nohighlight">\
 <p>\item[<span class="math notranslate nohighlight">\(\tri\)</span>]
 The program runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps,</p>
 <p>and there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.</p>
-<p>\</p>
-<p>For <span class="math notranslate nohighlight">\(k \leq n\)</span>,</p>
-<p>the top edge of the <span class="math notranslate nohighlight">\(k\)</span>th row has</p>
-<p>the line number to be executed in step <span class="math notranslate nohighlight">\(k+1\)</span></p>
-<p>(or <span class="math notranslate nohighlight">\(n+1\)</span> if the program halts at step <span class="math notranslate nohighlight">\(k\)</span>),</p>
-<p>then the contents of the register,   symbol-by-symbol,</p>
-<p>and then all blanks.</p>
-<p>\end{itemize}</p>
-</section>
-</div><p>For the first part, note that no instruction tile has <span class="math notranslate nohighlight">\(M+1\)</span> on the bottom, where <span class="math notranslate nohighlight">\(M\)</span> is the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>The proof of the second point is by induction on <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p><a class="reference internal" href="#tiling_works">Proposition 6</a>
-leads to the proof of the main result in this section, <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">tiling_undecidability</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+We prove this by induction on $n$.  For $n = 0$, both statements are true. The unique tiling of row $0$ is the starting tile followed by all blanks.
+
+All of the work is in verifying the induction step.   So assume the equivalence of 1 and 2 for $n$; we prove it for $n+1$.
+
+
+
+
+For the first part, note that no instruction tile has $M+1$ on the bottom, where $M$ is the number of instructions in $p$.
+
+The proof of the second point is by induction on $n$.
+
+{prf:ref}`tiling_works`
+leads to the proof of the main result in this section, {prf:ref}`tiling_undecidability`.
+</pre></div>
+</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
@@ -894,7 +906,7 @@ there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-observations">Some observations</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-statement">Formal statement</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#main-lemma">Main lemma</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reverse-inequality">The reverse inequality</a></li>
 </ul>
 
