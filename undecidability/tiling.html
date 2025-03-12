@@ -670,31 +670,7 @@ is the word composed of all symbols on the
 <p>Again we take <span class="math notranslate nohighlight">\(p\)</span> to be our example program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
 We see part a tiling (the bottom four rows), together with the words encoded in those rows, shown on the right.</p>
 </section>
-</div><div class="tip admonition">
-<p class="admonition-title">Observation/Example</p>
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  (In this point, <span class="math notranslate nohighlight">\(p\)</span> is not the example program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.)
-Suppose that row 67 of a tiling using <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
-and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.
-In view of the fact that 131 + 8 = 139,
-the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
-<p>We claim that row 68 must be the top row below:
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
-<p>There are a few steps to this verification.<br />
-First, note that the last tile on the bottom row has a blank on its north edge.<br />
-So the sixth tile on the top row has to have a blank on its
-south edge. There are three choices for that tile: the all blank tile, and two others wich have either
-hearts or diamonds on the west.  These last two are impossible.   So the sixth tile in our first row
-is all blank.  Thus all tiles to its east in that row are blank.  As for the tiles to the west, we
-show by induction on <span class="math notranslate nohighlight">\(i\leq 6\)</span> that the <span class="math notranslate nohighlight">\((6-i)\)</span>th tile in the top row is the one we show in the picture.
-This conlcudes our claim.</p>
-<p>The word encoded in row 68  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
-This is exactly the same as
-the word encoded in row 67.</p>
-<p>Don’t read the symbol as “copyright” but as “copy right.”</p>
-</div>
-<p>A similar remark applies for instructions in <span class="math notranslate nohighlight">\(p\)</span> which are back-transfers <code class="docutils literal notranslate"><span class="pre">1####</span></code>.</p>
+</div><p>A similar remark applies for instructions in <span class="math notranslate nohighlight">\(p\)</span> which are back-transfers <code class="docutils literal notranslate"><span class="pre">1####</span></code>.</p>
 <hr class="docutils" />
 <p>We continue with facts along the same lines for the instructions <code class="docutils literal notranslate"><span class="pre">1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
 Since the lines of argument are similar, we only discuss the second of these.
