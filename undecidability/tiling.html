@@ -786,7 +786,27 @@ So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq K\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Here are the details on the case that instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is  <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code></p>
+<p class="sd-card-text">Here are the details on the case that instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is  <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code>
+To make things concrete, suppose that row <span class="math notranslate nohighlight">\(n\)</span> of is tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
+and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.
+In view of the fact that 131 + 8 = 139,
+the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
+<p class="sd-card-text">We claim that row <span class="math notranslate nohighlight">\(n+1\)</span> must be the top row below:
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
+<p class="sd-card-text">There are a few steps to this verification.<br />
+First, note that the last tile on the bottom row has a blank on its north edge.<br />
+So the sixth tile on the top row has to have a blank on its
+south edge. There are three choices for that tile: the all blank tile, and two others wich have either
+hearts or diamonds on the west.  These last two are impossible.   So the sixth tile in our first row
+is all blank.  Thus all tiles to its east in that row are blank.  As for the tiles to the west, we
+show by induction on <span class="math notranslate nohighlight">\(i\leq 6\)</span> that the <span class="math notranslate nohighlight">\((6-i)\)</span>th tile in the top row is the one we show in the picture.
+This conlcudes our claim.</p>
+<p class="sd-card-text">The word encoded in row <span class="math notranslate nohighlight">\(n+1\)</span>  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
+This is exactly the same as
+the word encoded in row <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
 </details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is not empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
