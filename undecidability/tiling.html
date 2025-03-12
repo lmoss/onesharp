@@ -672,23 +672,6 @@ We see part a tiling (the bottom four rows), together with the words encoded in 
 </section>
 </div><p>A similar remark applies for instructions in <span class="math notranslate nohighlight">\(p\)</span> which are back-transfers <code class="docutils literal notranslate"><span class="pre">1####</span></code>.</p>
 <hr class="docutils" />
-<p>We continue with facts along the same lines for the instructions <code class="docutils literal notranslate"><span class="pre">1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
-Since the lines of argument are similar, we only discuss the second of these.
-Suppose that row 4743 of some tiling of the quadrant starts out
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
-<p>and instruction 24 of the program is <code class="docutils literal notranslate"><span class="pre">1##</span></code>. Then the first tile in row 4744 must be
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t12-12.png?raw=1" width="100%" height="100%">
-What are the next tiles in row 4744?
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%"></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Click for the answer.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t14-14.png?raw=1" width="100%" height="100%">
-</div>
-</details><p>The word encoded in row 4744, <code class="docutils literal notranslate"><span class="pre">1##1#</span></code>, is exactly the word encoded
-in row 4743, with <code class="docutils literal notranslate"><span class="pre">#</span></code> added at the end.</p>
-<p>This shows that we have implemented the <code class="docutils literal notranslate"><span class="pre">1##</span></code> instructions correctly.</p>
-<hr class="docutils" />
 <p>Finally, let’s get one last parallel fact, this time for the case instruction. Suppose again that row 4743 of some tiling of the quadrant starts out
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
 <p>But now suppose that line 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>
@@ -756,9 +739,25 @@ So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq K\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Here are the details on the case that instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<p class="sd-card-text">Here are the details on the case that instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
+Again, for the sake of exposition we work an example rather than the general case.
+Let <span class="math notranslate nohighlight">\(n = 4743\)</span>.  Suppose that row 4743 of some tiling starts out
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
+<p class="sd-card-text">and instruction 24 of the program is <code class="docutils literal notranslate"><span class="pre">1##</span></code>. Then the first tile in row 4744 must be
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t12-12.png?raw=1" width="100%" height="100%">
+What are the next tiles in row 4744?
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%"></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click for the answer.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t14-14.png?raw=1" width="100%" height="100%">
 </div>
-</details><p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</details><p class="sd-card-text">The word encoded in row 4744, <code class="docutils literal notranslate"><span class="pre">1##1#</span></code>, is exactly the word encoded
+in row 4743, with <code class="docutils literal notranslate"><span class="pre">#</span></code> added at the end.</p>
+<p class="sd-card-text">This shows that we have implemented the <code class="docutils literal notranslate"><span class="pre">1##</span></code> instructions correctly.</p>
+</div>
+</details><hr class="docutils" />
+<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
