@@ -534,11 +534,10 @@ such that</p>
 \[
 p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in {K}^{\mathbb{T}}
 \]</div>
+<p>That is, <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.</p>
 <p>As a result, <span class="math notranslate nohighlight">\(\overline{K}^{\mathbb{T}}\)</span> is undecidable.  So <span class="math notranslate nohighlight">\({K}^{\mathbb{T}}\)</span> is also undecidable.</p>
 </section>
 </div></div>
-<p>In words, we are going to define a computable and total function <span class="math notranslate nohighlight">\(\mathcal{T}:  A\to  \mathbb{T}\)</span>
-such that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.</p>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.  The universal function <span class="math notranslate nohighlight">\(u\)</span> from earlier had the property that the following are equivalent:</p>
@@ -646,15 +645,6 @@ are the only ones with the oblong rectangle on the left side.</p>
 then there is no tile with <span class="math notranslate nohighlight">\(n+1\)</span> on the bottom.
 Thus no complete tiling of the first quadrant
 can have a tile where  <span class="math notranslate nohighlight">\(n+1\)</span> appears on the top.</p>
-<div class="warning admonition">
-<p class="admonition-title">Restatement of our goal</p>
-<p><span class="math notranslate nohighlight">\(p\)</span> runs forever (on all empty registers)
-if and only if
-<span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the first quadrant.</p>
-<p><span class="math notranslate nohighlight">\(p\)</span> halts (on all empty registers)
-if and only if
-<span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
-</div>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
 <section class="definition-content" id="proof-content">
@@ -670,33 +660,7 @@ is the word composed of all symbols on the
 <p>Again we take <span class="math notranslate nohighlight">\(p\)</span> to be our example program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
 We see part a tiling (the bottom four rows), together with the words encoded in those rows, shown on the right.</p>
 </section>
-</div><p>A similar remark applies for instructions in <span class="math notranslate nohighlight">\(p\)</span> which are back-transfers <code class="docutils literal notranslate"><span class="pre">1####</span></code>.</p>
-<hr class="docutils" />
-<p>Finally, let’s get one last parallel fact, this time for the case instruction. Suppose again that row 4743 of some tiling of the quadrant starts out
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
-<p>But now suppose that line 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>
-Then the first tile in row 25 can be any of the three tiles
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"></p>
-<p>So the situation is
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t16-16.png?raw=1" width="100%" height="100%"></p>
-<p>We cannot have the symbol above the blank to be as below
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%"></p>
-<p>This is because the symbols in the middle of row 4744 have to be
-<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, or ``blank.’’ So there would be no way to match the heart symbol at the end.</p>
-<p>We must have all blanks on the far right, and then next to that a tiles with two <code class="docutils literal notranslate"><span class="pre">1</span></code>s:</p>
-<p>We now know the last tiles before the blank tiles in row 4744:
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
-<p>Indeed, the whole row has to be
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%"></p>
-<p>The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##1</span></code>.</p>
-<p>This is exactly
-the word encoded in row 4743, with  the first symbol (a <code class="docutils literal notranslate"><span class="pre">1</span></code>) deleted.</p>
-<p>And the instruction to go to is 26 = 24 + 2.
-So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
-at least in the case when the register starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<p>Similar work applies when  the register starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
-<p>Now what happens when the register is empty?   In this case, our overall assumptions say that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers is going to converge.</p>
-</section>
+</div></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="main-lemma">
 <h1>Main lemma<a class="headerlink" href="#main-lemma" title="Link to this heading">#</a></h1>
@@ -723,7 +687,7 @@ and the
 the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps.</p></li>
 </ol>
 </section>
-</div><p>We prove this by induction on <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n = 0\)</span>, both statements are true. The unique tiling of row <span class="math notranslate nohighlight">\(0\)</span> is the starting tile followed by all blanks.</p>
+</div><p>We prove this lemma by induction on <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n = 0\)</span>, both statements are true. The unique tiling of row <span class="math notranslate nohighlight">\(0\)</span> is the starting tile followed by all blanks.</p>
 <p>All of the work is in verifying the induction step.   So assume the equivalence of 1 and 2 for <span class="math notranslate nohighlight">\(n\)</span>; we prove it for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 <p>First, assume that <span class="math notranslate nohighlight">\(p\)</span> does not run for at least <span class="math notranslate nohighlight">\(n+1\)</span> steps.   Then either it does not run for at least <span class="math notranslate nohighlight">\(n\)</span> steps, or else
 it does run for at least <span class="math notranslate nohighlight">\(n\)</span> steps, and then halts on step <span class="math notranslate nohighlight">\(n+1\)</span>.    In the first case, by induction hypothesis, there is no tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
@@ -757,7 +721,7 @@ in row 4743, with <code class="docutils literal notranslate"><span class="pre">#
 <p class="sd-card-text">This shows that we have implemented the <code class="docutils literal notranslate"><span class="pre">1##</span></code> instructions correctly.</p>
 </div>
 </details><hr class="docutils" />
-<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -783,14 +747,52 @@ This is exactly the same as
 the word encoded in row <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
-</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is not empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 Of course, this is similar to Case 3(a).</p>
-<p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is not empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+<p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 This is similar to Case 3(b).</p>
 <p>Case 5: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.</p>
+<div class="{dropdown}Details docutils">
+<p>:open:
+Suppose again that row 4743 of some tiling of the quadrant starts out
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
+<p>But now suppose that line 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>
+Then the first tile in row 25 can be any of the three tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"></p>
+<p>So the situation is
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t16-16.png?raw=1" width="100%" height="100%"></p>
+<p>We cannot have the symbol above the blank to be as below
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%"></p>
+<p>This is because the symbols in the middle of row 4744 have to be
+<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, or ``blank.’’ So there would be no way to match the heart symbol at the end.</p>
+<p>We must have all blanks on the far right, and then next to that a tiles with two <code class="docutils literal notranslate"><span class="pre">1</span></code>s:
+We now know the last tiles before the blank tiles in row 4744:
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
+<p>Indeed, the whole row has to be
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%"></p>
+<p>The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##1</span></code>.</p>
+<p>This is exactly
+the word encoded in row 4743, with  the first symbol (a <code class="docutils literal notranslate"><span class="pre">1</span></code>) deleted.</p>
+<p>And the instruction to go to is 26 = 24 + 2.
+So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
+at least in the case when the register starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p>Similar work applies when  the register starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
+<p>Now what happens when the register is empty?   In this case, our overall assumptions say that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers is going to converge.</p>
+</div>
+<hr class="docutils" />
 <p><a class="reference internal" href="#tiling_works">Lemma 4</a>
 leads to the proof of the main result in this section, <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">tiling_undecidability</span></code>.</p>
+<p>We now turn to the proof.</p>
+<div class="warning admonition">
+<p class="admonition-title">Reminder of what we are proving.</p>
+<p><span class="math notranslate nohighlight">\(p\)</span> runs forever (on all empty registers)
+if and only if
+<span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the first quadrant.</p>
+<p><span class="math notranslate nohighlight">\(p\)</span> halts (on all empty registers)
+if and only if
+<span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
+</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
