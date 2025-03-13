@@ -611,8 +611,7 @@ not the <code class="docutils literal notranslate"><span class="pre">1#</span></
 <p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-24.png?raw=1" width="100%" height="100%">
 </section>
-</div><p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
-<section id="some-observations">
+</div><section id="some-observations">
 <h2>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h2>
 <p>We continue with some observations which are used in verifying that our construction works.  These will be used in <a class="reference internal" href="#tiling_works">Lemma 4</a> below.
 Fix a program <span class="math notranslate nohighlight">\(p\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
@@ -633,13 +632,15 @@ We call these <em>instruction tiles</em>.  The instruction tiles
 are the only ones with the oblong rectangle on the left side.</p>
 <p>We are going to denote by <span class="math notranslate nohighlight">\(k\)</span> the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.
 Notice that there is no tile with <span class="math notranslate nohighlight">\(k+1\)</span> on the bottom.</p>
-<p>An easy induction shows the following:
-in a tiling of the first quadrant
-that starts with the starting tile,
-every row has to have all blanks after some finite point.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It would be good to prove this.</p>
+<p>Consider a tiling of two neighboring rows of the quadrant, say row <span class="math notranslate nohighlight">\(i\)</span> and row <span class="math notranslate nohighlight">\(i+1\)</span>.
+Suppose that the first blank in row <span class="math notranslate nohighlight">\(i\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>th tile.
+Then  the first blank in row <span class="math notranslate nohighlight">\(i+1\)</span> is either the <span class="math notranslate nohighlight">\((j-1)\)</span>st tile, or the <span class="math notranslate nohighlight">\(j\)</span>th tile, or the <span class="math notranslate nohighlight">\((j+1)\)</span>st tile.
+An easy induction then shows the following:
+in a tiling of the first quadrant or of some finite number of rows at the bottom,
+every row has to have all blanks after some finite point.</p>
+<p>We don’t actually need to know this fact, but it would be good to prove this.</p>
 </div>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
@@ -726,8 +727,7 @@ By what we saw above, the contents of the register after <span class="math notra
 And so the contents after <span class="math notranslate nohighlight">\(n+1\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1###1#</span></code>.  This is exactly the word encoded in row 4744.</p>
 <p class="sd-card-text">This verifies point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  Of course, we only worked with an example, but the general case is an elaboration of what we showed here.</p>
 </div>
-</details><hr class="docutils" />
-<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</details><p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -735,8 +735,9 @@ And so the contents after <span class="math notranslate nohighlight">\(n+1\)</sp
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
 and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   So <span class="math notranslate nohighlight">\(m = 8\)</span> here.
 In view of the fact that 131 + 8 = 139,
-the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
+the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span> must be
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%">
+It is important to check that the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span> cannot be the same tile but with the copyright symbol replaced by the blank.</p>
 <p class="sd-card-text">We claim that row <span class="math notranslate nohighlight">\(n+1\)</span> must be the top row below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">There are a few steps to this verification.<br />
@@ -754,7 +755,12 @@ This is the word in the register after <span class="math notranslate nohighlight
 <p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
 </details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This is very much like Case 3(a) above, with one important change.   The instruction tile in row <span class="math notranslate nohighlight">\(n+1\)</span> now <em>must</em> be the tile with a blank on the right side.</p>
+</div>
+</details><p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 Of course, this is similar to Case 3(a).</p>
 <p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 This is similar to Case 3(b).</p>
