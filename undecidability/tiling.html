@@ -782,11 +782,15 @@ We now know the last tiles before the blank tiles in row 4744:
 <p class="sd-card-text">The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##1</span></code>.</p>
 <p class="sd-card-text">This is exactly
 the word encoded in row 4743, with  the first symbol (a <code class="docutils literal notranslate"><span class="pre">1</span></code>) deleted.</p>
-<p class="sd-card-text">And the instruction to go to is 26 = 24 + 2.
-So we have implemented <code class="docutils literal notranslate"><span class="pre">1#####</span></code> correctly,
+<p class="sd-card-text">And the instruction to go to is 26 = 24 + 2.  All of this leads to a verification of point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>,
 at least in the case when the register after <span class="math notranslate nohighlight">\(n\)</span> steps starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p class="sd-card-text">Similar work applies when  the register starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
-<p class="sd-card-text">Now what happens when the register is empty?   In this case, our overall assumptions say that running <span class="math notranslate nohighlight">\(p\)</span> on empty registers is going to converge.</p>
+<p class="sd-card-text">Now what happens when the word encoded in row 4743 is the empty word.  By induction hypothesis, after 4743 steps of running <span class="math notranslate nohighlight">\(p\)</span>,
+the register is empty.  Moreove, the first tile in row 4744 must be the first one below:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%">
+<p class="sd-card-text">By trying things out again, we see that the rest of row 4744 must be the empty tile.   So the word encoded in that register is again empty.
+Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\)</span>.  This all corresponds to executing the <code class="docutils literal notranslate"><span class="pre">1#####</span></code> instruction on the empty register.</p>
+<p class="sd-card-text">We have verified all parts of (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 </div>
 </details></section>
 <section class="tex2jax_ignore mathjax_ignore" id="proof-of-the-theorem">
