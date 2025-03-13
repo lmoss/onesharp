@@ -695,7 +695,9 @@ This is point (1) for <span class="math notranslate nohighlight">\(n\)</span>.  
 So we have a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows, and the word encoded in row <span class="math notranslate nohighlight">\(n\)</span> is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 We need to see that we have a unique tiling of row <span class="math notranslate nohighlight">\(n+1\)</span>, and that the word encoded in row <span class="math notranslate nohighlight">\(n+1\)</span> is the contents of the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps.</p>
 <p>Consider the instruction tile in row <span class="math notranslate nohighlight">\(n\)</span>.  By induction hypothesis, the number at the bottom
-of this tile is <span class="math notranslate nohighlight">\(i(n)\)</span>, and the number at the top is <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  Now <span class="math notranslate nohighlight">\(i(n+1)\)</span> cannot be <span class="math notranslate nohighlight">\(K+1\)</span>, since if it were, the program <span class="math notranslate nohighlight">\(p\)</span> could not run for <span class="math notranslate nohighlight">\(n+1\)</span> steps.
+of this tile is <span class="math notranslate nohighlight">\(i(n)\)</span>, and the number at the top is <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  Now <span class="math notranslate nohighlight">\(i(n+1)\)</span> cannot be <span class="math notranslate nohighlight">\(k+1\)</span>,
+where <span class="math notranslate nohighlight">\(k\)</span> is the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.
+For if <span class="math notranslate nohighlight">\(i(n+1) = k+1\)</span>, the program <span class="math notranslate nohighlight">\(p\)</span> could not run for <span class="math notranslate nohighlight">\(n+1\)</span> steps.
 So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq k\)</span>.</p>
 <p>At this point the proof splits into cases depending on what instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is.</p>
 <p>Case 1: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This is very similar to Case 2 just below.</p>
@@ -709,16 +711,19 @@ So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq k\)</span>.</p>
 <p class="sd-card-text">and instruction 24 of the program is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  We check that there is a unique way to tile row 4744.
 The first tile in that row must be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t12-12.png?raw=1" width="100%" height="100%">
+This is because the only tile in <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(24\)</span> on the bottom is the tile above.
 What are the next tiles in row 4744?
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%"></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click for the answer.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t14-14.png?raw=1" width="100%" height="100%">
+Of course, it must be checked that this really is the only way to tile row 4744.   The observations made above should help you do this.
 </div>
-</details><p class="sd-card-text">So we see that there is a unique way to tile row 4744.</p>
-<p class="sd-card-text">By what we saw above, the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1##1</span></code>.
-Thus, the contents after <span class="math notranslate nohighlight">\(n+1\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1###1#</span></code>.  This is exactly the word encoded in row 4744.</p>
+</details><p class="sd-card-text">So we see that there is a unique way to tile row 4744.   Recall that we are verifying point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  It remains to
+show that the word encoded in the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps is  is the contents of the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps.
+By what we saw above, the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1##1</span></code>.  Step <span class="math notranslate nohighlight">\(n+1\)</span> executed the instruction <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
+And so the contents after <span class="math notranslate nohighlight">\(n+1\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1###1#</span></code>.  This is exactly the word encoded in row 4744.</p>
 <p class="sd-card-text">This verifies point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  Of course, we only worked with an example, but the general case is an elaboration of what we showed here.</p>
 </div>
 </details><hr class="docutils" />
