@@ -839,12 +839,25 @@ such that</p>
 <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T}\)</span> does halt.</p>
 </section>
 </div><p>The work here is based on an important mathematical result.</p>
-<div class="proof lemma admonition" id="lemma-6">
+<div class="proof lemma admonition" id="Konig">
 <p class="admonition-title"><span class="caption-number">Lemma 5 </span> (Konig Infinity Lemma)</p>
 <section class="lemma-content" id="proof-content">
 <p>Every infinite and finitely branching tree has an infinite branch.</p>
 </section>
-</div><p>Now here is the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 15</a>.</p>
+</div><p>This very general result has as a special case the following fact:</p>
+<div class="proof lemma admonition" id="lemma-7">
+<p class="admonition-title"><span class="caption-number">Lemma 6 </span> (If a tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant, then there is some natural number <span class="math notranslate nohighlight">\(n\)</span> such that)</p>
+<section class="lemma-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the  <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower left corner.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. We show the contrapositive.   Assume that for all <span class="math notranslate nohighlight">\(n\)</span> there is a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square.</p>
+<p>Consider the set of all tilings of all <span class="math notranslate nohighlight">\(n\times n\)</span> squares.  It is a tree, where the “edge” relation
+relates a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square to a tiling of the <span class="math notranslate nohighlight">\((n+1)\times (n+1)\)</span> square iff the first is a restriction of the second.
+This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> is finite to begin with.  It is finitely branching for the same reason.   By <a class="reference internal" href="#Konig">Lemma 5</a>, the tree has an infinite branch.<br />
+By taking the union of the tilings along this branch, we tile the entire quadrant.</p>
+</div>
+<p>We turn this observation into the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 15</a>.</p>
 <p>Given a pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
 make a program  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> such that
 running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on all empty registers using the <span class="math notranslate nohighlight">\(\mu\)</span>-operator
@@ -857,14 +870,14 @@ then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>In this case <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-7">
+<div class="exercise admonition" id="undecidability/tiling-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 73 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-8">
+<div class="exercise admonition" id="undecidability/tiling-exercise-9">
 
 <p class="admonition-title"><span class="caption-number">Exercise 74 </span></p>
 <section id="exercise-content">
