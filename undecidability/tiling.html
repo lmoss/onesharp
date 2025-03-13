@@ -852,10 +852,10 @@ such that</p>
 <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the  <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower left corner.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. We show the contrapositive.   Assume that for all <span class="math notranslate nohighlight">\(n\)</span> there is a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square.</p>
-<p>Consider the set of all tilings of all <span class="math notranslate nohighlight">\(n\times n\)</span> squares.  It is a tree, where the “edge” relation
+<p>Proof. We show the contrapositive.   Assume that for all <span class="math notranslate nohighlight">\(n\)</span> there is a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square in the corner.</p>
+<p>Consider the set of all tilings of all <span class="math notranslate nohighlight">\(n\times n\)</span> squares in the corner.  It is a tree, where the “edge” relation
 relates a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square to a tiling of the <span class="math notranslate nohighlight">\((n+1)\times (n+1)\)</span> square iff the first is a restriction of the second.
-This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> is finite to begin with.  It is finitely branching for the same reason.   By <a class="reference internal" href="#Konig">Lemma 5</a>, the tree has an infinite branch.<br />
+This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 5</a>, the tree has an infinite branch.<br />
 By taking the union of the tilings along this branch, we tile the entire quadrant.</p>
 </div>
 <p>We turn this observation into the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 15</a>.</p>
