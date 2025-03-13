@@ -834,9 +834,9 @@ such that</p>
 \[
 \mathbb{T}\in  {K}^{\mathbb{T}} \mbox{ iff  }  f(\mathbb{T}) \in \overline{K}^1
 \]</div>
-<p>That is, <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> can tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T}\)</span> does not halt.</p>
+<p>That is, <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> can tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T})\)</span> does not halt.</p>
 <p>In other words,
-<span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T}\)</span> does halt.</p>
+<span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T})\)</span> does halt.</p>
 </section>
 </div><p>The work here is based on an important mathematical result.</p>
 <div class="proof lemma admonition" id="Konig">
@@ -864,12 +864,8 @@ running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on 
 to look for some number <span class="math notranslate nohighlight">\(n\)</span>
 such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em>cannot</em> tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
-<hr class="docutils" />
-<p>And (crucially) if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
-then by an argument using the Koenig Infinity Lemma,
-there is some <span class="math notranslate nohighlight">\(n\)</span> such that
-<span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
-<p>In this case <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
+<p>The point again is that if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
+then our last lemma shows that  <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
 <div class="exercise admonition" id="undecidability/tiling-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 73 </span></p>
