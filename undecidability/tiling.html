@@ -542,15 +542,14 @@ p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in {K}^{\mathbb{T}}
 </div></div>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.   As we saw in  <a class="reference internal" href="../universal/universal.html#one-more-register-halting">Proposition 4</a>, there is a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.   As we saw in  <a class="reference internal" href="../universal/universal.html#one-more-register-halting">Proposition 4</a>, we can computably find a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span> if and only if <span class="math notranslate nohighlight">\([\![q]\!](\ )\!\!\downarrow\)</span></p></li>
 <li><p>The only register mentioned in <span class="math notranslate nohighlight">\(q\)</span> is R1.</p></li>
-<li><p><span class="math notranslate nohighlight">\(q\)</span> may be obtained from <span class="math notranslate nohighlight">\(p\)</span> computably.</p></li>
 </ol>
 <div class="attention admonition">
 <p class="admonition-title">Assumption</p>
-<p>We are going to replace <span class="math notranslate nohighlight">\(p\)</span> by <span class="math notranslate nohighlight">\(q\)</span>.   That is, we <em>assume</em> from now on that <span class="math notranslate nohighlight">\(p\)</span> the  only register mentioned in <span class="math notranslate nohighlight">\(q\)</span> is R1.</p>
+<p>We are going to replace <span class="math notranslate nohighlight">\(p\)</span> by <span class="math notranslate nohighlight">\(q\)</span>.   That is, we <em>assume</em> from now on that the  only register mentioned in <span class="math notranslate nohighlight">\(p\)</span> is R1.</p>
 </div>
 </section>
 <section id="ideas-behind-the-construction">
@@ -615,19 +614,12 @@ not the <code class="docutils literal notranslate"><span class="pre">1#</span></
 </div><p>The rest of our work is devoted to showing that if there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>, then <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
 <section id="some-observations">
 <h2>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h2>
-<p>We continue with some observations which are used in verifying that our construction works.  These will be used in <a class="reference internal" href="#tiling_works">Lemma 4</a> below.</p>
+<p>We continue with some observations which are used in verifying that our construction works.  These will be used in <a class="reference internal" href="#tiling_works">Lemma 4</a> below.
+Fix a program <span class="math notranslate nohighlight">\(p\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
 <p>The only tile with a blank on the left is the all blank tile.
 Thus, if one of the tiles in a given row has
 a blank on the right,
 then forever to its right, all the tiles are blank.</p>
-<p>An easy induction shows the following:
-in a tiling of the first quadrant
-that starts with the starting tile,
-every row has to have all blanks after some finite point.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>It would be good to prove this.</p>
-</div>
 <p>If the copyright symbol appears on the east or west edge of a tile, then all tiles in that row must have
 either the copyright symbol or blank on their east and west.</p>
 <p>Same with the heart symbol: if it occurs on the east or west side of a tile, then all tiles in that row must have
@@ -639,8 +631,16 @@ on the top
 if and only if that tile is in the first column.
 We call these <em>instruction tiles</em>.  The instruction tiles
 are the only ones with the oblong rectangle on the left side.</p>
-<p>If <span class="math notranslate nohighlight">\(p\)</span> has <span class="math notranslate nohighlight">\(K\)</span> instructions,
-then there is no tile with <span class="math notranslate nohighlight">\(K+1\)</span> on the bottom.</p>
+<p>We are going to denote by <span class="math notranslate nohighlight">\(k\)</span> the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.
+Notice that there is no tile with <span class="math notranslate nohighlight">\(k+1\)</span> on the bottom.</p>
+<p>An easy induction shows the following:
+in a tiling of the first quadrant
+that starts with the starting tile,
+every row has to have all blanks after some finite point.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It would be good to prove this.</p>
+</div>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
 <section class="definition-content" id="proof-content">
@@ -663,12 +663,12 @@ We see part a tiling (the bottom four rows), together with the words encoded in 
 <p>Before we state our main lemma, we need some terminology about the rows in a tiling and about the step numbers in the run of a program.
 We start counting the rows with row <span class="math notranslate nohighlight">\(0\)</span>.  (So in a tiling of the quadrant the first tile in row <span class="math notranslate nohighlight">\(0\)</span> is the start tile.)</p>
 <p>For a program <span class="math notranslate nohighlight">\(p\)</span>, “step 0” gets us ready before step <span class="math notranslate nohighlight">\(1\)</span>.  In step <span class="math notranslate nohighlight">\(1\)</span>, we execute the first instruction of <span class="math notranslate nohighlight">\(p\)</span>.   In each step <span class="math notranslate nohighlight">\(n\)</span>, we execute
-instruction <span class="math notranslate nohighlight">\(i(n)\)</span>, and we also calculate the next instruction to execute, <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  We always have <span class="math notranslate nohighlight">\(0\leq i(n)\leq K+1\)</span>, where <span class="math notranslate nohighlight">\(K\)</span> is the
+instruction <span class="math notranslate nohighlight">\(i(n)\)</span>, and we also calculate the next instruction to execute, <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  We always have <span class="math notranslate nohighlight">\(0\leq i(n)\leq k+1\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the
 number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>For example, let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
 We have <span class="math notranslate nohighlight">\(i(0) = 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 2\)</span>, <span class="math notranslate nohighlight">\(i(3) = 3\)</span>, <span class="math notranslate nohighlight">\(i(4) = 1\)</span>, <span class="math notranslate nohighlight">\(i(5) = 2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>.</p>
-<p>For another, let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">1#1##</span></code>.  Then <span class="math notranslate nohighlight">\(i(0)= 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 3\)</span>.  The number of instructions in <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(K =2\)</span>,
-and so <span class="math notranslate nohighlight">\(i(2) = K+1\)</span>.</p>
+<p>For another, let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">1#1##</span></code>.  Then <span class="math notranslate nohighlight">\(i(0)= 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 3\)</span>.  The number of instructions in <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(k =2\)</span>,
+and so <span class="math notranslate nohighlight">\(i(2) = k+1\)</span>.</p>
 <div class="proof lemma admonition" id="tiling_works">
 <p class="admonition-title"><span class="caption-number">Lemma 4 </span></p>
 <section class="lemma-content" id="proof-content">
@@ -687,8 +687,8 @@ the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>t
 <p>All of the work is in verifying the induction step.   So assume the equivalence of 1 and 2 for <span class="math notranslate nohighlight">\(n\)</span>; we prove it for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 <p>First, assume that <span class="math notranslate nohighlight">\(p\)</span> does not run for at least <span class="math notranslate nohighlight">\(n+1\)</span> steps.   Then either it does not run for at least <span class="math notranslate nohighlight">\(n\)</span> steps, or else
 it does run for at least <span class="math notranslate nohighlight">\(n\)</span> steps, and then halts on step <span class="math notranslate nohighlight">\(n+1\)</span>.    In the first case, by induction hypothesis, there is no tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.
-So there is no tiling of the first <span class="math notranslate nohighlight">\(n+1\)</span> rows, either.  In the second case, the instruction tile in row <span class="math notranslate nohighlight">\(n\)</span> has <span class="math notranslate nohighlight">\(K+1\)</span> on the top row.  In this case,
-there is no way to continue the tiling, because there is no tile with <span class="math notranslate nohighlight">\(K+1\)</span> on the bottom.  So there is no tiling of the first <span class="math notranslate nohighlight">\(n+1\)</span> rows.</p>
+So there is no tiling of the first <span class="math notranslate nohighlight">\(n+1\)</span> rows, either.  In the second case, the instruction tile in row <span class="math notranslate nohighlight">\(n\)</span> has <span class="math notranslate nohighlight">\(k+1\)</span> on the top row.  In this case,
+there is no way to continue the tiling, because there is no tile with <span class="math notranslate nohighlight">\(k+1\)</span> on the bottom.  So there is no tiling of the first <span class="math notranslate nohighlight">\(n+1\)</span> rows.</p>
 <p>Turning things around, we have shown that (2) for <span class="math notranslate nohighlight">\(n+1\)</span> implies (1) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 <p>Second, assume (1) for <span class="math notranslate nohighlight">\(n+1\)</span>:  <span class="math notranslate nohighlight">\(p\)</span> does run for at least <span class="math notranslate nohighlight">\(n+1\)</span> steps.  Then it runs for at least <span class="math notranslate nohighlight">\(n\)</span> steps.
 This is point (1) for <span class="math notranslate nohighlight">\(n\)</span>.   By the induction hypothesis, we have (2) for <span class="math notranslate nohighlight">\(n\)</span>.
@@ -696,7 +696,7 @@ So we have a unique tiling of the first <span class="math notranslate nohighligh
 We need to see that we have a unique tiling of row <span class="math notranslate nohighlight">\(n+1\)</span>, and that the word encoded in row <span class="math notranslate nohighlight">\(n+1\)</span> is the contents of the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps.</p>
 <p>Consider the instruction tile in row <span class="math notranslate nohighlight">\(n\)</span>.  By induction hypothesis, the number at the bottom
 of this tile is <span class="math notranslate nohighlight">\(i(n)\)</span>, and the number at the top is <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  Now <span class="math notranslate nohighlight">\(i(n+1)\)</span> cannot be <span class="math notranslate nohighlight">\(K+1\)</span>, since if it were, the program <span class="math notranslate nohighlight">\(p\)</span> could not run for <span class="math notranslate nohighlight">\(n+1\)</span> steps.
-So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq K\)</span>.</p>
+So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq k\)</span>.</p>
 <p>At this point the proof splits into cases depending on what instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is.</p>
 <p>Case 1: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This is very similar to Case 2 just below.</p>
 <p>Case 2: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.</p>
@@ -722,13 +722,13 @@ Thus, the contents after <span class="math notranslate nohighlight">\(n+1\)</spa
 <p class="sd-card-text">This verifies point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  Of course, we only worked with an example, but the general case is an elaboration of what we showed here.</p>
 </div>
 </details><hr class="docutils" />
-<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To make things concrete, suppose that row <span class="math notranslate nohighlight">\(n\)</span> of is tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
-and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   So <span class="math notranslate nohighlight">\(k = 8\)</span> here.
+and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   So <span class="math notranslate nohighlight">\(m = 8\)</span> here.
 In view of the fact that 131 + 8 = 139,
 the instruction tile in the first column of row <span class="math notranslate nohighlight">\(68\)</span> is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%"></p>
@@ -748,10 +748,10 @@ the word encoded in row <span class="math notranslate nohighlight">\(n\)</span>.
 This is the word in the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps.   Overall, we have verified (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 <p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
-</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 Of course, this is similar to Case 3(a).</p>
-<p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+<p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 This is similar to Case 3(b).</p>
 <p>Case 5: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
@@ -801,12 +801,12 @@ leads to the proof of the main result in this section, <a class="reference inter
 <hr class="docutils" />
 <p>For the first statement, the lemma implies that for all <span class="math notranslate nohighlight">\(n\)</span>, there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the quadrant.  From the uniqueness, if <span class="math notranslate nohighlight">\(n &lt; m\)</span>, then the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows has to be a restriction of the tiling of the first <span class="math notranslate nohighlight">\(m\)</span> rows.   It follows that we can take the union over <span class="math notranslate nohighlight">\(n\)</span> of the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.  This will be a tiling of the entire quadrant.</p>
 <p>For the second statement, suppose towards a contradiction that the run of <span class="math notranslate nohighlight">\(p\)</span> halts in <span class="math notranslate nohighlight">\(n+1\)</span> steps and yet <span class="math notranslate nohighlight">\(\TT(p)\)</span> can tile the quadrant.
-We use <a class="reference internal" href="#tiling_works">Lemma 4</a>.  We have (1) for <span class="math notranslate nohighlight">\(n\)</span>, and so we have (2) for <span class="math notranslate nohighlight">\(n\)</span> as well. Let <span class="math notranslate nohighlight">\(K\)</span> be the number of instructions in our program <span class="math notranslate nohighlight">\(p\)</span>.
+We use <a class="reference internal" href="#tiling_works">Lemma 4</a>.  We have (1) for <span class="math notranslate nohighlight">\(n\)</span>, and so we have (2) for <span class="math notranslate nohighlight">\(n\)</span> as well. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of instructions in our program <span class="math notranslate nohighlight">\(p\)</span>.
 The instruction tile in row <span class="math notranslate nohighlight">\(n\)</span>
 (the first tile)
-must have <span class="math notranslate nohighlight">\(K+1\)</span> on the top; this is what it means for the run to halt in <span class="math notranslate nohighlight">\(n+1\)</span> steps.  Let us call this tile <span class="math notranslate nohighlight">\(t^*\)</span>.<br />
+must have <span class="math notranslate nohighlight">\(k+1\)</span> on the top; this is what it means for the run to halt in <span class="math notranslate nohighlight">\(n+1\)</span> steps.  Let us call this tile <span class="math notranslate nohighlight">\(t^*\)</span>.<br />
 Since we have a tiling of the entire quadrant,
-there must be a tile on top of <span class="math notranslate nohighlight">\(t^*\)</span>.   But no tile in our set has <span class="math notranslate nohighlight">\(K+1\)</span> on the bottom.  This is the contradiction.</p>
+there must be a tile on top of <span class="math notranslate nohighlight">\(t^*\)</span>.   But no tile in our tile set <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> has <span class="math notranslate nohighlight">\(k+1\)</span> on the bottom.  This is the contradiction.</p>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
