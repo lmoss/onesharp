@@ -524,7 +524,7 @@ K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
 \end{array}
 \end{split}\]</div>
 <p>Clearly <span class="math notranslate nohighlight">\(A\)</span> is decidable, and it is easy to see that <span class="math notranslate nohighlight">\(K^1\)</span> is undecidable.</p>
-<p>Here is the main result in this section:</p>
+</div>
 <div class="proof theorem admonition" id="tiling_undecidability">
 <p class="admonition-title"><span class="caption-number">Theorem 14 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -539,8 +539,7 @@ p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in {K}^{\mathbb{T}}
 <p>That is, <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the quadrant if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.</p>
 <p>As a result, <span class="math notranslate nohighlight">\(\overline{K}^{\mathbb{T}}\)</span> is undecidable.  So <span class="math notranslate nohighlight">\({K}^{\mathbb{T}}\)</span> is also undecidable.</p>
 </section>
-</div></div>
-<section id="preparation">
+</div><section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.   As we saw in  <a class="reference internal" href="../universal/universal.html#one-more-register-halting">Proposition 4</a>, we can computably find a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
 <ol class="arabic simple">
@@ -731,11 +730,11 @@ And so the contents after <span class="math notranslate nohighlight">\(n+1\)</sp
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">To make things concrete, suppose that <span class="math notranslate nohighlight">\(n = 67\)</span> and <span class="math notranslate nohighlight">\(m=8\)</span>,  and also that row <span class="math notranslate nohighlight">\(n\)</span> is
+<p class="sd-card-text">To make things concrete, suppose that <span class="math notranslate nohighlight">\(n = 67\)</span>, <span class="math notranslate nohighlight">\(i(68) = 131\)</span>,  <span class="math notranslate nohighlight">\(m=8\)</span>,  that row <span class="math notranslate nohighlight">\(n\)</span> of the tiling is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
-and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   We have two options for the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span>.
-In view of the fact that 131 + 8 = 139,
-We claim that it must be
+and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   Thus, <span class="math notranslate nohighlight">\(i(69) = 131 + 8=169\)</span>.
+We have two options for the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span>.
+We claim that this tile must be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%">
 It is important to check that the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span> cannot be the same tile but with the copyright symbol replaced by the blank.</p>
 <p class="sd-card-text">We claim that row <span class="math notranslate nohighlight">\(68\)</span> must be the top row below:
@@ -745,7 +744,7 @@ and a case-by-case analysis shows that row 68 must be as above.</p>
 <p class="sd-card-text">The word encoded in row <span class="math notranslate nohighlight">\(67\)</span>  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  By our induction hypothesis on <span class="math notranslate nohighlight">\(n = 67\)</span>,
 This is exactly the same as the same as the contents of the register after <span class="math notranslate nohighlight">\(67\)</span> steps.  Instruction 68 of <span class="math notranslate nohighlight">\(p\)</span> was
 <code class="docutils literal notranslate"><span class="pre">1^8</span> <span class="pre">#^3</span></code>.   After executing that instruction, the register did not change.   So it still is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  All of this verifies
-(2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
+(2) for <span class="math notranslate nohighlight">\(n+1\)</span> in Case 3(a).</p>
 <p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
 </details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
@@ -824,31 +823,48 @@ there must be a tile on top of <span class="math notranslate nohighlight">\(t^*\
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
-<p>We conclude our work on tiling by showing that
-<span class="math notranslate nohighlight">\(\overline{K}^{\mathbb{T}} \leq_m {K}_{0}\)</span>.
-Given a pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
+<div class="proof theorem admonition" id="tiling_undecidability_converse">
+<p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
+<section class="theorem-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\( {K}^{\mathbb{T}}\leq \overline{K}^1 \)</span>.</p>
+<p>That is, there is a total computable function
+<span class="math notranslate nohighlight">\(\mathcal{T}:  \mathbb{T}\to A\)</span>
+such that</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{T}\in  {K}^{\mathbb{T}} \mbox{ iff  }  f(\mathbb{T}) \in \overline{K}^1
+\]</div>
+<p>That is, <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> can tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T}\)</span> does not halt.</p>
+<p>In other words,
+<span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T}\)</span> does halt.</p>
+</section>
+</div><p>The work here is based on an important mathematical result.</p>
+<div class="proof lemma admonition" id="lemma-6">
+<p class="admonition-title"><span class="caption-number">Lemma 5 </span> (Konig Infinity Lemma)</p>
+<section class="lemma-content" id="proof-content">
+<p>Every infinite and finitely branching tree has an infinite branch.</p>
+</section>
+</div><p>Now here is the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 15</a>.</p>
+<p>Given a pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
 make a program  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> such that
-running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on all empty registers
-using the <span class="math notranslate nohighlight">\(\mu\)</span>-operator
+running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on all empty registers using the <span class="math notranslate nohighlight">\(\mu\)</span>-operator
 to look for some number <span class="math notranslate nohighlight">\(n\)</span>
 such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em>cannot</em> tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
 <hr class="docutils" />
-<p>If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has a tiling, the program <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> never halts.
-So <span class="math notranslate nohighlight">\(f(\mathcal{T})\in {K}^{\mathbb{T}}\)</span>.</p>
 <p>And (crucially) if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
 then by an argument using the Koenig Infinity Lemma,
 there is some <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square containing the corner.</p>
 <p>In this case <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-5">
+<div class="exercise admonition" id="undecidability/tiling-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 73 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-6">
+<div class="exercise admonition" id="undecidability/tiling-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 74 </span></p>
 <section id="exercise-content">
