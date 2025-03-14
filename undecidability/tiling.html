@@ -831,11 +831,11 @@ there must be a tile on top of <span class="math notranslate nohighlight">\(t^*\
 such that</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{T}\in  {K}^{\mathbb{T}} \mbox{ iff  }  f(\mathbb{T}) \in \overline{K}^1
+\mathcal{T}\in  {K}^{\mathbb{T}} \mbox{ iff  }  f(\mathcal{T}) \in \overline{K}^1
 \]</div>
-<p>That is, <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> can tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T})\)</span> does not halt.</p>
+<p>That is, <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> does not halt.</p>
 <p>In other words,
-<span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathbb{T})\)</span> does halt.</p>
+<span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the entire quadrant if and only if  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> does halt.</p>
 </section>
 </div><p>The work here is based on an important mathematical result.</p>
 <div class="proof lemma admonition" id="Konig">
@@ -853,14 +853,14 @@ Let <span class="math notranslate nohighlight">\(t_{n+1}\)</span> be any such no
 <div class="proof lemma admonition" id="lemma-7">
 <p class="admonition-title"><span class="caption-number">Lemma 6 </span></p>
 <section class="lemma-content" id="proof-content">
-<p>If a tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the entire quadrant, then there is some natural number <span class="math notranslate nohighlight">\(n\)</span> such that
-<span class="math notranslate nohighlight">\(\mathbb{T}\)</span> cannot tile the  <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower left corner.</p>
+<p>If a tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the entire quadrant, then there is some natural number <span class="math notranslate nohighlight">\(n\)</span> such that
+<span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the  <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower left corner.</p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. We show the contrapositive.   Assume that for all <span class="math notranslate nohighlight">\(n\)</span> there is a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square in the corner.  We show that there is a tiling of the entire quadrant.</p>
 <p>Consider the set of all tilings of all <span class="math notranslate nohighlight">\(n\times n\)</span> squares in the corner.  It is a tree, where the “edge” relation
 relates a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square to a tiling of the <span class="math notranslate nohighlight">\((n+1)\times (n+1)\)</span> square iff the first is a restriction of the second.
-This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 5</a>, the tree has an infinite branch.<br />
+This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 5</a>, the tree has an infinite branch.<br />
 By taking the union of the tilings along this branch, we tile the entire quadrant.</p>
 <p>(One cannot in general take the union of tilings, since those tilings might conflict.  But if we have a branch in this tree, then the tilings along the branch agree on their common squares.  And in this case, we <em>can</em> take the union.)</p>
 </div>
@@ -877,11 +877,11 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 
 <p class="admonition-title"><span class="caption-number">Exercise 73 </span></p>
 <section id="exercise-content">
-<p>Our work on tiling dealt with <em>finite</em> tile sets.  This problem relaxes the finiteness requirement.    Construct an infinite pointed tile set <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> with the following properties:</p>
+<p>Our work on tiling dealt with <em>finite</em> tile sets.  This problem relaxes the finiteness requirement.    Construct an infinite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbb{T}\)</span> is computable.</p></li>
-<li><p>For all <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> can tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower-left corner.</p></li>
-<li><p>There is no tiling of the entire quadrant using <span class="math notranslate nohighlight">\(\mathbb{T}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is computable.</p></li>
+<li><p>For all <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower-left corner.</p></li>
+<li><p>There is no tiling of the entire quadrant using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p></li>
 </ol>
 </section>
 </div>
