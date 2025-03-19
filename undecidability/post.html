@@ -517,7 +517,8 @@ p\in {K}^1 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
 <p>Here and below, <span class="math notranslate nohighlight">\(K\)</span> is the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>Whenever instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code> or <code class="docutils literal notranslate"><span class="pre">1##</span></code>, we have</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-11.png?raw=1" width="100%" height="100%">
-<p>That is, we use the left domino above when instruction <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and the right domino when it is <code class="docutils literal notranslate"><span class="pre">1##````.</span> <span class="pre">Similarly,</span> <span class="pre">whenever</span> <span class="pre">instruction</span> <span class="pre">$i$</span> <span class="pre">is</span> </code>1^k ###<code class="docutils literal notranslate"><span class="pre">or</span></code>1^k ####```, we have</p>
+<p>That is, we use the left domino above when instruction <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and the right domino when it is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
+Similarly, whenever instruction <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> or <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code>, we have</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-12.png?raw=1" width="100%" height="100%">
 <p>Finally, whenever instruction <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, we have the three dominoes shown below:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-13.png?raw=1" width="100%" height="100%"></section>
@@ -526,10 +527,17 @@ p\in {K}^1 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program</p>
 <div class="math notranslate nohighlight">
 \[
-{\tt 1\#\# | 1 \#^5  | 1^3\#^3 |  1^2 \#^4  |  1^3 \#^4}
+{\tt 1\# | 1\#\# | 1 \#^5  | 1^3\#^3 |  1^2 \#^4  |  1^3 \#^4}
 \]</div>
 <p>Then <span class="math notranslate nohighlight">\(\mathcal{D}(p)\)</span> is the following set of dominoes:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-16.png?raw=1" width="100%" height="100%">
+<p>This domino set has a (unique) Post sequence.  It is</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-21.png?raw=1" width="100%" height="100%">
+<p>The Post word is</p>
+<div class="math notranslate nohighlight">
+\[
+{\rm start} {\em 1} {\tt 1} {\em 2} {\tt 1 \#} {\em 3} {\tt 1 \# } {\em 5} {\tt # } {\tt 3 } {\tt #} {\em 6 3 4 7} {\rm start}
+\]</div>
 </section>
 <section id="proof">
 <h2>Proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h2>
