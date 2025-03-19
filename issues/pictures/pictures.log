@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2025 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  19 MAR 2025 09:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -671,46 +671,46 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./pictures.aux)
 \openout1 = `pictures.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 150.
+LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 153.
 LaTeX Font Info:    Trying to load font information for OML+pxmi on input line 
-150.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/omlpxmi.fd
 File: omlpxmi.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMS/pxsy/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMS/pxsy/m/n on input line 153.
 LaTeX Font Info:    Trying to load font information for OMS+pxsy on input line 
-150.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/omspxsy.fd
 File: omspxsy.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMX/pxex/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMX/pxex/m/n on input line 153.
 LaTeX Font Info:    Trying to load font information for OMX+pxex on input line 
-150.
+153.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/omxpxex.fd
 File: omxpxex.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for U/pxexa/m/n on input line 150.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for U/pxexa/m/n on input line 153.
 LaTeX Font Info:    Trying to load font information for U+pxexa on input line 1
-50.
+53.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxexa.fd
 File: upxexa.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    ... okay on input line 153.
 LaTeX Font Info:    Trying to load font information for OT1+pxr on input line 1
-50.
+53.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ot1pxr.fd
 File: ot1pxr.fd 2000/12/14 v1.0
@@ -739,35 +739,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-62.
+65.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+pxsya on input line 1
-62.
+65.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsya.fd
 File: upxsya.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+pxsyb on input line 1
-62.
+65.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsyb.fd
 File: utxsyb.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+pxmia on input line 1
-62.
+65.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxmia.fd
 File: upxmia.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+pxsyc on input line 1
-62.
+65.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/upxsyc.fd
 File: upxsyc.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 16
-2.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -789,11 +789,12 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    Trying to load font information for OT1+pxtt on input line 
-911.
+914.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pxfonts/ot1pxtt.fd
 File: ot1pxtt.fd 2000/12/14 v1.0
 )
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [10]
 Missing character: There is no ; in font nullfont!
@@ -1033,7 +1034,7 @@ pxfonts/pxsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/pxfonts
 fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local
 /texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pictures.pdf (57 pages, 89865 bytes).
+Output written on pictures.pdf (57 pages, 90288 bytes).
 PDF statistics:
  217 PDF objects out of 1000 (max. 8388607)
  150 compressed objects within 2 object streams
