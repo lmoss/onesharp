@@ -481,15 +481,19 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="post-s-correspondence-problem">
 <h1>Post’s Correspondence Problem<a class="headerlink" href="#post-s-correspondence-problem" title="Link to this heading">#</a></h1>
 <p>Post’s Correspondence Problem (PCP) was introduced <a class="reference internal" href="../issues/problems.html#content-firstpcp"><span class="std std-ref">earlier</span></a>.
-We use build on the undecidability of the Halting Problem to prove the undecidability of the PCP.  In more detail, we saw in <a class="reference internal" href="tiling.html#content-tilingpreparation"><span class="std std-ref">our work on tiling</span></a> that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs which only use R1 and which halt is undecidable.</p>
+We use build on the undecidability of the Halting Problem to prove the undecidability of the PCP for pointed domino sets.  In more detail, we saw in <a class="reference internal" href="tiling.html#content-tilingpreparation"><span class="std std-ref">our work on tiling</span></a> that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs which only use R1 and which halt is undecidable.</p>
 <div class="tip admonition">
 <p class="admonition-title">Notation</p>
 <p>We let <span class="math notranslate nohighlight">\(A\)</span> be the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs whose only register is R1.   We let</p>
 <div class="math notranslate nohighlight">
-\[
-K^1 = \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}
-\]</div>
-<p>Let <span class="math notranslate nohighlight">\(\mathbb{D}\)</span> be the set of (codes of) all finite domino sets <span class="math notranslate nohighlight">\((\mathcal{D},d_0)\)</span>.
+\[\begin{split}
+\begin{array}{lcl}
+K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
+K^2&amp; = &amp;  \{ p \in A : [\![p]\!](\ )\!\!\downarrow\ \mbox{ and }  [\![p]\!](\ )\simeq \varepsilon}\\
+\end{array}
+\end{split}\]</div>
+<p>We know that <span class="math notranslate nohighlight">\(K^1\)</span> is undecidable.    It is easy to see that <span class="math notranslate nohighlight">\(K^1 \leq K^2\)</span> via the function <span class="math notranslate nohighlight">\(p\mapsto p + clear\)</span>, and so <span class="math notranslate nohighlight">\(K^2\)</span> is also undecidable.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbb{D}\)</span> be the set of (codes of) all finite, pointed domino sets <span class="math notranslate nohighlight">\((\mathcal{D},d_0)\)</span>.
 Let <span class="math notranslate nohighlight">\(K^{\mathbb{D}}\)</span> be the set of (codes of) domino sets <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> which have a Post word.</p>
 <p>When we talk about domino sets in this section, we always will mean a
 finite,
@@ -499,13 +503,13 @@ pointed set.  And when we talk about a Post word, we always mean a finite word w
 <div class="proof theorem admonition" id="PCP_undecidability">
 <p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
 <section class="theorem-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\({K}^1\leq_m  {K}^{\mathbb{D}}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\({K}^2\leq_m  {K}^{\mathbb{D}}\)</span>.</p>
 <p>That is, there is a total computable function
 <span class="math notranslate nohighlight">\(\mathcal{D}:  A\to  \mathbb{D}\)</span>
 such that</p>
 <div class="math notranslate nohighlight">
 \[
-p\in {K}^1 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
+p\in {K}^2 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
 \]</div>
 <p>That is, <span class="math notranslate nohighlight">\(\mathcal{D}(p)\)</span> has a Post word if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
 <p>As a result, <span class="math notranslate nohighlight">\({K}^{\mathbb{D}}\)</span> is undecidable.</p>
@@ -536,7 +540,7 @@ Similarly, whenever instruction <span class="math notranslate nohighlight">\(i\)
 <p>The Post word is</p>
 <div class="math notranslate nohighlight">
 \[
-{ 1} {\tt 1} {2} {\tt 1 \#} {3} {\tt 1 \# } {5} {\tt \# } {3 } {\tt \#} {6 3 4 7}
+{start} | { 1} {\tt 1} | {2} {\tt 1 \#} | {3} {\tt 1 \# } | {5} {\tt \# } | {3 } {\tt \#} | 6 |  3 | 4 | 7 | {halt}
 \]</div>
 </section>
 <section id="proof">
@@ -577,6 +581,8 @@ and if at before this instruction <code class="docutils literal notranslate"><sp
 \[
 1 {\tt 1} | 2 {\tt 1 \#}  | 3 {\tt 1 \#} | 5 {\tt \#}  | 3 {\tt \# } | 6 \varepsilon | 3  \varepsilon | 4  \varepsilon | 7  \varepsilon | 
 \]</div>
+<p>The differences are to be found in the first two segments that start with <span class="math notranslate nohighlight">\(3\)</span>.   That is, instruction <span class="math notranslate nohighlight">\(3\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.  The first segment which starts with a <span class="math notranslate nohighlight">\(3\)</span> is <span class="math notranslate nohighlight">\(3{\tt 1 \#}\)</span>.  In the trace, this is <span class="math notranslate nohighlight">\(3{\tt \#}.  In the modified trace, we added the {\tt 1} because before we executed the instruction ```1#####```, the register started with a {\tt 1}.   Similar remarks apply to the second of the  three segments that start with \)</span>3$.<br />
+The third such segment does not get an extra character because the register was empty at the time that <code class="docutils literal notranslate"><span class="pre">1#####</span></code> was executed.</p>
 </section>
 </div></section>
 </section>
