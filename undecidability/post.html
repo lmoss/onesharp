@@ -468,7 +468,43 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/post.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="post-s-correspondence-problem">
 <h1>Post’s Correspondence Problem<a class="headerlink" href="#post-s-correspondence-problem" title="Link to this heading">#</a></h1>
-<p>We use <span class="math notranslate nohighlight">\(\one\hash\)</span> to prove the undecidability of Post’s Correspondence Problem.</p>
+<p>Post’s Correspondence Problem (PCP) was introduced <a class="reference internal" href="../issues/problems.html#content-firstpcp"><span class="std std-ref">earlier</span></a>.
+We use build on the undecidability of the Halting Problem to prove the undecidability of the PCP.  In more detail, we saw in <a class="reference internal" href="tiling.html#content-tilingpreparation"><span class="std std-ref">our work on tiling</span></a> that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs which only use R1 and which halt is undecidable.</p>
+<p>``{admonition} Notation
+:class: tip</p>
+<p>We let <span class="math notranslate nohighlight">\(A\)</span> be the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs whose only register is R1.   We let</p>
+<div class="math notranslate nohighlight">
+\[
+K^1 = \{ p in A : [\![p]\!](\ )\!\!\downarrow}
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\mathbb{D}\)</span> be the set of (codes of) all finite domino sets <span class="math notranslate nohighlight">\((\mathcal{D},d_0)\)</span>.
+Let <span class="math notranslate nohighlight">\(K^{\mathbb{D}}\)</span> be the set of (codes of) domino sets <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> which have a Post word.</p>
+<p>When we talk about domino sets in this section, we always will mean a
+finite,
+pointed set.  And when we talk about a Post word, we always mean a finite word whose concatanations on the top and bottom agree.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Here is our main result on the PCP.
+
+
+```{prf:theorem}
+:label: PCP_undecidability
+
+
+${K}^1\leq_m  {K}^{\mathbb{D}}$.  
+
+That is, there is a total computable function
+$\mathcal{D}:  A\to  \mathbb{D}$
+such that 
+
+$$
+p\in {K}^1 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
+$$
+
+That is, $\mathcal{D}(p)$ has a Post word if and only if $[\![p]\!](\ )\!\!\downarrow$.
+
+As a result, ${K}^{\mathbb{D}}$ is also undecidable.
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
