@@ -440,7 +440,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -456,6 +458,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-mathcal-d">Definition of <span class="math notranslate nohighlight">\(\mathcal{D}\)</span></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -470,8 +480,8 @@ document.write(`
 <h1>Post’s Correspondence Problem<a class="headerlink" href="#post-s-correspondence-problem" title="Link to this heading">#</a></h1>
 <p>Post’s Correspondence Problem (PCP) was introduced <a class="reference internal" href="../issues/problems.html#content-firstpcp"><span class="std std-ref">earlier</span></a>.
 We use build on the undecidability of the Halting Problem to prove the undecidability of the PCP.  In more detail, we saw in <a class="reference internal" href="tiling.html#content-tilingpreparation"><span class="std std-ref">our work on tiling</span></a> that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs which only use R1 and which halt is undecidable.</p>
-<p>``{admonition} Notation
-:class: tip</p>
+<div class="tip admonition">
+<p class="admonition-title">Notation</p>
 <p>We let <span class="math notranslate nohighlight">\(A\)</span> be the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs whose only register is R1.   We let</p>
 <div class="math notranslate nohighlight">
 \[
@@ -482,29 +492,32 @@ Let <span class="math notranslate nohighlight">\(K^{\mathbb{D}}\)</span> be the 
 <p>When we talk about domino sets in this section, we always will mean a
 finite,
 pointed set.  And when we talk about a Post word, we always mean a finite word whose concatanations on the top and bottom agree.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-Here is our main result on the PCP.
-
-
-```{prf:theorem}
-:label: PCP_undecidability
-
-
-${K}^1\leq_m  {K}^{\mathbb{D}}$.  
-
-That is, there is a total computable function
-$\mathcal{D}:  A\to  \mathbb{D}$
-such that 
-
-$$
-p\in {K}^1 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
-$$
-
-That is, $\mathcal{D}(p)$ has a Post word if and only if $[\![p]\!](\ )\!\!\downarrow$.
-
-As a result, ${K}^{\mathbb{D}}$ is also undecidable.
-</pre></div>
 </div>
+<p>Here is our main result on the PCP.</p>
+<div class="proof theorem admonition" id="PCP_undecidability">
+<p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
+<section class="theorem-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\({K}^1\leq_m  {K}^{\mathbb{D}}\)</span>.</p>
+<p>That is, there is a total computable function
+<span class="math notranslate nohighlight">\(\mathcal{D}:  A\to  \mathbb{D}\)</span>
+such that</p>
+<div class="math notranslate nohighlight">
+\[
+p\in {K}^1 \quadiff   \mathcal{D}(p) \in {K}^{\mathbb{D}}
+\]</div>
+<p>That is, <span class="math notranslate nohighlight">\(\mathcal{D}(p)\)</span> has a Post word if and only if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>.</p>
+<p>As a result, <span class="math notranslate nohighlight">\({K}^{\mathbb{D}}\)</span> is also undecidable.</p>
+</section>
+</div><section id="definition-of-mathcal-d">
+<h2>Definition of <span class="math notranslate nohighlight">\(\mathcal{D}\)</span><a class="headerlink" href="#definition-of-mathcal-d" title="Link to this heading">#</a></h2>
+<p>Fix a program <span class="math notranslate nohighlight">\(p\in A\)</span>.    <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> starts with the following dominoes:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-10.png?raw=1" width="100%" height="100%">
+<p>Then whenever instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code> or <code class="docutils literal notranslate"><span class="pre">1##</span></code>, we have</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-11.png?raw=1" width="100%" height="100%">
+<p>Whenever instruction <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">###</span></code> or <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">####</span></code>, we have</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-12.png?raw=1" width="100%" height="100%">
+<p>Finally, whenever instruction <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, we have the three dominoes shown below:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-13.png?raw=1" width="100%" height="100%"></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -561,6 +574,21 @@ As a result, ${K}^{\mathbb{D}}$ is also undecidable.
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-mathcal-d">Definition of <span class="math notranslate nohighlight">\(\mathcal{D}\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
