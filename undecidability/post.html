@@ -555,9 +555,32 @@ Similarly, whenever instruction <span class="math notranslate nohighlight">\(i\)
 \[
 1\ v_1 2\ v_2  \cdots i(j)\ v_j  \cdots i(n)\ v_n,
 \]</div>
-<p>is defined in almost the same way, with the difference being that if <span class="math notranslate nohighlight">\(i(j)\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, and if</p>
+<p>is defined in almost the same way, with the difference being that if <span class="math notranslate nohighlight">\(i(j)\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, and if <span class="math notranslate nohighlight">\(i(j)\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>,
+and if at before this instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code> is executed the register is non-empty and has <span class="math notranslate nohighlight">\(c_j\)</span> as its first character, then
+<span class="math notranslate nohighlight">\(v_j= c_j w_j\)</span>.</p>
 </div>
+<div class="proof example admonition" id="example-modified-trace">
+<p class="admonition-title"><span class="caption-number">Example 3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Again we take <span class="math notranslate nohighlight">\(p\)</span> to be</p>
+<div class="math notranslate nohighlight">
+\[
+{\tt 1\# | 1\#\# | 1 \#^5  | 1^3\#^3 |  1^2 \#^4  |  1^3 \#^4}
+\]</div>
+<p>The trace is</p>
+<div class="math notranslate nohighlight">
+\[
+1 {\tt 1} | 2 {\tt 1 \#}  | 3 {\tt \#} | 5 {\tt \#}  | 3 {\tt \varepsilon } | 6 \varepsilon | 3  \varepsilon | 4  \varepsilon | 7  \varepsilon | 
+{\tt 1\# | 1\#\# | 1 \#^5  | 1^3\#^3 |  1^2 \#^4  |  1^3 \#^4}
+\]</div>
+<p>The modified trace is</p>
+<div class="math notranslate nohighlight">
+\[
+1 {\tt 1} | 2 {\tt 1 \#}  | 3 {\tt 1 \#} | 5 {\tt \#}  | 3 {\tt \# } | 6 \varepsilon | 3  \varepsilon | 4  \varepsilon | 7  \varepsilon | 
+{\tt 1\# | 1\#\# | 1 \#^5  | 1^3\#^3 |  1^2 \#^4  |  1^3 \#^4}
+\]</div>
 </section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
