@@ -536,12 +536,27 @@ Similarly, whenever instruction <span class="math notranslate nohighlight">\(i\)
 <p>The Post word is</p>
 <div class="math notranslate nohighlight">
 \[
-{\rm start} {\em 1} {\tt 1} {\em 2} {\tt 1 \#} {\em 3} {\tt 1 \# } {\em 5} {\tt # } {\tt 3 } {\tt #} {\em 6 3 4 7} {\rm start}
+{\rm start} {\em 1} {\tt 1} {\em 2} {\tt 1 \#} {\em 3} {\tt 1 \# } {\em 5} {\tt \# } {\tt 3 } {\tt \#} {\em 6 3 4 7} {\rm start}
 \]</div>
 </section>
 <section id="proof">
 <h2>Proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h2>
 <p>We now turn to the proof of <a class="reference internal" href="#PCP_undecidability">Theorem 16</a>.</p>
+<div class="attention admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  Assume that <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>, and suppose that the computation takes <span class="math notranslate nohighlight">\(n\)</span> steps. The <em>trace</em> of <span class="math notranslate nohighlight">\(p\)</span> is the sequence of words</p>
+<div class="math notranslate nohighlight">
+\[
+1\ w_1 2\ w_2  \cdots i(j)\ w_j  \cdots i(n)\ w_n,
+\]</div>
+<p>where for <span class="math notranslate nohighlight">\(1\leq j \leq n\)</span>, <span class="math notranslate nohighlight">\(i(j)\)</span> is the number of the instruction which is executed in step <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(w(j)\)</span> is the contents of the register after step <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>The <em>modified trace</em> of <span class="math notranslate nohighlight">\(p\)</span> is the sequence of words</p>
+<div class="math notranslate nohighlight">
+\[
+1\ v_1 2\ v_2  \cdots i(j)\ v_j  \cdots i(n)\ v_n,
+\]</div>
+<p>is defined in almost the same way, with the difference being that if <span class="math notranslate nohighlight">\(i(j)\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, and if</p>
+</div>
 </section>
 </section>
 
