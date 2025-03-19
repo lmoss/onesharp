@@ -583,18 +583,18 @@ and if at before this instruction <code class="docutils literal notranslate"><sp
 \]</div>
 <p>The differences are to be found in the first two segments that start with <span class="math notranslate nohighlight">\(3\)</span>.   That is, instruction <span class="math notranslate nohighlight">\(3\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.  The first segment which starts with a <span class="math notranslate nohighlight">\(3\)</span> is <span class="math notranslate nohighlight">\(3{\tt 1 \#}\)</span>.  In the trace, this is <span class="math notranslate nohighlight">\(3{\tt \#}\)</span>.  In the modified trace, we added the {\tt 1} because before we executed the instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, the register started with a {\tt 1}.   Similar remarks apply to the second of the  three segments that start with <span class="math notranslate nohighlight">\(3\)</span>.<br />
 The third such segment does not get an extra character because the register was empty at the time that <code class="docutils literal notranslate"><span class="pre">1#####</span></code> was executed.</p>
+<p>Notice that the modified trace is identical to the Post word in our example above, except for the first and last symbols, <span class="math notranslate nohighlight">\(start\)</span> and <span class="math notranslate nohighlight">\(halt\)</span>.</p>
 </section>
 </div><div class="proof lemma admonition" id="domino_contruction_works">
 <p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
 <section class="lemma-content" id="proof-content">
-<p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{D}(p)\)</span>
-and also the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers.</p>
+<p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider  the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers and the tile set <span class="math notranslate nohighlight">\(\mathcal{D}(p)\)</span>.</p>
 <p>For all <span class="math notranslate nohighlight">\(n\)</span> the following are equivalent:</p>
 <ol class="arabic simple">
 <li><p>The run goes on for at least <span class="math notranslate nohighlight">\(n\)</span> steps without halting.</p></li>
 <li><p>There is a (unique) sequence of  dominos <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> with the following properties:</p></li>
 </ol>
-<p>(a) The word across the tops of <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> is</p>
+<p>(a). The word across the tops of <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> is</p>
 <p>The <span class="math notranslate nohighlight">\(n\)</span>th row starts with an instruction tile bearing <span class="math notranslate nohighlight">\(i(n)\)</span> on the bottom and <span class="math notranslate nohighlight">\(i(n+1)\)</span> on the top,
 and the
 the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps.</p>
