@@ -489,7 +489,7 @@ We use build on the undecidability of the Halting Problem to prove the undecidab
 \[\begin{split}
 \begin{array}{lcl}
 K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
-K^2&amp; = &amp;  \{ p \in A : [\![p]\!](\ )\!\!\downarrow\ \mbox{ and }  [\![p]\!](\ )\simeq \varepsilon}\\
+K^2&amp; = &amp;  \{ p \in A : [\![p]\!](\ )\!\!\downarrow\ \mbox{ and }  [\![p]\!](\ )\simeq \varepsilon\}\\
 \end{array}
 \end{split}\]</div>
 <p>We know that <span class="math notranslate nohighlight">\(K^1\)</span> is undecidable.    It is easy to see that <span class="math notranslate nohighlight">\(K^1 \leq K^2\)</span> via the function <span class="math notranslate nohighlight">\(p\mapsto p + clear\)</span>, and so <span class="math notranslate nohighlight">\(K^2\)</span> is also undecidable.</p>
@@ -548,13 +548,13 @@ Similarly, whenever instruction <span class="math notranslate nohighlight">\(i\)
 <p>We now turn to the proof of <a class="reference internal" href="#PCP_undecidability">Theorem 16</a>.</p>
 <div class="attention admonition">
 <p class="admonition-title">Definition</p>
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  Assume that <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>, and suppose that the computation takes <span class="math notranslate nohighlight">\(n\)</span> steps. The <em>trace</em> of <span class="math notranslate nohighlight">\(p\)</span> is the sequence of words</p>
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  Assume that <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>, and suppose that the computation goes on for at least <span class="math notranslate nohighlight">\(n\)</span> steps without halting.   The <em><span class="math notranslate nohighlight">\(n\)</span>-trace</em> of <span class="math notranslate nohighlight">\(p\)</span> is the sequence of words</p>
 <div class="math notranslate nohighlight">
 \[
 1\ w_1 2\ w_2  \cdots i(j)\ w_j  \cdots i(n)\ w_n,
 \]</div>
 <p>where for <span class="math notranslate nohighlight">\(1\leq j \leq n\)</span>, <span class="math notranslate nohighlight">\(i(j)\)</span> is the number of the instruction which is executed in step <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(w(j)\)</span> is the contents of the register after step <span class="math notranslate nohighlight">\(j\)</span>.</p>
-<p>The <em>modified trace</em> of <span class="math notranslate nohighlight">\(p\)</span> is the sequence of words</p>
+<p>The <em>modified <span class="math notranslate nohighlight">\(n\)</span>-trace</em> of <span class="math notranslate nohighlight">\(p\)</span> is the sequence of words</p>
 <div class="math notranslate nohighlight">
 \[
 1\ v_1 2\ v_2  \cdots i(j)\ v_j  \cdots i(n)\ v_n,
@@ -571,35 +571,41 @@ and if at before this instruction <code class="docutils literal notranslate"><sp
 \[
 {\tt 1\# | 1\#\# | 1 \#^5  | 1^3\#^3 |  1^2 \#^4  |  1^3 \#^4}
 \]</div>
-<p>The trace is</p>
+<p>The <span class="math notranslate nohighlight">\(9\)</span>-trace is</p>
 <div class="math notranslate nohighlight">
 \[
 1 {\tt 1} | 2 {\tt 1 \#}  | 3 {\tt \#} | 5 {\tt \#}  | 3 {\tt \varepsilon } | 6 \varepsilon | 3  \varepsilon | 4  \varepsilon | 7  \varepsilon 
 \]</div>
-<p>The modified trace is</p>
+<p>The modified <span class="math notranslate nohighlight">\(9\)</span>-trace is</p>
 <div class="math notranslate nohighlight">
 \[
 1 {\tt 1} | 2 {\tt 1 \#}  | 3 {\tt 1 \#} | 5 {\tt \#}  | 3 {\tt \# } | 6 \varepsilon | 3  \varepsilon | 4  \varepsilon | 7  \varepsilon | 
 \]</div>
 <p>The differences are to be found in the first two segments that start with <span class="math notranslate nohighlight">\(3\)</span>.   That is, instruction <span class="math notranslate nohighlight">\(3\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.  The first segment which starts with a <span class="math notranslate nohighlight">\(3\)</span> is <span class="math notranslate nohighlight">\(3{\tt 1 \#}\)</span>.  In the trace, this is <span class="math notranslate nohighlight">\(3{\tt \#}\)</span>.  In the modified trace, we added the <span class="math notranslate nohighlight">\({\tt 1}\)</span> because before we executed the instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>, the register started with a <span class="math notranslate nohighlight">\({\tt 1}\)</span>.   Similar remarks apply to the second of the  three segments that start with <span class="math notranslate nohighlight">\(3\)</span>.<br />
 The third such segment does not get an extra character because the register was empty at the time that <code class="docutils literal notranslate"><span class="pre">1#####</span></code> was executed.</p>
-<p>Notice that the modified trace is identical to the Post word in our example above, except for the first and last symbols, <span class="math notranslate nohighlight">\(start\)</span> and <span class="math notranslate nohighlight">\(halt\)</span>.</p>
+<p>Notice that the modified <span class="math notranslate nohighlight">\(9\)</span>-trace is identical to the Post word in our example above, except for the first and last symbols, <span class="math notranslate nohighlight">\(start\)</span> and <span class="math notranslate nohighlight">\(halt\)</span>.</p>
 </section>
 </div><div class="proof lemma admonition" id="domino_contruction_works">
 <p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider  the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers and the tile set <span class="math notranslate nohighlight">\(\mathcal{D}(p)\)</span>.</p>
-<p>For all <span class="math notranslate nohighlight">\(n\)</span> the following are equivalent:</p>
+<p>For all <span class="math notranslate nohighlight">\(n\geq 0\)</span> the following are equivalent:</p>
 <ol class="arabic simple">
 <li><p>The run goes on for at least <span class="math notranslate nohighlight">\(n\)</span> steps without halting.</p></li>
 <li><p>There is a (unique) sequence of  dominos <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> with the following properties:</p></li>
 </ol>
-<p>(a). The word across the tops of <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> is</p>
+<p>(a). The word across the tops of <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> is the modified <span class="math notranslate nohighlight">\(n\)</span>-trace, perhaps with one extra symbol at the end.
+The word across the bottoms is the modified <span class="math notranslate nohighlight">\((n+1)\)</span>-trace, perhaps with one extra symbol at the end.</p>
+<p>(b) <span class="math notranslate nohighlight">\(d_1 d_2 \cdots d_r\)</span> both starts and ends with an instruction domino.</p>
 <p>The <span class="math notranslate nohighlight">\(n\)</span>th row starts with an instruction tile bearing <span class="math notranslate nohighlight">\(i(n)\)</span> on the bottom and <span class="math notranslate nohighlight">\(i(n+1)\)</span> on the top,
 and the
 the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps.</p>
 </section>
-</div></section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n = 0\)</span>, we take <span class="math notranslate nohighlight">\(r = 2\)</span>, and we take <span class="math notranslate nohighlight">\(d_1, d_2 to be the starting domino together with the unique domino with instruction number \)</span>1$ on the top.   We omit the verification that this works.</p>
+<p>Now assume our result for <span class="math notranslate nohighlight">\(n\)</span>, and we show it for <span class="math notranslate nohighlight">\(n+1\)</span>.   W</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
