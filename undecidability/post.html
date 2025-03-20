@@ -602,8 +602,11 @@ and the
 the word encoded in the <span class="math notranslate nohighlight">\(n\)</span>th row is the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n = 0\)</span>, we take <span class="math notranslate nohighlight">\(r = 2\)</span>, and we take <span class="math notranslate nohighlight">\(d_1, d_2 to be the starting domino together with the unique domino with instruction number \)</span>1$ on the top.   We omit the verification that this works.</p>
-<p>Now assume our result for <span class="math notranslate nohighlight">\(n\)</span>, and we show it for <span class="math notranslate nohighlight">\(n+1\)</span>.   W</p>
+<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.  For <span class="math notranslate nohighlight">\(n = 0\)</span>, we take <span class="math notranslate nohighlight">\(r = 2\)</span>, and we take <span class="math notranslate nohighlight">\(d_1, d_2\)</span> to be the starting domino together with the unique domino with instruction number <span class="math notranslate nohighlight">\(1\)</span> on the top.   We omit the verification that this works.</p>
+<p>Now assume our result for <span class="math notranslate nohighlight">\(n\)</span>, and we show it for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
+<p>In the other direction, assume (2) for <span class="math notranslate nohighlight">\(n+1\)</span>, and let <span class="math notranslate nohighlight">\(d_1, \ldots, d_r\)</span> be as in (2).  We show (1) for <span class="math notranslate nohighlight">\(n+1\)</span>.   Consider the initial subsequence
+of <span class="math notranslate nohighlight">\(d_1, \ldots, d_r\)</span>  determined by the first <span class="math notranslate nohighlight">\(n\)</span> instruction dominoes, and everything that came before any of these.   This sequence has the properties
+in (2) for <span class="math notranslate nohighlight">\(n\)</span>.  So by induction hypothesis, we also know (1) for <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 </section>
 </section>
