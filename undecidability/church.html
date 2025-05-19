@@ -469,6 +469,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-in-first-order-logic">Validity in first-order logic</a></li>
 </ul>
             </nav>
         </div>
@@ -483,13 +484,14 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/church.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="logic">
 <h1>Logic<a class="headerlink" href="#logic" title="Link to this heading">#</a></h1>
-<p>This section is going to contain a proof of Church’s Theorem that satisfiability of first-order logic is undecidable.   This will be a corollary of the undecidability of tiling.</p>
+<p>This section is going to contain a proof of Church’s Theorem that <em>satisfiability</em> of first-order logic is undecidable.   We assume that you know what a first-order logic sentence is, or that you are willing to read on and look things up elsewhere as needed.   A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>satsifiable</em> if <span class="math notranslate nohighlight">\(\phi\)</span> has a model.</p>
 <div class="proof theorem admonition" id="Churchs-theorem">
 <p class="admonition-title"><span class="caption-number">Theorem 17 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>The set of sentences of first-order logic which are satisfiable is undecidable.</p>
+<p>The set <span class="math notranslate nohighlight">\(SAT_{FO}\)</span> of sentences of first-order logic which are satisfiable is undecidable.
+In fact <span class="math notranslate nohighlight">\(\overline{K}\leq_m SAT_{FO}\)</span>.</p>
 </section>
-</div><p>Before we start in on the proof we want to outline the overall strategy.   We build on the undecidability of tiling.  So you will want to recall the (finite pointed) tile sets and also what it means for a tile set to tile the quadrant.  We want to construct a computable function taking tile sets to logic sentences with the property that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.  If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then the model of <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> which we have in mind <em>is</em> the quadrant with the tiling on it.   But as with all reductions, we need to be sure that if there is <em>any</em> model of <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span>, then there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   This goes via considering the <em>grid</em> <span class="math notranslate nohighlight">\(N\times N\)</span> as a structure which interprets a simple signature.  This is what comes next.   The discussion sets aside the tiling at first and just consider the grid.   After we prove an important lemma about this model, we return to tile sets and tilings of the quadrant.</p>
+</div><p>Before we start in on the proof we want to outline the overall strategy.   We build on the undecidability of tiling.  So you will want to recall the (finite pointed) tile sets and also what it means for a tile set to tile the quadrant.  We want to construct a computable function taking tile sets to logic sentences with the property that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.  If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then the model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> which we have in mind <em>is</em> the quadrant with the tiling on it.   But as with all reductions, we need to be sure that if there is <em>any</em> model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>, then there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   This goes via considering the <em>grid</em> <span class="math notranslate nohighlight">\(N\times N\)</span> as a structure which interprets a simple signature.  This is what comes next.   The discussion sets aside the tiling at first and just consider the grid.   After we prove an important lemma about this model, we return to tile sets and tilings of the quadrant.</p>
 <section id="the-grid">
 <h2>The grid<a class="headerlink" href="#the-grid" title="Link to this heading">#</a></h2>
 <p>Until further notice, our signature <span class="math notranslate nohighlight">\(\Sigma\)</span> contains a constant <span class="math notranslate nohighlight">\(0\)</span>, and two unary function symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span>, standing for <em>north</em> and <em>east</em>.   We have in mind a specific <span class="math notranslate nohighlight">\(\Sigma\)</span>-structure which we call <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> for <em>grid</em>.  The points of the grid are pairs of natural numbers, so <span class="math notranslate nohighlight">\(G = N\times N\)</span>.   The symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are interpreted as follows:</p>
@@ -593,6 +595,35 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 </section>
 </div>
 </section>
+<section id="validity-in-first-order-logic">
+<h2>Validity in first-order logic<a class="headerlink" href="#validity-in-first-order-logic" title="Link to this heading">#</a></h2>
+<p>A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>valid</em> if it is true in all models.  This is the same thing as saying that <span class="math notranslate nohighlight">\(\neg\phi\)</span> is not satisfiable.   So if we let <span class="math notranslate nohighlight">\(Val_{FO}\)</span> be the set of valid sentences, then</p>
+<div class="math notranslate nohighlight">
+\[
+K \leq_m Val_{FO}
+\]</div>
+<div class="exercise admonition" id="undecidability/church-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 78 </span></p>
+<section id="exercise-content">
+<p>Prove this last fact, given what we have done above.</p>
+</section>
+</div>
+<p>Naturally, we wish to know about the converse: is <span class="math notranslate nohighlight">\(Val_{FO}\leq_m K\)</span>?  We show that it is, leaning on a very important property of first-order logic.  This is that there is a <em>proof system</em> for it.   That is there is a definition of a <em>(formal) proof</em> with the following properties:</p>
+<ol class="arabic simple">
+<li><p>Formal proofs are finite sequences of logic sentences, and the relation</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\mbox{$P$ is a proof of $\phi$}
+\]</div>
+<p>is decidable.</p>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(\phi\in VAL_{FO}\)</span> if and only if for some <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(P\)</span> is a proof of <span class="math notranslate nohighlight">\(\phi\)</span>.</p></li>
+</ol>
+<p>Point 2 is called the <em>Completeness Theorem</em> of first-order logic.</p>
+<p>It follows from the two points that the set <span class="math notranslate nohighlight">\(VAL_{FO}\)</span>  is <span class="math notranslate nohighlight">\(\Sigma_1\)</span> and hence computably enumerable. Therefore <span class="math notranslate nohighlight">\(Val_{FO}\leq_m K\)</span>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -657,6 +688,7 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-in-first-order-logic">Validity in first-order logic</a></li>
 </ul>
   </nav></div>
 
