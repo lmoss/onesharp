@@ -467,6 +467,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-churchs-theorem">Proof of <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">Churchs-theorem</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -545,7 +547,7 @@ It is easy to check that <span class="math notranslate nohighlight">\(f\)</span>
 </section>
 <section id="two-improvements">
 <h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
-<p>```{exercise} Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
+<p>```{exer} Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.   This function has the property
 that the number of unary relation symbols in <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> is the same as the number of tiles in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.<br />
 Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
@@ -555,13 +557,32 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+</section>
+<section id="mapping-tile-sets-to-logic-sentences">
+<h2>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h2>
+<p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> is to computably map tile sets to logic sentences in such a way as to have the following condition:</p>
+<div class="math notranslate nohighlight">
+\[
+\mbox{For all tile sets $\mathcal{T}$, $\varphi(\mathcal{T})$ has only three variables.}
+\]</div>
+<p>Here is the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.   In words, it should be the conjunction of sentences which say</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\phi_{grid}\)</span></p></li>
+<li><p>Every square in the grid gets exactly one tile.</p></li>
+<li><p>For all squares <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match appropriately.</p></li>
+<li><p>For all squares <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(e(x)\)</span> match appropriately.</p></li>
+<li><p>The tile on <span class="math notranslate nohighlight">\(0\)</span> is <span class="math notranslate nohighlight">\(t_0\)</span>.</p></li>
+</ol>
+</section>
+<section id="proof-of-churchs-theorem">
+<h2>Proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a><a class="headerlink" href="#proof-of-churchs-theorem" title="Link to this heading">#</a></h2>
 <div class="proof lemma admonition" id="lemma-2">
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
 </section>
-</div><p>```{exercise} Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function  <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that:</p>
+</div><p>```{exer} Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function  <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that for all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>:</p>
 <ol class="arabic simple">
-<li><p>For all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has only three variables.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has only three variables.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -630,6 +651,8 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-churchs-theorem">Proof of <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">Churchs-theorem</span></code></a></li>
 </ul>
   </nav></div>
 
