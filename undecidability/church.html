@@ -462,8 +462,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-grid">The grid</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-grid">Axioms for the grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-quadrant">Axioms for the quadrant</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
@@ -491,10 +491,10 @@ document.write(`
 <p>The set <span class="math notranslate nohighlight">\(SAT_{FO}\)</span> of sentences of first-order logic which are satisfiable is undecidable.
 In fact <span class="math notranslate nohighlight">\(\overline{K}\leq_m SAT_{FO}\)</span>.</p>
 </section>
-</div><p>Before we start in on the proof we want to outline the overall strategy.   We build on the undecidability of tiling.  So you will want to recall the (finite pointed) tile sets and also what it means for a tile set to tile the quadrant.  We want to construct a computable function taking tile sets to logic sentences with the property that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.  If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then the model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> which we have in mind <em>is</em> the quadrant with the tiling on it.   But as with all reductions, we need to be sure that if there is <em>any</em> model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>, then there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   This goes via considering the <em>grid</em> <span class="math notranslate nohighlight">\(N\times N\)</span> as a structure which interprets a simple signature.  This is what comes next.   The discussion sets aside the tiling at first and just consider the grid.   After we prove an important lemma about this model, we return to tile sets and tilings of the quadrant.</p>
-<section id="the-grid">
-<h2>The grid<a class="headerlink" href="#the-grid" title="Link to this heading">#</a></h2>
-<p>Until further notice, our signature <span class="math notranslate nohighlight">\(\Sigma\)</span> contains a constant <span class="math notranslate nohighlight">\(0\)</span>, and two unary function symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span>, standing for <em>north</em> and <em>east</em>.   We have in mind a specific <span class="math notranslate nohighlight">\(\Sigma\)</span>-structure which we call <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> for <em>grid</em>.  The points of the grid are pairs of natural numbers, so <span class="math notranslate nohighlight">\(G = N\times N\)</span>.   The symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are interpreted as follows:</p>
+</div><p>Before we start in on the proof we want to outline the overall strategy.   We build on the undecidability of tiling.  So you will want to recall the (finite pointed) tile sets and also what it means for a tile set to tile the quadrant.  We want to construct a computable function taking tile sets to logic sentences with the property that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.  If <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then the model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> which we have in mind <em>is</em> the quadrant with the tiling on it.   But as with all reductions, we need to be sure that if there is <em>any</em> model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>, then there is a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.   This goes via considering the <em>quadrant</em> <span class="math notranslate nohighlight">\(N\times N\)</span> as a structure which interprets a simple signature.  This is what comes next.   The discussion sets aside the tiling at first and just consider the quadrant.   After we prove an important lemma about this model, we return to tile sets and tilings of the quadrant.</p>
+<section id="the-quadrant-as-a-model">
+<h2>The quadrant as a model<a class="headerlink" href="#the-quadrant-as-a-model" title="Link to this heading">#</a></h2>
+<p>Until further notice, our signature <span class="math notranslate nohighlight">\(\Sigma\)</span> contains a constant <span class="math notranslate nohighlight">\(0\)</span>, and two unary function symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span>, standing for <em>north</em> and <em>east</em>.   We have in mind a specific <span class="math notranslate nohighlight">\(\Sigma\)</span>-structure which we call <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> for <em>quadrant</em>.  The points of the quadrant are pairs of natural numbers, so <span class="math notranslate nohighlight">\(G = N\times N\)</span>.   The symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are interpreted as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -504,24 +504,24 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 \end{array}
 \end{split}\]</div>
 <p>This is our intended model.</p>
-<section id="axioms-for-the-grid">
-<h3>Axioms for the grid<a class="headerlink" href="#axioms-for-the-grid" title="Link to this heading">#</a></h3>
-<p>We next write down a few sentences true in the grid.   In English, here they arey:</p>
+<section id="axioms-for-the-quadrant">
+<h3>Axioms for the quadrant<a class="headerlink" href="#axioms-for-the-quadrant" title="Link to this heading">#</a></h3>
+<p>We next write down a few sentences in our signature which are true in the quadrant.   In English, here they arey:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are one-to-one.</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> commute.</p></li>
 <li><p><span class="math notranslate nohighlight">\(0\)</span> is not in the image of <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(0\)</span> is not in the image of <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
 </ol>
 <p>These can be expressed in the first-order language of our signature.</p>
-<p>We take <span class="math notranslate nohighlight">\(\phi_1 \wedge \phi_2 \wedge \phi_3\)</span> and call it <span class="math notranslate nohighlight">\(\phi_{grid}\)</span></p>
+<p>We take <span class="math notranslate nohighlight">\(\phi_1 \wedge \phi_2 \wedge \phi_3\)</span> and call it <span class="math notranslate nohighlight">\(\phi_{quad}\)</span></p>
 <div class="proof lemma admonition" id="lemma-in-Churchs-theorem">
 <p class="admonition-title"><span class="caption-number">Lemma 8 </span></p>
 <section class="lemma-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{grid}\)</span>.   If <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is any model of <span class="math notranslate nohighlight">\(\phi_{grid}\)</span>, then the reachable submodel of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is isomorphic to the grid.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{quad}\)</span>.   If <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is any model of <span class="math notranslate nohighlight">\(\phi_{quad}\)</span>, then the reachable submodel of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is isomorphic to the quadrant.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. It is clear that <span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{grid}\)</span>.   We turn to the second assertion.</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> satisfy <span class="math notranslate nohighlight">\(\phi_{grid}\)</span>.
+<p>Proof. It is clear that <span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{quad}\)</span>.   We turn to the second assertion.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> satisfy <span class="math notranslate nohighlight">\(\phi_{quad}\)</span>.
 Observe that the every point in <span class="math notranslate nohighlight">\(M\)</span> of the form <span class="math notranslate nohighlight">\(n^i e^j(0)\)</span> belongs to the reachable submodel
 <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span>.  Going the other way, we check by induction on a term <span class="math notranslate nohighlight">\(t\)</span> without variables that <span class="math notranslate nohighlight">\(t\)</span> is of this form for some <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>and (critically) that <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are unique. For this, note that <span class="math notranslate nohighlight">\(0 = n^0 e^0(0)\)</span>.  If <span class="math notranslate nohighlight">\(t\)</span> is the (interpretation of the) term <span class="math notranslate nohighlight">\(n^i e^j(0)\)</span>, then <span class="math notranslate nohighlight">\(n(t)\)</span> is  <span class="math notranslate nohighlight">\(n^{i+1} e^j(0)\)</span>, and <span class="math notranslate nohighlight">\(e(t)\)</span> is  <span class="math notranslate nohighlight">\(n^{i} e^{j+1}(0)\)</span>.   For the uniqueness part, suppose that <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(\ell\)</span> are natural numbers and</p>
 <div class="math notranslate nohighlight">
@@ -541,7 +541,7 @@ when <span class="math notranslate nohighlight">\(j &lt; \ell\)</span>.   So we 
 \[
 f(i,j) = n^i e^j(0).
 \]</div>
-<p>From what we said above, <span class="math notranslate nohighlight">\(f\)</span> is a one-to-one function from the grid onto the reachable submodel <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.
+<p>From what we said above, <span class="math notranslate nohighlight">\(f\)</span> is a one-to-one function from the quadrant onto the reachable submodel <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.
 It is easy to check that <span class="math notranslate nohighlight">\(f\)</span> preserves the interpretations of the function symbols, and thus it is an isomorphism
 <span class="math notranslate nohighlight">\(f: \mathcal{G} \cong \mathcal{M}_{reach}\)</span>.</p>
 </div>
@@ -556,17 +556,17 @@ It is easy to check that <span class="math notranslate nohighlight">\(f\)</span>
 \]</div>
 <p>Here is the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.   In words, it should be the conjunction of sentences which say</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\phi_{grid}\)</span></p></li>
-<li><p>Every square in the grid gets exactly one tile.</p></li>
-<li><p>For all squares <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match appropriately.</p></li>
-<li><p>For all squares <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(e(x)\)</span> match appropriately.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi_{quad}\)</span></p></li>
+<li><p>Every <span class="math notranslate nohighlight">\(x\)</span> gets exactly one tile.</p></li>
+<li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match appropriately.</p></li>
+<li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(e(x)\)</span> match appropriately.</p></li>
 <li><p>The tile on <span class="math notranslate nohighlight">\(0\)</span> is <span class="math notranslate nohighlight">\(t_0\)</span>.</p></li>
 </ol>
 </section>
 <section id="proof-of-the-theorem">
 <h2>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h2>
-<p>We have defined <span class="math notranslate nohighlight">\(\varphi\)</span> just above.   We must check that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  One direction is fairly direct: if  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  The model has as universe <span class="math notranslate nohighlight">\(N\times N\)</span>, the interpretations of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> are as in the grid, and the interpretation of the symbol <span class="math notranslate nohighlight">\(T_i\)</span> is the set of pairs <span class="math notranslate nohighlight">\((i,j)\)</span> such that tile <span class="math notranslate nohighlight">\(i\)</span> goes on the point <span class="math notranslate nohighlight">\((i,j)\in N\times N\)</span>.    In the other direction, suppose that we have any model <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.   Consider the submodel generated by the constant <span class="math notranslate nohighlight">\(0\)</span>.
-By <a class="reference internal" href="#lemma-in-Churchs-theorem">Lemma 8</a>, this model <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> has a universe which is isomorphic to <span class="math notranslate nohighlight">\(N\times N\)</span>. So we may replace the points in  <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> by pairs of numbers.  In other words, we can expand <span class="math notranslate nohighlight">\(N\times N\)</span> as a model of the grid signature to also interpret the tiling relations.  Then it is easy to read off from this model an actual tiling of the quadrant: tile the square <span class="math notranslate nohighlight">\((i,j)\)</span> with tile <span class="math notranslate nohighlight">\(t_a\)</span> iff <span class="math notranslate nohighlight">\(T_a(i,j)\)</span> in  <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span>.  The point is that the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> implies that we have a proper tiling of the quadrant.</p>
+<p>We have defined <span class="math notranslate nohighlight">\(\varphi\)</span> just above.   We must check that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  One direction is fairly direct: if  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  The model has as universe <span class="math notranslate nohighlight">\(N\times N\)</span>, the interpretations of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> are as in the quadrant, and the interpretation of the symbol <span class="math notranslate nohighlight">\(T_i\)</span> is the set of pairs <span class="math notranslate nohighlight">\((i,j)\)</span> such that tile <span class="math notranslate nohighlight">\(i\)</span> goes on the point <span class="math notranslate nohighlight">\((i,j)\in N\times N\)</span>.    In the other direction, suppose that we have any model <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.   Consider the submodel generated by the constant <span class="math notranslate nohighlight">\(0\)</span>.
+By <a class="reference internal" href="#lemma-in-Churchs-theorem">Lemma 8</a>, this model <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> has a universe which is isomorphic to <span class="math notranslate nohighlight">\(N\times N\)</span>. So we may replace the points in  <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> by pairs of numbers.  In other words, we can expand <span class="math notranslate nohighlight">\(N\times N\)</span> as a model of the quadrant signature to also interpret the tiling relations.  Then it is easy to read off from this model an actual tiling of the quadrant: tile the square <span class="math notranslate nohighlight">\((i,j)\)</span> with tile <span class="math notranslate nohighlight">\(t_a\)</span> iff <span class="math notranslate nohighlight">\(T_a(i,j)\)</span> in  <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span>.  The point is that the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> implies that we have a proper tiling of the quadrant.</p>
 </section>
 <section id="two-improvements">
 <h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
@@ -579,8 +579,8 @@ By <a class="reference internal" href="#lemma-in-Churchs-theorem">Lemma 8</a>, t
 that the number of unary relation symbols in<span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> is the same as the number of tiles in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.<br />
 Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
 <p>[Hint: Take <span class="math notranslate nohighlight">\(\Sigma\)</span> to have the symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> from before, and also a new relation symbol <span class="math notranslate nohighlight">\(Tile(x)\)</span>,
-and a new unary function symbol <span class="math notranslate nohighlight">\(on\)</span>.   Instead of coding the grid, code the grid together with a separate finite set of tiles.
-The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the grid.]</p>
+and a new unary function symbol <span class="math notranslate nohighlight">\(on\)</span>.   Instead of coding the quadrant, code the quadrant together with a separate finite set of tiles.
+The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the quadrant.]</p>
 </section>
 </div>
 <div class="exercise admonition" id="undecidability/church-exercise-3">
@@ -681,8 +681,8 @@ K \leq_m Val_{FO}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-grid">The grid</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-grid">Axioms for the grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-quadrant">Axioms for the quadrant</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
