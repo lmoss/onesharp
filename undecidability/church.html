@@ -466,9 +466,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-grid">Axioms for the grid</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
 </ul>
             </nav>
         </div>
@@ -545,19 +545,6 @@ It is easy to check that <span class="math notranslate nohighlight">\(f\)</span>
 </div>
 </section>
 </section>
-<section id="two-improvements">
-<h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
-<p>```{exer} Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
-<span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.   This function has the property
-that the number of unary relation symbols in <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> is the same as the number of tiles in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.<br />
-Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
-<p>[Hint: Take <span class="math notranslate nohighlight">\(\Sigma\)</span> to have the symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> from before, and also a new relation symbol <span class="math notranslate nohighlight">\(Tile(x)\)</span>,
-and a new unary function symbol <span class="math notranslate nohighlight">\(on\)</span>.   Instead of coding the grid, code the grid together with a separate finite set of tiles.
-The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the grid.]</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
 <section id="mapping-tile-sets-to-logic-sentences">
 <h2>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h2>
 <p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> is to define a computable function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to logic sentences in such a way as to have the following condition:</p>
@@ -582,7 +569,20 @@ By <a class="reference internal" href="#lemma-in-Churchs-theorem">Lemma 8</a>, t
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
 </section>
-</div><p>```{exercise} Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that for all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>:</p>
+</div></section>
+<section id="two-improvements">
+<h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
+<p>```{exercise} Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
+<span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.   This function has the property
+that the number of unary relation symbols in <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> is the same as the number of tiles in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.<br />
+Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
+<p>[Hint: Take <span class="math notranslate nohighlight">\(\Sigma\)</span> to have the symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> from before, and also a new relation symbol <span class="math notranslate nohighlight">\(Tile(x)\)</span>,
+and a new unary function symbol <span class="math notranslate nohighlight">\(on\)</span>.   Instead of coding the grid, code the grid together with a separate finite set of tiles.
+The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the grid.]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>```{exercise} Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that for all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has only three variables.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.</p></li>
@@ -652,9 +652,9 @@ By <a class="reference internal" href="#lemma-in-Churchs-theorem">Lemma 8</a>, t
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-grid">Axioms for the grid</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
 </ul>
   </nav></div>
 
