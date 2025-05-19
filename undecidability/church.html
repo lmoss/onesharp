@@ -466,6 +466,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-grid">Axioms for the grid</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
 </ul>
             </nav>
         </div>
@@ -481,6 +482,12 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="logic">
 <h1>Logic<a class="headerlink" href="#logic" title="Link to this heading">#</a></h1>
 <p>This section is going to contain a proof of Church’s Theorem that satisfyability of first-order logic is undecidable.   This will be a corollary of the undecidability of tiling.  It also will be a place to connect to the Incompleteness Theorem (though this might deserve a section on its own) and to philosophical matters.</p>
+<div class="proof theorem admonition" id="Churchs-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 17 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The set of sentences of first-order logic which are satisfiable is undecidable.</p>
+</section>
+</div><p>Before we start in on the proof we want to outline the overall strategy.   We build on the undecidability of tiling.</p>
 <section id="the-grid">
 <h2>The grid<a class="headerlink" href="#the-grid" title="Link to this heading">#</a></h2>
 <p>Until further notice, our signature <span class="math notranslate nohighlight">\(\Sigma\)</span> contains a constant <span class="math notranslate nohighlight">\(0\)</span>, and two unary function symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span>, standing for <em>north</em> and <em>east</em>.   We have in mind a specific <span class="math notranslate nohighlight">\(\Sigma\)</span>-structure which we call <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> for <em>grid</em>.  The points of the grid are pairs of natural numbers, so <span class="math notranslate nohighlight">\(G = N\times N\)</span>.   The symbols <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are interpreted as follows:</p>
@@ -503,7 +510,7 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 </ol>
 <p>These can be expressed in the first-order language of our signature.</p>
 <p>We take <span class="math notranslate nohighlight">\(\phi_1 \wedge \phi_2 \wedge \phi_3\)</span> and call it <span class="math notranslate nohighlight">\(\phi_{grid}\)</span></p>
-<div class="proof lemma admonition" id="lemma-0">
+<div class="proof lemma admonition" id="lemma-1">
 <p class="admonition-title"><span class="caption-number">Lemma 8 </span></p>
 <section class="lemma-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{grid}\)</span>.   If <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is any model of <span class="math notranslate nohighlight">\(\phi_{grid}\)</span>, then the reachable submodel of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is isomorphic to the grid.</p>
@@ -534,11 +541,32 @@ f(i,j) = n^i e^j(0).
 It is easy to check that <span class="math notranslate nohighlight">\(f\)</span> preserves the interpretations of the function symbols, and thus it is an isomorphism
 <span class="math notranslate nohighlight">\(f: \mathcal{G} \cong \mathcal{M}_{reach}\)</span>.</p>
 </div>
-<div class="proof lemma admonition" id="lemma-1">
+</section>
+</section>
+<section id="two-improvements">
+<h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
+<p>```{exercise} Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
+<span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.   This function has the property
+that the number of unary relation symbols in <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> is the same as the number of tiles in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.<br />
+Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
+<p>[Hint: Take <span class="math notranslate nohighlight">\(\Sigma\)</span> to have the symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> from before, and also a new relation symbol <span class="math notranslate nohighlight">\(Tile(x)\)</span>,
+and a new unary function symbol <span class="math notranslate nohighlight">\(on\)</span>.   Instead of coding the grid, code the grid together with a separate finite set of tiles.
+The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the grid.]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="proof lemma admonition" id="lemma-2">
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
 </section>
-</div></section>
+</div><p>```{exercise} Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function  <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that:</p>
+<ol class="arabic simple">
+<li><p>For all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has only three variables.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal(T))\)</span> has a model.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -601,6 +629,7 @@ It is easy to check that <span class="math notranslate nohighlight">\(f\)</span>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-grid">Axioms for the grid</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
 </ul>
   </nav></div>
 
