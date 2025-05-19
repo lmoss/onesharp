@@ -563,7 +563,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 </ol>
 <div class="math notranslate nohighlight">
 \[
-(\forall x)\bigvee_{1\leq i\leq m}\biggl(t_i(x)\andd \nott\bigvee_{1\leq j\neq i\leq m}) t_j(x) \biggr)
+(\forall x)\bigvee_{1\leq i\leq m}\biggl(t_i(x)\wedge \neg\bigvee_{1\leq j\neq i\leq m}) t_j(x) \biggr)
 \]</div>
 <ol class="arabic simple" start="3">
 <li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match appropriately (see below).</p></li>
@@ -579,6 +579,19 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 \begin{array}{cccc}
 t_1 &amp; t_2 &amp; t_3 &amp; t_4 \\
 t_5 &amp; t_6 &amp; t_7 &amp; t_8
+\end{array}
+\end{split}\]</div>
+<p>Here is how we would state point 3, that for all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+(\forall x) \biggl( &amp; &amp; (t_1(x)\iif (t_1(n(x))\vee t_3(n(x))\orr t_4(n(x)))) \\
+&amp; \wedge &amp; (t_2(x)\iif t_7(n(x))) \\
+&amp; \wedge &amp; (t_3(x)\iif (t_1(n(x))\vee t_3(n(x))\orr t_4(n(x)))) \\
+&amp; \wedge &amp;t_4(x)\iif (t_1(n(x))\vee t_3(n(x))\orr t_4(n(x)))) \\
+&amp;  \wedge &amp; t_5(x)\iif t_7(n(x)) \\
+&amp; \wedge &amp; t_6(x)\iif t_6(n(x)) \\
+&amp; \wedge &amp; (t_7(x)\iif (t_1(n(x))\vee t_3(n(x))\vee t_4(n(x)))) \biggr) \\
 \end{array}
 \end{split}\]</div>
 </section>
