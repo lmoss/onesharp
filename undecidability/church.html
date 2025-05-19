@@ -563,7 +563,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 </ol>
 <div class="math notranslate nohighlight">
 \[
-(\forall x)\bigvee_{1\leq i\leq m}\biggl(t_i(x)\wedge \neg\bigvee_{1\leq j\neq i\leq m} t_j(x) \biggr)
+(\forall x)\bigvee_{1\leq i\leq m}\biggl(T_i(x)\wedge \neg\bigvee_{1\leq j\neq i\leq m} T_j(x) \biggr)
 \]</div>
 <ol class="arabic simple" start="3">
 <li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match appropriately (see below).</p></li>
@@ -586,17 +586,18 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lll}
-(\forall x) \biggl( &amp; &amp; t_1(x)\to (t_1(n(x))\vee t_3(n(x))\vee t_4(n(x))) \\
-&amp; \wedge &amp; t_2(x)\to t_7(n(x)) \\
-&amp; \wedge &amp; t_3(x)\to (t_1(n(x))\vee t_3(n(x))\vee t_4(n(x))) \\
-&amp; \wedge &amp;t_4(x)\to (t_1(n(x))\vee t_3(n(x))\vee t_4(n(x))) \\
-&amp;  \wedge &amp; t_5(x)\to t_7(n(x)) \\
-&amp; \wedge &amp; t_6(x)\to (t_6(n(x) \vee t_8(n(x))) \\
-&amp;  \wedge &amp; t_7(x)\to t_2(n(x)) \\
-&amp; \wedge &amp; t_8(x)\to (t_1(n(x))\vee t_3(n(x))\vee t_4(n(x))) \biggr) \\
+(\forall x) \biggl( &amp; &amp; T_1(x)\To (T_1(n(x))\vee T_3(n(x))\vee T_4(n(x))) \\
+&amp; \wedge &amp; T_2(x)\To T_7(n(x)) \\
+&amp; \wedge &amp; T_3(x)\To (T_1(n(x))\vee T_3(n(x))\vee T_4(n(x))) \\
+&amp; \wedge &amp;T_4(x)\To (T_1(n(x))\vee T_3(n(x))\vee T_4(n(x))) \\
+&amp;  \wedge &amp; T_5(x)\To T_7(n(x)) \\
+&amp; \wedge &amp; T_6(x)\To (T_6(n(x) \vee T_8(n(x))) \\
+&amp;  \wedge &amp; T_7(x)\To T_2(n(x)) \\
+&amp; \wedge &amp; T_8(x)\To (T_1(n(x))\vee T_3(n(x))\vee T_4(n(x))) \biggr) \\
 \end{array}
 \end{split}\]</div>
 <p>Please note that this sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires ``local’’ information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
+<p>Point 5, pertaining to the distinuished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, would be <span class="math notranslate nohighlight">\(T_5(0)\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="undecidability/church-exercise-3">
 
