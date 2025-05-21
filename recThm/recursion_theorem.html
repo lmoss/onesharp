@@ -225,11 +225,6 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../more_programs/primitive_recursion.html">Primitive recursion</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -482,7 +477,7 @@ document.write(`
 <h1>The Recursion Theorem<a class="headerlink" href="#the-recursion-theorem" title="Link to this heading">#</a></h1>
 <p>This section generalizes <a class="reference internal" href="self_writing.html"><span class="std std-doc">the existence of self-writing programs</span></a> to prove one of the cornerstone results of computability theory, Kleene’s Second Recursion Theorem.</p>
 <div class="proof theorem admonition" id="recursion_theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -550,7 +545,7 @@ q_n &amp; \mbox{if $x = \varepsilon$}\\
 </div>
 <section id="kleene-s-proof">
 <h2>Kleene’s proof<a class="headerlink" href="#kleene-s-proof" title="Link to this heading">#</a></h2>
-<p>The proof of <a class="reference internal" href="#recursion_theorem">Theorem 9</a> above begins with the idea that the program <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!] (\hat{q})\)</span>.   The original proof, due to Kleene, goes a little differently.   It starts with the idea that <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form</p>
+<p>The proof of <a class="reference internal" href="#recursion_theorem">Theorem 6</a> above begins with the idea that the program <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!] (\hat{q})\)</span>.   The original proof, due to Kleene, goes a little differently.   It starts with the idea that <span class="math notranslate nohighlight">\(q^*\)</span> should be of the form</p>
 <div class="math notranslate nohighlight">
 \[
 [\![s^1_1]\!] (p',p')
@@ -566,7 +561,7 @@ q_n &amp; \mbox{if $x = \varepsilon$}\\
 <h2>Another form of the Recusion Theorem<a class="headerlink" href="#another-form-of-the-recusion-theorem" title="Link to this heading">#</a></h2>
 <p>Here is a second form of the Recursion Theorem, due (?) to Hartley Rogers in his famous book.</p>
 <div class="proof theorem admonition" id="recursion_theorem_2">
-<p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For every computable <span class="math notranslate nohighlight">\(f: Words \to Words\)</span> there is a program <span class="math notranslate nohighlight">\(p^*\)</span> so that
 <span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![f(p^*)]\!]\)</span>.</p>
@@ -584,7 +579,7 @@ move(2,k) + y + move(k,2) + u_1
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is large enough so that <span class="math notranslate nohighlight">\(y\)</span> does not mention Rk, and <span class="math notranslate nohighlight">\(u_1\)</span> is as in
 <a class="reference external" href="https://lmoss.github.io/onesharp/universal/universal.html#universal-programs-of-more-than-one-argument">our work on the universal program</a>.</p>
-<p>By <a class="reference internal" href="#recursion_theorem">Theorem 9</a>, we have some <span class="math notranslate nohighlight">\(p^*\)</span> so that</p>
+<p>By <a class="reference internal" href="#recursion_theorem">Theorem 6</a>, we have some <span class="math notranslate nohighlight">\(p^*\)</span> so that</p>
 <div class="math notranslate nohighlight">
 \[
 [\![p^*]\!](r)  = [\![ [\! [z]\!](p^*) ]\!] (r) = [\![ [\! [y]\!](p^*) ]\!] (r) =   [\![f(p^*)]\!](r).
@@ -597,7 +592,7 @@ move(2,k) + y + move(k,2) + u_1
 <p>There is a word <span class="math notranslate nohighlight">\(p^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\([\![p^*]\!](r) = r + p^*\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Take <span class="math notranslate nohighlight">\(f\)</span> to be <span class="math notranslate nohighlight">\([\![write]\!]\)</span>.  Then <span class="math notranslate nohighlight">\(f\)</span> is total.  By <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>, let <span class="math notranslate nohighlight">\(p^*\)</span> be such that
+<p>Proof. Take <span class="math notranslate nohighlight">\(f\)</span> to be <span class="math notranslate nohighlight">\([\![write]\!]\)</span>.  Then <span class="math notranslate nohighlight">\(f\)</span> is total.  By <a class="reference internal" href="#recursion_theorem_2">Theorem 7</a>, let <span class="math notranslate nohighlight">\(p^*\)</span> be such that
 <span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![ [\![write]\!](p^*) ]\!]\)</span>.
 Then for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -609,7 +604,7 @@ Then for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 65 </span></p>
 <section id="exercise-content">
-<p>Show that <a class="reference internal" href="#recursion_theorem">Theorem 9</a> follows from <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>.</p>
+<p>Show that <a class="reference internal" href="#recursion_theorem">Theorem 6</a> follows from <a class="reference internal" href="#recursion_theorem_2">Theorem 7</a>.</p>
 </section>
 </div>
 </section>
@@ -670,7 +665,7 @@ Let <span class="math notranslate nohighlight">\(f\)</span> be a total computabl
 \right.
 \end{split}\]</div>
 <p>It should be clear how to get a computable <span class="math notranslate nohighlight">\(f\)</span> with this property, using the universal function.</p>
-<p>Now by <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>, there is some <span class="math notranslate nohighlight">\(p^*\)</span> such that <span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![f(p^*)]\!]\)</span>.
+<p>Now by <a class="reference internal" href="#recursion_theorem_2">Theorem 7</a>, there is some <span class="math notranslate nohighlight">\(p^*\)</span> such that <span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![f(p^*)]\!]\)</span>.
 This function would satisfy</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
