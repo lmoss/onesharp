@@ -24,7 +24,6 @@ parts:
   chapters:
   - file: more_programs/sanity
   - file: more_programs/arithmetic
-  - file: more_programs/primitive_recursion
   - file: more_programs/smn
   
 
@@ -35,6 +34,7 @@ parts:
 
 - caption: Computable Functions of Numbers
   chapters:
+   - file: mu/primitive_recursion
    - file: mu/T_predicate
    - file: mu/mu
 
