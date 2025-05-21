@@ -238,6 +238,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mu/primitive_recursion.html">Primitive recursion</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 </ul>
@@ -479,7 +484,7 @@ document.write(`
 <h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h1>
 <p>We come to one of the most famous and most basic results in computability theory, the <em>undecidability of the halting problem</em>, first proved by Turing in 1936.</p>
 <div class="proof theorem admonition" id="Turings-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>There is no program <span class="math notranslate nohighlight">\(p\)</span> such that
 for all words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>,</p>
@@ -545,7 +550,7 @@ again have a contradiction: <span class="math notranslate nohighlight">\([\![r]\
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you have read the
-<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/recursion_theorem.html">section on the Recursion Theorem</a>, you might enjoy a slightly different proof of <a class="reference internal" href="#Turings-theorem">Theorem 8</a>.</p>
+<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/recursion_theorem.html">section on the Recursion Theorem</a>, you might enjoy a slightly different proof of <a class="reference internal" href="#Turings-theorem">Theorem 11</a>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 <p>Assume towards a contradiction that there is a program <span class="math notranslate nohighlight">\(p\)</span> as above.  Then we easily modify it to get a program <span class="math notranslate nohighlight">\(q\)</span> so that</p>
 <div class="math notranslate nohighlight">
@@ -559,7 +564,7 @@ again have a contradiction: <span class="math notranslate nohighlight">\([\![r]\
 \right.
 \end{array}
 \end{split}\]</div>
-<p>By <a class="reference internal" href="../recThm/recursion_theorem.html#recursion_theorem">Theorem 6</a>, there is some <span class="math notranslate nohighlight">\(x^*\)</span> so that for all <span class="math notranslate nohighlight">\(y\)</span>,</p>
+<p>By <a class="reference internal" href="../recThm/recursion_theorem.html#recursion_theorem">Theorem 9</a>, there is some <span class="math notranslate nohighlight">\(x^*\)</span> so that for all <span class="math notranslate nohighlight">\(y\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -592,7 +597,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
-<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 8</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
+<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 11</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
 <div class="proof corollary admonition" id="corollary-2">
 <p class="admonition-title"><span class="caption-number">Corollary 4 </span></p>
 <section class="corollary-content" id="proof-content">
@@ -636,7 +641,7 @@ Find a subset of <span class="math notranslate nohighlight">\(A\)</span> which i
 <section class="tex2jax_ignore mathjax_ignore" id="rice-s-theorem">
 <h1>Rice’s Theorem<a class="headerlink" href="#rice-s-theorem" title="Link to this heading">#</a></h1>
 <div class="proof theorem admonition" id="Rices-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> be any set of programs, and assume that <span class="math notranslate nohighlight">\(S\)</span> is
 closed under <em>equivalence of words as one-place functions</em>: if <span class="math notranslate nohighlight">\(x\in S\)</span>, and if
