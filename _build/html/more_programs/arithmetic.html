@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'more_programs/arithmetic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Primitive recursion" href="primitive_recursion.html" />
+    <link rel="next" title="The s-m-n Theorem" href="smn.html" />
     <link rel="prev" title="A tool to help write programs" href="sanity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,11 +211,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="primitive_recursion.html">Primitive recursion</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -229,6 +224,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mu/primitive_recursion.html">Primitive recursion</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 </ul>
@@ -253,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
     </div>
@@ -713,28 +713,28 @@ This is φbump(compare,4)
 <p>The parts of the program that are shaded red are special to the multiplication algorithm. The point is that if we wish to write a program for something similar, we could keep the outside “shell” and just modify the red lines above. Your first exercise below asks you to do just that.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="more_programs/arithmetic-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <div class="section" id="exercise-content">
 <p>Modify the multiplication program to compute exponentiation. This would be a program <code class="docutils literal notranslate"><span class="pre">exp</span></code> with the following property: when started with the bb representation of m in R1 and n in R2, the program eventually halts with the bb representation of mn in R1.</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <div class="section" id="exercise-content">
 <p>In our work on multiplication, we assumed addition and worked with it to get multiplication. Now forget about our program for addition, and using only the program <code class="docutils literal notranslate"><span class="pre">succ</span></code> for the successor function, construct a program for addition.</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which, when started with n in bb in R1, gives n! in R1. [Here n! is the factorial function. Remember that 0! = 1 and (n+1)! = (n+1) x n!.]</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
 <div class="section" id="exercise-content">
 <p>Write two programs which convert back and forth from unary to binary representation.</p>
 </div>
@@ -781,11 +781,11 @@ This is φbump(compare,4)
       </div>
     </a>
     <a class="right-next"
-       href="primitive_recursion.html"
+       href="smn.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Primitive recursion</p>
+        <p class="prev-next-title">The s-m-n Theorem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

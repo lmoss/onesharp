@@ -216,11 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="more_programs/primitive_recursion.html">Primitive recursion</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
@@ -234,6 +229,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mu/primitive_recursion.html">Primitive recursion</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu/mu.html">Mu-recursive functions</a></li>
 </ul>
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="undecidability/post.html">Post’s Correspondence Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undecidability/church.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
     </div>
@@ -443,6 +443,7 @@ document.write(`
    <a href="#cap-definition-9"><strong>definition-9</strong></a> | 
    <a href="#cap-domino_contruction_works"><strong>domino_contruction_works</strong></a> | 
    <a href="#cap-example-3"><strong>example-3</strong></a> | 
+   <a href="#cap-example-church-tiling"><strong>example-church-tiling</strong></a> | 
    <a href="#cap-example-formal-tiling"><strong>example-formal-tiling</strong></a> | 
    <a href="#cap-example-modified-trace"><strong>example-modified-trace</strong></a> | 
    <a href="#cap-lemma-2"><strong>lemma-2</strong></a> | 
@@ -720,6 +721,14 @@ document.write(`
        <a href="undecidability/tiling.html#example-3"><code class="xref">example-3</code></a> <em>(undecidability/tiling)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-church-tiling"><td></td><td>
+       <strong>example-church-tiling</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="undecidability/church.html#example-church-tiling"><code class="xref">example-church-tiling</code></a> <em>(undecidability/church)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-formal-tiling"><td></td><td>
        <strong>example-formal-tiling</strong></td><td></td></tr>
      <tr>
@@ -741,7 +750,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="undecidability/church.html#lemma-2"><code class="xref">lemma-2</code></a> <em>(undecidability/church)</em></td><td>
+       <a href="mu/primitive_recursion.html#lemma-2"><code class="xref">lemma-2</code></a> <em>(mu/primitive_recursion)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lemma-7"><td></td><td>
@@ -853,7 +862,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="universal/universal.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(universal/universal)</em></td><td>
+       <a href="mu/primitive_recursion.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(mu/primitive_recursion)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-1"><td></td><td>
@@ -861,7 +870,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="more_programs/primitive_recursion.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(more_programs/primitive_recursion)</em></td><td>
+       <a href="mu/primitive_recursion.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(mu/primitive_recursion)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-2"><td></td><td>
@@ -877,7 +886,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="more_programs/primitive_recursion.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(more_programs/primitive_recursion)</em></td><td>
+       <a href="mu/primitive_recursion.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(mu/primitive_recursion)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-T"><td></td><td>

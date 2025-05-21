@@ -1,6 +1,6 @@
 # Invitation to Computability 
 
-This is an online textbook on the basics of computability theory, originating in classes given by the author 
+This is a textbook on the basics of computability theory, originating in classes given by the author 
 at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is 
 not. It treats the basic topics of the subject: the concept of computability, primitive recursion, 
 mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in 
@@ -27,7 +27,7 @@ an intellectual version of a coffee-table book.
 
 The intended readers are students of certain areas of computer science, mathematics, philosophy, or other fieds.
 It it aimed at anyone who frequently encounters the topics of the book and has the needed mathematical background to
-read it.  That background is a standard familiarity with mathematical notation and discourse.   One should know
+read it.  That background is a working familiarity with mathematical notation and discourse.   One should know
 how to read mathematics.  But beyond that, nothing is really assumed.  There are places where it would be good to
 have seen some basic topics in areas like logic, set theory, and computer programming; I hope to have provided
 enough background on those to make what is here accessible.
@@ -38,11 +38,12 @@ The main feature of the book is that it is an online resource rather than a prin
 Most of the chapters in the book are Jupyter notebooks. (Some others are markdown files.)
 Rather than simply read, these chapters are intended to  be *run*. One way to use them is to save them and then run them locally.  Alternatively, one could open them  on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don't have buttons to run it on CoCalc, and the best option is to run them on Colab.  For this, one starts by clicking on the button at the top. 
 
-Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  The particular model of computation developed here is a variant of register machines called *text register machines*.  A "text" register machine is a register machine whose programming language alphabet is the same as the alphabet written into the registers.  For us, the programming language is a set of words on the two letter alphabet ```{1,#}```.  So the language is called ```1#```. This text comes with a Python interpreter for ```1#```, so the programs can be run.  The programs themselves are unreadable.  But the book comes with tool support to enable people to write programs; for example, one can turn a flowchart into a  ```1#``` program.      The main first theorems of computability theory are presented constructively in full detail.   So one can write explicit universal programs, $s^m_n$ programs, self-writing programs, the T-predicate, and similar artifacts that essentially *are* the main first results in computability theory.  This is why the treatment here is much more explicit than usual. 
+Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  It is more concrete in the beginning than other books, and more abstract later on.  The concrete part in the beginning develops a model of computation which is a variant of a register machine called a *text register machine*.  A "text" register machine is a register machine whose programming language alphabet is the same as the alphabet written into the registers.  For us, the programming language is a set of words on the two letter alphabet ```{1,#}```.  So the language is called ```1#```. This text comes with a Python interpreter for ```1#```, so the programs can be run.  The programs themselves are unreadable.  But the book comes with tool support to enable people to write programs; for example, one can turn a flowchart into a  ```1#``` program.      The main first theorems of computability theory are presented constructively in full detail.   So one can write explicit universal programs, $s^m_n$ programs, self-writing programs, the T-predicate, and similar artifacts that essentially *are* the main first results in computability theory.  This is why the treatment here is much more explicit than usual. 
 
-The ways in which the text are more sophisticated include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, etc. 
-Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail, but at the same time it discusses the overall issues of coding in an abstract way that owes a lot to abstract data types.  Returning to the book, it also presents quite a bit on concrete undecidability matters and the main negative results of 20th century mathematical logic such as 
-Church's Theorem that satisfiability in first-order logic is undecidable.
+The ways in which the text are more sophisticated include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, etc.
+Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail, but at the same time it discusses the overall issues of coding in an abstract way that owes a lot to abstract data types and category theory.  
+
+The book also presents quite a bit on concrete undecidability matters and the main negative results of 20th century mathematical logic such as Church's Theorem that satisfiability in first-order logic is undecidable.
 
 
 ## Using it in a classroom or for self-study
