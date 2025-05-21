@@ -43,6 +43,9 @@ parts:
   - file: recThm/self_writing
   - file: recThm/recursion_theorem
   
+- caption: Computably Enumerable Sets
+  chapters:
+  - file: cesets/computablyEnumerable  
   
 #- caption: The Enumeration Theorem
 #  chapters:
