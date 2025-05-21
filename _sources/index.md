@@ -57,4 +57,4 @@ Overall, there is enough material for a course, but probably one would would wan
 
 ## Artwork
 
-The illustrations in the book are by  <a href="https://www.jeffreyfineart.com/">Jeffrey Fine</a>.  I was fortunate to work with him on a <a href="https://www.youtube.com/watch?v=0cH3rB8dIVo">logic-related video</a>, and it's a pleasure to do this again.
+The illustrations in the book are by  <a href="https://www.jeffreyfineart.com/">Jeffrey Fine</a>.  I was fortunate to work with him on a <a href="https://www.youtube.com/watch?v=0cH3rB8dIVo">logic-related video</a>.  It's a pleasure to do this again.
