@@ -55,6 +55,6 @@ Much of the action in this book is in the exercises.   So for a student working 
 
 Overall, there is enough material for a course, but probably one would would want to supplement it based on the interests of the students and instructor.  At the same time, the topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
 
-### Artwork
+## Artwork
 
 The illustrations in the book are by  <a href="https://www.jeffreyfineart.com/">Jeffrey Fine</a>.  I was fortunate to work with him on a <a href="https://www.youtube.com/watch?v=0cH3rB8dIVo">logic-related video</a>, and it's a pleasure to do this again.
