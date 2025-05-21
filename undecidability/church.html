@@ -506,6 +506,7 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 <p>This is our intended model.</p>
 <section id="axioms-for-the-quadrant">
 <h3>Axioms for the quadrant<a class="headerlink" href="#axioms-for-the-quadrant" title="Link to this heading">#</a></h3>
+<p><em>This material is not needed in the theorem below and so should be deleted.</em></p>
 <p>We next write down four sentences in our signature which are true in the quadrant.   Here they are in English and as first-order sentences <span class="math notranslate nohighlight">\(\phi_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(\phi_4\)</span>:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are one-to-one: <span class="math notranslate nohighlight">\((\forall x)(\forall y) (n(x) = n(y)\to x = y)\)</span>, and similarly for <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
@@ -565,7 +566,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 \]</div>
 <p>Here is the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.  Suppose that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has tiles <span class="math notranslate nohighlight">\(t_0\)</span>, <span class="math notranslate nohighlight">\(t_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(t_m\)</span>.  Then  <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> is the conjunction of sentences which say</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\phi_{quad}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> commute: <span class="math notranslate nohighlight">\((\forall x)(n(e(x)) = e(n(x)))\)</span>.</p></li>
 <li><p>Every <span class="math notranslate nohighlight">\(x\)</span> gets exactly one tile:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
@@ -603,7 +604,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 &amp; \wedge &amp; T_8(x)\to (T_1(n(x))\vee T_3(n(x))\vee T_4(n(x))) \biggr) \\
 \end{array}
 \end{split}\]</div>
-<p>Please note that this sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires ``local’’ information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
+<p>Please note that this sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires “local” information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
 <p>Point 5, pertaining to the distinuished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, would be <span class="math notranslate nohighlight">\(T_5(0)\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="undecidability/church-exercise-4">
@@ -611,9 +612,8 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 <p class="admonition-title"><span class="caption-number">Exercise 78 </span></p>
 <section id="exercise-content">
 <ol class="arabic simple">
-<li><p>Write out point 3 in the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> in a formal way, similar to what we did with point 2.</p></li>
 <li><p>What should the disjunction <span class="math notranslate nohighlight">\(\bigvee \emptyset\)</span> be in logic?</p></li>
-<li><p>Suppose we were to add a new tile to our example tile set above with four new colors on the sides.  Then nothing can go above this new tile.  Based on your definition of <span class="math notranslate nohighlight">\(\bigvee\emptyset\)</span>, what will our example sentence be?  Is it correct?</p></li>
+<li><p>Suppose we were to add a new tile to our example tile set above with four completely new colors on the sides.  Then nothing can go above this new tile, not even itself.  Based on your definition of <span class="math notranslate nohighlight">\(\bigvee\emptyset\)</span>, what will our example sentence be?  Is it correct?</p></li>
 </ol>
 </section>
 </div>
@@ -622,10 +622,18 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 <h2>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h2>
 <p>We have defined <span class="math notranslate nohighlight">\(\varphi\)</span> just above.   We must check that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  One direction is fairly direct: if  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  The model has as universe <span class="math notranslate nohighlight">\(N\times N\)</span>, the interpretations of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> are as in the quadrant, and the interpretation of the symbol <span class="math notranslate nohighlight">\(T_i\)</span> is the set of pairs <span class="math notranslate nohighlight">\((i,j)\)</span> such that tile <span class="math notranslate nohighlight">\(i\)</span> goes on the point <span class="math notranslate nohighlight">\((i,j)\in N\times N\)</span>.</p>
 <p>In the other direction, suppose that we have any model <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.<br />
-We need to tile the quadrant.   Tile the square <span class="math notranslate nohighlight">\((i,j)\)</span> with the unique <span class="math notranslate nohighlight">\(t_a\in \mathcal{T}\)</span> such that <span class="math notranslate nohighlight">\(T_a(n^i e^j(0))\)</span> in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.  There is a unique such <span class="math notranslate nohighlight">\(t_a \in \mathcal{T}\)</span> since <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> satisfies point 2 in the definition of
-<span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.</p>
-<p>Consider the submodel generated by the constant <span class="math notranslate nohighlight">\(0\)</span>.
-By <a class="reference internal" href="#lemma-in-Churchs-theorem">Lemma 8</a>, this model <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> has a universe which is isomorphic to <span class="math notranslate nohighlight">\(N\times N\)</span>. So we may replace the points in  <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> by pairs of numbers.  In other words, we can expand <span class="math notranslate nohighlight">\(N\times N\)</span> as a model of the quadrant signature to also interpret the tiling relations.  Then it is easy to read off from this model an actual tiling of the quadrant: tile the square <span class="math notranslate nohighlight">\((i,j)\)</span> with tile <span class="math notranslate nohighlight">\(t_a\)</span> iff <span class="math notranslate nohighlight">\(T_a(i,j)\)</span> in <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span>.  The point is that the definition of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> implies that we have a proper tiling of the quadrant.</p>
+We need to tile the quadrant.   Tile the square <span class="math notranslate nohighlight">\((i,j)\)</span> with the unique <span class="math notranslate nohighlight">\(t_a\in \mathcal{T}\)</span> such that <span class="math notranslate nohighlight">\(T_a(n^j e^i(0))\)</span> in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.  There is a unique such <span class="math notranslate nohighlight">\(t_a \in \mathcal{T}\)</span> since <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> satisfies point 2 in the definition of
+<span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.  We need to see that this tiling is proper.  First of all, <span class="math notranslate nohighlight">\(0\)</span> in the quadrant is <span class="math notranslate nohighlight">\((0,0)\)</span>, and so we tile it with the unique <span class="math notranslate nohighlight">\(t_a\)</span> such that <span class="math notranslate nohighlight">\(T_a(n^0 e^0(0))\)</span>; that is <span class="math notranslate nohighlight">\(T_a(0)\)</span>.  But in this case <span class="math notranslate nohighlight">\(t_a\)</span> is the distinguished tile <span class="math notranslate nohighlight">\(t^*\)</span>, as desired.</p>
+<p>Let us check that the tiles on <span class="math notranslate nohighlight">\((i,j)\)</span> and <span class="math notranslate nohighlight">\((i+1,j)\)</span> match on the common edge.
+(The same kind of work applies to the tiles on <span class="math notranslate nohighlight">\((i,j)\)</span> and <span class="math notranslate nohighlight">\((i,j+1)\)</span>, and it is rather easier.) The point is that in the quadrant, <span class="math notranslate nohighlight">\(e(i,j) = (i+1,j)\)</span>.
+Let <span class="math notranslate nohighlight">\(m\)</span> be the interpretation of the term <span class="math notranslate nohighlight">\(n^j e^i(0)\)</span> in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.  We claim that <span class="math notranslate nohighlight">\(e(m)\)</span> is the interpretation of
+<span class="math notranslate nohighlight">\(n^{j} e^{i+1}(0)\)</span>.  The reason is that in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the functions <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> commute.  So</p>
+<div class="math notranslate nohighlight">
+\[
+e(n^j e^i(0))  = n e(n^{j-1} e^i(0))  = \cdots = n^j e (e^{i}(0)) = n^{j} e^{i+1}(0). 
+\]</div>
+<p>It follows that in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the tiles on <span class="math notranslate nohighlight">\(n^j e^i(0)\)</span> and <span class="math notranslate nohighlight">\( n^{j} e^{i+1}(0)\)</span> match appropriately.</p>
+<p>By construction, those are the same tiles as on <span class="math notranslate nohighlight">\((i,j)\)</span> and <span class="math notranslate nohighlight">\((i+1,j)\)</span> in the quadrant.  So those tiles match.</p>
 </section>
 <section id="two-improvements">
 <h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
