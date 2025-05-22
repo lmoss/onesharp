@@ -617,7 +617,7 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
-<p>A <em>program</em> is a sequence of instructions run together.</p>
+<p>A <em>program</em> is a finite sequence of instructions run together.   Usually we insist that programs be nonempty.</p>
 </section>
 </div><p>We have already been using this terminology.  For example, we saw</p>
 <p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
@@ -675,8 +675,8 @@ and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <sp
 </tbody>
 </table>
 </div>
-<p>All numbers in this chart are written in unary.
-Registers are processed as queues: symbols enter on the right and exit on the left.</p>
+<p>All numbers in this chart are written in unary, and <span class="math notranslate nohighlight">\(n\geq 1\)</span>.</p>
+<p>Registers are processed as queues: symbols enter on the right and exit on the left.</p>
 <p>The first two types of instructions add symbols to the right ends of the registers.</p>
 <p>Here is a review of how the case instruction <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#####</span></code> works.</p>
 <p>If Rn is empty, we go to the very next instruction.</p>
