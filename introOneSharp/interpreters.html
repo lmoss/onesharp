@@ -617,7 +617,13 @@ What happens in each register if we run the same program
 </div>
 </div>
 <p>So far in this notebook, we have only seen the function <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code>.   If we want to run things “in one fell swoop”, we could use the function <code class="docutils literal notranslate"><span class="pre">onesharp(p,[r1,r2,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.,</span> <span class="pre">rn])</span></code>.   It also takes two arguments, the first a program and the second a (possibly-empty) sequence of input words.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"><div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>There is an important difference between the inputs to the interpreter and the inputs to the command-line program <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.</p>
+<p>In the interpreter, the programs and input words are understood to be strings of symbols.  One need not put quotes around them.  In fact, doing so would give an error.</p>
+<p>On the other hand, in the command-line tool, we need to take care to indicate (to the Python program that is being executed) that we are dealing with strings.  So we need to puth quotes around the programs and the input words.  (Alternatively, we could name a program by using an assignment statement, but in that statement we again need the quotes.)  Also, in the second argument of <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>, we need to use a <em>list</em> of words.  This is a sequence of strings (again with quotes) enclosed in square brackets and separated by commas.</p>
+</div>
+</section>
 <section id="useful-command-line-tools">
 <h2>Useful command-line tools<a class="headerlink" href="#useful-command-line-tools" title="Link to this heading">#</a></h2>
 <p>These are Python functions which you can call in a code cell, provide that you have run the very first cell in a notebook, the cell that loads in the relevant definitions.</p>
@@ -646,12 +652,6 @@ What happens in each register if we run the same program
 </tbody>
 </table>
 </div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>There is an important difference between the inputs to the interpreter and the inputs to the command-line program <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.</p>
-<p>In the interpreter, the programs and input words are understood to be strings of symbols.  One need not put quotes around them.  In fact, doing so would give an error.</p>
-<p>On the other hand, in the command-line tool, we need to take care to indicate (to the Python program that is being executed) that we are dealing with strings.  So we need to puth quotes around the programs and the input words.  (Alternatively, we could name a program by using an assignment statement, but in that statement we again need the quotes.)  Also, in the second argument of <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>, we need to use a list of words.  This is a sequence of strings (again with quotes) enclosed in square brackets and separated by commas.</p>
-</div>
 </section>
 <section id="useful-operations-inside-a-jupyter-notebook">
 <h2>Useful operations inside a Jupyter notebook<a class="headerlink" href="#useful-operations-inside-a-jupyter-notebook" title="Link to this heading">#</a></h2>
@@ -666,11 +666,18 @@ What happens in each register if we run the same program
 <li><p>Delete a cell.</p></li>
 <li><p>Open a new notebook.</p></li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You need to know the commands of 1# well to go forward.</p>
-<p>You don’t need to know much about Python, but it would help to know the basics of strings and lists.  Some exercises will ask you to write Python code, and if you want to solve them you of course would need to know more.</p>
-<p>It would be good to read about the basics of Jupyter notebooks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">tip</span><span class="p">}</span>
+<span class="n">You</span> <span class="n">need</span> <span class="n">to</span> <span class="n">know</span> <span class="n">the</span> <span class="n">commands</span> <span class="n">of</span> <span class="mi">1</span><span class="c1"># well to go forward.</span>
+
+<span class="n">You</span> <span class="n">don</span><span class="s1">&#39;t need to know much about Python, but it would help to know the basics of strings and lists.  Some exercises will ask you to write Python code, and if you want to solve them you of course would need to know more.</span>
+
+<span class="n">It</span> <span class="n">would</span> <span class="n">be</span> <span class="n">good</span> <span class="n">to</span> <span class="n">read</span> <span class="n">about</span> <span class="n">the</span> <span class="n">basics</span> <span class="n">of</span> <span class="n">Jupyter</span> <span class="n">notebooks</span><span class="o">.</span>  
+<span class="err">````</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
