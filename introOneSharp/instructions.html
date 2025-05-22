@@ -638,7 +638,14 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 if <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">##</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
 and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">#####</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>.)</p>
 </div>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<section id="exercise-content">
+<p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
+</section>
+</div>
+</section>
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
 <section id="the-full-set-of-instructions-of-1">
@@ -675,13 +682,6 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 <p>If Rn is empty, we go to the very next instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mathtt{1}\)</span>, we delete that symbol and go to the second instruction after the case instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mathtt{\#}\)</span>, we delete that symbol and go to the third instruction after the case instruction.</p>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
-<section id="exercise-content">
-<p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
-</section>
-</div>
 </section>
 </section>
 </section>
