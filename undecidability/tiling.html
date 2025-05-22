@@ -566,7 +566,7 @@ we want a run of <span class="math notranslate nohighlight">\(p\)</span> to give
 <p>Here is an example which we shall mention at several points in the rest of this discussion.  We take <span class="math notranslate nohighlight">\(p\)</span> to be the program  <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.  Clearly <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.  We want the bottom 8 rows of the tiling of the quadrant to resemble</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-23.png?raw=1" width="100%" height="100%">
 <p>We say <em>resemble</em> here because what is shown above is not a set of tiles in the first place: there are no colors on the edges.  But our details below are an elaboration of this idea.   It might be fun for you to work out your own elaboration at this point before looking below.   But if you want to see how our definitions will work, you can look at
-<a class="reference internal" href="#example-formal-tiling">Example 1</a>.</p>
+<code class="xref prf prf-ref docutils literal notranslate"><span class="pre">example-formal-tiling</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We have an issue with the numeral <span class="math notranslate nohighlight">\(1\)</span> and the <code class="docutils literal notranslate"><span class="pre">1#</span></code> symbol <code class="docutils literal notranslate"><span class="pre">1</span></code>.  In order to avoid a potential confusion, we
@@ -599,15 +599,15 @@ Fix such a program <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t3-03.png?raw=1" width="100%" height="100%"></p>
 <p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code> we include the two tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t4-04.png?raw=1" width="100%" height="100%"></p>
-<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is   <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span><code class="docutils literal notranslate"><span class="pre">####</span></code> we include the two tiles
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%"></p>
 <p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>,
 we include the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t6-06.png?raw=1" width="100%" height="100%"></p>
 <p>Notice that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is a finite set of tiles.
 We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> to be pointed, and we take the green tile above.</p>
 <p>This completes the definition of the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
-<div class="proof example admonition" id="example-formal-tiling">
+<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is   <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span><code class="docutils literal notranslate"><span class="pre">####</span></code> we include the two tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%"></p>
+<div class="proof example admonition" id="example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
 <section class="example-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be our running example program  <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.

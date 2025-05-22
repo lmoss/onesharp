@@ -471,9 +471,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-javascript-interpreter">Online Javascript interpreter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-a-separate-window-or-in-this-page">Python interpreter in a separate window or in this page</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-javascript-interpreter">Online Javascript interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-this-page">Python interpreter in this page</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-operations-inside-a-jupyter-notebook">Useful operations inside a Jupyter notebook</a></li>
 </ul>
@@ -508,10 +508,10 @@ document.write(`
 It was written in JavaScript by my former PhD students Robert Rose and David Sprunger.</p>
 <p>To get started with it, enter <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code> in the program editor box (the large box at the top).   Then press ‘evaluate’ on the right.  What happened is that the program executed the first instruction, <code class="docutils literal notranslate"><span class="pre">1#</span></code>, adding a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1.  Then it evaluated <code class="docutils literal notranslate"><span class="pre">1##</span></code>, adding <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1.   Third, it executed <code class="docutils literal notranslate"><span class="pre">11#</span></code>, adding <code class="docutils literal notranslate"><span class="pre">1</span></code> to R2.   Finally, it executed <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <p>You can press the ‘evaluate’ button again, and it will execute the same program <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code>, but this time it will execute it with words aleady in the registers.   You can also physically add or change what is in the registers.</p>
-<section id="python-interpreter-in-a-separate-window-or-in-this-page">
-<h3>Python interpreter in a separate window or in this page<a class="headerlink" href="#python-interpreter-in-a-separate-window-or-in-this-page" title="Link to this heading">#</a></h3>
-<p>The Javascript editor is convenient, and we hope you’ll</p>
-<p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ at the top of this notebook.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs.</p>
+</section>
+<section id="python-interpreter-in-this-page">
+<h2>Python interpreter in this page<a class="headerlink" href="#python-interpreter-in-this-page" title="Link to this heading">#</a></h2>
+<p>The Javascript editor is convenient, and we hope you’ll at least try it out.   It’s very basic, and most people would find it better to use an interpreter with more features, even if it means learning how to do so.  For this, we have a Python interpreter.   To use it, either download this notebook and run it locally, or else click on ‘Open in Colab’ at the top of this notebook.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs.</p>
 <p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,7 +580,7 @@ What happens in each register if we run the same program
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
 <section id="running-programs-in-code-cells">
-<h3>Running programs in code cells<a class="headerlink" href="#running-programs-in-code-cells" title="Link to this heading">#</a></h3>
+<h2>Running programs in code cells<a class="headerlink" href="#running-programs-in-code-cells" title="Link to this heading">#</a></h2>
 <p>Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.</p>
 <p>There are two programs that do this.  They are
 <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> and <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.  These are illustrated in the next two cells.  Both of these programs are written in Python, not in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  They both require as inputs a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program followed by a sequence of  words composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
@@ -619,8 +619,7 @@ What happens in each register if we run the same program
 </div>
 </div>
 <p>So far in this notebook, we have only seen the function <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code>.   If we want to run things “in one fell swoop”, we could use the function <code class="docutils literal notranslate"><span class="pre">onesharp(p,[r1,r2,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.,</span> <span class="pre">rn])</span></code>.   It also takes two arguments, the first a program and the second a (possibly-empty) sequence of input words.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
-<section id="useful-command-line-tools">
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"><section id="useful-command-line-tools">
 <h3>Useful command-line tools<a class="headerlink" href="#useful-command-line-tools" title="Link to this heading">#</a></h3>
 <p>These are Python functions which you can call in a code cell, provide that you have run the very first cell in a notebook, the cell that loads in the relevant definitions.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -742,9 +741,9 @@ What happens in each register if we run the same program
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-javascript-interpreter">Online Javascript interpreter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-a-separate-window-or-in-this-page">Python interpreter in a separate window or in this page</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-javascript-interpreter">Online Javascript interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-this-page">Python interpreter in this page</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-operations-inside-a-jupyter-notebook">Useful operations inside a Jupyter notebook</a></li>
 </ul>
