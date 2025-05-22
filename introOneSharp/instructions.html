@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>First steps &#8212; Invitation to Computability</title>
+    <title>Programs in 1# and what they do &#8212; Invitation to Computability</title>
   
   
   
@@ -200,7 +200,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">First steps</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programs in 1# and what they do</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
@@ -461,7 +462,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>First steps</h1>
+    <h1>Programs in 1# and what they do</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -471,10 +472,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Programs in 1# and what they do</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-with-the-interpreters">First steps with the interpreters</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-interpreter">Online interpreter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 </ul>
@@ -498,10 +499,6 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/instructions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section id="first-steps">
-<h1>First steps<a class="headerlink" href="#first-steps" title="Link to this heading">#</a></h1>
-<p>Our approach to computability theory uses <em>register machines</em>, and a programming language called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  The programs of <code class="docutils literal notranslate"><span class="pre">1#</span></code> are run on an <em>interpreter</em>.  The interpreter is itself a computer program, and so you will need to learn how to interact with it.   In fact, there are two interpreters connected to this book, one in Python and one in Javascript.  You will not need to learn anything about these interpreters, but you will need to learn how to use them.   So the main work at this point consists of learning <code class="docutils literal notranslate"><span class="pre">1#</span></code> and also learning how to run programs on the interpreters.</p>
-<p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ above.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
@@ -511,73 +508,13 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Welcome to our first tutorial lesson on
-<code class="docutils literal notranslate"><span class="pre">1#</span></code>. You will learn the basics of the language here and also see some small programs.</p>
-<p>This lesson is written on a lower level than the lessons which come after it. It is a very concrete introduction to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
-If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will
-find this material easy.</p>
-<p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
-<section id="the-1-interpreter-in-a-separate-window-or-in-this-page">
-<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page<a class="headerlink" href="#the-1-interpreter-in-a-separate-window-or-in-this-page" title="Link to this heading">#</a></h2>
-<p>There are several ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a *markdown code cell’, and the other is by using a <em>displayed interpreter</em>.  Nearly all of the time we use a command in a markdown code cell, but when one starts out with the language a displayed interpreter is probably a better option.  So we are going to start with that.</p>
-</section>
-<section id="online-interpreter">
-<h2>Online interpreter<a class="headerlink" href="#online-interpreter" title="Link to this heading">#</a></h2>
-<p>Here is <a href="https://rrose1.github.io/jsonesharp/" target="_blank">an online interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
-It was written in JavaScript by my former PhD students Robert Rose and David Sprunger.</p>
-<p>The web interpreter above has a nice <em>slow evaluation</em> feature which the Python interpreter lacks.</p>
-<p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
-<div class="cell tag_hide_code docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
-<span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#11###1&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11111#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
-<span class="c1">#R3 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
-
-<span class="c1">## For more registers, add lines here like</span>
-<span class="c1">## R4 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
-<span class="c1">## You also must modify the definition of &#39;a&#39; below accordingly.</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">R1</span><span class="p">,</span><span class="n">R2</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_multiple_blanks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
-
-<span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The first thing to do is to make everything nicer to look at by  hiding the program above.  To do this, click on the symbol to the left of the word Interpreter.   This should cause the symbol to rotate, and it also should hide the code and make the display extend across your screen.</p>
-<p>The top line of the interpreter should contain the following <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
-<p>If it does not contain this, feel free to copy and past the program above into the program box in the interpreter.</p>
-<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  The registers are called R1 and R2.   The inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about and programs soon.</p>
-<p>Click on the arrow to run the program on the inputs, and look at the <em>output</em> at the bottom of the interpreter box.</p>
-<p>Instead of clicking on the arrow, you also could type shift-return on a keyboard.  This also will run the program on the inputs.</p>
-<p>Modify the inputs to R1 and R2, but keep the program the same.</p>
-<p>The empty word is a perfectly good word, so you could also enter it into R1 or R2 just by leaving the register blank or by entering one or more spaces.  In fact, spaces are ignored in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
-<p>You can modify <span class="math notranslate nohighlight">\(R1\)</span> and <span class="math notranslate nohighlight">\(R2\)</span> as many times as you like.</p>
-<p>What you should find after doing this is that the output is the input in <span class="math notranslate nohighlight">\(R1\)</span> followed by the input in <span class="math notranslate nohighlight">\(R2\)</span>. We also will say <em>concatenated</em> instead of <em>followed by</em>.</p>
-<hr class="docutils" />
-<p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn’t show the step-by-step behavior of the register machine, it only showed the final output.   We’ll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-0">
-
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
-<section id="exercise-content">
-<p>Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
-</section>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">1#####</span> <span class="pre">11111111###</span> <span class="pre">1111###</span> <span class="pre">111##</span> <span class="pre">1111##</span> <span class="pre">11111####</span> <span class="pre">111#</span> <span class="pre">1111#</span> <span class="pre">11111111####</span> <span class="pre">111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">1111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">11#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span></code></p>
-</section>
-<section id="the-1-instruction-set">
-<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set<a class="headerlink" href="#the-1-instruction-set" title="Link to this heading">#</a></h2>
-<p>We are going to present the full set of instructions of <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  There are five instruction types.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>When we use superscripts and write, for example,  <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">#^n</span></code> we mean <span class="math notranslate nohighlight">\(m\)</span> copies of the symbol <code class="docutils literal notranslate"><span class="pre">1</span></code> followed by <span class="math notranslate nohighlight">\(n\)</span> copies of the symbol <code class="docutils literal notranslate"><span class="pre">#</span></code>.  For example,</p>
-<p><code class="docutils literal notranslate"><span class="pre">1^15</span> <span class="pre">#^4</span></code> abbreviates <code class="docutils literal notranslate"><span class="pre">111111111111111####</span></code></p>
-</div>
-<p>So far, we have seen two <em>programs</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>. Programs are composed of <em>instructions</em>. In fact, programs are just sequences of instructions run together. There are only five kinds of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions.  Now is the time to introduce them.</p>
+<section id="programs-in-1-and-what-they-do">
+<h1>Programs in 1# and what they do<a class="headerlink" href="#programs-in-1-and-what-they-do" title="Link to this heading">#</a></h1>
+<p>We have already seen computability on an <em>intuitive</em> or <em>informal</em> level.   This intuitive level is both the right level for our work, and at the same time the wrong level.   What we mean here is that for some things, working intuitively is exactly what we want to do.   For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions.</p>
+<p>A <em>word</em> for us will be a sequence of strings using the characters <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.   For example, <code class="docutils literal notranslate"><span class="pre">1##1</span></code> is a word, as is the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.</p>
+<p>A <em>register</em> is a place that stores words.  A <em>register machine</em> is a collection of registers.
+These registers are called R1, R2, etc.   The machine runs according to a <em>program</em>.  Programs are comprised of <em>instructions</em>.  We are going to describe instructions and programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> shortly.  The idea is that the register machine starts with a few words in the registers, proceeds according to the program, and (if all goes well) eventually <em>halts</em>,.</p>
+<p>There are only five kinds of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions.  Now is the time to introduce them.</p>
 <p>We begin our journey with the first two types of instructions of the language.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -671,6 +608,85 @@ It was written in JavaScript by my former PhD students Robert Rose and David Spr
 <p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">1</span></code>, we delete that symbol and go to the second instruction after the case instruction.</p>
 <p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">#</span></code>, we delete that symbol and go to the third instruction after the case instruction.</p>
 <p>The ‘cases’ instructions are the most complex to understand, and it will help to look an example in detail.   But first we have some exercises on the 1^n# and 1^n## instructions.</p>
+</section>
+<section id="first-steps-with-the-interpreters">
+<h1>First steps with the interpreters<a class="headerlink" href="#first-steps-with-the-interpreters" title="Link to this heading">#</a></h1>
+<p>Our approach to computability theory uses <em>register machines</em>, and a programming language called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  The programs of <code class="docutils literal notranslate"><span class="pre">1#</span></code> are run on an <em>interpreter</em>.  The interpreter is itself a computer program, and so you will need to learn how to interact with it.   In fact, there are two interpreters connected to this book, one in Python and one in Javascript.  You will not need to learn anything about these interpreters, but you will need to learn how to use them.   So the main work at this point consists of learning <code class="docutils literal notranslate"><span class="pre">1#</span></code> and also learning how to run programs on the interpreters.</p>
+<p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ above.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### The ```1#``` instruction set</span>
+
+<span class="n">We</span> <span class="n">are</span> <span class="n">going</span> <span class="n">to</span> <span class="n">present</span> <span class="n">the</span> <span class="n">full</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">instructions</span> <span class="n">of</span> <span class="err">```</span><span class="mi">1</span><span class="c1">#```.  There are five instruction types.  </span>
+
+<span class="err">```</span><span class="p">{</span><span class="n">attention</span><span class="p">}</span>
+<span class="n">When</span> <span class="n">we</span> <span class="n">use</span> <span class="n">superscripts</span> <span class="ow">and</span> <span class="n">write</span><span class="p">,</span> <span class="k">for</span> <span class="n">example</span><span class="p">,</span>  <span class="err">```</span><span class="mi">1</span><span class="o">^</span><span class="n">m</span> <span class="c1">#^n``` we mean $m$ copies of the symbol ```1``` followed by $n$ copies of the symbol ```#```.  For example,</span>
+
+<span class="err">```</span><span class="mi">1</span><span class="o">^</span><span class="mi">15</span> <span class="c1">#^4``` abbreviates ```111111111111111####```</span>
+
+<span class="err">```</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Welcome to our first tutorial lesson on
+<code class="docutils literal notranslate"><span class="pre">1#</span></code>. You will learn the basics of the language here and also see some small programs.</p>
+<p>This lesson is written on a lower level than the lessons which come after it. It is a very concrete introduction to <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
+If you are familiar with any machine model in the theory of computation, such as Turing Machines or classical register machines, you probably will
+find this material easy.</p>
+<p>But this introductory lesson is really intended for people with no background on these matters. If this is you, please work slowly, doing the exercises as you go.</p>
+<section id="the-1-interpreter-in-a-separate-window-or-in-this-page">
+<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page<a class="headerlink" href="#the-1-interpreter-in-a-separate-window-or-in-this-page" title="Link to this heading">#</a></h2>
+<p>There are several ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a *markdown code cell’, and the other is by using a <em>displayed interpreter</em>.  Nearly all of the time we use a command in a markdown code cell, but when one starts out with the language a displayed interpreter is probably a better option.  So we are going to start with that.</p>
+</section>
+<section id="online-interpreter">
+<h2>Online interpreter<a class="headerlink" href="#online-interpreter" title="Link to this heading">#</a></h2>
+<p>Here is <a href="https://rrose1.github.io/jsonesharp/" target="_blank">an online interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
+It was written in JavaScript by my former PhD students Robert Rose and David Sprunger.</p>
+<p>The web interpreter above has a nice <em>slow evaluation</em> feature which the Python interpreter lacks.</p>
+<p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
+<div class="cell tag_hide_code docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Interpreter</span>
+<span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;11#####111111###111###1##1111####1#111111####&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="s1">&#39;#11###1&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="s1">&#39;11111#&#39;</span> <span class="c1">#@param {type:&quot;string&quot;}</span>
+<span class="c1">#R3 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
+
+<span class="c1">## For more registers, add lines here like</span>
+<span class="c1">## R4 = &#39;&#39; #@param {type:&quot;string&quot;}</span>
+<span class="c1">## You also must modify the definition of &#39;a&#39; below accordingly.</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">R1</span><span class="p">,</span><span class="n">R2</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">remove_multiple_blanks</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+
+<span class="n">onesharp</span><span class="p">(</span><span class="n">program</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first thing to do is to make everything nicer to look at by  hiding the program above.  To do this, click on the symbol to the left of the word Interpreter.   This should cause the symbol to rotate, and it also should hide the code and make the display extend across your screen.</p>
+<p>The top line of the interpreter should contain the following <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
+<p>If it does not contain this, feel free to copy and past the program above into the program box in the interpreter.</p>
+<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  The registers are called R1 and R2.   The inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about and programs soon.</p>
+<p>Click on the arrow to run the program on the inputs, and look at the <em>output</em> at the bottom of the interpreter box.</p>
+<p>Instead of clicking on the arrow, you also could type shift-return on a keyboard.  This also will run the program on the inputs.</p>
+<p>Modify the inputs to R1 and R2, but keep the program the same.</p>
+<p>The empty word is a perfectly good word, so you could also enter it into R1 or R2 just by leaving the register blank or by entering one or more spaces.  In fact, spaces are ignored in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<p>You can modify <span class="math notranslate nohighlight">\(R1\)</span> and <span class="math notranslate nohighlight">\(R2\)</span> as many times as you like.</p>
+<p>What you should find after doing this is that the output is the input in <span class="math notranslate nohighlight">\(R1\)</span> followed by the input in <span class="math notranslate nohighlight">\(R2\)</span>. We also will say <em>concatenated</em> instead of <em>followed by</em>.</p>
+<hr class="docutils" />
+<p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn’t show the step-by-step behavior of the register machine, it only showed the final output.   We’ll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
+<div class="exercise admonition" id="introOneSharp/instructions-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<section id="exercise-content">
+<p>Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
+</section>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">1#####</span> <span class="pre">11111111###</span> <span class="pre">1111###</span> <span class="pre">111##</span> <span class="pre">1111##</span> <span class="pre">11111####</span> <span class="pre">111#</span> <span class="pre">1111#</span> <span class="pre">11111111####</span> <span class="pre">111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">1111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">11#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span></code></p>
+<p>So far, we have seen two <em>programs</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>. Programs are composed of <em>instructions</em>. In fact, programs are just sequences of instructions run together.</p>
 <div class="exercise admonition" id="try-to-figure">
 
 <p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
@@ -1131,10 +1147,10 @@ Registers are processed as queues: symbols enter on the right and exit on the le
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">First steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Programs in 1# and what they do</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-with-the-interpreters">First steps with the interpreters</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-interpreter">Online interpreter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 </ul>
