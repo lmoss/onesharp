@@ -630,22 +630,13 @@ It was written in JavaScript by my former PhD students Robert Rose and David Spr
 
 <p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <section id="exercise-content">
-<p>Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
-</section>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">1#####</span> <span class="pre">11111111###</span> <span class="pre">1111###</span> <span class="pre">111##</span> <span class="pre">1111##</span> <span class="pre">11111####</span> <span class="pre">111#</span> <span class="pre">1111#</span> <span class="pre">11111111####</span> <span class="pre">111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">1111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">11#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span></code></p>
-<p>So far, we have seen two <em>programs</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>. Programs are composed of <em>instructions</em>. In fact, programs are just sequences of instructions run together.</p>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
-<section id="exercise-content">
 <p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty.</p>
 </section>
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
 <section id="what-are-programs">
 <h2>What are programs?<a class="headerlink" href="#what-are-programs" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-2">
+<div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
 <p>A <em>program</em> is a sequence of instructions run together.</p>
@@ -668,242 +659,6 @@ It was written in JavaScript by my former PhD students Robert Rose and David Spr
 <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">#</span></code> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
 if <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">##</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
 and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">#####</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>.)</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="s1">&#39;1#11#####1###1###&#39;</span><span class="p">,[</span><span class="s1">&#39;1#1&#39;</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1#11&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">step_by_step</span><span class="p">(</span><span class="s1">&#39;1#11#####1###1###&#39;</span><span class="p">,[</span><span class="s1">&#39;1#1&#39;</span><span class="p">,</span><span class="s1">&#39;#&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First, here is the program:
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_16db03ae_cc71_11ef_b765_1e0062143c79row0_col0,#T_16db03ae_cc71_11ef_b765_1e0062143c79row0_col1,#T_16db03ae_cc71_11ef_b765_1e0062143c79row1_col0,#T_16db03ae_cc71_11ef_b765_1e0062143c79row1_col1,#T_16db03ae_cc71_11ef_b765_1e0062143c79row2_col0,#T_16db03ae_cc71_11ef_b765_1e0062143c79row2_col1,#T_16db03ae_cc71_11ef_b765_1e0062143c79row3_col0,#T_16db03ae_cc71_11ef_b765_1e0062143c79row3_col1{
-            background-color:  #C9DFEC;
-            text-align:  left;
-        }</style><table id="T_16db03ae_cc71_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >instruction</th>        <th class="col_heading level0 col1" >explanation</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_16db03ae_cc71_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >1#</td>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row0_col1" class="data row0 col1" >add 1 to R1</td>
-            </tr>
-            <tr>
-                        <th id="T_16db03ae_cc71_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" >11#####</td>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row1_col1" class="data row1 col1" >cases on R2</td>
-            </tr>
-            <tr>
-                        <th id="T_16db03ae_cc71_11ef_b765_1e0062143c79level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row2_col0" class="data row2 col0" >1###</td>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row2_col1" class="data row2 col1" >go forward 1 to instruction 4</td>
-            </tr>
-            <tr>
-                        <th id="T_16db03ae_cc71_11ef_b765_1e0062143c79level0_row3" class="row_heading level0 row3" >4</th>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row3_col0" class="data row3 col0" >1###</td>
-                        <td id="T_16db03ae_cc71_11ef_b765_1e0062143c79row3_col1" class="data row3 col1" >go forward 1 to instruction 5</td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The computation starts with the register contents shown below.
-The registers include those those which you entered as part of the input
-and also others mentioned in the input program.
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_16dccb3a_cc71_11ef_b765_1e0062143c79row0_col0,#T_16dccb3a_cc71_11ef_b765_1e0062143c79row1_col0{
-            background-color:  #FFFFCC;
-            text-align:  left;
-        }</style><table id="T_16dccb3a_cc71_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >contents</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_16dccb3a_cc71_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_16dccb3a_cc71_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >1#1</td>
-            </tr>
-            <tr>
-                        <th id="T_16dccb3a_cc71_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_16dccb3a_cc71_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" >#</td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 1:
-Execute instruction 1: add 1 to R1.
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_16dd6748_cc71_11ef_b765_1e0062143c79row0_col0,#T_16dd6748_cc71_11ef_b765_1e0062143c79row1_col0{
-            background-color:  #FFFFCC;
-            text-align:  left;
-        }</style><table id="T_16dd6748_cc71_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >contents</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_16dd6748_cc71_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_16dd6748_cc71_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >1#11</td>
-            </tr>
-            <tr>
-                        <th id="T_16dd6748_cc71_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_16dd6748_cc71_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" >#</td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 2:
-Execute instruction 2: cases on R2.
-The first symbol in that register is #, so we delete that symbol and go forward 3 instructions.
-The computation then halts properly because the control is just below the last line of the program,
-and because all registers other than R1 are empty.
-The output is 1#11.
-</pre></div>
-</div>
-</div>
-</div>
-<p>The last computation started with two inputs.  Try changing those inputs to see what happens.  We have not discussed ``halting’’ yet; for this, see <a class="reference internal" href="#content:haltDef"><span class="xref myst">this link</span></a> If you want to read ahead, please do so.  As practice with the definition of <em>halt</em>, you might try yourself to predict what will happen before running it.  You can add the symbols <span class="math notranslate nohighlight">\(\mathtt{1}\)</span> or <span class="math notranslate nohighlight">\(\mathtt{\#}\)</span>, and you also can delete symbols.  But you should not delete the quote marks.  Also, you can change the program the same way.   The idea is that you should explore this function <em>step_by_step</em> by trying it out on simple inputs.</p>
-<p>Here is an explanation of the form of the command <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> that we have been using.</p>
-<p>The first argument could be a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program surrounded by single quotes or double-quotes.   If you use single quotes, you need to be sure to use the correct ones; on my screen they look straight, not slanted.   You could also use a concatenation of quoted expressions (see below).  But if you forget the quotes, you will get an error because the Python program that is running all of this will balk at <code class="docutils literal notranslate"><span class="pre">1#</span></code> expressions without quotes around them.</p>
-<p>In addition, you can name expressions ahead of time using assignment statements like</p>
-<p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">'1#'</span></code></p>
-<p>and then enter (for example)</p>
-<p><code class="docutils literal notranslate"><span class="pre">step_by_step(p,['11'])</span></code>.</p>
-<hr class="docutils" />
-<p>The program <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> begins with a parse of your program, and so if you input a word that is not a sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> expressions, it will stop without further ado.</p>
-<p>The second argument to <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code> is a list of words.   A list in Python is enclosed by square brackets [ and ], not by parentheses.  The words that go in the list are used in R1, R2, … in that order.  It is understood that any register not represented by any input starts with the empty string.   You can also represent the empty string by ‘ ‘.  And the empty list  of registers is denoted by two square brackets with nothing inside,  [  ].</p>
-<p>All in all, the examples below show different formats for the input to our function <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">=</span> <span class="s1">&#39;1#&#39;</span>
-<span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;#1&#39;</span>
-<span class="n">step_by_step</span><span class="p">(</span><span class="n">p</span><span class="p">,[</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">p</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First, here is the program:
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_c88f7090_cc70_11ef_b765_1e0062143c79row0_col0,#T_c88f7090_cc70_11ef_b765_1e0062143c79row0_col1{
-            background-color:  #C9DFEC;
-            text-align:  left;
-        }</style><table id="T_c88f7090_cc70_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >instruction</th>        <th class="col_heading level0 col1" >explanation</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_c88f7090_cc70_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_c88f7090_cc70_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >1#</td>
-                        <td id="T_c88f7090_cc70_11ef_b765_1e0062143c79row0_col1" class="data row0 col1" >add 1 to R1</td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The computation starts with the register contents shown below.
-The registers include those those which you entered as part of the input
-and also others mentioned in the input program.
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_c88ff1f0_cc70_11ef_b765_1e0062143c79row0_col0,#T_c88ff1f0_cc70_11ef_b765_1e0062143c79row1_col0,#T_c88ff1f0_cc70_11ef_b765_1e0062143c79row2_col0{
-            background-color:  #FFFFCC;
-            text-align:  left;
-        }</style><table id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >contents</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >#1</td>
-            </tr>
-            <tr>
-                        <th id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" >#1</td>
-            </tr>
-            <tr>
-                        <th id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79level0_row2" class="row_heading level0 row2" >3</th>
-                        <td id="T_c88ff1f0_cc70_11ef_b765_1e0062143c79row2_col0" class="data row2 col0" >1#</td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 1:
-Execute instruction 1: add 1 to R1.
-This computation does not halt.
-Here is the list of registers whose contents are not empty at this point, other than R1:[2, 3].
-The register contents at the end are shown above.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">step_by_step</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">q</span><span class="o">+</span><span class="n">p</span><span class="p">,[])</span>
-<span class="c1"># This is a comment.</span>
-<span class="c1"># the symbol + is used for concatenation of strings in Python.</span>
-<span class="c1"># Since p and q are strings, we can concatenate them</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First, here is the program:
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_c894504c_cc70_11ef_b765_1e0062143c79row0_col0,#T_c894504c_cc70_11ef_b765_1e0062143c79row0_col1,#T_c894504c_cc70_11ef_b765_1e0062143c79row1_col0,#T_c894504c_cc70_11ef_b765_1e0062143c79row1_col1{
-            background-color:  #C9DFEC;
-            text-align:  left;
-        }</style><table id="T_c894504c_cc70_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >instruction</th>        <th class="col_heading level0 col1" >explanation</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_c894504c_cc70_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_c894504c_cc70_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >1##</td>
-                        <td id="T_c894504c_cc70_11ef_b765_1e0062143c79row0_col1" class="data row0 col1" >add # to R1</td>
-            </tr>
-            <tr>
-                        <th id="T_c894504c_cc70_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_c894504c_cc70_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" >11#</td>
-                        <td id="T_c894504c_cc70_11ef_b765_1e0062143c79row1_col1" class="data row1 col1" >add 1 to R2</td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The computation starts with the register contents shown below.
-The registers include those those which you entered as part of the input
-and also others mentioned in the input program.
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_c894e84a_cc70_11ef_b765_1e0062143c79row0_col0,#T_c894e84a_cc70_11ef_b765_1e0062143c79row1_col0{
-            background-color:  #FFFFCC;
-            text-align:  left;
-        }</style><table id="T_c894e84a_cc70_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >contents</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_c894e84a_cc70_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_c894e84a_cc70_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" ></td>
-            </tr>
-            <tr>
-                        <th id="T_c894e84a_cc70_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_c894e84a_cc70_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" ></td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 1:
-Execute instruction 1: add # to R1.
-</pre></div>
-</div>
-<div class="output text_html"><style  type="text/css" >
-#T_c8956400_cc70_11ef_b765_1e0062143c79row0_col0,#T_c8956400_cc70_11ef_b765_1e0062143c79row1_col0{
-            background-color:  #FFFFCC;
-            text-align:  left;
-        }</style><table id="T_c8956400_cc70_11ef_b765_1e0062143c79" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >contents</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_c8956400_cc70_11ef_b765_1e0062143c79level0_row0" class="row_heading level0 row0" >1</th>
-                        <td id="T_c8956400_cc70_11ef_b765_1e0062143c79row0_col0" class="data row0 col0" >#</td>
-            </tr>
-            <tr>
-                        <th id="T_c8956400_cc70_11ef_b765_1e0062143c79level0_row1" class="row_heading level0 row1" >2</th>
-                        <td id="T_c8956400_cc70_11ef_b765_1e0062143c79row1_col0" class="data row1 col0" ></td>
-            </tr>
-    </tbody></table></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 2:
-Execute instruction 2: add 1 to R2.
-This computation does not halt.
-Here is the list of registers whose contents are not empty at this point, other than R1:[2].
-The register contents at the end are shown above.
-</pre></div>
-</div>
-</div>
-</div>
-<p>So far in this notebook, we have only seen the function <code class="docutils literal notranslate"><span class="pre">step_by_step</span></code>.   If we want to run things “in one fell swoop”, we could use the function <code class="docutils literal notranslate"><span class="pre">onesharp(p,[r1,r2,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.,</span> <span class="pre">rn])</span></code>.   It also takes two arguments, the first a program and the second a (possibly-empty) sequence of input words.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="s1">&#39;1#&#39;</span><span class="p">,[])</span>
-</pre></div>
-</div>
-</div>
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
 <section id="reference">
@@ -971,9 +726,9 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 </tbody>
 </table>
 </div>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-3">
+<div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <section id="exercise-content">
 <p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
 </section>
