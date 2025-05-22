@@ -477,8 +477,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-with-the-interpreters">First steps with the interpreters</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-interpreter">Online interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 </ul>
@@ -623,15 +623,16 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <h1>First steps with the interpreters<a class="headerlink" href="#first-steps-with-the-interpreters" title="Link to this heading">#</a></h1>
 <p>The programs of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can be run by hand.  But they also can be run on an <em>interpreter</em>.  An interpreter is itself a computer program, and to run a program on an interpreter, you will need to learn how to interact with it.   In fact, there are several interpreters connected to this book, one in Javascript and the others in Python.  You will not need to learn anything about these interpreters, but you will need to learn how to use them.   So the main work at this point consists of learning <code class="docutils literal notranslate"><span class="pre">1#</span></code> and also learning how to run programs on the interpreters.</p>
 <p>To start, either download this notebook and run it locally, or else click on ‘Open in Colab’ at the top of this notebook.  Then click on the triangle below.  It should take some time (always less than a minute for me).  Ignore all of the output on the screen, but look for a green check near where you clicked. This action loads a set of Python programs which are run in the backround in the rest of this notebook.   You will not need to look at those programs.</p>
-<section id="the-1-interpreter-in-a-separate-window-or-in-this-page">
-<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page<a class="headerlink" href="#the-1-interpreter-in-a-separate-window-or-in-this-page" title="Link to this heading">#</a></h2>
-<p>There are several ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a <em>code cell</em> inside this notebook.   This only works when we are running the notebook in an environment like Colab or CoCalc.  The other way to run a program is by using an <em>online interpreter</em>.  Nearly all of the time we use a code cell.  But when one starts out with the language the online interpreter is probably a better option.  So we are going to start with that.</p>
-</section>
 <section id="online-interpreter">
 <h2>Online interpreter<a class="headerlink" href="#online-interpreter" title="Link to this heading">#</a></h2>
 <p>Here is <a href="https://rrose1.github.io/jsonesharp/" target="_blank">an online interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
 It was written in JavaScript by my former PhD students Robert Rose and David Sprunger.</p>
-<p>The web interpreter above has a nice <em>slow evaluation</em> feature which the Python interpreter lacks.</p>
+<p>To get started with it, enter <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code> in the program editor box (the large box at the top).   Then press ‘evaluate’ on the right.  What happened is that the program executed the first instruction, <code class="docutils literal notranslate"><span class="pre">1#</span></code>, adding a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1.  Then it evaluated <code class="docutils literal notranslate"><span class="pre">1##</span></code>, adding <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1.   Third, it executed <code class="docutils literal notranslate"><span class="pre">11#</span></code>, adding <code class="docutils literal notranslate"><span class="pre">1</span></code> to R2.   Finally, it executed <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<p>You can press the ‘evaluate’ button again, and it will execute the same program <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code>, but this time it will execute it with words aleady in the registers.   You can also physically add or change what is in the registers.</p>
+</section>
+<section id="the-1-interpreter-in-a-separate-window-or-in-this-page">
+<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page<a class="headerlink" href="#the-1-interpreter-in-a-separate-window-or-in-this-page" title="Link to this heading">#</a></h2>
+<p>There are several ways to run <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs.  One is by calling a special-purpose command in a <em>code cell</em> inside this notebook.   This only works when we are running the notebook in an environment like Colab or CoCalc.  The other way to run a program is by using an <em>online interpreter</em>.  Nearly all of the time we use a code cell.  But when one starts out with the language the online interpreter is probably a better option.  So we are going to start with that.</p>
 <p>You see below the <em>interpreter</em>.  Even before learning how the language works, we want to see how to run programs by entering them into the interpreter along with inputs.</p>
 <div class="cell tag_hide_code docutils container">
 <div class="cell_input docutils container">
@@ -1140,8 +1141,8 @@ Registers are processed as queues: symbols enter on the right and exit on the le
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-with-the-interpreters">First steps with the interpreters</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-interpreter">Online interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-interpreter-in-a-separate-window-or-in-this-page">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter in a separate window or in this page</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 </ul>
