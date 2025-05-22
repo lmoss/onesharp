@@ -201,6 +201,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
@@ -515,7 +516,7 @@ At first blush it seems paradoxical that such programs would exist: there is no 
 \[
 [\![ [\![ {\tt diag} ]\!](x)]\!](\ ) \simeq [\![ x ]\!](x)
 \]</div>
-<p>We have already seen such a program: <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>  See <a class="reference internal" href="../introOneSharp/move_copy_write.html#pre-diag"><span class="std std-numref">Exercise 25</span></a>.   However, we want a slightly different program, only because it is a little shorter.</p>
+<p>We have already seen such a program: <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>  See <a class="reference internal" href="../introOneSharp/move_copy_write.html#pre-diag"><span class="std std-numref">Exercise 29</span></a>.   However, we want a slightly different program, only because it is a little shorter.</p>
 <p>We take <code class="docutils literal notranslate"><span class="pre">diag</span></code> to be the program shown below.</p>
 <P>
 <CENTER>
@@ -658,7 +659,7 @@ and extending them.</p>
 to check your work on the interpreter.</p>
 <div class="exercise admonition" id="recThm/self_writing-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
 <section id="exercise-content">
 <p>If x and y are words, let’s think about
 [ [<code class="docutils literal notranslate"><span class="pre">diag</span></code>] (<code class="docutils literal notranslate"><span class="pre">x</span></code>)] (<code class="docutils literal notranslate"><span class="pre">y</span></code>).  Is it [[ <code class="docutils literal notranslate"><span class="pre">x</span></code> ]](<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>), or
@@ -667,7 +668,7 @@ to check your work on the interpreter.</p>
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
 <section id="exercise-content">
 <p>Write a program which when started on all empty registers
 writes itself to R1 and also writes <code class="docutils literal notranslate"><span class="pre">#</span></code> to R2.</p>
@@ -675,7 +676,7 @@ writes itself to R1 and also writes <code class="docutils literal notranslate"><
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
 <section id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
@@ -685,7 +686,7 @@ In other words, <span class="math notranslate nohighlight">\([\![ p]\!](\ ) =  p
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
 <section id="exercise-content">
 <p>Find an infinite sequence of programs which are all different with the property that each program in the list
 writes the next one in the list into R1.</p>
@@ -693,7 +694,7 @@ writes the next one in the list into R1.</p>
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <section id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
 doesn’t
@@ -703,7 +704,7 @@ In other words, <span class="math notranslate nohighlight">\([\![ p]\!](\ ) = \#
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
 <section id="exercise-content">
 <p>Write a self-replicating program
 that begins with the program to transfer ahead
@@ -712,7 +713,7 @@ one instruction, <code class="docutils literal notranslate"><span class="pre">1#
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <section id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(s\)</span> which, when run with R2, R3, etc.
 empty,  ends up with R1 containing <span class="math notranslate nohighlight">\(s\)</span> <em>after</em> whatever
@@ -722,7 +723,7 @@ In other words, for all words <span class="math notranslate nohighlight">\(y\)</
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">selfknow</span></code>  with the property that when run with
 a string q in R1,
@@ -734,14 +735,14 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 64 </span></p>
 <section id="exercise-content">
 <p>A country adopts <code class="docutils literal notranslate"><span class="pre">1#</span></code> as its national programming language.  To celebrate, they want a new flag. Write a program <code class="docutils literal notranslate"><span class="pre">flag</span></code> with the property that running  <code class="docutils literal notranslate"><span class="pre">flag</span></code> on all empty registers gives two copies of  <code class="docutils literal notranslate"><span class="pre">flag</span></code>separated by a stripe with the same number of characters as  <code class="docutils literal notranslate"><span class="pre">flag</span></code>.   The stripe should have all <code class="docutils literal notranslate"><span class="pre">#</span></code> symbols.</p>
 </section>
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 65 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
 which trades places with its input in R1.
@@ -755,7 +756,7 @@ before attempting this problem.  But it might be fun to try now.]</p>
 </div>
 <div class="exercise admonition" id="recThm/self_writing-exercise-10">
 
-<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 66 </span></p>
 <section id="exercise-content">
 <p>Write two “twin’’ programs <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> with the properties
 that <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are different programs;
