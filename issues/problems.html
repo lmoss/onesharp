@@ -187,8 +187,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: initial remarks</a></li>
 
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems</a></li>
+
 
 
 
@@ -475,6 +475,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
@@ -522,8 +523,8 @@ cyan (light blue) and dark blue.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
 Now here is a finite part of a tiling of the quadrant with this pointed tile set:
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-03.png?raw=1" width="100%" height="100%">
-We should emphasize that given a (pointed) tile set <span class="math notranslate nohighlight">\(\TT\)</span>, there might or might not be a tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT\)</span>.
-The algorithmic question is to determine from <span class="math notranslate nohighlight">\(\TT\)</span> whether or not there is a tiling of the quadrant as requested.   This means that we want to know in finite time whether or not some infinite task can be completed or not.</p>
+We should emphasize that given a (pointed) tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, there might or might not be a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.
+The algorithmic question is to determine from<span class="math notranslate nohighlight">\(\mathcal{T}\)</span> whether or not there is a tiling of the quadrant as requested.   This means that we want to know in finite time whether or not some infinite task can be completed or not.</p>
 <div class="exercise admonition" id="issues/problems-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
@@ -537,7 +538,7 @@ Does the quadrant have a tiling with this set?</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
 <section id="exercise-content">
-<p>Construct a (finite) pointed tile set <span class="math notranslate nohighlight">\(\TT\)</span> with the following properties:</p>
+<p>Construct a (finite) pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <p>(a) The quadrant can be tiled using <span class="math notranslate nohighlight">\(\TT\)</span> in exactly one way.</p>
 <p>(b) In the tiling of the quadrant, the start tile appears on the main diagonal, and nowhere else.</p>
 </section>
@@ -596,6 +597,24 @@ which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</sp
 To say <em>PCP is undecidable</em> means that   <em>there is no</em>
 computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="integer-roots-of-polynomials">
+<h1>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Link to this heading">#</a></h1>
+<p>There are a number of algorithmic problems of great interest in mathematics.  One of the most famous is the following:</p>
+<div class="danger admonition">
+<p class="admonition-title">Problem</p>
+<p>Given a polynomial <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> in many variables, does it have an integer root?   That is, are there integers <span class="math notranslate nohighlight">\(i_1, \ldots, i_n\)</span> such that <span class="math notranslate nohighlight">\(p(i_1, \ldots, i_n) = 0\)</span>?</p>
+</div>
+<p>This problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  It raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
+<p>It turns out that there is <em>no</em> algorithm to do this.  This is the only question which we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are mainly from number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
+<div class="exercise admonition" id="issues/problems-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
+<section id="exercise-content">
+<p>Show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
+<p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
+</section>
+</div>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="matrix-mortality">
 <h1>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h1>
 <p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
@@ -605,9 +624,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 <p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>.   Given a finite set <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\times n\)</span> matrices with integer entries, is there a finite product of elements of <span class="math notranslate nohighlight">\(S\)</span>, allowing repeats, whose product is the zero matrix?</p>
 <p>This is the <span class="math notranslate nohighlight">\(n\times n\)</span> <em>matrix mortality problem</em>.</p>
 </div>
-<div class="exercise admonition" id="issues/problems-exercise-3">
+<div class="exercise admonition" id="issues/problems-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
 <section id="exercise-content">
 <p>Here are three matrices:</p>
 <div class="math notranslate nohighlight">
@@ -664,9 +683,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 </div>
 </div>
 <p>The next exercise is important.</p>
-<div class="exercise admonition" id="issues/problems-exercise-4">
+<div class="exercise admonition" id="issues/problems-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
 <section id="exercise-content">
 <p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
 (a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
@@ -792,6 +811,7 @@ This, too, is an interesting thing to do.</p></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>

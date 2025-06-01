@@ -187,8 +187,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: initial remarks</a></li>
 
-
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
+
 
 
 
@@ -475,9 +475,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
 </ul>
 </li>
@@ -557,11 +555,11 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <p>For computability, we naturally want to do the same thing, and generally we will.   But there are situations where it would be more naturally to be intensional, and we want to flag those.</p>
 <p>does the question of whether a function is computable or not depend on how the function is presented, or is it a property of the</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="finite-vs-infinite">
-<h1>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Link to this heading">#</a></h1>
+<section id="finite-vs-infinite">
+<h2>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Link to this heading">#</a></h2>
 <p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
+</section>
 <section id="total-vs-partial-functions">
 <h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Link to this heading">#</a></h2>
 <p>Another choice point is whether to stick to total functions or to allow partial functions in our study.   We opt to include partial functions.</p>
@@ -683,9 +681,7 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
 </ul>
 </li>
