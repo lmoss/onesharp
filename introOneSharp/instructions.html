@@ -501,7 +501,7 @@ document.write(`
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="instructions-of-1">
 <h1>Instructions of 1#<a class="headerlink" href="#instructions-of-1" title="Link to this heading">#</a></h1>
-<p>We have already seen computability on an <em>intuitive</em> or <em>informal</em> level.   This intuitive level is both the right level for our work, and at the same time the wrong level.   What we mean here is that for some things, working intuitively is exactly what we want to do.   For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions.</p>
+<p id="content-onesharpinstructions">We have already seen computability on an <em>intuitive</em> or <em>informal</em> level.   This intuitive level is both the right level for our work, and at the same time the wrong level.   What we mean here is that for some things, working intuitively is exactly what we want to do.   For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions.</p>
 <p>A <em>word</em> for us will be a sequence of strings using the characters <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.   For example, <code class="docutils literal notranslate"><span class="pre">1##1</span></code> is a word, as is the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.</p>
 <p>A <em>register</em> is a place that stores words.  A <em>register machine</em> is a collection of registers.
 These registers are called R1, R2, etc.   The machine runs according to a <em>program</em>.  Programs are comprised of <em>instructions</em>.  We are going to describe instructions and programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> shortly.  The idea is that the register machine starts with a few words in the registers, proceeds according to the program, and (if all goes well) eventually <em>halts</em>,.</p>
@@ -607,7 +607,7 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">#</span></code>, we delete that symbol and go to the third instruction after the case instruction.</p>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <section id="exercise-content">
 <p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty.</p>
 </section>
@@ -641,7 +641,7 @@ and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <sp
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <section id="exercise-content">
 <p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
 </section>

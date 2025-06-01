@@ -478,7 +478,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -559,6 +563,9 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <h1>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Link to this heading">#</a></h1>
 <p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
+<section id="total-vs-partial-functions">
+<h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Link to this heading">#</a></h2>
+<p>Another choice point is whether to stick to total functions or to allow partial functions in our study.   We opt to include partial functions.</p>
 <p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
@@ -567,6 +574,41 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 </section>
 </div><p>The proof basically comes down to a <em>table look-up</em>.</p>
 <p>For many, this result is uninspiring, even wrong somehow.  So it is worthwhile to understand both the result itself and the objections.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<p><span class="math notranslate nohighlight">\(Inst\)</span> is the set of instructions (i.e., programs) of functions on algorithmically suited sets.</p>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Going forward</p>
+<p>We will propose and study a precise definition of computability, starting <a class="reference internal" href="problems.html#content-firsttiles"><span class="std std-ref">here</span></a> below.</p>
+<p>Nevertheless, there are still interesting things that one can do in computability theory with purely intuitive notions.</p>
+<p>We will allow partial functions.</p>
+<p>We will concentrate on <em>in principle</em> computability, and we will be thinking of equality extensionally.</p>
+</div>
+<div class="exercise admonition" id="issues/issues-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<section id="exercise-content">
+<p>Find a computable function <span class="math notranslate nohighlight">\(c: Inst \times Inst \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\~![c(p,q)]\!] = [\~![q]\!] \o [\~![q]\!]\)</span>.</p>
+</section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">exercise</span><span class="p">}</span>
+<span class="n">Find</span> <span class="n">a</span> <span class="n">computable</span> <span class="n">function</span> <span class="err">$</span><span class="n">con</span><span class="p">:</span> <span class="n">N</span> \<span class="n">to</span> <span class="n">Inst</span><span class="err">$</span> <span class="n">such</span> <span class="n">that</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>\<span class="err">!</span><span class="p">]</span><span class="err">$</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">constant</span> <span class="n">function</span> <span class="k">with</span> <span class="n">value</span> <span class="err">$</span><span class="n">n</span><span class="err">$</span><span class="o">.</span> <span class="n">That</span> <span class="ow">is</span><span class="p">,</span>
+
+<span class="err">$$</span>
+<span class="p">[</span>\<span class="o">~</span><span class="err">!</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>\<span class="err">!</span><span class="p">](</span><span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> \<span class="n">mbox</span><span class="p">{</span> <span class="k">for</span> <span class="nb">all</span> <span class="err">$</span><span class="n">m</span><span class="err">$</span><span class="p">}</span>
+<span class="err">$$</span>
+<span class="err">```</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -639,7 +681,11 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
