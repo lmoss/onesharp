@@ -474,7 +474,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 </ul>
 
@@ -530,6 +533,27 @@ h(n) = \mbox{the least $m &gt; n$ such that $m$ and $m+2$ are both prime numbers
 <p>Even with the distinction between “in practice” and “in principle” computability, and even with our decsion to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
 <p>First, we will provide a very concrete definition of computability based on a <em>machine model</em>.  We have already begun this with our introduction of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and its associated notion of <em>functions computed by programs</em>.   There are other ways to do just this, and the machine models involved have names like <em>Turing machine</em> or <em>register machine</em>.   (Our <em>text register machine</em> is of course very close to an ordinary register machine; the main difference is that we have an alphabet with two symbols instead of just one, and our language of instructions and programs is identical to the language of words stored in the registers.   We will see later what differences come to.)</p>
 <p>Second, we argue that in a very real sense, it doesn’t matter which concrete model of computation one works with, “it comes to the same thing”.  This is the second part of the <em>Church-Turing Thesis</em>.  One way to make this concrete is to take computability on the natural numbers as a sort of reference point, and then check that all of the concrete models give the same notion of computable partial functions.   It would take quite some work to provide the evidence that all of the models of computation lead to the same class of computable partial functions of numbers, and so we are not going to do much of it.  The first part of this same <em>Church-Turing Thesis</em> is that this class of computable partial functions of numbers is the correct formalization of the intuitive notion of a computable function.</p>
+<section id="intentional-vs-extensional">
+<h2>Intentional vs. Extensional<a class="headerlink" href="#intentional-vs-extensional" title="Link to this heading">#</a></h2>
+<p>Yet another choice point in our study is whether to take computability as an <em>extensional</em> or <em>intensional</em> notion.   Here is what we mean: for any function <span class="math notranslate nohighlight">\(f\)</span>, the <em>graph</em> of <span class="math notranslate nohighlight">\(f\)</span> is the set of input-output pairs of <span class="math notranslate nohighlight">\(f\)</span>.  For example, the graph of <span class="math notranslate nohighlight">\(s(n) = n+1\)</span> on the natural numbers is the set</p>
+<div class="math notranslate nohighlight">
+\[
+\{(0,1), (1,2), (2,3), \ldots, (n,n+1), \ldots\}.
+\]</div>
+<p>Here are two functions from positive numbers to positive numbers:</p>
+<div class="math notranslate nohighlight">
+\[
+f(m,n) = \mbox{the greatest common divisor of $m$ and $n$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and $n$}
+\]</div>
+<p>These have the same graph relation, so they are extensionally the same.   But the descriptions are different, so those descriptions are intensionally different.</p>
+<p>Now the standard practice in mathematics is to regard function equality as extensional.  Thus, <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are regarded as <em>identical</em>.  One takes function identity in the extensional sense in mathematics partly because it is clear and unproblematic, and because the alternative is very difficult to pin down.</p>
+<p>For computability, we naturally want to do the same thing, and generally we will.   But there are situations where it would be more naturally to be intensional, and we want to flag those.</p>
+<p>does the question of whether a function is computable or not depend on how the function is presented, or is it a property of the</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="finite-vs-infinite">
 <h1>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Link to this heading">#</a></h1>
@@ -611,7 +635,10 @@ h(n) = \mbox{the least $m &gt; n$ such that $m$ and $m+2$ are both prime numbers
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 </ul>
 
