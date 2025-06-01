@@ -58,3 +58,15 @@ Overall, there is enough material for a course, but probably one would would wan
 ## Artwork
 
 The illustrations in the book are by  <a href="https://www.jeffreyfineart.com/">Jeffrey Fine</a>.  I was fortunate to work with him on a <a href="https://www.youtube.com/watch?v=0cH3rB8dIVo">logic-related video</a>.  It's a pleasure to do this again.
+
+The pictures signify.  For example, 
+
+<img src="https://github.com/lmoss/onesharp/blob/main/beaver.jpg?raw=1" width="200" height="160">
+
+is the [Busy Beaver](busyBeaver.ipynb).
+
+The ourboros
+
+<img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
+
+indicates that we are seeing an interesting example related to self-reference.   
