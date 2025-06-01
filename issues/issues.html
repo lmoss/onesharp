@@ -584,23 +584,20 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <p>Find a computable function <span class="math notranslate nohighlight">\(c: Inst \times Inst \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\![c(p,q)]\!] = [\![q]\!] \o [\![q]\!]\)</span>.</p>
 </section>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">exercise</span><span class="p">}</span>
-
-<span class="n">Find</span> <span class="n">a</span> <span class="n">computable</span> <span class="n">function</span> <span class="err">$</span><span class="n">con</span><span class="p">:</span> <span class="n">N</span> \<span class="n">to</span> <span class="n">Inst</span><span class="err">$</span> <span class="n">such</span> <span class="n">that</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>\<span class="err">!</span><span class="p">]</span><span class="err">$</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">constant</span> <span class="n">function</span> <span class="k">with</span> <span class="n">value</span> <span class="err">$</span><span class="n">n</span><span class="err">$</span><span class="o">.</span> <span class="n">That</span> <span class="ow">is</span><span class="p">,</span>
-
-<span class="err">$$</span>
-<span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>\<span class="err">!</span><span class="p">](</span><span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span> \<span class="n">mbox</span><span class="p">{</span> <span class="k">for</span> <span class="nb">all</span> <span class="err">$</span><span class="n">m</span><span class="err">$</span><span class="p">}</span>
-<span class="err">$$</span>
-<span class="err">```</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="exercise admonition" id="issues/issues-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<section id="exercise-content">
+<p>Find a computable function <span class="math notranslate nohighlight">\(con: N \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\![c(n)]\!]\)</span> is the constant function with value <span class="math notranslate nohighlight">\(n\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![c(n)]\!](m) = n \mbox{ for all $m$}
+\]</div>
+</section>
+</div>
+<div class="exercise admonition" id="issues/issues-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(f: N \to N\)</span> be any function with the property that if <span class="math notranslate nohighlight">\(n \leq m\)</span>, then <span class="math notranslate nohighlight">\(f(n) \geq f(m)\)</span>.  Show that <span class="math notranslate nohighlight">\(f\)</span> is intuitively computable.</p>
 </section>
