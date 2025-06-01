@@ -67,7 +67,7 @@ The pictures signify.  For example,
 
 is the [Busy Beaver](busyBeaver.ipynb).
 
-The ourboros
+The ouroboros
 
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 
