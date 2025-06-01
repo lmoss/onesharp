@@ -187,8 +187,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: initial remarks</a></li>
 
-
-
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
 
 
@@ -472,9 +470,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
 </ul>
 </li>
@@ -525,18 +523,18 @@ h(n) = \mbox{the least $m &gt; n$ such that $m$ and $m+2$ are both prime numbers
 <p class="admonition-title">Problem which we will address</p>
 <p>Propose a precise definition of computability.</p>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="in-principle-vs-in-practice">
-<h1>In principle vs. in practice<a class="headerlink" href="#in-principle-vs-in-practice" title="Link to this heading">#</a></h1>
+<section id="in-principle-vs-in-practice">
+<h2>In principle vs. in practice<a class="headerlink" href="#in-principle-vs-in-practice" title="Link to this heading">#</a></h2>
 <p>This section is about different issues to keep in mind regarding computability.   Our next issue is about computability <em>in principle</em> vs. computability <em>in practice</em>.   It is the topic of the diagram below.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-56.png?raw=1" width="100%" height="100%"><p>What we have been discussing up to now is <em>in principle</em> computability.   This is because we decided to ignore all matters having to do with time or space.  This is not always a useful thing to do.  What good would it be to know that a function is computable if whenever we tried to run it we would be sure that it took a billion years to compute anything?   Would we even want to say that this function is computable?</p>
 <p>The inner-most region above represents what could be “computed” at the time of this writing.  It is marked by a jagged boundary, since this border depends on the sofware and hardware, and on top of that it is time-dependent.  It is very hard to have a detailed and useful scientific study of such a concept.  Of more interest is the red boundary, the division between mathematical matters which are “in principle” computable, and those which are out of this boundary.  What we mean by “in principle” here is that we want to set aside all considerations of time and space limitations, except that everything must take only finitely many steps, and use only finitely much space.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="models-of-computation">
-<h1>Models of computation<a class="headerlink" href="#models-of-computation" title="Link to this heading">#</a></h1>
+<section id="models-of-computation">
+<h2>Models of computation<a class="headerlink" href="#models-of-computation" title="Link to this heading">#</a></h2>
 <p>Even with the distinction between “in practice” and “in principle” computability, and even with our decsion to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
 <p>First, we will provide a very concrete definition of computability based on a <em>machine model</em>.  We have already begun this with our introduction of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and its associated notion of <em>functions computed by programs</em>.   There are other ways to do just this, and the machine models involved have names like <em>Turing machine</em> or <em>register machine</em>.   (Our <em>text register machine</em> is of course very close to an ordinary register machine; the main difference is that we have an alphabet with two symbols instead of just one, and our language of instructions and programs is identical to the language of words stored in the registers.   We will see later what differences come to.)</p>
 <p>Second, we argue that in a very real sense, it doesn’t matter which concrete model of computation one works with, “it comes to the same thing”.  This is the second part of the <em>Church-Turing Thesis</em>.  One way to make this concrete is to take computability on the natural numbers as a sort of reference point, and then check that all of the concrete models give the same notion of computable partial functions.   It would take quite some work to provide the evidence that all of the models of computation lead to the same class of computable partial functions of numbers, and so we are not going to do much of it.  The first part of this same <em>Church-Turing Thesis</em> is that this class of computable partial functions of numbers is the correct formalization of the intuitive notion of a computable function.</p>
+</section>
 <section id="intentional-vs-extensional">
 <h2>Intentional vs. Extensional<a class="headerlink" href="#intentional-vs-extensional" title="Link to this heading">#</a></h2>
 <p>Yet another choice point in our study is whether to take computability as an <em>extensional</em> or <em>intensional</em> notion.   Here is what we mean: for any function <span class="math notranslate nohighlight">\(f\)</span>, the <em>graph</em> of <span class="math notranslate nohighlight">\(f\)</span> is the set of input-output pairs of <span class="math notranslate nohighlight">\(f\)</span>.  For example, the graph of <span class="math notranslate nohighlight">\(s(n) = n+1\)</span> on the natural numbers is the set</p>
@@ -598,6 +596,7 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">exercise</span><span class="p">}</span>
+
 <span class="n">Find</span> <span class="n">a</span> <span class="n">computable</span> <span class="n">function</span> <span class="err">$</span><span class="n">con</span><span class="p">:</span> <span class="n">N</span> \<span class="n">to</span> <span class="n">Inst</span><span class="err">$</span> <span class="n">such</span> <span class="n">that</span> <span class="err">$</span><span class="p">[</span>\<span class="err">!</span><span class="p">[</span><span class="n">c</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>\<span class="err">!</span><span class="p">]</span><span class="err">$</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">constant</span> <span class="n">function</span> <span class="k">with</span> <span class="n">value</span> <span class="err">$</span><span class="n">n</span><span class="err">$</span><span class="o">.</span> <span class="n">That</span> <span class="ow">is</span><span class="p">,</span>
 
 <span class="err">$$</span>
@@ -682,9 +681,9 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
 </ul>
 </li>
