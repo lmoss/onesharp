@@ -38,12 +38,14 @@ The main feature of the book is that it is an online resource rather than a prin
 Most of the chapters in the book are Jupyter notebooks. (Some others are markdown files.)
 Rather than simply read, these chapters are intended to  be *run*. One way to use them is to save them and then run them locally.  Alternatively, one could open them  on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don't have buttons to run it on CoCalc, and the best option is to run them on Colab.  For this, one starts by clicking on the button at the top. 
 
-Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  It is more concrete in the beginning than other books, and more abstract later on.  The concrete part in the beginning develops a model of computation which is a variant of a register machine called a *text register machine*.  A "text" register machine is a register machine whose programming language alphabet is the same as the alphabet written into the registers.  For us, the programming language is a set of words on the two letter alphabet ```{1,#}```.  So the language is called ```1#```. This text comes with a Python interpreter for ```1#```, so the programs can be run.  The programs themselves are unreadable.  But the book comes with tool support to enable people to write programs; for example, one can turn a flowchart into a  ```1#``` program.      The main first theorems of computability theory are presented constructively in full detail.   So one can write explicit universal programs, $s^m_n$ programs, self-writing programs, the T-predicate, and similar artifacts that essentially *are* the main first results in computability theory.  This is why the treatment here is much more explicit than usual. 
+Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  How can this be?  It is more concrete in the beginning than other books, and more abstract later on.  The concrete part in the beginning develops a model of computation which is a variant of a register machine called a *text register machine*.  A "text" register machine is a register machine whose programming language alphabet is the same as the alphabet written into the registers.  For us, the programming language is a set of words on the two letter alphabet ```{1,#}```.  So the language is called ```1#```. This text comes with a Python interpreter for ```1#```, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to enable people to write programs; for example, one can turn a flowchart into a  ```1#``` program.      The main first theorems of computability theory are presented constructively in full detail.   So one can write explicit universal programs, $s^m_n$ programs, self-writing programs, the T-predicate, and similar artifacts that essentially *are* the main first results in computability theory.  This is why the treatment here is much more explicit than usual. 
 
-The ways in which the text are more sophisticated include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, etc.
-Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail, but at the same time it discusses the overall issues of coding in an abstract way that owes a lot to abstract data types and category theory.  
+As we mentioned, the book is at the same time more abstract than others on this topic.  The ways in which the text are more abstract include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, and category theory.  So this part of the book demands more mathematical maturity than the concrete work.  
 
-The book also presents quite a bit on concrete undecidability matters and the main negative results of 20th century mathematical logic such as Church's Theorem that satisfiability in first-order logic is undecidable.
+
+Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail -- much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.  
+
+The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as Church's Theorem that satisfiability in first-order logic is undecidable.
 
 
 ## Using it in a classroom or for self-study
@@ -53,7 +55,7 @@ There are a number of ways the book could be used in courses for students in sev
 
 Much of the action in this book is in the exercises.   So for a student working on their own, it would be important to do a fair number of them and also to have be able to talk to others about their solutions.  I hope that the book would be useful that way.
 
-Overall, there is enough material for a course, but probably one would would want to supplement it based on the interests of the students and instructor.  At the same time, the topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
+Overall, there will eventually enough material for a one-semester course. It is likely that an intstuctor would would want to choose some part of the material here based on their own interests and experience, and also on who exactly their students are.  The book is designed with this in mind.  Probably everyone should use the basic material on ```1#```, but after that there are various ways to go.   The topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
 
 ## Artwork
 
@@ -69,4 +71,10 @@ The ourboros
 
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 
-indicates that we are seeing an interesting example related to self-reference.   
+indicates that we are seeing an interesting example related to self-reference.   And 
+
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
+
+
+tells us that we are in the territory of unsolvable problems.
+
