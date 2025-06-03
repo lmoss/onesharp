@@ -551,22 +551,14 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <section id="exercise-content">
 <p>Here is an exercise pertaining to the matrix mortality problem.   Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix
-[
-A = \left[
-\begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array}
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[ 
+\begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}
 \right]
-]</p>
+\end{split}\]</div>
 <p>The key features of <span class="math notranslate nohighlight">\(A\)</span> are shown below:</p>
-<p>Let <span class="math notranslate nohighlight">\(Q\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices.</p>
-<p>Here is a computable function <span class="math notranslate nohighlight">\(f: Q \to Q\)</span>:</p>
-<p>[
-f(S) = S\cup {A}
-]</p>
-<p>Our goal is to prove the following fact:</p>
-<div class="proof proposition admonition" id="proposition-9">
-<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
-<section class="proposition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
@@ -584,6 +576,15 @@ f(S) = S\cup {A}
 = 
 \left[\begin{array}{lll} a &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
 \end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(Q\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices.</p>
+<p>Here is a computable function <span class="math notranslate nohighlight">\(f: Q \to Q\)</span>:</p>
+<p>[
+f(S) = S\cup {A}
+]</p>
+<p>Our goal is to prove the following fact:</p>
+<div class="proof proposition admonition" id="proposition-9">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<section class="proposition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies.</p>
 <ol class="arabic simple">
 <li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
