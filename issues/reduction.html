@@ -197,6 +197,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -451,7 +452,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -467,6 +470,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right">$$
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -567,23 +583,31 @@ f(S) = S\cup {A}
 <div class="proof proposition admonition" id="proposition-9">
 <p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
 <section class="proposition-content" id="proof-content">
-<p>\frame[shrink]{
-\frametitle{<span class="math notranslate nohighlight">\(M_{1,1} \leq_m  M_0\)</span>}</p>
-<p>\begin{lemma}
-[
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
-\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]</p>
-<p>=
-\left[\begin{array}{lll} a &amp; b &amp; c \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array}\right]
-]
-\end{lemma}</p>
-<p><span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span> iff <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \\ d &amp;  e &amp; f \\ g &amp;  h &amp; i  \end{array}\right]
+%\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+= 
+\left[\begin{array}{lll} a &amp; b &amp; c \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\end{split}\]</div>
+<p>We also have</p>
 </section>
 </div></section>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right">
+<h1>$$
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]<a class="headerlink" href="#left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right" title="Link to this heading">#</a></h1>
+<p>\left[\begin{array}{lll} a &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array}\right]
+]</p>
+<p>Let us shwo that a for a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies,
+<span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span> iff <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -640,6 +664,26 @@ f(S) = S\cup {A}
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right">$$
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
