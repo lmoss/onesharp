@@ -1231,7 +1231,7 @@ the input program only uses R1, R2, and R3.  You should get a program
 <p>The proof of the general fact is an exercise using <span class="math notranslate nohighlight">\(u_0\)</span> and the <span class="math notranslate nohighlight">\(s^m_n\)</span> Theorem.</p>
 <div class="exercise admonition" id="universal/universal-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <section id="exercise-content">
 <p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <span class="math notranslate nohighlight">\(\self\)</span>?</p>
 <p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <span class="math notranslate nohighlight">\(\self\)</span> takes 22,376,608 steps, whereas running <span class="math notranslate nohighlight">\(\self\)</span> on empty registers takes 3,322.</p>
@@ -1239,7 +1239,7 @@ the input program only uses R1, R2, and R3.  You should get a program
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
 <section id="exercise-content">
 <p>Show that the sets <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(K_0\)</span> are computably enumerable, where</p>
 <div class="math notranslate nohighlight">
@@ -1253,7 +1253,7 @@ K_0 &amp; = &amp; \{ p : [\![ p ]\!](\ )\!\downarrow\}\\
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
 <p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
@@ -1261,7 +1261,7 @@ K_0 &amp; = &amp; \{ p : [\![ p ]\!](\ )\!\downarrow\}\\
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
 <section id="exercise-content">
 <p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses R1 itself (no other registers).
 This exercise requires a trick, since there is no program like <code class="docutils literal notranslate"><span class="pre">diag</span></code> which only uses one register.</p>
@@ -1282,7 +1282,7 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 <h1>Only one more register than the inputs<a class="headerlink" href="#only-one-more-register-than-the-inputs" title="Link to this heading">#</a></h1>
 <p>The work in this section can be used to prove the following result.</p>
 <div class="proof proposition admonition" id="one-more-register-halting">
-<p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>For every <span class="math notranslate nohighlight">\(n\)</span> and every program <span class="math notranslate nohighlight">\(p\)</span>, there is a program <span class="math notranslate nohighlight">\(q\)</span> such that</p>
 <ol class="arabic simple">
@@ -1299,7 +1299,7 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 </section>
 </div><p>Taking <span class="math notranslate nohighlight">\(n = 0\)</span>, it shows that when running a register machine program <span class="math notranslate nohighlight">\(p\)</span> on no inputs, we may assume that the program uses only one register.   In particular,  we have an undecidability result:</p>
 <div class="proof proposition admonition" id="one-register-halting">
-<p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 7 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of register machine programs which are tidy and which only use R1.</p>
 <p>Let <span class="math notranslate nohighlight">\(K^1\)</span> be <span class="math notranslate nohighlight">\(\{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\)</span></p>
