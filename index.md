@@ -70,10 +70,14 @@ The ouroboros
 
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 
-indicates that we are seeing an interesting example related to self-reference.   And 
+indicates that we are seeing an interesting example related to self-reference.   
 
 <img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
 
 
 tells us that we are in the territory of unsolvable problems.
+
+<img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160">
+
+This is used mainly to separate sections of a notebook.
 
