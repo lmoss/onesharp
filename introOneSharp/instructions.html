@@ -604,17 +604,10 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <p>If Rn is empty, we go to the very next instruction.</p>
 <p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">1</span></code>, we delete that symbol and go to the second instruction after the case instruction.</p>
 <p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">#</span></code>, we delete that symbol and go to the third instruction after the case instruction.</p>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-0">
-
-<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
-<section id="exercise-content">
-<p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty.</p>
-</section>
-</div>
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
 <section id="what-are-programs">
 <h2>What are programs?<a class="headerlink" href="#what-are-programs" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-1">
+<div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
 <section class="definition-content" id="proof-content">
 <p>A <em>program</em> is a finite sequence of instructions run together.   Usually we insist that programs be nonempty.</p>
@@ -629,6 +622,20 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <p class="admonition-title">Important</p>
 <p>Any sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions run together as a single word is a program.</p>
 <p>Spaces inside do not matter.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Here is a program:</p>
+<p><span class="math notranslate nohighlight">\(\one\one\hash\one\one\hash\hash\hash\one\one\hash\hash\hash\hash\one\hash\hash\)</span></p>
+<p>It is four instructions concatenated together.</p>
+<p>The first instruction, <span class="math notranslate nohighlight">\(\one\one\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\hash\)</span>)  and go to the last instruction <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+</div>
+<div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<section id="exercise-content">
+<p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">#1</span></code> in R3, and the other registers empty.</p>
+</section>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
