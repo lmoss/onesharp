@@ -620,11 +620,18 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 </section>
 </div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 79 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 80 </span></p>
 <section id="exercise-content">
 <p>For all the sets <span class="math notranslate nohighlight">\(A\)</span> in our reference list,
 Find a subset of <span class="math notranslate nohighlight">\(A\)</span> which is infinite and computable.</p>
 <p>Then do the same for the complement set <span class="math notranslate nohighlight">\(\overline{A}\)</span>.</p>
+</section>
+</div>
+<div class="exercise admonition" id="undecidability/haltingProblem-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 81 </span></p>
+<section id="exercise-content">
+<p>Find a bijection <span class="math notranslate nohighlight">\(f: N\to N\)</span> which is not computable.</p>
 </section>
 </div>
 </section>
@@ -632,14 +639,14 @@ Find a subset of <span class="math notranslate nohighlight">\(A\)</span> which i
 <h1>Improvement for one-register programs<a class="headerlink" href="#improvement-for-one-register-programs" title="Link to this heading">#</a></h1>
 <p>There is also an improved version of the basic result.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs which are tidy and which only use one register.</p>
-<div class="proof corollary admonition" id="corollary-5">
+<div class="proof corollary admonition" id="corollary-6">
 <p class="admonition-title"><span class="caption-number">Corollary 6 </span></p>
 <section class="corollary-content" id="proof-content">
 <p>The halting problem is undecidable even for programs in <span class="math notranslate nohighlight">\(A\)</span> when run on all emtpy registers.</p>
 </section>
-</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-6">
+</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 80 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 82 </span></p>
 <section id="exercise-content">
 <p>The language <span class="math notranslate nohighlight">\(\one\hash\)</span> has infinitely many instructions: the instructions are the words <span class="math notranslate nohighlight">\(\one^k \hash^{\ell}\)</span>, where <span class="math notranslate nohighlight">\(k\in \N\)</span> and <span class="math notranslate nohighlight">\(1\leq \ell\leq 5\)</span>.</p>
 <p>For each finite set <span class="math notranslate nohighlight">\(F\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions, we can consider <span class="math notranslate nohighlight">\(H_F\)</span>, the set of programs <span class="math notranslate nohighlight">\(p\)</span> built using the instructions of <span class="math notranslate nohighlight">\(F\)</span> (and no others) such that <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
@@ -680,29 +687,29 @@ f(x) &amp; = &amp; \left\{
 So since <span class="math notranslate nohighlight">\(q\notin S\)</span>, we have <span class="math notranslate nohighlight">\(f(x^*)\notin S\)</span>.  This contradicts <span class="math notranslate nohighlight">\(S\)</span> being closed under equivalence.   So we have a contradiction
 in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we have a similar contradiction in case <span class="math notranslate nohighlight">\(x^*\notin S\)</span>.</p>
 </div>
-<div class="proof corollary admonition" id="corollary-8">
+<div class="proof corollary admonition" id="corollary-9">
 <p class="admonition-title"><span class="caption-number">Corollary 7 </span></p>
 <section class="corollary-content" id="proof-content">
 <p>The following sets are undecidable: <span class="math notranslate nohighlight">\(Fin\)</span>, <span class="math notranslate nohighlight">\(Inf\)</span>, and <span class="math notranslate nohighlight">\(Tot\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-9">
+</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-10">
 
-<p class="admonition-title"><span class="caption-number">Exercise 81 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 83 </span></p>
 <section id="exercise-content">
 <p>Show that <span class="math notranslate nohighlight">\(Inf \leq_m Tot\)</span> and <span class="math notranslate nohighlight">\(Tot \leq_m Inf\)</span>.</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-10">
+<div class="exercise admonition" id="undecidability/haltingProblem-exercise-11">
 
-<p class="admonition-title"><span class="caption-number">Exercise 82 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 84 </span></p>
 <section id="exercise-content">
 <p>Show that the following set <span class="math notranslate nohighlight">\(S\)</span> of programs is undecidable:
 <span class="math notranslate nohighlight">\(S\)</span> is the set of programs <span class="math notranslate nohighlight">\(p\)</span> which, when run on all empty registers at some point write <code class="docutils literal notranslate"><span class="pre">1</span></code> into R2.</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-11">
+<div class="exercise admonition" id="undecidability/haltingProblem-exercise-12">
 
-<p class="admonition-title"><span class="caption-number">Exercise 83 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 85 </span></p>
 <section id="exercise-content">
 <p>What about the set of programs which at some point execute their <em>second</em> instruction?  Is that set decidable?</p>
 </section>
