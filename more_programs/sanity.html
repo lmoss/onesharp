@@ -152,8 +152,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
-    <p class="title logo__title">Invitation to Computability</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -213,6 +219,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">A tool to help write programs</a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="arithmetic.html">Programs for arithmetic</a></li>
 
@@ -472,9 +480,10 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-inputs-to-sanity">The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-segments">Examples of segments:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-sanity-work">How does Sanity work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-programs-and-exercises">Further programs and exercises</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-programs">Further programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
 
             </nav>
@@ -685,8 +694,9 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
 <h2>How does Sanity work?<a class="headerlink" href="#how-does-sanity-work" title="Link to this heading">#</a></h2>
 <p>We aren’t going to discuss this at length (now), but you can read the Python code for it by examining the input box at the top.   Eventually this code will be documented well-enough so that it can be read.  The overall idea is to work with <em>parsed</em> programs, the Python lists that we obtained with <a class="reference internal" href="../introOneSharp/move_copy_write.html#content-parsing"><span class="std std-ref">the function <code class="docutils literal notranslate"><span class="pre">parse</span></code> that we saw earlier</span></a>.  The program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> consists of manipulations of parses, followed by an application of <code class="docutils literal notranslate"><span class="pre">unparse</span></code> which returns us to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.</p>
 </section>
-<section id="further-programs-and-exercises">
-<h2>Further programs and exercises<a class="headerlink" href="#further-programs-and-exercises" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="further-programs">
+<h1>Further programs<a class="headerlink" href="#further-programs" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code cell contains a Sane program which multiplies the contents of</span>
@@ -891,6 +901,9 @@ The register contents at the end are shown below.
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <div class="exercise admonition" id="more_programs/sanity-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
@@ -910,7 +923,6 @@ The register contents at the end are shown below.
 <p class="admonition-title">An issue to think about</p>
 <p>You probabily noticed that the program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> was written in Python, a high-level programming language.   This is partly because <code class="docutils literal notranslate"><span class="pre">1#</span></code> does not have any support for the Roman alphabet, and so to even to read the tags one would need to do some coding.  But even more importantly, a high-level programming language has things that enable a person to write programs: attention to structure, a type system, conventions about handling variables, and more.   This brings us to a question that will crop up at several points: can one really do <em>everthing</em> in <code class="docutils literal notranslate"><span class="pre">1#</span></code>, or are high-level tools necessary?  This is not a mathematical question, and it might be more of an opinion question than anything else.   We bring it up here so that you can keep it in mind as you use high-level tools in connection with a very low-level language.</p>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -984,9 +996,10 @@ The register contents at the end are shown below.
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-inputs-to-sanity">The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-segments">Examples of segments:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-sanity-work">How does Sanity work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-programs-and-exercises">Further programs and exercises</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-programs">Further programs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
 
   </nav></div>
