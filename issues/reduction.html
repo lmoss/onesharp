@@ -546,11 +546,12 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
 <p>Assuming that <span class="math notranslate nohighlight">\(PCP\)</span> is undecidable, show that it is undecidable even if the alphabet has only two letters.</p>
 </section>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-8">
+<div class="exercise admonition" id="matrix-mortality-exercise">
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <section id="exercise-content">
-<p>Here is an exercise pertaining to the matrix mortality problem.   Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
+<p>Here is an exercise pertaining to the matrix mortality problem.   Athough it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="#content:matrixMortalityUndecidable"><span class="xref myst">our later work on matrix mortality</span></a>.</p>
+<p>Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -612,6 +613,11 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
 <p>Here each <span class="math notranslate nohighlight">\(a^i\)</span> is the product of the <span class="math notranslate nohighlight">\(i\)</span>th group.</p>
 <p>Evaluate the upper-left corner of the product, and check that one of the groups <span class="math notranslate nohighlight">\( B^i_1 B^i_2 \cdots B^i_{n_i}\)</span> must multiply to give a matrix with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.</p>
 </section>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>The source for the reduction involving <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices is</p>
+<p>Vesa Halava and Tero Harju, (2001). Mortality in Matrix Semigroups. The American Mathematical Monthly, 108(7), 649–653.</p>
 </div>
 </section>
 
