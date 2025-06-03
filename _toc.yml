@@ -59,6 +59,7 @@ parts:
   - file: undecidability/busyBeaver
   - file: undecidability/tiling
   - file: undecidability/post
+  - file: undecidability/matrixMortality
   - file: undecidability/church
 
 
