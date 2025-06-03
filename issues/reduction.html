@@ -197,7 +197,6 @@
 
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -452,9 +451,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -470,19 +467,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right">$$
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
-\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -566,7 +550,7 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
 <section id="exercise-content">
-<p>Here is an exercise pertaining to the matrix mortality problem.   Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq M_{0}B\)</span> and <span class="math notranslate nohighlight">\(M_{0}\leq M_{1,1}\)</span></p>
+<p>Here is an exercise pertaining to the matrix mortality problem.   Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix
 [
 A = \left[
@@ -592,22 +576,47 @@ f(S) = S\cup {A}
 \left[\begin{array}{lll} a &amp; b &amp; c \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
 \end{split}\]</div>
 <p>We also have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \\ d &amp;  e &amp; f \\ g &amp;  h &amp; i  \end{array}\right]
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+= 
+\left[\begin{array}{lll} a &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies.</p>
+<ol class="arabic simple">
+<li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
+<li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(f(S)\)</span> whose product belongs to <span class="math notranslate nohighlight">\(M_0\)</span>.  Write it as</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B^k_2 \cdots B^k_{n_k} A
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(B^i_j\)</span> matrices belong to <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Divide the product above into <span class="math notranslate nohighlight">\(k+1\)</span> groups:</p>
+<div class="math notranslate nohighlight">
+\[
+(A B^1_1 B^1_2 \cdots B^1_{n_1}) \quad (A B^2_1 B^2_2 \cdots B^2_{n_1}) \quad\cdots\quad
+ (A B^k_1 B^k_2 \cdots B^k_{n_k}) 
+\quad  A
+\]</div>
+<p>And then multiply it group-by-group:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{lll} a^1 &amp; b^1 &amp; c^1 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\left[\begin{array}{lll} a^2 &amp; b^2 &amp; c^2 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\cdots
+\left[\begin{array}{lll} a^k &amp; b^k &amp; c^k \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\left[\begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\end{split}\]</div>
+<p>Show that the upper-left corner elements <span class="math notranslate nohighlight">\(a^i\)</span> are non-zero, as is the product of all of them. Finally, derive a contradiction.</p>
 </section>
 </div></section>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right">
-<h1>$$
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
-\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]<a class="headerlink" href="#left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right" title="Link to this heading">#</a></h1>
-<p>\left[\begin{array}{lll} a &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array}\right]
-]</p>
-<p>Let us shwo that a for a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies,
-<span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span> iff <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -664,26 +673,6 @@ f(S) = S\cup {A}
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right-left-begin-array-lll-a-b-c-d-e-f-g-h-i-end-array-right-left-begin-array-lll-1-0-0-0-0-0-0-0-0-end-array-right">$$
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]
-\left[ \begin{array}{lll} a &amp; b &amp; c \ d &amp;  e &amp; f \ g &amp;  h &amp; i  \end{array}\right]
-\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \ 0 &amp;  0 &amp; 0 \ 0 &amp;  0 &amp; 0  \end{array} \right]</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
