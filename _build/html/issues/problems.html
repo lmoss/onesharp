@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Computable functions on encoded structures" href="coding.html" />
-    <link rel="prev" title="Computability: several notions" href="issues.html" />
+    <link rel="prev" title="Computability: initial remarks" href="issues.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,14 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/beaver.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
-    <script>document.write(`<img src="../_static/beaver.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
+    <p class="title logo__title">Invitation to Computability</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -173,10 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: several notions</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: initial remarks</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems</a></li>
+
 
 
 
@@ -463,6 +457,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
@@ -482,7 +477,7 @@ document.write(`
 <div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems">
 <h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this heading">#</a></h1>
 <p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
-</div>
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"></div>
 <div class="tex2jax_ignore mathjax_ignore section" id="does-a-graph-have-a-cycle">
 <h1>Does a graph have a cycle?<a class="headerlink" href="#does-a-graph-have-a-cycle" title="Permalink to this heading">#</a></h1>
 <p>A <em>graph</em> is a set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
@@ -510,11 +505,11 @@ cyan (light blue) and dark blue.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
 Now here is a finite part of a tiling of the quadrant with this pointed tile set:
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-03.png?raw=1" width="100%" height="100%">
-We should emphasize that given a (pointed) tile set <span class="math notranslate nohighlight">\(\TT\)</span>, there might or might not be a tiling of the quadrant with <span class="math notranslate nohighlight">\(\TT\)</span>.
-The algorithmic question is to determine from <span class="math notranslate nohighlight">\(\TT\)</span> whether or not there is a tiling of the quadrant as requested.   This means that we want to know in finite time whether or not some infinite task can be completed or not.</p>
+We should emphasize that given a (pointed) tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, there might or might not be a tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.
+The algorithmic question is to determine from<span class="math notranslate nohighlight">\(\mathcal{T}\)</span> whether or not there is a tiling of the quadrant as requested.   This means that we want to know in finite time whether or not some infinite task can be completed or not.</p>
 <div class="exercise admonition" id="issues/problems-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\TT^*\)</span> be the pointed tile set consisting of the tiles in the bottom row of the last set:
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-05.png?raw=1" width="100%" height="100%">
@@ -523,9 +518,9 @@ Does the quadrant have a tiling with this set?</p>
 </div>
 <div class="exercise admonition" id="issues/problems-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
 <div class="section" id="exercise-content">
-<p>Construct a (finite) pointed tile set <span class="math notranslate nohighlight">\(\TT\)</span> with the following properties:</p>
+<p>Construct a (finite) pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <p>(a) The quadrant can be tiled using <span class="math notranslate nohighlight">\(\TT\)</span> in exactly one way.</p>
 <p>(b) In the tiling of the quadrant, the start tile appears on the main diagonal, and nowhere else.</p>
 </div>
@@ -537,7 +532,7 @@ Does the quadrant have a tiling with this set?</p>
 <p>Given an alphabet <span class="math notranslate nohighlight">\(A\)</span>, we define</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{lcl}
-A^+ &amp; = &amp; \set{a_1 a_2 \cdots a_n : n \in N,  n\geq 0, \mbox{ and } a_i\in A \mbox{ for all $i$}}\\
+A^+ &amp; = &amp; \set{a_1 a_2 \cdots a_n : n \in N,  n\geq 1, \mbox{ and } a_i\in A \mbox{ for all $i$}}\\
 A^* &amp; = &amp; A^+ \cup\set{\epsilon}\\
 \end{array}
 \end{split}\]</div>
@@ -584,6 +579,24 @@ which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</sp
 To say <em>PCP is undecidable</em> means that   <em>there is no</em>
 computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
 </div>
+<div class="tex2jax_ignore mathjax_ignore section" id="integer-roots-of-polynomials">
+<h1>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Permalink to this heading">#</a></h1>
+<p>There are a number of algorithmic problems of great interest in mathematics.  One of the most famous is the following:</p>
+<div class="danger admonition">
+<p class="admonition-title">Problem</p>
+<p>Given a polynomial <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> in many variables, does it have an integer root?   That is, are there integers <span class="math notranslate nohighlight">\(i_1, \ldots, i_n\)</span> such that <span class="math notranslate nohighlight">\(p(i_1, \ldots, i_n) = 0\)</span>?</p>
+</div>
+<p>This problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  It raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
+<p>It turns out that there is <em>no</em> algorithm to do this.  This is the only question which we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are mainly from number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
+<div class="exercise admonition" id="issues/problems-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
+<div class="section" id="exercise-content">
+<p>Show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
+<p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
+</div>
+</div>
+</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="matrix-mortality">
 <h1>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h1>
 <p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
@@ -593,9 +606,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 <p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>.   Given a finite set <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\times n\)</span> matrices with integer entries, is there a finite product of elements of <span class="math notranslate nohighlight">\(S\)</span>, allowing repeats, whose product is the zero matrix?</p>
 <p>This is the <span class="math notranslate nohighlight">\(n\times n\)</span> <em>matrix mortality problem</em>.</p>
 </div>
-<div class="exercise admonition" id="issues/problems-exercise-3">
+<div class="exercise admonition" id="issues/problems-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
 <div class="section" id="exercise-content">
 <p>Here are three matrices:</p>
 <div class="math notranslate nohighlight">
@@ -652,9 +665,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 </div>
 </div>
 <p>The next exercise is important.</p>
-<div class="exercise admonition" id="issues/problems-exercise-4">
+<div class="exercise admonition" id="issues/problems-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
 <div class="section" id="exercise-content">
 <p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
 (a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
@@ -748,7 +761,7 @@ This, too, is an interesting thing to do.</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computability: several notions</p>
+        <p class="prev-next-title">Computability: initial remarks</p>
       </div>
     </a>
     <a class="right-next"
@@ -779,6 +792,7 @@ This, too, is an interesting thing to do.</p></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>

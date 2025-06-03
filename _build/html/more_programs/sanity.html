@@ -151,14 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/beaver.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
-    <script>document.write(`<img src="../_static/beaver.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
+    <p class="title logo__title">Invitation to Computability</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -173,10 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: several notions</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: initial remarks</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
+
 
 
 
@@ -484,10 +478,18 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/more_programs/sanity.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="a-tool-to-help-write-programs">
 <h1>A tool to help write programs<a class="headerlink" href="#a-tool-to-help-write-programs" title="Permalink to this heading">#</a></h1>
-<p>The main tool here is a Python program called <code class="docutils literal notranslate"><span class="pre">sanity</span></code>.
-This tool makes it easier for someone to organize 1# programs and to write them without having to count lines for all of the forward- and backward-transfer statements.</p>
+<p>The language <code class="docutils literal notranslate"><span class="pre">1#</span></code> is intended to be the simplest possible language in which one can discuss the main results of computability theory.  One way to make this case is to discuss</p>
+<ol class="arabic simple">
+<li><p>Write a program to say “hello world”.  That is, write a program that outputs some simple string.</p></li>
+<li><p>Write a program to send a rocket to the moon.   That is, show that scientific computation is possible in the language.</p></li>
+<li><p>Write a program that can run other programs.</p></li>
+<li><p>Write a program that outputs itself.</p></li>
+<li><p>Write a program that trades places with its input. This is a program <span class="math notranslate nohighlight">\(p\)</span> with the property that for all programs <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\([\![p]\!](q)\simeq [\![q]\!](p)\)</span>.</p></li>
+</ol>
+<p>We have seen problem 1, and this is basically handled by the <code class="docutils literal notranslate"><span class="pre">write</span></code> program.   When it comes to doing numerical computation, or much of anything else, it is hard to use <code class="docutils literal notranslate"><span class="pre">1#</span></code> “out of the box.”  That is, it was designed to illustrate results in computability theory but as a result it is very hard for a person to use.   This section rectifies matters by providing a tool that makes it easier to write programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.   The program is called <code class="docutils literal notranslate"><span class="pre">sanity</span></code>.</p>
+<p>This tool makes it easier for someone to organize 1# programs and to write them without having to count lines for all of the forward- and backward-transfer statements.</p>
 <p>The concept and the name come from Jon Bowman, who once took my class and felt that construction 1# programs by hand was crazy, and that counting all the 1’s in a long expression “made his eyeballs bleed.”</p>
-<p>To start, run the next code cell to install the 1# Python package in your Colab environment. Then run the second code cell to import the functions from the 1# package which are used in this notebook.</p>
+<p>To start, run the next code cell to install the 1# Python package in your preferred environment. Then run the second code cell to import the functions from the 1# package which are used in this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!python -m pip install -U setuptools
@@ -877,48 +879,24 @@ The register contents at the end are shown below.
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">sanity</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
-</pre></div>
+<div class="exercise admonition" id="more_programs/sanity-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program which takes a program <span class="math notranslate nohighlight">\(p\)</span> as input and gives the first instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">p1</span><span class="p">,[</span><span class="s1">&#39;1#&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;##&#39;
-</pre></div>
+<div class="exercise admonition" id="more_programs/sanity-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<div class="section" id="exercise-content">
+<p>For any program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(|p|\)</span> denotes the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Write a program to compute the function <span class="math notranslate nohighlight">\(p\mapsto |p|\)</span>, using unary representation of numbers.</p>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">pr</span><span class="p">,[</span><span class="s1">&#39;1##&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;#&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1#####111###111###111111111111111111111111111111111111111111###11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###1#####111###1111###11111111111111111111###1##11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###11#11#1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####1111111111111111111111111111111111111111111111111111111111###11#11##1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####11111111111111111111111111111111111111111###1#####111###1111###11111111111111111111###1##1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111###11##11#1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####111111111111111111###11##11##1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####1###1#####111###1111111111###1111111111111111111111111###11#####11111 1###111###1##1111####1#11111 1####111111111111111111111111111111111111111111111111###11##1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####11111111111111111111111111111111###11#1#####111###1111111111###1111111111111111111111111###11#####11111 1###111###1##1111####1#11111 1####1111111111111111111###11##1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####111###11#11111111111111111111111111111####1#####111###11111111###11111111111111111111111###1##11#####111###11####111####1111111111111111111###11#1#####11111 1###111###11##1111####11#11111 1####11#####11111 1###111###1##1111####1#11111 1####111###11##111111111111111111111111111####&#39;
-</pre></div>
-</div>
-</div>
+<div class="danger admonition">
+<p class="admonition-title">An issue to think about</p>
+<p>You probabily noticed that the program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> was written in Python, a high-level programming language.   This is partly because <code class="docutils literal notranslate"><span class="pre">1#</span></code> does not have any support for the Roman alphabet, and so to even to read the tags one would need to do some coding.  But even more importantly, a high-level programming language has things that enable a person to write programs: attention to structure, a type system, conventions about handling variables, and more.   This brings us to a question that will crop up at several points: can one really do <em>everthing</em> in <code class="docutils literal notranslate"><span class="pre">1#</span></code>, or are high-level tools necessary?  This is not a mathematical question, and it might be more of an opinion question than anything else.   We bring it up here so that you can keep it in mind as you use high-level tools in connection with a very low-level language.</p>
 </div>
 </div>
 </div>

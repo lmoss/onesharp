@@ -154,14 +154,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/beaver.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
-    <script>document.write(`<img src="_static/beaver.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
+    <p class="title logo__title">Invitation to Computability</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -176,10 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: several notions</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: initial remarks</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
+
 
 
 
@@ -430,6 +424,7 @@ document.write(`
    <a href="#cap-corollary-1"><strong>corollary-1</strong></a> | 
    <a href="#cap-corollary-2"><strong>corollary-2</strong></a> | 
    <a href="#cap-corollary-3"><strong>corollary-3</strong></a> | 
+   <a href="#cap-corollary-4"><strong>corollary-4</strong></a> | 
    <a href="#cap-corollary-5"><strong>corollary-5</strong></a> | 
    <a href="#cap-corollary-8"><strong>corollary-8</strong></a> | 
    <a href="#cap-corollary-T-numbers"><strong>corollary-T-numbers</strong></a> | 
@@ -442,6 +437,7 @@ document.write(`
    <a href="#cap-def-starting-snapshot"><strong>def-starting-snapshot</strong></a> | 
    <a href="#cap-def-suitable"><strong>def-suitable</strong></a> | 
    <a href="#cap-def-upshot"><strong>def-upshot</strong></a> | 
+   <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-15"><strong>definition-15</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
    <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
@@ -451,7 +447,7 @@ document.write(`
    <a href="#cap-domino_contruction_works"><strong>domino_contruction_works</strong></a> | 
    <a href="#cap-example-3"><strong>example-3</strong></a> | 
    <a href="#cap-example-church-tiling"><strong>example-church-tiling</strong></a> | 
-   <a href="#cap-example-formal-tiling"><strong>example-formal-tiling</strong></a> | 
+   <a href="#cap-example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1"><strong>example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1</strong></a> | 
    <a href="#cap-example-modified-trace"><strong>example-modified-trace</strong></a> | 
    <a href="#cap-lemma-2"><strong>lemma-2</strong></a> | 
    <a href="#cap-lemma-7"><strong>lemma-7</strong></a> | 
@@ -560,6 +556,14 @@ document.write(`
        <a href="undecidability/haltingProblem.html#corollary-3"><code class="xref">corollary-3</code></a> <em>(undecidability/haltingProblem)</em></td><td>
        <em>corollary</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-corollary-4"><td></td><td>
+       <strong>corollary-4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="recThm/recursion_theorem.html#corollary-4"><code class="xref">corollary-4</code></a> <em>(recThm/recursion_theorem)</em></td><td>
+       <em>corollary</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-corollary-5"><td></td><td>
        <strong>corollary-5</strong></td><td></td></tr>
      <tr>
@@ -656,6 +660,14 @@ document.write(`
        <a href="mu/T_predicate.html#def-upshot"><code class="xref">def-upshot</code></a> <em>(mu/T_predicate)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-0"><td></td><td>
+       <strong>definition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="introOneSharp/instructions.html#definition-0"><code class="xref">definition-0</code></a> <em>(introOneSharp/instructions)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-15"><td></td><td>
        <strong>definition-15</strong></td><td></td></tr>
      <tr>
@@ -728,12 +740,12 @@ document.write(`
        <a href="undecidability/church.html#example-church-tiling"><code class="xref">example-church-tiling</code></a> <em>(undecidability/church)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-formal-tiling"><td></td><td>
-       <strong>example-formal-tiling</strong></td><td></td></tr>
+     <tr class="cap" id="cap-example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1"><td></td><td>
+       <strong>example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="undecidability/tiling.html#example-formal-tiling"><code class="xref">example-formal-tiling</code></a> <em>(undecidability/tiling)</em></td><td>
+       <a href="undecidability/tiling.html#example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1"><code class="xref">example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1</code></a> <em>(undecidability/tiling)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-modified-trace"><td></td><td>

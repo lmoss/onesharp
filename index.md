@@ -78,7 +78,7 @@ indicates that we are seeing an interesting example related to self-reference.
 tells us that we are in the territory of unsolvable problems.
 
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160">
-<img src="https://github.com/lmoss/onesharp/blob/main/tiling2.jpg?raw=1" width="200" height="160">
+
 
 This is used mainly to separate sections of a notebook.
 

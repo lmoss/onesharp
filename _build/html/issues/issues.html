@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Computability: several notions &#8212; Invitation to Computability</title>
+    <title>Computability: initial remarks &#8212; Invitation to Computability</title>
   
   
   
@@ -151,14 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/beaver.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
-    <script>document.write(`<img src="../_static/beaver.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
+    <p class="title logo__title">Invitation to Computability</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -173,10 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: several notions</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: initial remarks</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
+
 
 
 
@@ -449,7 +443,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Computability: several notions</h1>
+    <h1>Computability: initial remarks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -459,9 +453,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: several notions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 
             </nav>
@@ -475,21 +475,76 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/issues.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="computability-several-notions">
-<h1>Computability: several notions<a class="headerlink" href="#computability-several-notions" title="Permalink to this heading">#</a></h1>
-<p>We now turn to some of the main issues that drive our subject.   First of all, there is the matter of <em>giving a mathematical definition to the intuitive concept of computability</em>.   To see one of the issues, consider the diagram below.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-56.png?raw=1" width="100%" height="100%"><p>The inside region represents what could be “computed” at the time of this writing.  It is marked by a jagged boundary, since this border depends on the sofware and hardware, and on top of that it is time-dependent.  It is very hard to have a detailed and useful scientific study of such a concept.  Of more interest is the red boundary, the division between mathematical matters which are “in principle” computable, and those which are out of this boundary.  What we mean by “in principle” here is that we want to set aside all considerations of time and space limitations, except that everything must take only finitely many steps, and use only finitely much space.</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="computability-initial-remarks">
+<h1>Computability: initial remarks<a class="headerlink" href="#computability-initial-remarks" title="Permalink to this heading">#</a></h1>
+<p>We now turn to some of the main issues that drive our subject.   First of all, there is the matter of giving a mathematical definition to the intuitive concept of <em>computable function</em>.   What we mean here is that there is an <em>intuitive definition</em>: a function <span class="math notranslate nohighlight">\(f:A\to B\)</span> is <em>intuitively computable</em> if there is a finite set of precise instructions so that, given <span class="math notranslate nohighlight">\(a\in A\)</span> as an input and carrying out the instructions results in <span class="math notranslate nohighlight">\(f(a)\)</span> as an output.   Executing the instructions has to finish in finite time on each input.    The output <span class="math notranslate nohighlight">\(f(a)\)</span> has to be correct.</p>
+<div class="tip admonition">
+<p class="admonition-title">Examples/Non-Examples</p>
+<ol class="arabic simple">
+<li><p>Let <span class="math notranslate nohighlight">\(N\)</span> be the set of natural numbers <span class="math notranslate nohighlight">\(N = \{0, 1,2, \ldots, \}\)</span>.  Then the factorial function <span class="math notranslate nohighlight">\(f(n) = n!\)</span> is intuitively computable.
+One reason to believe this is that we have computer programs which do compute it.   There is some program that computes this function.  The program consists of precise instructions.  Given a number, say <span class="math notranslate nohighlight">\(213556669\)</span>, we could imagine carrying out those instructions to get <span class="math notranslate nohighlight">\(213556669!\)</span>.  This is true even though the usual decimal representation of <span class="math notranslate nohighlight">\(213556669!\)</span> is huge, and the computation of it also would take a long time (but not forever). So while we will see “edge cases” below, we want to study functions like the factorial function.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(2 = \{ \mbox{True}, \mbox{False}\}\)</span> be the set of <em>truth values</em>, and let <span class="math notranslate nohighlight">\(g: N \to 2\)</span> be given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+g(n) = \mbox{True} \quad \mbox{if and only if} \quad \mbox{Harriet Tubman liked $n$}.
+\]</div>
+<p>We mention this as a contrast to the factorial function.  It is not clear that this is a precisely-defined function in the first place.   What does it mean for a person to “like” a number?  When are we talking about?  And for someone like Harriet Tubman who lived in the past, how would we ever know?  We are going to set aside such (descriptions of possible) functions.</p>
+<ol class="arabic simple" start="3">
+<li><p>Let <span class="math notranslate nohighlight">\(h: N \to N\)</span> be given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+h(n) = \mbox{the least $m &gt; n$ such that $m$ and $m+2$ are both prime numbers}
+\]</div>
+<p>In contrast to <span class="math notranslate nohighlight">\(g\)</span>, this function is precisely defined.  For example, <span class="math notranslate nohighlight">\(h(8) = 11\)</span>.  Moreover, <span class="math notranslate nohighlight">\(h\)</span> is intuitively computable: given <span class="math notranslate nohighlight">\(n\)</span>, just look at the numbers <span class="math notranslate nohighlight">\(m &gt; n\)</span>, one by one, and see if each <span class="math notranslate nohighlight">\(m\)</span> and its associated number <span class="math notranslate nohighlight">\(m+2\)</span> are both prime.    However, there is a hitch: it is not known whether <span class="math notranslate nohighlight">\(g\)</span> a <em>total</em> function.  That is, it is not known now whether there are infinitely many <em>twin primes</em>.  If there are, then <span class="math notranslate nohighlight">\(h\)</span> is a total computable function.   If not, then <span class="math notranslate nohighlight">\(h\)</span> is still computable, but it is a computable <em>partial</em> function.   (A <em>partial function</em> is a function which might not be defined at all points of its input set.)</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="models-of-computation">
-<h1>Models of computation<a class="headerlink" href="#models-of-computation" title="Permalink to this heading">#</a></h1>
+<p>There are two points coming from these examples.  The first is that there is <em>some</em> concept of computability that people can agree on. That is, for some of the examples above, if we asked people in a position to think about those functions, they would tend to agree on the answers.   On the other hand, if we were to want to <em>prove</em> something about computable functions, it would be better to have a precise definition in hand.  This brings us to the second point of the examples: is that when we sit down to formalize the concept .   This is a matter of mathematical modeling.</p>
+<div class="danger admonition">
+<p class="admonition-title">Problem which we will address</p>
+<p>Propose a precise definition of computability.</p>
+</div>
+<div class="section" id="in-principle-vs-in-practice">
+<h2>In principle vs. in practice<a class="headerlink" href="#in-principle-vs-in-practice" title="Permalink to this heading">#</a></h2>
+<p>This section is about different issues to keep in mind regarding computability.   Our next issue is about computability <em>in principle</em> vs. computability <em>in practice</em>.   It is the topic of the diagram below.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-56.png?raw=1" width="100%" height="100%"><p>What we have been discussing up to now is <em>in principle</em> computability.   This is because we decided to ignore all matters having to do with time or space.  This is not always a useful thing to do.  What good would it be to know that a function is computable if whenever we tried to run it we would be sure that it took a billion years to compute anything?   Would we even want to say that this function is computable?</p>
+<p>The inner-most region above represents what could be “computed” at the time of this writing.  It is marked by a jagged boundary, since this border depends on the sofware and hardware, and on top of that it is time-dependent.  It is very hard to have a detailed and useful scientific study of such a concept.  Of more interest is the red boundary, the division between mathematical matters which are “in principle” computable, and those which are out of this boundary.  What we mean by “in principle” here is that we want to set aside all considerations of time and space limitations, except that everything must take only finitely many steps, and use only finitely much space.</p>
+</div>
+<div class="section" id="models-of-computation">
+<h2>Models of computation<a class="headerlink" href="#models-of-computation" title="Permalink to this heading">#</a></h2>
 <p>Even with the distinction between “in practice” and “in principle” computability, and even with our decsion to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
 <p>First, we will provide a very concrete definition of computability based on a <em>machine model</em>.  We have already begun this with our introduction of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and its associated notion of <em>functions computed by programs</em>.   There are other ways to do just this, and the machine models involved have names like <em>Turing machine</em> or <em>register machine</em>.   (Our <em>text register machine</em> is of course very close to an ordinary register machine; the main difference is that we have an alphabet with two symbols instead of just one, and our language of instructions and programs is identical to the language of words stored in the registers.   We will see later what differences come to.)</p>
 <p>Second, we argue that in a very real sense, it doesn’t matter which concrete model of computation one works with, “it comes to the same thing”.  This is the second part of the <em>Church-Turing Thesis</em>.  One way to make this concrete is to take computability on the natural numbers as a sort of reference point, and then check that all of the concrete models give the same notion of computable partial functions.   It would take quite some work to provide the evidence that all of the models of computation lead to the same class of computable partial functions of numbers, and so we are not going to do much of it.  The first part of this same <em>Church-Turing Thesis</em> is that this class of computable partial functions of numbers is the correct formalization of the intuitive notion of a computable function.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="finite-vs-infinite">
-<h1>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h1>
+<div class="section" id="intentional-vs-extensional">
+<h2>Intentional vs. Extensional<a class="headerlink" href="#intentional-vs-extensional" title="Permalink to this heading">#</a></h2>
+<p>Yet another choice point in our study is whether to take computability as an <em>extensional</em> or <em>intensional</em> notion.   Here is what we mean: for any function <span class="math notranslate nohighlight">\(f\)</span>, the <em>graph</em> of <span class="math notranslate nohighlight">\(f\)</span> is the set of input-output pairs of <span class="math notranslate nohighlight">\(f\)</span>.  For example, the graph of <span class="math notranslate nohighlight">\(s(n) = n+1\)</span> on the natural numbers is the set</p>
+<div class="math notranslate nohighlight">
+\[
+\{(0,1), (1,2), (2,3), \ldots, (n,n+1), \ldots\}.
+\]</div>
+<p>Here are two functions from positive numbers to positive numbers:</p>
+<div class="math notranslate nohighlight">
+\[
+f(m,n) = \mbox{the greatest common divisor of $m$ and $n$}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and $n$}
+\]</div>
+<p>These have the same graph relation, so they are extensionally the same.   But the descriptions are different, so those descriptions are intensionally different.</p>
+<p>Now the standard practice in mathematics is to regard function equality as extensional.  Thus, <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are regarded as <em>identical</em>.  One takes function identity in the extensional sense in mathematics partly because it is clear and unproblematic, and because the alternative is very difficult to pin down.</p>
+<p>For computability, we naturally want to do the same thing, and generally we will.   But there are situations where it would be more naturally to be intensional, and we want to flag those.</p>
+<p>does the question of whether a function is computable or not depend on how the function is presented, or is it a property of the</p>
+</div>
+<div class="section" id="finite-vs-infinite">
+<h2>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h2>
 <p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
+</div>
+<div class="section" id="total-vs-partial-functions">
+<h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Permalink to this heading">#</a></h2>
+<p>Another choice point is whether to stick to total functions or to allow partial functions in our study.   We opt to include partial functions.</p>
 <p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
@@ -498,6 +553,46 @@ document.write(`
 </div>
 </div><p>The proof basically comes down to a <em>table look-up</em>.</p>
 <p>For many, this result is uninspiring, even wrong somehow.  So it is worthwhile to understand both the result itself and the objections.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<p><span class="math notranslate nohighlight">\(Inst\)</span> is the set of instructions (i.e., programs) of functions on algorithmically suited sets.</p>
+</div>
+<div class="exercise admonition" id="issues/issues-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<div class="section" id="exercise-content">
+<p>Find a computable function <span class="math notranslate nohighlight">\(c: Inst \times Inst \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\![c(p,q)]\!] = [\![q]\!] \o [\![q]\!]\)</span>.</p>
+</div>
+</div>
+<div class="exercise admonition" id="issues/issues-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<div class="section" id="exercise-content">
+<p>Find a computable function <span class="math notranslate nohighlight">\(con: N \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\![c(n)]\!]\)</span> is the constant function with value <span class="math notranslate nohighlight">\(n\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+[\![c(n)]\!](m) = n \mbox{ for all $m$}
+\]</div>
+</div>
+</div>
+<div class="exercise admonition" id="issues/issues-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(f: N \to N\)</span> be any function with the property that if <span class="math notranslate nohighlight">\(n \leq m\)</span>, then <span class="math notranslate nohighlight">\(f(n) \geq f(m)\)</span>.  Show that <span class="math notranslate nohighlight">\(f\)</span> is intuitively computable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<div class="danger admonition">
+<p class="admonition-title">Going forward </p>
+<p>We will propose and study a precise definition of computability, starting <span class="xref myst">here</span>.</p>
+<p>Nevertheless, there are still interesting things that one can do in computability theory with purely intuitive notions.</p>
+<p>We will allow partial functions.</p>
+<p>We will concentrate on <em>in principle</em> computability, and we will be thinking of equality extensionally.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -563,9 +658,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: several notions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 
   </nav></div>
