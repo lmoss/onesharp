@@ -808,7 +808,15 @@ the register is empty.  Moreove, the first tile in row 4744 must be the first of
 Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\)</span>.  This all corresponds to executing the <code class="docutils literal notranslate"><span class="pre">1#####</span></code> instruction on the empty register.</p>
 <p class="sd-card-text">We have verified all parts of (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 </div>
-</details></section>
+</details><div class="exercise admonition" id="undecidability/tiling-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 89 </span></p>
+<section id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be finite tile set, and consider <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.<br />
+Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> that is <em>not</em> isomorphic to the grid model (the model that we had in mind when we formulated <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>).</p>
+</section>
+</div>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="proof-of-the-theorem">
 <h1>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h1>
 <p><a class="reference internal" href="#tiling_works">Lemma 4</a>
@@ -860,7 +868,7 @@ whose distance is <span class="math notranslate nohighlight">\(&gt; n\)</span> i
 Let <span class="math notranslate nohighlight">\(t_{n+1}\)</span> be any such node <span class="math notranslate nohighlight">\(u\)</span>.</p>
 </div>
 <p>This very general result has as a special case the following fact:</p>
-<div class="proof lemma admonition" id="lemma-7">
+<div class="proof lemma admonition" id="lemma-8">
 <p class="admonition-title"><span class="caption-number">Lemma 6 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>If a tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the entire quadrant, then there is some natural number <span class="math notranslate nohighlight">\(n\)</span> such that
@@ -883,9 +891,9 @@ such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em
 <p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
 <p>The point again is that if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
 then our last lemma shows that  <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-8">
+<div class="exercise admonition" id="undecidability/tiling-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 89 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 90 </span></p>
 <section id="exercise-content">
 <p>Our work on tiling dealt with <em>finite</em> tile sets.  This problem relaxes the finiteness requirement.    Construct an infinite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <ol class="arabic simple">
@@ -895,16 +903,16 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 </ol>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-9">
+<div class="exercise admonition" id="undecidability/tiling-exercise-10">
 
-<p class="admonition-title"><span class="caption-number">Exercise 90 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 91 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
 </div>
 <div class="exercise admonition" id="tiling_for_Trakhtenbrot">
 
-<p class="admonition-title"><span class="caption-number">Exercise 91 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 92 </span></p>
 <section id="exercise-content">
 <p>In this problem we consider a variant of the tiling problem where the goal is not to tile the entire first quadrant but rather to tile a finite rectangle in a noteworthy way.</p>
 <p>A <em>three-pointed</em> tile set is a tile set <span class="math notranslate nohighlight">\(\mathcal{T}_3\)</span> with three distinguished tiles, a <em>start</em> tile, a <em>halt</em> tile, and a <em>blank</em> tile.</p>
