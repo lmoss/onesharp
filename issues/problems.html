@@ -505,6 +505,7 @@ document.write(`
 <p>A <em>graph</em> is a set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
 <p>Given a graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
+<p>We are not going to be very interested in specific solvable problems in this book.  So the main point of this example here is that it contrasts with all of the examples which follow it.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="tiling-problems">
 <span id="content-firsttiles"></span><h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Link to this heading">#</a></h1>
@@ -706,7 +707,7 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-halting-set-k-and-related-sets">
 <h1>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Link to this heading">#</a></h1>
-<p>We also want to study a few problems related to <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.   These include</p>
+<p>We also want to study a few problems related to computer prorgrams.   These include</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -720,8 +721,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
-<p>Of course, there are many other sets that we could define.   We want to know whether they are computable or not.</p>
-<p>We also could ask whether they are computably enumerable or not.</p>
+<p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="truth-and-proof">
 <h1>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Link to this heading">#</a></h1>
