@@ -693,7 +693,8 @@ f(\bar{x})
 &amp;  &lt; &amp; F(\hat{x}, \max_j r_j + s) &amp; \mbox{(4)}\\
 \end{array}
 \end{split}\]</div>
-<p>Point (2) uses <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">BuckTwo,</span> <span class="pre">(3)</span> <span class="pre">uses</span>&#160; <span class="pre">{prf:ref}</span></code>BuckThree<code class="docutils literal notranslate"> <span class="pre">and</span>&#160; <span class="pre">$\hat{x}</span> <span class="pre">\geq</span> <span class="pre">3$,</span>&#160; <span class="pre">and</span> <span class="pre">(4)</span> <span class="pre">uses</span> <span class="pre">{prf:ref}</span></code>BuckFive` and  <span class="math notranslate nohighlight">\(\hat{x} \geq 3\)</span>, <span class="math notranslate nohighlight">\(r_1 \geq 2\)</span>.</p>
+<p>Point (2) uses <a class="reference internal" href="#BuckTwo">Lemma 4</a>, (3) uses  <a class="reference internal" href="#BuckThree">Lemma 5</a> and  <span class="math notranslate nohighlight">\(\hat{x} \geq 3\)</span>,
+and (4) uses <a class="reference internal" href="#BuckFive">Lemma 7</a> and  <span class="math notranslate nohighlight">\(\hat{x} \geq 3\)</span>, <span class="math notranslate nohighlight">\(r_1 \geq 2\)</span>.</p>
 <p>We have used <a class="reference internal" href="#BuckTwo">Lemma 4</a> at other several points.
 To conclude this step of the induction, we have shown that the number <span class="math notranslate nohighlight">\( \max_j r_j + s\)</span> has the required property for <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p>Suppose that <span class="math notranslate nohighlight">\(f(\bar{x},y)\)</span> is defined by primitive recursion from <span class="math notranslate nohighlight">\(h(\bar{x})\)</span> and <span class="math notranslate nohighlight">\(k(\bar{x},y,z)\)</span> as:
@@ -724,7 +725,7 @@ f(\bar{x},y+1)  &amp; = &amp; k(\bar{x}, y, f(\bar{x},y)) \\
 f(\bar{x},y)  &amp; &lt; &amp;  F(\hat{x} + y, t)   &amp;\mbox{by our claim above}\\
  &amp; \leq &amp; F(2p, t)  &amp;\mbox{by definition of $p$} \\ 
  &amp; = &amp; F(F(p,2), t) &amp;\mbox{since $F(m,2) = 2m$} \\
- &amp; = &amp; F(p, t+2) &amp;\mbox{(5))}\\
+ &amp; = &amp; F(p, t+2) &amp;\mbox{(5)}\\
 %  &amp; = &amp; F(F(p+1,2), t+1) &amp; \mbox{since $F(m,2) = 2m$} \\
 % &amp;  &lt; &amp;  F(p+1,t+2) &amp;\mbox{(6)}\\
 % &amp; = &amp; F(\hat{x} + (y+1), t+2) &amp;\\
