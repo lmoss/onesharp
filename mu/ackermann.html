@@ -545,7 +545,7 @@ F(m,4) &amp; = &amp;  2^{2^{\rddots2}}\mbox{, this is a tower of $m$ 2's}
  \hline 
 \end{array} 
 \end{split}\]</div>
-<div class="proof lemma admonition" id="lemma-0">
+<div class="proof lemma admonition" id="BuckOne">
 <p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For  <span class="math notranslate nohighlight">\(n\geq 3\)</span> and  all <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(a &lt; F(a,n)\)</span>.</p>
@@ -567,12 +567,25 @@ Assuming that <span class="math notranslate nohighlight">\(a &lt; F(a,n+1)\)</sp
 <p>The calculation above has two strict inequalities,
 and it implies that <span class="math notranslate nohighlight">\(a+1 &lt; F(a+1, n+1)\)</span>.</p>
 </div>
-<div class="proof lemma admonition" id="lemma-1">
+<div class="proof lemma admonition" id="BuckTwo">
 <p class="admonition-title"><span class="caption-number">Lemma 4 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(n \geq 0\)</span> and <span class="math notranslate nohighlight">\(a &lt; b\)</span>, then <span class="math notranslate nohighlight">\(F(a,n) &lt; F(b,n)\)</span>.</p>
 </section>
-</div><div class="proof lemma admonition" id="lemma-2">
+</div><div class="proof admonition" id="proof">
+<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.   For <span class="math notranslate nohighlight">\(n = 0\)</span>, <span class="math notranslate nohighlight">\(F(a,0) = a+1 &lt; b+1 = F(b,0)\)</span>.   Similar reasoning applies with <span class="math notranslate nohighlight">\(n = 1\)</span> and <span class="math notranslate nohighlight">\(n = 2\)</span>.
+Assuming our result for <span class="math notranslate nohighlight">\(n\geq 2\)</span>, we argue by induction on <span class="math notranslate nohighlight">\(b\)</span> that for <span class="math notranslate nohighlight">\(a &lt; b\)</span>, <span class="math notranslate nohighlight">\(F(a, n+1) &lt; F(b, n+1)\)</span>.<br />
+We need only show that <span class="math notranslate nohighlight">\(F(a,n+1) &lt; F(a+1, n+1)\)</span>.<br />
+But</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{array}{lcll}
+F(a,n+1)  &amp;  &lt; &amp; F(F(a,n+1),n) &amp;\mbox{by {prf:ref}`BuckOne` and $n + 1 \geq 3$}\\ &amp;  = &amp;  F(a+1, n+1) 
+\end{array} 
+\end{split}\]</div>
+<p>This completes the proof.</p>
+</div>
+<div class="proof lemma admonition" id="BuckThree">
 <p class="admonition-title"><span class="caption-number">Lemma 5 </span></p>
 <section class="lemma-content" id="proof-content">
 <ol class="arabic simple">
@@ -580,17 +593,64 @@ and it implies that <span class="math notranslate nohighlight">\(a+1 &lt; F(a+1,
 <li><p>If <span class="math notranslate nohighlight">\(u \geq 3\)</span>, then <span class="math notranslate nohighlight">\(3 \leq F(u,v) &lt; F(u,v+1)\)</span>.</p></li>
 </ol>
 </section>
-</div><div class="proof lemma admonition" id="lemma-3">
+</div><div class="proof admonition" id="proof">
+<p>Proof. We show both parts together by induction on <span class="math notranslate nohighlight">\(v\)</span>.  For <span class="math notranslate nohighlight">\(v = 0\)</span>: <span class="math notranslate nohighlight">\(F(2,0) = 3 &lt; 4 = F(2,1)\)</span>, and for all <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(F(u,0) = u+1 &lt; u+2 = F(u,1)\)</span>.</p>
+<p>Assume both parts for <span class="math notranslate nohighlight">\(v\)</span>; we check both for <span class="math notranslate nohighlight">\(v +1\)</span>.
+For (1), see the chart.
+For (2) we use induction on <span class="math notranslate nohighlight">\(u \geq 3\)</span>.<br />
+First, a calculation for <span class="math notranslate nohighlight">\(u\geq 2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \begin{array}{lcll}
+  F(u+1,v+1)  &amp;  = &amp; F(F(u,v+1),v) \\
+  &amp;  &lt; &amp;  F(F(u,v+1),v+1) &amp;  \mbox{($*$)} \\
+    &amp;  \leq &amp;  F(F(u,v+2),v+1)  &amp; \mbox{($**$)} \\
+ &amp;  = &amp;  F(u+1, v+2) 
+  \end{array} 
+\end{split}\]</div>
+<p>When
+<span class="math notranslate nohighlight">\(u = 2\)</span>,  step (<span class="math notranslate nohighlight">\(*\)</span>) is by the induction hypothesis on <span class="math notranslate nohighlight">\(v\)</span>; we also used <span class="math notranslate nohighlight">\(3 &lt; F(3, v+1)\)</span>, and this is due to point (1).
+We have equality in the step (<span class="math notranslate nohighlight">\(**\)</span>).   From above,
+<span class="math notranslate nohighlight">\( F(3,v+1)  &lt;  F(3, v+2) \)</span>.
+We have the base case, except for the point that <span class="math notranslate nohighlight">\(3 \leq F(3,v+1)\)</span>, and we verify this below.</p>
+<p>For the induction step on <span class="math notranslate nohighlight">\(u\)</span>, we assume about <span class="math notranslate nohighlight">\(u\)</span> that <span class="math notranslate nohighlight">\( 3 \leq F(u,v+1)  &lt;  F(u, v+2) \)</span>.   We repeat the calculation above.
+Step (<span class="math notranslate nohighlight">\(*\)</span>) follows from the induction hypothesis on <span class="math notranslate nohighlight">\(v\)</span>,
+and step  (<span class="math notranslate nohighlight">\(**\)</span>)  from <a class="reference internal" href="#BuckTwo">Lemma 4</a>.
+To  complete the verification of (2), both for the base case <span class="math notranslate nohighlight">\(u = 3\)</span> and the induction step on <span class="math notranslate nohighlight">\(u\)</span>,
+we need only check that <span class="math notranslate nohighlight">\(F(F(u,v+1),v) \geq 3\)</span>.
+Let <span class="math notranslate nohighlight">\(k = F(u, v+1)\)</span>.  Then <span class="math notranslate nohighlight">\(k \geq 3\)</span> since <span class="math notranslate nohighlight">\(u \geq 2\)</span>, and <span class="math notranslate nohighlight">\(F(k,v) \geq 3\)</span> by induction hypothesis on <span class="math notranslate nohighlight">\(v\)</span>.</p>
+</div>
+<div class="proof lemma admonition" id="lemma-3">
 <p class="admonition-title"><span class="caption-number">Lemma 6 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), n) &lt; F(x, n+2)\)</span>.</p>
 </section>
-</div><div class="proof lemma admonition" id="lemma-4">
+</div><div class="proof lemma admonition" id="BuckFour">
 <p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n,m\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), m) &lt; F(x, n+m)\)</span>.</p>
 </section>
-</div><div class="proof lemma admonition" id="lemma-5">
+</div><div class="proof admonition" id="proof">
+<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\geq 2\)</span>.
+For <span class="math notranslate nohighlight">\(n=2\)</span> and <span class="math notranslate nohighlight">\(x = 3\)</span>,
+<span class="math notranslate nohighlight">\(F(F(3,2), 2) = 12 &lt; 16 = F(3, 4)\)</span>.
+For <span class="math notranslate nohighlight">\(n=2\)</span> and <span class="math notranslate nohighlight">\(x = 4\)</span>,
+<span class="math notranslate nohighlight">\(F(F(4,2), 2) = 16 &lt; 2^{16} = F(3, 5)\)</span>.
+For <span class="math notranslate nohighlight">\(n = 2\)</span> and <span class="math notranslate nohighlight">\(x\geq 5\)</span>, <span class="math notranslate nohighlight">\(F(F(x,2),2) = 4x &lt; 2^x = F(x,3) &lt; F(x,4)\)</span>.</p>
+<p>Assume about <span class="math notranslate nohighlight">\(n\geq 2\)</span> that for all <span class="math notranslate nohighlight">\(x\geq 3\)</span>,  <span class="math notranslate nohighlight">\(F(F(x,n), n) &lt; F(x, n+2)\)</span>.
+Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcll}
+F(F(x+1, n), n) &amp; = &amp;F( F(F(x,n), n-1), n) \\
+&amp; &lt; &amp; F( F(F(x,n), n), n)  &amp;\mbox{by {prf:ref}`BuckThree`, using $F(x,n)\geq 3$}\\
+&amp; &lt; &amp; F( F(x, n+2), n)  &amp;\mbox{ind. hyp.}\\
+&amp; &lt; &amp; F( F(x, n+2), n+1)  &amp;\mbox{by {prf:ref}`BuckThree`, using $F(x,n+2)\geq 3$}\\
+&amp; = &amp; F(x+1, n+2)\\
+\end{array}
+\end{split}\]</div>
+</div>
+<div class="proof lemma admonition" id="BuckMain">
 <p class="admonition-title"><span class="caption-number">Lemma 8 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For every primitive recursive <span class="math notranslate nohighlight">\(f:N^k \to N\)</span>, there is some <span class="math notranslate nohighlight">\(r \geq 3\)</span> so that for all <span class="math notranslate nohighlight">\(\overline{x} = x_1,\ldots, x_k\in N^k\)</span>,
@@ -603,7 +663,7 @@ f(\overline{x}) &lt; F(\hat{x}_i, r)\)</span>.</p>
 <p>Buck’s function <span class="math notranslate nohighlight">\(F\)</span> is not primitive recursive.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Suppose towards a contradiction that <span class="math notranslate nohighlight">\(F\)</span> were primitive recursive.   By the Main Lemma, let <span class="math notranslate nohighlight">\(r\geq 3\)</span> be such that
+<p>Proof. Suppose towards a contradiction that <span class="math notranslate nohighlight">\(F\)</span> were primitive recursive.   By <a class="reference internal" href="#BuckMain">Lemma 8</a>, let <span class="math notranslate nohighlight">\(r\geq 3\)</span> be such that
 <span class="math notranslate nohighlight">\(F(x,y) &lt; F(\{x,y\}^{\widehat{}}, r)\)</span> for all <span class="math notranslate nohighlight">\(x,y\)</span>.  Take <span class="math notranslate nohighlight">\(x = y = r\)</span>.   Then <span class="math notranslate nohighlight">\(\{x,y\}^{\widehat{}} = r\)</span>.  We have <span class="math notranslate nohighlight">\(F(r,r) &lt;F(r,r)\)</span>, and this is the contradiction.</p>
 </div>
 </section>
@@ -640,7 +700,7 @@ A(x,y) &lt; A(r, \max(x,y))
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Credits</p>
-<p>Buck’s function was first mention in his paper</p>
+<p>Buck’s function comes from his paper</p>
 <p>R. C. Buck,
 Mathematical Induction and Recursive Definitions.
 The American Mathematical Monthly, Vol. 70, No. 2 (Feb., 1963), pp. 128-135.</p>
