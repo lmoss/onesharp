@@ -478,7 +478,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-s-function">Buck’s function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-to-ackermann-s-function">Return to Ackermann’s function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-ackermann-s-function">Back to Ackermann’s function</a></li>
 </ul>
             </nav>
         </div>
@@ -559,8 +559,8 @@ Assuming that <span class="math notranslate nohighlight">\(a &lt; F(a,n+1)\)</sp
 <div class="math notranslate nohighlight">
 \[\begin{split}
  \begin{array}{lcll}
- a &amp;  &lt; &amp; F(a,n+1) &amp;\mbox{ind.~hyp.~on $a$}\\
-    &amp;  &lt; &amp;  F(F(a,n+1), n) &amp;\mbox{ind.~hyp.~on $n$}\\
+ a &amp;  &lt; &amp; F(a,n+1) &amp;\mbox{induction hypothesis on $a$}\\
+    &amp;  &lt; &amp;  F(F(a,n+1), n) &amp;\mbox{induction hypothesis on $n$}\\
  &amp;  = &amp;  F(a+1, n+1) 
   \end{array} 
 \end{split}\]</div>
@@ -573,17 +573,19 @@ and it implies that <span class="math notranslate nohighlight">\(a+1 &lt; F(a+1,
 <p>If <span class="math notranslate nohighlight">\(n \geq 0\)</span> and <span class="math notranslate nohighlight">\(a &lt; b\)</span>, then <span class="math notranslate nohighlight">\(F(a,n) &lt; F(b,n)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.   For <span class="math notranslate nohighlight">\(n = 0\)</span>, <span class="math notranslate nohighlight">\(F(a,0) = a+1 &lt; b+1 = F(b,0)\)</span>.   Similar reasoning applies with <span class="math notranslate nohighlight">\(n = 1\)</span> and <span class="math notranslate nohighlight">\(n = 2\)</span>.
-Assuming our result for <span class="math notranslate nohighlight">\(n\geq 2\)</span>, we argue by induction on <span class="math notranslate nohighlight">\(b\)</span> that for <span class="math notranslate nohighlight">\(a &lt; b\)</span>, <span class="math notranslate nohighlight">\(F(a, n+1) &lt; F(b, n+1)\)</span>.<br />
+<p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(n = 0\)</span>, <span class="math notranslate nohighlight">\(F(a,0) = a+1 &lt; b+1 = F(b,0)\)</span>.</p>
+<p>Similar reasoning applies with <span class="math notranslate nohighlight">\(n = 1\)</span> and <span class="math notranslate nohighlight">\(n = 2\)</span>.</p>
+<p>Assuming our result for <span class="math notranslate nohighlight">\(n\geq 2\)</span>, we argue by induction on <span class="math notranslate nohighlight">\(b\)</span> that for <span class="math notranslate nohighlight">\(a &lt; b\)</span>, <span class="math notranslate nohighlight">\(F(a, n+1) &lt; F(b, n+1)\)</span>.<br />
 We need only show that <span class="math notranslate nohighlight">\(F(a,n+1) &lt; F(a+1, n+1)\)</span>.<br />
 But</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{array}{lcll}
-F(a,n+1)  &amp;  &lt; &amp; F(F(a,n+1),n) &amp;\mbox{by {prf:ref}`BuckOne` and $n + 1 \geq 3$}\\ &amp;  = &amp;  F(a+1, n+1) 
+F(a,n+1)  &amp;  &lt; &amp; F(F(a,n+1),n) \\ &amp;  = &amp;  F(a+1, n+1) 
 \end{array} 
 \end{split}\]</div>
-<p>This completes the proof.</p>
+<p>In the first step, we used <a class="reference internal" href="#BuckOne">Lemma 3</a> and  the fact that <span class="math notranslate nohighlight">\(n + 1 \geq 3\)</span>.</p>
 </div>
 <div class="proof lemma admonition" id="BuckThree">
 <p class="admonition-title"><span class="caption-number">Lemma 5 </span></p>
@@ -644,7 +646,7 @@ F(F(x+1, n), n) &amp; = &amp;F( F(F(x,n), n-1), n) \\
 &amp; = &amp; F(x+1, n+2)\\
 \end{array}
 \end{split}\]</div>
-<p>In these calculuations, we used <a class="reference internal" href="#BuckThree">Lemma 5</a> twice, using also that <span class="math notranslate nohighlight">\(F(x,n+2)\geq F(x,n) 3\)</span>.</p>
+<p>In these calculuations, we used <a class="reference internal" href="#BuckThree">Lemma 5</a> twice, using also that <span class="math notranslate nohighlight">\(F(x,n+2)\geq F(x,n)\geq 3\)</span>.</p>
 </div>
 <div class="proof lemma admonition" id="BuckFive">
 <p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
@@ -675,8 +677,8 @@ f(\overline{x}) &lt; F(\hat{x}_i, r)\)</span>.</p>
 <span class="math notranslate nohighlight">\(F(x,y) &lt; F(\{x,y\}^{\widehat{}}, r)\)</span> for all <span class="math notranslate nohighlight">\(x,y\)</span>.  Take <span class="math notranslate nohighlight">\(x = y = r\)</span>.   Then <span class="math notranslate nohighlight">\(\{x,y\}^{\widehat{}} = r\)</span>.  We have <span class="math notranslate nohighlight">\(F(r,r) &lt;F(r,r)\)</span>, and this is the contradiction.</p>
 </div>
 </section>
-<section id="return-to-ackermann-s-function">
-<h2>Return to Ackermann’s function<a class="headerlink" href="#return-to-ackermann-s-function" title="Link to this heading">#</a></h2>
+<section id="back-to-ackermann-s-function">
+<h2>Back to Ackermann’s function<a class="headerlink" href="#back-to-ackermann-s-function" title="Link to this heading">#</a></h2>
 <div class="proof lemma admonition" id="lemma-7">
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
@@ -785,7 +787,7 @@ The American Mathematical Monthly, Vol. 70, No. 2 (Feb., 1963), pp. 128-135.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-s-function">Buck’s function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-to-ackermann-s-function">Return to Ackermann’s function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-ackermann-s-function">Back to Ackermann’s function</a></li>
 </ul>
   </nav></div>
 
