@@ -524,8 +524,10 @@ F(m,3) &amp; = &amp; 2^m \\
 F(m,4) &amp; = &amp;  2^{2^{\rddots2}}\mbox{, this is
 a tower of $m$ 2's}
 \end{array}
-\qquad
-\begin{tabular}{|c||c|c|c|c|c|c|}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{|c||c|c|c|c|c|c|}
 \hline
 % \diagbox[width=\dimexpr \textwidth/8+2\tabcolsep\relax, height=1cm]{$ u$}{$v$} &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
 % \diagbox{$m$}{$n$} &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
@@ -536,13 +538,13 @@ a tower of $m$ 2's}
  \hline 
 2  &amp; 3 &amp; 4 &amp; 4 &amp; 4 &amp; 4  &amp; 4\\
  \hline
-3  &amp; 4 &amp; 5 &amp; 6 &amp; 8 &amp; 16  &amp; $2^{16}$ \\
+3  &amp; 4 &amp; 5 &amp; 6 &amp; 8 &amp; 16  &amp; 2^{16} \\
  \hline
-4  &amp; 5 &amp; 6 &amp; 8 &amp; 16 &amp; $2^{16}$ &amp; $F(2^{16},4)$\\
+4  &amp; 5 &amp; 6 &amp; 8 &amp; 16 &amp; 2^{16} &amp; F(2^{16},4)\\
  \hline
-5 &amp; 6 &amp; 7 &amp; 10 &amp; 32 &amp;  $2^{2^{16}}$ &amp; $F(F(4,5),4)$  \\
+5 &amp; 6 &amp; 7 &amp; 10 &amp; 32 &amp;  2^{2^{16}} &amp; F(F(4,5),4)  \\
  \hline 
-\end{tabular} 
+\end{array} 
 \end{split}\]</div>
 <div class="proof lemma admonition" id="lemma-0">
 <p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
@@ -592,9 +594,9 @@ and it implies that <span class="math notranslate nohighlight">\(a+1 &lt; F(a+1,
 </div><div class="proof lemma admonition" id="lemma-5">
 <p class="admonition-title"><span class="caption-number">Lemma 8 </span></p>
 <section class="lemma-content" id="proof-content">
-<p>For every primitive recursive <span class="math notranslate nohighlight">\(f:N^k \to N\)</span>, there is some <span class="math notranslate nohighlight">\(r \geq 3\)</span> so that for all <span class="math notranslate nohighlight">\(\xbar = x_1,\ldots, x_k\in N^k\)</span>,
+<p>For every primitive recursive <span class="math notranslate nohighlight">\(f:N^k \to N\)</span>, there is some <span class="math notranslate nohighlight">\(r \geq 3\)</span> so that for all <span class="math notranslate nohighlight">\(\overline{x} = x_1,\ldots, x_k\in N^k\)</span>,
 <span class="math notranslate nohighlight">\(
-f(\xbar) &lt; F(\xhat_i, r)\)</span>.</p>
+f(\overline{x}) &lt; F(\hat{x}_i, r)\)</span>.</p>
 </section>
 </div><div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
@@ -639,6 +641,17 @@ A(x,y) &lt; A(r, \max(x,y))
 \]</div>
 <p>for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.   In particular, taking <span class="math notranslate nohighlight">\(x = r = y\)</span>, we have <span class="math notranslate nohighlight">\(A(r,r) &lt; A(r,r)\)</span>.</p>
 <p>Contradiction!</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>Buck’s function was first mention in his paper</p>
+<p>R. C. Buck,
+Mathematical Induction and Recursive Definitions.
+The American Mathematical Monthly, Vol. 70, No. 2 (Feb., 1963), pp. 128-135.</p>
+<p>The first (?) proof that Ackermann’s function is total but not primitive recursive was given in the paper (in German)</p>
+<p>Rózsa Péter, (1935). “Konstruktion nichtrekursiver Funktionen”. Mathematische Annalen. 111: 42–60.</p>
+<p>Péter went on to write the first book on primitive recursive functions, translated into English as</p>
+<p>Rózsa Péter, (1967). Recursive Functions (3d revised ed.). Academic Press.</p>
 </div>
 </section>
 </section>
