@@ -503,9 +503,10 @@ A(x,y)\quadeq \left\{
 \end{array}
 \right.
 \end{split}\]</div>
+<p>This section shows that <span class="math notranslate nohighlight">\(A\)</span> is not primitive recursive.</p>
 <section id="buck-s-function">
 <h2>Buck’s function<a class="headerlink" href="#buck-s-function" title="Link to this heading">#</a></h2>
-<p>Here is Buck’s function <span class="math notranslate nohighlight">\(F(m,n)\)</span>.</p>
+<p>We want to mention a different function that is also total and computable, Buck’s function <span class="math notranslate nohighlight">\(F(m,n)\)</span>.  We then will give the full details on why it is not primitive recursive.  Here is Buck’s function <span class="math notranslate nohighlight">\(F(m,n)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -514,7 +515,7 @@ F(0,n)  &amp; = &amp; \left\{ \begin{array}{ll}  2 &amp;\mbox{if $n = 1$} \\  0 
 F(m+1,n+1) &amp; = &amp; F(F(m,n+1), n)\\
 \end{array}
 \end{split}\]</div>
-<p>Here are some special cases, and a table of values for small <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Here are some special cases.  The reason for moving from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(F\)</span> is just that the expressions below are a little more elegant than what we get with <span class="math notranslate nohighlight">\(A\)</span>.  But the two functions are closely related, as we’ll see below.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -524,6 +525,7 @@ F(m,3) &amp; = &amp; 2^m \\
 F(m,4) &amp; = &amp;  2^{2^{\rddots2}}\mbox{, this is a tower of $m$ 2's}
 \end{array}
 \end{split}\]</div>
+<p>Here also is a table of values of this function for small <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{|c||c|c|c|c|c|c|}
@@ -717,7 +719,7 @@ f(\bar{x},y+1)  &amp; = &amp; k(\bar{x}, y, f(\bar{x},y)) \\
  &amp; = &amp; F(\hat{x} + y + 1, t) &amp;\mbox{by definition of $F$}
  \end{array}
 \end{split}\]</div>
-<p>Point (4) uses <a class="reference internal" href="#BuckTwo">Lemma 4</a></p>
+<p>Point (4) uses <a class="reference internal" href="#BuckTwo">Lemma 4</a>.</p>
 <p>Our claim proved, we now fix <span class="math notranslate nohighlight">\(\bar{x},y\)</span>.  We have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
