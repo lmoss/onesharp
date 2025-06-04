@@ -617,14 +617,14 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 <div class="math notranslate nohighlight">
 \[
 x = 8, 866, 128, 975, 287, 5283 
-quad
+\quad
 y =  −8, 778, 405, 442, 862, 239 
 \quad 
 z =  −2, 736, 111, 468, 807, 040.
 \]</div>
 </div>
 <p>In view of how hard it is to actually solve problems of this type, it is perhaps not surprising that the problem is in general undecidable.</p>
-<p>This problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  It raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
+<p>This problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
 <p>As we said, it turns out that there is <em>no</em> algorithm to do solve the integer root problem in general.  This is the only question which we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are mainly from number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
 <p>Of course, the fact that the general problem is undecidable does not deter people from solving special cases, as they did above.</p>
 <div class="exercise admonition" id="issues/problems-exercise-3">
@@ -761,15 +761,9 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 This, too, is an interesting thing to do.</p></li>
 </ol>
 <p>We are going to investigate both of these <em>back off</em> questions in some detail.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Credits</span>
-<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">warning</span>
-
-<span class="n">The</span> <span class="n">amazing</span> <span class="n">example</span> <span class="kn">from</span><span class="w"> </span><span class="nn">number</span> <span class="n">theory</span> <span class="ow">is</span> <span class="n">due</span> <span class="n">to</span> <span class="n">Andrew</span> <span class="n">Booker</span><span class="p">,</span> <span class="ow">and</span> <span class="p">[</span><span class="n">you</span> <span class="n">can</span> <span class="n">find</span> <span class="n">it</span> <span class="n">here</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">people</span><span class="o">.</span><span class="n">maths</span><span class="o">.</span><span class="n">bris</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/~</span><span class="n">maarb</span><span class="o">/</span><span class="n">papers</span><span class="o">/</span><span class="n">cubesv1</span><span class="o">.</span><span class="n">pdf</span><span class="p">)</span><span class="o">.</span>    <span class="n">It</span> <span class="n">was</span> <span class="n">popularized</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">number</span> <span class="n">of</span> <span class="n">places</span><span class="p">,</span> <span class="n">including</span> <span class="p">[</span><span class="n">here</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">affinemess</span><span class="o">.</span><span class="n">quora</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">HOLY</span><span class="o">-</span><span class="n">CRAP</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="n">IS</span><span class="o">-</span><span class="n">THE</span><span class="o">-</span><span class="n">SUM</span><span class="o">-</span><span class="n">OF</span><span class="o">-</span><span class="n">THREE</span><span class="o">-</span><span class="n">CUBES</span><span class="c1">#mkMyX).</span>
-</pre></div>
-</div>
-</div>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://affinemess.quora.com/HOLY-CRAP-33-IS-THE-SUM-OF-THREE-CUBES#mkMyX">here</a>.</p>
 </div>
 </section>
 
