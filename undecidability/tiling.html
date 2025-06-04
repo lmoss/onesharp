@@ -543,7 +543,7 @@ K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
 <p>Clearly <span class="math notranslate nohighlight">\(A\)</span> is decidable, and it is easy to see that <span class="math notranslate nohighlight">\(K^1\)</span> is undecidable.</p>
 </div>
 <div class="proof theorem admonition" id="tiling_undecidability">
-<p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 14 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(\overline{K}^1\leq_m  {K}^{\mathbb{T}}\)</span>.  Equivalently, <span class="math notranslate nohighlight">\(\overline{K}^1 \leq_m K^{\mathbb{T}}\)</span>.</p>
 <p>That is, there is a total computable function
@@ -630,7 +630,7 @@ not the <code class="docutils literal notranslate"><span class="pre">1#</span></
 </section>
 </div><section id="some-observations">
 <h2>Some observations<a class="headerlink" href="#some-observations" title="Link to this heading">#</a></h2>
-<p>We continue with some observations which are used in verifying that our construction works.  These will be used in <a class="reference internal" href="#tiling_works">Lemma 10</a> below.
+<p>We continue with some observations which are used in verifying that our construction works.  These will be used in <a class="reference internal" href="#tiling_works">Lemma 9</a> below.
 Fix a program <span class="math notranslate nohighlight">\(p\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
 <p>The only tile with a blank on the left is the all blank tile.
 Thus, if one of the tiles in a given row has
@@ -688,7 +688,7 @@ We have <span class="math notranslate nohighlight">\(i(0) = 0\)</span>, <span cl
 <p>For another, let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">1#1##</span></code>.  Then <span class="math notranslate nohighlight">\(i(0)= 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 3\)</span>.  The number of instructions in <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(k =2\)</span>,
 and so <span class="math notranslate nohighlight">\(i(2) = k+1\)</span>.</p>
 <div class="proof lemma admonition" id="tiling_works">
-<p class="admonition-title"><span class="caption-number">Lemma 10 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>Fix <span class="math notranslate nohighlight">\(p\in A\)</span>, and consider <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>
 and also the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers.</p>
@@ -818,7 +818,7 @@ Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\
 </div>
 </details><div class="exercise admonition" id="undecidability/tiling-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 89 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 90 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be finite tile set, and consider <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.<br />
 Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> that is <em>not</em> isomorphic to the grid model (the model that we had in mind when we formulated <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>).</p>
@@ -827,7 +827,7 @@ Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T}
 </div>
 <div class="exercise admonition" id="undecidability/tiling-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 90 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 91 </span></p>
 <section id="exercise-content">
 <p>In a similar vein, consider the program <code class="docutils literal notranslate"><span class="pre">1#</span> <span class="pre">1####</span> <span class="pre">+</span> <span class="pre">clear_1</span></code>.</p>
 <p>It has six instructions.  It does not halt.   The tile set associated with it, <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> has a tile with <span class="math notranslate nohighlight">\(7\)</span> as the instruction number on the top.  Find a model of <span class="math notranslate nohighlight">\(\phi(\mathcal{T}(p))\)</span> which has some point with this tile on it.</p>
@@ -836,8 +836,8 @@ Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T}
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="proof-of-the-theorem">
 <h1>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h1>
-<p><a class="reference internal" href="#tiling_works">Lemma 10</a>
-leads to the proof of the main result in this section, <a class="reference internal" href="#tiling_undecidability">Theorem 15</a>.</p>
+<p><a class="reference internal" href="#tiling_works">Lemma 9</a>
+leads to the proof of the main result in this section, <a class="reference internal" href="#tiling_undecidability">Theorem 14</a>.</p>
 <p>We now turn to the proof.</p>
 <div class="warning admonition">
 <p class="admonition-title">Reminder of what we are proving.</p>
@@ -848,7 +848,7 @@ leads to the proof of the main result in this section, <a class="reference inter
 <hr class="docutils" />
 <p>For the first statement, the lemma implies that for all <span class="math notranslate nohighlight">\(n\)</span>, there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the quadrant.  From the uniqueness, if <span class="math notranslate nohighlight">\(n &lt; m\)</span>, then the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows has to be a restriction of the tiling of the first <span class="math notranslate nohighlight">\(m\)</span> rows.   It follows that we can take the union over <span class="math notranslate nohighlight">\(n\)</span> of the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.  This will be a tiling of the entire quadrant.</p>
 <p>For the second statement, suppose towards a contradiction that the run of <span class="math notranslate nohighlight">\(p\)</span> halts in <span class="math notranslate nohighlight">\(n+1\)</span> steps and yet <span class="math notranslate nohighlight">\(\TT(p)\)</span> can tile the quadrant.
-We use <a class="reference internal" href="#tiling_works">Lemma 10</a>.  We have (1) for <span class="math notranslate nohighlight">\(n\)</span>, and so we have (2) for <span class="math notranslate nohighlight">\(n\)</span> as well. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of instructions in our program <span class="math notranslate nohighlight">\(p\)</span>.
+We use <a class="reference internal" href="#tiling_works">Lemma 9</a>.  We have (1) for <span class="math notranslate nohighlight">\(n\)</span>, and so we have (2) for <span class="math notranslate nohighlight">\(n\)</span> as well. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of instructions in our program <span class="math notranslate nohighlight">\(p\)</span>.
 The instruction tile in row <span class="math notranslate nohighlight">\(n\)</span>
 (the first tile)
 must have <span class="math notranslate nohighlight">\(k+1\)</span> on the top; this is what it means for the run to halt in <span class="math notranslate nohighlight">\(n+1\)</span> steps.  Let us call this tile <span class="math notranslate nohighlight">\(t^*\)</span>.   Since we have a tiling of the entire quadrant,
@@ -858,7 +858,7 @@ there must be a tile on top of <span class="math notranslate nohighlight">\(t^*\
 <section class="tex2jax_ignore mathjax_ignore" id="the-reverse-inequality">
 <h1>The reverse inequality<a class="headerlink" href="#the-reverse-inequality" title="Link to this heading">#</a></h1>
 <div class="proof theorem admonition" id="tiling_undecidability_converse">
-<p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\( {K}^{\mathbb{T}}\leq \overline{K}^1 \)</span>.</p>
 <p>That is, there is a total computable function
@@ -874,7 +874,7 @@ such that</p>
 </section>
 </div><p>The work here is based on an important mathematical result.</p>
 <div class="proof lemma admonition" id="Konig">
-<p class="admonition-title"><span class="caption-number">Lemma 11 </span> (Konig Infinity Lemma)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 10 </span> (Konig Infinity Lemma)</p>
 <section class="lemma-content" id="proof-content">
 <p>Every infinite tree <span class="math notranslate nohighlight">\(T\)</span> which is finitely branching has an infinite branch.</p>
 </section>
@@ -886,7 +886,7 @@ Let <span class="math notranslate nohighlight">\(t_{n+1}\)</span> be any such no
 </div>
 <p>This very general result has as a special case the following fact:</p>
 <div class="proof lemma admonition" id="lemma-9">
-<p class="admonition-title"><span class="caption-number">Lemma 12 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 11 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>If a tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the entire quadrant, then there is some natural number <span class="math notranslate nohighlight">\(n\)</span> such that
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the  <span class="math notranslate nohighlight">\(n\times n\)</span> square in the lower left corner.</p>
@@ -895,11 +895,11 @@ Let <span class="math notranslate nohighlight">\(t_{n+1}\)</span> be any such no
 <p>Proof. We show the contrapositive.   Assume that for all <span class="math notranslate nohighlight">\(n\)</span> there is a tiling using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of the <span class="math notranslate nohighlight">\(n\times n\)</span> square in the corner.  We show that there is a tiling of the entire quadrant.</p>
 <p>Consider the set of all tilings of all <span class="math notranslate nohighlight">\(n\times n\)</span> squares in the corner.  It is a tree, where the “edge” relation
 relates a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square to a tiling of the <span class="math notranslate nohighlight">\((n+1)\times (n+1)\)</span> square iff the first is a restriction of the second.
-This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 11</a>, the tree has an infinite branch.<br />
+This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 10</a>, the tree has an infinite branch.<br />
 By taking the union of the tilings along this branch, we tile the entire quadrant.</p>
 <p>(One cannot in general take the union of tilings, since those tilings might conflict.  But if we have a branch in this tree, then the tilings along the branch agree on their common squares.  And in this case, we <em>can</em> take the union.)</p>
 </div>
-<p>We turn this observation into the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 16</a>.</p>
+<p>We turn this observation into the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 15</a>.</p>
 <p>Given a pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>,
 make a program  <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> such that
 running <span class="math notranslate nohighlight">\(f(\mathcal{T})\)</span> on all empty registers using the <span class="math notranslate nohighlight">\(\mu\)</span>-operator
@@ -910,7 +910,7 @@ such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em
 then our last lemma shows that  <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
 <div class="exercise admonition" id="undecidability/tiling-exercise-10">
 
-<p class="admonition-title"><span class="caption-number">Exercise 91 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 92 </span></p>
 <section id="exercise-content">
 <p>Our work on tiling dealt with <em>finite</em> tile sets.  This problem relaxes the finiteness requirement.    Construct an infinite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <ol class="arabic simple">
@@ -922,7 +922,7 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 </div>
 <div class="exercise admonition" id="undecidability/tiling-exercise-11">
 
-<p class="admonition-title"><span class="caption-number">Exercise 92 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 93 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
@@ -931,7 +931,7 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 <h2>A problem related to tiling finite rectangles<a class="headerlink" href="#a-problem-related-to-tiling-finite-rectangles" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="tilingforTrakhtenbrot">
 
-<p class="admonition-title"><span class="caption-number">Exercise 93 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 94 </span></p>
 <section id="exercise-content">
 <p>In this problem we consider a variant of the tiling problem where the goal is not to tile the entire first quadrant but rather to tile a finite rectangle in a noteworthy way.</p>
 <p>A <em>three-pointed</em> tile set is a tile set <span class="math notranslate nohighlight">\(\mathcal{T}_3\)</span> with three distinguished tiles, a <em>start</em> tile, a <em>halt</em> tile, and a <em>blank</em> tile.</p>
