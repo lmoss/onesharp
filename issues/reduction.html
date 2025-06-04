@@ -197,6 +197,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -452,7 +453,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -468,6 +471,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-correspondence-problem">Post correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -490,24 +509,60 @@ document.write(`
 <li><p>If <span class="math notranslate nohighlight">\(A\)</span> is undecidable, then so is <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </ol>
 </section>
-</div><div class="exercise admonition" id="issues/reduction-exercise-1">
+</div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+<section id="tiling">
+<h2>Tiling<a class="headerlink" href="#tiling" title="Link to this heading">#</a></h2>
+<p>In the problems below on tiling, you should use the notion of reduction that we are currently studying.</p>
+<div class="exercise admonition" id="issues/reduction-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <section id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
-<p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as easy.</p>
+<p>The <em>one dimensional tiling problem</em> is the problem of deciding whether a tile set can tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis” part of the quadrant (the bottom infinite row).  Show that this problem is decidable by reducing to the problem of whether a finite graph has a cycle.</p>
 </section>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <section id="exercise-content">
+<p>The <em>two-row tiling problem</em> is the same problem, but we want to tile the bottom-most two infinite rows.  Is this problem decidable or undecidable?</p>
+</section>
+</div>
+<div class="exercise admonition" id="issues/reduction-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<section id="exercise-content">
+<p>What about the two-column tiling problem?</p>
+</section>
+</div>
+</section>
+<section id="roots-of-polynomials">
+<h2>Roots of polynomials<a class="headerlink" href="#roots-of-polynomials" title="Link to this heading">#</a></h2>
+</section>
+<section id="post-correspondence-problem">
+<h2>Post correspondence problem<a class="headerlink" href="#post-correspondence-problem" title="Link to this heading">#</a></h2>
+<div class="exercise admonition" id="issues/reduction-exercise-4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<section id="exercise-content">
 <p>Assuming that <span class="math notranslate nohighlight">\(PCP\)</span> is undecidable, show that it is undecidable even if the alphabet has only two letters.</p>
+</section>
+</div>
+</section>
+<section id="matrix-mortality">
+<h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
+<div class="exercise admonition" id="issues/reduction-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<section id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
+<p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as easy.</p>
 </section>
 </div>
 <div class="exercise admonition" id="matrix-mortality-exercise">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
 <section id="exercise-content">
 <p>Here is an exercise pertaining to the matrix mortality problem.   Athough it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="../undecidability/matrixMortality.html#content-matrixmortalityundecidable"><span class="std std-ref">our later work on the undecidability of matrix mortality</span></a>.</p>
 <p>Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
@@ -579,6 +634,7 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
 <p>Vesa Halava and Tero Harju, (2001). Mortality in Matrix Semigroups. The American Mathematical Monthly, 108(7), 649–653.</p>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -634,6 +690,29 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-correspondence-problem">Post correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
