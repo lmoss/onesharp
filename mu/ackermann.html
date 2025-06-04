@@ -676,7 +676,7 @@ we  take <span class="math notranslate nohighlight">\(r = 3\)</span>.   For exam
 f(\bar{x}) = h(g_1(\bar{x}), \ldots, g_{\ell}(\bar{x}))
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(h: N^{\ell} \to N\)</span>, and  <span class="math notranslate nohighlight">\(g_i: N^k \to N\)</span> for  <span class="math notranslate nohighlight">\(1\leq i \leq \ell\)</span>.
-Let <span class="math notranslate nohighlight">\(s\geq 3\)</span> be such that <span class="math notranslate nohighlight">\(h(\bar{y}) &lt; F(\yhat, s)\)</span> for all <span class="math notranslate nohighlight">\(\bar{y} \in N^{\ell}\)</span>,
+Let <span class="math notranslate nohighlight">\(s\geq 3\)</span> be such that <span class="math notranslate nohighlight">\(h(\bar{y}) &lt; F(\hat{y}, s)\)</span> for all <span class="math notranslate nohighlight">\(\bar{y} \in N^{\ell}\)</span>,
 and for each <span class="math notranslate nohighlight">\(i\)</span>, let <span class="math notranslate nohighlight">\(r_i\geq 3\)</span> be such that <span class="math notranslate nohighlight">\(g_i(\bar{y}) &lt; F(\hat{x}, r_i)\)</span> for all <span class="math notranslate nohighlight">\(\bar{x} \in N^{k}\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(\bar{x} \in N^{k}\)</span>.
 Let <span class="math notranslate nohighlight">\(z_1 = g_1(\bar{x})\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(z_{\ell} = g_{\ell}(\bar{x})\)</span>.   Then  <span class="math notranslate nohighlight">\(\hat{z} = \max\{z_1, \ldots, z_{\ell},3\}\)</span>.
@@ -699,15 +699,10 @@ To conclude this step of the induction, we have shown that the number <span clas
 <span class="math notranslate nohighlight">\(f(\bar{x},0) = h(\bar{x})\)</span>, and <span class="math notranslate nohighlight">\(f(\bar{x},y+1) = k(\bar{x}, y, f(\bar{x},y))\)</span>.
 Let <span class="math notranslate nohighlight">\(r\)</span>  and <span class="math notranslate nohighlight">\(s\)</span> be such that <span class="math notranslate nohighlight">\(h(\bar{x}) &lt; F(\hat{x}, r)\)</span> and <span class="math notranslate nohighlight">\(k(\bar{x}, y,z) &lt; F(\max(\hat{x}, y, z), s)\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(t = 1+ \max(r,s)\)</span>.</p>
-<p>We introduce some notation for readability.  % For a given tuple <span class="math notranslate nohighlight">\(\bar{x}\)</span>, we write <span class="math notranslate nohighlight">\(\hat{x}\)</span> for <span class="math notranslate nohighlight">\(\max_i x_i\)</span>.
-Let <span class="math notranslate nohighlight">\(p = \max(\hat{x},y)= (\bar{x},y)^{\widehat{}}\)</span>, and let <span class="math notranslate nohighlight">\(q = \max(p,f(\bar{x}, y) )\)</span>.
-We show that <span class="math notranslate nohighlight">\(t+2\)</span> has the desired property:<br />
-for all <span class="math notranslate nohighlight">\(\bar{x}, y\)</span>,
-<span class="math notranslate nohighlight">\(f(\bar{x},y) &lt;  F(p, t+2)\)</span>.</p>
-<p>First we have a preliminary claim:
-<span class="math notranslate nohighlight">\(f(\bar{x}, y) &lt; F(\hat{x} + y, t)\)</span> for all <span class="math notranslate nohighlight">\(\bar{x}\)</span> and all <span class="math notranslate nohighlight">\(y\geq 0\)</span>.
-The proof is by induction on <span class="math notranslate nohighlight">\(y\)</span>.
-This is clear for <span class="math notranslate nohighlight">\(y=0\)</span>.   Assume about <span class="math notranslate nohighlight">\(y\)</span> that <span class="math notranslate nohighlight">\(f(\bar{x}, y) &lt; F(\hat{x} + y, t)\)</span>.
+<p>We introduce some notation for readability.  Let <span class="math notranslate nohighlight">\(p = \max(\hat{x},y)= (\bar{x},y)^{\widehat{}}\)</span>, and let <span class="math notranslate nohighlight">\(q = \max(p,f(\bar{x}, y) )\)</span>. We show that <span class="math notranslate nohighlight">\(t+2\)</span> has the desired property:  for all <span class="math notranslate nohighlight">\(\bar{x}, y\)</span>, <span class="math notranslate nohighlight">\(f(\bar{x},y) &lt;  F(p, t+2)\)</span>.</p>
+<p>First we have a preliminary claim:</p>
+<p><span class="math notranslate nohighlight">\(f(\bar{x}, y) &lt; F(\hat{x} + y, t)\)</span> for all <span class="math notranslate nohighlight">\(\bar{x}\)</span> and all <span class="math notranslate nohighlight">\(y\geq 0\)</span>.</p>
+<p>The proof is by induction on <span class="math notranslate nohighlight">\(y\)</span>. This is clear for <span class="math notranslate nohighlight">\(y=0\)</span>.   Assume about <span class="math notranslate nohighlight">\(y\)</span> that <span class="math notranslate nohighlight">\(f(\bar{x}, y) &lt; F(\hat{x} + y, t)\)</span>.
 By <a class="reference internal" href="#BuckOne">Lemma 3</a>, <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are also <span class="math notranslate nohighlight">\(&lt; F(\hat{x}+y,t)\)</span>, since <span class="math notranslate nohighlight">\(t\geq 3\)</span>.  Thus <span class="math notranslate nohighlight">\(q &lt; F(\hat{x} +y, t)\)</span>.
 So</p>
 <div class="math notranslate nohighlight">
@@ -719,9 +714,11 @@ f(\bar{x},y+1)  &amp; = &amp; k(\bar{x}, y, f(\bar{x},y)) \\
  &amp; \leq &amp; F(F(\hat{x} + y, t), t-1) &amp;\mbox{since $s\leq t-1$}\\
  &amp; = &amp; F(\hat{x} + y + 1, t) &amp;\mbox{by definition of $F$}
  \end{array}
- \]
-Our claim proved, we now fix $\bar{x},y$.  We have 
-\[\begin{array}{lclll}
+\end{split}\]</div>
+<p>Our claim proved, we now fix <span class="math notranslate nohighlight">\(\bar{x},y\)</span>.  We have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lclll}
 f(\bar{x},y)  &amp; &lt; &amp;  F(\hat{x} + y, t)   &amp;\mbox{by our claim above}\\
  &amp; \leq &amp; F(2p, t)  &amp;\mbox{by definition of $p$} \\ 
  &amp; = &amp; F(F(p,2), t) &amp;\mbox{since $F(m,2) = 2m$} \\
