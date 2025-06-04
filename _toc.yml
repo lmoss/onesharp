@@ -38,6 +38,7 @@ parts:
    - file: mu/primitive_recursion
    - file: mu/T_predicate
    - file: mu/mu
+   - file: mu/ackermann
 
 - caption: The Recursion Theorem
   chapters:
