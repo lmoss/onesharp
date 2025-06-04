@@ -248,6 +248,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -500,7 +501,7 @@ document.write(`
 <h1>Satisfiability and validity in first-order logic<a class="headerlink" href="#satisfiability-and-validity-in-first-order-logic" title="Link to this heading">#</a></h1>
 <p>This section contains a proof of Church’s Theorem that <em>satisfiability</em> of first-order logic is undecidable.   We assume that you know what a first-order logic sentence is, or that you are willing to read on and look things up elsewhere as needed.   A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>satsifiable</em> if <span class="math notranslate nohighlight">\(\phi\)</span> has a model.</p>
 <div class="proof theorem admonition" id="Churchs-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 18 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>The set <span class="math notranslate nohighlight">\(SAT_{FO}\)</span> of sentences of first-order logic which are satisfiable is undecidable.
 In fact <span class="math notranslate nohighlight">\(\overline{K}\leq_m SAT_{FO}\)</span>.</p>
@@ -537,7 +538,7 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 </section>
 </div>
 <div class="proof lemma admonition" id="lemma-in-Churchs-theorem">
-<p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 14 </span></p>
 <section class="lemma-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{quad}\)</span>.   If <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is any model of <span class="math notranslate nohighlight">\(\phi_{quad}\)</span>, then the reachable submodel of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is isomorphic to the quadrant.</p>
 </section>
@@ -573,7 +574,7 @@ It is easy to check that <span class="math notranslate nohighlight">\(f\)</span>
 <h2>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be a tile set.   Recall that we had a signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span>.
 We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a relation symbol <span class="math notranslate nohighlight">\(T\)</span> for each tile <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
-<p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 16</a> is to define a computable function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to logic sentences in such a way as to have the following condition:</p>
+<p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 18</a> is to define a computable function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to logic sentences in such a way as to have the following condition:</p>
 <div class="math notranslate nohighlight">
 \[
 \mbox{For all tile sets $\mathcal{T}$,  $\mathcal{T}$ can tile the quadrant iff $\varphi(\mathcal{T})$.}
@@ -670,10 +671,10 @@ e(n^j e^i(0))  = n e(n^{j-1} e^i(0))  = \cdots = n^j e (e^{i}(0)) = n^{j} e^{i+1
 
 <p class="admonition-title"><span class="caption-number">Exercise 96 </span></p>
 <section id="exercise-content">
-<p>Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 16</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
+<p>Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 18</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.   This function has the property
 that the number of unary relation symbols in <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> is the same as the number of tiles in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.<br />
-Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 16</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
+Improve our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 18</a> by changing <span class="math notranslate nohighlight">\(\varphi\)</span> so as to use a fixed finite signature <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
 <p>[Hint: Take <span class="math notranslate nohighlight">\(\Sigma\)</span> to have the symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> from before, and also a new relation symbol <span class="math notranslate nohighlight">\(Tile(x)\)</span>,
 and a new unary function symbol <span class="math notranslate nohighlight">\(on\)</span>.   Instead of coding the quadrant, code the quadrant together with a separate finite set of tiles.
 The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the quadrant.]</p>
@@ -683,7 +684,7 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 
 <p class="admonition-title"><span class="caption-number">Exercise 97 </span></p>
 <section id="exercise-content">
-<p>Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 16</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that for all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>:</p>
+<p>Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 18</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that for all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has only three variables.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.</p></li>

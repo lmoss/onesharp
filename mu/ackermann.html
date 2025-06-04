@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The halting problem &#8212; Invitation to Computability</title>
+    <title>Ackermann’s function &#8212; Invitation to Computability</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'undecidability/haltingProblem';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'mu/ackermann';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The busy beaver problem" href="busyBeaver.html" />
-    <link rel="prev" title="Definition and equivalent formulations" href="../cesets/computablyEnumerable.html" />
+    <link rel="next" title="Self-writing programs" href="../recThm/self_writing.html" />
+    <link rel="prev" title="Mu-recursive functions" href="mu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -240,16 +240,16 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mu/primitive_recursion.html">Primitive recursion</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="primitive_recursion.html">Primitive recursion</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T_predicate.html">The T predicate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -268,20 +268,20 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">The halting problem</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/haltingProblem.html">The halting problem</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="busyBeaver.html">The busy beaver problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tiling.html">Tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/busyBeaver.html">The busy beaver problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/tiling.html">Tiling</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="post.html">Post’s Correspondence Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="church.html">Satisfiability and validity in first-order logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
     </div>
@@ -353,7 +353,7 @@
       
       
       
-      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/haltingProblem.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fmu/ackermann.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@
       
       
       
-      <li><a href="../_sources/undecidability/haltingProblem.ipynb" target="_blank"
+      <li><a href="../_sources/mu/ackermann.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -467,7 +467,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The halting problem</h1>
+    <h1>Ackermann’s function</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -477,12 +477,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-s-function">Buck’s function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-to-ackermann-s-function">Return to Ackermann’s function</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -493,231 +490,157 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/haltingProblem.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="the-halting-problem">
-<h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h1>
-<p>We come to one of the most famous and most basic results in computability theory, the <em>undecidability of the halting problem</em>, first proved by Turing in 1936.</p>
-<div class="proof theorem admonition" id="Turings-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>There is no program <span class="math notranslate nohighlight">\(p\)</span> such that
-for all words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>,</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ackermann-s-function">
+<h1>Ackermann’s function<a class="headerlink" href="#ackermann-s-function" title="Link to this heading">#</a></h1>
+<p>The most famous example of a function which is computable and total but not primitive recursive is <em>Ackermann’s function</em>.  It is given by</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{lcl}
-[\![p]\!](x,y) &amp; = &amp; \left\{
-\begin{array}{ll}
-\one &amp; \mbox{if $[\![x]\!](y)\dar$}\\
-\hash &amp;  \mbox{if $[\![x]\!](y)\uparrow$}
+\[\begin{split}
+A(x,y)\quadeq \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
 \end{array}
 \right.
-\end{array}
 \end{split}\]</div>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. Suppose toward a contradiction that we had such a program <span class="math notranslate nohighlight">\(p\)</span>.
-Modifying <span class="math notranslate nohighlight">\(p\)</span>, we get a program <span class="math notranslate nohighlight">\(q\)</span> so that for all <span class="math notranslate nohighlight">\(a\)</span>,</p>
+<section id="buck-s-function">
+<h2>Buck’s function<a class="headerlink" href="#buck-s-function" title="Link to this heading">#</a></h2>
+<p>Here is Buck’s function <span class="math notranslate nohighlight">\(F(m,n)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
-[\![q]\!](a) &amp; = &amp; \left\{
-\begin{array}{ll}
-\uparrow &amp; \mbox{if $[\![a]\!](a)\dar$}\\
-\hash &amp;  \mbox{if $[\![a]\!](a)\uparrow$}
-\end{array}
-\right.
+F(m,0) &amp; = &amp; m+1 \\ \\ 
+F(0,n)  &amp; = &amp; \left\{ \begin{array}{ll}  2 &amp;\mbox{if $n = 1$} \\  0 &amp;\mbox{if $n = 2$} \\  1 &amp;\mbox{if $n \geq 3$} \end{array} \right.\\ \\
+F(m+1,n+1) &amp; = &amp; F(F(m,n+1), n)\\
 \end{array}
 \end{split}\]</div>
-<p>In words, running <span class="math notranslate nohighlight">\(q\)</span> on <span class="math notranslate nohighlight">\(a\)</span> diverges iff running <span class="math notranslate nohighlight">\(a\)</span> on itself converges, and vice-versa.   And this holds for all <span class="math notranslate nohighlight">\(a\)</span>.  So in particular it holds for <span class="math notranslate nohighlight">\(q\)</span>.   And this leads to a contradiction, as we shall see formally just below.</p>
-<p>Here’s how this one would actually get <span class="math notranslate nohighlight">\(q\)</span> from <span class="math notranslate nohighlight">\(p\)</span>.
-Assume that <span class="math notranslate nohighlight">\(p\)</span> preserves its input.
-Let <span class="math notranslate nohighlight">\(p\)</span> have <span class="math notranslate nohighlight">\(k\)</span> instructions.
-Let</p>
+<p>Here are some special cases, and a table of values for small <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+F(m,1) &amp; = &amp;2+ m\\
+F(m,2)  &amp; = &amp; 2\cdot m \\
+F(m,3) &amp; = &amp; 2^m \\
+F(m,4) &amp; = &amp;  2^{2^{\rddots2}}\mbox{, this is
+a tower of $m$ 2's}
+\end{array}
+\qquad
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+% \diagbox[width=\dimexpr \textwidth/8+2\tabcolsep\relax, height=1cm]{$ u$}{$v$} &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+% \diagbox{$m$}{$n$} &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+ \hline
+ 0  &amp; 1 &amp; 2 &amp; 0 &amp; 1 &amp; 1  &amp; 1\\
+ \hline
+ 1  &amp; 2 &amp; 3 &amp; 2 &amp; 2 &amp; 2 &amp; 2 \\
+ \hline 
+2  &amp; 3 &amp; 4 &amp; 4 &amp; 4 &amp; 4  &amp; 4\\
+ \hline
+3  &amp; 4 &amp; 5 &amp; 6 &amp; 8 &amp; 16  &amp; $2^{16}$ \\
+ \hline
+4  &amp; 5 &amp; 6 &amp; 8 &amp; 16 &amp; $2^{16}$ &amp; $F(2^{16},4)$\\
+ \hline
+5 &amp; 6 &amp; 7 &amp; 10 &amp; 32 &amp;  $2^{2^{16}}$ &amp; $F(F(4,5),4)$  \\
+ \hline 
+\end{tabular} 
+\end{split}\]</div>
+<div class="proof lemma admonition" id="lemma-0">
+<p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For  <span class="math notranslate nohighlight">\(n\geq 3\)</span> and  all <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(a &lt; F(a,n)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. For <span class="math notranslate nohighlight">\(n = 3\)</span>, it’s clear: <span class="math notranslate nohighlight">\(a &lt; 2^a = F(a,3)\)</span>.<br />
+Assume our result for <span class="math notranslate nohighlight">\(n\geq 3\)</span>, we check it for <span class="math notranslate nohighlight">\(n +1\)</span>.
+We argue by induction on <span class="math notranslate nohighlight">\(a\)</span>.<br />
+First, <span class="math notranslate nohighlight">\(0 &lt; 1 = F(0,n+1)\)</span>.<br />
+Assuming that <span class="math notranslate nohighlight">\(a &lt; F(a,n+1)\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \begin{array}{lcll}
+ a &amp;  &lt; &amp; F(a,n+1) &amp;\mbox{ind.~hyp.~on $a$}\\
+    &amp;  &lt; &amp;  F(F(a,n+1), n) &amp;\mbox{ind.~hyp.~on $n$}\\
+ &amp;  = &amp;  F(a+1, n+1) 
+  \end{array} 
+\end{split}\]</div>
+<p>The calculation above has two strict inequalities,
+and it implies that <span class="math notranslate nohighlight">\(a+1 &lt; F(a+1, n+1)\)</span>.</p>
+</div>
+<div class="proof lemma admonition" id="lemma-1">
+<p class="admonition-title"><span class="caption-number">Lemma 4 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>If <span class="math notranslate nohighlight">\(n \geq 0\)</span> and <span class="math notranslate nohighlight">\(a &lt; b\)</span>, then <span class="math notranslate nohighlight">\(F(a,n) &lt; F(b,n)\)</span>.</p>
+</section>
+</div><div class="proof lemma admonition" id="lemma-2">
+<p class="admonition-title"><span class="caption-number">Lemma 5 </span></p>
+<section class="lemma-content" id="proof-content">
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(3 \leq F(2, v)\leq F(2, v+1)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(u \geq 3\)</span>, then <span class="math notranslate nohighlight">\(3 \leq F(u,v) &lt; F(u,v+1)\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="proof lemma admonition" id="lemma-3">
+<p class="admonition-title"><span class="caption-number">Lemma 6 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), n) &lt; F(x, n+2)\)</span>.</p>
+</section>
+</div><div class="proof lemma admonition" id="lemma-4">
+<p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n,m\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), m) &lt; F(x, n+m)\)</span>.</p>
+</section>
+</div><div class="proof lemma admonition" id="lemma-5">
+<p class="admonition-title"><span class="caption-number">Lemma 8 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For every primitive recursive <span class="math notranslate nohighlight">\(f:N^k \to N\)</span>, there is some <span class="math notranslate nohighlight">\(r \geq 3\)</span> so that for all <span class="math notranslate nohighlight">\(\xbar = x_1,\ldots, x_k\in N^k\)</span>,
+<span class="math notranslate nohighlight">\(
+f(\xbar) &lt; F(\xhat_i, r)\)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-6">
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Buck’s function <span class="math notranslate nohighlight">\(F\)</span> is not primitive recursive.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose towards a contradiction that <span class="math notranslate nohighlight">\(F\)</span> were primitive recursive.   By the Main Lemma, let <span class="math notranslate nohighlight">\(r\geq 3\)</span> be such that
+<span class="math notranslate nohighlight">\(F(x,y) &lt; F(\{x,y\}^{\widehat{}}, r)\)</span> for all <span class="math notranslate nohighlight">\(x,y\)</span>.<br />
+Take <span class="math notranslate nohighlight">\(x = y = r\)</span>.<br />
+Then <span class="math notranslate nohighlight">\(\{x,y\}^{\widehat{}} = r\)</span>.  We have
+<span class="math notranslate nohighlight">\(F(r,r) &lt;F(r,r)\)</span>, and this is the contradiction.</p>
+</div>
+</section>
+<section id="return-to-ackermann-s-function">
+<h2>Return to Ackermann’s function<a class="headerlink" href="#return-to-ackermann-s-function" title="Link to this heading">#</a></h2>
+<div class="proof lemma admonition" id="lemma-7">
+<p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> there is a number <span class="math notranslate nohighlight">\(r\)</span> such that for all <span class="math notranslate nohighlight">\(x_1, \ldots, x_k\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-q \quadeq \copyprog_{1,2,3} + p +
-\one^3\hash^5
- + \one^2 \hash^3  
- + \one^{k + 2} \hash^4 
+f(x_1, \ldots, x_k) &lt; A(r, \max_i x_i)
 \]</div>
-<p>Then <span class="math notranslate nohighlight">\(q\)</span> has the property that we want.
-But now, take <span class="math notranslate nohighlight">\(a\)</span> to be <span class="math notranslate nohighlight">\(q\)</span>.
-Then</p>
+</section>
+</div><p>This lemma is proved by induction on the PR functions.</p>
+<p>For the base cases of <span class="math notranslate nohighlight">\(z\)</span> and the projections, we can take <span class="math notranslate nohighlight">\(r=0\)</span>.
+For the successor function, we can take <span class="math notranslate nohighlight">\(r = 1\)</span>.</p>
+<p>Consider a composition, say <code class="docutils literal notranslate"><span class="pre">[comp,</span> <span class="pre">f,</span> <span class="pre">g_1,</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">.</span> <span class="pre">,</span> <span class="pre">g_k]</span></code>.  By induction hypothesis, we have numbers <span class="math notranslate nohighlight">\(r_i\)</span>
+for <span class="math notranslate nohighlight">\(g_i\)</span> (for <span class="math notranslate nohighlight">\(1\leq i \leq k\)</span>), and we also have a number <span class="math notranslate nohighlight">\(s\)</span> for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>I won’t give this here, but you can find a short note that does the details on our Canvas page.  Assuming this lemma, we can then easily infer what we really want:</p>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The Ackermann function <span class="math notranslate nohighlight">\(A(x,y): N^2\to N\)</span> is not primitive recursive.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Assume toward a contradiction that <span class="math notranslate nohighlight">\(A(x,y)\)</span> were primitive recursive.  By the lemma, we have a number <span class="math notranslate nohighlight">\(r\)</span> so that</p>
 <div class="math notranslate nohighlight">
 \[
-[\![q]\!](q)\dar   \quadiff [\![q]\!](q)\uparrow.
+A(x,y) &lt; A(r, \max(x,y))
 \]</div>
+<p>for all <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.   In particular, taking <span class="math notranslate nohighlight">\(x = r = y\)</span>, we have <span class="math notranslate nohighlight">\(A(r,r) &lt; A(r,r)\)</span>.</p>
 <p>Contradiction!</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Look up <a class="reference external" href="http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html">this setting of the proof</a> by Geoffrey Pullum in the spirit of Dr. Seuss.</p>
-</div>
-<div class="proof corollary admonition" id="corollary-1">
-<p class="admonition-title"><span class="caption-number">Corollary 3 </span></p>
-<section class="corollary-content" id="proof-content">
-<p>The set <span class="math notranslate nohighlight">\(\overline{K}\)</span> is not computably enumerable.</p>
 </section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. Suppose towards a contradiction that <span class="math notranslate nohighlight">\(r\)</span> is a program whose domain is <span class="math notranslate nohighlight">\(\overline{K}\)</span>.   Then just as with <span class="math notranslate nohighlight">\(q\)</span> in the proof above, we
-again have a contradiction: <span class="math notranslate nohighlight">\([\![r]\!](r)\!\!\downarrow\)</span> iff  <span class="math notranslate nohighlight">\([\![r]\!](r)\!\!\uparrow\)</span>.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you have read the
-<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/recursion_theorem.html">section on the Recursion Theorem</a>, you might enjoy a slightly different proof of <a class="reference internal" href="#Turings-theorem">Theorem 12</a>.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
-<p>Assume towards a contradiction that there is a program <span class="math notranslate nohighlight">\(p\)</span> as above.  Then we easily modify it to get a program <span class="math notranslate nohighlight">\(q\)</span> so that</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-[\![q]\!](x,y) &amp; = &amp; \left\{
-\begin{array}{ll}
-[\![x]\!](y) + 1 &amp; \mbox{if $[\![x]\!](y)\dar$}\\
-{\tt 1} &amp;  \mbox{if $[\![x]\!](y)\uparrow$}
-\end{array}
-\right.
-\end{array}
-\end{split}\]</div>
-<p>By <a class="reference internal" href="../recThm/recursion_theorem.html#recursion_theorem">Theorem 10</a>, there is some <span class="math notranslate nohighlight">\(x^*\)</span> so that for all <span class="math notranslate nohighlight">\(y\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-[\![x^*]\!](y) &amp; = &amp; \left\{
-\begin{array}{ll}
-[\![x^*]\!](y) + 1 &amp; \mbox{if $[\![x^*]\!](y)\!\!\downarrow$}\\
-{\tt 1} &amp;  \mbox{if $[\![x^*]\!](y)\!\!\uparrow$}
-\end{array}
-\right.
-\end{array}
-\end{split}\]</div>
-<p>Now we cannot have <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\uparrow\)</span>, since if we did, we would also have <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\downarrow\)</span> by the second line above.  So, <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\downarrow\)</span>.  But then by the first line,
-<span class="math notranslate nohighlight">\([\![x^*]\!](y)\simeq [\![x^*]\!](y) + 1\)</span>, and this is impossible.</p>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="corollaries">
-<h1>Corollaries<a class="headerlink" href="#corollaries" title="Link to this heading">#</a></h1>
-<p>There are a number of corollaries to the basic undecidability result.
-Let us begin by recalling the sets of that we mentioned earlier:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-\mbox{Prog} &amp; = &amp; \mbox{the set of programs} \\
-\mbox{Tidy} &amp; = &amp; \mbox{the set of tidy programs} \\
-K_0 &amp; = &amp; \mbox{the programs which halt when run on all empty registers}\\
-K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
-\textit{Fin} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is finite} \\   
-\textit{Inf} &amp; = &amp; \mbox{the programs $p$ such that the domain of $[\![p]\!]$ is infinite} \\      
-\textit{Tot} &amp; = &amp; \mbox{the program  $p$ such that $[\![p]\!]$ is a total function} \\ 
-\textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
-\end{array}
-\end{split}\]</div>
-<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 12</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
-<div class="proof corollary admonition" id="corollary-2">
-<p class="admonition-title"><span class="caption-number">Corollary 4 </span></p>
-<section class="corollary-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(K\)</span>, the set of programs which halt when run on themselves, is undecidable.</p>
-</section>
-</div><div class="proof corollary admonition" id="corollary-3">
-<p class="admonition-title"><span class="caption-number">Corollary 5 </span></p>
-<section class="corollary-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(K_0\)</span>, the set of programs which halt when run on all empty registers, is undecidable.</p>
-</section>
-</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-4">
-
-<p class="admonition-title"><span class="caption-number">Exercise 80 </span></p>
-<section id="exercise-content">
-<p>For all the sets <span class="math notranslate nohighlight">\(A\)</span> in our reference list,
-Find a subset of <span class="math notranslate nohighlight">\(A\)</span> which is infinite and computable.</p>
-<p>Then do the same for the complement set <span class="math notranslate nohighlight">\(\overline{A}\)</span>.</p>
-</section>
-</div>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-5">
-
-<p class="admonition-title"><span class="caption-number">Exercise 81 </span></p>
-<section id="exercise-content">
-<p>Find a bijection <span class="math notranslate nohighlight">\(f: N\to N\)</span> which is not computable.</p>
-</section>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="improvement-for-one-register-programs">
-<h1>Improvement for one-register programs<a class="headerlink" href="#improvement-for-one-register-programs" title="Link to this heading">#</a></h1>
-<p>There is also an improved version of the basic result.</p>
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of programs which are tidy and which only use one register.</p>
-<div class="proof corollary admonition" id="corollary-6">
-<p class="admonition-title"><span class="caption-number">Corollary 6 </span></p>
-<section class="corollary-content" id="proof-content">
-<p>The halting problem is undecidable even for programs in <span class="math notranslate nohighlight">\(A\)</span> when run on all emtpy registers.</p>
-</section>
-</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-7">
-
-<p class="admonition-title"><span class="caption-number">Exercise 82 </span></p>
-<section id="exercise-content">
-<p>The language <span class="math notranslate nohighlight">\(\one\hash\)</span> has infinitely many instructions: the instructions are the words <span class="math notranslate nohighlight">\(\one^k \hash^{\ell}\)</span>, where <span class="math notranslate nohighlight">\(k\in \N\)</span> and <span class="math notranslate nohighlight">\(1\leq \ell\leq 5\)</span>.</p>
-<p>For each finite set <span class="math notranslate nohighlight">\(F\)</span> of <span class="math notranslate nohighlight">\(\one\hash\)</span> instructions, we can consider <span class="math notranslate nohighlight">\(H_F\)</span>, the set of programs <span class="math notranslate nohighlight">\(p\)</span> built using the instructions of <span class="math notranslate nohighlight">\(F\)</span> (and no others) such that <span class="math notranslate nohighlight">\(\phifn_p(\ )\dar\)</span>.</p>
-<p>For example, if <span class="math notranslate nohighlight">\(F = \set{\one\hash, \one\hash\hash}\)</span>, then <span class="math notranslate nohighlight">\(H_F\)</span> is decidable.  This is because every program built from these two instructions halts.</p>
-<p>Find a finite set <span class="math notranslate nohighlight">\(F\)</span> such that <span class="math notranslate nohighlight">\(H_F\)</span> is undecidable.</p>
-</section>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="rice-s-theorem">
-<h1>Rice’s Theorem<a class="headerlink" href="#rice-s-theorem" title="Link to this heading">#</a></h1>
-<div class="proof theorem admonition" id="Rices-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(S\)</span> be any set of programs, and assume that <span class="math notranslate nohighlight">\(S\)</span> is
-closed under <em>equivalence of words as one-place functions</em>: if <span class="math notranslate nohighlight">\(x\in S\)</span>, and if
-<span class="math notranslate nohighlight">\([\![x]\!]\)</span> and <span class="math notranslate nohighlight">\([\![y]\!]\)</span> are the same partial function,
-then <span class="math notranslate nohighlight">\(y\in S\)</span>.</p>
-<p>If <span class="math notranslate nohighlight">\(S\)</span> is decidable, then <span class="math notranslate nohighlight">\(S\)</span> is either the empty set or the set of all programs.</p>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. If not, we can fix programs <span class="math notranslate nohighlight">\(p\in S\)</span> and <span class="math notranslate nohighlight">\(q\notin S\)</span>, and we also can fix a program <span class="math notranslate nohighlight">\(s\)</span> which computes the characteristic function of <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<p>Now let</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-f(x) &amp; = &amp; \left\{
-\begin{array}{ll} [\![q]\!](x) &amp;\mbox{if  $ [\![s]\!](x)\simeq 1$}
-\\
- [\![p]\!](x) &amp;\mbox{if  $ [\![s]\!](x)\simeq \#$}
-\end{array}
-\right.
-\end{array}
-\end{split}\]</div>
-<p>Let <span class="math notranslate nohighlight">\(x^*\)</span> be such that <span class="math notranslate nohighlight">\([\![x^*]\!] = [\![f(x^*)]\!]\)</span>.  If
-<span class="math notranslate nohighlight">\(x^*\in S\)</span>, then
-<span class="math notranslate nohighlight">\( [\![s]\!](x^*)\simeq 1\)</span>.    But by definition of <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\([\![f(x^*)]\!](x) = [\![q]\!](x)\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.  This tells us that
-<span class="math notranslate nohighlight">\([\![f(x^*)]\!]\)</span> and <span class="math notranslate nohighlight">\([\![q]\!]\)</span> are the same partial function.
-So since <span class="math notranslate nohighlight">\(q\notin S\)</span>, we have <span class="math notranslate nohighlight">\(f(x^*)\notin S\)</span>.  This contradicts <span class="math notranslate nohighlight">\(S\)</span> being closed under equivalence.   So we have a contradiction
-in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we have a similar contradiction in case <span class="math notranslate nohighlight">\(x^*\notin S\)</span>.</p>
-</div>
-<div class="proof corollary admonition" id="corollary-9">
-<p class="admonition-title"><span class="caption-number">Corollary 7 </span></p>
-<section class="corollary-content" id="proof-content">
-<p>The following sets are undecidable: <span class="math notranslate nohighlight">\(Fin\)</span>, <span class="math notranslate nohighlight">\(Inf\)</span>, and <span class="math notranslate nohighlight">\(Tot\)</span>.</p>
-</section>
-</div><div class="exercise admonition" id="undecidability/haltingProblem-exercise-10">
-
-<p class="admonition-title"><span class="caption-number">Exercise 83 </span></p>
-<section id="exercise-content">
-<p>Show that <span class="math notranslate nohighlight">\(Inf \leq_m Tot\)</span> and <span class="math notranslate nohighlight">\(Tot \leq_m Inf\)</span>.</p>
-</section>
-</div>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-11">
-
-<p class="admonition-title"><span class="caption-number">Exercise 84 </span></p>
-<section id="exercise-content">
-<p>Show that the following set <span class="math notranslate nohighlight">\(S\)</span> of programs is undecidable:
-<span class="math notranslate nohighlight">\(S\)</span> is the set of programs <span class="math notranslate nohighlight">\(p\)</span> which, when run on all empty registers at some point write <code class="docutils literal notranslate"><span class="pre">1</span></code> into R2.</p>
-</section>
-</div>
-<div class="exercise admonition" id="undecidability/haltingProblem-exercise-12">
-
-<p class="admonition-title"><span class="caption-number">Exercise 85 </span></p>
-<section id="exercise-content">
-<p>What about the set of programs which at some point execute their <em>second</em> instruction?  Is that set decidable?</p>
-</section>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -733,7 +656,7 @@ in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we
         },
         kernelOptions: {
             name: "python3",
-            path: "./undecidability"
+            path: "./mu"
         },
         predefinedOutput: true
     }
@@ -751,20 +674,20 @@ in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../cesets/computablyEnumerable.html"
+       href="mu.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Definition and equivalent formulations</p>
+        <p class="prev-next-title">Mu-recursive functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="busyBeaver.html"
+       href="../recThm/self_writing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The busy beaver problem</p>
+        <p class="prev-next-title">Self-writing programs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -784,12 +707,9 @@ in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buck-s-function">Buck’s function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-to-ackermann-s-function">Return to Ackermann’s function</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
