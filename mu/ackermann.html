@@ -691,22 +691,22 @@ A(x,y)\quadeq \left\{
 <p>With the variables transposed we get</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-A(y,x)\quadeq \left\{
-\begin{array}{ll} y+1 &amp;\mbox{if  $y=0$}
+A(x,y)\quadeq \left\{
+\begin{array}{ll} x+1 &amp;\mbox{if  $y=0$}
 \\
- A(1, x-1) &amp; \mbox{if  $y\neq 0$ and $x=0$}\\
- A(A(y-1,x), x-1) &amp; \mbox{otherwise}
+ A(1,x-1) &amp; \mbox{if  $y\neq 0$ and $x=0$}\\
+ A(A(x,y-1),x-1) &amp; \mbox{otherwise}
 \end{array}
 \right.
 \end{split}\]</div>
-<p>and then trading in <span class="math notranslate nohighlight">\(m\)</span> for <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(n\)</span> for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<p>Now change <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A(m,n)\quadeq \left\{
-\begin{array}{ll} m+1 &amp;\mbox{if  $m=0$}
+\begin{array}{ll} m+1 &amp;\mbox{if  $n=0$}
 \\
- A(1, n-1) &amp; \mbox{if  $m\neq 0$ and $n=0$}\\
- A(A(m-1,n), n-1) &amp; \mbox{otherwise}
+ A(1,m-1) &amp; \mbox{if  $n\neq 0$ and $m=0$}\\
+ A(A(m,n-1),m-1) &amp; \mbox{otherwise}
 \end{array}
 \right.
 \end{split}\]</div>
