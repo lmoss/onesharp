@@ -622,7 +622,8 @@ y =  −8, 778, 405, 442, 862, 239
 \quad 
 z =  −2, 736, 111, 468, 807, 040.
 \]</div>
-<p>But this is an <em>instance</em> of the general problem.   That general problem would ask us to find a program or algorithm which, when given the polynomial as an input, answers Yes or No correctly and in finite time.  The question again is whether the given polynomial has an integer root.</p>
+<p>But this is an <em>instance</em> of the general problem.   That general problem would ask us to find a program or algorithm which, when given the polynomial as an input, answers Yes or No correctly and in finite time.   For example, it just so happens that for a number of the form <span class="math notranslate nohighlight">\(n = 9k + 4\)</span> or <span class="math notranslate nohighlight">\(n = 9k + 5\)</span>, there are no roots of  <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - n\)</span>.</p>
+<p>The question again is whether a given polynomial has an integer root.</p>
 </div>
 <p>In view of how hard it is to actually solve instances (despite having a lot of number theory to use), it is perhaps not surprising that the general problem is undecidable.</p>
 <p>This problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
