@@ -594,16 +594,8 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 <div class="proof example admonition" id="example-church-tiling">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
 <section class="example-content" id="proof-content">
-<p>Let us go back to <a class="reference internal" href="../issues/problems.html#content-firsttiles"><span class="std std-ref">our very first example of a pointed tile set</span></a>.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
-<p>Let us write these eight tiles as</p>
-<p><span class="math notranslate nohighlight">\(
-\begin{array}{&#64;{\qquad}&#64;{\qquad}&#64;{\qquad}c&#64;{\qquad}c&#64;{\qquad}c}
-&amp; &amp; &amp; t_1 &amp; t_2 &amp; t_3 &amp; t_4 \\
-&amp; &amp; &amp;  t_5 &amp; t_6 &amp; t_7 &amp; t_8
-\end{array}
-\)</span></p>
-<p>Here is point 2 for this example, saying that every point gets a unique tile:</p>
+<p>Let us go back to <a class="reference internal" href="../issues/problems.html#content-firsttiles"><span class="std std-ref">our very first example of a pointed tile set</span></a>.  Call this tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
+<p>Here is point 2 for <span class="math notranslate nohighlight">\(\phi(\mathcal{T})\)</span>, saying that every point gets a unique tile:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lll}
@@ -617,6 +609,15 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 &amp;  \vee  &amp; ( T_8(x)\wedge\neg \bigvee_{j\neq 8} T_j(x) ) \biggr) \\
 \end{array}
 \end{split}\]</div>
+<p>For points 3, it is convenient to display the tiles:</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
+<p>Let us write them as</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{&#64;{\qquad}&#64;{\qquad}&#64;{\qquad}c&#64;{\qquad}c&#64;{\qquad}c}
+&amp; &amp; &amp; t_1 &amp; t_2 &amp; t_3 &amp; t_4 \\
+&amp; &amp; &amp;  t_5 &amp; t_6 &amp; t_7 &amp; t_8
+\end{array}
+\)</span></p>
 <p>Here is how we would state point 3, that for all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
