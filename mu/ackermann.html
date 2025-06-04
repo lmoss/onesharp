@@ -677,50 +677,6 @@ f(\overline{x}) &lt; F(\hat{x}_i, r)\)</span>.</p>
 </section>
 <section id="back-to-ackermann-s-function">
 <h2>Back to Ackermann’s function<a class="headerlink" href="#back-to-ackermann-s-function" title="Link to this heading">#</a></h2>
-<p>Let us start with Ackermann’s function as above</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A(x,y)\quadeq \left\{
-\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
-\\
- A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
- A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
-\end{array}
-\right.
-\end{split}\]</div>
-<p>With the variables transposed in the body we get</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A(x,y)\quadeq \left\{
-\begin{array}{ll} x+1 &amp;\mbox{if  $x=0$}
-\\
- A(1,x-1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
- A(A(y-1,x),x-1) &amp; \mbox{otherwise}
-\end{array}
-\right.
-\end{split}\]</div>
-<p>Now change <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to <span class="math notranslate nohighlight">\(n\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A(m,n)\quadeq \left\{
-\begin{array}{ll} m+1 &amp;\mbox{if  $n=0$}
-\\
- A(1,m-1) &amp; \mbox{if  $n\neq 0$ and $m=0$}\\
- A(A(m,n-1),m-1) &amp; \mbox{otherwise}
-\end{array}
-\right.
-\end{split}\]</div>
-<p>So we have <span class="math notranslate nohighlight">\(A(m,0)=m+1\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(A(m+1, n+1) = A(A(m,n+1), n)\)</span>.</p>
-<p>Here again is Buck:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-F(m,0) &amp; = &amp; m+1 \\ \\ 
-F(0,n)  &amp; = &amp; \left\{ \begin{array}{ll}  2 &amp;\mbox{if $n = 1$} \\  0 &amp;\mbox{if $n = 2$} \\  1 &amp;\mbox{if $n \geq 3$} \end{array} \right.\\ \\
-F(m+1,n+1) &amp; = &amp; F(F(m,n+1), n)\\
-\end{array}
-\end{split}\]</div>
 <div class="proof lemma admonition" id="lemma-7">
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
