@@ -576,9 +576,7 @@ and it implies that <span class="math notranslate nohighlight">\(a+1 &lt; F(a+1,
 <p>Proof. By induction on <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(n = 0\)</span>, <span class="math notranslate nohighlight">\(F(a,0) = a+1 &lt; b+1 = F(b,0)\)</span>.</p>
 <p>Similar reasoning applies with <span class="math notranslate nohighlight">\(n = 1\)</span> and <span class="math notranslate nohighlight">\(n = 2\)</span>.</p>
-<p>Assuming our result for <span class="math notranslate nohighlight">\(n\geq 2\)</span>, we argue by induction on <span class="math notranslate nohighlight">\(b\)</span> that for <span class="math notranslate nohighlight">\(a &lt; b\)</span>, <span class="math notranslate nohighlight">\(F(a, n+1) &lt; F(b, n+1)\)</span>.<br />
-We need only show that <span class="math notranslate nohighlight">\(F(a,n+1) &lt; F(a+1, n+1)\)</span>.<br />
-But</p>
+<p>Assuming our result for <span class="math notranslate nohighlight">\(n\geq 2\)</span>, we argue by induction on <span class="math notranslate nohighlight">\(b\)</span> that for <span class="math notranslate nohighlight">\(a &lt; b\)</span>, <span class="math notranslate nohighlight">\(F(a, n+1) &lt; F(b, n+1)\)</span>.   We need only show that <span class="math notranslate nohighlight">\(F(a,n+1) &lt; F(a+1, n+1)\)</span>.    But</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} 
 \begin{array}{lcll}
@@ -679,6 +677,39 @@ f(\overline{x}) &lt; F(\hat{x}_i, r)\)</span>.</p>
 </section>
 <section id="back-to-ackermann-s-function">
 <h2>Back to Ackermann’s function<a class="headerlink" href="#back-to-ackermann-s-function" title="Link to this heading">#</a></h2>
+<p>Let us start with Ackermann’s function as above</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A(x,y)\quadeq \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{split}\]</div>
+<p>With the variables transposed we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A(y,x)\quadeq \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $y=0$}
+\\
+ A(x-1, 1) &amp; \mbox{if  $y\neq 0$ and $x=0$}\\
+ A(A(y-1,x), x-1) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{split}\]</div>
+<p>and then trading in <span class="math notranslate nohighlight">\(m\)</span> for <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(n\)</span> for <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A(m,x)\quadeq \left\{
+\begin{array}{ll} m+1 &amp;\mbox{if  $m=0$}
+\\
+ A(n-1, 1) &amp; \mbox{if  $m\neq 0$ and $n=0$}\\
+ A(A(m-1,x), n-1) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{split}\]</div>
 <div class="proof lemma admonition" id="lemma-7">
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
 <section class="lemma-content" id="proof-content">
