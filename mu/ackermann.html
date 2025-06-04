@@ -695,7 +695,7 @@ A(x,y)\quadeq \left\{
 \begin{array}{ll} x+1 &amp;\mbox{if  $x=0$}
 \\
  A(1,x-1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
- A(A(x,y-1),x-1) &amp; \mbox{otherwise}
+ A(A(y-1,x),x-1) &amp; \mbox{otherwise}
 \end{array}
 \right.
 \end{split}\]</div>
@@ -710,7 +710,7 @@ A(m,n)\quadeq \left\{
 \end{array}
 \right.
 \end{split}\]</div>
-<p>So we have <span class="math notranslate nohighlight">\(A(0,n)=1\)</span>.</p>
+<p>So we have <span class="math notranslate nohighlight">\(A(m,0)=m+1\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(A(m+1, n+1) = A(A(m,n+1), n)\)</span>.</p>
 <p>Here again is Buck:</p>
 <div class="math notranslate nohighlight">
