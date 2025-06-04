@@ -665,7 +665,75 @@ F(F(x,n), m)  &lt; F(F(x,p),p) &lt;  F(x, p+2) \leq F(x, n+m).
 <span class="math notranslate nohighlight">\(
 f(\overline{x}) &lt; F(\hat{x}_i, r)\)</span>.</p>
 </section>
-</div><div class="proof theorem admonition" id="theorem-6">
+</div><div class="proof admonition" id="proof">
+<p>Proof. By induction on <span class="math notranslate nohighlight">\(f\)</span>.  For the constant <span class="math notranslate nohighlight">\(0\)</span> function, successor function <span class="math notranslate nohighlight">\(s(x) = x+1\)</span>,
+and  projections <span class="math notranslate nohighlight">\(pr^n_k(x_1,\ldots, x_k) = x_n\)</span>,
+we  take <span class="math notranslate nohighlight">\(r = 3\)</span>.   For example,
+<span class="math notranslate nohighlight">\(pr^n_k(\bar{x}) = x_n \leq \hat{x} &lt;  F(\hat{x}, 3)\)</span> by <a class="reference internal" href="#BuckOne">Lemma 3</a>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(f: N^k \to N\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+f(\bar{x}) = h(g_1(\bar{x}), \ldots, g_{\ell}(\bar{x}))
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(h: N^{\ell} \to N\)</span>, and  <span class="math notranslate nohighlight">\(g_i: N^k \to N\)</span> for  <span class="math notranslate nohighlight">\(1\leq i \leq \ell\)</span>.
+Let <span class="math notranslate nohighlight">\(s\geq 3\)</span> be such that <span class="math notranslate nohighlight">\(h(\bar{y}) &lt; F(\yhat, s)\)</span> for all <span class="math notranslate nohighlight">\(\bar{y} \in N^{\ell}\)</span>,
+and for each <span class="math notranslate nohighlight">\(i\)</span>, let <span class="math notranslate nohighlight">\(r_i\geq 3\)</span> be such that <span class="math notranslate nohighlight">\(g_i(\bar{y}) &lt; F(\hat{x}, r_i)\)</span> for all <span class="math notranslate nohighlight">\(\bar{x} \in N^{k}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\bar{x} \in N^{k}\)</span>.
+Let <span class="math notranslate nohighlight">\(z_1 = g_1(\bar{x})\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(z_{\ell} = g_{\ell}(\bar{x})\)</span>.   Then  <span class="math notranslate nohighlight">\(\hat{z} = \max\{z_1, \ldots, z_{\ell},3\}\)</span>.
+For each <span class="math notranslate nohighlight">\(j&lt;\ell\)</span>, <span class="math notranslate nohighlight">\(z_j &lt; F(\hat{x},r_j)\)</span>.  Thus <span class="math notranslate nohighlight">\(\hat{z} &lt;  \max_j  F(\hat{x},r_j)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lclll}
+f(\bar{x}) 
+&amp;= &amp; h(g_1(\bar{x}), \ldots, g_{\ell}(\bar{x}))
+  \\
+ &amp;&lt;  &amp; F(\hat{z}, s) &amp;\mbox{by definition of $s$, using $g_j(\bar{x})\geq 3$} \\
+&amp;  &lt; &amp; F(\max_j F(\hat{x}, r_j), s) &amp; \mbox{by {prf:ref}`BuckTwo`}\\
+&amp;  \leq &amp;  F( F(\hat{x},  \max_j r_j) , s)&amp; \mbox{by {prf:ref}`BuckThree`, using $\hat{x} \geq 3$ }\\
+&amp;  &lt; &amp; F(\hat{x}, \max_j r_j + s) &amp; \mbox{by {prf:ref}`BuckFive`, using $\hat{x} \geq 3$, $r_1 \geq 2$}\\
+\end{array}
+\end{split}\]</div>
+<p>We have used <a class="reference internal" href="#BuckTwo">Lemma 4</a> at several points.
+To conclude this step of the induction, we have shown that the number <span class="math notranslate nohighlight">\( \max_j r_j + s\)</span> has the required property for <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(f(\bar{x},y)\)</span> is defined by primitive recursion from <span class="math notranslate nohighlight">\(h(\bar{x})\)</span> and <span class="math notranslate nohighlight">\(k(\bar{x},y,z)\)</span> as:
+<span class="math notranslate nohighlight">\(f(\bar{x},0) = h(\bar{x})\)</span>, and <span class="math notranslate nohighlight">\(f(\bar{x},y+1) = k(\bar{x}, y, f(\bar{x},y))\)</span>.
+Let <span class="math notranslate nohighlight">\(r\)</span>  and <span class="math notranslate nohighlight">\(s\)</span> be such that <span class="math notranslate nohighlight">\(h(\bar{x}) &lt; F(\hat{x}, r)\)</span> and <span class="math notranslate nohighlight">\(k(\bar{x}, y,z) &lt; F(\max(\hat{x}, y, z), s)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(t = 1+ \max(r,s)\)</span>.</p>
+<p>We introduce some notation for readability.  % For a given tuple <span class="math notranslate nohighlight">\(\bar{x}\)</span>, we write <span class="math notranslate nohighlight">\(\hat{x}\)</span> for <span class="math notranslate nohighlight">\(\max_i x_i\)</span>.
+Let <span class="math notranslate nohighlight">\(p = \max(\hat{x},y)= (\bar{x},y)^{\widehat{}}\)</span>, and let <span class="math notranslate nohighlight">\(q = \max(p,f(\bar{x}, y) )\)</span>.
+We show that <span class="math notranslate nohighlight">\(t+2\)</span> has the desired property:<br />
+for all <span class="math notranslate nohighlight">\(\bar{x}, y\)</span>,
+<span class="math notranslate nohighlight">\(f(\bar{x},y) &lt;  F(p, t+2)\)</span>.</p>
+<p>First we have a preliminary claim:
+<span class="math notranslate nohighlight">\(f(\bar{x}, y) &lt; F(\hat{x} + y, t)\)</span> for all <span class="math notranslate nohighlight">\(\bar{x}\)</span> and all <span class="math notranslate nohighlight">\(y\geq 0\)</span>.
+The proof is by induction on <span class="math notranslate nohighlight">\(y\)</span>.
+This is clear for <span class="math notranslate nohighlight">\(y=0\)</span>.   Assume about <span class="math notranslate nohighlight">\(y\)</span> that <span class="math notranslate nohighlight">\(f(\bar{x}, y) &lt; F(\hat{x} + y, t)\)</span>.
+By <a class="reference internal" href="#BuckOne">Lemma 3</a>, <span class="math notranslate nohighlight">\(\hat{x}\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are also <span class="math notranslate nohighlight">\(&lt; F(\hat{x}+y,t)\)</span>, since <span class="math notranslate nohighlight">\(t\geq 3\)</span>.  Thus <span class="math notranslate nohighlight">\(q &lt; F(\hat{x} +y, t)\)</span>.
+So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lclll}
+f(\bar{x},y+1)  &amp; = &amp; k(\bar{x}, y, f(\bar{x},y)) \\
+ &amp; &lt; &amp; F(q,s) &amp;\mbox{by definition of $s$} \\
+ &amp; &lt; &amp; F(F(\hat{x} + y, t), s) &amp; \mbox{by {prf:ref}`BuckTwo`}\\
+ &amp; \leq &amp; F(F(\hat{x} + y, t), t-1) &amp;\mbox{since $s\leq t-1$}\\
+ &amp; = &amp; F(\hat{x} + y + 1, t) &amp;\mbox{by definition of $F$}
+ \end{array}
+ \]
+Our claim proved, we now fix $\bar{x},y$.  We have 
+\[\begin{array}{lclll}
+f(\bar{x},y)  &amp; &lt; &amp;  F(\hat{x} + y, t)   &amp;\mbox{by our claim above}\\
+ &amp; \leq &amp; F(2p, t)  &amp;\mbox{by definition of $p$} \\ 
+ &amp; = &amp; F(F(p,2), t) &amp;\mbox{since $F(m,2) = 2m$} \\
+ &amp; = &amp; F(p, t+2) &amp;\mbox{by {prf:ref}`BuckFive`, using $p\geq 3$, $t \geq 3$}\\
+%  &amp; = &amp; F(F(p+1,2), t+1) &amp; \mbox{since $F(m,2) = 2m$} \\
+% &amp;  &lt; &amp;  F(p+1,t+2) &amp;\mbox{by {prf:ref}`BuckTwo`}\\
+% &amp; = &amp; F(\hat{x} + (y+1), t+2) &amp;\\
+\end{array}
+\end{split}\]</div>
+<p>This completes the induction step for primitive recursion, hence the lemma overall.</p>
+</div>
+<div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Buck’s function <span class="math notranslate nohighlight">\(F\)</span> is not primitive recursive.</p>
