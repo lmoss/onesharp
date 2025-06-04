@@ -620,15 +620,10 @@ To  complete the verification of (2), both for the base case <span class="math n
 we need only check that <span class="math notranslate nohighlight">\(F(F(u,v+1),v) \geq 3\)</span>.
 Let <span class="math notranslate nohighlight">\(k = F(u, v+1)\)</span>.  Then <span class="math notranslate nohighlight">\(k \geq 3\)</span> since <span class="math notranslate nohighlight">\(u \geq 2\)</span>, and <span class="math notranslate nohighlight">\(F(k,v) \geq 3\)</span> by induction hypothesis on <span class="math notranslate nohighlight">\(v\)</span>.</p>
 </div>
-<div class="proof lemma admonition" id="lemma-3">
+<div class="proof lemma admonition" id="BuckFour">
 <p class="admonition-title"><span class="caption-number">Lemma 6 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), n) &lt; F(x, n+2)\)</span>.</p>
-</section>
-</div><div class="proof lemma admonition" id="BuckFour">
-<p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n,m\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), m) &lt; F(x, n+m)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. By induction on <span class="math notranslate nohighlight">\(n\geq 2\)</span>.
@@ -643,12 +638,25 @@ Then</p>
 \[\begin{split}
 \begin{array}{lcll}
 F(F(x+1, n), n) &amp; = &amp;F( F(F(x,n), n-1), n) \\
-&amp; &lt; &amp; F( F(F(x,n), n), n)  &amp;\mbox{by {prf:ref}`BuckThree`, using $F(x,n)\geq 3$}\\
-&amp; &lt; &amp; F( F(x, n+2), n)  &amp;\mbox{ind. hyp.}\\
-&amp; &lt; &amp; F( F(x, n+2), n+1)  &amp;\mbox{by {prf:ref}`BuckThree`, using $F(x,n+2)\geq 3$}\\
+&amp; &lt; &amp; F( F(F(x,n), n), n) \\
+&amp; &lt; &amp; F( F(x, n+2), n)  &amp;\mbox{induction hypothesis}\\
+&amp; &lt; &amp; F( F(x, n+2), n+1)  \\
 &amp; = &amp; F(x+1, n+2)\\
 \end{array}
 \end{split}\]</div>
+<p>In these calculuations, we used <a class="reference internal" href="#BuckThree">Lemma 5</a> twice, using also that <span class="math notranslate nohighlight">\(F(x,n+2)\geq F(x,n) 3\)</span>.</p>
+</div>
+<div class="proof lemma admonition" id="BuckFive">
+<p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For all <span class="math notranslate nohighlight">\(x\geq 3\)</span> and <span class="math notranslate nohighlight">\(n,m\geq 2\)</span>, <span class="math notranslate nohighlight">\(F(F(x,n), m) &lt; F(x, n+m)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(p = \max\{m,n\}\)</span>.  Using <a class="reference internal" href="#BuckThree">Lemma 5</a> and <a class="reference internal" href="#BuckFour">Lemma 6</a>,</p>
+<div class="math notranslate nohighlight">
+\[
+F(F(x,n), m)  &lt; F(F(x,p),p) &lt;  F(x, p+2) \leq F(x, n+m).
+\]</div>
 </div>
 <div class="proof lemma admonition" id="BuckMain">
 <p class="admonition-title"><span class="caption-number">Lemma 8 </span></p>
