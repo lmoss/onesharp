@@ -17,9 +17,7 @@ packages, Jupyter notebooks and everything needed to work with them, $\LaTeX$, g
 course of working on the book I became interested in using all of these computational artifacts, mainly as a 
 way of seeing what would work in a textbook, and what would not. Since working in this medium is new to me 
 (and pretty much everyone), I became as interested in those aspects of the project as in the content.  Some of the featues of  this presentation which are not present in a traditional book are: many more pictures than
-a traditional printed book contains;  executable Python code, especially in the beginning chapters; and clickable references to discussions and papers both inside and outside of the book 
-itself. In time I hope to add animations to illustrate some of the dynamism that everyone feels with computably 
-enumerable sets which is arrested in any print presentation.
+a traditional printed book contains;  executable Python code, especially in the beginning chapters; the ability to hide technical passages and to otherwise structure a text; and clickable references to discussions and papers both inside and outside of the book  itself. In time I hope to add animations to illustrate some of the dynamism that everyone feels with computably enumerable sets which is arrested in any print presentation.
 I also would like to incorporate tools for readers annotate and discuss matters, enabling a community of 
 readers.  In short, I am aiming for something which is both a short textbook and 
 an intellectual version of a coffee-table book.
@@ -77,6 +75,8 @@ Overall, there will eventually be enough material for a one-semester course.  At
 The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have lecture slides that eventually will go into the book.)   There are a few things in the ```1#``` section that ought to change: the tool called "sanity" that turns flowcharts into programs should be re-designed, and there needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
 
 Some of the sections of the book here are placeholders.
+
+I would like to explore animation as a tool for presenting aspects of this subject.
 
 The section(s) on the Godel Incompleteness Theorem is yet to come.
 
