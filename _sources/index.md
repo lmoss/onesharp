@@ -104,7 +104,7 @@ The ouroboros
 
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 
-indicates that we are seeing an interesting example related to self-reference.   
+indicates that we are seeing an interesting example related to self-reference, suggestive of infinity.   
 
 <img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
 
