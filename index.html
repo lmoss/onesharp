@@ -478,12 +478,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Invitation to Computability</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Invitation to Computability</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-a-jupyter-book">Why a Jupyter book?</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended audience</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-register-machines">Text register machines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsolvable-problems">Unsolvable problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and">Recursion principles and</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and-the-categorical-treament-of-recursion">Recursion principles and the categorical treament of recursion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a></li>
@@ -511,6 +514,8 @@ mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theore
 computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of
 these results, and so the presentation here will differ, and this book will try to make pointers to many of the
 developments in computability theory and computer science that have come from the clasical material.</p>
+<section id="why-a-jupyter-book">
+<h2>Why a Jupyter book?<a class="headerlink" href="#why-a-jupyter-book" title="Link to this heading">#</a></h2>
 <p>We are also living in the wake of several revolutions in society coming from the advent of computers and the
 worldwide web.  This is on my mind front and center as I prepare this book.  It should not be strange that a
 book about computation theory should use up-to-date computational tools. This book uses Python and various
@@ -525,6 +530,7 @@ I also would like to incorporate tools for readers annotate and discuss matters,
 readers.  I am not primarily a computability theorist, and so these features of the work are just as
 compelling to me as the content.  In short, I am aiming for something which is both a short textbook and
 an intellectual version of a coffee-table book.</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="intended-audience">
 <h1>Intended audience<a class="headerlink" href="#intended-audience" title="Link to this heading">#</a></h1>
@@ -546,10 +552,11 @@ how to read mathematics.  This would be the wrong place to learn these things; t
 <h2>Unsolvable problems<a class="headerlink" href="#unsolvable-problems" title="Link to this heading">#</a></h2>
 <p>The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as Church’s Theorem that satisfiability in first-order logic is undecidable.   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with <code class="docutils literal notranslate"><span class="pre">1#</span></code> earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church’s Theorem.</p>
 </section>
-<section id="recursion-principles-and">
-<h2>Recursion principles and<a class="headerlink" href="#recursion-principles-and" title="Link to this heading">#</a></h2>
-<p>As we mentioned, the book is at the same time more abstract than others on this topic.  The ways in which the text are more abstract include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, and category theory.  This all comes in the second part of the book.   That part demands more mathematical maturity than the concrete work.  But the book is also designed so that the first part provides some help to students at beginning levels.</p>
-<p>Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail – much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.</p>
+<section id="recursion-principles-and-the-categorical-treament-of-recursion">
+<h2>Recursion principles and the categorical treament of recursion<a class="headerlink" href="#recursion-principles-and-the-categorical-treament-of-recursion" title="Link to this heading">#</a></h2>
+<p>Another way to make the point about the book being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail – much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.</p>
+<p>We include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, and term rewriting.  This all comes in the second part of the book.   That part demands more mathematical maturity than the concrete work.  But the book is also designed so that the first part provides some help to students at beginning levels.</p>
+<p>The final distinctive feature of the book is a “gentle introduction” to areas of theoretical computer science related to <em>algebra</em> and <em>coalgebra</em>.   The goal here is to understand Lawvere’s point that ordinary recursion on the natural numbers is equivalent to the initiality of the the natural numbers in a certain category.  Doing this leads to a deeper understanding of the relation of recursion and induction.  So all of this is presented from scratch.  The payoff comes when we “turn the arrows around” to see corecursion and bisimulation, matching recursion and induction.  These are not traditional topics for an introductory course on this subject, but I no reason why they would not be.   And for my intended audicence, they make more sense than the traditional topics which I have chosen to omit, such as oracle computation, c.e. sets and priority arguments, and complexity theory.  These all are the main focus topics of other textbooks and do not fit with what I am trying to do here.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="using-it-in-a-classroom-or-for-self-study">
@@ -644,12 +651,15 @@ how to read mathematics.  This would be the wrong place to learn these things; t
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Invitation to Computability</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Invitation to Computability</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-a-jupyter-book">Why a Jupyter book?</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended audience</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-register-machines">Text register machines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsolvable-problems">Unsolvable problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and">Recursion principles and</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and-the-categorical-treament-of-recursion">Recursion principles and the categorical treament of recursion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a></li>
