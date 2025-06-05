@@ -838,15 +838,16 @@ Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T}
 <h1>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h1>
 <p><a class="reference internal" href="#tiling_works">Lemma 9</a>
 leads to the proof of the main result in this section, <a class="reference internal" href="#tiling_undecidability">Theorem 14</a>.</p>
-<p>We now turn to the proof.</p>
 <div class="warning admonition">
 <p class="admonition-title">Reminder of what we are proving.</p>
 <p>If <span class="math notranslate nohighlight">\(p\)</span> runs forever (on all empty registers), then
 <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> can tile the first quadrant.</p>
 <p>If <span class="math notranslate nohighlight">\(p\)</span> halts (on all empty registers) at some point, then
 <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> cannot tile the first quadrant.</p>
+</div>
 <hr class="docutils" />
-<p>For the first statement, the lemma implies that for all <span class="math notranslate nohighlight">\(n\)</span>, there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the quadrant.  From the uniqueness, if <span class="math notranslate nohighlight">\(n &lt; m\)</span>, then the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows has to be a restriction of the tiling of the first <span class="math notranslate nohighlight">\(m\)</span> rows.   It follows that we can take the union over <span class="math notranslate nohighlight">\(n\)</span> of the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.  This will be a tiling of the entire quadrant.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. For the first statement, the lemma implies that for all <span class="math notranslate nohighlight">\(n\)</span>, there is a unique tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows of the quadrant.  From the uniqueness, if <span class="math notranslate nohighlight">\(n &lt; m\)</span>, then the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows has to be a restriction of the tiling of the first <span class="math notranslate nohighlight">\(m\)</span> rows.   It follows that we can take the union over <span class="math notranslate nohighlight">\(n\)</span> of the tiling of the first <span class="math notranslate nohighlight">\(n\)</span> rows.  This will be a tiling of the entire quadrant.</p>
 <p>For the second statement, suppose towards a contradiction that the run of <span class="math notranslate nohighlight">\(p\)</span> halts in <span class="math notranslate nohighlight">\(n+1\)</span> steps and yet <span class="math notranslate nohighlight">\(\TT(p)\)</span> can tile the quadrant.
 We use <a class="reference internal" href="#tiling_works">Lemma 9</a>.  We have (1) for <span class="math notranslate nohighlight">\(n\)</span>, and so we have (2) for <span class="math notranslate nohighlight">\(n\)</span> as well. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of instructions in our program <span class="math notranslate nohighlight">\(p\)</span>.
 The instruction tile in row <span class="math notranslate nohighlight">\(n\)</span>

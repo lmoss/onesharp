@@ -478,11 +478,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended audience</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artwork">Artwork</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Invitation to Computability</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended audience</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-register-machines">Text register machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsolvable-problems">Unsolvable problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and">Recursion principles and</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#artwork">Artwork</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -516,29 +525,41 @@ I also would like to incorporate tools for readers annotate and discuss matters,
 readers.  I am not primarily a computability theorist, and so these features of the work are just as
 compelling to me as the content.  In short, I am aiming for something which is both a short textbook and
 an intellectual version of a coffee-table book.</p>
-<section id="intended-audience">
-<h2>Intended audience<a class="headerlink" href="#intended-audience" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="intended-audience">
+<h1>Intended audience<a class="headerlink" href="#intended-audience" title="Link to this heading">#</a></h1>
 <p>The intended readers are students of certain areas of computer science, mathematics, philosophy, or other fieds.
 It it aimed at anyone who frequently encounters the topics of the book and has the needed mathematical background to
 read it.  That background is a working familiarity with mathematical notation and discourse.   One should know
 how to read mathematics.  This would be the wrong place to learn these things; the pace and level would be too much.   But if you can read mathematics, that is enough: nothing else is really assumed.  There are places where it would be good to have seen some induction on the natural numbers and even some basic topics in areas like logic, set theory, and computer programming.  But one could do without the background, I think.  And I hope to have provided enough background on those topics to make what is here accessible.</p>
+<p>Here is another way to describe the intended audience: people in the broad area of interdisciplinary logic but who are not specialists in computability theory per se.</p>
 </section>
-<section id="distinctive-features">
-<h2>Distinctive features<a class="headerlink" href="#distinctive-features" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="distinctive-features">
+<h1>Distinctive features<a class="headerlink" href="#distinctive-features" title="Link to this heading">#</a></h1>
 <p>The are three distinctive features of the book.   The first that it the first half of it is mainly an online resource that is more important than the printed book.   Most of the chapters in that part of the book are Jupyter notebooks. Rather than simply read, these chapters are intended to  be <em>run</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open them  on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don’t have buttons to run it on CoCalc, and the best options are to run them locally or on Colab.  For Colab, one starts by clicking on the button at the top.</p>
-<p>Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  How can this be?  It is more concrete in the beginning than other books, and more abstract later on.  The concrete part in the beginning develops a model of computation which is a variant of a register machine called a <em>text register machine</em>.  The “text” in “text register machine” is the feature (orignal here) that the programming language of the machine is the same as the language of programs.  This language the set of words on the two letter alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  So the language is called <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This text comes with a Python interpreter for <code class="docutils literal notranslate"><span class="pre">1#</span></code>, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to help people to write long programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code>; for example, one can turn a flowchart into a  <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.  Those tools are in Python, and while one need not read the programs to use them, a class for computer science students could indeed do so.  Using <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the accompanying tools, the main first theorems of computability theory are presented constructively in full detail, with no coding and no hand-waving.    One can write explicit universal programs, <span class="math notranslate nohighlight">\(s^m_n\)</span> programs, self-writing programs, the T-predicate, and similar artifacts that essentially <em>are</em> the main first results in computability theory.   This is why the treatment here is much more explicit than usual.   The way the book works is that those main first results are presented in full detail, and then after doing so it becomes more “hand wavy”.  Probably every book on the topic is going becomes “hand wavy” at some point.  But this one does so much later, due to our use of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the extra tools.</p>
+<section id="text-register-machines">
+<h2>Text register machines<a class="headerlink" href="#text-register-machines" title="Link to this heading">#</a></h2>
+<p>Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  How can this be?  It is more concrete in the beginning than other books, and more abstract later on.</p>
+<p>The concrete part in the beginning develops a model of computation which is a variant of a register machine called a <em>text register machine</em>.  The “text” in “text register machine” is the feature (orignal here) that the programming language of the machine is the same as the language of programs.  This language the set of words on the two letter alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  So the language is called <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This text comes with two interpreters for <code class="docutils literal notranslate"><span class="pre">1#</span></code>, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to help people to write long programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code>; for example, one can turn a flowchart into a  <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.  Another tool turns a decription of a primitive recursive function into <code class="docutils literal notranslate"><span class="pre">1#</span></code> code.   Those tools are in Python, and while one need not read the programs to use them, a class for computer science students could indeed do so.  Using <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the accompanying tools, the main first theorems of computability theory are presented constructively in full detail, with no coding and no hand-waving.    One can write explicit universal programs, <span class="math notranslate nohighlight">\(s^m_n\)</span> programs, self-writing programs, the T-predicate, and similar artifacts that essentially <em>are</em> the main first results in computability theory.   This is why the treatment here is much more explicit than usual.   The way the book works is that those main first results are presented in full detail, and then after doing so it becomes more “hand wavy”.  Probably every book on the topic is going becomes “hand wavy” at some point.  But this one does so much later, due to our use of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the extra tools.</p>
+</section>
+<section id="unsolvable-problems">
+<h2>Unsolvable problems<a class="headerlink" href="#unsolvable-problems" title="Link to this heading">#</a></h2>
+<p>The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as Church’s Theorem that satisfiability in first-order logic is undecidable.   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with <code class="docutils literal notranslate"><span class="pre">1#</span></code> earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church’s Theorem.</p>
+</section>
+<section id="recursion-principles-and">
+<h2>Recursion principles and<a class="headerlink" href="#recursion-principles-and" title="Link to this heading">#</a></h2>
 <p>As we mentioned, the book is at the same time more abstract than others on this topic.  The ways in which the text are more abstract include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, and category theory.  This all comes in the second part of the book.   That part demands more mathematical maturity than the concrete work.  But the book is also designed so that the first part provides some help to students at beginning levels.</p>
 <p>Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail – much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.</p>
-<p>The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as Church’s Theorem that satisfiability in first-order logic is undecidable.   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.</p>
 </section>
-<section id="using-it-in-a-classroom-or-for-self-study">
-<h2>Using it in a classroom or for self-study<a class="headerlink" href="#using-it-in-a-classroom-or-for-self-study" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-it-in-a-classroom-or-for-self-study">
+<h1>Using it in a classroom or for self-study<a class="headerlink" href="#using-it-in-a-classroom-or-for-self-study" title="Link to this heading">#</a></h1>
 <p>There are a number of ways the book could be used in courses for students in several disciplines. Of course instructors would have to be happy with register machines as a vehicle to introduce the subject;  I know that not everyone feels this way.    For computer science students, the subject is often taught as one of several topics in a computability theory course.  Indeed, in computer science settings, “theory of computation” includes automata theory and complexity theory, two subjects that we do not cover.   For such courses, one would need to select the topics judiciously.    The same for philosophy courses aiming to cover the Incompleteness Theorem.  This is possible, but the treatment of first-order logic is, well, incomplete: we don’t do the full work on the syntax of first-order logic, or on any proof system for it.  On the other hand, we prove the undecidability of satisfiability without mentioning a proof system for first-order logic, and this can be appreciated by students without a logic background.</p>
 <p>Much of the action in this book is in the exercises.   So for a student working on their own, it would be important to do a fair number of them and also to have be able to talk to others about their solutions.  I hope that the book would be useful that way.</p>
-<p>Overall, there will eventually enough material for a one-semester course.  At the time of this writing (June 2025), there already is close to that.   It is likely that an intstuctor would would want to choose some part of the material here based on their own interests and experience, and also on who exactly their students are.  The book is designed with this in mind.  Probably everyone should use the basic material on <code class="docutils literal notranslate"><span class="pre">1#</span></code>, but after that there are various ways to go.   The topic of computability has many connections and developments, far too many for an “invitation” book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.</p>
+<p>Overall, there will eventually be enough material for a one-semester course.  At the time of this writing (June 2025), there already is close to that.   It is likely that an intstuctor would would want to choose some part of the material here based on their own interests and experience, and also on who exactly their students are.  The book is designed with this in mind.  Probably everyone should use the basic material on <code class="docutils literal notranslate"><span class="pre">1#</span></code>, but after that there are various ways to go.   The topic of computability has many connections and developments, far too many for an “invitation” book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.</p>
 </section>
-<section id="artwork">
-<h2>Artwork<a class="headerlink" href="#artwork" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="artwork">
+<h1>Artwork<a class="headerlink" href="#artwork" title="Link to this heading">#</a></h1>
 <p>The illustrations in the book are by  <a href="https://www.jeffreyfineart.com/">Jeffrey Fine</a>.  I was fortunate to work with him on a <a href="https://www.youtube.com/watch?v=0cH3rB8dIVo">logic-related video</a>.  It’s a pleasure to do this again.</p>
 <p>The pictures signify.  For example,</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/beaver.jpg?raw=1" width="200" height="160">
@@ -550,7 +571,6 @@ how to read mathematics.  This would be the wrong place to learn these things; t
 <p>tells us that we are in the territory of unsolvable problems.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160">
 <p>This is used mainly to separate sections of a notebook.</p>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -624,11 +644,20 @@ how to read mathematics.  This would be the wrong place to learn these things; t
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended audience</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artwork">Artwork</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Invitation to Computability</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intended-audience">Intended audience</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-register-machines">Text register machines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsolvable-problems">Unsolvable problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and">Recursion principles and</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#artwork">Artwork</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
