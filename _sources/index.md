@@ -79,7 +79,7 @@ Overall, there will eventually be enough material for a one-semester course.  At
 The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.)   There are a few things in the ```1#``` section that ought to change: 
 [the tool called "sanity" that turns flowcharts into programs](content:firstSanity) should be improved so as to have a more forgiving syntax. There needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
 
-Some of the sections of the book here are placeholders.
+Some of the sections of the book here (c.e. sets) are placeholders.  Others are not even that (Church-Turing Thesis, and also models of computation beyond register machines).
 
 I would like to explore animation as a tool for presenting aspects of this subject.
 
