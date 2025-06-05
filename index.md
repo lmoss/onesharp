@@ -72,13 +72,13 @@ Overall, there will eventually be enough material for a one-semester course.  At
 
 # Status report: Summer 2025
 
-The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have lecture slides that eventually will go into the book.)   There are a few things in the ```1#``` section that ought to change: the tool called "sanity" that turns flowcharts into programs should be re-designed, and there needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
+The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.)   There are a few things in the ```1#``` section that ought to change: the tool called "sanity" that turns flowcharts into programs should be re-designed, and there needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
 
 Some of the sections of the book here are placeholders.
 
 I would like to explore animation as a tool for presenting aspects of this subject.
 
-The section(s) on the Godel Incompleteness Theorem is yet to come.
+The section on the Godel Incompleteness Theorem is yet to come.  This might expand to a chapter on its own.
 
 I mentioned above material on recursion principles and on the categorical treament of recursion.  All of this material exists in the form of notes or lecture slides.  So it needs to be set in a proper form and added to the book.
 
