@@ -8,6 +8,8 @@ computability theory, mathematics, and logic.  Of course we are living decades p
 these results, and so the presentation here will differ, and this book will try to make pointers to many of the 
 developments in computability theory and computer science that have come from the clasical material.
 
+## Why a Jupyter book?
+
 We are also living in the wake of several revolutions in society coming from the advent of computers and the 
 worldwide web.  This is on my mind front and center as I prepare this book.  It should not be strange that a 
 book about computation theory should use up-to-date computational tools. This book uses Python and various 
@@ -47,11 +49,15 @@ The concrete part in the beginning develops a model of computation which is a va
 The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as Church's Theorem that satisfiability in first-order logic is undecidable.   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with ```1#``` earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church's Theorem.   
 
 
-## Recursion principles and 
+## Recursion principles and the categorical treament of recursion
 
-As we mentioned, the book is at the same time more abstract than others on this topic.  The ways in which the text are more abstract include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, term rewriting, and category theory.  This all comes in the second part of the book.   That part demands more mathematical maturity than the concrete work.  But the book is also designed so that the first part provides some help to students at beginning levels.
+Another way to make the point about the book being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail -- much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.
 
-Another way to make the point about being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail -- much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.  
+We include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, and term rewriting.  This all comes in the second part of the book.   That part demands more mathematical maturity than the concrete work.  But the book is also designed so that the first part provides some help to students at beginning levels.
+
+The final distinctive feature of the book is a "gentle introduction" to areas of theoretical computer science related to *algebra* and *coalgebra*.   The goal here is to understand Lawvere's point that ordinary recursion on the natural numbers is equivalent to the initiality of the the natural numbers in a certain category.  Doing this leads to a deeper understanding of the relation of recursion and induction.  So all of this is presented from scratch.  The payoff comes when we "turn the arrows around" to see corecursion and bisimulation, matching recursion and induction.  These are not traditional topics for an introductory course on this subject, but I no reason why they would not be.   And for my intended audicence, they make more sense than the traditional topics which I have chosen to omit, such as oracle computation, c.e. sets and priority arguments, and complexity theory.  These all are the main focus topics of other textbooks and do not fit with what I am trying to do here.
+
+  
 
 
 
