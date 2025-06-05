@@ -6,7 +6,7 @@ not. It treats the basic topics of the subject: the concept of computability, pr
 mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in 
 computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of 
 these results, and so the presentation here will differ, and this book will try to make pointers to many of the 
-developments in computability theory and computer science that have come from the clasical material.
+developments in computability theory and computer science that have come from the clasical material.  
 
 ## Why a Jupyter book?
 
@@ -17,12 +17,11 @@ packages, Jupyter notebooks and everything needed to work with them, $\LaTeX$, g
 course of working on the book I became interested in using all of these computational artifacts, mainly as a 
 way of seeing what would work in a textbook, and what would not. Since working in this medium is new to me 
 (and pretty much everyone), I became as interested in those aspects of the project as in the content.  Some of the featues of  this presentation which are not present in a traditional book are: many more pictures than
-a traditional printed book contains, especially ones in color;  executable Python code, especially in the beginning chapters; and clickable references to discussions and papers both inside and outside of the book 
+a traditional printed book contains;  executable Python code, especially in the beginning chapters; and clickable references to discussions and papers both inside and outside of the book 
 itself. In time I hope to add animations to illustrate some of the dynamism that everyone feels with computably 
 enumerable sets which is arrested in any print presentation.
 I also would like to incorporate tools for readers annotate and discuss matters, enabling a community of 
-readers.  I am not primarily a computability theorist, and so these features of the work are just as 
-compelling to me as the content.  In short, I am aiming for something which is both a short textbook and 
+readers.  In short, I am aiming for something which is both a short textbook and 
 an intellectual version of a coffee-table book.
 
 # Intended audience
@@ -36,7 +35,8 @@ Here is another way to describe the intended audience: people in the broad area 
 
 # Distinctive features
 
-The are three distinctive features of the book.   The first that it the first half of it is mainly an online resource that is more important than the printed book.   Most of the chapters in that part of the book are Jupyter notebooks. Rather than simply read, these chapters are intended to  be *run*. One way to use them is to save them and then run them locally.  Alternatively, one could open them  on a hosting service like CoCalc, Binder, or Google Colab. At the present time, I don't have buttons to run it on CoCalc, and the best options are to run them locally or on Colab.  For Colab, one starts by clicking on the button at the top. 
+The are three distinctive features of the book.   The first half of the book is mainly an online resource.  For this part of the book, this more important than the printed book.    Most of the chapters in that part of the book are Jupyter notebooks. Rather than simply read, these chapters are intended to  be *run*. One way to use them is to save them and then run them locally.  Alternatively, one could open them on a hosting service like CoCalc, Binder, or Google Colab.  The Jupyter book format is not so important for the material that comes after the first sections, and for those a traditional print book is going to be available.
+
 
 ## Text register machines
 
@@ -71,6 +71,17 @@ For computer science students, the subjects here are often taught as one of seve
 Much of the action in this book is in the exercises.   So for a student working on their own, it would be important to do a fair number of them and also to have be able to talk to others about their solutions.  I hope that the book would be useful that way.
 
 Overall, there will eventually be enough material for a one-semester course.  At the time of this writing (June 2025), there already is close to that.   It is likely that an intstuctor would would want to choose some part of the material here based on their own interests and experience, and also on who exactly their students are.  The book is designed with this in mind.  Probably everyone should use the basic material on ```1#```, but after that there are various ways to go.   The topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
+
+# Status report: Summer 2025
+
+The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have lecture slides that eventually will go into the book.)   There are a few things in the ```1#``` section that ought to change: the tool called "sanity" that turns flowcharts into programs should be re-designed, and there needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
+
+Some of the sections of the book here are placeholders.
+
+The section(s) on the Godel Incompleteness Theorem is yet to come.
+
+I mentioned above material on recursion principles and on the categorical treament of recursion.  All of this material exists in the form of notes or lecture slides.  So it needs to be set in a proper form and added to the book.
+
 
 # Artwork
 
