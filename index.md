@@ -5,8 +5,8 @@ at Indiana University for quite a few years.  In some way, the content is standa
 not. It treats the basic topics of the subject: the concept of computability, primitive recursion, 
 mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in 
 computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of 
-these results, and so the presentation here will differ, and this book will try to make pointers to many of the 
-developments in computability theory and computer science that have come from the clasical material.  
+these results, and so the presentation here will differ.  This book will try to make pointers to many of the 
+developments in computability theory and computer science that have come from the classical material.  
 
 ## Why a Jupyter book?
 
@@ -16,21 +16,18 @@ book about computation theory should use up-to-date computational tools. This bo
 packages, Jupyter notebooks and everything needed to work with them, $\LaTeX$, github, and more.  In the 
 course of working on the book I became interested in using all of these computational artifacts, mainly as a 
 way of seeing what would work in a textbook, and what would not. Since working in this medium is new to me 
-(and pretty much everyone), I became as interested in those aspects of the project as in the content.  Some of the featues of  this presentation which are not present in a traditional book are: many more pictures than
-a traditional printed book contains;  executable Python code, especially in the beginning chapters; the ability to hide technical passages and to otherwise structure a text; and clickable references to discussions, papers,
-[and even poems](http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html) both inside and outside of the book  itself. In time I hope to add animations to illustrate some of the dynamism that everyone feels with computably enumerable sets which is arrested in any print presentation.
-I also would like to incorporate tools for readers annotate and discuss matters, enabling a community of 
-readers.  In short, I am aiming for something which is both a short textbook and 
-an intellectual version of a coffee-table book.
+(and pretty much everyone), I became as interested in those aspects of the project as in the content. Here are some of the things found here which are not in a traditional book are:  executable Python code, especially in the beginning chapters; a variety of pictures and charts; the ability to hide technical passages and to otherwise structure a text; and clickable references to discussions, papers,
+[and even poems](http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html), both inside and outside of the book  itself. In time I will consider adding animations to illustrate some of the dynamism that I sense with computably enumerable sets which is arrested in any print presentation.  I also would like to incorporate tools for readers to annotate and discuss matters, enabling a community of  readers.  In short, I am aiming for something which is both a short textbook and an intellectual version of a coffee-table book.
 
 # Intended audience
 
 The intended readers are students of certain areas of computer science, mathematics, philosophy, or other fieds.
 It it aimed at anyone who frequently encounters the topics of the book and has the needed mathematical background to
 read it.  That background is a working familiarity with mathematical notation and discourse.   One should know
-how to read mathematics.  This would be the wrong place to learn these things; the pace and level would be too much.   But if you can read mathematics, that is enough: nothing else is really assumed.  There are places where it would be good to have seen some induction on the natural numbers and even some basic topics in areas like logic, set theory, and computer programming.  But one could do without the background, I think.  And I hope to have provided enough background on those topics to make what is here accessible.
+how to read mathematics.  This would be the wrong place to learn basic abstract mathematics; the pace and level would be too much.   But if you can read mathematics, that is enough: nothing else is really assumed.  There are places where it would be good to have seen some induction on the natural numbers and even some basic topics in areas like logic, set theory, and computer programming.  But one could do without the background, I think.  And I hope to have provided enough background on those topics to make what is here accessible.
 
 Here is another way to describe the intended audience: people in the broad area of interdisciplinary logic but who are not specialists in computability theory per se.
+
 
 # Distinctive features
 
@@ -90,7 +87,7 @@ I would like to add sections on combinatory logic, partly to compare the fixed-p
 I mentioned above material on recursion principles and on the categorical treament of recursion.  All of this material exists in the form of notes or lecture slides.  So it needs to be set in a proper form and added to the book.
 
 
-# Artwork
+# Art
 
 The illustrations in the book are by  <a href="https://www.jeffreyfineart.com/">Jeffrey Fine</a>.  I was fortunate to work with him on a <a href="https://www.youtube.com/watch?v=0cH3rB8dIVo">logic-related video</a>.  It's a pleasure to do this again.
 
