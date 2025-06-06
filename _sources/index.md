@@ -69,9 +69,9 @@ For computer science students, the subjects here are often taught as one of seve
 
 Much of the action in this book is in the exercises.   So for a student working on their own, it would be important to do a fair number of them and also to have be able to talk to others about their solutions.  I hope that the book would be useful that way.
 
-Overall, there will eventually be enough material for a one-semester course.  At the time of this writing (June 2025), there already is close to that.   It is likely that an intstuctor would would want to choose some part of the material here based on their own interests and experience, and also on who exactly their students are.  The book is designed with this in mind.  Probably everyone should use the basic material on ```1#```, but after that there are various ways to go.   The topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
+There will eventually be enough material for a one-semester course.  At the time of this writing (June 2025), there already is close to that.   It is likely that an intstuctor would would want to choose some part of the material here based on their own interests and experience, and also on who exactly their students are.  The book is designed with this in mind.  Probably everyone should use the basic material on ```1#```, but after that there are various ways to go.   The topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
 
-# Status report: Summer 2025
+# Summer 2025 Status report
 
 The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.)   There are a few things in the ```1#``` section that ought to change: 
 [the tool called "sanity" that turns flowcharts into programs](content:firstSanity) should be improved so as to have a more forgiving syntax. There needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
