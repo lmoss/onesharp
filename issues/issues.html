@@ -481,8 +481,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
@@ -561,14 +561,17 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <p>For computability, we naturally want to do the same thing, and generally we will.   But there are situations where it would be more naturally to be intensional, and we want to flag those.</p>
 <p>does the question of whether a function is computable or not depend on how the function is presented, or is it a property of the</p>
 </section>
+<section id="total-vs-partial-functions">
+<h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be sets.  A <em>function</em> from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is a way to take each element of <span class="math notranslate nohighlight">\(A\)</span> to some element of <span class="math notranslate nohighlight">\(B\)</span>.   It must be defined for all <span class="math notranslate nohighlight">\(a\in A\)</span>, and we emphasize this point by saying that it is <em>total</em>.   A <em>partial function</em> from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is a total function from a subset of <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>.  Another way to say this: <span class="math notranslate nohighlight">\(f\)</span> is a partial function if some (but perhaps not all) of the elements of <span class="math notranslate nohighlight">\(A\)</span> are taken to elements of <span class="math notranslate nohighlight">\(B\)</span>.  We say that <span class="math notranslate nohighlight">\(f(a)\)</span> is <em>defined</em> in this case, and we write <span class="math notranslate nohighlight">\(f(a)\!\!\downarrow\)</span>.  Finally, the <em>domain</em> of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\{ a\in A \colon f(a)\!\!\downarrow\}\)</span>.</p>
+<p>Please note that every total <span class="math notranslate nohighlight">\(f\colonA\to B\)</span> is automatically partial.</p>
+<p>Another choice point is whether to stick to total functions or to allow partial functions in our study.   We opt to include partial functions in a big way.  That is, we are foregrounding the partial functions.   When a function is total, we make a special mention of this.   (To contrast, with <span class="math notranslate nohighlight">\(A = B = \)</span> the real numbers, the function
+<span class="math notranslate nohighlight">\(f(x)= \frac{1}{x}\)</span> is not defined at <span class="math notranslate nohighlight">\(x = 0\)</span>.  But usually one pretends that it is total and then makes a special note afterwards about <span class="math notranslate nohighlight">\(0\)</span>.  Here, every function is presumed to be merely partial, and the total functions are the ones that get a special notice.)</p>
+</section>
 <section id="finite-vs-infinite">
 <h2>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Link to this heading">#</a></h2>
 <p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
-</section>
-<section id="total-vs-partial-functions">
-<h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Link to this heading">#</a></h2>
-<p>Another choice point is whether to stick to total functions or to allow partial functions in our study.   We opt to include partial functions.</p>
 <p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
@@ -612,7 +615,7 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <div class="danger admonition">
 <p class="admonition-title">Going forward</p>
-<p>We will propose and study a precise definition of computability, starting <a class="reference internal" href="#content:content:onesharpinstructions"><span class="xref myst">here</span></a>.</p>
+<p>We will propose and study a precise definition of computability, starting <a class="reference internal" href="../introOneSharp/instructions.html#content-onesharpinstructions"><span class="std std-ref">here</span></a>.</p>
 <p>Nevertheless, there are still interesting things that one can do in computability theory with purely intuitive notions.</p>
 <p>We will allow partial functions.</p>
 <p>We will concentrate on <em>in principle</em> computability, and we will be thinking of equality extensionally.</p>
@@ -687,8 +690,8 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-vs-partial-functions">Total vs. partial functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-vs-infinite">Finite vs. infinite</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
