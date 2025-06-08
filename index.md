@@ -1,12 +1,9 @@
 # Invitation to Computability 
 
 This is a textbook on the basics of computability theory, originating in classes given by the author 
-at Indiana University for quite a few years.  In some way, the content is standard, and in some ways it is 
-not. It treats the basic topics of the subject: the concept of computability, primitive recursion, 
-mu-recursion, universal functions, the Enumeration Theorem, the Recursion Theorem, and undecidability in 
-computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of 
-these results, and so the presentation here will differ.  This book will try to make pointers to many of the 
-developments in computability theory and computer science that have come from the classical material.  
+at Indiana University for quite a few years.  My students are mainly graduate students in either mathematics or computer science, always with a few undergraduates and a few grad students from philosophy and other disciplines.
+
+In some way, the content is standard, and in some ways it is not. It treats the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Recursion Theorem, and undecidability in computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of these results, and so the presentation here will differ.  This book will try to make pointers to many of the developments in computability theory and computer science that have come from the classical material.  
 
 ## Why a Jupyter book?
 
@@ -21,12 +18,9 @@ way of seeing what would work in a textbook, and what would not. Since working i
 
 # Intended audience
 
-The intended readers are students of certain areas of computer science, mathematics, philosophy, or other fieds.
-It is aimed at anyone who frequently encounters the topics of the book and has the needed mathematical background to
-read it.  That background is a working familiarity with mathematical notation and discourse.   One should know
-how to read mathematics.  This would be the wrong place to learn basic abstract mathematics; the pace and level would be too much.   But if you can read mathematics, that is enough: nothing else is really assumed.  There are places where it would be good to have seen some induction on the natural numbers and even some basic topics in areas like logic, set theory, and computer programming.  But one could do without the background, I think.  And I hope to have provided enough background on those topics to make what is here accessible.
+This book is aimed at anyone who frequently encounters the topics of the book and has the needed mathematical background to read it.  That background is a working familiarity with mathematical notation and discourse.   One should know how to read mathematics.  This would be the wrong place to learn basic abstract mathematics; the pace and level would be too much.   But if you can read mathematics, that is enough: nothing else is really assumed.  There are places where it would be good to have seen some induction on the natural numbers and even some basic topics in areas like logic, set theory, and computer programming.  But one could do without the background, I think.  And I hope to have provided enough background on those topics to make what is here accessible.
 
-Here is another way to describe the intended audience: people in the broad area of interdisciplinary logic but who are not specialists in computability theory per se.
+Some of the people who will benefit from the book: those in the broad area of interdisciplinary logic but who are not specialists in computability theory per se; omputer scientists in areas like programming languages and theory of computation; philosophers interested in areas like the philosophy of logic or philosophy of mathematics.  For others, such as those pursuing any area of mathematics, the subject will probably be an "extra".  But this is important.  I really have in mind a broad audience of people who might find the topics here intersting.
 
 
 # Distinctive features
