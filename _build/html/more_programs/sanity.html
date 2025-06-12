@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -233,8 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -265,6 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
@@ -486,7 +490,7 @@ document.write(`
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/more_programs/sanity.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="a-tool-to-help-write-programs">
-<h1>A tool to help write programs<a class="headerlink" href="#a-tool-to-help-write-programs" title="Permalink to this heading">#</a></h1>
+<span id="content-firstsanity"></span><h1>A tool to help write programs<a class="headerlink" href="#a-tool-to-help-write-programs" title="Permalink to this heading">#</a></h1>
 <p>The language <code class="docutils literal notranslate"><span class="pre">1#</span></code> is intended to be the simplest possible language in which one can discuss the main results of computability theory.  One way to make this case is to discuss</p>
 <ol class="arabic simple">
 <li><p>Write a program to say “hello world”.  That is, write a program that outputs some simple string.</p></li>
@@ -894,14 +898,14 @@ The register contents at the end are shown below.
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <div class="exercise admonition" id="more_programs/sanity-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which takes a program <span class="math notranslate nohighlight">\(p\)</span> as input and gives the first instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 </div>
 <div class="exercise admonition" id="more_programs/sanity-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <div class="section" id="exercise-content">
 <p>For any program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(|p|\)</span> denotes the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>Write a program to compute the function <span class="math notranslate nohighlight">\(p\mapsto |p|\)</span>, using unary representation of numbers.</p>

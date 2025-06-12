@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="current nav bd-sidenav">
@@ -233,8 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -265,6 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
@@ -645,28 +649,28 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 <p>We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program which takes the contents of R1 and adds them to the ends of <em>both</em> R2 and R3.</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program that clears out R1, leaving it empty.</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).</p>
 </div>
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
 <div class="section" id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\one\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\one\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.) Of course, your program may use R2!</p>
 </div>
@@ -776,7 +780,7 @@ and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
 <div class="section" id="exercise-content">
 <p>Why is the result of running <span class="math notranslate nohighlight">\(\writeprog\)</span> on a word <span class="math notranslate nohighlight">\(x\)</span>  always a program,
 even if  <span class="math notranslate nohighlight">\(x\)</span> is a word which is not a program?</p>
@@ -784,7 +788,7 @@ even if  <span class="math notranslate nohighlight">\(x\)</span> is a word which
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
 <div class="section" id="exercise-content">
 <p>Modify <span class="math notranslate nohighlight">\(\writeprog\)</span>
 to get a program <span class="math notranslate nohighlight">\(\writetotwo\)</span>
@@ -827,7 +831,7 @@ q =\mbox{copy}_{1,2,3} + \mbox{move}_{2,1}
 <p>This program <span class="math notranslate nohighlight">\(q\)</span> would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that registers 2 and 3 were empty to begin with, running <span class="math notranslate nohighlight">\(q\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in register <span class="math notranslate nohighlight">\(1\)</span> would give us <span class="math notranslate nohighlight">\(x + x\)</span> in register 1 at the end.</p>
 <div class="exercise admonition" id="pre-diag">
 
-<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
 <div class="section" id="exercise-content">
 <ol class="arabic simple">
 <li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(q\)</span>. Suppose that we run <span class="math notranslate nohighlight">\(q\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>.  Which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>

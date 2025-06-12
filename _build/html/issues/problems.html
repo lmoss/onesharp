@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -233,8 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -265,6 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
@@ -485,12 +489,16 @@ document.write(`
 <div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems">
 <h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this heading">#</a></h1>
 <p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"></div>
+</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="does-a-graph-have-a-cycle">
 <h1>Does a graph have a cycle?<a class="headerlink" href="#does-a-graph-have-a-cycle" title="Permalink to this heading">#</a></h1>
 <p>A <em>graph</em> is a set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
 <p>Given a graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
+<p>We are not going to be very interested in specific solvable problems in this book.  So the main point of this example here is that it contrasts with all of the examples which follow it.</p>
+<hr class="docutils" />
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
+<hr class="docutils" />
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="tiling-problems">
 <span id="content-firsttiles"></span><h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this heading">#</a></h1>
@@ -499,8 +507,9 @@ document.write(`
 The colors involved are red, black, grey, green, yellow,
 cyan (light blue) and dark blue.</p>
 <p>A <em>tile set</em> is a finite set of tiles.  A <em>pointed</em> tile set is a tile set that comes with a special tile <span class="math notranslate nohighlight">\(t_0\)</span> called the <em>start tile</em>.</p>
-<p>The <em>first quadrant</em> is the set of squares shown below
-<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-02.png?raw=1" width="100%" height="100%"></p>
+<p>The <em>first quadrant</em> is the set of squares shown below</p>
+<hr class="docutils" />
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-02.png?raw=1" width="100%" height="100%">
 <div class="danger admonition">
 <p class="admonition-title">Problems</p>
 <p>Given a tile set, is it possible to tile all of the squares in the first quadrant in such a way that tiles which share an edge must have the same color on that edge?</p>
@@ -594,8 +603,23 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 <p class="admonition-title">Problem</p>
 <p>Given a polynomial <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> in many variables, does it have an integer root?   That is, are there integers <span class="math notranslate nohighlight">\(i_1, \ldots, i_n\)</span> such that <span class="math notranslate nohighlight">\(p(i_1, \ldots, i_n) = 0\)</span>?</p>
 </div>
-<p>This problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  It raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
-<p>It turns out that there is <em>no</em> algorithm to do this.  This is the only question which we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are mainly from number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>For example here is a polynomial in three variables: <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - 33\)</span>.  What we are asking is whether there are integers comprising a root.   This was open for quite some time.  It turns out that the answer is Yes:</p>
+<div class="math notranslate nohighlight">
+\[
+x = 8, 866, 128, 975, 287, 5283 
+\quad
+y =  −8, 778, 405, 442, 862, 239 
+\quad 
+z =  −2, 736, 111, 468, 807, 040.
+\]</div>
+<p>But this is an <em>instance</em> of the general problem.   That general problem would ask us to find a program or algorithm which, when given the polynomial as an input, outpus an answer – Yes or No correctly and in finite time  – to the question of whether the given polynomial has an integer root.  For example, it just so happens that for a number of the form <span class="math notranslate nohighlight">\(n = 9k + 4\)</span> or <span class="math notranslate nohighlight">\(n = 9k + 5\)</span>, there are no roots of  <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - n\)</span>.  So for polynomials of those forms, the answer would be No.   And for  <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - 33\)</span>, it would be Yes.</p>
+</div>
+<p>The general problem is called <em>Hilbert’s 10th problem</em>.  In view of how hard it is to actually solve instances (despite having a lot of number theory to use), it is perhaps not surprising that Hilbert’s 10th problem is undecidable.  This is called the Maitiasevich-Robinson-Davis-Putnam (MRLP) Theorem.</p>
+<p>Hilbert’s 10th problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
+<p>As we said, it turns out that there is <em>no</em> algorithm to do solve Hilbert’s 10th problem in general.  This is the only question whichv we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are involve so much number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
+<p>Of course, the fact that the general problem is undecidable does not deter people from solving special cases, as they did above.</p>
 <div class="exercise admonition" id="issues/problems-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
@@ -606,7 +630,7 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="matrix-mortality">
-<h1>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h1>
+<span id="content-firstmatrixmortality"></span><h1>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h1>
 <p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
 matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> of integers.   It is called the <em>matrix mortality</em> problem.</p>
 <div class="danger admonition">
@@ -692,7 +716,7 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-halting-set-k-and-related-sets">
 <h1>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Permalink to this heading">#</a></h1>
-<p>We also want to study a few problems related to <code class="docutils literal notranslate"><span class="pre">1#</span></code> words.   These include</p>
+<p>We also want to study a few problems related to computer prorgrams.   These include</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -706,8 +730,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
-<p>Of course, there are many other sets that we could define.   We want to know whether they are computable or not.</p>
-<p>We also could ask whether they are computably enumerable or not.</p>
+<p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="truth-and-proof">
 <h1>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Permalink to this heading">#</a></h1>
@@ -731,6 +754,10 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 This, too, is an interesting thing to do.</p></li>
 </ol>
 <p>We are going to investigate both of these <em>back off</em> questions in some detail.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"><div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://youtu.be/wymmCdLdPvM">here</a>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

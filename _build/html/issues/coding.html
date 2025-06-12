@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -233,8 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -265,6 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
@@ -626,26 +630,11 @@ Consider</p>
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> be the set of finite graphs whose set of vertices is of the form <span class="math notranslate nohighlight">\(\{1,2, \ldots, n\}\)</span> for some <span class="math notranslate nohighlight">\(n\)</span>.  We make this into a structure.  There are no relations or functions, just the set by itself.  What is an encoding of this structure?   What does it mean to say that the subset <span class="math notranslate nohighlight">\(C\)</span> of graphs which contain a cycle is a decidable set relative to an encoding?</p>
 </div>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Click for the refenence to the source paper on some of this material.<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">&#64;incollection {MR835461,
-AUTHOR = {Meseguer, Jos’e{} and Goguen, Joseph A.},
-TITLE = {Initiality, induction, and computability},
-BOOKTITLE = {Algebraic methods in semantics ({F}ontainebleau, 1982)},
-PAGES = {459–541},
-PUBLISHER = {Cambridge Univ. Press, Cambridge},
-YEAR = {1985},
-ISBN = {0-521-26793-5},
-MRCLASS = {68Q55 (03B70 03D45 03D80 08A99)},
-MRNUMBER = {835461}
-}</p>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>Jose Meseguer and Joseph A. Goguen, “Initiality, induction, and computability”, in <em>Algebraic methods in semantics</em>, Cambridge University Press, 1985, 459-541.</p>
 </div>
-</details></div>
+</div>
 
     <script type="text/x-thebe-config">
     {

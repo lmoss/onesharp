@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -233,8 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -265,6 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
 </ul>
 
@@ -438,7 +442,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -454,6 +460,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-correspondence-problem">Post correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -467,47 +489,145 @@ document.write(`
 <div class="tex2jax_ignore mathjax_ignore section" id="reduction-of-one-problem-to-another">
 <h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Permalink to this heading">#</a></h1>
 <p><strong>definitions and interesting examples are yet to come</strong></p>
-<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="issues/reduction-exercise-0">
+<div class="proof proposition admonition" id="proposition-0">
+<p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
+<div class="proposition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(A\leq B\)</span>.</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(B\)</span> is decidable, then so is <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(A\)</span> is undecidable, then so is <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ol>
+</div>
+</div></div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<div class="section" id="tiling">
+<h2>Tiling<a class="headerlink" href="#tiling" title="Permalink to this heading">#</a></h2>
+<p>In the problems below on tiling, you should use the notion of reduction that we are currently studying.</p>
+<div class="exercise admonition" id="issues/reduction-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <div class="section" id="exercise-content">
-<p>The <em>Pointed PCP Problem</em> (PPCP) is like Post’s Correspondence Problem (PCP) except we have a designated domino <span class="math notranslate nohighlight">\(d_0\)</span> which must be used as the first domino in a match.</p>
-<p>Let <span class="math notranslate nohighlight">\(PCP\)</span> be the set of PCP instances for which there exists a match, and let <span class="math notranslate nohighlight">\(PPCP\)</span> be the set of PPCP instances for which there is a match.</p>
-<p>(a) Prove that <span class="math notranslate nohighlight">\(PPCP \leq_m PCP\)</span>.</p>
-<p>(b) Prove that <span class="math notranslate nohighlight">\(PCP \leq_m PPCP\)</span>.</p>
-</div>
-</div>
-<div class="exercise admonition" id="issues/reduction-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
-<div class="section" id="exercise-content">
-<p>Suppose we consider a version of the tiling problem.
-We are again given a pointed tile set.  But instead of tiling the first quadrant we only need to tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis”.  Let’s call this problem <span class="math notranslate nohighlight">\(Tile_1\)</span>.
-Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decidable.</p>
+<p>The <em>one dimensional tiling problem</em> is the problem of deciding whether a tile set can tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis” part of the quadrant (the bottom infinite row).  Show that this problem is decidable by reducing to the problem of whether a finite graph has a cycle.</p>
 </div>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
-<p>Another version of tiling.  Given a pointed tile set, can we tile <em>the bottom two rows</em> of the quadrant?   Let’s call this problem <span class="math notranslate nohighlight">\(Tile_2\)</span>.   Show that <span class="math notranslate nohighlight">\(Tile_1 \leq_m Tile_2\)</span>, and also that
-<span class="math notranslate nohighlight">\(Tile_2 \leq_m Tile_1\)</span>.</p>
+<p>The <em>two-row tiling problem</em> is the same problem, but we want to tile the bottom-most two infinite rows.  Is this problem decidable or undecidable?</p>
 </div>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-3">
 
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<div class="section" id="exercise-content">
+<p>What about the two-column tiling problem?</p>
+</div>
+</div>
+</div>
+<div class="section" id="roots-of-polynomials">
+<h2>Roots of polynomials<a class="headerlink" href="#roots-of-polynomials" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="issues/reduction-exercise-4">
+
 <p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
 <div class="section" id="exercise-content">
-<p>Our tiling problem asks whether, given a finite set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of tiles and a distinguished <span class="math notranslate nohighlight">\(t^*\in \mathcal{T}\)</span>, we can tile the first quadrant with <span class="math notranslate nohighlight">\((\mathcal{T},t^*)\)</span>.    Let us call the collection of pointed tile sets where this is possible <span class="math notranslate nohighlight">\(Y\)</span>.  Let <span class="math notranslate nohighlight">\(Z\)</span> be the collection of pointed tile sets which can tile the entire plane, subject to the requirement that <span class="math notranslate nohighlight">\(t^*\)</span> is used, and also that shared edges have the same color.</p>
-<p>Show that <span class="math notranslate nohighlight">\(Y \leq_m Z\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be the set of multi-variable polynomials <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> with integer coefficients which have a root consisting of positive integers, and let <span class="math notranslate nohighlight">\(Y\)</span> be the polynomials with integer coefficients which have a root consisting of negative integers.  Show that <span class="math notranslate nohighlight">\(X \leq Y\)</span> and <span class="math notranslate nohighlight">\(Y\leq X\)</span>.</p>
 </div>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-4">
+</div>
+<div class="section" id="post-correspondence-problem">
+<h2>Post correspondence problem<a class="headerlink" href="#post-correspondence-problem" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="issues/reduction-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
 <div class="section" id="exercise-content">
+<p>Assuming that <span class="math notranslate nohighlight">\(PCP\)</span> is undecidable, show that it is undecidable even if the alphabet has only two letters.</p>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-mortality">
+<h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="issues/reduction-exercise-6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
-<p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as straightforward.</p>
+<p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as easy.</p>
+</div>
+</div>
+<p>Here is an exercise pertaining to the matrix mortality problem.   Athough it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="../undecidability/matrixMortality.html#content-matrixmortalityundecidable"><span class="std std-ref">our later work on the undecidability of matrix mortality</span></a>.</p>
+<div class="exercise admonition" id="matrix-mortality-exercise">
+
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[ 
+\begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}
+\right]
+\end{split}\]</div>
+<p>The key features of <span class="math notranslate nohighlight">\(A\)</span> are shown below:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \\ d &amp;  e &amp; f \\ g &amp;  h &amp; i  \end{array}\right]
+%\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+= 
+\left[\begin{array}{lll} a &amp; b &amp; c \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\end{split}\]</div>
+<p>We also have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+\left[ \begin{array}{lll} a &amp; b &amp; c \\ d &amp;  e &amp; f \\ g &amp;  h &amp; i  \end{array}\right]
+\left[ \begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array} \right]
+= 
+\left[\begin{array}{lll} a &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(Q\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices.</p>
+<p>Here is a computable function <span class="math notranslate nohighlight">\(f: Q \to Q\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(S) = S\cup \{A\}
+\]</div>
+<p>Our goal is to prove the following fact:</p>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies.</p>
+<ol class="arabic simple">
+<li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
+<li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(f(S)\)</span> whose product has a zero in the upper-left corner.  Write the product as</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B^k_2 \cdots B^k_{n_k} A
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(B^i_j\)</span> matrices belong to <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Divide the product above into <span class="math notranslate nohighlight">\(k+1\)</span> groups:</p>
+<div class="math notranslate nohighlight">
+\[
+(A B^1_1 B^1_2 \cdots B^1_{n_1}) \quad (A B^2_1 B^2_2 \cdots B^2_{n_1}) \quad\cdots\quad
+ (A B^k_1 B^k_2 \cdots B^k_{n_k}) 
+\quad  A
+\]</div>
+<p>And then multiply it group-by-group:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{lll} a^1 &amp; b^1 &amp; c^1 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\left[\begin{array}{lll} a^2 &amp; b^2 &amp; c^2 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\cdots
+\left[\begin{array}{lll} a^k &amp; b^k &amp; c^k \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\left[\begin{array}{lll} 1 &amp; 0 &amp; 0 \\ 0 &amp;  0 &amp; 0 \\ 0 &amp;  0 &amp; 0  \end{array}\right]
+\end{split}\]</div>
+<p>Here each <span class="math notranslate nohighlight">\(a^i\)</span> is the product of the <span class="math notranslate nohighlight">\(i\)</span>th group.</p>
+<p>Evaluate the upper-left corner of the product, and check that one of the groups <span class="math notranslate nohighlight">\( B^i_1 B^i_2 \cdots B^i_{n_i}\)</span> must multiply to give a matrix with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.</p>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>The source for the reduction involving <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices is</p>
+<p>Vesa Halava and Tero Harju, (2001). Mortality in Matrix Semigroups. The American Mathematical Monthly, 108(7), 649–653.</p>
 </div>
 </div>
 </div>
@@ -566,6 +686,28 @@ Show that <span class="math notranslate nohighlight">\(Tile_1\)</span> is decida
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-correspondence-problem">Post correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
