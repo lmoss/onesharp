@@ -207,6 +207,7 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Halting</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions defined by programs</a></li>
 
 
@@ -482,11 +483,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-informally">Halting: informally</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definitions">Halting: the formal definitions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definition">Halting: the formal definition</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#up-arrow-and-down-arrow-notation">Up-arrow and down-arrow notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-problem">The halting problem</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-problem">The halting problem</a></li>
 </ul>
 
             </nav>
@@ -543,8 +544,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="halting-the-formal-definitions">
-<h1>Halting: the formal definitions<a class="headerlink" href="#halting-the-formal-definitions" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="halting-the-formal-definition">
+<h1>Halting: the formal definition<a class="headerlink" href="#halting-the-formal-definition" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
 <p>There are five ways that the run of a program <span class="math notranslate nohighlight">\(p\)</span> on some register contents could halt.</p>
@@ -571,8 +572,9 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 <p>The definitions of <span class="math notranslate nohighlight">\([\![p]\!](x_1, \ldots, x_n)\!\!\downarrow\)</span>  and  <span class="math notranslate nohighlight">\([\![p]\!](x_1, \ldots, x_n)\!\!\uparrow\)</span> are similar.</p>
 </div>
 </section>
-<section id="the-halting-problem">
-<h2>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-halting-problem">
+<h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h1>
 <p>We now can state one of the key foundational points in computability theory.  This is that the <em>halting problem</em> is unsolvable.  It is a result due to Alan Turing in his seminal paper of 1936.  Although his original paper dealt with what we now call <em>Turing machines</em> (indeed, they were originated in this same paper), the discussion carries over to register machines.</p>
 <p>We begin by thinking about <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs <span class="math notranslate nohighlight">\(x\)</span> and asking whether they halt or not.  As we know, it makes a difference whether we run <span class="math notranslate nohighlight">\(x\)</span> on all empty registers or with some non-empty words in the registers.  Let us for a moment just consider <span class="math notranslate nohighlight">\(x\)</span> on all empty registers.  It might be nice to know if <span class="math notranslate nohighlight">\(x\)</span> halts or not.   Of course we mean “halting” according to our formal definition.    In computability theory, we always ask if</p>
 <div class="danger admonition">
@@ -600,7 +602,6 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 \end{array}
 \end{split}\]</div>
 <p>Although it appears much later in this book, you could read <a class="reference internal" href="../undecidability/haltingProblem.html#Turings-theorem">Theorem 11</a> right now.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -671,11 +672,11 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-informally">Halting: informally</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definitions">Halting: the formal definitions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definition">Halting: the formal definition</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#up-arrow-and-down-arrow-notation">Up-arrow and down-arrow notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-problem">The halting problem</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-problem">The halting problem</a></li>
 </ul>
 
   </nav></div>
