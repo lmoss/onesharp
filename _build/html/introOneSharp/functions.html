@@ -195,6 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions defined by programs</a></li>
 
 
@@ -238,6 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/turing.html">Turing computability</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -740,7 +742,7 @@ empty.</p>
 <p>For any set <span class="math notranslate nohighlight">\(A\)</span>, the <em>characteristic function of <span class="math notranslate nohighlight">\(A\)</span></em> is the function <span class="math notranslate nohighlight">\(\chi_A\)</span> given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\chi_A(x) = \left\{ \begin{array}{ll} 1 &amp;\mbox{if $x\in A$} \\  0 &amp;\mbox{if $x\notin A$} \end{array}\right.
+\chi_A(x) = \left\{ \begin{array}{ll} \one &amp;\mbox{if $x\in A$} \\  \hash &amp;\mbox{if $x\notin A$} \end{array}\right.
 \end{split}\]</div>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq \words\)</span> is <em><code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable</em> if <span class="math notranslate nohighlight">\(\chi_A\)</span> is a computable function.  Other names for “computable” include “decidable” and “recursive”.</p>
 </div>
