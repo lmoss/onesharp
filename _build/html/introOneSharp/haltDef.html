@@ -570,17 +570,19 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 <p>Is there a program <span class="math notranslate nohighlight">\(p\)</span> such that for all programs <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-[\![h]\!](p) = \left{
+[\![p]\!](x) = \left\{
 \begin{array}{ll}
-\one &amp; \mbox{if $[\!x]\!](\ )\!\!downarrow$} \\
-\hash &amp; \mbox{if $[\!x]\!](\ )\!\!uparrow$} \\
+\one &amp; \mbox{if $[\![x]\!](\ )\!\!\downarrow$} \\
+\hash &amp; \mbox{if $[\![x]\!](\ )\!\!\uparrow$} \\
+\end{array}
 \right.   
 \end{split}\]</div>
 </div>
 <p>So the problem here is the set of programs which halt on empty registers.   Turing showed that this problem is unsolvable.  That is, there is no program <span class="math notranslate nohighlight">\(p\)</span> as described.</p>
 <p>For programs with an input, the statement of the problem is similar.  We need to fix a number of arguments.   Let’s fix this to be <span class="math notranslate nohighlight">\(1\)</span>.   We are considering programs <span class="math notranslate nohighlight">\(x\)</span> and their run on one word.    Then we would be asking if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{lcl}
+\[\begin{split}
+\begin{array}{lcl}
 [\![p]\!](x,y) &amp; = &amp; \left\{
 \begin{array}{ll}
 \one &amp; \mbox{if $[\![x]\!](y)\dar$}\\
