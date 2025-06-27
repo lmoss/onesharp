@@ -60,9 +60,10 @@ parts:
   - file: undecidability/haltingProblem
   - file: undecidability/busyBeaver
   - file: undecidability/tiling
+  - file: undecidability/church
   - file: undecidability/post
   - file: undecidability/matrixMortality
-  - file: undecidability/church
+
 
 
 
