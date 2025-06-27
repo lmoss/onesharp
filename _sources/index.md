@@ -1,6 +1,6 @@
 # Invitation to Computability 
 
-### Lawrence S. Moss
+Lawrence S. Moss
 
 This is a textbook on the basics of computability theory, originating in classes given by the author 
 at Indiana University for quite a few years.  My students are mainly graduate students in either mathematics or computer science, always with a few undergraduates and a few grad students from philosophy and other disciplines.
