@@ -480,7 +480,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
@@ -504,11 +504,11 @@ document.write(`
 <h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Link to this heading">#</a></h1>
 <p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="does-a-graph-have-a-cycle">
-<h1>Does a graph have a cycle?<a class="headerlink" href="#does-a-graph-have-a-cycle" title="Link to this heading">#</a></h1>
-<p>A <em>graph</em> is a set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="does-a-finite-graph-have-a-cycle">
+<h1>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Link to this heading">#</a></h1>
+<p>A <em>finite graph</em> is a finite set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
-<p>Given a graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
+<p>Given a finite graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
 <p>We are not going to be very interested in specific solvable problems in this book.  So the main point of this example here is that it contrasts with all of the examples which follow it.</p>
 <hr class="docutils" />
 <img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
@@ -839,7 +839,7 @@ This, too, is an interesting thing to do.</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
