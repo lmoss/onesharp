@@ -501,6 +501,11 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/recThm/self_writing.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="self-writing-programs">
 <h1>Self-writing programs<a class="headerlink" href="#self-writing-programs" title="Link to this heading">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Note for instructors</p>
+<p>Technically, this section is not necessary in order to prove the Recursion Theorem in the next section.   One could immediately go there.  But I feel that most people would find this section more approachable, and so I recommend using it.  If one does omit this section, the exercises here still could be worked based on the Recursion Theorem.</p>
+</div>
 <p>A self-writing replicating program is one which outputs itself, starting with all registers empty.
 At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter to spit out the program that is inside it. And anyways, it would seem that typically, a program is usually longer than its output. So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
 <p>In order to get a program which writes itself, one must use some sort of trick or clever idea. Our goal is to explain one such clever idea, and then to see other applications of it as we go. Before you understand it, the idea will seem to be a trick, or even a fluke: we have a program, and it just so happens to output itself. But as we come to understand it better, the trick becomes tamed into a general method.</p>

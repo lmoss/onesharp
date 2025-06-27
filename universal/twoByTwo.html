@@ -496,6 +496,11 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/universal/twoByTwo.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="two-by-two-encoding">
 <h1>Two-by-Two encoding<a class="headerlink" href="#two-by-two-encoding" title="Link to this heading">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Note for instructors</p>
+<p>This section is not yet complete.   Here is the idea.  To build a universal register machine, one of the main issues is that a universal program must work with a fixed finite set of registers and yet simulate work with an arbitrary number of registers.   One needs some trick for this.  There are several possibilities, and in this section we outline one of them.  For teaching purposes, one has a few options.  They could give a complete exposition of some trick (as is done in this section); alternatively, they could do nothing, and expect students to come up with their own tricks; or they could do something in between.</p>
+</div>
 <p>This section shows that every <code class="docutils literal notranslate"><span class="pre">1#</span></code> program may be modified to get a program with the special feature that when it runs, the case statement <code class="docutils literal notranslate"><span class="pre">1#####</span></code> is never called on an empty R1.  (This technical feature will be put to use later, when we prove the undecidability of Post’s Correspondence Problem).</p>
 <p>The work here also is a good illustration of the use of the Sanity tool.</p>
 <div class="cell docutils container">
