@@ -479,10 +479,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-quadrant">Axioms for the quadrant</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
@@ -522,16 +519,6 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 \end{array}
 \end{split}\]</div>
 <p>This is our intended model.</p>
-<section id="axioms-for-the-quadrant">
-<h3>Axioms for the quadrant<a class="headerlink" href="#axioms-for-the-quadrant" title="Link to this heading">#</a></h3>
-<p><em>This material is not needed in the theorem below and so should be deleted.</em></p>
-<p>We next write down four sentences in our signature which are true in the quadrant.   Here they are in English and as first-order sentences <span class="math notranslate nohighlight">\(\phi_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(\phi_4\)</span>:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are one-to-one: <span class="math notranslate nohighlight">\((\forall x)(\forall y) (n(x) = n(y)\to x = y)\)</span>, and similarly for <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> commute: <span class="math notranslate nohighlight">\((\forall x)(n(e(x)) = e(n(x)))\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(0\)</span> is not in the image of <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(0\)</span> is not in the image of <span class="math notranslate nohighlight">\(e\)</span>: <span class="math notranslate nohighlight">\((\forall x)\neg (n(x) = 0)\)</span>, and similarly for <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
-<li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, if <span class="math notranslate nohighlight">\(x\)</span> is not in the image of <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(e(x)\)</span> also is not in the image of <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
-</ol>
 <p>Let <span class="math notranslate nohighlight">\(\phi_{quad}\)</span> be <span class="math notranslate nohighlight">\(\phi_1 \wedge \phi_2 \wedge \phi_3 \wedge \phi_4\)</span>.</p>
 <div class="exercise admonition" id="undecidability/church-exercise-1">
 
@@ -540,38 +527,6 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 <p>Write out <span class="math notranslate nohighlight">\(\phi_4\)</span> in first-order logic.</p>
 </section>
 </div>
-<div class="proof lemma admonition" id="lemma-in-Churchs-theorem">
-<p class="admonition-title"><span class="caption-number">Lemma 12 </span></p>
-<section class="lemma-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{quad}\)</span>.   If <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is any model of <span class="math notranslate nohighlight">\(\phi_{quad}\)</span>, then the reachable submodel of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is isomorphic to the quadrant.</p>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. It is clear that <span class="math notranslate nohighlight">\(\mathcal{G}\models \phi_{quad}\)</span>.   We turn to the second assertion.</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> satisfy <span class="math notranslate nohighlight">\(\phi_{quad}\)</span>.
-Observe that the every point in <span class="math notranslate nohighlight">\(M\)</span> of the form <span class="math notranslate nohighlight">\(n^i e^j(0)\)</span> belongs to the reachable submodel
-<span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span>.  Going the other way, we check by induction on a term <span class="math notranslate nohighlight">\(t\)</span> without variables that <span class="math notranslate nohighlight">\(t\)</span> is of this form for some <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, and (critically) that <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are unique. For this, note that <span class="math notranslate nohighlight">\(0 = n^0 e^0(0)\)</span>.  If <span class="math notranslate nohighlight">\(t\)</span> is the (interpretation of the) term <span class="math notranslate nohighlight">\(n^i e^j(0)\)</span>, then <span class="math notranslate nohighlight">\(n(t)\)</span> is  <span class="math notranslate nohighlight">\(n^{i+1} e^j(0)\)</span>, and <span class="math notranslate nohighlight">\(e(t)\)</span> is  <span class="math notranslate nohighlight">\(n^{i} e^{j+1}(0)\)</span>.   For the uniqueness part, suppose that <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(\ell\)</span> are natural numbers and</p>
-<div class="math notranslate nohighlight">
-\[
-n^{i} e^{j}(0) =  n^{k} e^{\ell}(0)
-\]</div>
-<p>We show that <span class="math notranslate nohighlight">\(i =k\)</span> and <span class="math notranslate nohighlight">\(j = \ell\)</span>.
-Since <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are one-to-one, either <span class="math notranslate nohighlight">\(i\)</span> or <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(0\)</span>, and similarly for <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(\ell\)</span>.
-There are a few cases at this point.   If both <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are <span class="math notranslate nohighlight">\(0\)</span>, and also both <span class="math notranslate nohighlight">\(j\)</span> and <span class="math notranslate nohighlight">\(\ell\)</span> are <span class="math notranslate nohighlight">\(0\)</span>,
-then obviously <span class="math notranslate nohighlight">\(i =k\)</span> and <span class="math notranslate nohighlight">\(j = \ell\)</span>.  Without loss of generality, we may assume that <span class="math notranslate nohighlight">\(i &gt; 0\)</span>.   If <span class="math notranslate nohighlight">\(i &gt; k\)</span>, then <span class="math notranslate nohighlight">\(n^{i -k} e^j(0)  = e^{\ell}(0)\)</span>.
-This means that <span class="math notranslate nohighlight">\(e^{\ell}(0)\)</span> is of the form <span class="math notranslate nohighlight">\(n(u)\)</span> for some term <span class="math notranslate nohighlight">\(u\)</span>.  So we contradict the fact that <span class="math notranslate nohighlight">\(0\)</span> is not in the image of <span class="math notranslate nohighlight">\(n\)</span>.
-Similarly, we get a contradiction when <span class="math notranslate nohighlight">\(i&lt; k\)</span>.   We thus have <span class="math notranslate nohighlight">\(i = k\)</span>.  We have <span class="math notranslate nohighlight">\(n^{i} e^{j}(0) =  n^{i} e^{\ell}(0)\)</span>.
-Since <span class="math notranslate nohighlight">\(n\)</span> is one-to-one, we have <span class="math notranslate nohighlight">\(e^{j}(0) =   e^{\ell}(0)\)</span>.  Exactly as above we get contradictions when <span class="math notranslate nohighlight">\(j &gt; \ell\)</span> and
-when <span class="math notranslate nohighlight">\(j &lt; \ell\)</span>.   So we have the case <span class="math notranslate nohighlight">\(j = \ell\)</span>.   But then we have the desired conclusion: <span class="math notranslate nohighlight">\(i =k\)</span> and <span class="math notranslate nohighlight">\(j = \ell\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(f: G \to M\)</span> be</p>
-<div class="math notranslate nohighlight">
-\[
-f(i,j) = n^i e^j(0).
-\]</div>
-<p>From what we said above, <span class="math notranslate nohighlight">\(f\)</span> is a one-to-one function from the quadrant onto the reachable submodel <span class="math notranslate nohighlight">\(\mathcal{M}_{reach}\)</span> of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.
-It is easy to check that <span class="math notranslate nohighlight">\(f\)</span> preserves the interpretations of the function symbols, and thus it is an isomorphism
-<span class="math notranslate nohighlight">\(f: \mathcal{G} \cong \mathcal{M}_{reach}\)</span>.</p>
-</div>
-</section>
 </section>
 <section id="mapping-tile-sets-to-logic-sentences">
 <h2>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h2>
@@ -640,7 +595,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 <p>Please note that this sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires “local” information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
 <p>Point 5, pertaining to the distinuished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, would be <span class="math notranslate nohighlight">\(T_5(0)\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="undecidability/church-exercise-4">
+</div><div class="exercise admonition" id="undecidability/church-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 96 </span></p>
 <section id="exercise-content">
@@ -670,7 +625,7 @@ e(n^j e^i(0))  = n e(n^{j-1} e^i(0))  = \cdots = n^j e (e^{i}(0)) = n^{j} e^{i+1
 </section>
 <section id="two-improvements">
 <h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
-<div class="exercise admonition" id="undecidability/church-exercise-5">
+<div class="exercise admonition" id="undecidability/church-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 97 </span></p>
 <section id="exercise-content">
@@ -683,7 +638,7 @@ and a new unary function symbol <span class="math notranslate nohighlight">\(on\
 The purpose of the function <span class="math notranslate nohighlight">\(on\)</span> is to endode that a given tile is on a given square of the quadrant.]</p>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/church-exercise-6">
+<div class="exercise admonition" id="undecidability/church-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 98 </span></p>
 <section id="exercise-content">
@@ -702,7 +657,7 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 \[
 K \leq_m Val_{FO}
 \]</div>
-<div class="exercise admonition" id="undecidability/church-exercise-7">
+<div class="exercise admonition" id="undecidability/church-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 99 </span></p>
 <section id="exercise-content">
@@ -727,7 +682,7 @@ K \leq_m Val_{FO}
 <section id="trakhtentbrot-s-theorem">
 <h2>Trakhtentbrot’s Theorem<a class="headerlink" href="#trakhtentbrot-s-theorem" title="Link to this heading">#</a></h2>
 <p>The work which we have done so far show that whenever a first-order signature contains a binary relation sybmol, the validty problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete, and the satisfiabililty problem is <span class="math notranslate nohighlight">\(\Pi_1\)</span>-complete.    We might ask about the <em>finite</em> versions of these.   That is, we study the problem of whether a logic sentence has a <em>finite</em> model.   The results here shows that this problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete.</p>
-<div class="exercise admonition" id="undecidability/church-exercise-8">
+<div class="exercise admonition" id="undecidability/church-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 100 </span></p>
 <section id="exercise-content">
@@ -802,10 +757,7 @@ K \leq_m Val_{FO}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms-for-the-quadrant">Axioms for the quadrant</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
