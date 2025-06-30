@@ -499,7 +499,7 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/church.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="satisfiability-and-validity-in-first-order-logic">
 <h1>Satisfiability and validity in first-order logic<a class="headerlink" href="#satisfiability-and-validity-in-first-order-logic" title="Link to this heading">#</a></h1>
-<p>This section contains a proof of Church’s Theorem that <em>satisfiability</em> of first-order logic is undecidable.   We assume that you know what a first-order logic sentence is, or that you are willing to read on and look things up elsewhere as needed.   A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>satsifiable</em> if <span class="math notranslate nohighlight">\(\phi\)</span> has a model.</p>
+<p>This section contains a proof of the Church-Turing Theorem that <em>satisfiability</em> of first-order logic is undecidable.   We assume that you know what a first-order logic sentence is, or that you are willing to read on and look things up elsewhere as needed.   A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>satsifiable</em> if <span class="math notranslate nohighlight">\(\phi\)</span> has a model.</p>
 <div class="proof theorem admonition" id="Churchs-theorem">
 <p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -681,6 +681,11 @@ K \leq_m Val_{FO}
 <p>Use <a class="reference internal" href="tiling.html#tilingforTrakhtenbrot"><span class="std std-ref">Exercise</span></a> to show that the problem of determining whether a first-order logic sentence has a finite model is undecidable.</p>
 <p>[Hint: you will not be able to use the functions <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> as we did above.  This is due to the fact that in a finite rectangle it is not entirely clear what to do about those functions on the north and east edges of a rectangle.   So you will need to fix this, either by making a decision on how to define <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> on the edges, or else by moving from functions to relations.  Either way, there are a fair amount of details to work out and check in this problem.]</p>
 </section>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Credits</p>
+<p>What we are calling the Church-Turing Theorem is sometimes called Church’s Theorem.   For a good overview of the history and significance of this result, see</p>
+<p>Copeland, B. Jack, “The Church-Turing Thesis”, The Stanford Encyclopedia of Philosophy (Winter 2024 Edition), Edward N. Zalta &amp; Uri Nodelman (eds.), URL = <a class="reference external" href="https://plato.stanford.edu/archives/win2024/entries/church-turing/">https://plato.stanford.edu/archives/win2024/entries/church-turing/</a>.</p>
 </div>
 </section>
 </section>
