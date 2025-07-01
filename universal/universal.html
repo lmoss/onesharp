@@ -488,7 +488,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-project">Group project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extra-property-of-the-universal-program">An extra property of the universal program</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-more-register-than-the-inputs">Only one more register than the inputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-work-register">Only one work register</a></li>
 </ul>
 
             </nav>
@@ -1283,9 +1283,9 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 <p>We may take <span class="math notranslate nohighlight">\(u\)</span> to have the following property: when run on a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the word in R1 is not empty at any point other than at the very end.</p>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="only-one-more-register-than-the-inputs">
-<h1>Only one more register than the inputs<a class="headerlink" href="#only-one-more-register-than-the-inputs" title="Link to this heading">#</a></h1>
-<p>The work in this section can be used to prove the following result.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="only-one-work-register">
+<h1>Only one work register<a class="headerlink" href="#only-one-work-register" title="Link to this heading">#</a></h1>
+<p>A register machine program in our sense does not come with a number of how many arguments it expects.  One and the same program can be used as a function of zero, one, two, or many arguments.   In other words, the definition of <span class="math notranslate nohighlight">\([\![p]\!]^n(x_1, \ldots, x_n)\)</span> depends on <span class="math notranslate nohighlight">\(n\)</span> and of course on <span class="math notranslate nohighlight">\(p\)</span>.  Given <span class="math notranslate nohighlight">\([\![p]\!]^n\)</span> as a function of <span class="math notranslate nohighlight">\(n\)</span> arguments, we might ask how many registers are needed to compute it.   We need the first <span class="math notranslate nohighlight">\(n\)</span> registers just to read the input.  But are there functions which can be computed with two additional registers that cannot be computed with one?    The work that we have recently seen shows that we can do with one additional register to do all the work.</p>
 <div class="proof proposition admonition" id="one-more-register-halting">
 <p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
 <section class="proposition-content" id="proof-content">
@@ -1314,6 +1314,7 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 <a href="https://lmoss.github.io/onesharp/undecidability/haltingProblem.html">
 the section on the halting problem</a>.  It follows from the last result that the halting problem for register machine programs which are tidy and which only use R1 is undecidable.</p>
 <p>We are going to put the proposition just above to good use when we prove the undecidability of <a href="https://lmoss.github.io/onesharp/undecidability/post.html">Post’s correspondence problem</a> and of <a href="https://lmoss.github.io/onesharp/undecidability/tiling.html">tiling</a>.</p>
+<p>Now that we know that in a register machine architecture one can do with one work register, a next natural question would be whether <em>any</em> work registers are actually needed.  For example, can one compute the  <span class="math notranslate nohighlight">\(f(x) = {\tt 1}x\)</span> on a register machine using R1 only?  Intuitively, one should not be able to do this.  (Try it and see.)  In fact, it is possible to show this fact. See &lt;a = href =”https://doi.org/10.1016/j.ipl.2008.02.002”&gt;Confusion of Memory</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1389,7 +1390,7 @@ the section on the halting problem</a>.  It follows from the last result that th
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-project">Group project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extra-property-of-the-universal-program">An extra property of the universal program</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-more-register-than-the-inputs">Only one more register than the inputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-work-register">Only one work register</a></li>
 </ul>
 
   </nav></div>
