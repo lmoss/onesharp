@@ -5,7 +5,7 @@ Lawrence S. Moss
 This is a textbook on the basics of computability theory, originating in classes given by the author 
 at Indiana University for quite a few years.  My students are mainly graduate students in either mathematics or computer science, always with a few undergraduates and a few grad students from philosophy and other disciplines.
 
-In some ways, the content of the book is standard, and in some ways it is not. It treats the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Recursion Theorem, and undecidability in computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of these results, and so the presentation here will differ.  This book will try to make pointers to many of the developments in computability theory and computer science that have come from the classical material.  
+In some ways, the content of the book is standard, and in some ways it is not. It introduces the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Recursion Theorem, relative computability, the arithmetic hierarchy, and undecidability in computability theory, mathematics, and logic.  Of course we are living decades past the original results on these topics, and so the presentation here will differ.  This book will try to make pointers to many of the developments in computability theory and computer science that have come from the classical material.  
 
 ## Why a Jupyter book?
 

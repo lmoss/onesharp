@@ -262,13 +262,9 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -502,30 +498,13 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="functions-defined-by-programs">
 <h1>Functions defined by programs<a class="headerlink" href="#functions-defined-by-programs" title="Link to this heading">#</a></h1>
-<p>At this point we know what programs of   <code class="docutils literal notranslate"><span class="pre">1#</span></code> are and how they work.
+<p>At this point <a class="reference internal" href="instructions.html#content-whatareprograms"><span class="std std-ref">we know what programs of   <code class="docutils literal notranslate"><span class="pre">1#</span></code> are and how they work</span></a>.
 We are interested not just in the programs themselves
 but in <em>what</em> they compute.</p>
-<p>We call the set <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>  our  <em>alphabet</em>, and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
-<p>We know that it is odd to call such a small set an “alphabet”,
-even more so when that set doesn’t have any letters in it!
-But this usage is standard, and so we’ll adopt it.
-When used in situations like ours, the word “alphabet”
-just means a set that you use to build words from.</p>
-<p>But if <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code> is our alphabet, what in
-the world are our words?!</p>
-<p>Answer:
-A <em>word</em> is just a sequence of  symbols from our alphabet.</p>
-<p>Examples of words include
-<code class="docutils literal notranslate"><span class="pre">11#11####</span></code> and also the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
 <p>Let us be clear about the difference between
 <em>instructions</em> and <em>programs</em>:</p>
 <p><em>Instructions</em> are single steps
 in programs.</p>
-<p>A <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> is just a sequence of
-instructions,
-run together to make a big word.
-An instruction counts as a program,
-but programs of length <span class="math notranslate nohighlight">\(\geq 2\)</span> are not instructions.</p>
 <div class="proof definition admonition" id="phi-notation">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
 <section class="definition-content" id="proof-content">

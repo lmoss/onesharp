@@ -262,13 +262,9 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -493,7 +489,6 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majorized-by-the-ackermann-function">Majorized by the Ackermann function</a></li>
 </ul>
 </li>
 </ul>
@@ -679,7 +674,7 @@ arity of the term
 <p><code class="docutils literal notranslate"><span class="pre">in_place_program(t)</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The in_place_programs in this notebook do not <em>halt</em> according to [our earlier definition][haltDef.ipynb].
+<p>The in_place_programs in this notebook do not <em>halt</em> according to <a class="reference internal" href="../introOneSharp/haltDef.html#content-haltdef"><span class="std std-ref">our earlier definition</span></a>.
 Instead, they <em>preserve their inputs</em>.</p>
 </div>
 <p>For example, run the program associated with <em>add</em> below as shown below it.  (That is, take away the # from the beginning of the lines after the definition. The 2 inputs are preserved and the result goes in register 3.)</p>
@@ -838,21 +833,6 @@ f(\overline{x}) = y \quad \mbox{ iff }\quad [\![ q ]\!](bb(x_1), \ldots, bb(x_n)
 </section>
 </div><p>Part 1 refers to programs which <em>preserve their inputs</em>.  We prove this part by induction on the primitive recursive function <span class="math notranslate nohighlight">\(f\)</span>.  Then we infer 2 from it by “cleaning up”.  Doing things this way is like <em>strengthening an induction hypothesis</em>, a widely-used trick in mathematics.</p>
 </section>
-<section id="majorized-by-the-ackermann-function">
-<h2>Majorized by the Ackermann function<a class="headerlink" href="#majorized-by-the-ackermann-function" title="Link to this heading">#</a></h2>
-<p>Our last proof by induction on the PR functions pertains to the <em>Ackermann function</em> <span class="math notranslate nohighlight">\(A(x,y)\)</span> defined as follows:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A(x,y)\quadeq \left\{
-\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
-\\
- A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
- A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
-\end{array}
-\right.
-\end{split}\]</div>
-<p><a class="reference internal" href="#content:firstAckermann"><span class="xref myst">We shall see later</span></a> that it is total and computable but not primitive recursive.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -932,7 +912,6 @@ A(x,y)\quadeq \left\{
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#majorized-by-the-ackermann-function">Majorized by the Ackermann function</a></li>
 </ul>
 </li>
 </ul>
