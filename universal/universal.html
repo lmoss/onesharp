@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'universal/universal';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Primitive recursion" href="../mu/primitive_recursion.html" />
+    <link rel="next" title="Further results on universal programs" href="universalMore.html" />
     <link rel="prev" title="Two-by-Two encoding" href="twoByTwo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -237,6 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Universal programs</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="universalMore.html">Further results on universal programs</a></li>
 
 
 
@@ -483,9 +484,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-project">Group project</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extra-property-of-the-universal-program">An extra property of the universal program</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-work-register">Only one work register</a></li>
 </ul>
 
             </nav>
@@ -1216,22 +1214,7 @@ the input program only uses R1, R2, and R3.  You should get a program
  someone else.    
 </ol>  
 </div>
-</details><img src="https://github.com/lmoss/onesharp/blob/main/basses.jpg?raw=1" width="200" height="160"></section>
-<section class="tex2jax_ignore mathjax_ignore" id="universal-programs-of-more-than-one-argument">
-<h1>Universal programs of more than one argument<a class="headerlink" href="#universal-programs-of-more-than-one-argument" title="Link to this heading">#</a></h1>
-<p>Here is a more general result based on what we have seen up to now.</p>
-<div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 2 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>For every natural number <span class="math notranslate nohighlight">\(n\)</span> there is a program <span class="math notranslate nohighlight">\(u_n\)</span> such that for all words <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ u_n]\!](p,x_1, \ldots, x_n)\simeq [\![p]\!](x_1, \ldots, x_n)
-\]</div>
-</section>
-</div><p>What we have seen is an explicit program <span class="math notranslate nohighlight">\(u_0\)</span>.</p>
-<p>The proof of the general fact is an exercise using <span class="math notranslate nohighlight">\(u_0\)</span> and the <span class="math notranslate nohighlight">\(s^m_n\)</span> Theorem.</p>
-<div class="exercise admonition" id="universal/universal-exercise-1">
+</details><div class="exercise admonition" id="universal/universal-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
 <section id="exercise-content">
@@ -1239,7 +1222,7 @@ the input program only uses R1, R2, and R3.  You should get a program
 <p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <span class="math notranslate nohighlight">\(\self\)</span> takes 22,376,608 steps, whereas running <span class="math notranslate nohighlight">\(\self\)</span> on empty registers takes 3,322.</p>
 </section>
 </div>
-<div class="exercise admonition" id="universal/universal-exercise-2">
+<div class="exercise admonition" id="universal/universal-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <section id="exercise-content">
@@ -1253,7 +1236,7 @@ K_0 &amp; = &amp; \{ p : [\![ p ]\!](\ )\!\downarrow\}\\
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="universal/universal-exercise-3">
+<div class="exercise admonition" id="universal/universal-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
 <section id="exercise-content">
@@ -1261,7 +1244,7 @@ K_0 &amp; = &amp; \{ p : [\![ p ]\!](\ )\!\downarrow\}\\
 <p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
 </section>
 </div>
-<div class="exercise admonition" id="universal/universal-exercise-4">
+<div class="exercise admonition" id="universal/universal-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <section id="exercise-content">
@@ -1270,48 +1253,6 @@ This exercise requires a trick, since there is no program like <code class="docu
 <p>[Hint: you will need the technique of coding several registers into R1.]</p>
 </section>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="an-extra-property-of-the-universal-program">
-<h1>An extra property of the universal program<a class="headerlink" href="#an-extra-property-of-the-universal-program" title="Link to this heading">#</a></h1>
-<p>For use in several places, we need a technical remark about the universal prorgram <span class="math notranslate nohighlight">\(u\)</span> which we can arrange.  That is, the remark below is not a consequence of the specification of <span class="math notranslate nohighlight">\(u\)</span> that we started with.  It is not even a consequence of the outline of <span class="math notranslate nohighlight">\(u\)</span> which we provided.
-But if you write <span class="math notranslate nohighlight">\(u\)</span> the way we suggest, then the property below is either true, or one can arrange for it to hold.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>We may take <span class="math notranslate nohighlight">\(u\)</span> to have the following property: when run on a word <span class="math notranslate nohighlight">\(x\)</span> in R1, the word in R1 is not empty at any point other than at the very end.</p>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="only-one-work-register">
-<h1>Only one work register<a class="headerlink" href="#only-one-work-register" title="Link to this heading">#</a></h1>
-<p>A register machine program in our sense does not come with a number of how many arguments it expects.  One and the same program can be used as a function of zero, one, two, or many arguments.   In other words, the definition of <span class="math notranslate nohighlight">\([\![p]\!]^n(x_1, \ldots, x_n)\)</span> depends on <span class="math notranslate nohighlight">\(n\)</span> and of course on <span class="math notranslate nohighlight">\(p\)</span>.  Given <span class="math notranslate nohighlight">\([\![p]\!]^n\)</span> as a function of <span class="math notranslate nohighlight">\(n\)</span> arguments, we might ask how many registers are needed to compute it.   We need the first <span class="math notranslate nohighlight">\(n\)</span> registers just to read the input.  But are there functions which can be computed with two additional registers that cannot be computed with one?    The work that we have recently seen shows that we can do with one additional register to do all the work.</p>
-<div class="proof proposition admonition" id="one-more-register-halting">
-<p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
-<section class="proposition-content" id="proof-content">
-<p>For every <span class="math notranslate nohighlight">\(n\)</span> and every program <span class="math notranslate nohighlight">\(p\)</span>, there is a program <span class="math notranslate nohighlight">\(q\)</span> such that</p>
-<ol class="arabic simple">
-<li><p>For all words <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span>,</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-[\![p]\!] (x_1, \ldots, x_n) \simeq [\![q]\!] (x_1, \ldots, x_n) 
-\]</div>
-<ol class="arabic simple" start="2">
-<li><p><span class="math notranslate nohighlight">\(q\)</span> uses R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, R<span class="math notranslate nohighlight">\(n\)</span>, R<span class="math notranslate nohighlight">\((n+1)\)</span>, and no other registers</p></li>
-<li><p><span class="math notranslate nohighlight">\(q\)</span> may be obtained computably from <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
-</ol>
-</section>
-</div><p>Taking <span class="math notranslate nohighlight">\(n = 0\)</span>, it shows that when running a register machine program <span class="math notranslate nohighlight">\(p\)</span> on no inputs, we may assume that the program uses only one register.   In particular,  we have an undecidability result:</p>
-<div class="proof proposition admonition" id="one-register-halting">
-<p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
-<section class="proposition-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of register machine programs which are tidy and which only use R1.</p>
-<p>Let <span class="math notranslate nohighlight">\(K^1\)</span> be <span class="math notranslate nohighlight">\(\{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\)</span></p>
-<p>Then <span class="math notranslate nohighlight">\(K_0 \leq_m K^1\)</span>.</p>
-</section>
-</div><p>We are going to prove that <span class="math notranslate nohighlight">\(K_0\)</span> is undecidable in
-<a href="https://lmoss.github.io/onesharp/undecidability/haltingProblem.html">
-the section on the halting problem</a>.  It follows from the last result that the halting problem for register machine programs which are tidy and which only use R1 is undecidable.</p>
-<p>We are going to put the proposition just above to good use when we prove the undecidability of <a href="https://lmoss.github.io/onesharp/undecidability/post.html">Post’s correspondence problem</a> and of <a href="https://lmoss.github.io/onesharp/undecidability/tiling.html">tiling</a>.</p>
-<p>Now that we know that in a register machine architecture one can do with one work register, a next natural question would be whether <em>any</em> work registers are actually needed.  For example, can one compute the  <span class="math notranslate nohighlight">\(f(x) = {\tt 1}x\)</span> on a register machine using R1 only?  Intuitively, one should not be able to do this.  (Try it and see.)  In fact, it is possible to show this fact. See the paper <a href ="https://doi.org/10.1016/j.ipl.2008.02.002">Confusion of Memory</a> for details.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1354,11 +1295,11 @@ the section on the halting problem</a>.  It follows from the last result that th
       </div>
     </a>
     <a class="right-next"
-       href="../mu/primitive_recursion.html"
+       href="universalMore.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Primitive recursion</p>
+        <p class="prev-next-title">Further results on universal programs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1385,9 +1326,6 @@ the section on the halting problem</a>.  It follows from the last result that th
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-project">Group project</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#universal-programs-of-more-than-one-argument">Universal programs of more than one argument</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extra-property-of-the-universal-program">An extra property of the universal program</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#only-one-work-register">Only one work register</a></li>
 </ul>
 
   </nav></div>
