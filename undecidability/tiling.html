@@ -213,9 +213,6 @@
 
 
 
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/tidy.html">Tidy programs</a></li>
 
 </ul>
@@ -238,9 +235,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../universal/universalMore.html">Further results on universal programs</a></li>
-
-
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -522,7 +516,7 @@ is a finite set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span
 Let <span class="math notranslate nohighlight">\(K^{\mathbb{T}}\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
 there is a <em>proper tiling</em> of
 the first quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  (<em>Proper</em> here means that <span class="math notranslate nohighlight">\(t_0\)</span> goes in the bottom-left corner,
-and all neighboring edges of tiles have the same color.)</p>
+and edges shared by neighboring tiles have the same color.)</p>
 <p>When we talk about tile sets in this section, we always will mean a
 finite,
 pointed tile set.  And when we talk about a tiling, we always mean a proper tiling.</p>
@@ -533,6 +527,7 @@ the first quadrant <em>cannot</em> be properly tiled with <span class="math notr
 </div>
 <div class="attention admonition">
 <p class="admonition-title">Our goal</p>
+<p>Consider the following sets:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -541,6 +536,7 @@ K^1 &amp; = &amp; \{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\\
 \end{array}
 \end{split}\]</div>
 <p>Clearly <span class="math notranslate nohighlight">\(A\)</span> is decidable, and it is easy to see that <span class="math notranslate nohighlight">\(K^1\)</span> is undecidable.</p>
+<p>Our goal is to prove the result below.</p>
 </div>
 <div class="proof theorem admonition" id="tiling_undecidability">
 <p class="admonition-title"><span class="caption-number">Theorem 14 </span></p>
