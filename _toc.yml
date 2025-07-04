@@ -33,6 +33,7 @@ parts:
   chapters:  
   - file: universal/twoByTwo 
   - file: universal/universal
+  - file: universal/universalMore
 
 - caption: Computable Functions of Numbers
   chapters:
