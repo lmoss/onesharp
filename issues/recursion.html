@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The busy beaver problem &#8212; Invitation to Computability</title>
+    <title>Recursion &#8212; Invitation to Computability</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'undecidability/busyBeaver';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'issues/recursion';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tiling" href="tiling.html" />
-    <link rel="prev" title="The halting problem" href="haltingProblem.html" />
+    <link rel="next" title="Instructions of 1#" href="../introOneSharp/instructions.html" />
+    <link rel="prev" title="Reduction of one problem to another" href="reduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,21 +184,21 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: choices</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: choices</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../issues/recursion.html">Recursion</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -271,20 +271,20 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="haltingProblem.html">The halting problem</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/haltingProblem.html">The halting problem</a></li>
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">The busy beaver problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tiling.html">Tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/busyBeaver.html">The busy beaver problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/tiling.html">Tiling</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="church.html">Satisfiability and validity in first-order logic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="post.html">Post’s Correspondence Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matrixMortality.html">Matrix mortality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 </ul>
 
     </div>
@@ -356,7 +356,7 @@
       
       
       
-      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fundecidability/busyBeaver.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fissues/recursion.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@
       
       
       
-      <li><a href="../_sources/undecidability/busyBeaver.ipynb" target="_blank"
+      <li><a href="../_sources/issues/recursion.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -468,7 +468,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The busy beaver problem</h1>
+    <h1>Recursion</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -482,103 +482,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/busyBeaver.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="the-busy-beaver-problem">
-<h1>The busy beaver problem<a class="headerlink" href="#the-busy-beaver-problem" title="Link to this heading">#</a></h1>
-<p>Let <span class="math notranslate nohighlight">\(BB(n)\)</span> be the  largest number of <code class="docutils literal notranslate"><span class="pre">1</span></code>s produced by any <code class="docutils literal notranslate"><span class="pre">1#</span></code>-program with at most <span class="math notranslate nohighlight">\(n\)</span> instructions
-which halts properly on all empty registers.  Notice that <span class="math notranslate nohighlight">\(BB\)</span> is well-defined and total.  The main point is that <span class="math notranslate nohighlight">\(BB\)</span> is not computable.</p>
-<div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>There is no program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span> such that
-for all <span class="math notranslate nohighlight">\(n\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-\begin{array}{lcl}
-[\![\mathtt{beaver}]\!](\one^n) &amp; = &amp; \one^{BB(n)}
-\end{array}
-\]</div>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. We are going to prove this two ways.   Our first proof uses the Recursion Theorem.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
-<p>Suppose that we had a program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.  Let <span class="math notranslate nohighlight">\(q\)</span> be a program so that
-for all <span class="math notranslate nohighlight">\(p\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ q]\!](p) = [\![\mathtt{beaver}]\!](|p|) + \mathtt{1},
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(|p|\)</span> is the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.   The function <span class="math notranslate nohighlight">\(p\mapsto |p|\)</span> is computable.   So <span class="math notranslate nohighlight">\(q\)</span> is computable.   By the Recursion Theorem, there is some <span class="math notranslate nohighlight">\(p^*\)</span> so that</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ p^* ]\!](\ ) \simeq 
-[\![ q]\!](p^*) = [\![\mathtt{beaver}]\!](|p^*|) + \mathtt{1} 
-= \mathtt{1}^{BB(|p^*|) + 1}
-\]</div>
-<p>But by definition of <span class="math notranslate nohighlight">\(BB\)</span>, for all programs <span class="math notranslate nohighlight">\(r\)</span>, if <span class="math notranslate nohighlight">\([\![ r ]\!](\ ) \simeq \mathtt{1}^k\)</span>, then <span class="math notranslate nohighlight">\(k \leq BB(|r|)\)</span>.
-Taking <span class="math notranslate nohighlight">\(r\)</span> to be <span class="math notranslate nohighlight">\(p^*\)</span>, we see that</p>
-<div class="math notranslate nohighlight">
-\[
-BB(|p^*|) + 1 \leq BB(|p^*|),\]</div>
-<p>and this is a contradiction.</p>
-</div>
-<div class="proof admonition" id="proof">
-<p>Proof. Here is a second proof.
-Suppose that the <span class="math notranslate nohighlight">\(\one\hash\)</span> program
-<span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span> computed <span class="math notranslate nohighlight">\(BB\)</span> as above.</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> be a <span class="math notranslate nohighlight">\(\one\hash\)</span> program  to
-compute <span class="math notranslate nohighlight">\(n \to n^2\)</span>, using unary notation.</p>
-<p>Consider the programs  <span class="math notranslate nohighlight">\(p_{n}\)</span> for <span class="math notranslate nohighlight">\(n\in N\)</span>, given by</p>
-<div class="math notranslate nohighlight">
-\[
-p_n \quadeq (\one\hash)^{n} + \mathtt{square} + 
-\mathtt{beaver} + \one\hash
-\]</div>
-<p>Then
-<span class="math notranslate nohighlight">\([\![ p_n]\!](\ )\simeq \one^K\)</span>, where <span class="math notranslate nohighlight">\(K = BB(n^2) + 1\)</span>.</p>
-<p>Notice that the number of instructions in <span class="math notranslate nohighlight">\(p_n\)</span> is <em>linear in <span class="math notranslate nohighlight">\(n\)</span></em>.
-In fact, it is <span class="math notranslate nohighlight">\(n + m +1\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the total number of instructions
-in <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> and <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(N\)</span> be large enough so that <span class="math notranslate nohighlight">\(N^2 &gt; N+m+1\)</span>.
-Then by definition of <span class="math notranslate nohighlight">\(p_N\)</span>,</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="recursion">
+<h1>Recursion<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h1>
+<p>This notebook will present recursion as something that we need to understand.  It will serve as a motivation for several of the sections in the book.</p>
+<p>Consider the following three function definitions:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
-|[\![ p_N]\!](\ )|
- &amp; = &amp;  BB(N^2) + 1 \\
+gcd(x,y) &amp; = &amp; 
+\left\{
+\begin{array}{ll}
+x &amp; \mbox{if $y=0$} \\
+\gcd(y, rem(x,y))) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\\ 
+\\
+A(x,y) &amp; = &amp; \left\{
+\begin{array}{ll} y+1 &amp;\mbox{if  $x=0$}
+\\
+ A(x-1,1) &amp; \mbox{if  $x\neq 0$ and $y=0$}\\
+ A(x-1,A(x,y-1)) &amp; \mbox{otherwise}
+\end{array}
+\right.
+\\
+\\
+collatz(n) &amp; = &amp;  \left\{ \begin{array}{ll} 
+1 &amp;\mbox{if $n \leq 1$} \\
+1 + collatz(n/2) &amp; \mbox{if $n\geq 2$ is even } \\
+ 1 + collatz(3n) &amp; \mbox{if $n\geq 3$ is odd} 
+ \end{array}\right.
 \end{array}
 \end{split}\]</div>
-<p>On the left above, we mean the number of symbols in <span class="math notranslate nohighlight">\([\![ p_N]\!](\ )\)</span>.</p>
-<p>The number of instructions in <span class="math notranslate nohighlight">\(p_N\)</span> is <span class="math notranslate nohighlight">\(N+m +1 &lt; N^2\)</span>.   So by definition of <span class="math notranslate nohighlight">\(BB\)</span>, <span class="math notranslate nohighlight">\(BB(N^2)\)</span> is at least <span class="math notranslate nohighlight">\(|[\![ q]\!](\ )|\)</span>, for any program of length <span class="math notranslate nohighlight">\(\leq  N^2\)</span>
-which happens to produce an output which is all <span class="math notranslate nohighlight">\(1\)</span>’s.    And <span class="math notranslate nohighlight">\(p_N\)</span> is one such program.  Hence we also have</p>
-<div class="math notranslate nohighlight">
-\[
-BB(N^2)   \geq  |[\![ p_N]\!](\ )|
-\]</div>
-<p>This is a contradiction!</p>
-</div>
-<div class="exercise admonition" id="undecidability/busyBeaver-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 87 </span></p>
-<section id="exercise-content">
-<p>Show that there is no total computable function <span class="math notranslate nohighlight">\(f\colon\N\to\N\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(f(m) \geq BB(m)\)</span>.</p>
-</section>
-</div>
-<div class="exercise admonition" id="undecidability/busyBeaver-exercise-2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 88 </span></p>
-<section id="exercise-content">
-<p>A common estimate for the number of atoms in the universe is <span class="math notranslate nohighlight">\(M = 10^{82}\)</span>.
-Show that <span class="math notranslate nohighlight">\(BB(50) &gt; M\)</span>.</p>
-</section>
-</div>
-<div class="exercise admonition" id="undecidability/busyBeaver-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 89 </span></p>
-<section id="exercise-content">
-<p>We defined <span class="math notranslate nohighlight">\(BB(n)\)</span> using <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs with at most <span class="math notranslate nohighlight">\(n\)</span> instructions.  How would things change if we defined <span class="math notranslate nohighlight">\(BB(n)\)</span> using programs with at most <span class="math notranslate nohighlight">\(n\)</span> <em>symbols</em>?</p>
-</section>
-</div>
+<p>In the first of these, <span class="math notranslate nohighlight">\(rem(x,y)\)</span> is the remainder when <span class="math notranslate nohighlight">\(y\)</span> is divided by <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>In all three function definitions, the right-hand side includes calls to the same function which is being defined, but those calls are more complicated than what is allowed by primitive recursion.  So from the form in which we have written them, it is not clear from first principles that any of these are computable in the first place.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -594,7 +531,7 @@ Show that <span class="math notranslate nohighlight">\(BB(50) &gt; M\)</span>.</
         },
         kernelOptions: {
             name: "python3",
-            path: "./undecidability"
+            path: "./issues"
         },
         predefinedOutput: true
     }
@@ -612,20 +549,20 @@ Show that <span class="math notranslate nohighlight">\(BB(50) &gt; M\)</span>.</
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="haltingProblem.html"
+       href="reduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The halting problem</p>
+        <p class="prev-next-title">Reduction of one problem to another</p>
       </div>
     </a>
     <a class="right-next"
-       href="tiling.html"
+       href="../introOneSharp/instructions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tiling</p>
+        <p class="prev-next-title">Instructions of 1#</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
