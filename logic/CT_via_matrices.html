@@ -536,7 +536,7 @@ Whenever <span class="math notranslate nohighlight">\(M = (m_{i,j})\)</span> is 
 (\forall x_{1,1}) \cdots (\forall x_{3,3})&amp; &amp; R(x_{1,1}, x_{1,2}, x_{1,3}, 
 x_{2,1}, x_{2,2}, x_{2,3},
 x_{3,1}, x_{3,2}, x_{3,3}) \\
-&amp; \iif &amp; R\bigl(x_{1,1} \underline{m_{1,1}} +  x_{1,2} \underline{m_{2,1}} +   x_{1,3} \underline{m_{3,1}},\\
+&amp; \rightarrow &amp; R\bigl(x_{1,1} \underline{m_{1,1}} +  x_{1,2} \underline{m_{2,1}} +   x_{1,3} \underline{m_{3,1}},\\
 &amp; &amp; \quad x_{1,1} \underline{m_{1,2}} +  x_{1,2} \underline{m_{2,2}} +   x_{1,3} \underline{m_{3,2}},\\
 &amp; &amp;  \qquad \vdots \\
 &amp; &amp; \quad x_{3,1} \underline{m_{1,3}} +  x_{3,2} \underline{m_{2,3}} +   x_{3,3} \underline{m_{3,3}} \bigr)
@@ -553,14 +553,15 @@ We have a model <span class="math notranslate nohighlight">\(\mathbb{Z} \models 
 the following are equivalent:</p>
 <ol class="arabic simple">
 <li><p>Some finite product from <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is the <span class="math notranslate nohighlight">\(3\times 3\)</span> zero matrix <span class="math notranslate nohighlight">\(0_3\)</span>.</p></li>
-<li><p>In first order logic, <span class="math notranslate nohighlight">\(\proves Ax_{\mathcal{S}} \iif R(0_3)\)</span>.</p></li>
+<li><p>In first order logic, <span class="math notranslate nohighlight">\(\vdash Ax_{\mathcal{S}} \to R(0_3)\)</span>.</p></li>
 </ol>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. (2)<span class="math notranslate nohighlight">\(\Rightarrow\)</span>(1) is immediate from the observation that <span class="math notranslate nohighlight">\(Z\)</span> from above is a model of <span class="math notranslate nohighlight">\(Ax_{\mathcal{S}}\)</span>.
 As for (1)<span class="math notranslate nohighlight">\(\Rightarrow\)</span>(2), we show by induction on <span class="math notranslate nohighlight">\(i\geq 0\)</span> that if the matrix <span class="math notranslate nohighlight">\(M\)</span> is a product of <span class="math notranslate nohighlight">\(i\)</span> members of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, allowing repeats
-and allowing the empty product in case <span class="math notranslate nohighlight">\(i= 0\)</span>, then <span class="math notranslate nohighlight">\(\proves Ax_{\mathcal{S}} \iif R(M)\)</span>.   Then (2) follows immediately from this fact and (1).</p>
+and allowing the empty product in case <span class="math notranslate nohighlight">\(i= 0\)</span>, then <span class="math notranslate nohighlight">\(\vdash Ax_{\mathcal{S}} \rightarrow R(M)\)</span>.   Then (2) follows immediately from this fact and (1).</p>
 </div>
+<p><a class="reference internal" href="#CT_via_matrices">Lemma 14</a> implies the Church-Turing Theorem, <a class="reference internal" href="church_turing.html#Churchs-theorem">Theorem 17</a>, in view of the undecidability of matrix mortality.</p>
 </section>
 </section>
 
