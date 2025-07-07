@@ -476,11 +476,15 @@ In fact \overline{K}\leq_m SAT_{FO}.</h1>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-in-first-order-logic">Validity in first-order logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-in-first-order-logic">Validity in first-order logic</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trakhtentbrot-s-theorem">Trakhtentbrot’s Theorem</a></li>
 </ul>
             </nav>
@@ -494,7 +498,7 @@ In fact \overline{K}\leq_m SAT_{FO}.</h1>
                 <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/church.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p>This chapter contains classica applicaitons of computability theory to logic, obtaining the central negative results of the subject.  We start with the Church-Turing Theorem that <em>satisfiability</em> of first-order logic is undecidable.   We assume that you know what a first-order logic sentence is, or that you are willing to read on and look things up elsewhere as needed.   A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>satsifiable</em> if <span class="math notranslate nohighlight">\(\phi\)</span> has a model.</p>
+<p>This chapter contains classic applications of computability theory to logic, obtaining the central negative results of the subject.  We start with the Church-Turing Theorem that <em>satisfiability</em> of first-order logic sentences is undecidable.  (As we have seen, this is equivalent to saying that <em>validity</em> of first-order logic sentences is undecidable.) We assume that you know what a first-order logic sentence is, or that you are willing to read on and look things up elsewhere as needed.   A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>satsifiable</em> if <span class="math notranslate nohighlight">\(\phi\)</span> has a model.</p>
 <div class="proof theorem admonition" id="Churchs-theorem">
 <p class="admonition-title"><span class="caption-number">Theorem 17 </span></p>
 <section class="theorem-content" id="proof-content">
@@ -516,9 +520,8 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 \end{array}
 \end{split}\]</div>
 <p>This is our intended model.</p>
-</section>
 <section id="mapping-tile-sets-to-logic-sentences">
-<h2>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h2>
+<h3>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be a tile set.   Recall that we had a signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span>.
 We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a relation symbol <span class="math notranslate nohighlight">\(T\)</span> for each tile <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
 <p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> is to define a computable function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to logic sentences in such a way as to have the following condition:</p>
@@ -597,7 +600,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 </div>
 </section>
 <section id="proof-of-the-theorem">
-<h2>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h2>
+<h3>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h3>
 <p>We have defined <span class="math notranslate nohighlight">\(\varphi\)</span> just above.   We must check that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  One direction is fairly direct: if  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant, then <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.  The model has as universe <span class="math notranslate nohighlight">\(N\times N\)</span>, the interpretations of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> are as in the quadrant, and the interpretation of the symbol <span class="math notranslate nohighlight">\(T_i\)</span> is the set of pairs <span class="math notranslate nohighlight">\((i,j)\)</span> such that tile <span class="math notranslate nohighlight">\(i\)</span> goes on the point <span class="math notranslate nohighlight">\((i,j)\in N\times N\)</span>.</p>
 <p>In the other direction, suppose that we have any model <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.<br />
 We need to tile the quadrant.   Tile the square <span class="math notranslate nohighlight">\((i,j)\)</span> with the unique <span class="math notranslate nohighlight">\(t_a\in \mathcal{T}\)</span> such that <span class="math notranslate nohighlight">\(T_a(n^j e^i(0))\)</span> in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>.  There is a unique such <span class="math notranslate nohighlight">\(t_a \in \mathcal{T}\)</span> since <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> satisfies point 2 in the definition of
@@ -612,6 +615,7 @@ e(n^j e^i(0))  = n e(n^{j-1} e^i(0))  = \cdots = n^j e (e^{i}(0)) = n^{j} e^{i+1
 \]</div>
 <p>It follows that in <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, the tiles on <span class="math notranslate nohighlight">\(n^j e^i(0)\)</span> and <span class="math notranslate nohighlight">\( n^{j} e^{i+1}(0)\)</span> match appropriately.</p>
 <p>By construction, those are the same tiles as on <span class="math notranslate nohighlight">\((i,j)\)</span> and <span class="math notranslate nohighlight">\((i+1,j)\)</span> in the quadrant.  So those tiles match.</p>
+</section>
 </section>
 <section id="two-improvements">
 <h2>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h2>
@@ -639,9 +643,8 @@ The purpose of the function <span class="math notranslate nohighlight">\(on\)</s
 </ol>
 </section>
 </div>
-</section>
 <section id="validity-in-first-order-logic">
-<h2>Validity in first-order logic<a class="headerlink" href="#validity-in-first-order-logic" title="Link to this heading">#</a></h2>
+<h3>Validity in first-order logic<a class="headerlink" href="#validity-in-first-order-logic" title="Link to this heading">#</a></h3>
 <p>A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>valid</em> if it is true in all models.  This is the same thing as saying that <span class="math notranslate nohighlight">\(\neg\phi\)</span> is not satisfiable.   So if we let <span class="math notranslate nohighlight">\(Val_{FO}\)</span> be the set of valid sentences, then</p>
 <div class="math notranslate nohighlight">
 \[
@@ -668,6 +671,7 @@ K \leq_m Val_{FO}
 </ol>
 <p>Point 2 is called the <em>Completeness Theorem</em> of first-order logic.   It says that a sentence is true in all models if and only if it has a formal proof.</p>
 <p>It follows from the two points that the set <span class="math notranslate nohighlight">\(VAL_{FO}\)</span>  is <span class="math notranslate nohighlight">\(\Sigma_1\)</span> and hence computably enumerable. Therefore <span class="math notranslate nohighlight">\(Val_{FO}\leq_m K\)</span>.</p>
+</section>
 </section>
 <section id="trakhtentbrot-s-theorem">
 <h2>Trakhtentbrot’s Theorem<a class="headerlink" href="#trakhtentbrot-s-theorem" title="Link to this heading">#</a></h2>
@@ -752,11 +756,15 @@ K \leq_m Val_{FO}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-in-first-order-logic">Validity in first-order logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-quadrant-as-a-model">The quadrant as a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-tile-sets-to-logic-sentences">Mapping tile sets to logic sentences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-theorem">Proof of the theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-improvements">Two improvements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity-in-first-order-logic">Validity in first-order logic</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trakhtentbrot-s-theorem">Trakhtentbrot’s Theorem</a></li>
 </ul>
   </nav></div>
