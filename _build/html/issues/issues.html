@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Computability: initial remarks &#8212; Invitation to Computability</title>
+    <title>Computability: choices &#8212; Invitation to Computability</title>
   
   
   
@@ -171,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: initial remarks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Computability: choices</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
 
@@ -186,6 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -197,9 +198,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -224,9 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -249,13 +245,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -271,7 +263,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">Commutative rings with unit</a></li>
+
 </ul>
 
     </div>
@@ -457,7 +454,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Computability: initial remarks</h1>
+    <h1>Computability: choices</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -467,7 +464,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: choices</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
@@ -489,12 +486,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/issues.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="computability-initial-remarks">
-<h1>Computability: initial remarks<a class="headerlink" href="#computability-initial-remarks" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="computability-choices">
+<h1>Computability: choices<a class="headerlink" href="#computability-choices" title="Permalink to this heading">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Note for instructors</p>
 <p>The sections of this chapter are general background and motivation.  They could be read at the beginning of a course, but more likely they will be used on an “as needed” basis.  I say this because not every course will need all of the background sections that are here.   For example, if a course will not contain the concrete undecidability results that near the end of the book, there is no real reason to motivate them in the beginning.  In other words, the course could begin with the work on <code class="docutils literal notranslate"><span class="pre">1#</span></code> in the next chapter.</p>
+<p>Some of the sections of this chapter contain exercises, and it should be understood that those exercises are mainly to be solved on the basis of <em>intuitive computability</em>, since this material is presented before any definitions are made.  Then later, once the definitions are in place, one can return to these exercises, and to everything else in this chapter as well, in order to see how things would work with actual definitions.</p>
 </div>
 <p>We begin with some of the main issues that drive our subject.   First of all, there is the matter of giving a mathematical definition to the intuitive concept of <em>computable function</em>.   What we mean here is that there is an <em>intuitive definition</em>: a function <span class="math notranslate nohighlight">\(f:A\to B\)</span> is <em>intuitively computable</em> if there is a finite set of precise instructions so that, given <span class="math notranslate nohighlight">\(a\in A\)</span> as an input and carrying out the instructions results in <span class="math notranslate nohighlight">\(f(a)\)</span> as an output.   Executing the instructions has to finish in finite time on each input.    The output <span class="math notranslate nohighlight">\(f(a)\)</span> has to be correct.</p>
 <div class="tip admonition">
@@ -680,7 +678,7 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: initial remarks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: choices</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>

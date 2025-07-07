@@ -174,9 +174,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: initial remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
 
@@ -189,6 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues/reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="issues/recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -200,9 +201,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="introOneSharp/functions.html">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -227,9 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -252,13 +248,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -274,7 +266,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic/CT_via_matrices.html">Commutative rings with unit</a></li>
+
 </ul>
 
     </div>
@@ -435,6 +432,7 @@ document.write(`
    <a href="#cap-BuckTheorem"><strong>BuckTheorem</strong></a> | 
    <a href="#cap-BuckThree"><strong>BuckThree</strong></a> | 
    <a href="#cap-BuckTwo"><strong>BuckTwo</strong></a> | 
+   <a href="#cap-CT_via_matrices"><strong>CT_via_matrices</strong></a> | 
    <a href="#cap-Churchs-theorem"><strong>Churchs-theorem</strong></a> | 
    <a href="#cap-Konig"><strong>Konig</strong></a> | 
    <a href="#cap-PCP_undecidability"><strong>PCP_undecidability</strong></a> | 
@@ -471,7 +469,7 @@ document.write(`
    <a href="#cap-example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1"><strong>example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1</strong></a> | 
    <a href="#cap-example-modified-trace"><strong>example-modified-trace</strong></a> | 
    <a href="#cap-lemma-9"><strong>lemma-9</strong></a> | 
-   <a href="#cap-lemma-in-Churchs-theorem"><strong>lemma-in-Churchs-theorem</strong></a> | 
+   <a href="#cap-numerals"><strong>numerals</strong></a> | 
    <a href="#cap-one-more-register-halting"><strong>one-more-register-halting</strong></a> | 
    <a href="#cap-one-register-halting"><strong>one-register-halting</strong></a> | 
    <a href="#cap-phi-notation"><strong>phi-notation</strong></a> | 
@@ -551,12 +549,20 @@ document.write(`
        <a href="mu/ackermann.html#BuckTwo"><code class="xref">BuckTwo</code></a> <em>(mu/ackermann)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-CT_via_matrices"><td></td><td>
+       <strong>CT_via_matrices</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="logic/CT_via_matrices.html#CT_via_matrices"><code class="xref">CT_via_matrices</code></a> <em>(logic/CT_via_matrices)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-Churchs-theorem"><td></td><td>
        <strong>Churchs-theorem</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="undecidability/church.html#Churchs-theorem"><code class="xref">Churchs-theorem</code></a> <em>(undecidability/church)</em></td><td>
+       <a href="logic/church_turing.html#Churchs-theorem"><code class="xref">Churchs-theorem</code></a> <em>(logic/church_turing)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-Konig"><td></td><td>
@@ -756,7 +762,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="introOneSharp/functions.html#definition-2"><code class="xref">definition-2</code></a> <em>(introOneSharp/functions)</em></td><td>
+       <a href="undecidability/tiling.html#definition-2"><code class="xref">definition-2</code></a> <em>(undecidability/tiling)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-5"><td></td><td>
@@ -812,7 +818,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="undecidability/church.html#example-church-tiling"><code class="xref">example-church-tiling</code></a> <em>(undecidability/church)</em></td><td>
+       <a href="logic/church_turing.html#example-church-tiling"><code class="xref">example-church-tiling</code></a> <em>(logic/church_turing)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1"><td></td><td>
@@ -839,12 +845,12 @@ document.write(`
        <a href="undecidability/tiling.html#lemma-9"><code class="xref">lemma-9</code></a> <em>(undecidability/tiling)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-lemma-in-Churchs-theorem"><td></td><td>
-       <strong>lemma-in-Churchs-theorem</strong></td><td></td></tr>
+     <tr class="cap" id="cap-numerals"><td></td><td>
+       <strong>numerals</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="undecidability/church.html#lemma-in-Churchs-theorem"><code class="xref">lemma-in-Churchs-theorem</code></a> <em>(undecidability/church)</em></td><td>
+       <a href="logic/CT_via_matrices.html#numerals"><code class="xref">numerals</code></a> <em>(logic/CT_via_matrices)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-one-more-register-halting"><td></td><td>
@@ -852,7 +858,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="universal/universal.html#one-more-register-halting"><code class="xref">one-more-register-halting</code></a> <em>(universal/universal)</em></td><td>
+       <a href="universal/universalMore.html#one-more-register-halting"><code class="xref">one-more-register-halting</code></a> <em>(universal/universalMore)</em></td><td>
        <em>proposition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-one-register-halting"><td></td><td>
@@ -860,7 +866,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="universal/universal.html#one-register-halting"><code class="xref">one-register-halting</code></a> <em>(universal/universal)</em></td><td>
+       <a href="universal/universalMore.html#one-register-halting"><code class="xref">one-register-halting</code></a> <em>(universal/universalMore)</em></td><td>
        <em>proposition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-phi-notation"><td></td><td>
@@ -940,7 +946,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="universal/universal.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(universal/universal)</em></td><td>
+       <a href="universal/universalMore.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(universal/universalMore)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-1"><td></td><td>

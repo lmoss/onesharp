@@ -171,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: initial remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
 
@@ -186,6 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../issues/recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -223,9 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -238,6 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/turing.html">Turing computability</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -247,13 +245,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -269,7 +263,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">Commutative rings with unit</a></li>
+
 </ul>
 
     </div>
@@ -491,6 +490,11 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/more_programs/sanity.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="a-tool-to-help-write-programs">
 <span id="content-firstsanity"></span><h1>A tool to help write programs<a class="headerlink" href="#a-tool-to-help-write-programs" title="Permalink to this heading">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Note for instructors</p>
+<p>Any class which asks students to write significant programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> would be better off investing in the “Sanity” tool of this section, even though Sanity might push students with no computer experience out of their comfort zone.  The key to teaching Sanity is to give examples and to work with people so that they are alert to the strict syntax of Sanity.</p>
+</div>
 <p>The language <code class="docutils literal notranslate"><span class="pre">1#</span></code> is intended to be the simplest possible language in which one can discuss the main results of computability theory.  One way to make this case is to discuss</p>
 <ol class="arabic simple">
 <li><p>Write a program to say “hello world”.  That is, write a program that outputs some simple string.</p></li>

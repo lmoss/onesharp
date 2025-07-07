@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Computability: initial remarks" href="issues/issues.html" />
+    <link rel="next" title="Computability: choices" href="issues/issues.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,9 +170,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: initial remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
 
@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues/reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="issues/recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -196,9 +197,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="introOneSharp/functions.html">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -223,9 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -248,13 +244,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -270,7 +262,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logic/CT_via_matrices.html">Commutative rings with unit</a></li>
+
 </ul>
 
     </div>
@@ -474,7 +471,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-register-machines">Text register machines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsolvable-problems">Unsolvable problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and-the-categorical-treament-of-recursion">Recursion principles and the categorical treament of recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and-the-categorical-treatment-of-recursion">Recursion principles and the categorical treatment of recursion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a><ul class="visible nav section-nav flex-column">
@@ -499,9 +496,10 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="invitation-to-computability">
 <h1>Invitation to Computability<a class="headerlink" href="#invitation-to-computability" title="Permalink to this heading">#</a></h1>
+<p>Lawrence S. Moss</p>
 <p>This is a textbook on the basics of computability theory, originating in classes given by the author
 at Indiana University for quite a few years.  My students are mainly graduate students in either mathematics or computer science, always with a few undergraduates and a few grad students from philosophy and other disciplines.</p>
-<p>In some ways, the content of the book is standard, and in some ways it is not. It treats the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Recursion Theorem, and undecidability in computability theory, mathematics, and logic.  Of course we are living decades past the original proofs of these results, and so the presentation here will differ.  This book will try to make pointers to many of the developments in computability theory and computer science that have come from the classical material.</p>
+<p>In some ways, the content of the book is standard, and in some ways it is not. It introduces the basic topics of the subject: the concept of computability, primitive recursion, mu-recursion, universal functions, the Recursion Theorem, relative computability, the arithmetic hierarchy, and undecidability in computability theory, mathematics, and logic.  Of course we are living decades past the original results on these topics, and so the presentation here will differ.  This book will try to make pointers to many of the developments in computability theory and computer science that have come from the classical material.</p>
 <div class="section" id="why-a-jupyter-book">
 <h2>Why a Jupyter book?<a class="headerlink" href="#why-a-jupyter-book" title="Permalink to this heading">#</a></h2>
 <p>We are also living in the wake of several revolutions in society coming from the advent of computers and the
@@ -510,33 +508,33 @@ book about computation theory should use up-to-date computational tools. This bo
 packages, Jupyter notebooks and everything needed to work with them, <span class="math notranslate nohighlight">\(\LaTeX\)</span>, github, and more.  In the
 course of working on the book I became interested in using all of these computational artifacts, mainly as a
 way of seeing what would work in a textbook, and what would not. Since working in this medium is new to me
-(and pretty much everyone), I became as interested in those aspects of the project as in the content. Here are some of artifacts found here but not in a traditional book on computability theory: a executable Python code, especially in the beginning chapters; a variety of pictures and charts; the ability to hide technical passages and to otherwise structure a text; and clickable references to discussions, papers,
+(and pretty much everyone), I became as interested in those aspects of the project as in the content. Here are some of artifacts found here but not in a traditional book on computability theory: a executable Python code, especially in several chapters near the beginning; a variety of pictures and charts; the ability to hide technical passages and to otherwise structure a text; and clickable references to discussions, papers,
 <a class="reference external" href="http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html">and even poems</a>, both inside and outside of the book  itself. In time I will consider adding animations to illustrate some of the dynamism that I sense with computably enumerable sets which is arrested in any print presentation.  I also would like to incorporate tools for readers to annotate and discuss matters, enabling a community of  readers.  In short, I am aiming for something which is both a short textbook and an intellectual version of a coffee-table book.</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="intended-audience">
 <h1>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this heading">#</a></h1>
 <p>This book is aimed at anyone who frequently encounters the very basic parts of computability theory and has the needed mathematical background to read it.  That background is a working familiarity with mathematical notation and discourse.   One should know how to read mathematics.  This would be the wrong place to learn basic abstract mathematics; the pace and level would be too much.   But if you can read mathematics, that is enough: nothing else is really assumed.  There are places where it would be good to have seen some induction on the natural numbers and even some basic topics in areas like logic, set theory, and computer programming.  But one could do without the background, I think.  And I hope to have provided enough background on those topics to make what is here accessible.</p>
-<p>Some of the people who will benefit from the book: those in the broad area of interdisciplinary logic but who are not specialists in computability theory per se; computer scientists in areas like programming languages and theory of computation; philosophers interested in areas like the philosophy of logic or philosophy of mathematics.  For others, such as those pursuing any area of mathematics, the subject will probably be an “extra”.  But “extras” are important, too.  I really have in mind a broad audience of people who might find the topics here intersting.</p>
+<p>Some of the people who will benefit from the book: those in the broad area of interdisciplinary logic but who are not specialists in computability theory per se; computer scientists in areas like programming languages and theory of computation; philosophers interested in areas like the philosophy of logic or philosophy of mathematics.  For others, such as those pursuing any area of mathematics, especially areas that might be far from computability theory, the subject will probably be an “extra”.  But “extras” are important, too.  Summing up: I have in mind a broad audience of people who might find the topics of the book intersting.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="distinctive-features">
 <span id="content-distinctivefeatures"></span><h1>Distinctive features<a class="headerlink" href="#distinctive-features" title="Permalink to this heading">#</a></h1>
-<p>The are three distinctive features of the book.   Theree of the first four chapters are mainly an online resource.  For this part of the book, this more important than the printed book.    Most of the chapters in that part of the book are Jupyter notebooks. Rather than simply read, these chapters are intended to be <em>run</em> and <em>programmed</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open them on a hosting service like CoCalc, Binder, or Google Colab.  The Jupyter book format is not so important for the material that comes after the first sections, and for those a traditional print book is going to be available.</p>
+<p>The are three distinctive features of this book.   Three of the first four chapters are mainly an online resource.  For them, this more important than the printed book.    Most of the chapters in that part of the book are Jupyter notebooks. Rather than simply read, these chapters are intended to be <em>run</em> and <em>programmed</em>. One way to use them is to save them and then run them locally.  Alternatively, one could open them on a hosting service like CoCalc, Binder, or Google Colab.  The Jupyter book format is not so important for the material that comes after the first sections, and for those a traditional print book is going to be available.</p>
 <div class="section" id="text-register-machines">
 <h2>Text register machines<a class="headerlink" href="#text-register-machines" title="Permalink to this heading">#</a></h2>
 <p>Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  How can this be?  It is more concrete in the beginning than other books, and more abstract later on.  It is more concrete in that it comes with a dedicated computer implementation and because it goes into full details on coding.  But later it is more abstract because it discusses matters like recursion on induction on a fairly abstract level and because it also discusses corecursion alongside recursion.</p>
-<p>The concrete part in the beginning develops a model of computation which is a variant of a register machine called a <em>text register machine</em>.  The “text” in “text register machine” is the feature (orignal here) that the programming language of the machine is the same as the language of programs.  This language the set of words on the two letter alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  So the language is called <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This text comes with two interpreters for <code class="docutils literal notranslate"><span class="pre">1#</span></code>, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to help people to write long programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code>; for example, one can turn a flowchart into a  <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.  Another tool turns a decription of a primitive recursive function into <code class="docutils literal notranslate"><span class="pre">1#</span></code> code.   Those tools are in Python, and while one need not read the programs to use them, a class for computer science students could indeed do so.  Using <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the accompanying tools, the main first theorems of computability theory are presented constructively in full detail, with no coding and no hand-waving.    One can write explicit universal programs, <span class="math notranslate nohighlight">\(s^m_n\)</span> programs, self-writing programs, the T-predicate, and similar artifacts that essentially <em>are</em> the main first results in computability theory.   One can prove Kleene’s Second Recursion Theorem in full detail, too.</p>
-<p>The use of <code class="docutils literal notranslate"><span class="pre">1#</span></code> is why the treatment here is much more explicit than usual.   The way the book works is that those main first results are presented in full detail, and then after doing so it becomes more “hand wavy”.  Probably every book on the topic is going becomes “hand wavy” at some point.  But this one does so much later, due to our use of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the extra tools.</p>
+<p>The concrete part in the beginning develops a model of computation which is a variant of a register machine called a <em>text register machine</em>.  The “text” in “text register machine” is the feature that the programming language of the machine is the same as the language of programs.  This language the set of words on the two letter alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  So the language is called <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This text comes with two interpreters for <code class="docutils literal notranslate"><span class="pre">1#</span></code>, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to help people to write long programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code>; for example, one can turn a flowchart into a  <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.  Another tool turns a decription of a primitive recursive function into <code class="docutils literal notranslate"><span class="pre">1#</span></code> code.   Those tools are in Python, and while one need not read the programs to use them, a class for computer science students could indeed do so.  Using <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the accompanying tools, the main first theorems of computability theory are presented constructively in full detail, with no coding and no hand-waving.    One can write explicit universal programs, <span class="math notranslate nohighlight">\(s^m_n\)</span> programs, self-writing programs, the T-predicate, and similar artifacts that essentially <em>are</em> the main first results in computability theory.   One can prove Kleene’s Second Recursion Theorem in full detail, too.</p>
+<p>The use of <code class="docutils literal notranslate"><span class="pre">1#</span></code> is why the treatment here is much more explicit than usual.   The way the book works is that those main first results are presented in full detail, and then after doing so it becomes more “hand wavy”.  Probably every book on the topic becomes “hand wavy” at some point.  But this one does fairly late, due to our use of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and the extra tools.</p>
 </div>
 <div class="section" id="unsolvable-problems">
 <h2>Unsolvable problems<a class="headerlink" href="#unsolvable-problems" title="Permalink to this heading">#</a></h2>
-<p>The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as Church’s Theorem that satisfiability in first-order logic is undecidable.   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with <code class="docutils literal notranslate"><span class="pre">1#</span></code> earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church’s Theorem.</p>
+<p>The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as the Church-Turing Theorem (satisfiability in first-order logic is undecidable).   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with <code class="docutils literal notranslate"><span class="pre">1#</span></code> earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church’s Theorem.</p>
 </div>
-<div class="section" id="recursion-principles-and-the-categorical-treament-of-recursion">
-<h2>Recursion principles and the categorical treament of recursion<a class="headerlink" href="#recursion-principles-and-the-categorical-treament-of-recursion" title="Permalink to this heading">#</a></h2>
+<div class="section" id="recursion-principles-and-the-categorical-treatment-of-recursion">
+<h2>Recursion principles and the categorical treatment of recursion<a class="headerlink" href="#recursion-principles-and-the-categorical-treatment-of-recursion" title="Permalink to this heading">#</a></h2>
 <p>Another way to make the point about the book being both more concrete and also more sophisticated: the text goes into details about coding in a fair amount of detail – much more so than usual, since we can illustrate much of the coding work using actual programs.  But at the same time it discusses the overall issues of coding in an abstract way, using ideas originating in abstract data types.</p>
 <p>We include pointers to, and digressions on, topics such as recursion principles in very general settings, combinatory logic, and term rewriting.  For example, we discuss recursion on well-founded well-ordered sets.  This all comes in the second part of the book.   That part demands more mathematical maturity than the concrete work.  But the book is also designed so that the first part provides some help to students at beginning levels.</p>
-<p>The final distinctive feature of the book is a “gentle introduction” to areas of theoretical computer science related to <em>algebra</em> and <em>coalgebra</em>.   The goal here is to understand Lawvere’s point that ordinary recursion on the natural numbers is equivalent to the initiality of the the natural numbers in a certain category.  Doing this leads to a deeper understanding of the relation of recursion and induction.  So all of this is presented from scratch.  The payoff comes when we “turn the arrows around” to see corecursion and bisimulation, matching recursion and induction.  These are not traditional topics for an introductory course on this subject, but I no reason why they would not be.   And for my intended audicence, they make more sense than the traditional topics which I have chosen to omit, such as oracle computation, c.e. sets and priority arguments, and complexity theory.  These all are the main focus topics of other textbooks and do not fit with what I am trying to do here.</p>
+<p>The final distinctive feature of the book is a “gentle introduction” to areas of theoretical computer science related to <em>algebra</em> and <em>coalgebra</em>.   The goal here is to understand the point that ordinary recursion on the natural numbers is equivalent to the initiality of the natural numbers in a certain category.  Doing this leads to a deeper understanding of the relation of recursion and induction.  So all of this is presented from scratch.  The payoff comes when we “turn the arrows around” to see corecursion and bisimulation, matching recursion and induction.  These are not traditional topics for an introductory course on this subject, but I no reason why they would not be.   And for my intended audience, they make more sense than the traditional topics which I have chosen to omit, such as oracle computation, c.e. sets and priority arguments, and complexity theory.  These all are the main focus topics of other textbooks and do not fit with what I am trying to do here.</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="using-it-in-a-classroom-or-for-self-study">
@@ -595,6 +593,8 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
 </div>
 <div class="toctree-wrapper compound">
 </div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -632,7 +632,7 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computability: initial remarks</p>
+        <p class="prev-next-title">Computability: choices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -659,7 +659,7 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distinctive-features">Distinctive features</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-register-machines">Text register machines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsolvable-problems">Unsolvable problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and-the-categorical-treament-of-recursion">Recursion principles and the categorical treament of recursion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-principles-and-the-categorical-treatment-of-recursion">Recursion principles and the categorical treatment of recursion</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-in-a-classroom-or-for-self-study">Using it in a classroom or for self-study</a><ul class="visible nav section-nav flex-column">

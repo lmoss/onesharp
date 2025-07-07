@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Computable functions on encoded structures" href="coding.html" />
-    <link rel="prev" title="Computability: initial remarks" href="issues.html" />
+    <link rel="prev" title="Computability: choices" href="issues.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: initial remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems</a></li>
 
@@ -186,6 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -223,9 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -238,6 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/turing.html">Turing computability</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -247,13 +245,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -269,7 +263,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">Commutative rings with unit</a></li>
+
 </ul>
 
     </div>
@@ -466,7 +465,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
@@ -490,11 +489,11 @@ document.write(`
 <h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this heading">#</a></h1>
 <p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="does-a-graph-have-a-cycle">
-<h1>Does a graph have a cycle?<a class="headerlink" href="#does-a-graph-have-a-cycle" title="Permalink to this heading">#</a></h1>
-<p>A <em>graph</em> is a set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="does-a-finite-graph-have-a-cycle">
+<h1>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Permalink to this heading">#</a></h1>
+<p>A <em>finite graph</em> is a finite set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
-<p>Given a graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
+<p>Given a finite graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
 <p>We are not going to be very interested in specific solvable problems in this book.  So the main point of this example here is that it contrasts with all of the examples which follow it.</p>
 <hr class="docutils" />
 <img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
@@ -607,16 +606,17 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 <p class="admonition-title">Example</p>
 <p>For example here is a polynomial in three variables: <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - 33\)</span>.  What we are asking is whether there are integers comprising a root.   This was open for quite some time.  It turns out that the answer is Yes:</p>
 <div class="math notranslate nohighlight">
-\[
-x = 8, 866, 128, 975, 287, 528
-\quad
-y =  −8, 778, 405, 442, 862, 239 
-\quad 
-z =  −2, 736, 111, 468, 807, 040.
-\]</div>
+\[\begin{split}
+\begin{array}{lcr}
+x &amp; =  &amp; 8, 866, 128, 975, 287, 528\\
+y &amp; =  &amp;  −8, 778, 405, 442, 862, 239 
+\\
+z &amp; =  &amp;  −2, 736, 111, 468, 807, 040
+\end{array}
+\end{split}\]</div>
 <p>But this is an <em>instance</em> of the general problem.   That general problem would ask us to find a program or algorithm which, when given the polynomial as an input, outpus an answer – Yes or No – correctly and in finite time  – to the question of whether the given polynomial has an integer root.  For example, it just so happens that for a number of the form <span class="math notranslate nohighlight">\(n = 9k + 4\)</span> or <span class="math notranslate nohighlight">\(n = 9k + 5\)</span>, there are no roots of  <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - n\)</span>.  So for polynomials of those forms, the answer would be No.   And for  <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - 33\)</span>, it would be Yes.</p>
 </div>
-<p>The general problem is called <em>Hilbert’s 10th problem</em>.  In view of how hard it is to actually solve instances (despite having a lot of number theory to use), it is perhaps not surprising that Hilbert’s 10th problem is undecidable.  This is called the Maitiasevich-Robinson-Davis-Putnam (MRLP) Theorem.</p>
+<p>The general problem is called <em>Hilbert’s 10th problem</em>.  In view of how hard it is to actually solve instances (despite having a lot of number theory to use), it is perhaps not surprising that Hilbert’s 10th problem is undecidable.  This is called the Maitiasevich-Robinson-Davis-Putnam (MRDP) Theorem.</p>
 <p>Hilbert’s 10th problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
 <p>As we said, it turns out that there is <em>no</em> algorithm to do solve Hilbert’s 10th problem in general.  This is the only question whichv we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are involve so much number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
 <p>Of course, the fact that the general problem is undecidable does not deter people from solving special cases, as they did above.</p>
@@ -709,7 +709,7 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </ol>
 <p>[Hint, this has very little to do with matrix multiplication!]</p>
 <ol class="arabic simple" start="2">
-<li><p>Now consider the a variation on the last part.  Consider the problem whose inputs are pairs <span class="math notranslate nohighlight">\((n,S\)</span> consisting of a number <span class="math notranslate nohighlight">\(n\)</span> and some <span class="math notranslate nohighlight">\(S\in A_n\)</span>.  We again ask whether <span class="math notranslate nohighlight">\(S\)</span> has a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix.  Does the last part imply that this problem is decidable?  Be sure to give a clear, concise, and convincing answer.</p></li>
+<li><p>Now consider the a variation on the last part.  Consider the problem whose inputs are pairs <span class="math notranslate nohighlight">\((n,S)\)</span> consisting of a number <span class="math notranslate nohighlight">\(n\)</span> and some <span class="math notranslate nohighlight">\(S\in A_n\)</span>.  We again ask whether <span class="math notranslate nohighlight">\(S\)</span> has a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix.  Does the last part imply that this problem is decidable?  Be sure to give a clear, concise, and convincing answer.</p></li>
 </ol>
 </div>
 </div>
@@ -796,7 +796,7 @@ This, too, is an interesting thing to do.</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computability: initial remarks</p>
+        <p class="prev-next-title">Computability: choices</p>
       </div>
     </a>
     <a class="right-next"
@@ -824,7 +824,7 @@ This, too, is an interesting thing to do.</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-graph-have-a-cycle">Does a graph have a cycle?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>

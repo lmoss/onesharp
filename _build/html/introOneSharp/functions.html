@@ -171,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: initial remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../issues/problems.html">Algorithmic problems</a></li>
 
@@ -186,6 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../issues/recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="current nav bd-sidenav">
@@ -197,9 +198,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -224,9 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -249,13 +245,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Contents of this chapter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -271,7 +263,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">Commutative rings with unit</a></li>
+
 </ul>
 
     </div>
@@ -467,10 +464,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions defined by programs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions defined by programs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-sets-and-computably-enumerable-sets">Computable sets and computably enumerable sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-of-programs">Equivalence of programs</a></li>
@@ -489,30 +488,13 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="functions-defined-by-programs">
 <h1>Functions defined by programs<a class="headerlink" href="#functions-defined-by-programs" title="Permalink to this heading">#</a></h1>
-<p>At this point we know what programs of   <code class="docutils literal notranslate"><span class="pre">1#</span></code> are and how they work.
+<p>At this point <a class="reference internal" href="instructions.html#content-whatareprograms"><span class="std std-ref">we know what programs of   <code class="docutils literal notranslate"><span class="pre">1#</span></code> are and how they work</span></a>.
 We are interested not just in the programs themselves
 but in <em>what</em> they compute.</p>
-<p>We call the set <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>  our  <em>alphabet</em>, and we use the letter <span class="math notranslate nohighlight">\(A\)</span>  for it.</p>
-<p>We know that it is odd to call such a small set an “alphabet”,
-even more so when that set doesn’t have any letters in it!
-But this usage is standard, and so we’ll adopt it.
-When used in situations like ours, the word “alphabet”
-just means a set that you use to build words from.</p>
-<p>But if <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code> is our alphabet, what in
-the world are our words?!</p>
-<p>Answer:
-A <em>word</em> is just a sequence of  symbols from our alphabet.</p>
-<p>Examples of words include
-<code class="docutils literal notranslate"><span class="pre">11#11####</span></code> and also the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
 <p>Let us be clear about the difference between
 <em>instructions</em> and <em>programs</em>:</p>
 <p><em>Instructions</em> are single steps
 in programs.</p>
-<p>A <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> is just a sequence of
-instructions,
-run together to make a big word.
-An instruction counts as a program,
-but programs of length <span class="math notranslate nohighlight">\(\geq 2\)</span> are not instructions.</p>
 <div class="proof definition admonition" id="phi-notation">
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
 <div class="definition-content section" id="proof-content">
@@ -566,9 +548,8 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 <p>Show that the following function <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable: <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="partial-functions">
-<h1>Partial functions<a class="headerlink" href="#partial-functions" title="Permalink to this heading">#</a></h1>
+<div class="section" id="partial-functions">
+<h2>Partial functions<a class="headerlink" href="#partial-functions" title="Permalink to this heading">#</a></h2>
 <p>Suppose we run a program <span class="math notranslate nohighlight">\(p\)</span> with an input word <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.  This run might, or might not, halt.  The first example of this is when <span class="math notranslate nohighlight">\(p\)</span> is a loop <span class="math notranslate nohighlight">\(\one\hash^3\one\hash^4\)</span>.  For this program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span> is <em>undefined</em> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>For other programs <span class="math notranslate nohighlight">\(q\)</span> there might be some programs <span class="math notranslate nohighlight">\(p\)</span> for which <span class="math notranslate nohighlight">\(\phifn_p\)</span> is defined for some but not all input words.</p>
 <div class="proof definition admonition" id="definition-2">
@@ -623,8 +604,8 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="functions-of-two-or-more-arguments">
-<h1>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this heading">#</a></h1>
+<div class="section" id="functions-of-two-or-more-arguments">
+<h2>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this heading">#</a></h2>
 <p>A program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
 <div class="proof definition tip admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
@@ -712,8 +693,8 @@ k(x) = f(g(x), h(x))
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="functions-of-zero-inputs">
-<h1>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Permalink to this heading">#</a></h1>
+<div class="section" id="functions-of-zero-inputs">
+<h2>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Permalink to this heading">#</a></h2>
 <p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
 <div class="proof definition admonition" id="definition-8">
 <p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
@@ -734,6 +715,7 @@ registers
 empty.</p>
 </div>
 </div></div>
+</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-9">
@@ -839,8 +821,7 @@ That is, for all <span class="math notranslate nohighlight">\(x\)</span>, <span 
 <p>More generally, we could define the notion of <em>equivalent as <span class="math notranslate nohighlight">\(n\)</span>-place functions</em> for all natural numbers <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">1###</span></code> and <code class="docutils literal notranslate"><span class="pre">1###1###</span></code> are not equal, but they are strongly equivalent (and thus equivalent as one-place functions).</p>
-<p>For an example of programs <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> which are equivalent as one-place functions but not strongly equivalent, let <span class="math notranslate nohighlight">\(p\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">1#</span></code>.
-Running <span class="math notranslate nohighlight">\(q\)</span> when R1 and R2 both have <code class="docutils literal notranslate"><span class="pre">1</span></code> results in a halting computation where R1 has <code class="docutils literal notranslate"><span class="pre">11</span></code> and R2 is empty.  But running <span class="math notranslate nohighlight">\(p\)</span> this way preserves R2.</p>
+<p>For an example of programs <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> which are equivalent as one-place functions but not strongly equivalent, let <span class="math notranslate nohighlight">\(p\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>, and let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">clear_2</span> <span class="pre">+</span> <span class="pre">1#</span></code>.  Running <span class="math notranslate nohighlight">\(q\)</span> when R1 and R2 both have <code class="docutils literal notranslate"><span class="pre">1</span></code> results in a halting computation where R1 has <code class="docutils literal notranslate"><span class="pre">11</span></code> and R2 is empty.  But running <span class="math notranslate nohighlight">\(p\)</span> this way preserves R2.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -906,10 +887,12 @@ Running <span class="math notranslate nohighlight">\(q\)</span> when R1 and R2 b
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions defined by programs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions defined by programs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-sets-and-computably-enumerable-sets">Computable sets and computably enumerable sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-of-programs">Equivalence of programs</a></li>
