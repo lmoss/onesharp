@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>The s-m-n Theorem &#8212; Invitation to Computability</title>
+    <title>The Church-Theorem obtained from matrix mortality &#8212; Invitation to Computability</title>
   
   
   
@@ -61,11 +61,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'more_programs/smn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'logic/CT_via_matrices';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Two-by-Two encoding" href="../universal/twoByTwo.html" />
-    <link rel="prev" title="Programs for arithmetic" href="arithmetic.html" />
+    <link rel="prev" title="The set \(SAT_{FO}\) of sentences of first-order logic which are satisfiable is undecidable. In fact \(\overline{K}\leq_m SAT_{FO}\)." href="church_turing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,17 +216,17 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="sanity.html">A tool to help write programs</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/sanity.html">A tool to help write programs</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="arithmetic.html">Programs for arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/arithmetic.html">Programs for arithmetic</a></li>
 
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">The s-m-n Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_programs/smn.html">The s-m-n Theorem</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -277,9 +276,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">Church-Turing Theorem via tiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem obtained from matrix mortality</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="church_turing.html">Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Church-Theorem obtained from matrix mortality</a></li>
 </ul>
 
     </div>
@@ -351,7 +350,7 @@
       
       
       
-      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Fmore_programs/smn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lmoss/onesharp/issues/new?title=Issue%20on%20page%20%2Flogic/CT_via_matrices.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +380,7 @@
       
       
       
-      <li><a href="../_sources/more_programs/smn.ipynb" target="_blank"
+      <li><a href="../_sources/logic/CT_via_matrices.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -452,7 +451,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -463,11 +464,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The s-m-n Theorem</h1>
+    <h1>The Church-Theorem obtained from matrix mortality</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutative-rings-with-unit">Commutative rings with unit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-9-place-relation-symbol-r">Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -477,154 +487,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="the-s-m-n-theorem">
-<h1>The s-m-n Theorem<a class="headerlink" href="#the-s-m-n-theorem" title="Link to this heading">#</a></h1>
-<p>This section contains one of the most widely-used technical results in computability theory,<a class="reference internal" href="#smn">Lemma 1</a> below.</p>
-<div class="proof lemma admonition" id="smn">
-<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-church-theorem-obtained-from-matrix-mortality">
+<h1>The Church-Theorem obtained from matrix mortality<a class="headerlink" href="#the-church-theorem-obtained-from-matrix-mortality" title="Link to this heading">#</a></h1>
+<p>We give another short proof of <a class="reference internal" href="church_turing.html#Churchs-theorem">Theorem 17</a>, this time using our work on matrix mortality.</p>
+<section id="commutative-rings-with-unit">
+<h2>Commutative rings with unit<a class="headerlink" href="#commutative-rings-with-unit" title="Link to this heading">#</a></h2>
+<p>We us a first-order signature in this section has symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, and <span class="math notranslate nohighlight">\(\times\)</span>.  The symbol <span class="math notranslate nohighlight">\(-\)</span> is unary.
+The set <span class="math notranslate nohighlight">\(Ax\)</span> of axioms are those of <em>commutative rings with unit</em>. What we need to know about this set is that (1) the integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> with the usual operations is a model of it, and a lemma stated below.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>A <em>numeral</em> is a term of the form <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(1+1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, or its negative <span class="math notranslate nohighlight">\(-(1 + \cdots+ 1)\)</span>.   For each integer <span class="math notranslate nohighlight">\(n\)</span> we have a corresponding numeral <span class="math notranslate nohighlight">\(\underline{n}\)</span>.
+For example, <span class="math notranslate nohighlight">\(\underline{-3}\)</span> is <span class="math notranslate nohighlight">\(-(1+(1+1))\)</span>.  Every numeral is of the form <span class="math notranslate nohighlight">\(\underline{m}\)</span> for some integer <span class="math notranslate nohighlight">\(m\)</span>.</p>
+</div>
+<div class="proof lemma admonition" id="numerals">
+<p class="admonition-title"><span class="caption-number">Lemma 13 </span></p>
 <section class="lemma-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> be natural numbers.</p>
-<p>There is a program <span class="math notranslate nohighlight">\(s^m_n\)</span> such that for all words <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ [\![s^m_n]\!](p, q_1,\ldots, q_m)]\!](r_1,\ldots, r_n)
-\simeq
-[\![ p]\!](q_1,\ldots, q_m,r_1,\ldots, r_n)
-\]</div>
-</section>
-</div><div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
-<section class="remark-content" id="proof-content">
-<p>The way the notation in <span class="math notranslate nohighlight">\(s^m_n\)</span> works is that we have <span class="math notranslate nohighlight">\(m\)</span> stored variables, and we expect <span class="math notranslate nohighlight">\(n\)</span> more to run <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Here is the statement in words:</p>
-<p>If we start running  <span class="math notranslate nohighlight">\(s^m_n\)</span>  with  <span class="math notranslate nohighlight">\(p\)</span> in R1, <span class="math notranslate nohighlight">\(q_1\)</span>  in R2,  and <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span> in R<span class="math notranslate nohighlight">\((m+1)\)</span>  then we  get a word <span class="math notranslate nohighlight">\(x\)</span> in R1 (and all other registers empty).</p>
-<p>If we then run <span class="math notranslate nohighlight">\(x\)</span>  with <span class="math notranslate nohighlight">\(r_1\)</span> in R1,<span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_n\)</span> in R<span class="math notranslate nohighlight">\(n\)</span>, we would get the same thing as running the original <span class="math notranslate nohighlight">\(p\)</span> with
-<span class="math notranslate nohighlight">\(q_1\)</span> in R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(q_m\)</span> in R<span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span> in R<span class="math notranslate nohighlight">\((m+1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(r_m\)</span> in R<span class="math notranslate nohighlight">\((m+n)\)</span>.</p>
-</section>
-</div><p>We are not going to prove <a class="reference internal" href="#smn">Lemma 1</a> in full, but we do want to give all the details on what is probably the most important special case, when <span class="math notranslate nohighlight">\(m = n = 1\)</span>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Example: <span class="math notranslate nohighlight">\(s^1_1\)</span></p>
-<p>We seek a program <span class="math notranslate nohighlight">\(s^1_1\)</span> so that</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ [\![s^1_1]\!](p, q)]\!](r)
-\simeq
-[\![ p]\!](q,r)
-\]</div>
-<p>We take <span class="math notranslate nohighlight">\(s^1_1\)</span> to be</p>
-<p><code class="docutils literal notranslate"><span class="pre">move_1_3</span> <span class="pre">+</span> <span class="pre">move_2_1</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_1_2</span> <span class="pre">+</span> <span class="pre">[[write]](move_1_2)</span> <span class="pre">+</span> <span class="pre">move_2_1</span>&#160; <span class="pre">+</span> <span class="pre">move_3_1</span></code></p>
-<p>Before we check that this works, here is a comment on the difference between <code class="docutils literal notranslate"><span class="pre">write</span></code> and <code class="docutils literal notranslate"><span class="pre">[[write]](move_1_2)</span></code>.
-The program <code class="docutils literal notranslate"><span class="pre">write</span></code> takes whatever word <span class="math notranslate nohighlight">\(x\)</span> is in R1 and, using R2 as a temporary register, returns a program which
-would write <span class="math notranslate nohighlight">\(x\)</span> after whatever is in R1.   The program <code class="docutils literal notranslate"><span class="pre">[[write]](move_1_2)</span></code> puts the program <code class="docutils literal notranslate"><span class="pre">move_1_2</span></code> after whatever
-is in R1.</p>
-<p>We verify that our proposal for <span class="math notranslate nohighlight">\(s^1_1\)</span> works by making tables of what happens after each of its sub-programs.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>start</p></th>
-<th class="head"><p>move_1_3</p></th>
-<th class="head"><p>move_2_1</p></th>
-<th class="head"><p>write</p></th>
-<th class="head"><p>move_1_2</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>R1</p></td>
-<td><p>p</p></td>
-<td><p></p></td>
-<td><p>q</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>R2</p></td>
-<td><p>q</p></td>
-<td><p>q</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>R3</p></td>
-<td><p></p></td>
-<td><p>p</p></td>
-<td><p>p</p></td>
-<td><p>p</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The reason for starting with <code class="docutils literal notranslate"><span class="pre">move_1_3</span></code> is that <code class="docutils literal notranslate"><span class="pre">write</span></code> uses R2, so we need that register to be empty before executing <code class="docutils literal notranslate"><span class="pre">write</span></code></p>
-<p>Continuing:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">[[write]](move_1_2)</span></code></p></th>
-<th class="head"><p>move_2_1</p></th>
-<th class="head"><p>move_3_1</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>R1</p></td>
-<td><p>move_1_2</p></td>
-<td><p>move_1_2 +  <code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></td>
-<td><p>move_1_2 +  <code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code> + p</p></td>
-</tr>
-<tr class="row-odd"><td><p>R2</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>R3</p></td>
-<td><p>p</p></td>
-<td><p>p</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>So we see that <span class="math notranslate nohighlight">\([\![s^1_1]\!](p, q)\)</span> is the program <code class="docutils literal notranslate"> <span class="pre">move_1_2</span> <span class="pre">+</span> <span class="pre">[[write]](q)</span> <span class="pre">+</span> <span class="pre">p</span></code>.
-We run this program on <code class="docutils literal notranslate"><span class="pre">r</span></code> in R1.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>start</p></th>
-<th class="head"><p>move_1_2</p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">[[write]](q)</span></code></p></th>
-<th class="head"><p>p</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>R1</p></td>
-<td><p>r</p></td>
-<td><p></p></td>
-<td><p>q</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">[[p]](q,r)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>R2</p></td>
-<td><p></p></td>
-<td><p>r</p></td>
-<td><p>r</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>As desired, we get <span class="math notranslate nohighlight">\([\![ p]\!](q,r)\)</span>.</p>
-<p>This concludes the verification.</p>
-</div>
-<div class="proof lemma admonition" id="smn2">
-<p class="admonition-title"><span class="caption-number">Lemma 2 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>For each <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <code class="docutils literal notranslate"><span class="pre">[[s^m_n]]</span></code> is a primitive recursive function.</p>
-<p>Also, there is a primitive recursive function <span class="math notranslate nohighlight">\(f:N\times N\to Words\)</span> such that for all <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f(m,n)\)</span> has the property defining <span class="math notranslate nohighlight">\(s^m_n\)</span>.   That is,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ [\![f(m,n)]\!](p, q_1,\ldots, q_m)]\!](r_1,\ldots, r_n)
-\simeq
-[\![ p]\!](q_1,\ldots, q_m,r_1,\ldots, r_n)
-\]</div>
+<p>For all integers <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\underline{n} + \underline{m} = \underline{n+m}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\underline{n} \times \underline{m} =\underline{n\times m}\)</span>.</p></li>
+</ol>
 </section>
 </div></section>
+<section id="add-a-9-place-relation-symbol-r">
+<h2>Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#add-a-9-place-relation-symbol-r" title="Link to this heading">#</a></h2>
+<p>We add a relation symbol <span class="math notranslate nohighlight">\(R\)</span> to our signature.   The <span class="math notranslate nohighlight">\(9\)</span> comes from <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices, and since we are thinking of matrices, we use subscripts on
+variables  as a reminder.   So we write</p>
+<div class="math notranslate nohighlight">
+\[
+R(x_{1,1}, x_{1,2}, x_{1,3}, 
+x_{2,1}, x_{2,2}, x_{2,3},
+x_{3,1}, x_{3,2}, x_{3,3})
+\]</div>
+<p>rather than <span class="math notranslate nohighlight">\(R(x_1, \ldots, x_9)\)</span>.
+Moreover, if <span class="math notranslate nohighlight">\(M = (m_{ij})\)</span> is <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix of integers, we write <span class="math notranslate nohighlight">\(R(M)\)</span>
+to mean</p>
+<div class="math notranslate nohighlight">
+\[
+R(\underline{m_{1,1}},\underline{m_{1,2}}, \underline{m_{1,3}}, 
+\underline{m_{2,1}},\underline{m_{2,2}}, \underline{m_{2,3}},
+\underline{m_{3,1}},\underline{m_{3,2}}, \underline{m_{3,3}})
+\]</div>
+<p>The remaining axioms pertain to a finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices
+Whenever <span class="math notranslate nohighlight">\(M = (m_{i,j})\)</span> is a matrix in <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, we also add</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+(\forall x_{1,1}) \cdots (\forall x_{3,3})&amp; &amp; R(x_{1,1}, x_{1,2}, x_{1,3}, 
+x_{2,1}, x_{2,2}, x_{2,3},
+x_{3,1}, x_{3,2}, x_{3,3}) \\
+&amp; \iif &amp; R\bigl(x_{1,1} \underline{m_{1,1}} +  x_{1,2} \underline{m_{2,1}} +   x_{1,3} \underline{m_{3,1}},\\
+&amp; &amp; \quad x_{1,1} \underline{m_{1,2}} +  x_{1,2} \underline{m_{2,2}} +   x_{1,3} \underline{m_{3,2}},\\
+&amp; &amp;  \qquad \vdots \\
+&amp; &amp; \quad x_{3,1} \underline{m_{1,3}} +  x_{3,2} \underline{m_{2,3}} +   x_{3,3} \underline{m_{3,3}} \bigr)
+\end{array}
+\end{split}\]</div>
+<p>In our shorthand  notation, the first axiom is <span class="math notranslate nohighlight">\(R(I_3)\)</span>, where <span class="math notranslate nohighlight">\(I_3\)</span> is the <span class="math notranslate nohighlight">\(3\times 3\)</span> identity matrix.  Our remaining axioms imply that  if <span class="math notranslate nohighlight">\(R(M_1)\)</span> and <span class="math notranslate nohighlight">\(M_2\in \mathcal{S}\)</span>, then <span class="math notranslate nohighlight">\(R(M_1\times M_2)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(Ax_{\mathcal{S}}\)</span> be the conjunction of the finite set of axioms mentioned  above.
+We have a model <span class="math notranslate nohighlight">\(\mathbb{Z} \models Ax_{\mathcal{S}}\)</span>, where for <span class="math notranslate nohighlight">\(R\)</span> we specify that
+<span class="math notranslate nohighlight">\(R(M)\)</span> iff <span class="math notranslate nohighlight">\(M\)</span> is a product of elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, allowing repeats and allowing the empty product.</p>
+<div class="proof lemma admonition" id="CT_via_matrices">
+<p class="admonition-title"><span class="caption-number">Lemma 14 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>For all finite sets <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices,
+the following are equivalent:</p>
+<ol class="arabic simple">
+<li><p>Some finite product from <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is the <span class="math notranslate nohighlight">\(3\times 3\)</span> zero matrix <span class="math notranslate nohighlight">\(0_3\)</span>.</p></li>
+<li><p>In first order logic, <span class="math notranslate nohighlight">\(\proves Ax_{\mathcal{S}} \iif R(0_3)\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. (2)<span class="math notranslate nohighlight">\(\Rightarrow\)</span>(1) is immediate from the observation that <span class="math notranslate nohighlight">\(Z\)</span> from above is a model of <span class="math notranslate nohighlight">\(Ax_{\mathcal{S}}\)</span>.
+As for (1)<span class="math notranslate nohighlight">\(\Rightarrow\)</span>(2), we show by induction on <span class="math notranslate nohighlight">\(i\geq 0\)</span> that if the matrix <span class="math notranslate nohighlight">\(M\)</span> is a product of <span class="math notranslate nohighlight">\(i\)</span> members of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, allowing repeats
+and allowing the empty product in case <span class="math notranslate nohighlight">\(i= 0\)</span>, then <span class="math notranslate nohighlight">\(\proves Ax_{\mathcal{S}} \iif R(M)\)</span>.   Then (2) follows immediately from this fact and (1).</p>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -639,7 +577,7 @@ We run this program on <code class="docutils literal notranslate"><span class="p
         },
         kernelOptions: {
             name: "python3",
-            path: "./more_programs"
+            path: "./logic"
         },
         predefinedOutput: true
     }
@@ -657,22 +595,14 @@ We run this program on <code class="docutils literal notranslate"><span class="p
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="arithmetic.html"
+       href="church_turing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Programs for arithmetic</p>
+        <p class="prev-next-title">The set <span class="math notranslate nohighlight">\(SAT_{FO}\)</span> of sentences of first-order logic which are satisfiable is undecidable.
+In fact <span class="math notranslate nohighlight">\(\overline{K}\leq_m SAT_{FO}\)</span>.</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../universal/twoByTwo.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Two-by-Two encoding</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -680,6 +610,22 @@ We run this program on <code class="docutils literal notranslate"><span class="p
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commutative-rings-with-unit">Commutative rings with unit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-9-place-relation-symbol-r">Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
