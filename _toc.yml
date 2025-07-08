@@ -31,7 +31,7 @@ parts:
 
 - caption: Universal Programs
   chapters:  
-  - file: universal/twoByTwo 
+# - file: universal/twoByTwo 
   - file: universal/universal
   - file: universal/universalMore
 
