@@ -744,37 +744,28 @@ show that the word encoded in the register after <span class="math notranslate n
 By what we saw above, the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1##1</span></code>.  Step <span class="math notranslate nohighlight">\(n+1\)</span> executed the instruction <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
 And so the contents after <span class="math notranslate nohighlight">\(n+1\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1###1#</span></code>.  This is exactly the word encoded in row 4744.</p>
 <p>This verifies point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  Of course, we only worked with an example, but the general case is an elaboration of what we showed here.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-
-Case 3(a): Instruction $i(n+1)$  of $p$ is ```1^m ###``` and R1 is not empty after executing $n$ steps of $p$.
-
-```{dropdown} Details here
-
-
-To make things concrete, suppose that $n = 67$, $i(68) = 131$,  $m=8$,  that row $n$ of the tiling is
-&lt;img src=&quot;https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;
-and that instruction 131 of $p$ is ```1```${}^8$```###```.   Thus, $i(69) = 131 + 8=169$.
-We have two options for the instruction tile in row $68$.
+<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To make things concrete, suppose that <span class="math notranslate nohighlight">\(n = 67\)</span>, <span class="math notranslate nohighlight">\(i(68) = 131\)</span>,  <span class="math notranslate nohighlight">\(m=8\)</span>,  that row <span class="math notranslate nohighlight">\(n\)</span> of the tiling is
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
+and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   Thus, <span class="math notranslate nohighlight">\(i(69) = 131 + 8=169\)</span>.
+We have two options for the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span>.
 We claim that this tile must be
-&lt;img src=&quot;https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;
-It is important to check that the instruction tile in row $68$ cannot be the same tile but with the copyright symbol replaced by the blank.
-
-We claim that row $68$ must be the top row below:
-&lt;img src=&quot;https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1&quot; width=&quot;100%&quot; height=&quot;100%&quot;&gt;
-
-We mainly leave this verification to you.  The tiles in row $68$ must either be blank or involve the copyright symbol,
-and a case-by-case analysis shows that row 68 must be as above.
-
-The word encoded in row $67$  is ```1##```.  By our induction hypothesis on $n = 67$, 
-This is exactly the same as the same as the contents of the register after $67$ steps.  Instruction 68 of $p$ was 
-```1^8 #^3```.   After executing that instruction, the register did not change.   So it still is ```1##```.  All of this verifies
- (2) for $n+1$ in Case 3(a).
-
-Don&#39;t read the symbol as &quot;copyright&quot; but as &quot;copy right.&quot;
-</pre></div>
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%">
+It is important to check that the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span> cannot be the same tile but with the copyright symbol replaced by the blank.</p>
+<p class="sd-card-text">We claim that row <span class="math notranslate nohighlight">\(68\)</span> must be the top row below:
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
+<p class="sd-card-text">We mainly leave this verification to you.  The tiles in row <span class="math notranslate nohighlight">\(68\)</span> must either be blank or involve the copyright symbol,
+and a case-by-case analysis shows that row 68 must be as above.</p>
+<p class="sd-card-text">The word encoded in row <span class="math notranslate nohighlight">\(67\)</span>  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  By our induction hypothesis on <span class="math notranslate nohighlight">\(n = 67\)</span>,
+This is exactly the same as the same as the contents of the register after <span class="math notranslate nohighlight">\(67\)</span> steps.  Instruction 68 of <span class="math notranslate nohighlight">\(p\)</span> was
+<code class="docutils literal notranslate"><span class="pre">1^8</span> <span class="pre">#^3</span></code>.   After executing that instruction, the register did not change.   So it still is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  All of this verifies
+(2) for <span class="math notranslate nohighlight">\(n+1\)</span> in Case 3(a).</p>
+<p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
-<p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
