@@ -467,12 +467,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-set-of-diverse-problems">A set of diverse problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 </li>
@@ -491,9 +492,11 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/problems.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="algorithmic-problems">
 <h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Link to this heading">#</a></h1>
+<section id="a-set-of-diverse-problems">
+<h2>A set of diverse problems<a class="headerlink" href="#a-set-of-diverse-problems" title="Link to this heading">#</a></h2>
 <p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
 <section id="does-a-finite-graph-have-a-cycle">
-<h2>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Link to this heading">#</a></h2>
+<h3>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Link to this heading">#</a></h3>
 <p>A <em>finite graph</em> is a finite set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
 <p>Given a finite graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
@@ -503,7 +506,7 @@ document.write(`
 <hr class="docutils" />
 </section>
 <section id="tiling-problems">
-<span id="content-firsttiles"></span><h2>Tiling problems<a class="headerlink" href="#tiling-problems" title="Link to this heading">#</a></h2>
+<span id="content-firsttiles"></span><h3>Tiling problems<a class="headerlink" href="#tiling-problems" title="Link to this heading">#</a></h3>
 <p>A <em>tile</em> is a square with a color on each side.   For example, here are eight tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
 The colors involved are red, black, grey, green, yellow,
@@ -546,7 +549,7 @@ Does the quadrant have a tiling with this set?</p>
 </div>
 </section>
 <section id="post-s-correspondence-problem">
-<span id="content-firstpcp"></span><h2>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Link to this heading">#</a></h2>
+<span id="content-firstpcp"></span><h3>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Link to this heading">#</a></h3>
 <p>An <em>alphabet</em> is just a set <span class="math notranslate nohighlight">\(A\)</span> of symbols.</p>
 <p>Given an alphabet <span class="math notranslate nohighlight">\(A\)</span>, we define</p>
 <div class="math notranslate nohighlight">
@@ -599,7 +602,7 @@ To say <em>PCP is undecidable</em> means that   <em>there is no</em>
 computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
 </section>
 <section id="integer-roots-of-polynomials">
-<h2>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Link to this heading">#</a></h2>
+<h3>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Link to this heading">#</a></h3>
 <p>There are a number of algorithmic problems of great interest in mathematics.  One of the most famous is the following:</p>
 <div class="danger admonition">
 <p class="admonition-title">Problem</p>
@@ -633,7 +636,7 @@ z &amp; =  &amp;  −2, 736, 111, 468, 807, 040
 </div>
 </section>
 <section id="matrix-mortality">
-<span id="content-firstmatrixmortality"></span><h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
+<span id="content-firstmatrixmortality"></span><h3>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h3>
 <p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
 matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> of integers.   It is called the <em>matrix mortality</em> problem.</p>
 <div class="danger admonition">
@@ -718,7 +721,7 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </div>
 </section>
 <section id="the-halting-set-k-and-related-sets">
-<h2>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Link to this heading">#</a></h2>
+<h3>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Link to this heading">#</a></h3>
 <p>We also want to study a few problems related to computer prorgrams.   These include</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -734,6 +737,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \end{array}
 \end{split}\]</div>
 <p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
+</section>
 <section id="truth-and-proof">
 <h3>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Link to this heading">#</a></h3>
 <p>We would like to ask about the set of <em>sentences in the language of ordinary mathematics</em> and as about the problem of deciding whether a given sentence is true or not.</p>
@@ -847,12 +851,13 @@ This, too, is an interesting thing to do.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-set-of-diverse-problems">A set of diverse problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 </li>
