@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Further results on universal programs" href="universalMore.html" />
-    <link rel="prev" title="Two-by-Two encoding" href="twoByTwo.html" />
+    <link rel="prev" title="The s-m-n Theorem" href="../more_programs/smn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -231,7 +231,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Universal programs</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="universalMore.html">Further results on universal programs</a></li>
@@ -1113,7 +1112,7 @@ would not have remained empty in the tables.
 <section id="coding-unboundedly-many-registers-into-one">
 <h2>Coding unboundedly many registers into one<a class="headerlink" href="#coding-unboundedly-many-registers-into-one" title="Link to this heading">#</a></h2>
 <p>The simplified form of the universal program that we just saw could be modified to work on programs with any fixed finite number of registers.  But we want one universal programs that works on <em>all</em> programs, without a pre-established bound.  For this, we need a new idea.</p>
-<p>We now call upon a technique introduced in a separate notebook in this course, the technique of <a class="reference internal" href="#two_by_two.ipynb"><span class="xref myst">two-by-two encoding</span></a>.  That notebook shows how we can add an <em>end of register marker</em> to R1, and the work with a simple encoding of symbols by pairs.   We took the end of register marker to be <code class="docutils literal notranslate"><span class="pre">##</span></code>, and we encoded <code class="docutils literal notranslate"><span class="pre">1</span></code> by <code class="docutils literal notranslate"><span class="pre">11</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code> by <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
+<p>We now call upon a technique introduced in a separate section, the technique of two-by-two encoding.  We add an <em>end of register marker</em> to R1, and the work with a simple encoding of symbols by pairs.   We took the end of register marker to be <code class="docutils literal notranslate"><span class="pre">##</span></code>, and we encoded <code class="docutils literal notranslate"><span class="pre">1</span></code> by <code class="docutils literal notranslate"><span class="pre">11</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code> by <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
 <p>All of that work was for R1 alone.   But we could do the same work for all of the other registers.</p>
 <p>Following this, the idea is to simply run all of the encoded registers into one.</p>
 <p>For an example of what we mean, suppose that we were dealing with the following snapshot:</p>
@@ -1284,12 +1283,12 @@ This exercise requires a trick, since there is no program like <code class="docu
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="twoByTwo.html"
+       href="../more_programs/smn.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Two-by-Two encoding</p>
+        <p class="prev-next-title">The s-m-n Theorem</p>
       </div>
     </a>
     <a class="right-next"
