@@ -518,12 +518,10 @@ Also the details concerning equivalence are not trivial.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be problems.</p>
-<p>\emph{<span class="math notranslate nohighlight">\(A \leq_m B\)</span>}   if there is an ``intuitively computable’’ <span class="math notranslate nohighlight">\(f: N\to N\)</span></p>
-<p>(or <span class="math notranslate nohighlight">\(f: words\to words\)</span>, or <span class="math notranslate nohighlight">\(N\to N\)</span>, or something similar)</p>
-<p>such that for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>{<span class="math notranslate nohighlight">\(A \leq_m B\)</span>}   if there is an ``intuitively computable’’ <span class="math notranslate nohighlight">\(f: N\to N\)</span>  (or <span class="math notranslate nohighlight">\(f: words\to words\)</span>, or <span class="math notranslate nohighlight">\(N\to N\)</span>, or something similar)   such that for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-\emph{\mbox{$x\in A \quadiff f(x) \in B$}}
+\mbox{$x\in A \quadiff f(x) \in B$}
 \]</div>
 <p>Again, <span class="math notranslate nohighlight">\(f\)</span> has to be total and computable!
 We say that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em>.</p>
@@ -538,10 +536,9 @@ apply the computable function <span class="math notranslate nohighlight">\(f\)</
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>Let’s consider the \emph{Modified PCP (MPCP)}:
+<p>Let’s consider the <em>Modified PCP (MPCP)</em>:
 Given a finite set of dominoes as in the PCP,</p>
-<p>and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the \emph{start domino}</p>
-<p>is there a Post sequence that \emph{starts with <span class="math notranslate nohighlight">\(d_0\)</span>}?</p>
+<p>and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the <em>start domino</em>, is there a Post sequence that starts with <span class="math notranslate nohighlight">\(d_0\)</span>?</p>
 <p>\</p>
 <p>I am going to give an informal proof that
 $<span class="math notranslate nohighlight">\(\mbox{the PCP and the MPCP are equivalent}
@@ -559,25 +556,18 @@ The basic idea is to do two things:</p>
 <p>MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
 <p>Given an input to the MPCP,
 say <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>,
-take two \emph{new symbols}, say <span class="math notranslate nohighlight">\(*\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then
-<em>make a new domino set</em>  <span class="math notranslate nohighlight">\(f(\DD)\)</span> in the following way:</p>
+take two new symbols, say <span class="math notranslate nohighlight">\(*\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then <em>make a new domino set</em>  <span class="math notranslate nohighlight">\(f(\DD)\)</span> in the following way:</p>
 <ol class="arabic simple">
 <li><p>Add <span class="math notranslate nohighlight">\(*\)</span> after all letters in  all top words in the original domino set.</p></li>
 <li><p>Add <span class="math notranslate nohighlight">\(*\)</span> before all letters in all bottom words in the original domino set.</p></li>
-<li><p>Add a new copy of the start domino, <span class="math notranslate nohighlight">\(d_0\)</span>,  but modify it  by adding <span class="math notranslate nohighlight">\(*\)</span> after all letters in the top and all letters in the bottom, and
-also add <span class="math notranslate nohighlight">\(*\)</span> before the first letter of the top word.</p></li>
-</ol>
-<p>This  one is called the \emph{first special domino}.</p>
-<ol class="arabic simple" start="4">
+<li><p>Add a new copy of the start domino, <span class="math notranslate nohighlight">\(d_0\)</span>,  but modify it  by adding <span class="math notranslate nohighlight">\(*\)</span> after all letters in the top and all letters in the bottom, and also add <span class="math notranslate nohighlight">\(*\)</span> before the first letter of the top word.   This  one is called the <em>first special domino</em>.</p></li>
 <li><p>Add a new domino with top word <span class="math notranslate nohighlight">\(\$\)</span> and bottom word <span class="math notranslate nohighlight">\(*\$\)</span>.
-This last one is called the \emph{second special domino}.</p></li>
+This last one is called the <em>second special domino</em>.</p></li>
 </ol>
 <hr class="docutils" />
 <p>Note that we have a <em>intuitively computable function</em> <span class="math notranslate nohighlight">\(f\)</span> from pointed tile sets to tile sets.</p>
 <p>That is, adding the <span class="math notranslate nohighlight">\(*\)</span> like this is completely algorithmic.</p>
-<p>\</p>
-<p>Another point: we don’t need to know whether the original pointed domino set</p>
-<p>has a Post word or not in order to add the <span class="math notranslate nohighlight">\(*\)</span>s.</p>
+<p>Another point: we don’t need to know whether the original pointed domino set has a Post word or not in order to add the <span class="math notranslate nohighlight">\(*\)</span>s.</p>
 <p>Let <span class="math notranslate nohighlight">\(\DD\)</span> be the domino set</p>
 <p>\begin{flushleft}
 \begin{tikzpicture}
@@ -593,7 +583,7 @@ This last one is called the \emph{second special domino}.</p></li>
 \draw  (3.5,.5) node{aab};  %% south
 \ \end{tikzpicture}
 \end{flushleft}
-with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> shown in \emph{red},</p>
+with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> shown in red,</p>
 <p>\</p>
 <p>Then <span class="math notranslate nohighlight">\(f(\DD)\)</span> is shown below
 \begin{flushleft}
@@ -615,13 +605,13 @@ with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> 
 \end{flushleft}
 (The two special dominoes of <span class="math notranslate nohighlight">\(f(\DD)\)</span> are shown at the end.)</p>
 <p>\</p>
-<div class="highlight-{claim}| notranslate"><div class="highlight"><pre><span></span> If $\DD$ has any Post sequence starting with $d_0$,
- then $f(\DD)$ has a Post sequence.
- 
- And if $f(\DD)$ has a Post sequence,  then $\DD$ has one that starts with $d_0$.
-</pre></div>
+<div class="admonition-claim admonition">
+<p class="admonition-title">Claim</p>
+<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,
+then <span class="math notranslate nohighlight">\(f(\DD)\)</span> has a Post sequence.</p>
+<p>And if <span class="math notranslate nohighlight">\(f(\DD)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
 </div>
-<p>For \emph{all} <span class="math notranslate nohighlight">\(\DD\)</span>, not just the one in our example:</p>
+<p>For <em>all</em> <span class="math notranslate nohighlight">\(\DD\)</span>, not just the one in our example:</p>
 <p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,  then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence.</p>
 <p>And if <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
 <p>The main fact:</p>
@@ -630,7 +620,7 @@ since this is the only one whose top and bottom words start with the same symbol
 <p>It also has to end with the second special domino.</p>
 <p>Now let’s prove the main claim.</p>
 <p>Next, we show that PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP
-This one is part of the \emph{second} homework.</p>
+This one is part of the  <em>second</em> homework.</p>
 <p>You need to define an intuitively computable function
 <span class="math notranslate nohighlight">\(g\)</span> from domino sets to ``pointed domino sets’’
 with the property that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
@@ -664,14 +654,10 @@ then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequen
 <p>}</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
-<p>In this class, a \emph{problem} is a set <span class="math notranslate nohighlight">\(P\)</span>,</p>
-<p>usually a \emph{subset} of some \emph{easily defined = computable}</p>
+<p>In this class, a <em>problem</em> is a set <span class="math notranslate nohighlight">\(P\)</span>,  usually a subset of some “easily defined = computable”</p>
 <p>set <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <p>\</p>
-<p>We call it a \emph{problem} because we want to know</p>
-<p>whether there is an algorithm to tell</p>
-<p>if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not;</p>
-<p>or whether there is no such algorithm.</p>
+<p>We call it a <em>problem</em> because we want to know  whether there is an algorithm to tell  if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not; or whether there is no such algorithm.</p>
 <p>\end{definition}</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -681,16 +667,12 @@ then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequen
 </div>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
-<p>A problem <span class="math notranslate nohighlight">\(P\)</span> is \emph{decidable}</p>
-<p>if there is an algorithm which,</p>
-<p>when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time</p>
-<p>whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.</p>
+<p>A problem <span class="math notranslate nohighlight">\(P\)</span> is <em>decidable</em>  if there is an algorithm which,  when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.  <span class="math notranslate nohighlight">\(P\)</span> is <em>undecidable</em> if no such algorithm exists.</p>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
 <p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
-<p>\</p>
 <p>This <span class="math notranslate nohighlight">\(P\)</span> is decidable.</p>
 </div>
 <div class="admonition-example admonition">
