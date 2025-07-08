@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/reduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Instructions of 1#" href="../introOneSharp/instructions.html" />
+    <link rel="next" title="Recursion" href="recursion.html" />
     <link rel="prev" title="Computable functions on encoded structures" href="coding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Issues</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Themes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: initial remarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
 
@@ -186,6 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/functions.html">Functions defined by programs</a></li>
-
-
-
 
 
 
@@ -220,12 +219,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Universal Programs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../universal/twoByTwo.html">Two-by-Two encoding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../universal/universal.html">Universal programs</a></li>
 
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../universal/universalMore.html">Further results on universal programs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computable Functions of Numbers</span></p>
 <ul class="nav bd-sidenav">
@@ -238,6 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mu/turing.html">Turing computability</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Recursion Theorem</span></p>
 <ul class="nav bd-sidenav">
@@ -247,13 +244,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Definition and equivalent formulations</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../cesets/computablyEnumerable.html">Computably enumerable sets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Undecidability</span></p>
 <ul class="nav bd-sidenav">
@@ -269,7 +262,11 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../undecidability/church.html">Satisfiability and validity in first-order logic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">The Church-Turing Theorem via tiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
 </ul>
 
     </div>
@@ -465,7 +462,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-between-problems">Relations between problems</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
@@ -488,7 +488,168 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/reduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="reduction-of-one-problem-to-another">
 <h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Permalink to this heading">#</a></h1>
-<p><strong>definitions and interesting examples are yet to come</strong></p>
+<p>** the part starting here is just a draft! **</p>
+<div class="section" id="relations-between-problems">
+<h2>Relations between problems<a class="headerlink" href="#relations-between-problems" title="Permalink to this heading">#</a></h2>
+<p>One of the things that we are very interested in
+in computability theory</p>
+<p>is in the <em>relation between problems</em>.
+\</p>
+<p>It will turn out that all of the problems which we have seen so far
+\begin{itemize}
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Tiling
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  <span class="math notranslate nohighlight">\(3\times 3\)</span> Matrix Mortality
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Post Correspondence Problem  (PCP)
+\end{itemize}</p>
+<p>are <em>equivalent</em> in some appropriate sense.
+Saying what this “appropriate sense” is
+will be important.<br />
+Also the details concerning equivalence are not trivial.</p>
+<p>MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
+<p>Given an input to the MPCP,
+say <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>,
+take two \emph{new symbols}, say <span class="math notranslate nohighlight">\(*\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then
+<em>make a new domino set</em>  <span class="math notranslate nohighlight">\(f(\DD)\)</span> in the following way:</p>
+<ol class="arabic simple">
+<li><p>Add <span class="math notranslate nohighlight">\(*\)</span> after all letters in  all top words in the original domino set.</p></li>
+<li><p>Add <span class="math notranslate nohighlight">\(*\)</span> before all letters in all bottom words in the original domino set.</p></li>
+<li><p>Add a new copy of the start domino, <span class="math notranslate nohighlight">\(d_0\)</span>,  but modify it  by adding <span class="math notranslate nohighlight">\(*\)</span> after all letters in the top and all letters in the bottom, and
+also add <span class="math notranslate nohighlight">\(*\)</span> before the first letter of the top word.</p></li>
+</ol>
+<p>This  one is called the \emph{first special domino}.</p>
+<ol class="arabic simple" start="4">
+<li><p>Add a new domino with top word <span class="math notranslate nohighlight">\(\$\)</span> and bottom word <span class="math notranslate nohighlight">\(*\$\)</span>.
+This last one is called the \emph{second special domino}.</p></li>
+</ol>
+<hr class="docutils" />
+<p>Note that we have a <em>intuitively computable function</em> <span class="math notranslate nohighlight">\(f\)</span> from pointed tile sets to tile sets.</p>
+<p>That is, adding the <span class="math notranslate nohighlight">\(*\)</span> like this is completely algorithmic.</p>
+<p>\</p>
+<p>Another point: we don’t need to know whether the original pointed domino set</p>
+<p>has a Post word or not in order to add the <span class="math notranslate nohighlight">\(*\)</span>s.</p>
+<p>Let <span class="math notranslate nohighlight">\(\DD\)</span> be the domino set</p>
+<p>\begin{flushleft}
+\begin{tikzpicture}
+\filldraw[fill=red!20,draw=red!50!black] (0,0)    rectangle ++(2,2);
+\foreach \x in {0,2.5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};</p>
+<p>\draw  (1,1.5) node{a};  %% north
+\draw  (1,.5) node{ab};  %% south
+\draw  (3.5,1.5) node{baa};  %% north
+\draw  (3.5,.5) node{aab};  %% south
+\ \end{tikzpicture}
+\end{flushleft}
+with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> shown in \emph{red},</p>
+<p>\</p>
+<p>Then <span class="math notranslate nohighlight">\(f(\DD)\)</span> is shown below
+\begin{flushleft}
+\begin{tikzpicture}</p>
+<p>\foreach \x in {0,2.5,5,7.5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};</p>
+<p>\draw  (1,1.5) node{a*};  %% north
+\draw  (1,.5) node{<em>a</em>b};  %% south
+\draw  (3.5,1.5) node{b<em>a</em>a*};  %% north
+\draw  (3.5,.5) node{<em>a</em>a*b};  %% south
+\draw  (6,1.5) node{<em>a</em>};  %% north
+\draw  (6,.5) node{<em>a</em>b};  %% south</p>
+<p>\draw  (8.5,1.5) node{$};  %% north
+\draw  (8.5,.5) node{*$};  %% southf</p>
+<p>\ \end{tikzpicture}
+\end{flushleft}
+(The two special dominoes of <span class="math notranslate nohighlight">\(f(\DD)\)</span> are shown at the end.)</p>
+<p>\</p>
+<div class="highlight-{claim}| notranslate"><div class="highlight"><pre><span></span> If $\DD$ has any Post sequence starting with $d_0$,
+ then $f(\DD)$ has a Post sequence.
+ 
+ And if $f(\DD)$ has a Post sequence,  then $\DD$ has one that starts with $d_0$.
+</pre></div>
+</div>
+<p>For \emph{all} <span class="math notranslate nohighlight">\(\DD\)</span>, not just the one in our example:</p>
+<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,  then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence.</p>
+<p>And if <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
+<p>The main fact:</p>
+<p>a Post sequence for <span class="math notranslate nohighlight">\(f(\DD)\)</span> must start with the first  special domino,
+since this is the only one whose top and bottom words start with the same symbol.</p>
+<p>It also has to end with the second special domino.</p>
+<p>Now let’s prove the main claim.</p>
+<p>Next, we show that PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP
+This one is part of the \emph{second} homework.</p>
+<p>You need to define an intuitively computable function
+<span class="math notranslate nohighlight">\(g\)</span> from domino sets to ``pointed domino sets’’
+with the property that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
+the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
+<li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
+then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
+</ol>
+<p>\frametitle{Summary of the definitions}</p>
+<p>\begin{alertblock}{meaning of:  MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP}
+There is a computable function <span class="math notranslate nohighlight">\(f\)</span> from pointed domino sets  <span class="math notranslate nohighlight">\((\DD,d_0)\)</span> to domino sets
+such that
+for all pointed domino sets <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>:
+\begin{itemize}
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>] If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>, then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has one also,
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Conversely, if <span class="math notranslate nohighlight">\(f(\DD,d_0)\)</span> has a Post sequence,
+then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>
+\end{itemize}
+\end{alertblock}</p>
+<p>\begin{alertblock}{meaning of:  PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP}
+There is a computable function <span class="math notranslate nohighlight">\(g\)</span> from domino sets to pointed domino sets
+such that
+for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:
+\begin{itemize}
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>] If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
+the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.
+\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
+then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
+\end{itemize}</p>
+<p>\end{alertblock}</p>
+<p>}</p>
+<p>\frame{
+\frametitle{Stepping back a bit}</p>
+<p>\begin{definition}
+In this class, a \emph{problem} is a set <span class="math notranslate nohighlight">\(P\)</span>,</p>
+<p>usually a \emph{subset} of some \emph{easily defined = computable}</p>
+<p>set <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>\</p>
+<p>We call it a \emph{problem} because we want to know</p>
+<p>whether there is an algorithm to tell</p>
+<p>if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not;</p>
+<p>or whether there is no such algorithm.</p>
+<p>\end{definition}</p>
+<p>\begin{example}
+<span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.
+\end{example}</p>
+<p>}</p>
+<p>\frame{
+\frametitle{Stepping back a bit}</p>
+<p>\begin{definition}
+A problem <span class="math notranslate nohighlight">\(P\)</span> is \emph{decidable}</p>
+<p>if there is an algorithm which,</p>
+<p>when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time</p>
+<p>whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.</p>
+<p>\end{definition}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$S =$  finite domino sets with a start domino
+ 
+ $P = MPCP$
+ 
+ $T = $ finite domino sets
+ 
+ $Q = PCP$
+ 
+ 
+ We saw earlier that $MPCP \leq PCP$.
+
+</pre></div>
+</div>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
 <div class="proposition-content section" id="proof-content">
@@ -499,6 +660,7 @@ document.write(`
 </ol>
 </div>
 </div></div>
+</div>
 <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <div class="section" id="tiling">
@@ -672,11 +834,11 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
       </div>
     </a>
     <a class="right-next"
-       href="../introOneSharp/instructions.html"
+       href="recursion.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Instructions of 1#</p>
+        <p class="prev-next-title">Recursion</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -695,7 +857,10 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-between-problems">Relations between problems</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
