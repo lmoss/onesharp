@@ -504,19 +504,58 @@ document.write(`
 <section id="relations-between-problems">
 <h2>Relations between problems<a class="headerlink" href="#relations-between-problems" title="Link to this heading">#</a></h2>
 <p>One of the things that we are very interested in
-in computability theory</p>
-<p>is in the <em>relation between problems</em>.
-\</p>
-<p>It will turn out that all of the problems which we have seen so far
-\begin{itemize}
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Tiling
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  <span class="math notranslate nohighlight">\(3\times 3\)</span> Matrix Mortality
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Post Correspondence Problem  (PCP)
-\end{itemize}</p>
+in computability theory is in the <em>relation between problems</em>.</p>
+<p>It will turn out that all of the problems which we have seen so far</p>
+<ol class="arabic simple">
+<li><p>Tiling</p></li>
+<li><p><span class="math notranslate nohighlight">\(3\times 3\)</span> Matrix Mortality</p></li>
+<li><p>Post Correspondence Problem  (PCP)</p></li>
+</ol>
 <p>are <em>equivalent</em> in some appropriate sense.
 Saying what this “appropriate sense” is
 will be important.<br />
 Also the details concerning equivalence are not trivial.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be problems.</p>
+<p>\emph{<span class="math notranslate nohighlight">\(A \leq_m B\)</span>}   if there is an ``intuitively computable’’ <span class="math notranslate nohighlight">\(f: N\to N\)</span></p>
+<p>(or <span class="math notranslate nohighlight">\(f: words\to words\)</span>, or <span class="math notranslate nohighlight">\(N\to N\)</span>, or something similar)</p>
+<p>such that for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\emph{\mbox{$x\in A \quadiff f(x) \in B$}}
+\]</div>
+<p>Again, <span class="math notranslate nohighlight">\(f\)</span> has to be total and computable!
+We say that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em>.</p>
+<p>The idea is that <span class="math notranslate nohighlight">\(B\)</span> is ``at least as hard as <span class="math notranslate nohighlight">\(A\)</span>’’ in some sense .  (However, this intuition will have to be corrected,  as we’ll see.)</p>
+</div>
+<div class="proof admonition" id="proof">
+<p>Proof. For the first part:
+given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span class="math notranslate nohighlight">\(x\in A\)</span> or not,
+apply the computable function <span class="math notranslate nohighlight">\(f\)</span>, and then see if <span class="math notranslate nohighlight">\(f(x)\in B\)</span> or not.</p>
+<p>The answer must be the same!</p>
+<p>The second assertion follows from the first.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Let’s consider the \emph{Modified PCP (MPCP)}:
+Given a finite set of dominoes as in the PCP,</p>
+<p>and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the \emph{start domino}</p>
+<p>is there a Post sequence that \emph{starts with <span class="math notranslate nohighlight">\(d_0\)</span>}?</p>
+<p>\</p>
+<p>I am going to give an informal proof that
+$<span class="math notranslate nohighlight">\(\mbox{the PCP and the MPCP are equivalent}
+\)</span>$
+The basic idea is to do two things:</p>
+<ol class="arabic simple">
+<li><p>If someone gave us an algorithm to solve the MPCP,</p></li>
+</ol>
+<p>use this to get an algorithm to solve the PCP.</p>
+<ol class="arabic simple" start="2">
+<li><p>If someone gave us an algorithm to solve the PCP,</p></li>
+</ol>
+<p>use this to get an algorithm to solve the MPCP.</p>
+</div>
 <p>MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
 <p>Given an input to the MPCP,
 say <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>,
@@ -601,7 +640,6 @@ the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>
 <li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
 then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
-<p>\frametitle{Summary of the definitions}</p>
 <p>\begin{alertblock}{meaning of:  MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP}
 There is a computable function <span class="math notranslate nohighlight">\(f\)</span> from pointed domino sets  <span class="math notranslate nohighlight">\((\DD,d_0)\)</span> to domino sets
 such that
@@ -624,10 +662,9 @@ then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequen
 \end{itemize}</p>
 <p>\end{alertblock}</p>
 <p>}</p>
-<p>\frame{
-\frametitle{Stepping back a bit}</p>
-<p>\begin{definition}
-In this class, a \emph{problem} is a set <span class="math notranslate nohighlight">\(P\)</span>,</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>In this class, a \emph{problem} is a set <span class="math notranslate nohighlight">\(P\)</span>,</p>
 <p>usually a \emph{subset} of some \emph{easily defined = computable}</p>
 <p>set <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <p>\</p>
@@ -636,19 +673,44 @@ In this class, a \emph{problem} is a set <span class="math notranslate nohighlig
 <p>if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not;</p>
 <p>or whether there is no such algorithm.</p>
 <p>\end{definition}</p>
-<p>\begin{example}
-<span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
-<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.
-\end{example}</p>
-<p>}</p>
-<p>\frame{
-\frametitle{Stepping back a bit}</p>
-<p>\begin{definition}
-A problem <span class="math notranslate nohighlight">\(P\)</span> is \emph{decidable}</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+</div>
+</div>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>A problem <span class="math notranslate nohighlight">\(P\)</span> is \emph{decidable}</p>
 <p>if there is an algorithm which,</p>
 <p>when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time</p>
 <p>whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.</p>
-<p>\end{definition}</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+<p>\</p>
+<p>This <span class="math notranslate nohighlight">\(P\)</span> is decidable.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in 9 variables with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+<p>This set <span class="math notranslate nohighlight">\(P\)</span> is not decidable.</p>
+</div>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(P\)</span> be a problem (as a subset of <span class="math notranslate nohighlight">\(S\)</span>),</p>
+<p>and <span class="math notranslate nohighlight">\(Q\)</span> a problem (as a subset of <span class="math notranslate nohighlight">\(T\)</span>).</p>
+<p>\</p>
+<p>We write [ P \leq Q ]
+if there is a computable <span class="math notranslate nohighlight">\(f: S\to T\)</span></p>
+<p>such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,
+[
+s\in P \quadiff f(s) \in Q
+]</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$S =$  finite domino sets with a start domino
  
  $P = MPCP$
@@ -661,6 +723,17 @@ A problem <span class="math notranslate nohighlight">\(P\)</span> is \emph{decid
  We saw earlier that $MPCP \leq PCP$.
 
 </pre></div>
+</div>
+<div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(f\)</span> be the computable function showing that <span class="math notranslate nohighlight">\(P\leq Q\)</span>.</p>
+<p>\</p>
+<p>Given <span class="math notranslate nohighlight">\(s\in S\)</span>, to tell whether or not <span class="math notranslate nohighlight">\(s\in P\)</span>,  apply <span class="math notranslate nohighlight">\(f\)</span>, and ask whether or not <span class="math notranslate nohighlight">\(f(s)\in Q\)</span>.</p>
+<p>(By assumption, there is a computable procedure to answer this question.)</p>
+<p>The same answer holds for the question of whether or not <span class="math notranslate nohighlight">\(s\in P\)</span>.</p>
+<p>This proves the first assertion,  and then the second one follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
