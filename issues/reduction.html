@@ -545,13 +545,9 @@ $<span class="math notranslate nohighlight">\(\mbox{the PCP and the MPCP are equ
 \)</span>$
 The basic idea is to do two things:</p>
 <ol class="arabic simple">
-<li><p>If someone gave us an algorithm to solve the MPCP,</p></li>
+<li><p>If someone gave us an algorithm to solve the MPCP,  use this to get an algorithm to solve the PCP.</p></li>
+<li><p>If someone gave us an algorithm to solve the PCP, use this to get an algorithm to solve the MPCP.</p></li>
 </ol>
-<p>use this to get an algorithm to solve the PCP.</p>
-<ol class="arabic simple" start="2">
-<li><p>If someone gave us an algorithm to solve the PCP,</p></li>
-</ol>
-<p>use this to get an algorithm to solve the MPCP.</p>
 </div>
 <p>MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
 <p>Given an input to the MPCP,
@@ -604,7 +600,6 @@ with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> 
 <p>\ \end{tikzpicture}
 \end{flushleft}
 (The two special dominoes of <span class="math notranslate nohighlight">\(f(\DD)\)</span> are shown at the end.)</p>
-<p>\</p>
 <div class="admonition-claim admonition">
 <p class="admonition-title">Claim</p>
 <p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,
@@ -614,47 +609,21 @@ then <span class="math notranslate nohighlight">\(f(\DD)\)</span> has a Post seq
 <p>For <em>all</em> <span class="math notranslate nohighlight">\(\DD\)</span>, not just the one in our example:</p>
 <p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,  then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence.</p>
 <p>And if <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
-<p>The main fact:</p>
-<p>a Post sequence for <span class="math notranslate nohighlight">\(f(\DD)\)</span> must start with the first  special domino,
-since this is the only one whose top and bottom words start with the same symbol.</p>
-<p>It also has to end with the second special domino.</p>
+<p>The main fact here is that a Post sequence for <span class="math notranslate nohighlight">\(f(\DD)\)</span> must start with the first  special domino, since this is the only one whose top and bottom words start with the same symbol.   It also has to end with the second special domino.</p>
 <p>Now let’s prove the main claim.</p>
 <p>Next, we show that PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP
 This one is part of the  <em>second</em> homework.</p>
-<p>You need to define an intuitively computable function
-<span class="math notranslate nohighlight">\(g\)</span> from domino sets to ``pointed domino sets’’
+<p>You need to define an intuitively computable function <span class="math notranslate nohighlight">\(g\)</span> from domino sets to ``pointed domino sets’’
 with the property that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
 <ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
-the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
-<li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
+<li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino, then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
-<p>meaning of:  MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
-<p>There is a computable function <span class="math notranslate nohighlight">\(f\)</span> from pointed domino sets  <span class="math notranslate nohighlight">\((\DD,d_0)\)</span> to domino sets
-such that  ffor all pointed domino sets <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>:</p>
-<ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>, then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has one also,</p></li>
-<li><p>Conversely, if <span class="math notranslate nohighlight">\(f(\DD,d_0)\)</span> has a Post sequence,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span></p></li>
-</ol>
-<p>f                                                              eaning of:  PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP</p>
-<p>There is a computable function <span class="math notranslate nohighlight">\(g\)</span> from domino sets to pointed domino sets
-such that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
-<ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
-the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
-<li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
-</ol>
-<p>}</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p>In this class, a <em>problem</em> is a set <span class="math notranslate nohighlight">\(P\)</span>,  usually a subset of some “easily defined = computable”</p>
 <p>set <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<p>\</p>
 <p>We call it a <em>problem</em> because we want to know  whether there is an algorithm to tell  if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not; or whether there is no such algorithm.</p>
-<p>\end{definition}</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
@@ -681,9 +650,12 @@ then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequen
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(P\)</span> be a problem (as a subset of <span class="math notranslate nohighlight">\(S\)</span>),</p>
 <p>and <span class="math notranslate nohighlight">\(Q\)</span> a problem (as a subset of <span class="math notranslate nohighlight">\(T\)</span>).</p>
-<p>We write [ P \leq Q ]
-if there is a computable <span class="math notranslate nohighlight">\(f: S\to T\)</span></p>
-<p>such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,</p>
+<p>We write</p>
+<div class="math notranslate nohighlight">
+\[
+P \leq Q
+\]</div>
+<p>if there is a computable <span class="math notranslate nohighlight">\(f: S\to T\)</span>  such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 s\in P \quadiff f(s) \in Q
@@ -691,14 +663,13 @@ s\in P \quadiff f(s) \in Q
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$S =$  finite domino sets with a start domino
  
- $P = MPCP$
+$P = MPCP$
  
- $T = $ finite domino sets
+$T = $ finite domino sets
  
- $Q = PCP$
+$Q = PCP$ 
  
- 
- We saw earlier that $MPCP \leq PCP$.
+We saw earlier that $MPCP \leq PCP$.
 
 </pre></div>
 </div>
