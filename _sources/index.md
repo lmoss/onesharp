@@ -16,7 +16,7 @@ packages, Jupyter notebooks and everything needed to work with them, $\LaTeX$, g
 course of working on the book I became interested in using all of these computational artifacts, mainly as a 
 way of seeing what would work in a textbook, and what would not. Since working in this medium is new to me 
 (and pretty much everyone), I became as interested in those aspects of the project as in the content. Here are some of artifacts found here but not in a traditional book on computability theory: a executable Python code, especially in several chapters near the beginning; a variety of pictures and charts; the ability to hide technical passages and to otherwise structure a text; and clickable references to discussions, papers,
-[and even poems](http://www.lel.ed.ac.uk/~gpullum/loopsnoop.html), both inside and outside of the book  itself. In time I will consider adding animations to illustrate some of the dynamism that I sense with computably enumerable sets which is arrested in any print presentation.  I also would like to incorporate tools for readers to annotate and discuss matters, enabling a community of  readers.  In short, I am aiming for something which is both a short textbook and an intellectual version of a coffee-table book.
+[and even poems](content:Pullum), both inside and outside of the book  itself. In time I will consider adding animations to illustrate some of the dynamism that I sense with computably enumerable sets which is arrested in any print presentation.  I also would like to incorporate tools for readers to annotate and discuss matters, enabling a community of  readers.  In short, I am aiming for something which is both a short textbook and an intellectual version of a coffee-table book.
 
 # Intended audience
 
