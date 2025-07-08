@@ -630,27 +630,23 @@ the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>
 <li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
 then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
-<p>\begin{alertblock}{meaning of:  MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP}
-There is a computable function <span class="math notranslate nohighlight">\(f\)</span> from pointed domino sets  <span class="math notranslate nohighlight">\((\DD,d_0)\)</span> to domino sets
-such that
-for all pointed domino sets <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>:
-\begin{itemize}
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>] If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>, then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has one also,
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Conversely, if <span class="math notranslate nohighlight">\(f(\DD,d_0)\)</span> has a Post sequence,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>
-\end{itemize}
-\end{alertblock}</p>
-<p>\begin{alertblock}{meaning of:  PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP}
-There is a computable function <span class="math notranslate nohighlight">\(g\)</span> from domino sets to pointed domino sets
-such that
-for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:
-\begin{itemize}
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>] If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
-the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
-\end{itemize}</p>
-<p>\end{alertblock}</p>
+<p>meaning of:  MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
+<p>There is a computable function <span class="math notranslate nohighlight">\(f\)</span> from pointed domino sets  <span class="math notranslate nohighlight">\((\DD,d_0)\)</span> to domino sets
+such that  ffor all pointed domino sets <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>:</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>, then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has one also,</p></li>
+<li><p>Conversely, if <span class="math notranslate nohighlight">\(f(\DD,d_0)\)</span> has a Post sequence,
+then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span></p></li>
+</ol>
+<p>f                                                              eaning of:  PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP</p>
+<p>There is a computable function <span class="math notranslate nohighlight">\(g\)</span> from domino sets to pointed domino sets
+such that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
+the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
+<li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
+then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
+</ol>
 <p>}</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
@@ -685,13 +681,13 @@ then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequen
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(P\)</span> be a problem (as a subset of <span class="math notranslate nohighlight">\(S\)</span>),</p>
 <p>and <span class="math notranslate nohighlight">\(Q\)</span> a problem (as a subset of <span class="math notranslate nohighlight">\(T\)</span>).</p>
-<p>\</p>
 <p>We write [ P \leq Q ]
 if there is a computable <span class="math notranslate nohighlight">\(f: S\to T\)</span></p>
-<p>such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,
-[
+<p>such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
 s\in P \quadiff f(s) \in Q
-]</p>
+\]</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$S =$  finite domino sets with a start domino
  
