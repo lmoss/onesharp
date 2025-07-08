@@ -476,6 +476,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-decidability">The definition of decidability</a></li>
 </ul>
             </nav>
         </div>
@@ -755,11 +756,30 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 This, too, is an interesting thing to do.</p></li>
 </ol>
 <p>We are going to investigate both of these <em>back off</em> questions in some detail.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"><div class="warning admonition">
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"></section>
+</section>
+<section id="the-definition-of-decidability">
+<h2>The definition of decidability<a class="headerlink" href="#the-definition-of-decidability" title="Link to this heading">#</a></h2>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>A problem <span class="math notranslate nohighlight">\(P\)</span> is <em>decidable</em>  if there is an algorithm which,  when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.  <span class="math notranslate nohighlight">\(P\)</span> is <em>undecidable</em> if no such algorithm exists.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+<p>This set <span class="math notranslate nohighlight">\(P\)</span> is decidable.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in 9 variables with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+<p>This set <span class="math notranslate nohighlight">\(P\)</span> is not decidable.</p>
+</div>
+<div class="warning admonition">
 <p class="admonition-title">Credits</p>
 <p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://youtu.be/wymmCdLdPvM">here</a>.</p>
 </div>
-</section>
 </section>
 </section>
 
@@ -836,6 +856,7 @@ This, too, is an interesting thing to do.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-decidability">The definition of decidability</a></li>
 </ul>
   </nav></div>
 
