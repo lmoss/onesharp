@@ -188,7 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: choices</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 
@@ -468,22 +467,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -603,8 +596,9 @@ which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</sp
 <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
 To say <em>PCP is undecidable</em> means that   <em>there is no</em>
 computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
+</section>
 <section id="integer-roots-of-polynomials">
-<h3>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Link to this heading">#</a></h3>
+<h2>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Link to this heading">#</a></h2>
 <p>There are a number of algorithmic problems of great interest in mathematics.  One of the most famous is the following:</p>
 <div class="danger admonition">
 <p class="admonition-title">Problem</p>
@@ -636,7 +630,6 @@ z &amp; =  &amp;  −2, 736, 111, 468, 807, 040
 <p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
 </section>
 </div>
-</section>
 </section>
 <section id="matrix-mortality">
 <span id="content-firstmatrixmortality"></span><h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
@@ -723,9 +716,8 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </section>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-halting-set-k-and-related-sets">
-<h1>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Link to this heading">#</a></h1>
+<section id="the-halting-set-k-and-related-sets">
+<h2>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Link to this heading">#</a></h2>
 <p>We also want to study a few problems related to computer prorgrams.   These include</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -742,7 +734,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \end{split}\]</div>
 <p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
 <section id="truth-and-proof">
-<h2>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Link to this heading">#</a></h2>
+<h3>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Link to this heading">#</a></h3>
 <p>We would like to ask about the set of <em>sentences in the language of ordinary mathematics</em> and as about the problem of deciding whether a given sentence is true or not.</p>
 <p>There are a few reasons why we are not going to directly do this.</p>
 <ol class="arabic simple">
@@ -767,6 +759,7 @@ This, too, is an interesting thing to do.</p></li>
 <p class="admonition-title">Credits</p>
 <p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://youtu.be/wymmCdLdPvM">here</a>.</p>
 </div>
+</section>
 </section>
 </section>
 
@@ -834,22 +827,16 @@ This, too, is an interesting thing to do.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
