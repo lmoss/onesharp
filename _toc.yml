@@ -6,8 +6,8 @@ parts:
   chapters:
   - file: issues/issues
   - file: issues/problems
-  - file: issues/coding
   - file: issues/reduction
+  - file: issues/coding
   - file: issues/recursion
 
 
