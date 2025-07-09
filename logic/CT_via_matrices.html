@@ -487,7 +487,24 @@ document.write(`
 <section id="commutative-rings-with-unit">
 <h2>Commutative rings with unit<a class="headerlink" href="#commutative-rings-with-unit" title="Link to this heading">#</a></h2>
 <p>We us a first-order signature in this section has symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, and <span class="math notranslate nohighlight">\(\times\)</span>.  The symbol <span class="math notranslate nohighlight">\(-\)</span> is unary.
-The set <span class="math notranslate nohighlight">\(Ax\)</span> of axioms are those of <em>commutative rings with unit</em>. As usual, we elide the multiplication sign <span class="math notranslate nohighlight">\(\times\)</span>, and we omit all the parentheses on repeated additions.  (For example, we would write <span class="math notranslate nohighlight">\(1+1+1\)</span> instead of <span class="math notranslate nohighlight">\(1 + (1+ 1)\)</span>.) What we need to know about this set is that (1) the integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> with the usual operations is a model of it, and a lemma stated below.</p>
+The set <span class="math notranslate nohighlight">\(Ax\)</span> of axioms are those of <em>commutative rings with unit</em>. The axioms are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+x + y &amp; = &amp; y + x \\
+x + (y + z ) &amp;  = &amp; (x + y) + z \\
+x + 0 = x \\
+x + (-x) = 0 \\
+\end{array}
+\quad
+\begin{array}{ll}
+x \times y &amp; = &amp; y \times x \\
+x \times (y \times z ) &amp;  = &amp; (x \times y) \times z \\
+x \times 1 = x \\
+x \times (y+z) &amp; = &amp; (x \times y) + (x \times z)
+\end{array}
+\end{split}\]</div>
+<p>As usual, we elide the multiplication sign <span class="math notranslate nohighlight">\(\times\)</span>, and we omit all the parentheses on repeated additions.  (For example, we would write <span class="math notranslate nohighlight">\(1+1+1\)</span> instead of <span class="math notranslate nohighlight">\(1 + (1+ 1)\)</span>.) What we need to know about this set is that (1) the integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> with the usual operations is a model of it, and a lemma stated below.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p>A <em>numeral</em> is a term of the form <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(1+1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, or its negative <span class="math notranslate nohighlight">\(-(1 + \cdots+ 1)\)</span>.   For each integer <span class="math notranslate nohighlight">\(n\)</span> we have a corresponding numeral <span class="math notranslate nohighlight">\(\underline{n}\)</span>.
