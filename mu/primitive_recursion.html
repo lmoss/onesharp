@@ -237,7 +237,6 @@
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ackermann.html">Ackermann’s function</a></li>
@@ -478,10 +477,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closure-properties">Closure properties</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closure-properties-primitive-recursive-functions-are">Closure properties: primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable"><code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable</a></li>
 </ul>
 </li>
 </ul>
@@ -780,13 +778,18 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div>
 </div>
 </div>
+<div class="exercise admonition" id="mu/primitive_recursion-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 65 </span></p>
+<section id="exercise-content">
+<p>Show that the function <span class="math notranslate nohighlight">\(f(x) = \lfloor \sqrt{x}\rfloor\)</span> is primitive recursive.
+For example, <span class="math notranslate nohighlight">\(f(3) = 1\)</span>, <span class="math notranslate nohighlight">\(f(4) =2\)</span>, and <span class="math notranslate nohighlight">\(f(5) = 2\)</span>.</p>
+</section>
+</div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="closure-properties">
-<h1>Closure properties<a class="headerlink" href="#closure-properties" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="primitive-recursive-functions-are">
-<h1>Primitive recursive functions are …<a class="headerlink" href="#primitive-recursive-functions-are" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="closure-properties-primitive-recursive-functions-are">
+<h1>Closure properties: primitive recursive functions are …<a class="headerlink" href="#closure-properties-primitive-recursive-functions-are" title="Link to this heading">#</a></h1>
 <p>Since the primitive recursive functions are an inductively defined class, we can prove things by <em>induction</em>.  Here is what this means:  to prove a property <span class="math notranslate nohighlight">\(P(f)\)</span> about <em>all primitive recursive functions</em> <span class="math notranslate nohighlight">\(f\)</span>, we can</p>
 <p>(1) Prove <span class="math notranslate nohighlight">\(P(f)\)</span> when <span class="math notranslate nohighlight">\(f\)</span> is one of the basic primitive recursive functions.</p>
 <p>(2) Assume <span class="math notranslate nohighlight">\(P(f)\)</span>, <span class="math notranslate nohighlight">\(P(g_1)\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(P(g_k)\)</span>, and then prove <span class="math notranslate nohighlight">\(P([comp, f, g_1, \ldots, g_k])\)</span>.</p>
@@ -794,7 +797,7 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 <p>We turn to examples of proof by induction on the primitive recursive functions:</p>
 <section id="total">
 <h2>Total<a class="headerlink" href="#total" title="Link to this heading">#</a></h2>
-<div class="proof theorem admonition" id="theorem-0">
+<div class="proof theorem admonition" id="theorem-1">
 <p class="admonition-title"><span class="caption-number">Theorem 3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Every primitive recursive function is total.</p>
@@ -802,9 +805,9 @@ q &gt; 1 and m q = p.   That is, I have changed h a litte so that it incorporate
 </div><p>So here <span class="math notranslate nohighlight">\(P(f)\)</span> is “<span class="math notranslate nohighlight">\(f\)</span> is a total function”.</p>
 <p>It is clear that all of the basic primitive recursive functions are total, and it is also easy to see that the composition of total functions is total.   So we are left with the closure of total functions under primitive recursion.</p>
 </section>
-<section id="computable-by-1-programs">
-<h2>Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs<a class="headerlink" href="#computable-by-1-programs" title="Link to this heading">#</a></h2>
-<div class="proof theorem admonition" id="theorem-1">
+<section id="computable">
+<h2><code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable<a class="headerlink" href="#computable" title="Link to this heading">#</a></h2>
+<div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Every primitive recursive function <span class="math notranslate nohighlight">\(f:N^k \to N\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
@@ -901,10 +904,9 @@ f(\overline{x}) = y \quad \mbox{ iff }\quad [\![ q ]\!](bb(x_1), \ldots, bb(x_n)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-to-see-if-the-first-15-numbers-are-prime-or-not">Checking to see if the first 15 numbers are prime or not</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closure-properties">Closure properties</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-recursive-functions-are">Primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closure-properties-primitive-recursive-functions-are">Closure properties: primitive recursive functions are …</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total">Total</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-by-1-programs">Computable by  <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computable"><code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable</a></li>
 </ul>
 </li>
 </ul>
