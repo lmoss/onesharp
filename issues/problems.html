@@ -635,14 +635,6 @@ z &amp; =  &amp;  −2, 736, 111, 468, 807, 040
 <p>Hilbert’s 10th problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
 <p>As we said, it turns out that there is <em>no</em> algorithm to do solve Hilbert’s 10th problem in general.  This is the only question whichv we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are involve so much number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
 <p>Of course, the fact that the general problem is undecidable does not deter people from solving special cases, as they did above.</p>
-<div class="exercise admonition" id="issues/problems-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
-<section id="exercise-content">
-<p>Show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
-<p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
-</section>
-</div>
 </section>
 <section id="matrix-mortality">
 <span id="content-firstmatrixmortality"></span><h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
@@ -653,9 +645,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 <p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>.   Given a finite set <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\times n\)</span> matrices with integer entries, is there a finite product of elements of <span class="math notranslate nohighlight">\(S\)</span>, allowing repeats, whose product is the zero matrix?</p>
 <p>This is the <span class="math notranslate nohighlight">\(n\times n\)</span> <em>matrix mortality problem</em>.</p>
 </div>
-<div class="exercise admonition" id="issues/problems-exercise-4">
+<div class="exercise admonition" id="issues/problems-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
 <section id="exercise-content">
 <p>Here are three matrices:</p>
 <div class="math notranslate nohighlight">
@@ -712,9 +704,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 </div>
 </div>
 <p>The next exercise is important.</p>
-<div class="exercise admonition" id="issues/problems-exercise-5">
+<div class="exercise admonition" id="issues/problems-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
 <section id="exercise-content">
 <p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
 (a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
@@ -783,12 +775,21 @@ This, too, is an interesting thing to do.</p></li>
 <p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
 <p>This set <span class="math notranslate nohighlight">\(P\)</span> is intuitively decidable.</p>
 </div>
+<div class="exercise admonition" id="issues/problems-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<section id="exercise-content">
+<p>Prove this:  show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
+<p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
+</section>
+</div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in 9 variables with integer coefficients.</p>
 <p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
-<p>This set <span class="math notranslate nohighlight">\(P\)</span> is not  intuitively decidable.</p>
+<p>This set <span class="math notranslate nohighlight">\(P\)</span> is not intuitively decidable.</p>
 </div>
+<p>This is much harder, and indeed we won’t see a proof.</p>
 <div class="warning admonition">
 <p class="admonition-title">Credits</p>
 <p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://youtu.be/wymmCdLdPvM">here</a>.</p>
