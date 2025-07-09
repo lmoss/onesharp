@@ -513,7 +513,7 @@ A \leq B
 <p>and say that <span class="math notranslate nohighlight">\(B\)</span> is <em>at least as hard as <span class="math notranslate nohighlight">\(A\)</span></em>, or that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em> if there is an intuitively computable <span class="math notranslate nohighlight">\(t: S\to T\)</span> such that for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-\mbox{$x\in A \quadiff f(x) \in B$}
+\mbox{$x\in A \quadiff t(x) \in B$}
 \]</div>
 <p>We sometimes call <span class="math notranslate nohighlight">\(t\)</span> the <em>translation</em> map.</p>
 </div>
@@ -521,15 +521,15 @@ A \leq B
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
 <section class="proposition-content" id="proof-content">
-<p>If <span class="math notranslate nohighlight">\(A\leq_m B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is decidable,
-then <span class="math notranslate nohighlight">\(A\)</span> is also decidable.</p>
-<p>If <span class="math notranslate nohighlight">\(A\leq_m B\)</span> and <span class="math notranslate nohighlight">\(A\)</span> is undecidable,
-then <span class="math notranslate nohighlight">\(B\)</span> is also undecidable.</p>
+<p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is intuitively decidable,
+then <span class="math notranslate nohighlight">\(A\)</span> is also intuitively decidable.</p>
+<p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(A\)</span> is intuitively undecidable,
+then <span class="math notranslate nohighlight">\(B\)</span> is also intuitively undecidable.</p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. For the first part:
 given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span class="math notranslate nohighlight">\(x\in A\)</span> or not,
-apply the computable function <span class="math notranslate nohighlight">\(f\)</span>, and then see if <span class="math notranslate nohighlight">\(f(x)\in B\)</span> or not.  The answer must be the same!</p>
+apply the intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span>, and then see if <span class="math notranslate nohighlight">\(t(x)\in B\)</span> or not.  The answer must be the same!</p>
 <p>The second assertion follows from the first.</p>
 </div>
 <div class="admonition-example admonition">
@@ -635,15 +635,15 @@ xyzw - 15
 \end{array}
 \end{split}\]</div>
 <p>One common root is <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(y = 2\)</span>, <span class="math notranslate nohighlight">\(z = 3\)</span>, <span class="math notranslate nohighlight">\(w = 5\)</span>.  There might be others, but it only takes one common root to put a system into <span class="math notranslate nohighlight">\(B\)</span>.</p>
-<p>Every polynomial is a system with just one polynomial.   So the translation map taking polynomials into systems is the <em>inclusion</em> map.</p>
-<p>We need to exhibit an intuitively computable function <span class="math notranslate nohighlight">\(f\)</span> from systems of polynomials to single polynomials with the property that</p>
+<p>Every polynomial is a system with just one polynomial.   So we may take the translation map <span class="math notranslate nohighlight">\(t\)</span> taking polynomials into systems to be the <em>inclusion</em> map.</p>
+<p>We need to exhibit an intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span> from systems of polynomials to single polynomials with the property that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{cl}
  &amp;  \mbox{$(p_1,\ldots, p_k)$ has a common integer root}\\ 
 \quadiff &amp; \mbox{$f((p_1,\ldots, p_k))$ has an integer root}\\
 \end{array}
 \end{split}\]</div>
-<p>Let <span class="math notranslate nohighlight">\(f\)</span> be defined by</p>
+<p>Let <span class="math notranslate nohighlight">\(t\)</span> be defined by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{array}{lcl}
@@ -662,7 +662,7 @@ f((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
 \mbox{iff} &amp; f((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
 \end{array}
 \end{split}\]</div>
-<p>This calculation shows that <span class="math notranslate nohighlight">\(A\leq B\)</span> via <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>This calculation shows that <span class="math notranslate nohighlight">\(A\leq B\)</span> via <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>This is the most difficult of the verifications.  We present an example and invite you to work out the full details as an exercise.</p>
 <p>Consider</p>
 <div class="math notranslate nohighlight">
