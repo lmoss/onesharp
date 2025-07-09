@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/reduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recursion" href="recursion.html" />
-    <link rel="prev" title="Computable functions on encoded structures" href="coding.html" />
+    <link rel="next" title="Computable functions on encoded structures" href="coding.html" />
+    <link rel="prev" title="Algorithmic problems" href="problems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,9 +190,10 @@
 <li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
 
+
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -469,6 +470,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-related-to-integer-polynomials">Examples related to integer polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
@@ -512,15 +514,12 @@ Also the details concerning equivalence are not trivial.</p>
 \[
 \mbox{$x\in A \quadiff f(x) \in B$}
 \]</div>
-<p>Again, <span class="math notranslate nohighlight">\(f\)</span> has to be total and computable!
-We say that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em>.</p>
-<p>The idea is that <span class="math notranslate nohighlight">\(B\)</span> is ``at least as hard as <span class="math notranslate nohighlight">\(A\)</span>’’ in some sense .  (However, this intuition will have to be corrected,  as we’ll see.)</p>
+<p>Again, <span class="math notranslate nohighlight">\(f\)</span> has to be total and computable.  We say that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em> or that <span class="math notranslate nohighlight">\(B\)</span> is <em>at least as hard as <span class="math notranslate nohighlight">\(A\)</span></em>.</p>
 </div>
 <div class="proof admonition" id="proof">
 <p>Proof. For the first part:
 given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span class="math notranslate nohighlight">\(x\in A\)</span> or not,
-apply the computable function <span class="math notranslate nohighlight">\(f\)</span>, and then see if <span class="math notranslate nohighlight">\(f(x)\in B\)</span> or not.</p>
-<p>The answer must be the same!</p>
+apply the computable function <span class="math notranslate nohighlight">\(f\)</span>, and then see if <span class="math notranslate nohighlight">\(f(x)\in B\)</span> or not.  The answer must be the same!</p>
 <p>The second assertion follows from the first.</p>
 </div>
 <div class="admonition-example admonition">
@@ -667,6 +666,29 @@ We saw earlier that $MPCP \leq PCP$.
 </ol>
 </section>
 </div></section>
+<section class="tex2jax_ignore mathjax_ignore" id="examples-related-to-integer-polynomials">
+<h1>Examples related to integer polynomials<a class="headerlink" href="#examples-related-to-integer-polynomials" title="Link to this heading">#</a></h1>
+<p>We turn to some examples related to integer polynomials and systems of them.  Consider the following sets:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array{lcl}
+A  &amp; = &amp; \mbox{all polynomials which have an integer root}\\
+A_{\leq 4}  &amp; = &amp; \mbox{all polynomials of degree $\leq 4$ which have an integer root}\\
+B &amp; = &amp; \mbox{all systems of polynomials which have an integer root}\\
+\end{array}
+\end{split}\]</div>
+<p>As an example of an element of <span class="math notranslate nohighlight">\(B\)</span>, consider</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+2x^2 - y \\
+x^{449} -8y + wz   \\
+xyzw - 15
+\end{array}
+\end{split}\]</div>
+<p>One common root is <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(y = 2\)</span>, <span class="math notranslate nohighlight">\(z = 3\)</span>, <span class="math notranslate nohighlight">\(w = 5\)</span>.  There might be others, but it only takes one common root to put a system into <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Every polynomial is a system with just one polynomial.   So the translation map taking polynomials into systems is the <em>inclusion</em> map.</p>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <section id="tiling">
@@ -674,21 +696,21 @@ We saw earlier that $MPCP \leq PCP$.
 <p>In the problems below on tiling, you should use the notion of reduction that we are currently studying.</p>
 <div class="exercise admonition" id="issues/reduction-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
 <section id="exercise-content">
 <p>The <em>one dimensional tiling problem</em> is the problem of deciding whether a tile set can tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis” part of the quadrant (the bottom infinite row).  Show that this problem is decidable by reducing to the problem of whether a finite graph has a cycle.</p>
 </section>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
 <section id="exercise-content">
 <p>The <em>two-row tiling problem</em> is the same problem, but we want to tile the bottom-most two infinite rows.  Is this problem decidable or undecidable?</p>
 </section>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
 <section id="exercise-content">
 <p>What about the two-column tiling problem?</p>
 </section>
@@ -698,7 +720,7 @@ We saw earlier that $MPCP \leq PCP$.
 <h2>Roots of polynomials<a class="headerlink" href="#roots-of-polynomials" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> be the set of multi-variable polynomials <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> with integer coefficients which have a root consisting of positive integers, and let <span class="math notranslate nohighlight">\(Y\)</span> be the polynomials with integer coefficients which have a root consisting of negative integers.  Show that <span class="math notranslate nohighlight">\(X \leq Y\)</span> and <span class="math notranslate nohighlight">\(Y\leq X\)</span>.</p>
 </section>
@@ -708,7 +730,7 @@ We saw earlier that $MPCP \leq PCP$.
 <h2>Post correspondence problem<a class="headerlink" href="#post-correspondence-problem" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
 <section id="exercise-content">
 <p>Assuming that <span class="math notranslate nohighlight">\(PCP\)</span> is undecidable, show that it is undecidable even if the alphabet has only two letters.</p>
 </section>
@@ -718,7 +740,7 @@ We saw earlier that $MPCP \leq PCP$.
 <h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
 <p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as easy.</p>
@@ -727,7 +749,7 @@ We saw earlier that $MPCP \leq PCP$.
 <p>Here is an exercise pertaining to the matrix mortality problem.   Athough it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="../undecidability/matrixMortality.html#content-matrixmortalityundecidable"><span class="std std-ref">our later work on the undecidability of matrix mortality</span></a>.</p>
 <div class="exercise admonition" id="matrix-mortality-exercise">
 
-<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix</p>
@@ -831,20 +853,20 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="coding.html"
+       href="problems.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computable functions on encoded structures</p>
+        <p class="prev-next-title">Algorithmic problems</p>
       </div>
     </a>
     <a class="right-next"
-       href="recursion.html"
+       href="coding.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Recursion</p>
+        <p class="prev-next-title">Computable functions on encoded structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -865,6 +887,7 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-related-to-integer-polynomials">Examples related to integer polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
