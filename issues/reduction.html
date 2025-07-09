@@ -695,23 +695,24 @@ xyzw - 15
 \quadiff &amp; \mbox{$f((p_1,\ldots, p_k))$ has an integer root}\\
 \end{array}
 \end{split}\]</div>
-<p>Let <span class="math notranslate nohighlight">\(f\)</span> be defined by
-$<span class="math notranslate nohighlight">\(
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be defined by</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{array}{lcl}
 f((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
 \end{array}
-\)</span>$</p>
+\]</div>
 <p>To see that this works, fix  <span class="math notranslate nohighlight">\(p_1,\ldots, p_k\)</span> and let  <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span> be all the variables that occur in these polynomials. Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{ll}
- &amp; \mbox{$(p_1,\ldots, p_k)$ has a common integer root} \\
- \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i(\overline{x} ) = 0 \\
- \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i^{\emph{2}}(\overline{x} ) = 0 \\
- \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \emph{\sum_{i=1}^k} p_i^{2}(\overline{x} ) \ = 0 \\
-  \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) f(p_1,\ldots, p_k) (\overline{x}) = 0 \\
-  \mbox{iff} &amp; f((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
-  \end{array}
+&amp; \mbox{$(p_1,\ldots, p_k)$ has a common integer root} \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i(\overline{x} ) = 0 \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i^{2}(\overline{x} ) = 0 \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) {\sum_{i=1}^k} p_i^{2}(\overline{x} ) \ = 0 \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) f(p_1,\ldots, p_k) (\overline{x}) = 0 \\
+\mbox{iff} &amp; f((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
+\end{array}
 \end{split}\]</div>
 <p>This calculation shows that <span class="math notranslate nohighlight">\(A\leq B\)</span> via <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p>This is the most difficult of the verifications.  We present an example and invite you to work out the full details as an exercise.</p>
@@ -746,16 +747,16 @@ h   &amp; = &amp; gz \\
 \end{array}
 \end{array}
 \end{split}\]</div>
-<p>This shows that <span class="math notranslate nohighlight">\(A \leq E_2\)</span>, where <span class="math notranslate nohighlight">\(E_2\)</span> is the set of linear systems with roots.   Then we compose with the function which we already saw which shows that <span class="math notranslate nohighlight">\(E\leq A\)</span>.      This turns the system  above into a single equation of degree 4:
-$$\begin{array}{lcl}
-(a  - x^2)^2 + (b - ax)^2 + (c-y^2)^2  + (d - c^2)^2 + (e - cy)^2 &amp; &amp;  \</p>
-<ul class="simple">
-<li><p>(f- z^2)^2 + (g - f^2)^2</p></li>
-<li><p>(h-gz)^2 + (4 bd + 3e -  13  h )^2 &amp; = &amp; 0
+<p>This shows that <span class="math notranslate nohighlight">\(A \leq B_2\)</span>, where <span class="math notranslate nohighlight">\(E_2\)</span> is the set of linear systems with roots.   Then we compose with the function which we already saw which shows that <span class="math notranslate nohighlight">\(B\leq A\)</span>.      This turns the system  above into a single equation of degree <span class="math notranslate nohighlight">\(4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+(a  - x^2)^2 + (b - ax)^2 + (c-y^2)^2  + (d - c^2)^2 + (e - cy)^2 &amp; &amp;  \\
+ + (f- z^2)^2 + (g - f^2)^2
++ (h-gz)^2 + (4 bd + 3e -  13  h )^2 &amp; = &amp; 0
 \end{array}
-$<span class="math notranslate nohighlight">\(
-This transformation preserves satisfiability in \)</span>\mathbb{Z}<span class="math notranslate nohighlight">\( and shows that  \)</span>A \leq_m A_{\leq 4}$.</p></li>
-</ul>
+\end{split}\]</div>
+<p>This transformation preserves satisfiability in <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and shows that  <span class="math notranslate nohighlight">\(A \leq A_{\leq 4}\)</span>.</p>
 <p>The method of introducing variables to make something simpler is sometimes called <em>Skolem’s trick</em>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
