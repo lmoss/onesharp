@@ -613,50 +613,6 @@ with the property that for all domino sets <span class="math notranslate nohighl
 <li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
 <li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino, then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
-<div class="admonition-definition admonition">
-<p class="admonition-title">Definition</p>
-<p>In this class, a <em>problem</em> is a set <span class="math notranslate nohighlight">\(P\)</span>,  usually a subset of some “easily defined = computable”</p>
-<p>set <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<p>We call it a <em>problem</em> because we want to know  whether there is an algorithm to tell  if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not; or whether there is no such algorithm.</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
-<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
-</div>
-</div>
-<div class="admonition-definition admonition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="math notranslate nohighlight">\(P\)</span> be a problem (as a subset of <span class="math notranslate nohighlight">\(S\)</span>),</p>
-<p>and <span class="math notranslate nohighlight">\(Q\)</span> a problem (as a subset of <span class="math notranslate nohighlight">\(T\)</span>).</p>
-<p>We write</p>
-<div class="math notranslate nohighlight">
-\[
-P \leq Q
-\]</div>
-<p>if there is a computable <span class="math notranslate nohighlight">\(f: S\to T\)</span>  such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-s\in P \quadiff f(s) \in Q
-\]</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$S =$  finite domino sets with a start domino
- 
-$P = MPCP$
- 
-$T = $ finite domino sets
- 
-$Q = PCP$ 
- 
-We saw earlier that $MPCP \leq PCP$.
-
-</pre></div>
-</div>
-<div class="proof admonition" id="proof">
-<p>Proof. Let <span class="math notranslate nohighlight">\(f\)</span> be the computable function showing that <span class="math notranslate nohighlight">\(P\leq Q\)</span>.    Given <span class="math notranslate nohighlight">\(s\in S\)</span>, to tell whether or not <span class="math notranslate nohighlight">\(s\in P\)</span>,  apply <span class="math notranslate nohighlight">\(f\)</span>, and ask whether or not <span class="math notranslate nohighlight">\(f(s)\in Q\)</span>.   (By assumption, there is a computable procedure to answer this question.)   The same answer holds for the question of whether or not <span class="math notranslate nohighlight">\(s\in P\)</span>.    This proves the first assertion,  and then the second one follows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="examples-related-to-integer-polynomials">
 <h1>Examples related to integer polynomials<a class="headerlink" href="#examples-related-to-integer-polynomials" title="Link to this heading">#</a></h1>
