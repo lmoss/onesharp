@@ -260,7 +260,6 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The halting problem</a></li>
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="busyBeaver.html">The busy beaver problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tiling.html">Tiling</a></li>
 
@@ -472,8 +471,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
 </ul>
@@ -593,9 +594,8 @@ again have a contradiction: <span class="math notranslate nohighlight">\([\![r]\
 <p>Now we cannot have <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\uparrow\)</span>, since if we did, we would also have <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\downarrow\)</span> by the second line above.  So, <span class="math notranslate nohighlight">\([\![x^*]\!](y)\!\!\downarrow\)</span>.  But then by the first line,
 <span class="math notranslate nohighlight">\([\![x^*]\!](y)\simeq [\![x^*]\!](y) + 1\)</span>, and this is impossible.</p>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="corollaries">
-<h1>Corollaries<a class="headerlink" href="#corollaries" title="Link to this heading">#</a></h1>
+<section id="corollaries">
+<h2>Corollaries<a class="headerlink" href="#corollaries" title="Link to this heading">#</a></h2>
 <p>There are a number of corollaries to the basic undecidability result.
 Let us begin by recalling the sets of that we mentioned earlier:</p>
 <div class="math notranslate nohighlight">
@@ -638,6 +638,7 @@ Find a subset of <span class="math notranslate nohighlight">\(A\)</span> which i
 <p>Find a bijection <span class="math notranslate nohighlight">\(f: N\to N\)</span> which is not computable.</p>
 </section>
 </div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="improvement-for-one-register-programs">
 <h1>Improvement for one-register programs<a class="headerlink" href="#improvement-for-one-register-programs" title="Link to this heading">#</a></h1>
@@ -784,8 +785,10 @@ in case  <span class="math notranslate nohighlight">\(x^*\in S\)</span>.  But we
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The halting problem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">Corollaries</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#improvement-for-one-register-programs">Improvement for one-register programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rice-s-theorem">Rice’s Theorem</a></li>
 </ul>

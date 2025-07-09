@@ -260,7 +260,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/haltingProblem.html">The halting problem</a></li>
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/busyBeaver.html">The busy beaver problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/tiling.html">Tiling</a></li>
 
@@ -472,7 +471,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-related-to-the-pcp">Example related to the PCP</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-related-to-integer-polynomials">Examples related to integer polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
@@ -535,6 +537,8 @@ given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span c
 apply the intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span>, and then see if <span class="math notranslate nohighlight">\(t(x)\in B\)</span> or not.  The answer must be the same!</p>
 <p>The second assertion follows from the first.</p>
 </div>
+<section id="example-related-to-the-pcp">
+<h2>Example related to the PCP<a class="headerlink" href="#example-related-to-the-pcp" title="Link to this heading">#</a></h2>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>Let’s consider the <em>Modified PCP (MPCP)</em>:  Given a finite set of dominoes as in the PCP, and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the <em>start domino</em>, is there a Post sequence that starts with <span class="math notranslate nohighlight">\(d_0\)</span>?</p>
@@ -611,6 +615,7 @@ with the property that for all domino sets <span class="math notranslate nohighl
 <li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
 <li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino, then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="examples-related-to-integer-polynomials">
 <h1>Examples related to integer polynomials<a class="headerlink" href="#examples-related-to-integer-polynomials" title="Link to this heading">#</a></h1>
@@ -909,7 +914,10 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-related-to-the-pcp">Example related to the PCP</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-related-to-integer-polynomials">Examples related to integer polynomials</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
