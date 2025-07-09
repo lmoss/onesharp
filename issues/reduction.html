@@ -534,9 +534,7 @@ apply the intuitively computable translation <span class="math notranslate nohig
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>Let’s consider the <em>Modified PCP (MPCP)</em>:
-Given a finite set of dominoes as in the PCP,</p>
-<p>and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the <em>start domino</em>, is there a Post sequence that starts with <span class="math notranslate nohighlight">\(d_0\)</span>?</p>
+<p>Let’s consider the <em>Modified PCP (MPCP)</em>:  Given a finite set of dominoes as in the PCP, and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the <em>start domino</em>, is there a Post sequence that starts with <span class="math notranslate nohighlight">\(d_0\)</span>?</p>
 <p>I am going to give an informal proof that
 $<span class="math notranslate nohighlight">\(\mbox{the PCP and the MPCP are equivalent}
 \)</span>$
@@ -547,15 +545,12 @@ The basic idea is to do two things:</p>
 </ol>
 </div>
 <p>MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
-<p>Given an input to the MPCP,
-say <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>,
-take two new symbols, say <span class="math notranslate nohighlight">\(*\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then <em>make a new domino set</em>  <span class="math notranslate nohighlight">\(f(\DD)\)</span> in the following way:</p>
+<p>Given an input to the MPCP, say <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>, take two new symbols, say <span class="math notranslate nohighlight">\(*\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then <em>make a new domino set</em>  <span class="math notranslate nohighlight">\(t(\DD)\)</span> in the following way:</p>
 <ol class="arabic simple">
 <li><p>Add <span class="math notranslate nohighlight">\(*\)</span> after all letters in  all top words in the original domino set.</p></li>
 <li><p>Add <span class="math notranslate nohighlight">\(*\)</span> before all letters in all bottom words in the original domino set.</p></li>
 <li><p>Add a new copy of the start domino, <span class="math notranslate nohighlight">\(d_0\)</span>,  but modify it  by adding <span class="math notranslate nohighlight">\(*\)</span> after all letters in the top and all letters in the bottom, and also add <span class="math notranslate nohighlight">\(*\)</span> before the first letter of the top word.   This  one is called the <em>first special domino</em>.</p></li>
-<li><p>Add a new domino with top word <span class="math notranslate nohighlight">\(\$\)</span> and bottom word <span class="math notranslate nohighlight">\(*\$\)</span>.
-This last one is called the <em>second special domino</em>.</p></li>
+<li><p>Add a new domino with top word <span class="math notranslate nohighlight">\(\$\)</span> and bottom word <span class="math notranslate nohighlight">\(*\$\)</span>.  This last one is called the <em>second special domino</em>.</p></li>
 </ol>
 <hr class="docutils" />
 <p>Note that we have a <em>intuitively computable function</em> <span class="math notranslate nohighlight">\(f\)</span> from pointed tile sets to tile sets.  That is, adding the <span class="math notranslate nohighlight">\(*\)</span> like this is completely algorithmic.</p>
@@ -576,7 +571,7 @@ This last one is called the <em>second special domino</em>.</p></li>
 \end{flushleft}
 with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> shown in red,</p>
 <p>\</p>
-<p>Then <span class="math notranslate nohighlight">\(f(\DD)\)</span> is shown below
+<p>Then <span class="math notranslate nohighlight">\(t(\DD)\)</span> is shown below
 \begin{flushleft}
 \begin{tikzpicture}</p>
 <p>\foreach \x in {0,2.5,5,7.5}
@@ -593,17 +588,17 @@ with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> 
 <p>\draw  (8.5,1.5) node{$};  %% north
 \draw  (8.5,.5) node{*$};  %% southf</p>
 <p>\ \end{tikzpicture}</p>
-<p>(The two special dominoes of <span class="math notranslate nohighlight">\(f(\DD)\)</span> are shown at the end.)</p>
+<p>(The two special dominoes of <span class="math notranslate nohighlight">\(t(\DD)\)</span> are shown at the end.)</p>
 <div class="admonition-claim admonition">
 <p class="admonition-title">Claim</p>
 <p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,
-then <span class="math notranslate nohighlight">\(f(\DD)\)</span> has a Post sequence.</p>
-<p>And if <span class="math notranslate nohighlight">\(f(\DD)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
+then <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence.</p>
+<p>And if <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
 </div>
 <p>For <em>all</em> <span class="math notranslate nohighlight">\(\DD\)</span>, not just the one in our example:</p>
-<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,  then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence.</p>
-<p>And if <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
-<p>The main fact here is that a Post sequence for <span class="math notranslate nohighlight">\(f(\DD)\)</span> must start with the first  special domino, since this is the only one whose top and bottom words start with the same symbol.   It also has to end with the second special domino.</p>
+<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,  then <span class="math notranslate nohighlight">\(t(\DD, d_0)\)</span> has a Post sequence.</p>
+<p>And if <span class="math notranslate nohighlight">\(t(\DD, d_0)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
+<p>The main fact here is that a Post sequence for <span class="math notranslate nohighlight">\(t(\DD)\)</span> must start with the first  special domino, since this is the only one whose top and bottom words start with the same symbol.   It also has to end with the second special domino.</p>
 <p>Now let’s prove the main claim.</p>
 <p>Next, we show that PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP
 This one is part of the  <em>second</em> homework.</p>
@@ -640,14 +635,14 @@ xyzw - 15
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{cl}
  &amp;  \mbox{$(p_1,\ldots, p_k)$ has a common integer root}\\ 
-\quadiff &amp; \mbox{$f((p_1,\ldots, p_k))$ has an integer root}\\
+\quadiff &amp; \mbox{$t((p_1,\ldots, p_k))$ has an integer root}\\
 \end{array}
 \end{split}\]</div>
 <p>Let <span class="math notranslate nohighlight">\(t\)</span> be defined by</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{array}{lcl}
-f((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
+t((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
 \end{array}
 \]</div>
 <p>To see that this works, fix  <span class="math notranslate nohighlight">\(p_1,\ldots, p_k\)</span> and let  <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span> be all the variables that occur in these polynomials. Then</p>
@@ -658,8 +653,8 @@ f((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
 \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i(\overline{x} ) = 0 \\
 \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i^{2}(\overline{x} ) = 0 \\
 \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) {\sum_{i=1}^k} p_i^{2}(\overline{x} ) \ = 0 \\
-\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) f(p_1,\ldots, p_k) (\overline{x}) = 0 \\
-\mbox{iff} &amp; f((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) t(p_1,\ldots, p_k) (\overline{x}) = 0 \\
+\mbox{iff} &amp; t((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
 \end{array}
 \end{split}\]</div>
 <p>This calculation shows that <span class="math notranslate nohighlight">\(A\leq B\)</span> via <span class="math notranslate nohighlight">\(t\)</span>.</p>
@@ -806,13 +801,13 @@ h   &amp; = &amp; gz \\
 <p>Here is a computable function <span class="math notranslate nohighlight">\(f: Q \to Q\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-f(S) = S\cup \{A\}
+t(S) = S\cup \{A\}
 \]</div>
 <p>Our goal is to prove the following fact:</p>
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies.</p>
 <ol class="arabic simple">
-<li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
-<li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(f(S)\)</span> whose product has a zero in the upper-left corner.  Write the product as</p></li>
+<li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(t(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
+<li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(t(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(t(S)\)</span> whose product has a zero in the upper-left corner.  Write the product as</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
