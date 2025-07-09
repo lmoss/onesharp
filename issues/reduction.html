@@ -688,6 +688,33 @@ xyzw - 15
 \end{split}\]</div>
 <p>One common root is <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(y = 2\)</span>, <span class="math notranslate nohighlight">\(z = 3\)</span>, <span class="math notranslate nohighlight">\(w = 5\)</span>.  There might be others, but it only takes one common root to put a system into <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p>Every polynomial is a system with just one polynomial.   So the translation map taking polynomials into systems is the <em>inclusion</em> map.</p>
+<p>We need to exhibit an intuitively computable function <span class="math notranslate nohighlight">\(f\)</span> from systems of polynomials to single polynomials with the property that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{cl}
+ &amp;  \mbox{$(p_1,\ldots, p_n)$ has a common integer root}\\ 
+\quadiff &amp; \mbox{$f(\pbar)$ has an integer root}\\
+\end{array}
+\end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be defined by
+$<span class="math notranslate nohighlight">\(
+\begin{array}{lcl}
+f((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
+\end{array}
+\)</span>$</p>
+<p>To see that this works, fix  <span class="math notranslate nohighlight">\(p_1,\ldots, p_k\)</span> and let
+<span class="math notranslate nohighlight">\(x_1, \ldots, x_n\)</span> be all the variables that occur in these. Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+ &amp; \mbox{$(p_1,\ldots, p_k)$ has a common integer root} \\
+ \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i(\xbar) = 0 \\
+ \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i^{\emph{2}}(\xbar) = 0 \\
+ \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \emph{\sum_{i=1}^k} p_i^{\emph{2}}(\xbar) \ = 0 \\
+  \mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) f(p_1,\ldots, p_k) (\xbar) = 0 \\
+  \mbox{iff} &amp; f((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
+  \end{array}
+\end{split}\]</div>
+<p>This calculation shows that <span class="math notranslate nohighlight">\(A\leq B\)</span> via <span class="math notranslate nohighlight">\(f\)</span>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
