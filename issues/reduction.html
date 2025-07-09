@@ -498,7 +498,7 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/reduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="reduction-of-one-problem-to-another">
 <h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Link to this heading">#</a></h1>
-<p>** the part starting here is just a draft! **</p>
+<p>** the part starting here is a working draft! **</p>
 <p>One of the things that we are very interested in computability theory is in the <em>relation between problems</em>.  Here is the main definition that we will use.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
@@ -515,7 +515,7 @@ A \leq B
 <p>We sometimes call <span class="math notranslate nohighlight">\(t\)</span> the <em>translation</em> map.</p>
 </div>
 <p>We are going to see a few examples of this soon.  But first, here is the result that shows why we are interested in this definition in the first place.</p>
-<div class="proof proposition admonition" id="proposition-0">
+<div class="proof proposition admonition" id="proposition_intuitive_decidability">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is intuitively decidable,
@@ -534,6 +534,7 @@ apply the intuitively computable translation <span class="math notranslate nohig
 <p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(T\)</span> be the set of natural numbers, let <span class="math notranslate nohighlight">\(A\)</span> be the set of prime numbers, and let <span class="math notranslate nohighlight">\(B = \set{1,2,3}\)</span>.  Show that according to our definitions <span class="math notranslate nohighlight">\(A\leq B\)</span>.   However, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are both decidable, and most people who know about such things would agree that <span class="math notranslate nohighlight">\(A\)</span> is harder than <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>The moral of the story is that our English rendering of <span class="math notranslate nohighlight">\(A\leq B\)</span> is only good for comparisons of decidable vs. undecidable problems.</p>
 </section>
 </div>
 <section id="example-related-to-the-pcp">
@@ -617,6 +618,7 @@ with the property that for all domino sets <span class="math notranslate nohighl
 </section>
 <section id="why-does-t-have-to-be-intuitively-computable">
 <h2>Why does <span class="math notranslate nohighlight">\(t\)</span> have to be intuitively computable?<a class="headerlink" href="#why-does-t-have-to-be-intuitively-computable" title="Link to this heading">#</a></h2>
+<p>Similarly, we can now say why our definition of <span class="math notranslate nohighlight">\(A \leq B\)</span> requires the translation function <span class="math notranslate nohighlight">\(t: S\to T\)</span> to be intuitively computable.   If we took away this restriction,  <a class="reference internal" href="#proposition_intuitive_decidability">Proposition 2</a> would be false in general: consider the case when <span class="math notranslate nohighlight">\(A\)</span> is undecidable and <span class="math notranslate nohighlight">\(B\)</span> is decidable, and <span class="math notranslate nohighlight">\(t\)</span> is a constant function.</p>
 </section>
 <section id="examples-related-to-integer-roots-of-polynomials">
 <h2>Examples related to integer roots of polynomials<a class="headerlink" href="#examples-related-to-integer-roots-of-polynomials" title="Link to this heading">#</a></h2>
