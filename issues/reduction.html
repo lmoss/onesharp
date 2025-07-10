@@ -566,7 +566,11 @@ apply the intuitively computable translation <span class="math notranslate nohig
 <p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>, then <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence.</p>
 <p>And if <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d^*\)</span>.</p>
 </div>
-<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>,  then <span class="math notranslate nohighlight">\(t(\DD, d^*)\)</span> has a Post sequence.  And if <span class="math notranslate nohighlight">\(t(\DD, d^*)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d^*\)</span>.  The main fact here is that a Post sequence for <span class="math notranslate nohighlight">\(t(\DD)\)</span> must start with the first  special domino, since this is the only one whose top and bottom words start with the same symbol.   It also has to end with the second special domino.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. The first assertion is easier.  If we have a Post sequence in the original <span class="math notranslate nohighlight">\((\mathcal{D},d^*)\)</span> with word <span class="math notranslate nohighlight">\(w\)</span>, then
+we trade in these dominoes for the evident corresponding dominoes in <span class="math notranslate nohighlight">\(t(\mathcal{D},d^*)\)</span>, except that we begin the first special domino.  We also add the second special domino at the end.  Then it is easy to see that we have a Post sequence in <span class="math notranslate nohighlight">\(t(\mathcal{D},d^*)\)</span>: the word across the top and bottom is the same word <span class="math notranslate nohighlight">\(w\)</span> as above, except that we add <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> before all the letters, and also at the end, and follow it with <span class="math notranslate nohighlight">\(\$ \)</span>.</p>
+<p>In the more challenging direction, suppose that <span class="math notranslate nohighlight">\(t(\DD, d^*)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d^*\)</span>.  The main fact here is that a Post sequence for <span class="math notranslate nohighlight">\(t(\DD)\)</span> must start with the first  special domino, since this is the only one whose top and bottom words start with the same symbol.   It also has to end with the second special domino.</p>
+<p>``</p>
 <div class="exercise admonition" id="issues/reduction-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
@@ -577,6 +581,7 @@ apply the intuitively computable translation <span class="math notranslate nohig
 <li><p>Conversely, if <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence that starts with its start domino, then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
 </section>
+</div>
 </div>
 </section>
 <section id="why-does-t-have-to-be-intuitively-computable">
