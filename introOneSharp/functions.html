@@ -506,10 +506,8 @@ in programs.</p>
 <p class="admonition-title"><span class="caption-number">Definition 6 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
-called <span class="math notranslate nohighlight">\(\phifn_p\)</span>  on words.</p>
-<p><span class="math notranslate nohighlight">\(\phifn_p (x) \simeq y\)</span> means that
-<span class="math notranslate nohighlight">\(p\)</span> is a program,
-and
+called <span class="math notranslate nohighlight">\([\![ p]\!]\)</span>  on words.</p>
+<p><span class="math notranslate nohighlight">\([\![ p]\!] (x) \simeq y\)</span> means that <span class="math notranslate nohighlight">\(p\)</span> is a program, and
 when  we
 run it
 <span class="math notranslate nohighlight">\(p\)</span>  with the word <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty,
@@ -522,7 +520,7 @@ empty.</p>
 or if <span class="math notranslate nohighlight">\(p\)</span> does not halt with <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span>,
 or if
 <span class="math notranslate nohighlight">\(p\)</span> halts but not all of the registers besides <span class="math notranslate nohighlight">\(\Rone\)</span> are empty),
-then we say that <span class="math notranslate nohighlight">\(\phifn_p (x)\)</span>
+then we say that <span class="math notranslate nohighlight">\([\![ p]\!] (x)\)</span>
 is <em>undefined</em>.</p>
 </section>
 </div><div class="tip admonition">
@@ -534,7 +532,7 @@ is <em>undefined</em>.</p>
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Instead of <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span>, we might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.
+<p>Instead of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span>, we might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.
 We do this especially when we want to iterate the construction.
 That is, instead of writing</p>
 <div class="math notranslate nohighlight">
@@ -547,7 +545,7 @@ That is, instead of writing</p>
 \]</div>
 </div>
 <p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,
-just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in the other notation.</p>
+just like <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> is in the other notation.</p>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
@@ -557,22 +555,22 @@ just like <span class="math notranslate nohighlight">\(\phifn_p\)</span> is in t
 </div>
 <section id="partial-functions">
 <h2>Partial functions<a class="headerlink" href="#partial-functions" title="Link to this heading">#</a></h2>
-<p>Suppose we run a program <span class="math notranslate nohighlight">\(p\)</span> with an input word <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.  This run might, or might not, halt.  The first example of this is when <span class="math notranslate nohighlight">\(p\)</span> is a loop <span class="math notranslate nohighlight">\(\one\hash^3\one\hash^4\)</span>.  For this program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\phifn_p(x)\)</span> is <em>undefined</em> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>For other programs <span class="math notranslate nohighlight">\(q\)</span> there might be some programs <span class="math notranslate nohighlight">\(p\)</span> for which <span class="math notranslate nohighlight">\(\phifn_p\)</span> is defined for some but not all input words.</p>
+<p>Suppose we run a program <span class="math notranslate nohighlight">\(p\)</span> with an input word <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.  This run might, or might not, halt.  The first example of this is when <span class="math notranslate nohighlight">\(p\)</span> is a loop <span class="math notranslate nohighlight">\(\one\hash^3\one\hash^4\)</span>.  For this program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span> is <em>undefined</em> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>For other programs <span class="math notranslate nohighlight">\(p\)</span> there might be some programs <span class="math notranslate nohighlight">\(x\)</span> for which <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span> is defined for some but not all input words.</p>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Given words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, we write</p>
 <div class="math notranslate nohighlight">
 \[
-\phifn_x(y)\downarrow
+[\![ p]\!](x)(y)\downarrow
 \]</div>
-<p>if <span class="math notranslate nohighlight">\(\phifn_x(y)\)</span> is defined.  If <span class="math notranslate nohighlight">\(\phifn_x(y)\)</span> is undefined, we write</p>
+<p>if <span class="math notranslate nohighlight">\([\![ p]\!](x)(y)\)</span> is defined.  If <span class="math notranslate nohighlight">\([\![ p]\!](x)(y)\)</span> is undefined, we write</p>
 <div class="math notranslate nohighlight">
 \[
-\phifn_x(y)\uparrow
+[\![ p]\!](x)(y)\uparrow
 \]</div>
-<p>The <em>domain</em> of <span class="math notranslate nohighlight">\(\phifn_x\)</span> is <span class="math notranslate nohighlight">\(\set{y : \phifn_x(p)\dar}\)</span>.</p>
+<p>The <em>domain</em> of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span> is <span class="math notranslate nohighlight">\(\set{y : [\![ p]\!](x)(p)\dar}\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="introOneSharp/functions-exercise-3">
 
@@ -597,7 +595,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 <p>We have mentioned <em>monoids</em> in connection with the <span class="math notranslate nohighlight">\(+\)</span> operation on words.  Here is another monoid.  Let <span class="math notranslate nohighlight">\(P\)</span> be the set of partial functions from words to words.  Let <span class="math notranslate nohighlight">\(id\)</span> be the identity function on words.  Then we have a monoid</p>
 <div class="math notranslate nohighlight">
 \[
-(P, \circ, \id)
+(P, \circ, id)
 \]</div>
 <div class="exercise admonition" id="introOneSharp/functions-exercise-4">
 
@@ -624,8 +622,7 @@ called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <spa
 \phifn^n_p (x_1,\ldots, x_n) \simeq y
 \]</div>
 <p>means that
-<span class="math notranslate nohighlight">\(p\)</span> is a program,
-and
+<span class="math notranslate nohighlight">\(p\)</span> is a program, and
 when  we
 run it
 <span class="math notranslate nohighlight">\(p\)</span>  with <span class="math notranslate nohighlight">\(x_i\)</span> in  R<span class="math notranslate nohighlight">\(i\)</span> (for <span class="math notranslate nohighlight">\(1\leq i \leq n\)</span>) and all other registers empty,
@@ -639,7 +636,7 @@ or if <span class="math notranslate nohighlight">\(p\)</span> does not halt when
 or if
 <span class="math notranslate nohighlight">\(p\)</span> does halt when run on <span class="math notranslate nohighlight">\(x\)</span>
 but upon halting, not all of the registers besides R1 are empty),
-then we say that <span class="math notranslate nohighlight">\(\phifn_p (x)\)</span>
+then we say that <span class="math notranslate nohighlight">\([\![ p]\!] (x)\)</span>
 is <em>undefined</em>.</p>
 </section>
 </div><div class="tip admonition">
@@ -651,7 +648,7 @@ is <em>undefined</em>.</p>
 \[
 \clearprog_1 + \clearprog_3 + \moveprog_{2,1}
 \]</div>
-<p>Then <span class="math notranslate nohighlight">\(\phifn_p^3(x,y,z) \simeq y\)</span> for all words <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>.
+<p>Then <span class="math notranslate nohighlight">\([\![ p]\!]^3(x,y,z) \simeq y\)</span> for all words <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>.
 (Here <span class="math notranslate nohighlight">\(\clearprog_1\)</span> and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> are programs that simply delete all the symbols in those registers.  We have seen <span class="math notranslate nohighlight">\(\clearprog_1\)</span>, and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> is similar.)</p>
 </div>
 <div class="admonition attention">
@@ -702,13 +699,13 @@ k(x) = f(g(x), h(x))
 </section>
 <section id="functions-of-zero-inputs">
 <h2>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Link to this heading">#</a></h2>
-<p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\(\phifn_p\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\(\phifn_p^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
+<p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\([\![ p]\!]^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
 <div class="proof definition admonition" id="definition-8">
 <p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
 <section class="definition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
-\phifn^0_p (\ ) \simeq y
+[\![ p]\!]^0 (\ ) \simeq y
 \]</div>
 <p>means that
 <span class="math notranslate nohighlight">\(p\)</span> is a program,
@@ -721,7 +718,8 @@ eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in
 registers
 empty.</p>
 </section>
-</div></section>
+</div><p>Usually we would drop the superscript <span class="math notranslate nohighlight">\(0\)</span> and simply write <span class="math notranslate nohighlight">\([\![ p]\!] (\ ) \simeq y\)</span></p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Link to this heading">#</a></h1>
@@ -804,9 +802,9 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 <div class="proof definition admonition" id="definition-15">
 <p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
 <section class="definition-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\(\phifn_p\)</span>.
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\([\![ p]\!]\)</span>.
 That is,</p>
-<p><span class="math notranslate nohighlight">\(W_p = \set{x : \phifn_p(x)\downarrow}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(W_p = \set{x : [\![ p]\!](x)\downarrow}\)</span>.</p>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq\words\)</span> is <em>computably enumerable</em> if there is some program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(A = W_p\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="introOneSharp/functions-exercise-16">
