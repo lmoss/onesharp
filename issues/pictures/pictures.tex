@@ -28,6 +28,9 @@
   
  %% pdftocairo  -x 50 -y 50  -H 680 -f 57 -l 57 -png pictures.pdf pictures 
  %% above is the big graph with 11 nodes  
+ 
+  % pdftocairo  -x 50 -y 50  -H 140 -f 58 -l 58 -png pictures.pdf  % MPCP instance 
+    % pdftocairo  -x 50 -y 50  -H 140 -f 59 -l 59 -png pictures.pdf  %  PCP instance obtained by adding squares and $
   
 \documentclass[12pt]{article}
 
@@ -2729,6 +2732,54 @@ $
 
 \end{tikzpicture} 
 \]
+
+\vfil\eject
+
+
+\begin{flushleft}
+$\begin{array}{l}
+\begin{tikzpicture}
+ \filldraw[fill=green!20,draw=green!50!black] (0,0)    rectangle ++(2,2);
+\foreach \x in {0,2.5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+%%%
+%
+ \draw  (1,1.5) node{a};  %% north
+\draw  (1,.5) node{ab};  %% south
+\draw  (3.5,1.5) node{baa};  %% north
+\draw  (3.5,.5) node{aab};  %% south
+\end{tikzpicture}
+ \end{array}
+$
+\end{flushleft}
+
+\vfil\eject
+  \begin{flushleft}
+  $
+\begin{array}{l}
+\begin{tikzpicture}
+% \filldraw[fill=green!20,draw=green!50!black] (5,0)    rectangle ++(2,2);
+\foreach \x in {0,2.5,5,7.5}
+\foreach \y in {0}
+{
+\draw (\x, \y)    rectangle ++(2,2);
+};
+%%%
+%
+ \draw  (1,1.5) node{$a\, \blacksquare$};  %% north
+\draw  (1,.5) node{$\blacksquare\, a\, \blacksquare\, b$};  %% south
+\draw  (3.5,1.5) node{$b\, \blacksquare\,  a\, \blacksquare\, a\, \blacksquare$};  %% north
+\draw  (3.5,.5) node{$\blacksquare\, a\, \blacksquare\, a\, \blacksquare\, b$};  %% south
+ \draw  (6,1.5) node{$\blacksquare\, a\, \blacksquare\, $};  %% north
+\draw  (6,.5) node{$\blacksquare\, a\, \blacksquare\, b\, \blacksquare$};  %% south
+\draw  (8.5,1.5) node{\$};  %% north
+\draw  (8.5,.5) node{$\blacksquare\, \$ $};  %% southf
+\end{tikzpicture}
+\end{array}$ 
+ \end{flushleft}
 
 
 \end{document}
