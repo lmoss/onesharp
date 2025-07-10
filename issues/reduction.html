@@ -554,40 +554,14 @@ apply the intuitively computable translation <span class="math notranslate nohig
 </ol>
 <hr class="docutils" />
 <p>Note that we have a <em>intuitively computable function</em> <span class="math notranslate nohighlight">\(f\)</span> from pointed tile sets to tile sets.  That is, adding the <span class="math notranslate nohighlight">\(\$\)</span> and <span class="math notranslate nohighlight">\(\blacksquare\)</span> like this is completely algorithmic.    In particular, we don’t need to know whether the original pointed domino set has a Post word or not in order to add the new symbols.</p>
-<p>Let <span class="math notranslate nohighlight">\(\DD\)</span> be the domino set</p>
-<p>\begin{tikzpicture}
-\filldraw[fill=red!20,draw=red!50!black] (0,0)    rectangle ++(2,2);
-\foreach \x in {0,2.5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{a};  %% north
-\draw  (1,.5) node{ab};  %% south
-\draw  (3.5,1.5) node{baa};  %% north
-\draw  (3.5,.5) node{aab};  %% south
-\ \end{tikzpicture}
-\end{flushleft}
-with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> shown in red,</p>
-<p>\</p>
-<p>Then <span class="math notranslate nohighlight">\(t(\DD)\)</span> is shown below
-\begin{flushleft}
-\begin{tikzpicture}</p>
-<p>\foreach \x in {0,2.5,5,7.5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{a*};  %% north
-\draw  (1,.5) node{<em>a</em>b};  %% south
-\draw  (3.5,1.5) node{b<em>a</em>a*};  %% north
-\draw  (3.5,.5) node{<em>a</em>a*b};  %% south
-\draw  (6,1.5) node{<em>a</em>};  %% north
-\draw  (6,.5) node{<em>a</em>b};  %% south</p>
-<p>\draw  (8.5,1.5) node{$};  %% north
-\draw  (8.5,.5) node{*$};  %% southf</p>
-<p>\ \end{tikzpicture}</p>
-<p>(The two special dominoes of <span class="math notranslate nohighlight">\(t(\DD)\)</span> are shown at the end.)</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Here is a pointed domino set <span class="math notranslate nohighlight">\(\mathcal{D}\)</span></p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-58.png?raw=1" width="100%" height="100%">
+<p>The green domino is <span class="math notranslate nohighlight">\(d^*\)</span>.   Here is the domino set <span class="math notranslate nohighlight">\(t((\mathcal{D},d^*))\)</span>.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-59.png?raw=1" width="100%" height="100%">
+<p>The two special dominoes are shown at the end.</p>
+</div>
 <div class="admonition-claim admonition">
 <p class="admonition-title">Claim</p>
 <p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>, then <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence.</p>
