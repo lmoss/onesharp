@@ -208,7 +208,6 @@
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="tidy.html">Tidy programs</a></li>
 
 </ul>
@@ -478,8 +477,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-partial-functions">1# computable partial functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-partial-functions">1# computable partial functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-sets-and-computably-enumerable-sets">Computable sets and computably enumerable sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-of-programs">Equivalence of programs</a></li>
 </ul>
@@ -570,7 +571,7 @@ just like <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> is in
 
 <p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
 <section id="exercise-content">
-<p>Find a program <span class="math notranslate nohighlight">\(q\)</span> so that <span class="math notranslate nohighlight">\(\phi_q(x)\downarrow\)</span> iff the number of symbols in <span class="math notranslate nohighlight">\(x\)</span> is an even number.</p>
+<p>Find a program <span class="math notranslate nohighlight">\(q\)</span> so that <span class="math notranslate nohighlight">\([\![q]\!](x)\downarrow\)</span> iff the number of symbols in <span class="math notranslate nohighlight">\(x\)</span> is an even number.</p>
 </section>
 </div>
 <p>It is useful to be a litte more abstract.  In general in mathematics, functions are almost always <em>total</em>; that is, they are almost always defined for all possible inputs.  In computability theory this is not so.   We deal with functions that are frequently <em>partial</em>.  This means that they are undefined for some, or even all, of their possible inputs.</p>
@@ -613,7 +614,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words.</p>
 <div class="math notranslate nohighlight">
 \[
-\phifn^n_p (x_1,\ldots, x_n) \simeq y
+[\![p]\!] (x_1,\ldots, x_n) \simeq y
 \]</div>
 <p>means that
 <span class="math notranslate nohighlight">\(p\)</span> is a program, and
@@ -634,7 +635,7 @@ then we say that <span class="math notranslate nohighlight">\([\![ p]\!] (x)\)</
 is <em>undefined</em>.</p>
 </section>
 </div><div class="tip admonition">
-<p class="admonition-title">Examples</p>
+<p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(\semantics{\moveprogtwoone}(\one,\hash\hash\one) \simeq
 \one\hash\hash\one\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program</p>
@@ -715,10 +716,30 @@ empty.</p>
 </div><p>Usually we would drop the superscript <span class="math notranslate nohighlight">\(0\)</span> and simply write <span class="math notranslate nohighlight">\([\![ p]\!] (\ ) \simeq y\)</span></p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="characteristic-functions">
-<h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="computable-partial-functions">
+<h1>1# computable partial functions<a class="headerlink" href="#computable-partial-functions" title="Link to this heading">#</a></h1>
+<p>At this point, we know that programs <span class="math notranslate nohighlight">\(p\)</span> give rise to partial functions.   So it is natural to ask about the collection of partial functions obtainable that are of the form <span class="math notranslate nohighlight">\([\![ p ]\!]\)</span> for some <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <div class="proof definition admonition" id="definition-8">
 <p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
+<section class="definition-content" id="proof-content">
+<p>A partial function <span class="math notranslate nohighlight">\(f:Words^n \to Words\)</span> is <em><span class="math notranslate nohighlight">\(\one\hash\)</span>-computable</em> if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(f = [\![ p ]\!]^n\)</span>.  This means that for all <span class="math notranslate nohighlight">\(n\)</span>-tuples of words <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span>, <span class="math notranslate nohighlight">\(f(\overline{x}) \simeq [\![ p ]\!]^n(x)\)</span>.</p>
+</section>
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-9">
+
+<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
+<section id="exercise-content">
+<p>Show that the following functions <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> are <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable:</p>
+<p>(a) <span class="math notranslate nohighlight">\(f(x) = x\)</span>.</p>
+<p>(b) <span class="math notranslate nohighlight">\(f(\one\hash) = \hash\)</span>, and otherwise, <span class="math notranslate nohighlight">\(f(x)\!\uparrow\)</span>.</p>
+<p>(c) <span class="math notranslate nohighlight">\(f(x) = x + x\)</span>.</p>
+<p>(d) <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
+<p>(e) <span class="math notranslate nohighlight">\(f(x) = \one^{|x|}\)</span>, where <span class="math notranslate nohighlight">\(|x|\)</span> is the number of symbols in <span class="math notranslate nohighlight">\(x\)</span>.</p>
+</section>
+</div>
+<section id="characteristic-functions">
+<h2>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
 <section class="definition-content" id="proof-content">
 <p>For any set <span class="math notranslate nohighlight">\(A\)</span>, the <em>characteristic function of <span class="math notranslate nohighlight">\(A\)</span></em> is the function <span class="math notranslate nohighlight">\(\chi_A\)</span> given by</p>
 <div class="math notranslate nohighlight">
@@ -740,9 +761,9 @@ But we will see <em>Turing maching computability</em>, <em>Python computability<
 <section class="proposition-content" id="proof-content">
 <p>Every finite set of words is a computable set.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-10">
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-12">
 
-<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable sets.   Show that <span class="math notranslate nohighlight">\(A\cap B\)</span>, <span class="math notranslate nohighlight">\(A\cup B\)</span>, and <span class="math notranslate nohighlight">\(\overline{A}\)</span> are also <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable, where</p>
 <div class="math notranslate nohighlight">
@@ -756,16 +777,16 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-11">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-13">
 
-<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
 <section id="exercise-content">
 <p>Is the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable set of words?</p>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-12">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-14">
 
-<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <section id="exercise-content">
 <p>Show that the following function is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable:</p>
 <div class="math notranslate nohighlight">
@@ -779,9 +800,9 @@ f(w) = \left\{
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-13">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-15">
 
-<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <section id="exercise-content">
 <p>(a)
 As a parallel to how we defined <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
@@ -790,26 +811,6 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 </section>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="computable-partial-functions">
-<h1>1# computable partial functions<a class="headerlink" href="#computable-partial-functions" title="Link to this heading">#</a></h1>
-<p>At this point, we know that programs <span class="math notranslate nohighlight">\(p\)</span> give rise to partial functions.   So it is natural to ask about the collection of partial functions obtainable that are of the form <span class="math notranslate nohighlight">\([\![ p ]\!]\)</span> for some <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<div class="proof definition admonition" id="definition-14">
-<p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
-<section class="definition-content" id="proof-content">
-<p>A partial function <span class="math notranslate nohighlight">\(f:Words^n \to Words\)</span> is <em><span class="math notranslate nohighlight">\(\one\hash\)</span>-computable</em> if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(f = [\![ p ]\!]^n\)</span>.  This means that for all <span class="math notranslate nohighlight">\(n\)</span>-tuples of words <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span>, <span class="math notranslate nohighlight">\(f(\overline{x}) \simeq [\![ p ]\!]^n(x)\)</span>.</p>
-</section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-15">
-
-<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
-<section id="exercise-content">
-<p>Show that the following functions <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> are <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable:</p>
-<p>(a) <span class="math notranslate nohighlight">\(f(x) = x\)</span>.</p>
-<p>(b) <span class="math notranslate nohighlight">\(f(\one\hash) = \hash\)</span>, and otherwise, <span class="math notranslate nohighlight">\(f(x)\!\uparrow\)</span>.</p>
-<p>(c) <span class="math notranslate nohighlight">\(f(x) = x + x\)</span>.</p>
-<p>(d) <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
-<p>(e) <span class="math notranslate nohighlight">\(f(x) = \one^{|x|}\)</span>, where <span class="math notranslate nohighlight">\(|x|\)</span> is the number of symbols in <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</section>
-</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="computable-sets-and-computably-enumerable-sets">
 <h1>Computable sets and computably enumerable sets<a class="headerlink" href="#computable-sets-and-computably-enumerable-sets" title="Link to this heading">#</a></h1>
@@ -914,8 +915,10 @@ That is, for all <span class="math notranslate nohighlight">\(x\)</span>, <span 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-partial-functions">1# computable partial functions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-partial-functions">1# computable partial functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-functions">Characteristic functions</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-sets-and-computably-enumerable-sets">Computable sets and computably enumerable sets</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-of-programs">Equivalence of programs</a></li>
 </ul>
