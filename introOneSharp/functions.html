@@ -535,7 +535,7 @@ is <em>undefined</em>.</p>
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Instead of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span>, we might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.  This is a more common notation, actually.    We use the “semantic bracket” notation because we frequently want to <em>iterate</em> the construction, having one program output a function which we then output run on some other input.  For example,</p>
+<p>Instead of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span>, we might write <span class="math notranslate nohighlight">\(\phifn_{p}(x)\)</span>.  This is a more common notation, actually.    We use the “semantic bracket” notation because we frequently want to <em>iterate</em> the construction, having one program output a function which we then output run on some other input.  For example,</p>
 <div class="math notranslate nohighlight">
 \[\semantics{\semantics{\one\hash\hash}(\one)}(\hash\one)\simeq \hash\one\one.
 \]</div>
@@ -546,8 +546,6 @@ is <em>undefined</em>.</p>
 \]</div>
 <p>This is a little harder to read.</p>
 </div>
-<p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,
-just like <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> is in the other notation.</p>
 <section id="partial-functions">
 <h2>Partial functions<a class="headerlink" href="#partial-functions" title="Link to this heading">#</a></h2>
 <p>Suppose we run a program <span class="math notranslate nohighlight">\(p\)</span> with an input word <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.  This run might, or might not, halt.  The first example of this is when <span class="math notranslate nohighlight">\(p\)</span> is a loop <span class="math notranslate nohighlight">\(\one\hash^3\one\hash^4\)</span>.  For this program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span> is <em>undefined</em> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
