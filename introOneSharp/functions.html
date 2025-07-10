@@ -536,17 +536,16 @@ is <em>undefined</em>.</p>
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Instead of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span>, we might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.
-We do this especially when we want to iterate the construction.
-That is, instead of writing</p>
+<p>Instead of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span>, we might write <span class="math notranslate nohighlight">\(\semantics{p}(x)\)</span>.  This is a more common notation, actually.    We use the “semantic bracket” notation because we frequently want to <em>iterate</em> the construction, having one program output a function which we then output run on some other input.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\semantics{\semantics{\one\hash\hash}(\one)}(\hash\one)\simeq \hash\one\one.
+\]</div>
+<p>Writing this with the “<span class="math notranslate nohighlight">\(\varphi\)</span>” notation, we have</p>
 <div class="math notranslate nohighlight">
 \[\phifn_{\phifn_{\one\hash\hash}(\one)}(\hash\one)
 \simeq \hash\one\one.
 \]</div>
-<p>we would prefer to write</p>
-<div class="math notranslate nohighlight">
-\[\semantics{\semantics{\one\hash\hash}(\one)}(\hash\one)\simeq \hash\one\one.
-\]</div>
+<p>This is a little harder to read.</p>
 </div>
 <p>In this notation, <span class="math notranslate nohighlight">\(\semantics{p}\)</span> is a function,
 just like <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> is in the other notation.</p>
