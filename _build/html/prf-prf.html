@@ -178,17 +178,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="issues/issues.html">Computability: choices</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/problems.html">Algorithmic problems, decidable and undecidable</a></li>
 
 
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues/reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="issues/coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues/recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -233,7 +228,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mu/ackermann.html">Ackermann’s function</a></li>
@@ -256,7 +250,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="undecidability/haltingProblem.html">The halting problem</a></li>
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="undecidability/busyBeaver.html">The busy beaver problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="undecidability/tiling.html">Tiling</a></li>
 
@@ -269,6 +262,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="logic/church_turing.html">The Church-Turing Theorem via tiling</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
 </ul>
 
@@ -471,8 +467,9 @@ document.write(`
    <a href="#cap-one-more-register-halting"><strong>one-more-register-halting</strong></a> | 
    <a href="#cap-one-register-halting"><strong>one-register-halting</strong></a> | 
    <a href="#cap-phi-notation"><strong>phi-notation</strong></a> | 
-   <a href="#cap-proposition-0"><strong>proposition-0</strong></a> | 
+   <a href="#cap-proposition-2"><strong>proposition-2</strong></a> | 
    <a href="#cap-proposition_finite_computable"><strong>proposition_finite_computable</strong></a> | 
+   <a href="#cap-proposition_intuitive_decidability"><strong>proposition_intuitive_decidability</strong></a> | 
    <a href="#cap-recursion_theorem"><strong>recursion_theorem</strong></a> | 
    <a href="#cap-recursion_theorem_2"><strong>recursion_theorem_2</strong></a> | 
    <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
@@ -875,12 +872,12 @@ document.write(`
        <a href="introOneSharp/functions.html#phi-notation"><code class="xref">phi-notation</code></a> <em>(introOneSharp/functions)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-proposition-0"><td></td><td>
-       <strong>proposition-0</strong></td><td></td></tr>
+     <tr class="cap" id="cap-proposition-2"><td></td><td>
+       <strong>proposition-2</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="issues/reduction.html#proposition-0"><code class="xref">proposition-0</code></a> <em>(issues/reduction)</em></td><td>
+       <a href="issues/reduction.html#proposition-2"><code class="xref">proposition-2</code></a> <em>(issues/reduction)</em></td><td>
        <em>proposition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-proposition_finite_computable"><td></td><td>
@@ -889,6 +886,14 @@ document.write(`
        <td></td>
        <td>
        <a href="introOneSharp/functions.html#proposition_finite_computable"><code class="xref">proposition_finite_computable</code></a> <em>(introOneSharp/functions)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition_intuitive_decidability"><td></td><td>
+       <strong>proposition_intuitive_decidability</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="issues/reduction.html#proposition_intuitive_decidability"><code class="xref">proposition_intuitive_decidability</code></a> <em>(issues/reduction)</em></td><td>
        <em>proposition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-recursion_theorem"><td></td><td>
@@ -960,7 +965,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="issues/problems.html#theorem-2"><code class="xref">theorem-2</code></a> <em>(issues/problems)</em></td><td>
+       <a href="mu/primitive_recursion.html#theorem-2"><code class="xref">theorem-2</code></a> <em>(mu/primitive_recursion)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-T"><td></td><td>

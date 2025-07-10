@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algorithmic problems &#8212; Invitation to Computability</title>
+    <title>Algorithmic problems, decidable and undecidable &#8212; Invitation to Computability</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/problems';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computable functions on encoded structures" href="coding.html" />
+    <link rel="next" title="Reduction of one problem to another" href="reduction.html" />
     <link rel="prev" title="Computability: choices" href="issues.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,17 +175,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: choices</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmic problems, decidable and undecidable</a></li>
 
 
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reduction.html">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -230,7 +225,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
@@ -253,7 +247,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/haltingProblem.html">The halting problem</a></li>
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/busyBeaver.html">The busy beaver problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/tiling.html">Tiling</a></li>
 
@@ -266,6 +259,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">The Church-Turing Theorem via tiling</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
 </ul>
 
@@ -452,7 +448,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Algorithmic problems</h1>
+    <h1>Algorithmic problems, decidable and undecidable</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,14 +458,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems, decidable and undecidable</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-set-of-diverse-problems">A set of diverse problems</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-intuitive-decidability">The definition of intuitive decidability</a></li>
 </ul>
 
             </nav>
@@ -483,12 +483,17 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/problems.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems">
-<h1>Algorithmic problems<a class="headerlink" href="#algorithmic-problems" title="Permalink to this heading">#</a></h1>
-<p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems-decidable-and-undecidable">
+<h1>Algorithmic problems, decidable and undecidable<a class="headerlink" href="#algorithmic-problems-decidable-and-undecidable" title="Permalink to this heading">#</a></h1>
+<p>A major message of computability theory is that there are problems which cannot be solved.  But to say what this means precisely, we have to say what a “problem” is, and also what it means to “solve” one.    The point of this section is to do this work on an intuitive level, and in the next chapter we are going to see more detailed and precise definitions.  Much later in the book, we start to verify that certain sets are or are not decidable.</p>
+<p>An <em>algorithmic problem</em> is a well-defined set <span class="math notranslate nohighlight">\(S\)</span> of objects.  The question that we would like raise is whether we can imagine writing a program to decide whether an object is in or out of it.   If we can, the set <span class="math notranslate nohighlight">\(S\)</span> is called <em>intuitively decidable</em>
+or <em>intuitively solvable</em>.   For example, the set <span class="math notranslate nohighlight">\(E\)</span> of even numbers is an intuitively decidable algorithmic problem, since we could imagine (and in fact write) a program which inputs an arbitrary number and deciding whether or not it belongs to <span class="math notranslate nohighlight">\(E\)</span>.  The same goes for the set of odd numbers.  In fact, before one takes up the study of computability theory, I would be surprised if they could think of any sets of numbers which are algorithmic problems (that is, well-defined sets of numbers) and yet are not decidable.  As we said above, it is a major message of this subject that there are such sets.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="does-a-finite-graph-have-a-cycle">
-<h1>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Permalink to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-set-of-diverse-problems">
+<h1>A set of diverse problems<a class="headerlink" href="#a-set-of-diverse-problems" title="Permalink to this heading">#</a></h1>
+<p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
+<div class="section" id="does-a-finite-graph-have-a-cycle">
+<h2>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Permalink to this heading">#</a></h2>
 <p>A <em>finite graph</em> is a finite set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
 <p>Given a finite graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
@@ -497,8 +502,8 @@ document.write(`
 <img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
 <hr class="docutils" />
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="tiling-problems">
-<span id="content-firsttiles"></span><h1>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this heading">#</a></h1>
+<div class="section" id="tiling-problems">
+<span id="content-firsttiles"></span><h2>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this heading">#</a></h2>
 <p>A <em>tile</em> is a square with a color on each side.   For example, here are eight tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
 The colors involved are red, black, grey, green, yellow,
@@ -540,8 +545,8 @@ Does the quadrant have a tiling with this set?</p>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="post-s-correspondence-problem">
-<span id="content-firstpcp"></span><h1>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this heading">#</a></h1>
+<div class="section" id="post-s-correspondence-problem">
+<span id="content-firstpcp"></span><h2>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this heading">#</a></h2>
 <p>An <em>alphabet</em> is just a set <span class="math notranslate nohighlight">\(A\)</span> of symbols.</p>
 <p>Given an alphabet <span class="math notranslate nohighlight">\(A\)</span>, we define</p>
 <div class="math notranslate nohighlight">
@@ -593,8 +598,8 @@ which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</sp
 To say <em>PCP is undecidable</em> means that   <em>there is no</em>
 computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="integer-roots-of-polynomials">
-<h1>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Permalink to this heading">#</a></h1>
+<div class="section" id="integer-roots-of-polynomials">
+<h2>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Permalink to this heading">#</a></h2>
 <p>There are a number of algorithmic problems of great interest in mathematics.  One of the most famous is the following:</p>
 <div class="danger admonition">
 <p class="admonition-title">Problem</p>
@@ -618,17 +623,9 @@ z &amp; =  &amp;  −2, 736, 111, 468, 807, 040
 <p>Hilbert’s 10th problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
 <p>As we said, it turns out that there is <em>no</em> algorithm to do solve Hilbert’s 10th problem in general.  This is the only question whichv we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are involve so much number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
 <p>Of course, the fact that the general problem is undecidable does not deter people from solving special cases, as they did above.</p>
-<div class="exercise admonition" id="issues/problems-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
-<div class="section" id="exercise-content">
-<p>Show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
-<p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="matrix-mortality">
-<span id="content-firstmatrixmortality"></span><h1>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h1>
+<div class="section" id="matrix-mortality">
+<span id="content-firstmatrixmortality"></span><h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h2>
 <p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
 matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> of integers.   It is called the <em>matrix mortality</em> problem.</p>
 <div class="danger admonition">
@@ -636,9 +633,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 <p>Fix a number <span class="math notranslate nohighlight">\(n\)</span>.   Given a finite set <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\times n\)</span> matrices with integer entries, is there a finite product of elements of <span class="math notranslate nohighlight">\(S\)</span>, allowing repeats, whose product is the zero matrix?</p>
 <p>This is the <span class="math notranslate nohighlight">\(n\times n\)</span> <em>matrix mortality problem</em>.</p>
 </div>
-<div class="exercise admonition" id="issues/problems-exercise-4">
+<div class="exercise admonition" id="issues/problems-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
 <div class="section" id="exercise-content">
 <p>Here are three matrices:</p>
 <div class="math notranslate nohighlight">
@@ -695,9 +692,9 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 </div>
 </div>
 <p>The next exercise is important.</p>
-<div class="exercise admonition" id="issues/problems-exercise-5">
+<div class="exercise admonition" id="issues/problems-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
 <div class="section" id="exercise-content">
 <p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
 (a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
@@ -712,8 +709,8 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="the-halting-set-k-and-related-sets">
-<h1>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Permalink to this heading">#</a></h1>
+<div class="section" id="the-halting-set-k-and-related-sets">
+<h2>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Permalink to this heading">#</a></h2>
 <p>We also want to study a few problems related to computer prorgrams.   These include</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -730,8 +727,8 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \end{split}\]</div>
 <p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="truth-and-proof">
-<h1>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Permalink to this heading">#</a></h1>
+<div class="section" id="truth-and-proof">
+<h2>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Permalink to this heading">#</a></h2>
 <p>We would like to ask about the set of <em>sentences in the language of ordinary mathematics</em> and as about the problem of deciding whether a given sentence is true or not.</p>
 <p>There are a few reasons why we are not going to directly do this.</p>
 <ol class="arabic simple">
@@ -752,7 +749,36 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 This, too, is an interesting thing to do.</p></li>
 </ol>
 <p>We are going to investigate both of these <em>back off</em> questions in some detail.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"><div class="warning admonition">
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"></div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-definition-of-intuitive-decidability">
+<h1>The definition of intuitive decidability<a class="headerlink" href="#the-definition-of-intuitive-decidability" title="Permalink to this heading">#</a></h1>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>A problem <span class="math notranslate nohighlight">\(P\)</span> is <em>intuitively decidable</em>  if there is an algorithm which,  when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.  <span class="math notranslate nohighlight">\(P\)</span> is <em>undecidable</em> if no such algorithm exists.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+<p>This set <span class="math notranslate nohighlight">\(P\)</span> is intuitively decidable.</p>
+</div>
+<div class="exercise admonition" id="issues/problems-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<div class="section" id="exercise-content">
+<p>Prove this:  show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
+<p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
+</div>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in 9 variables with integer coefficients.</p>
+<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
+<p>This set <span class="math notranslate nohighlight">\(P\)</span> is not intuitively decidable.</p>
+</div>
+<p>This is much harder, and indeed we won’t see a proof.</p>
+<div class="warning admonition">
 <p class="admonition-title">Credits</p>
 <p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://youtu.be/wymmCdLdPvM">here</a>.</p>
 </div>
@@ -798,11 +824,11 @@ This, too, is an interesting thing to do.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="coding.html"
+       href="reduction.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computable functions on encoded structures</p>
+        <p class="prev-next-title">Reduction of one problem to another</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -821,14 +847,18 @@ This, too, is an interesting thing to do.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Algorithmic problems, decidable and undecidable</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-set-of-diverse-problems">A set of diverse problems</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-a-finite-graph-have-a-cycle">Does a finite graph have a cycle?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling-problems">Tiling problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-s-correspondence-problem">Post’s correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-roots-of-polynomials">Integer roots of polynomials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-halting-set-k-and-related-sets">The halting set K and related sets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truth-and-proof">Truth and proof</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-definition-of-intuitive-decidability">The definition of intuitive decidability</a></li>
 </ul>
 
   </nav></div>

@@ -68,8 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/reduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recursion" href="recursion.html" />
-    <link rel="prev" title="Computable functions on encoded structures" href="coding.html" />
+    <link rel="next" title="Computable functions on encoded structures" href="coding.html" />
+    <link rel="prev" title="Algorithmic problems, decidable and undecidable" href="problems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,17 +175,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Computability: choices</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">Algorithmic problems, decidable and undecidable</a></li>
 
 
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reduction of one problem to another</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="coding.html">Computable functions on encoded structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Text Register Machine Programs</span></p>
@@ -230,7 +225,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="../mu/T_predicate.html">The T predicate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/mu.html">Mu-recursive functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mu/ackermann.html">Ackermann’s function</a></li>
@@ -253,7 +247,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/haltingProblem.html">The halting problem</a></li>
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/busyBeaver.html">The busy beaver problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/tiling.html">Tiling</a></li>
 
@@ -266,6 +259,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">The Church-Turing Theorem via tiling</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
 </ul>
 
@@ -463,13 +459,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-between-problems">Relations between problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-related-to-the-pcp">Example related to the PCP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-t-have-to-be-intuitively-computable">Why does <span class="math notranslate nohighlight">\(t\)</span> have to be intuitively computable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-related-to-integer-roots-of-polynomials">Examples related to integer roots of polynomials</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-correspondence-problem">Post correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pcp">PCP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
 </ul>
 </li>
@@ -488,294 +486,232 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/reduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="reduction-of-one-problem-to-another">
 <h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Permalink to this heading">#</a></h1>
-<p>** the part starting here is just a draft! **</p>
-<div class="section" id="relations-between-problems">
-<h2>Relations between problems<a class="headerlink" href="#relations-between-problems" title="Permalink to this heading">#</a></h2>
-<p>One of the things that we are very interested in
-in computability theory is in the <em>relation between problems</em>.</p>
-<p>It will turn out that all of the problems which we have seen so far</p>
-<ol class="arabic simple">
-<li><p>Tiling</p></li>
-<li><p><span class="math notranslate nohighlight">\(3\times 3\)</span> Matrix Mortality</p></li>
-<li><p>Post Correspondence Problem  (PCP)</p></li>
-</ol>
-<p>are <em>equivalent</em> in some appropriate sense.
-Saying what this “appropriate sense” is
-will be important.<br />
-Also the details concerning equivalence are not trivial.</p>
+<p>We are very interested in <em>relations between problems</em>.  Here is the main definition that we will use.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be problems.</p>
-<p>\emph{<span class="math notranslate nohighlight">\(A \leq_m B\)</span>}   if there is an ``intuitively computable’’ <span class="math notranslate nohighlight">\(f: N\to N\)</span></p>
-<p>(or <span class="math notranslate nohighlight">\(f: words\to words\)</span>, or <span class="math notranslate nohighlight">\(N\to N\)</span>, or something similar)</p>
-<p>such that for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(T\)</span> be well-defined sets of mathematical objects, and let <span class="math notranslate nohighlight">\(A\subseteq S\)</span> and <span class="math notranslate nohighlight">\(B\subseteq T\)</span> be problems.  We do not assume that <span class="math notranslate nohighlight">\(S\)</span> or <span class="math notranslate nohighlight">\(T\)</span> is decidable.  We write</p>
 <div class="math notranslate nohighlight">
 \[
-\emph{\mbox{$x\in A \quadiff f(x) \in B$}}
+A \leq B
 \]</div>
-<p>Again, <span class="math notranslate nohighlight">\(f\)</span> has to be total and computable!
-We say that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em>.</p>
-<p>The idea is that <span class="math notranslate nohighlight">\(B\)</span> is ``at least as hard as <span class="math notranslate nohighlight">\(A\)</span>’’ in some sense .  (However, this intuition will have to be corrected,  as we’ll see.)</p>
+<p>and say that <span class="math notranslate nohighlight">\(B\)</span> is <em>at least as hard as <span class="math notranslate nohighlight">\(A\)</span></em>, or that  <em><span class="math notranslate nohighlight">\(A\)</span> is reducible to <span class="math notranslate nohighlight">\(B\)</span></em> if there is an intuitively computable <span class="math notranslate nohighlight">\(t: S\to T\)</span> such that for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\mbox{$x\in A \quadiff t(x) \in B$}
+\]</div>
+<p>We sometimes call <span class="math notranslate nohighlight">\(t\)</span> the <em>translation</em> map.</p>
 </div>
-<div class="proof admonition" id="proof">
-<p>Proof. For the first part:
-given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span class="math notranslate nohighlight">\(x\in A\)</span> or not,
-apply the computable function <span class="math notranslate nohighlight">\(f\)</span>, and then see if <span class="math notranslate nohighlight">\(f(x)\in B\)</span> or not.</p>
-<p>The answer must be the same!</p>
-<p>The second assertion follows from the first.</p>
-</div>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p>Let’s consider the \emph{Modified PCP (MPCP)}:
-Given a finite set of dominoes as in the PCP,</p>
-<p>and one special domino <span class="math notranslate nohighlight">\(d_0\)</span>  called the \emph{start domino}</p>
-<p>is there a Post sequence that \emph{starts with <span class="math notranslate nohighlight">\(d_0\)</span>}?</p>
-<p>\</p>
-<p>I am going to give an informal proof that
-$<span class="math notranslate nohighlight">\(\mbox{the PCP and the MPCP are equivalent}
-\)</span>$
-The basic idea is to do two things:</p>
-<ol class="arabic simple">
-<li><p>If someone gave us an algorithm to solve the MPCP,</p></li>
-</ol>
-<p>use this to get an algorithm to solve the PCP.</p>
-<ol class="arabic simple" start="2">
-<li><p>If someone gave us an algorithm to solve the PCP,</p></li>
-</ol>
-<p>use this to get an algorithm to solve the MPCP.</p>
-</div>
-<p>MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP</p>
-<p>Given an input to the MPCP,
-say <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>,
-take two \emph{new symbols}, say <span class="math notranslate nohighlight">\(*\)</span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then
-<em>make a new domino set</em>  <span class="math notranslate nohighlight">\(f(\DD)\)</span> in the following way:</p>
-<ol class="arabic simple">
-<li><p>Add <span class="math notranslate nohighlight">\(*\)</span> after all letters in  all top words in the original domino set.</p></li>
-<li><p>Add <span class="math notranslate nohighlight">\(*\)</span> before all letters in all bottom words in the original domino set.</p></li>
-<li><p>Add a new copy of the start domino, <span class="math notranslate nohighlight">\(d_0\)</span>,  but modify it  by adding <span class="math notranslate nohighlight">\(*\)</span> after all letters in the top and all letters in the bottom, and
-also add <span class="math notranslate nohighlight">\(*\)</span> before the first letter of the top word.</p></li>
-</ol>
-<p>This  one is called the \emph{first special domino}.</p>
-<ol class="arabic simple" start="4">
-<li><p>Add a new domino with top word <span class="math notranslate nohighlight">\(\$\)</span> and bottom word <span class="math notranslate nohighlight">\(*\$\)</span>.
-This last one is called the \emph{second special domino}.</p></li>
-</ol>
-<hr class="docutils" />
-<p>Note that we have a <em>intuitively computable function</em> <span class="math notranslate nohighlight">\(f\)</span> from pointed tile sets to tile sets.</p>
-<p>That is, adding the <span class="math notranslate nohighlight">\(*\)</span> like this is completely algorithmic.</p>
-<p>\</p>
-<p>Another point: we don’t need to know whether the original pointed domino set</p>
-<p>has a Post word or not in order to add the <span class="math notranslate nohighlight">\(*\)</span>s.</p>
-<p>Let <span class="math notranslate nohighlight">\(\DD\)</span> be the domino set</p>
-<p>\begin{flushleft}
-\begin{tikzpicture}
-\filldraw[fill=red!20,draw=red!50!black] (0,0)    rectangle ++(2,2);
-\foreach \x in {0,2.5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{a};  %% north
-\draw  (1,.5) node{ab};  %% south
-\draw  (3.5,1.5) node{baa};  %% north
-\draw  (3.5,.5) node{aab};  %% south
-\ \end{tikzpicture}
-\end{flushleft}
-with the start domino <span class="math notranslate nohighlight">\(d_0\)</span> shown in \emph{red},</p>
-<p>\</p>
-<p>Then <span class="math notranslate nohighlight">\(f(\DD)\)</span> is shown below
-\begin{flushleft}
-\begin{tikzpicture}</p>
-<p>\foreach \x in {0,2.5,5,7.5}
-\foreach \y in {0}
-{
-\draw (\x, \y)    rectangle ++(2,2);
-};</p>
-<p>\draw  (1,1.5) node{a*};  %% north
-\draw  (1,.5) node{<em>a</em>b};  %% south
-\draw  (3.5,1.5) node{b<em>a</em>a*};  %% north
-\draw  (3.5,.5) node{<em>a</em>a*b};  %% south
-\draw  (6,1.5) node{<em>a</em>};  %% north
-\draw  (6,.5) node{<em>a</em>b};  %% south</p>
-<p>\draw  (8.5,1.5) node{$};  %% north
-\draw  (8.5,.5) node{*$};  %% southf</p>
-<p>\ \end{tikzpicture}
-\end{flushleft}
-(The two special dominoes of <span class="math notranslate nohighlight">\(f(\DD)\)</span> are shown at the end.)</p>
-<p>\</p>
-<div class="highlight-{claim}| notranslate"><div class="highlight"><pre><span></span> If $\DD$ has any Post sequence starting with $d_0$,
- then $f(\DD)$ has a Post sequence.
- 
- And if $f(\DD)$ has a Post sequence,  then $\DD$ has one that starts with $d_0$.
-</pre></div>
-</div>
-<p>For \emph{all} <span class="math notranslate nohighlight">\(\DD\)</span>, not just the one in our example:</p>
-<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>,  then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence.</p>
-<p>And if <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d_0\)</span>.</p>
-<p>The main fact:</p>
-<p>a Post sequence for <span class="math notranslate nohighlight">\(f(\DD)\)</span> must start with the first  special domino,
-since this is the only one whose top and bottom words start with the same symbol.</p>
-<p>It also has to end with the second special domino.</p>
-<p>Now let’s prove the main claim.</p>
-<p>Next, we show that PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP
-This one is part of the \emph{second} homework.</p>
-<p>You need to define an intuitively computable function
-<span class="math notranslate nohighlight">\(g\)</span> from domino sets to ``pointed domino sets’’
-with the property that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
-<ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
-the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.</p></li>
-<li><p>Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
-</ol>
-<p>\begin{alertblock}{meaning of:  MPCP <span class="math notranslate nohighlight">\(\leq\)</span> PCP}
-There is a computable function <span class="math notranslate nohighlight">\(f\)</span> from pointed domino sets  <span class="math notranslate nohighlight">\((\DD,d_0)\)</span> to domino sets
-such that
-for all pointed domino sets <span class="math notranslate nohighlight">\((\DD,d_0)\)</span>:
-\begin{itemize}
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>] If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>, then <span class="math notranslate nohighlight">\(f(\DD, d_0)\)</span> has one also,
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Conversely, if <span class="math notranslate nohighlight">\(f(\DD,d_0)\)</span> has a Post sequence,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d_0\)</span>
-\end{itemize}
-\end{alertblock}</p>
-<p>\begin{alertblock}{meaning of:  PCP <span class="math notranslate nohighlight">\(\leq\)</span> MPCP}
-There is a computable function <span class="math notranslate nohighlight">\(g\)</span> from domino sets to pointed domino sets
-such that
-for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:
-\begin{itemize}
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>] If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(g(\DD)\)</span> has one also, and one that starts with
-the start domino of <span class="math notranslate nohighlight">\(g(\DD)\)</span>.
-\item[<span class="math notranslate nohighlight">\(\tri\)</span>]  Conversely, if <span class="math notranslate nohighlight">\(g(\DD)\)</span> has a Post sequence that starts with its start domino,
-then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
-\end{itemize}</p>
-<p>\end{alertblock}</p>
-<p>}</p>
-<div class="admonition-definition admonition">
-<p class="admonition-title">Definition</p>
-<p>In this class, a \emph{problem} is a set <span class="math notranslate nohighlight">\(P\)</span>,</p>
-<p>usually a \emph{subset} of some \emph{easily defined = computable}</p>
-<p>set <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<p>\</p>
-<p>We call it a \emph{problem} because we want to know</p>
-<p>whether there is an algorithm to tell</p>
-<p>if a given element of <span class="math notranslate nohighlight">\(S\)</span> is in <span class="math notranslate nohighlight">\(P\)</span>, or not;</p>
-<p>or whether there is no such algorithm.</p>
-<p>\end{definition}</p>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
-<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
-</div>
-</div>
-<div class="admonition-definition admonition">
-<p class="admonition-title">Definition</p>
-<p>A problem <span class="math notranslate nohighlight">\(P\)</span> is \emph{decidable}</p>
-<p>if there is an algorithm which,</p>
-<p>when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time</p>
-<p>whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.</p>
-</div>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in one variable with integer coefficients.</p>
-<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
-<p>\</p>
-<p>This <span class="math notranslate nohighlight">\(P\)</span> is decidable.</p>
-</div>
-<div class="admonition-example admonition">
-<p class="admonition-title">Example</p>
-<p><span class="math notranslate nohighlight">\(S = \)</span> all polynomials in 9 variables with integer coefficients.</p>
-<p><span class="math notranslate nohighlight">\(P = \)</span> all such polynomials which happen to have an integer root.</p>
-<p>This set <span class="math notranslate nohighlight">\(P\)</span> is not decidable.</p>
-</div>
-<div class="admonition-definition admonition">
-<p class="admonition-title">Definition</p>
-<p>Let <span class="math notranslate nohighlight">\(P\)</span> be a problem (as a subset of <span class="math notranslate nohighlight">\(S\)</span>),</p>
-<p>and <span class="math notranslate nohighlight">\(Q\)</span> a problem (as a subset of <span class="math notranslate nohighlight">\(T\)</span>).</p>
-<p>\</p>
-<p>We write [ P \leq Q ]
-if there is a computable <span class="math notranslate nohighlight">\(f: S\to T\)</span></p>
-<p>such that for all <span class="math notranslate nohighlight">\(s\in S\)</span>,
-[
-s\in P \quadiff f(s) \in Q
-]</p>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$S =$  finite domino sets with a start domino
- 
- $P = MPCP$
- 
- $T = $ finite domino sets
- 
- $Q = PCP$
- 
- 
- We saw earlier that $MPCP \leq PCP$.
-
-</pre></div>
-</div>
-<div class="proof admonition" id="proof">
-<p>Proof. Let <span class="math notranslate nohighlight">\(f\)</span> be the computable function showing that <span class="math notranslate nohighlight">\(P\leq Q\)</span>.</p>
-<p>\</p>
-<p>Given <span class="math notranslate nohighlight">\(s\in S\)</span>, to tell whether or not <span class="math notranslate nohighlight">\(s\in P\)</span>,  apply <span class="math notranslate nohighlight">\(f\)</span>, and ask whether or not <span class="math notranslate nohighlight">\(f(s)\in Q\)</span>.</p>
-<p>(By assumption, there is a computable procedure to answer this question.)</p>
-<p>The same answer holds for the question of whether or not <span class="math notranslate nohighlight">\(s\in P\)</span>.</p>
-<p>This proves the first assertion,  and then the second one follows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-<div class="proof proposition admonition" id="proposition-0">
+<p>We are going to see a few examples of this soon.  But first, here is the result that shows why we are interested in this definition in the first place.</p>
+<div class="proof proposition admonition" id="proposition_intuitive_decidability">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
 <div class="proposition-content section" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(A\leq B\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is intuitively decidable,
+then <span class="math notranslate nohighlight">\(A\)</span> is also intuitively decidable.</p>
+<p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(A\)</span> is intuitively undecidable,
+then <span class="math notranslate nohighlight">\(B\)</span> is also intuitively undecidable.</p>
+</div>
+</div><div class="proof admonition" id="proof">
+<p>Proof. For the first part: given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span class="math notranslate nohighlight">\(x\in A\)</span> or not,
+apply the intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span>, and then see if <span class="math notranslate nohighlight">\(t(x)\in B\)</span> or not.  The answer must be the same!</p>
+<p>The second assertion follows from the first.</p>
+</div>
+<p>Incidentally, we read <span class="math notranslate nohighlight">\(A\leq B\)</span> as <em><span class="math notranslate nohighlight">\(B\)</span> is at least as hard as <span class="math notranslate nohighlight">\(A\)</span></em>.  However, there are situations where <span class="math notranslate nohighlight">\(A\leq B\)</span> according to our definition but where most people would say that <span class="math notranslate nohighlight">\(A\)</span> is much harder to decide.</p>
+<div class="exercise admonition" id="issues/reduction-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
+<div class="section" id="exercise-content">
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(T\)</span> be the set of natural numbers, let <span class="math notranslate nohighlight">\(A\)</span> be the set of prime numbers, and let <span class="math notranslate nohighlight">\(B = \set{1,2,3}\)</span>.  Show that according to our definitions <span class="math notranslate nohighlight">\(A\leq B\)</span>.   However, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are both intuitively decidable, and most people who know about such things would agree that <span class="math notranslate nohighlight">\(A\)</span> is harder than <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>The moral of the story is that our English rendering of <span class="math notranslate nohighlight">\(A\leq B\)</span> is only good for comparisons of decidable vs. undecidable problems.</p>
+</div>
+</div>
+<div class="section" id="example-related-to-the-pcp">
+<h2>Example related to the PCP<a class="headerlink" href="#example-related-to-the-pcp" title="Permalink to this heading">#</a></h2>
+<p>Recall that <a class="reference internal" href="problems.html#content-firstpcp"><span class="std std-ref">the Post Correspondence Problem (PCP)</span></a> is the set of finite domino sets which have a post word.  We introduce a variant of this problem, the   <em>Modified PCP (MPCP)</em>:  A <em>pointed domino set</em> is one that comes with a distinguished domino <span class="math notranslate nohighlight">\(d^*\)</span> called the <em>start domino</em>.  Technically, it is a pair <span class="math notranslate nohighlight">\((\mathcal{D},d^*)\)</span>, where <span class="math notranslate nohighlight">\(d^*\in \DD\)</span>.  The MPCP is the set of finite pointed domino sets which have a Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>.</p>
+<div class="proof proposition admonition" id="proposition-2">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<div class="proposition-content section" id="proof-content">
+<p><span class="math notranslate nohighlight">\(MPCP \leq PCP\)</span>.   That is, there is an intuitively computable translation function <span class="math notranslate nohighlight">\(t: MPCP \to PCP\)</span> such that each pointed domino system <span class="math notranslate nohighlight">\((\mathcal{D},d^*)\)</span>, has a Post sequence iff its translation <span class="math notranslate nohighlight">\(t(\mathcal{D},d^*)\)</span> is an ordinary domino system which has a Post sequence.</p>
+</div>
+</div><p>Given an input to the MPCP, say <span class="math notranslate nohighlight">\((\DD,d^*)\)</span>, take two new symbols, say <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> and <span class="math notranslate nohighlight">\(\$\)</span>, and then <em>make a new domino set</em>  <span class="math notranslate nohighlight">\(t(\DD,d^*)\)</span> in the following way:</p>
 <ol class="arabic simple">
-<li><p>If <span class="math notranslate nohighlight">\(B\)</span> is decidable, then so is <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(A\)</span> is undecidable, then so is <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Add <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> after all letters in  all top words in the original domino set.</p></li>
+<li><p>Add <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> before all letters in all bottom words in the original domino set.</p></li>
+<li><p>Add a new copy of the start domino, <span class="math notranslate nohighlight">\(d^*\)</span>,  but modify it  by adding <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> after all letters in the top and before all letters in the bottom, and also add <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> before the first letter of the top word.   This  one is called the <em>first special domino</em>.</p></li>
+<li><p>Add a new domino with top word <span class="math notranslate nohighlight">\(\$\)</span> and bottom word <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> <span class="math notranslate nohighlight">\(\$ \)</span>.  This last one is called the <em>second special domino</em>.</p></li>
+</ol>
+<hr class="docutils" />
+<p>Note that we have a <em>intuitively computable function</em> <span class="math notranslate nohighlight">\(f\)</span> from pointed tile sets to tile sets.  That is, adding the <span class="math notranslate nohighlight">\(\$\)</span> and <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> like this is completely algorithmic.    In particular, we don’t need to know whether the original pointed domino set has a Post word or not in order to add the new symbols.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Here is a pointed domino set <span class="math notranslate nohighlight">\((\mathcal{D},d^*)\)</span></p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-58.png?raw=1" width="100%" height="100%">
+<p>The green domino is <span class="math notranslate nohighlight">\(d^*\)</span>.   Here is the domino set <span class="math notranslate nohighlight">\(t(\mathcal{D},d^*)\)</span>.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-59.png?raw=1" width="100%" height="100%">
+<p>The two special dominoes are shown at the end.</p>
+</div>
+<div class="admonition-claim admonition">
+<p class="admonition-title">Claim</p>
+<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has any Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>, then <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence.</p>
+<p>And if <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d^*\)</span>.</p>
+</div>
+<p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>,  then <span class="math notranslate nohighlight">\(t(\DD, d^*)\)</span> has a Post sequence.  And if <span class="math notranslate nohighlight">\(t(\DD, d^*)\)</span> has a Post sequence,  then <span class="math notranslate nohighlight">\(\DD\)</span> has one that starts with <span class="math notranslate nohighlight">\(d^*\)</span>.  The main fact here is that a Post sequence for <span class="math notranslate nohighlight">\(t(\DD)\)</span> must start with the first  special domino, since this is the only one whose top and bottom words start with the same symbol.   It also has to end with the second special domino.</p>
+<div class="exercise admonition" id="issues/reduction-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<div class="section" id="exercise-content">
+<p>Show that <span class="math notranslate nohighlight">\(PCP \leq MPCP\)</span>.   Here is what this means, spelled out.  You need to define an intuitively computable function <span class="math notranslate nohighlight">\(t\)</span> from domino sets to pointed domino sets with the property that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(t(\DD)\)</span> has one also, and one that starts with the start domino of <span class="math notranslate nohighlight">\(t(\DD)\)</span>.</p></li>
+<li><p>Conversely, if <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence that starts with its start domino, then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
 </div>
-</div></div>
+</div>
+</div>
+<div class="section" id="why-does-t-have-to-be-intuitively-computable">
+<h2>Why does <span class="math notranslate nohighlight">\(t\)</span> have to be intuitively computable?<a class="headerlink" href="#why-does-t-have-to-be-intuitively-computable" title="Permalink to this heading">#</a></h2>
+<p>Similarly, we can now say why our definition of <span class="math notranslate nohighlight">\(A \leq B\)</span> requires the translation function <span class="math notranslate nohighlight">\(t: S\to T\)</span> to be intuitively computable.   If we took away this restriction,  <a class="reference internal" href="#proposition_intuitive_decidability">Proposition 2</a> would be false in general: consider the case when <span class="math notranslate nohighlight">\(A\)</span> is undecidable and <span class="math notranslate nohighlight">\(B\)</span> is decidable, and <span class="math notranslate nohighlight">\(t\)</span> is a constant function.</p>
+</div>
+<div class="section" id="examples-related-to-integer-roots-of-polynomials">
+<h2>Examples related to integer roots of polynomials<a class="headerlink" href="#examples-related-to-integer-roots-of-polynomials" title="Permalink to this heading">#</a></h2>
+<p>We turn to some examples related to <em>polynomials</em> and <em>systems</em> of them.  In this discussion, we are looking at polynomials in many variables with integer coefficients.   Consider the following sets:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+A  &amp; = &amp; \mbox{all polynomials which have an integer root}\\
+A_{\leq 4}  &amp; = &amp; \mbox{all polynomials of degree $\leq 4$ which have an integer root}\\
+B &amp; = &amp; \mbox{all systems of polynomials which have a common integer root}\\
+\end{array}
+\end{split}\]</div>
+<p>As an example of an element of <span class="math notranslate nohighlight">\(B\)</span>, consider</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+2x^2 - y \\
+x^{449} -8y + wz   \\
+xyzw - 15
+\end{array}
+\end{split}\]</div>
+<p>One common root is <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(y = 2\)</span>, <span class="math notranslate nohighlight">\(z = 3\)</span>, <span class="math notranslate nohighlight">\(w = 5\)</span>.  There might be others, but it only takes one common root to put a system into <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Every polynomial is a system with just one polynomial.   So we may take the translation map <span class="math notranslate nohighlight">\(t\)</span> taking polynomials into systems to be the <em>inclusion</em> map.</p>
+<p>We need to exhibit an intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span> from systems of polynomials to single polynomials with the property that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{cl}
+ &amp;  \mbox{$(p_1,\ldots, p_k)$ has a common integer root}\\ 
+\quadiff &amp; \mbox{$t((p_1,\ldots, p_k))$ has an integer root}\\
+\end{array}
+\end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(t\)</span> be defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{lcl}
+t((p_1,\ldots, p_k)) &amp; = &amp; \sum_{i=1}^k {p}_i^2
+\end{array}
+\]</div>
+<p>To see that this works, fix  <span class="math notranslate nohighlight">\(p_1,\ldots, p_k\)</span> and let  <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span> be all the variables that occur in these polynomials. Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+&amp; \mbox{$(p_1,\ldots, p_k)$ has a common integer root} \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i(\overline{x} ) = 0 \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) \mbox{ for $i = 1, \ldots, k$}, p_i^{2}(\overline{x} ) = 0 \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) {\sum_{i=1}^k} p_i^{2}(\overline{x} ) \ = 0 \\
+\mbox{iff} &amp; (\exists x_1, \ldots, x_n\in\mathbb{Z}) t(p_1,\ldots, p_k) (\overline{x}) = 0 \\
+\mbox{iff} &amp; t((p_1,\ldots, p_k)) \mbox{ has an integer root} \\
+\end{array}
+\end{split}\]</div>
+<p>This calculation shows that <span class="math notranslate nohighlight">\(A\leq B\)</span> via <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>This is the most difficult of the verifications.  We present an example and invite you to work out the full details as an exercise.</p>
+<p>Consider</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{lcl}
+4x^3 y^4 + 3y^3 - 13 z^5 &amp; = &amp; 0
+\end{array}
+\]</div>
+<p>Let’s introduce seven new variables: <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(e\)</span>, <span class="math notranslate nohighlight">\(f\)</span>, and <span class="math notranslate nohighlight">\(g\)</span>.   Then we make the linear system</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c}
+\begin{array}{lcl}
+a &amp; = &amp; x^2 \\
+b &amp; = &amp;ax \\
+\\
+\end{array}\qquad
+\begin{array}{lcl}
+c   &amp; = &amp; y^2 \\
+d  &amp; = &amp;c^2 \\
+e   &amp; = &amp; c y \\
+\end{array}\qquad
+\begin{array}{lcl}
+f   &amp; = &amp; z^2  \\
+g   &amp; = &amp; f^2 \\
+h   &amp; = &amp; gz \\
+\end{array} \\ \\
+\begin{array}{lcl}
+4 bd + 3e -  13  h &amp; = &amp; 0 \\
+\end{array}
+\end{array}
+\end{split}\]</div>
+<p>This shows that <span class="math notranslate nohighlight">\(A \leq B_2\)</span>, where <span class="math notranslate nohighlight">\(E_2\)</span> is the set of linear systems with roots.   Then we compose with the function which we already saw which shows that <span class="math notranslate nohighlight">\(B\leq A\)</span>.      This turns the system  above into a single equation of degree <span class="math notranslate nohighlight">\(4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lcl}
+(a  - x^2)^2 + (b - ax)^2 + (c-y^2)^2  + (d - c^2)^2 + (e - cy)^2 &amp; &amp;  \\
+ + (f- z^2)^2 + (g - f^2)^2
++ (h-gz)^2 + (4 bd + 3e -  13  h )^2 &amp; = &amp; 0
+\end{array}
+\end{split}\]</div>
+<p>This transformation preserves satisfiability in <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and shows that  <span class="math notranslate nohighlight">\(A \leq A_{\leq 4}\)</span>.</p>
+<p>The method of introducing variables to make something simpler is sometimes called <em>Skolem’s trick</em>.</p>
+</div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<p>Here are some exercises to help you get catch on.  Some of these will be quite tricky, and the trickiness is due to two things: first, the definition of the translation function <span class="math notranslate nohighlight">\(t\)</span> often requires ingenuity and cleverness.   Your first attempt might not be correct.  That is, you might not be able to prove the required ‘if and only if’ statement; this itself might require a tricky argument.</p>
+<div class="admonition-observation admonition">
+<p class="admonition-title">Observation</p>
+<p>In showing that <span class="math notranslate nohighlight">\(t: S\to T\)</span> works, the hard direction is often the one that “goes backwards”, saying: “if <span class="math notranslate nohighlight">\(t(x)\in B\)</span>, then <span class="math notranslate nohighlight">\(x\in A\)</span>.”</p>
+</div>
 <div class="section" id="tiling">
 <h2>Tiling<a class="headerlink" href="#tiling" title="Permalink to this heading">#</a></h2>
-<p>In the problems below on tiling, you should use the notion of reduction that we are currently studying.</p>
-<div class="exercise admonition" id="issues/reduction-exercise-1">
+<div class="exercise admonition" id="issues/reduction-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
 <div class="section" id="exercise-content">
 <p>The <em>one dimensional tiling problem</em> is the problem of deciding whether a tile set can tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis” part of the quadrant (the bottom infinite row).  Show that this problem is decidable by reducing to the problem of whether a finite graph has a cycle.</p>
 </div>
 </div>
-<div class="exercise admonition" id="issues/reduction-exercise-2">
+<div class="exercise admonition" id="issues/reduction-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
 <div class="section" id="exercise-content">
 <p>The <em>two-row tiling problem</em> is the same problem, but we want to tile the bottom-most two infinite rows.  Is this problem decidable or undecidable?</p>
-</div>
-</div>
-<div class="exercise admonition" id="issues/reduction-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
-<div class="section" id="exercise-content">
 <p>What about the two-column tiling problem?</p>
 </div>
 </div>
 </div>
 <div class="section" id="roots-of-polynomials">
 <h2>Roots of polynomials<a class="headerlink" href="#roots-of-polynomials" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="issues/reduction-exercise-4">
+<div class="exercise admonition" id="issues/reduction-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> be the set of multi-variable polynomials <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> with integer coefficients which have a root consisting of positive integers, and let <span class="math notranslate nohighlight">\(Y\)</span> be the polynomials with integer coefficients which have a root consisting of negative integers.  Show that <span class="math notranslate nohighlight">\(X \leq Y\)</span> and <span class="math notranslate nohighlight">\(Y\leq X\)</span>.</p>
 </div>
 </div>
-</div>
-<div class="section" id="post-correspondence-problem">
-<h2>Post correspondence problem<a class="headerlink" href="#post-correspondence-problem" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="issues/reduction-exercise-5">
+<div class="exercise admonition" id="issues/reduction-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<div class="section" id="exercise-content">
+<p>We presented an example of how <span class="math notranslate nohighlight">\(A \leq A_4\)</span> could work, but we didn’t really define a function that does this.  Your task is to do this.</p>
+</div>
+</div>
+</div>
+<div class="section" id="pcp">
+<h2>PCP<a class="headerlink" href="#pcp" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="issues/reduction-exercise-8">
+
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
 <div class="section" id="exercise-content">
 <p>Assuming that <span class="math notranslate nohighlight">\(PCP\)</span> is undecidable, show that it is undecidable even if the alphabet has only two letters.</p>
 </div>
@@ -783,9 +719,9 @@ s\in P \quadiff f(s) \in Q
 </div>
 <div class="section" id="matrix-mortality">
 <h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="issues/reduction-exercise-6">
+<div class="exercise admonition" id="issues/reduction-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
 <p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as easy.</p>
@@ -794,7 +730,7 @@ s\in P \quadiff f(s) \in Q
 <p>Here is an exercise pertaining to the matrix mortality problem.   Athough it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="../undecidability/matrixMortality.html#content-matrixmortalityundecidable"><span class="std std-ref">our later work on the undecidability of matrix mortality</span></a>.</p>
 <div class="exercise admonition" id="matrix-mortality-exercise">
 
-<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
 <div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix</p>
@@ -826,13 +762,13 @@ s\in P \quadiff f(s) \in Q
 <p>Here is a computable function <span class="math notranslate nohighlight">\(f: Q \to Q\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-f(S) = S\cup \{A\}
+t(S) = S\cup \{A\}
 \]</div>
 <p>Our goal is to prove the following fact:</p>
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies.</p>
 <ol class="arabic simple">
-<li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
-<li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(f(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(f(S)\)</span> whose product has a zero in the upper-left corner.  Write the product as</p></li>
+<li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(t(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
+<li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(t(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(t(S)\)</span> whose product has a zero in the upper-left corner.  Write the product as</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
@@ -898,20 +834,20 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="coding.html"
+       href="problems.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computable functions on encoded structures</p>
+        <p class="prev-next-title">Algorithmic problems, decidable and undecidable</p>
       </div>
     </a>
     <a class="right-next"
-       href="recursion.html"
+       href="coding.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Recursion</p>
+        <p class="prev-next-title">Computable functions on encoded structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -931,13 +867,15 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Reduction of one problem to another</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-between-problems">Relations between problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-related-to-the-pcp">Example related to the PCP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-t-have-to-be-intuitively-computable">Why does <span class="math notranslate nohighlight">\(t\)</span> have to be intuitively computable?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-related-to-integer-roots-of-polynomials">Examples related to integer roots of polynomials</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiling">Tiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots-of-polynomials">Roots of polynomials</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-correspondence-problem">Post correspondence problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pcp">PCP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-mortality">Matrix mortality</a></li>
 </ul>
 </li>
