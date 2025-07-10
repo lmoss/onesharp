@@ -208,6 +208,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="tidy.html">Tidy programs</a></li>
 
 </ul>
@@ -473,6 +474,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions defined by programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-partial-functions">1# computable partial functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
 </ul>
@@ -529,10 +533,6 @@ is <em>undefined</em>.</p>
 <p><span class="math notranslate nohighlight">\([\![\one\hash]\!](\hash\one) \simeq \hash\one\one\)</span>.</p>
 <p><span class="math notranslate nohighlight">\([\![\hash]\!](\one)\)</span> is undefined.</p>
 <p><span class="math notranslate nohighlight">\([\![\one\hash\hash\hash\one\hash\hash\hash\hash]\!](x)\)</span> is undefined for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\phifn_{\one\hash\hash}(\one) \simeq \one\hash\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\phifn_{\one\hash}(\hash\one) \simeq\hash\one\one\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\phifn_{\hash}(\one)\)</span> is undefined</p>
-<p><span class="math notranslate nohighlight">\(\phifn_{\one\hash\hash\hash\one\hash\hash\hash\hash}(x)\)</span> is undefined for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -575,7 +575,16 @@ just like <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> is in
 \]</div>
 <p>The <em>domain</em> of <span class="math notranslate nohighlight">\([\![ p]\!](x)\)</span> is <span class="math notranslate nohighlight">\(\set{y : [\![ p]\!](x)(p)\dar}\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-3">
+</div></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="computable-partial-functions">
+<h1>1# computable partial functions<a class="headerlink" href="#computable-partial-functions" title="Link to this heading">#</a></h1>
+<p>At this point, we know that programs <span class="math notranslate nohighlight">\(p\)</span> give rise to partial functions.   So it is natural to ask about the collection of partial functions obtainable that are of the form <span class="math notranslate nohighlight">\([\![ p ]\!]\)</span> for some <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (A partial function <span class="math notranslate nohighlight">\(f:Words^n \to Words\)</span> is <em><span class="math notranslate nohighlight">\(\one\hash\)</span>-computable</em> if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(f = [\![ p ]\!]^n\)</span>.  This means that for all <span class="math notranslate nohighlight">\(n\)</span>-tuples of words <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span>, <span class="math notranslate nohighlight">\(f(\overline{x}) \simeq [\![ p ]\!]^n(x)\)</span>.)</p>
+<section class="definition-content" id="proof-content">
+</section>
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
 <section id="exercise-content">
@@ -600,7 +609,7 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 \[
 (P, \circ, id)
 \]</div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-4">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
 <section id="exercise-content">
@@ -611,12 +620,11 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 \]</div>
 </section>
 </div>
-</section>
 <section id="functions-of-two-or-more-arguments">
 <h2>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Link to this heading">#</a></h2>
 <p>A program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
-<div class="proof definition tip admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 8 </span></p>
+<div class="proof definition tip admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
 called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words.</p>
@@ -663,7 +671,7 @@ is <em>undefined</em>.</p>
 <li><p><span class="math notranslate nohighlight">\([\![ p ]\!]^3(1,\#,1) = 1\)</span>.</p></li>
 </ol>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-6">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
 <section id="exercise-content">
@@ -678,7 +686,7 @@ is <em>undefined</em>.</p>
 <p>(c) Show that we can go computably from <span class="math notranslate nohighlight">\(p\)</span> to <span class="math notranslate nohighlight">\(q\)</span>, and vice-versa.</p>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-7">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
 <section id="exercise-content">
@@ -703,8 +711,8 @@ k(x) = f(g(x), h(x))
 <section id="functions-of-zero-inputs">
 <h2>Functions of zero inputs<a class="headerlink" href="#functions-of-zero-inputs" title="Link to this heading">#</a></h2>
 <p>We started by associating to each program <span class="math notranslate nohighlight">\(p\)</span> a function <span class="math notranslate nohighlight">\([\![ p]\!]\)</span> of one argument, and then for each <span class="math notranslate nohighlight">\(n \geq 2\)</span> we associated  a function <span class="math notranslate nohighlight">\([\![ p]\!]^n\)</span> of <span class="math notranslate nohighlight">\(n\)</span> arguments.  This general definition works in case <span class="math notranslate nohighlight">\(n = 0\)</span> also.</p>
-<div class="proof definition admonition" id="definition-8">
-<p class="admonition-title"><span class="caption-number">Definition 9 </span></p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
 <section class="definition-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[
@@ -726,8 +734,8 @@ empty.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="characteristic-functions">
 <h1>Characteristic functions<a class="headerlink" href="#characteristic-functions" title="Link to this heading">#</a></h1>
-<div class="proof definition admonition" id="definition-9">
-<p class="admonition-title"><span class="caption-number">Definition 10 </span></p>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
 <section class="definition-content" id="proof-content">
 <p>For any set <span class="math notranslate nohighlight">\(A\)</span>, the <em>characteristic function of <span class="math notranslate nohighlight">\(A\)</span></em> is the function <span class="math notranslate nohighlight">\(\chi_A\)</span> given by</p>
 <div class="math notranslate nohighlight">
@@ -749,7 +757,7 @@ But we will see <em>Turing maching computability</em>, <em>Python computability<
 <section class="proposition-content" id="proof-content">
 <p>Every finite set of words is a computable set.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-11">
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-12">
 
 <p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
 <section id="exercise-content">
@@ -765,14 +773,14 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-12">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-13">
 
 <p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
 <section id="exercise-content">
 <p>Is the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable set of words?</p>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-13">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-14">
 
 <p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <section id="exercise-content">
@@ -788,7 +796,7 @@ f(w) = \left\{
 \end{split}\]</div>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-14">
+<div class="exercise admonition" id="introOneSharp/functions-exercise-15">
 
 <p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <section id="exercise-content">
@@ -802,15 +810,15 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 <section class="tex2jax_ignore mathjax_ignore" id="computable-sets-and-computably-enumerable-sets">
 <h1>Computable sets and computably enumerable sets<a class="headerlink" href="#computable-sets-and-computably-enumerable-sets" title="Link to this heading">#</a></h1>
 <p>We have seen above the definition of a <em>computable</em> set of words.   We now have a definition which is different but related.  Both concepts are important in computability theory.</p>
-<div class="proof definition admonition" id="definition-15">
-<p class="admonition-title"><span class="caption-number">Definition 11 </span></p>
+<div class="proof definition admonition" id="definition-16">
+<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\([\![ p]\!]\)</span>.
 That is,</p>
 <p><span class="math notranslate nohighlight">\(W_p = \set{x : [\![ p]\!](x)\downarrow}\)</span>.</p>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq\words\)</span> is <em>computably enumerable</em> if there is some program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(A = W_p\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-16">
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-17">
 
 <p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
 <section id="exercise-content">
@@ -898,6 +906,9 @@ That is, for all <span class="math notranslate nohighlight">\(x\)</span>, <span 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Functions defined by programs</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-functions">Partial functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#computable-partial-functions">1# computable partial functions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-or-more-arguments">Functions of two or more arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-zero-inputs">Functions of zero inputs</a></li>
 </ul>

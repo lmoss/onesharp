@@ -208,6 +208,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/tidy.html">Tidy programs</a></li>
 
 </ul>
@@ -519,7 +520,7 @@ numbers is <code class="docutils literal notranslate"><span class="pre">1#</span
 <section id="sequences-of-words-as-words">
 <h3>Sequences of words as words<a class="headerlink" href="#sequences-of-words-as-words" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="def-encode-sequences">
-<p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
 <section class="definition-content" id="proof-content">
 <p>We start by defining a specific encoding map</p>
 <div class="math notranslate nohighlight">
@@ -565,7 +566,7 @@ d(r_1,\ldots, r_n )  = {\tt \# 1} \quad c(r_1)\quad  {\tt \# 1} \quad  c(r_2)\qu
 <p>Recall that a snapshot is a number together with a finite sequence of words.    We associate snapshots to executions of a program on some inputs; a snapshot is determined by a line number in a program, and with the contents of some finite set of registers.
 But we want a definition of a snapshot encoding that does not refer to a program or to anything else.</p>
 <div class="proof definition admonition" id="def-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 13 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
 <section class="definition-content" id="proof-content">
 <p>An <em>encoded snapshot</em> is a word of the form</p>
 <div class="math notranslate nohighlight">
@@ -598,7 +599,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 <section id="definitions-leading-up-to-t">
 <h2>Definitions leading up to T<a class="headerlink" href="#definitions-leading-up-to-t" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="def-follows">
-<p class="admonition-title"><span class="caption-number">Definition 14 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Follows(p,s_1,s_2)\)</span></p>
 <p>means that</p>
@@ -610,7 +611,7 @@ But we want a definition of a snapshot encoding that does not refer to a program
 </ol>
 </section>
 </div><div class="proof definition admonition" id="def-suitable">
-<p class="admonition-title"><span class="caption-number">Definition 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Suitable(p,s)\)</span> means</p>
 <ol class="arabic simple">
@@ -627,7 +628,7 @@ s  =  1^n \quad +\quad {\tt \#\#} \quad+ \quad code({w_1,. . .,w_k})
 <span class="math notranslate nohighlight">\(1^k \#\#\)</span> or <span class="math notranslate nohighlight">\(1^k \#^5\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="def-starting-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Starting-snapshot(p,w, s)\)</span> means</p>
 <ol class="arabic simple">
@@ -642,7 +643,7 @@ w = code({w_1,\ldots, w_k})
 <p>and <span class="math notranslate nohighlight">\(s\)</span> represents the snapshot where <span class="math notranslate nohighlight">\(w_1\)</span> is in R1, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(w_k\)</span> is in Rk.</p>
 </section>
 </div><div class="proof definition admonition" id="def-halting-snapshot">
-<p class="admonition-title"><span class="caption-number">Definition 17 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Halting-snapshot(p, s)\)</span> means</p>
 <ol class="arabic simple">
@@ -652,7 +653,7 @@ w = code({w_1,\ldots, w_k})
 </ol>
 </section>
 </div><div class="proof definition admonition" id="def-snapshot-seq">
-<p class="admonition-title"><span class="caption-number">Definition 18 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span> means
 that
@@ -668,7 +669,7 @@ s_3 \quad    {\tt \# 1} \quad
 <p>where <span class="math notranslate nohighlight">\(Snapshot(s_i)\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="def-T">
-<p class="admonition-title"><span class="caption-number">Definition 19 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
 <section class="definition-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(T(p,x,z)\)</span> means</p>
 <ol class="arabic simple">
@@ -692,7 +693,7 @@ s_1, \ldots, s_{\ell}
 </section>
 </div><p>We need one more gadget, a function  called  <span class="math notranslate nohighlight">\(upshot\)</span>.</p>
 <div class="proof definition admonition" id="def-upshot">
-<p class="admonition-title"><span class="caption-number">Definition 20 </span></p>
+<p class="admonition-title"><span class="caption-number">Definition 21 </span></p>
 <section class="definition-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(Snapshot-seq(z)\)</span>, say
 <span class="math notranslate nohighlight">\(z\)</span> is</p>
