@@ -724,16 +724,31 @@ empty.</p>
 <section class="definition-content" id="proof-content">
 <p>A partial function <span class="math notranslate nohighlight">\(f:Words^n \to Words\)</span> is <em><span class="math notranslate nohighlight">\(\one\hash\)</span>-computable</em> if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(f = [\![ p ]\!]^n\)</span>.  This means that for all <span class="math notranslate nohighlight">\(n\)</span>-tuples of words <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span>, <span class="math notranslate nohighlight">\(f(\overline{x}) \simeq [\![ p ]\!]^n(x)\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-9">
+</div><div class="tip admonition">
+<p class="admonition-title">Examples</p>
+<p>(a) <span class="math notranslate nohighlight">\(f(x) = x\)</span> is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable using the program <span class="math notranslate nohighlight">\(\one\hash\hash\hash\)</span>.</p>
+<p>(b) <span class="math notranslate nohighlight">\(f(x) = x \one\)</span> is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable using the program <span class="math notranslate nohighlight">\(\one\hash\)</span>.</p>
+<p>(c) <span class="math notranslate nohighlight">\(f(x) = \one x\)</span> is <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable using the program <span class="math notranslate nohighlight">\(\moveprog_{1,2} + \one\hash +  \moveprog_{2,1}\)</span>.</p>
+</div>
+<div class="exercise admonition" id="introOneSharp/functions-exercise-9">
 
 <p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
 <section id="exercise-content">
 <p>Show that the following functions <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> are <span class="math notranslate nohighlight">\(\one\hash\)</span>-computable:</p>
-<p>(a) <span class="math notranslate nohighlight">\(f(x) = x\)</span>.</p>
-<p>(b) <span class="math notranslate nohighlight">\(f(\one\hash) = \hash\)</span>, and otherwise, <span class="math notranslate nohighlight">\(f(x)\!\uparrow\)</span>.</p>
-<p>(c) <span class="math notranslate nohighlight">\(f(x) = x + x\)</span>.</p>
-<p>(d) <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
-<p>(e) <span class="math notranslate nohighlight">\(f(x) = \one^{|x|}\)</span>, where <span class="math notranslate nohighlight">\(|x|\)</span> is the number of symbols in <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>(a) <span class="math notranslate nohighlight">\(f(\one\hash) = \hash\)</span>, and otherwise, <span class="math notranslate nohighlight">\(f(x)\!\uparrow\)</span>.</p>
+<p>(b) <span class="math notranslate nohighlight">\(f(x) = x + x\)</span>.</p>
+<p>(c) <span class="math notranslate nohighlight">\(f(x) = \writeprog(x) + x\)</span>.</p>
+<p>(d) <span class="math notranslate nohighlight">\(f(x) = \one^{|x|}\)</span>, where <span class="math notranslate nohighlight">\(|x|\)</span> is the number of symbols in <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>(e) <span class="math notranslate nohighlight">\(f(x)\)</span> as defined below:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(w) = \left\{ 
+  \begin{array}{ll}
+  w &amp; \mbox{if every symbol in $w$ is $\one$}\\
+  \hash &amp; \mbox{otherwise}
+  \end{array}
+  \right.
+\end{split}\]</div>
 </section>
 </div>
 <section id="characteristic-functions">
@@ -788,22 +803,6 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 
 <p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <section id="exercise-content">
-<p>Show that the following function is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-f(w) = \left\{ 
-  \begin{array}{ll}
-  w &amp; \mbox{if every symbol in $w$ is $\one$}\\
-  \hash &amp; \mbox{otherwise}
-  \end{array}
-  \right.
-\end{split}\]</div>
-</section>
-</div>
-<div class="exercise admonition" id="introOneSharp/functions-exercise-15">
-
-<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
-<section id="exercise-content">
 <p>(a)
 As a parallel to how we defined <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
 <p>(b) There is a Python program called <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> which takes two arguments, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>  program and a finite sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> -words.   Assuming that <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> behaves correctly, show that every <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable function is Python computable.</p>
@@ -815,7 +814,7 @@ As a parallel to how we defined <code class="docutils literal notranslate"><span
 <section class="tex2jax_ignore mathjax_ignore" id="computable-sets-and-computably-enumerable-sets">
 <h1>Computable sets and computably enumerable sets<a class="headerlink" href="#computable-sets-and-computably-enumerable-sets" title="Link to this heading">#</a></h1>
 <p>We have seen above the definition of a <em>computable</em> set of words.   We now have a definition which is different but related.  Both concepts are important in computability theory.</p>
-<div class="proof definition admonition" id="definition-16">
+<div class="proof definition admonition" id="definition-15">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program.  We write <span class="math notranslate nohighlight">\(W_p\)</span> for the domain of <span class="math notranslate nohighlight">\([\![ p]\!]\)</span>.
@@ -823,9 +822,9 @@ That is,</p>
 <p><span class="math notranslate nohighlight">\(W_p = \set{x : [\![ p]\!](x)\downarrow}\)</span>.</p>
 <p>A set <span class="math notranslate nohighlight">\(A\subseteq\words\)</span> is <em>computably enumerable</em> if there is some program <span class="math notranslate nohighlight">\(p\)</span> such that <span class="math notranslate nohighlight">\(A = W_p\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/functions-exercise-17">
+</div><div class="exercise admonition" id="introOneSharp/functions-exercise-16">
 
-<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <section id="exercise-content">
 <p>Show that every computable set is computably enumerable.  (As we shall see, the converse is false.) Show also that the family of computably enumerable sets is closed under intersection: if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are computably enumerable, so is <span class="math notranslate nohighlight">\(A\cap B\)</span>.</p>
 </section>
