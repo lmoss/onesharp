@@ -544,7 +544,7 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 <h2>Only one work register<a class="headerlink" href="#only-one-work-register" title="Link to this heading">#</a></h2>
 <p>A register machine program in our sense does not come with a number of how many arguments it expects.  One and the same program can be used as a function of zero, one, two, or many arguments.   In other words, the definition of <span class="math notranslate nohighlight">\([\![p]\!]^n(x_1, \ldots, x_n)\)</span> depends on <span class="math notranslate nohighlight">\(n\)</span> and of course on <span class="math notranslate nohighlight">\(p\)</span>.  Given <span class="math notranslate nohighlight">\([\![p]\!]^n\)</span> as a function of <span class="math notranslate nohighlight">\(n\)</span> arguments, we might ask how many registers are needed to compute it.   We need the first <span class="math notranslate nohighlight">\(n\)</span> registers just to read the input.  But are there functions which can be computed with two additional registers that cannot be computed with one?    The work that we have recently seen shows that we can do with one additional register to do all the work.</p>
 <div class="proof proposition admonition" id="one-more-register-halting">
-<p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 8 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>For every <span class="math notranslate nohighlight">\(n\)</span> and every program <span class="math notranslate nohighlight">\(p\)</span>, there is a program <span class="math notranslate nohighlight">\(q\)</span> such that</p>
 <ol class="arabic simple">
@@ -561,7 +561,7 @@ But if you write <span class="math notranslate nohighlight">\(u\)</span> the way
 </section>
 </div><p>Taking <span class="math notranslate nohighlight">\(n = 0\)</span>, it shows that when running a register machine program <span class="math notranslate nohighlight">\(p\)</span> on no inputs, we may assume that the program uses only one register.   In particular,  we have an undecidability result:</p>
 <div class="proof proposition admonition" id="one-register-halting">
-<p class="admonition-title"><span class="caption-number">Proposition 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 9 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of register machine programs which are tidy and which only use R1.</p>
 <p>Let <span class="math notranslate nohighlight">\(K^1\)</span> be <span class="math notranslate nohighlight">\(\{ p \in A : [\![p]\!](\ )\!\!\downarrow\}\)</span></p>
