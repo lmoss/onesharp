@@ -493,6 +493,26 @@ but in <em>what</em> they compute.</p>
 <em>instructions</em> and <em>programs</em>:</p>
 <p><em>Instructions</em> are single steps
 in programs.</p>
+<div class="attention admonition">
+<p class="admonition-title">Definition</p>
+<p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
+called <span class="math notranslate nohighlight">\([\![ p]\!]\)</span>  on words.</p>
+<p><span class="math notranslate nohighlight">\([\![ p]\!] (x) \simeq y\)</span> means that <span class="math notranslate nohighlight">\(p\)</span> is a program, and
+when  we
+run it
+<span class="math notranslate nohighlight">\(p\)</span>  with the word <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other registers empty,
+the register machine
+eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span> and all other
+registers
+empty.</p>
+<p>In all other cases
+(if <span class="math notranslate nohighlight">\(p\)</span> isn’t a program,
+or if <span class="math notranslate nohighlight">\(p\)</span> does not halt with <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(\Rone\)</span>,
+or if
+<span class="math notranslate nohighlight">\(p\)</span> halts but not all of the registers besides <span class="math notranslate nohighlight">\(\Rone\)</span> are empty),
+then we say that <span class="math notranslate nohighlight">\([\![ p]\!] (x)\)</span>
+is <em>undefined</em>.</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Examples</p>
 <p><span class="math notranslate nohighlight">\([\![\one\hash\hash ]\!](\one) \simeq \one\hash\)</span>.</p>
@@ -732,7 +752,7 @@ But we will see <em>Turing maching computability</em>, <em>Python computability<
 <p>The notion which we’ll study the most is <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computability.</p>
 </div>
 <div class="proof proposition admonition" id="proposition_finite_computable">
-<p class="admonition-title"><span class="caption-number">Proposition 4 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
 <div class="proposition-content section" id="proof-content">
 <p>Every finite set of words is a computable set.</p>
 </div>
