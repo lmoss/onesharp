@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
@@ -501,10 +501,10 @@ document.write(`
 <p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
 <section id="halting-informally">
 <h2>Halting: informally<a class="headerlink" href="#halting-informally" title="Link to this heading">#</a></h2>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
+<div class="admonition-definitions admonition">
+<p class="admonition-title">Definitions</p>
 <p>We (informally) say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on those inputs, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
-<p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control tranfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control transfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
 <p>To see the difference, consider the following two programs:
 <code class="docutils literal notranslate"><span class="pre">11###1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1#11###</span></code>.  Suppose we run them with some fixed but arbitrary word <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
@@ -583,7 +583,7 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 \end{split}\]</div>
 </div>
 <p>So the problem here is the set of programs which halt on empty registers.   Turing showed that this problem is unsolvable.  That is, there is no program <span class="math notranslate nohighlight">\(p\)</span> as described.</p>
-<p>For programs with an input, the statement of the problem is similar.  We need to fix a number of arguments.   Let’s fix this to be <span class="math notranslate nohighlight">\(1\)</span>.   We are considering programs <span class="math notranslate nohighlight">\(x\)</span> and their run on one word.    Then we would be asking if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that</p>
+<p>For programs with an input, the statement of the problem is similar.  We need to fix a number of arguments.   Let’s fix this to be <span class="math notranslate nohighlight">\(1\)</span>.   We are considering programs <span class="math notranslate nohighlight">\(x\)</span> and their run on one input.    Then we would be asking if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}

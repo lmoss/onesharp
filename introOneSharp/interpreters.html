@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
@@ -505,7 +505,7 @@ document.write(`
 <p>Here is <a href="https://rrose1.github.io/jsonesharp/" target="_blank">an online interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.
 It was written in JavaScript by my former PhD students Robert Rose and David Sprunger.</p>
 <p>To get started with it, enter <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code> in the program editor box (the large box at the top).   Then press ‘evaluate’ on the right.  What happened is that the program executed the first instruction, <code class="docutils literal notranslate"><span class="pre">1#</span></code>, adding a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1.  Then it evaluated <code class="docutils literal notranslate"><span class="pre">1##</span></code>, adding <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1.   Third, it executed <code class="docutils literal notranslate"><span class="pre">11#</span></code>, adding <code class="docutils literal notranslate"><span class="pre">1</span></code> to R2.   Finally, it executed <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
-<p>You can press the ‘evaluate’ button again, and it will execute the same program <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code>, but this time it will execute it with words aleady in the registers.   You can also physically add or change what is in the registers.</p>
+<p>You can press the ‘evaluate’ button again, and it will execute the same program <code class="docutils literal notranslate"><span class="pre">1#1##11#1#</span></code>, but this time it will execute it with words already in the registers.   You can also physically add or change what is in the registers.</p>
 </section>
 <section id="python-interpreter-in-this-page">
 <h2>Python interpreter in this page<a class="headerlink" href="#python-interpreter-in-this-page" title="Link to this heading">#</a></h2>
@@ -535,7 +535,7 @@ It was written in JavaScript by my former PhD students Robert Rose and David Spr
 <p>The top line of the interpreter should contain the following <em>program</em> of <code class="docutils literal notranslate"><span class="pre">1#</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
 <p>If it does not contain this, feel free to copy and past the program above into the program box in the interpreter.</p>
-<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  The registers are called R1 and R2.   The inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about and programs soon.</p>
+<p>The other two lines are the <em>inputs</em> to two <em>registers</em>.  The registers are called R1 and R2.   The inputs are the same kind of mathematical object as the program: they are <em>words</em> on the alphabet <code class="docutils literal notranslate"><span class="pre">{1,#}</span></code>.  In this book, words are just sequences  composed of the symbols <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>, such as <code class="docutils literal notranslate"><span class="pre">11###11#1</span></code> and <code class="docutils literal notranslate"><span class="pre">#1###1###111#11</span></code>.  We’ll have more to say about words and programs soon.</p>
 <p>Click on the arrow to run the program on the inputs, and look at the <em>output</em> at the bottom of the interpreter box.</p>
 <p>Instead of clicking on the arrow, you also could type shift-return on a keyboard.  This also will run the program on the inputs.</p>
 <p>Modify the inputs to R1 and R2, but keep the program the same.</p>
@@ -573,7 +573,7 @@ What happens in each register if we run the same program
 
 <p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
 <section id="exercise-content">
-<p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty.</p>
+<p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">#</span></code> in R3, and the other registers empty.</p>
 </section>
 </div>
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
@@ -623,7 +623,7 @@ What happens in each register if we run the same program
 <p class="admonition-title">Attention</p>
 <p>There is an important difference between the inputs to the <a href="https://rrose1.github.io/jsonesharp/" target="_blank">Javascript interpreter</a> and the inputs to the command-line program <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>.</p>
 <p>In the Javascript interpreter, the programs and input words are understood to be strings of symbols.  One need not put quotes around them.  In fact, doing so would give an error.</p>
-<p>On the other hand, in the command-line tool, we need to take care to indicate (to the Python program that is being executed) that we are dealing with strings.  So we need to puth quotes around the programs and the input words.  (Alternatively, we could name a program by using an assignment statement, but in that statement we again need the quotes.)  Also, in the second argument of <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>, we need to use a <em>list</em> of words.  This is a sequence of strings (again with quotes) enclosed in square brackets and separated by commas.</p>
+<p>On the other hand, in the command-line tool, we need to take care to indicate (to the Python program that is being executed) that we are dealing with strings.  So we need to put quotes around the programs and the input words.  (Alternatively, we could name a program by using an assignment statement, but in that statement we again need the quotes.)  Also, in the second argument of <code class="docutils literal notranslate"><span class="pre">onesharp</span></code>, we need to use a <em>list</em> of words.  This is a sequence of strings (again with quotes) enclosed in square brackets and separated by commas.</p>
 </div>
 </section>
 <section id="useful-command-line-tools">
