@@ -1069,9 +1069,9 @@ the columns shown are the <strong>beginnings</strong> of the
 "green" sub-program, and then the results of that sub-program
 are the beige columns which follow.
 The exact action depends on what kind of instruction is in R3 in 
-the given green column.  For example, if R3 has `≈, then
-in the next beige column we add a # to R5 (not R2: it is R5
-that models what is in R2 of the <i>real</i> machine when we run 
+the given green column.  For example, if R3 has ```11##```, then
+in the next beige column we add a ```#``` to R5 (not R2: it is R5
+that models what is in R2 of the <i>real</i> machine when we run our universal
 program).   We also must add 1 to  R2 in simulating the execution
 of 11#, since after 11#, we go to the very next instruction.
 This is how the green columns work when we execute an instruction
@@ -1201,7 +1201,7 @@ But for our purposes, it's fine to ignore this point.
 when the input program is tidy. 
 <li>  Above, we worked with the simplifying assumption that
 the input program only uses R1, R2, and R3.  You should get a program
-<i>u</i> that woks on all input programs.   
+<i>u</i> that works on all input programs.   
 <li>
   It is important to write well.   
  Your goal should be to write something that could be understood by
