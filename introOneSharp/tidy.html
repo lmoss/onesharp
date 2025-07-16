@@ -209,7 +209,6 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tidy programs</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -448,9 +447,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -466,16 +463,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tidy programs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-equivalence-to-tidy-programs">Strong equivalence to tidy programs</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -488,10 +475,9 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/tidy.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section id="tidy-programs">
 <h1>Tidy programs<a class="headerlink" href="#tidy-programs" title="Link to this heading">#</a></h1>
-<p>We next come to an important definition concerning programs.
-When a program is executed, each line either transers control to another line, or to some “line” outside the program.  If line k is an instruction of the form <code class="docutils literal notranslate"><span class="pre">1^k#</span></code> or <code class="docutils literal notranslate"><span class="pre">1^k##</span></code>, then after line k is executed we go to line k + 1.  Of course, both of these statements assume that there <em>is</em> a line k + 1.  If line k is the last line of the program, then “line k+1” does not exist.  But in this case, we say that the program has <em>halted</em>.</p>
-<p>A similar statement holds for the transfer instructions.
-If line k is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code>, then after line k is executed we go to line k + m, provided there is such a line in the program.  If the program has N lines and k + m = N+1, then after line k is executed, the program has <em>halted</em>.  If k + m &gt; N+1, then the program has not halted; it is <em>stuck</em>.</p>
+<p>The idea of <em>tidiness</em> is that it should be a condition on programs <span class="math notranslate nohighlight">\(p\)</span> which ensures that no matter what the registers contain when we begin executing <span class="math notranslate nohighlight">\(p\)</span>, no instruction  can possibly take us outside of <span class="math notranslate nohighlight">\(p\)</span>, except for going “one instruction below the end”.    The execution might not halt due to an infinite loop that is  inside of <span class="math notranslate nohighlight">\(p\)</span>, but it will not halt improperly.    For example, line <span class="math notranslate nohighlight">\(3\)</span> cannot be <span class="math notranslate nohighlight">\(\onett^3\hash^4\)</span>.</p>
+<p>This description of tidiness is semantic: it has to do with program execution.  We will eventually see that this kind of condition is undecidable. What we are after is a syntactic condition that is strong enough to do what we want, and yet  be decidable.   We also want to know that every
+program is equivalent to a tidy program.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">setuptools</span>
@@ -508,7 +494,7 @@ We would prefer to rewrite <span class="math notranslate nohighlight">\(q\)</spa
 What we are after here is a formal definition of tidiness.</p>
 <div class="attention admonition">
 <p class="admonition-title">Definition</p>
-<p>Suppose that <span class="math notranslate nohighlight">\(p\)</span> is a program with <span class="math notranslate nohighlight">\(N\)</span> lines.  Here are the requirements for <span class="math notranslate nohighlight">\(p\)</span> to be tidy:</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(p\)</span> is a program with <span class="math notranslate nohighlight">\(N\)</span> instructions.  Here are the requirements for <span class="math notranslate nohighlight">\(p\)</span> to be tidy:</p>
 <p>(a) If line <span class="math notranslate nohighlight">\(i\)</span> is a forward transfer instruction
 <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>, then <span class="math notranslate nohighlight">\(i +k \leq N+1\)</span>.</p>
 <p>(b) If line <span class="math notranslate nohighlight">\(i\)</span> is a backward transfer instruction <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">####</span></code>, then <span class="math notranslate nohighlight">\(i-k \geq 1\)</span>.</p>
@@ -516,38 +502,33 @@ What we are after here is a formal definition of tidiness.</p>
 </div>
 <p>Here is a comment on condition (c).
 Suppose that <span class="math notranslate nohighlight">\(p\)</span> had <span class="math notranslate nohighlight">\(N\)</span> lines, and line <span class="math notranslate nohighlight">\(N\)</span> were a case instruction
-<code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>. If Rk stared with a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then executing <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code> would take us to line <span class="math notranslate nohighlight">\(N+3\)</span>, and there is no such line.
+<code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>. If Rk started with a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then executing <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code> would take us to line <span class="math notranslate nohighlight">\(N+3\)</span>, and there is no such line.
 For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</span> and <span class="math notranslate nohighlight">\(N-2\)</span> cannot be case instructions.</p>
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
+<section id="exercise-content">
+<p>Prove that every program is strongly equivalent to a program in which the none of the last three instructions are case instructions <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#^5</span></code>.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="strong-equivalence-to-tidy-programs">
-<h1>Strong equivalence to tidy programs<a class="headerlink" href="#strong-equivalence-to-tidy-programs" title="Link to this heading">#</a></h1>
-<div class="proof proposition admonition" id="proposition-0">
+</div>
+<div class="proof proposition admonition" id="proposition-1">
 <p class="admonition-title"><span class="caption-number">Proposition 7 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>Every program is strongly equivalent to a tidy program. Moreover, there is a program <code class="docutils literal notranslate"><span class="pre">tidy</span></code> such that for all programs <span class="math notranslate nohighlight">\(p\)</span>,
 <span class="math notranslate nohighlight">\([\![tidy]\!](p)\)</span> is a tidy program strongly equivalent to <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </section>
-</div><div class="exercise admonition" id="introOneSharp/tidy-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
-<section id="exercise-content">
-<p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
-<p>For this result, it is just as important (if not more important) to convince yourself that you <em>could</em> work out the details than to actually work them out.</p>
-</section>
-</div>
-<div class="exercise admonition" id="introOneSharp/tidy-exercise-2">
+</div><div class="exercise admonition" id="introOneSharp/tidy-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
 <section id="exercise-content">
-<p>Prove that every program is strongly equivalent to a program in which the none of the last three instructions are case instructions <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#^5</span></code>.</p>
-<p>(I need to write out the solution in full here.)</p>
+<p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
 </section>
 </div>
 <div class="exercise admonition" id="tidiness">
 
 <p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
 <section id="exercise-content">
-<p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to any program of the form</p>
+<p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to every program of the form</p>
 <p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code><span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
 <p>Show that all three parts of the definition of tidiness are needed in order to show this fact.</p>
 </section>
@@ -556,19 +537,26 @@ For the same reason, lines <span class="math notranslate nohighlight">\(N-1\)</s
 
 <p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
 <section id="exercise-content">
+<p>Find a program <span class="math notranslate nohighlight">\(p\)</span> which is not tidy and yet has the property that no matter what the registers contain when we begin executing <span class="math notranslate nohighlight">\(p\)</span>, control is never taken  outside of <span class="math notranslate nohighlight">\(p\)</span>, except for going “one instruction below the end”.  The point is that our syntactic condition of tidiness is sufficient for the semantic condition that we want, but it is not necessary.</p>
+</section>
+</div>
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(q\)</span> be tidy, and assume that <span class="math notranslate nohighlight">\([\![ p ]\!](x) \simeq y\)</span>.
 Show that the following are equivalent:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\([\![ p+q ]\!](x)\downarrow\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![ q ]\!](y)\downarrow\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(([\![ q ]\!]\circ [\![ p ]\!])(x)\downarrow\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ p+q ]\!\!](x)\!\downarrow\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\([\![ q ]\!](y)\!\!\downarrow\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(([\![ q ]\!]\circ [\![ p ]\!])(x)\!\!\downarrow\)</span>.</p></li>
 </ol>
 <p>(Joshua Burns) Show that in general we need <span class="math notranslate nohighlight">\(q\)</span> to be tidy to have (1)<span class="math notranslate nohighlight">\(\Rightarrow\)</span>(2).</p>
 </section>
 </div>
 <div class="exercise admonition" id="back-transfer">
 
-<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
 <section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a tidy program.  Show that there is a program <span class="math notranslate nohighlight">\(q\)</span> with the following properties:</p>
 <ol class="arabic simple">
@@ -577,12 +565,12 @@ Show that the following are equivalent:</p>
 </ol>
 </section>
 </div>
-<div class="exercise admonition" id="introOneSharp/tidy-exercise-6">
+<div class="exercise admonition" id="introOneSharp/tidy-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <section id="exercise-content">
 <p>Show that the union of two computably enumerable sets is computably enumerable.</p>
-<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 52</span></a>.]</p>
+<p>[Hint: use <a class="reference internal" href="#back-transfer"><span class="std std-numref">Exercise 53</span></a>.]</p>
 </section>
 </div>
 </section>
@@ -641,23 +629,6 @@ Show that the following are equivalent:</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tidy programs</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-equivalence-to-tidy-programs">Strong equivalence to tidy programs</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
