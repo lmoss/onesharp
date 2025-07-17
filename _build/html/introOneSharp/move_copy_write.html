@@ -626,7 +626,27 @@ at the same time, and then be move Rp back to Rm.
 Of course, when we do this, we should have Rp empty to start
 with.</p>
 <p>
-Here is our program when m = 1, n = 2, p = 3:<div class="cell docutils container">
+<p>Here is our program when m = 1, n = 2, p = 3:</p>
+<TABLE  cellspacing="0" cellpadding="5">>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>1#####</TD> <TD>cases on R1</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>11111111###</TD> <TD>go forward 8 to instruction 10 (the  move<sub>3,1</sub> part) </TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>1111###</TD><TD>go forward 4 to instruction 7</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11##</TD> <TD>add # to R2</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111##</TD> <TD>add # to R3</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11111####</TD> <TD>go backward 5 to the top</TD> </TR>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111#</TD> <TD>add 1 to R3</TD></tr>
+         <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
+         <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
+</TABLE>        <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">copy_1_2_3</span>
 </pre></div>
@@ -651,12 +671,12 @@ other registers empty.</p></li>
 <p>In the notation from <a class="reference internal" href="functions.html"><span class="doc std std-doc">a little later</span></a>, we have</p>
 <div class="math notranslate nohighlight">
 \[
-[\![ [\![ write]\!](x)]\!](\ ) = x
+[\![ [\![ \writeprog]\!](x)]\!](\ ) = x
 \]</div>
 <p>Here is a table for <span class="math notranslate nohighlight">\(\writeprog\)</span>:</p>
 <TABLE  cellspacing="0" cellpadding="5">>
         <TR BGCOLOR="#FFFFCC">
-                <TD>1#####</TD> <TD>Cases on R1</TD></TR>
+                <TD>1#####</TD> <TD>cases on R1</TD></TR>
         <TR BGCOLOR="#FFFFCC">
                 <TD>111111111###</TD> <TD>Go forward 9:
                   to move<sub>2,1</sub> part</TD>  </tr>
@@ -664,20 +684,20 @@ other registers empty.</p></li>
 to the brown part</TD>  
         </TR>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>11#</TD> <TD>Add 1 to R2: 1## adds # to R1</TD></tr>
+                <TD>11#</TD> <TD>add 1 to R2: 1## adds # to R1</TD></tr>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>11##</TD> <TD>Add # to R2</TD></tr>   
+                <TD>11##</TD> <TD>add # to R2</TD></tr>   
          <TR  BGCOLOR="#B0E0E6">
-                <TD>11##</TD> <TD>Add # to R2</TD></tr>   
+                <TD>11##</TD> <TD>add # to R2</TD></tr>   
          <TR  BGCOLOR="#B0E0E6">
-                <TD>111111####</TD> <TD>Go backward 6 (to
+                <TD>111111####</TD> <TD>go backward 6 (to
 the top)</TD> </TR>
          <TR  BGCOLOR="#D4B48C">
-                <TD>11#</TD> <TD>Add 1 to R2: 1# adds 1 to R1</TD></tr>
+                <TD>11#</TD> <TD>add 1 to R2: 1# adds 1 to R1</TD></tr>
          <TR  BGCOLOR="#D4B48C">
-                <TD>11##</TD> <TD>Add # to R2</TD></tr>
+                <TD>11##</TD> <TD>add # to R2</TD></tr>
          <TR  BGCOLOR="#D4B48C">
-                <TD>111111111####</TD> <TD>Go backward 9
+                <TD>111111111####</TD> <TD>go backward 9
 (to the top)</TD>  
         </TR>
         <TR BGCOLOR="#FFFFCC">
