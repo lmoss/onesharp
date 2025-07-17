@@ -459,10 +459,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basic programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1">move_2_1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1"><code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-move-2-1">Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">copy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write">write</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy"><code class="docutils literal notranslate"><span class="pre">copy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write"><code class="docutils literal notranslate"><span class="pre">write</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notation-on-words">The <span class="math notranslate nohighlight">\(+\)</span> notation on words</a></li>
@@ -494,7 +494,7 @@ We turn to the simplest programs in the language.</p>
 </div>
 </div>
 <div class="section" id="move-2-1">
-<h2>move_2_1<a class="headerlink" href="#move-2-1" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">move_2_1</span></code><a class="headerlink" href="#move-2-1" title="Permalink to this heading">#</a></h2>
 <p>The first is a program called <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code>.   It is designed to move the contents of R2 onto the end of R1, emptying out R2 in the process.  Written out in full it is</p>
 <p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
 <p>We have defined <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to be this program, and so you can run it as shown below.</p>
@@ -550,7 +550,8 @@ We turn to the simplest programs in the language.</p>
          <TR  BGCOLOR="#D4B48C">
                 <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
         </TR>
-</TABLE>        <p>Here is an explanation of what is going on.</p>
+</TABLE> 
+<br><p>Here is an explanation of what is going on.</p>
 <p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="doc std std-doc">in a different notebook</span></a>.)</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1 and return to the very beginning of the program.</p>
@@ -606,7 +607,7 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 </div>
 </div>
 <div class="section" id="copy">
-<h2>copy<a class="headerlink" href="#copy" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">copy</span></code><a class="headerlink" href="#copy" title="Permalink to this heading">#</a></h2>
 <p>The second program in this notebook is called <code class="docutils literal notranslate"><span class="pre">copy</span></code>.
 Like <code class="docutils literal notranslate"><span class="pre">move</span></code>, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> program is actually an infinite batch of programs.</p>
 <div class="admonition attention">
@@ -626,8 +627,8 @@ at the same time, and then be move Rp back to Rm.
 Of course, when we do this, we should have Rp empty to start
 with.</p>
 <p>
-<p>Here is our program when m = 1, n = 2, p = 3:</p>
-<TABLE  cellspacing="0" cellpadding="5">>
+<p>Here is our program when m = 1, n = 2, p = 3.  That is, here is <span class="math notranslate nohighlight">\(\copyprog_{1,2,3}\)</span>.</p>
+<TABLE cellspacing="0" cellpadding="5">
         <TR BGCOLOR="#FFFFCC">
                 <TD>1#####</TD> <TD>cases on R1</TD></TR>
         <TR BGCOLOR="#FFFFCC">
@@ -646,16 +647,9 @@ with.</p>
                 <TD>111#</TD> <TD>add 1 to R3</TD></tr>
          <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
          <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
-</TABLE>        <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">copy_1_2_3</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</TABLE>        <br></div>
 <div class="section" id="write">
-<h2>write<a class="headerlink" href="#write" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">write</span></code><a class="headerlink" href="#write" title="Permalink to this heading">#</a></h2>
 <p>We construct with
 a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
 the following properties:</p>
@@ -674,36 +668,34 @@ other registers empty.</p></li>
 [\![ [\![ \writeprog]\!](x)]\!](\ ) = x
 \]</div>
 <p>Here is a table for <span class="math notranslate nohighlight">\(\writeprog\)</span>:</p>
-<TABLE  cellspacing="0" cellpadding="5">>
+<TABLE  cellspacing="0" cellpadding="5">
         <TR BGCOLOR="#FFFFCC">
                 <TD>1#####</TD> <TD>cases on R1</TD></TR>
         <TR BGCOLOR="#FFFFCC">
-                <TD>111111111###</TD> <TD>Go forward 9:
-                  to move<sub>2,1</sub> part</TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD><TD>Go forward 5:
+                <TD>111111111###</TD> <TD>go forward 9
+                  to the move<sub>2,1</sub> part</TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD><TD>go forward 5:
 to the brown part</TD>  
         </TR>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>11#</TD> <TD>add 1 to R2: 1## adds # to R1</TD></tr>
+                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
          <TR  BGCOLOR="#B0E0E6">
                 <TD>11##</TD> <TD>add # to R2</TD></tr>   
          <TR  BGCOLOR="#B0E0E6">
                 <TD>11##</TD> <TD>add # to R2</TD></tr>   
          <TR  BGCOLOR="#B0E0E6">
-                <TD>111111####</TD> <TD>go backward 6 (to
-the top)</TD> </TR>
+                <TD>111111####</TD> <TD>go backward 6 (to the top)</TD> </TR>
          <TR  BGCOLOR="#D4B48C">
-                <TD>11#</TD> <TD>add 1 to R2: 1# adds 1 to R1</TD></tr>
+                <TD>11#</TD> <TD>add 1 to R2 </TD></tr>
          <TR  BGCOLOR="#D4B48C">
                 <TD>11##</TD> <TD>add # to R2</TD></tr>
          <TR  BGCOLOR="#D4B48C">
-                <TD>111111111####</TD> <TD>go backward 9
-(to the top)</TD>  
+                <TD>111111111####</TD> <TD>go backward 9 (to the top)</TD>  
         </TR>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-<p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
+<br><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
@@ -850,10 +842,10 @@ q =\mbox{copy}_{1,2,3} + \mbox{move}_{2,1}
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basic programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1">move_2_1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1"><code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-move-2-1">Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">copy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write">write</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy"><code class="docutils literal notranslate"><span class="pre">copy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write"><code class="docutils literal notranslate"><span class="pre">write</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notation-on-words">The <span class="math notranslate nohighlight">\(+\)</span> notation on words</a></li>
