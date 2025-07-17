@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/functions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -197,7 +197,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="tidy.html">Tidy programs</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -489,10 +488,6 @@ document.write(`
 <p>At this point <a class="reference internal" href="instructions.html#content-whatareprograms"><span class="std std-ref">we know what programs of   <code class="docutils literal notranslate"><span class="pre">1#</span></code> are and how they work</span></a>.
 We are interested not just in the programs themselves
 but in <em>what</em> they compute.</p>
-<p>Let us be clear about the difference between
-<em>instructions</em> and <em>programs</em>:</p>
-<p><em>Instructions</em> are single steps
-in programs.</p>
 <div class="attention admonition">
 <p class="admonition-title">Definition</p>
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
@@ -590,14 +585,14 @@ and <span class="math notranslate nohighlight">\(f(y)\simeq z\)</span>.  In part
 </div>
 <div class="section" id="functions-of-two-or-more-arguments">
 <h2>Functions of two or more arguments<a class="headerlink" href="#functions-of-two-or-more-arguments" title="Permalink to this heading">#</a></h2>
-<p>A program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can also be used as a function of zero or more arguments.  Here is the relevant definition.</p>
+<p>A program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can also be used as a function of two or more arguments.  Here is the relevant definition.</p>
 <div class="attention admonition">
 <p class="admonition-title">Definition</p>
 <p>Every word <span class="math notranslate nohighlight">\(p\)</span> gives us a function
-called <span class="math notranslate nohighlight">\(\phifn^n_p\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words.</p>
+called <span class="math notranslate nohighlight">\([\![p]\!]^n\)</span>  on <span class="math notranslate nohighlight">\(n\)</span>-tuples of words: for an <span class="math notranslate nohighlight">\(n\)</span>-tuple <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-[\![p]\!] (x_1,\ldots, x_n) \simeq y
+[\![p]\!]^n (\overline{x}) \simeq y
 \]</div>
 <p>means that
 <span class="math notranslate nohighlight">\(p\)</span> is a program, and
@@ -666,7 +661,7 @@ g: \words \to \words \\
 h: \words \to \words \\
 \end{array}
 \end{split}\]</div>
-<p>Define a new function <span class="math notranslate nohighlight">\(f: \words^2 \to \words\)</span> by composition in the following form.</p>
+<p>Define a new function <span class="math notranslate nohighlight">\(k\colon \words \to \words\)</span> by composition in the following form.</p>
 <div class="math notranslate nohighlight">
 \[
 k(x) = f(g(x), h(x))
@@ -748,11 +743,11 @@ f(w) = \left\{
 <p>Our work will also involve other notions of “computable” besides <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability.<br />
 We have already seen
 <em>intuitive computability</em>, and this is not exactly a mathematical concept.
-But we will see <em>Turing maching computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the <code class="docutils literal notranslate"><span class="pre">1#</span></code> in the name “<code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable”.</p>
+But we will see <em>Turing machine computability</em>, <em>Python computability</em>, and other notions besides.   So it will be important to keep these straight. This is why we put the <code class="docutils literal notranslate"><span class="pre">1#</span></code> in the name “<code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable”.</p>
 <p>The notion which we’ll study the most is <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computability.</p>
 </div>
 <div class="proof proposition admonition" id="proposition_finite_computable">
-<p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 6 </span></p>
 <div class="proposition-content section" id="proof-content">
 <p>Every finite set of words is a computable set.</p>
 </div>
@@ -784,7 +779,7 @@ A\cup B &amp; = &amp; \set{w \in \words : w\in A \mbox{ or }
 <p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <div class="section" id="exercise-content">
 <p>(a)
-As a parallel to how we defined <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability, define what it means for a function from words to words to be <em>Python-computable</em></p>
+As a parallel to how we defined <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computability, define what it means for a function from words to words to be <em>Python-computable</em>.</p>
 <p>(b) There is a Python program called <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> which takes two arguments, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>  program and a finite sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> -words.   Assuming that <code class="docutils literal notranslate"><span class="pre">onesharp</span></code> behaves correctly, show that every <code class="docutils literal notranslate"><span class="pre">1#</span></code> -computable function is Python computable.</p>
 <p>[Hint: you will need to say clearly what “behaves correctly” means.]</p>
 </div>

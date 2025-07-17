@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/haltDef';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -197,7 +197,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="tidy.html">Tidy programs</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">More Programs</span></p>
 <ul class="nav bd-sidenav">
@@ -263,6 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
+
 </ul>
 
     </div>
@@ -485,13 +485,12 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">1#</span></code> has programs which contain <em>infinite loops</em> such as</p>
 <p><code class="docutils literal notranslate"><span class="pre">111###111####</span></code></p>
 <p>This program never finishes. If you run this in an interpreter, you will need to figure out how to stop the execution.    Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
-<p>This last example had nothing to do with the words in the input registers before we ran the program.  But usually the input registers make a difference to whether the program halts or not.</p>
 <div class="section" id="halting-informally">
 <h2>Halting: informally<a class="headerlink" href="#halting-informally" title="Permalink to this heading">#</a></h2>
-<div class="tip admonition">
-<p class="admonition-title">Definition</p>
-<p>We (informally) say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on those inputs, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
-<p>In contrast, we say that p <em>halts improperly</em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control tranfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="admonition-definitions admonition">
+<p class="admonition-title">Definitions</p>
+<p>We (informally) say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs <span class="math notranslate nohighlight">\(\overline{x}\)</span> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
+<p>In contrast, we say that p *halts improperly on <span class="math notranslate nohighlight">\(\overline{x}* if at some point during the execution of \)</span>p<span class="math notranslate nohighlight">\(, the control transfers either to a point before the beginning of \)</span>p<span class="math notranslate nohighlight">\( or to points more than one instruction beyond the last instruction of \)</span>p$.</p>
 </div>
 <p>To see the difference, consider the following two programs:
 <code class="docutils literal notranslate"><span class="pre">11###1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1#11###</span></code>.  Suppose we run them with some fixed but arbitrary word <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
@@ -501,7 +500,7 @@ document.write(`
 
 <p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
 <div class="section" id="exercise-content">
-<p>Which of the following programs halt when run on all empty registers? Which stop improperly? Why?</p>
+<p>Which of the following programs halt when run on all empty registers? Which halt improperly? Why?</p>
 <ol class="arabic simple">
 <li><p>11###111###1####</p></li>
 <li><p>11###111###11####</p></li>
@@ -516,7 +515,7 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
 <div class="section" id="exercise-content">
 <p><a class="reference internal" href="#on-halting"><span class="std std-numref">Exercise 37</span></a> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
-<p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
+<p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts.</p>
 <p>(b) When started with <span class="math notranslate nohighlight">\(w_2\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
 <p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop inside <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
@@ -555,7 +554,8 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 <div class="tex2jax_ignore mathjax_ignore section" id="the-halting-problem">
 <h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Permalink to this heading">#</a></h1>
 <p>We now can state one of the key foundational points in computability theory.  This is that the <em>halting problem</em> is unsolvable.  It is a result due to Alan Turing in his seminal paper of 1936.  Although his original paper dealt with what we now call <em>Turing machines</em> (indeed, they were originated in this same paper), the discussion carries over to register machines.</p>
-<p>We begin by thinking about <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs <span class="math notranslate nohighlight">\(x\)</span> and asking whether they halt or not.  As we know, it makes a difference whether we run <span class="math notranslate nohighlight">\(x\)</span> on all empty registers or with some non-empty words in the registers.  Let us for a moment just consider <span class="math notranslate nohighlight">\(x\)</span> on all empty registers.  It might be nice to know if <span class="math notranslate nohighlight">\(x\)</span> halts or not.   Of course we mean “halting” according to our formal definition.    In computability theory, we always ask if</p>
+<p>We begin by thinking about <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs <span class="math notranslate nohighlight">\(x\)</span> and asking whether they halt or not.  As we know, it makes a difference whether we run <span class="math notranslate nohighlight">\(x\)</span> on all empty registers or with some non-empty words in the registers.  Let us for a moment just consider <span class="math notranslate nohighlight">\(x\)</span> on all empty registers.  It might be nice to know if <span class="math notranslate nohighlight">\(x\)</span> halts or not.   Of course we mean “halting” according to our formal definition.    In computability theory, we always ask whether or not a function which we define is computable.  In the language of <em>problems</em> from the last chapter, we are dealing with the set <span class="math notranslate nohighlight">\(\set{x : [\![x]\!](\ )\!\!\downarrow}\)</span>.
+So we are asking about whether this set if computable.</p>
 <div class="danger admonition">
 <p class="admonition-title">Halting Problem</p>
 <p>Is there a program <span class="math notranslate nohighlight">\(p\)</span> such that for all programs <span class="math notranslate nohighlight">\(x\)</span>,</p>
@@ -570,7 +570,7 @@ a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em>
 \end{split}\]</div>
 </div>
 <p>So the problem here is the set of programs which halt on empty registers.   Turing showed that this problem is unsolvable.  That is, there is no program <span class="math notranslate nohighlight">\(p\)</span> as described.</p>
-<p>For programs with an input, the statement of the problem is similar.  We need to fix a number of arguments.   Let’s fix this to be <span class="math notranslate nohighlight">\(1\)</span>.   We are considering programs <span class="math notranslate nohighlight">\(x\)</span> and their run on one word.    Then we would be asking if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that</p>
+<p>For programs with an input, the statement of the problem is similar.  We need to fix a number of arguments.   Let’s fix this to be <span class="math notranslate nohighlight">\(1\)</span>.   We are considering programs <span class="math notranslate nohighlight">\(x\)</span> and their run on one input.    Then we would be asking if there is a program <span class="math notranslate nohighlight">\(p\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
