@@ -492,25 +492,26 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="commutative-rings-with-unit">
 <h1>Commutative rings with unit<a class="headerlink" href="#commutative-rings-with-unit" title="Link to this heading">#</a></h1>
-<p>We us a first-order signature in this section has symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, and <span class="math notranslate nohighlight">\(\times\)</span>.  The symbol <span class="math notranslate nohighlight">\(-\)</span> is unary.
-The set <span class="math notranslate nohighlight">\(Ax\)</span> of axioms are those of <em>commutative rings with unit</em>. The axioms are the universal closures of the equations below:</p>
+<p>The first-order signature in this section has symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>, and an extra relation symbol <span class="math notranslate nohighlight">\(R\)</span>.  The symbol <span class="math notranslate nohighlight">\(-\)</span> is unary.
+The set <span class="math notranslate nohighlight">\(Ax\)</span> of axioms start with \emph{the theory of commutative rings with unit}. The axioms are the universal closures of the equations below:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{array}{ll}
+\begin{array}{lcl}
 x + y &amp; = &amp; y + x \\
 x + (y + z ) &amp;  = &amp; (x + y) + z \\
 x + 0 &amp; = &amp; x \\
 x + (-x) &amp; = &amp; 0 \\
 \end{array}
 \qquad\qquad
-\begin{array}{ll}
+\begin{array}{lcl}
 x \times y &amp; = &amp; y \times x \\
 x \times (y \times z ) &amp;  = &amp; (x \times y) \times z \\
 x \times 1 &amp;=&amp; x \\
 x \times (y+z) &amp; = &amp; (x \times y) + (x \times z)
 \end{array}
 \end{split}\]</div>
-<p>Often one assumes that <span class="math notranslate nohighlight">\(0\neq 1\)</span>, but we do not need to do this.</p>
+<p>The main thing about commutative rings that we need to know is that  the integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> with the usual operations is a model of the sentences above.</p>
+<p>As usual, we sometimes elide the multiplication sign <span class="math notranslate nohighlight">\(\times\)</span>, and we omit all the parentheses on repeated additions.  (For example, we would write <span class="math notranslate nohighlight">\(1+1+1\)</span> instead of <span class="math notranslate nohighlight">\(1 + (1+ 1)\)</span>.)</p>
 <p>As usual, we elide the multiplication sign <span class="math notranslate nohighlight">\(\times\)</span>, and we omit all the parentheses on repeated additions.  (For example, we would write <span class="math notranslate nohighlight">\(1+1+1\)</span> instead of <span class="math notranslate nohighlight">\(1 + (1+ 1)\)</span>.) What we need to know about this set is that (1) the integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> with the usual operations is a model of it, and a lemma stated below.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
@@ -528,8 +529,7 @@ For example, <span class="math notranslate nohighlight">\(\underline{-3}\)</span
 </section>
 </div><section id="add-a-9-place-relation-symbol-r">
 <h2>Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#add-a-9-place-relation-symbol-r" title="Link to this heading">#</a></h2>
-<p>We add a relation symbol <span class="math notranslate nohighlight">\(R\)</span> to our signature.   The <span class="math notranslate nohighlight">\(9\)</span> comes from <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices, and since we are thinking of matrices, we use subscripts on
-variables  as a reminder.   So we write</p>
+<p>The signature in this section also includes a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span>.The <span class="math notranslate nohighlight">\(9\)</span> comes from <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices, and since we are thinking of matrices, we use subscripts on variables  as a reminder.   So we write</p>
 <div class="math notranslate nohighlight">
 \[
 R(x_{1,1}, x_{1,2}, x_{1,3}, 
@@ -560,15 +560,14 @@ x_{3,1}, x_{3,2}, x_{3,3}) \\
 \end{array}
 \end{split}\]</div>
 <p>In our shorthand  notation, the first axiom is <span class="math notranslate nohighlight">\(R(I_3)\)</span>, where <span class="math notranslate nohighlight">\(I_3\)</span> is the <span class="math notranslate nohighlight">\(3\times 3\)</span> identity matrix.</p>
-<p>Let <span class="math notranslate nohighlight">\(Ax_{\mathcal{S}}\)</span> be the conjunction of the finite set of axioms mentioned  above.
-We have a model <span class="math notranslate nohighlight">\(\mathbb{Z} \models Ax_{\mathcal{S}}\)</span>, where for <span class="math notranslate nohighlight">\(R\)</span> we specify that
-<span class="math notranslate nohighlight">\(R(M)\)</span> iff <span class="math notranslate nohighlight">\(M\)</span> is a product of elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(Ax_{\mathcal{S}}\)</span> be the conjunction of the finite set of axioms mentioned  above.   Notice that <span class="math notranslate nohighlight">\(Ax_{\mathcal{S}}\)</span> is a sentence of first-order logic, and the map <span class="math notranslate nohighlight">\(\mathcal{S}\mapsto Ax_{\mathcal{S}}\)</span> is computable.   For each <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, we have
+a model <span class="math notranslate nohighlight">\(\mathbb{Z}_{\mathcal{S}} \models Ax_{\mathcal{S}}\)</span>, where we interprety <span class="math notranslate nohighlight">\(R\)</span> in the natural way: <span class="math notranslate nohighlight">\(R(M)\)</span> iff <span class="math notranslate nohighlight">\(M\)</span> is a product of elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
 <div class="proof lemma admonition" id="matrix_closure">
 <p class="admonition-title"><span class="caption-number">Lemma 14 </span></p>
 <section class="lemma-content" id="proof-content">
-<p>If <span class="math notranslate nohighlight">\(R(M_1)\)</span> and <span class="math notranslate nohighlight">\(M_2\in \mathcal{S}\)</span>, then <span class="math notranslate nohighlight">\(R(M_1\times M_2)\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(M_2\in \mathcal{S}\)</span>, then <span class="math notranslate nohighlight">\(\proves R(M_1)\iif R(M_1\times M_2)\)</span>.</p>
 </section>
-</div><p>This says that in our notation, the interpretation of <span class="math notranslate nohighlight">\(R\)</span>, considered as a set of matrices, is closed under multiplication by elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
+</div><p>Here is what this says, informally and in our notation that writes <span class="math notranslate nohighlight">\(R(M)\)</span> for matrices <span class="math notranslate nohighlight">\(M\)</span>.  The lemma says that the interpretation of <span class="math notranslate nohighlight">\(R\)</span>, considered as a set of matrices, is closed under multiplication by elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
 <div class="proof lemma admonition" id="CT_via_matrices">
 <p class="admonition-title"><span class="caption-number">Lemma 15 </span></p>
 <section class="lemma-content" id="proof-content">
@@ -592,7 +591,7 @@ is <span class="math notranslate nohighlight">\(R(I_3)\)</span>, and so we have 
 
 <p class="admonition-title"><span class="caption-number">Exercise 108 </span></p>
 <section id="exercise-content">
-<p>Our proof of <a class="reference internal" href="#CT_via_matrices">Lemma 15</a> didn’t mention <a class="reference internal" href="#numerals">Lemma 13</a>.   But  <a class="reference internal" href="#numerals">Lemma 13</a> has to be used somewhere.  Where is it used?  Similarly, our work in this section seemed to only use propositional logic, but the first-order logic treatment of variables and quantification must be used somewhere, too.   Where did that come in?</p>
+<p>Prove <a class="reference internal" href="#matrix_closure">Lemma 14</a>, using  <a class="reference internal" href="#numerals">Lemma 13</a>.  This missing piece must use something about first-order logic, since otherwise all of our work in this section would seem to use only propositional logic.  The first-order logic treatment of variables and quantification must be used somewhere.   Where did that come in?</p>
 </section>
 </div>
 </section>

@@ -522,7 +522,7 @@ e(i,j) &amp; = &amp; (i+1, j)\\
 <h2>Mapping tile sets to logic sentences<a class="headerlink" href="#mapping-tile-sets-to-logic-sentences" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be a tile set.   Recall that we had a signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(e\)</span>.
 We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a relation symbol <span class="math notranslate nohighlight">\(T\)</span> for each tile <span class="math notranslate nohighlight">\(t\)</span> in <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
-<p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> is to define a computable function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to logic sentences in such a way as to have the following condition:</p>
+<p>The heart of the proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> is a computable function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to logic sentences in such a way as to have the following condition:</p>
 <div class="math notranslate nohighlight">
 \[
 \mbox{For all tile sets $\mathcal{T}$,  $\mathcal{T}$ can tile the quadrant iff $\varphi(\mathcal{T})$ has a model.}
@@ -559,7 +559,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 &amp;  \vee  &amp; ( T_8(x)\wedge\neg \bigvee_{j\neq 8} T_j(x) ) \biggr) \\
 \end{array}
 \end{split}\]</div>
-<p>For points 3, it is convenient to display the tiles:</p>
+<p>For point 3, it is convenient to display the tiles:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-04.png?raw=1" width="100%" height="100%">
 <p>Let us write them as</p>
 <p><span class="math notranslate nohighlight">\(
@@ -582,8 +582,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 &amp; \wedge &amp; T_8(x)\to (T_1(n(x))\vee T_3(n(x))\vee T_4(n(x))) \biggr) \\
 \end{array}
 \end{split}\]</div>
-<p>We say this by “table look-up”.</p>
-<p>Please note that this sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires “local” information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
+<p>This sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires “local” information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
 <p>Point 5, pertaining to the distinuished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, would be <span class="math notranslate nohighlight">\(T_5(0)\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="logic/church_turing-exercise-2">
