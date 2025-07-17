@@ -646,20 +646,20 @@ We turn to the simplest programs in the language.</p>
         </TR>
 </TABLE>        <TABLE>
         <TR BGCOLOR="#FFFFCC">
-                <TD>11#####</TD> <TD><\TD><TD style="text-aligh" right;>cases on R2</TD></TR>
+                <TD>11#####</TD> <TD></TD><TD style="text-aligh" right;>cases on R2</TD></TR>
         <TR BGCOLOR="#FFFFCC">
-                <TD>111111###</TD> <TD><\TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
+                <TD>111111###</TD> <TD></TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
                   </TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD> <TD><\TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
+        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD> <TD></TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
         </TR>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>1##</TD>  <TD><\TD><TD>first symbol is #: add # to R1</TD></tr>
+                <TD>1##</TD>  <TD></TD><TD>first symbol is #: add # to R1</TD></tr>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>1111####</TD> <TD><\TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
+                <TD>1111####</TD> <TD></TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
          <TR  BGCOLOR="#D4B48C">
-                <TD>1#</TD> <TD>add 1 to R1</TD></tr>
+                <TD>1#</TD> <TD></TD> <TD>add 1 to R1</TD></tr>
          <TR  BGCOLOR="#D4B48C">
-                <TD>111111####</TD> <TD><\TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
+                <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
         </TR>
 </TABLE>        <p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
