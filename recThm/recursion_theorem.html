@@ -514,7 +514,7 @@ So we first write a program <span class="math notranslate nohighlight">\(\hat{q}
 <p>This is the desired equation.   Now to get <span class="math notranslate nohighlight">\(\hat{q}\)</span>, we take</p>
 <div class="math notranslate nohighlight">
 \[
-\diagprog + \moveprog(1,2) + [\![\writeprog]\!](\progmove(1,4)) +  \progmove(2,1) + [\![\writeprog]\!](\moveprog(4,2) + p)
+\diagprog + \moveprog(1,2) + [\![\writeprog]\!](\moveprog(1,4)) +  \moveprog(2,1) + [\![\writeprog]\!](\moveprog(4,2) + p)
 \]</div>
 <p>This only mentions R1, R2, and R3.   (R3 is mentioned in <span class="math notranslate nohighlight">\(\diagprog\)</span>.) Then for all <span class="math notranslate nohighlight">\(x\)</span> which also mentions only those registers,</p>
 <div class="math notranslate nohighlight">
@@ -524,7 +524,7 @@ So we first write a program <span class="math notranslate nohighlight">\(\hat{q}
 <p>In particular,</p>
 <div class="math notranslate nohighlight">
 \[
-[\![\hat{q}]\!] (\hat{q}) = \moveprog(1,4) +[\![diagprog]\!] (\hat{q}) + \moveprog(4,2) + p
+[\![\hat{q}]\!] (\hat{q}) = \moveprog(1,4) +[\![\diagprog]\!] (\hat{q}) + \moveprog(4,2) + p
 \]</div>
 <p>Then a routine calculation shows that <a class="reference internal" href="#equation-eq-recursion-theorem">(1)</a> above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions only the the first three registers.)  This last equation was our goal, and so we are done.</p>
 <p>Recall that a <em>quine</em> is a program <span class="math notranslate nohighlight">\(q\)</span> such that <span class="math notranslate nohighlight">\([\![ q ]\!](\ ) \simeq q\)</span>.  Our program <span class="math notranslate nohighlight">\([\![ \diagprog]\!](\diagprog) \simeq \selfprog\)</span> is a quine.  We used a similar construction in proving the Recursion Theorem, so it is not surprising that the theorem is much more general and implies easily that quines exist.</p>
@@ -589,15 +589,14 @@ before attempting this problem.  But it might be fun to try now.]</p>
 [\![s^1_1]\!] (p',p')
 \]</div>
 <p>for some program <span class="math notranslate nohighlight">\(p'\)</span> which is built from <span class="math notranslate nohighlight">\(p\)</span>.  Indeed, we take <span class="math notranslate nohighlight">\(p'\)</span> to be a program with the property that</p>
-<div class="math notranslate nohighlight">
-\[
-[\![p']\!] (x, y) \simeq [\![p]\!]([\![s^1_1]\!](x, x), y)
-\]</div>
+<div class="math notranslate nohighlight" id="equation-kleene-proof">
+<span class="eqno">(2)<a class="headerlink" href="#equation-kleene-proof" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
 <div class="exercise admonition" id="recThm/recursion_theorem-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 82 </span></p>
 <section id="exercise-content">
-<p>Shows that this works: taking <span class="math notranslate nohighlight">\(p'\)</span> to be any prograph with the property agove, and then taking <span class="math notranslate nohighlight">\(q^* = [\![s^1_1]\!] (p',p')\)</span> gives a program with the desired equation <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
+<p>Show that this works: Let <span class="math notranslate nohighlight">\(p'\)</span> be any program with the property in <a class="reference internal" href="#equation-kleene-proof">(2)</a>, and let <span class="math notranslate nohighlight">\(q^* = [\![s^1_1]\!] (p',p')\)</span>.
+Show that this program <span class="math notranslate nohighlight">\(q^*\)</span> satisfies the equation <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
 </section>
 </div>
 </section>
@@ -619,7 +618,7 @@ f(x) = [\![y]\!](x)
 For example,  <span class="math notranslate nohighlight">\(z\)</span> could be</p>
 <div class="math notranslate nohighlight">
 \[
-\moveprog(2,k) + y + \progmove(k,2) + u_1
+\moveprog(2,k) + y + \moveprog(k,2) + u_1
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is large enough so that <span class="math notranslate nohighlight">\(y\)</span> does not mention Rk, and <span class="math notranslate nohighlight">\(u_1\)</span> is as in
 <a class="reference external" href="https://lmoss.github.io/onesharp/universal/universal.html#universal-programs-of-more-than-one-argument">our work on the universal program</a>.</p>
