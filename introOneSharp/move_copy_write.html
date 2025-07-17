@@ -643,13 +643,9 @@ We turn to the simplest programs in the language.</p>
          <TR  BGCOLOR="#D4B48C">
                 <TD>1#</TD> <TD>Add 1 to R1</TD></tr>
          <TR  BGCOLOR="#D4B48C">
-                <TD>11##</TD> <TD>Add # to R2</TD></tr>
-         <TR  BGCOLOR="#D4B48C">
                 <TD>111111####</TD> <TD>go backward 6 to instruction 1 (the top)
 (to the top)</TD>  
         </TR>
-        <TR BGCOLOR="#FFFFCC">
-             <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
 </CENTER><p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
 <p>If the first symbol of R2 is a 1, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a 1 to R1 and return to the very beginning of the program.</p>
