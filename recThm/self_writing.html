@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recThm/self_writing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -742,32 +742,6 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 <p class="admonition-title"><span class="caption-number">Exercise 78 </span></p>
 <section id="exercise-content">
 <p>A country adopts <code class="docutils literal notranslate"><span class="pre">1#</span></code> as its national programming language.  To celebrate, they want a new flag. Write a program <code class="docutils literal notranslate"><span class="pre">flag</span></code> with the property that running  <code class="docutils literal notranslate"><span class="pre">flag</span></code> on all empty registers gives two copies of  <code class="docutils literal notranslate"><span class="pre">flag</span></code>separated by a stripe with the same number of characters as  <code class="docutils literal notranslate"><span class="pre">flag</span></code>.   The stripe should have all <code class="docutils literal notranslate"><span class="pre">#</span></code> symbols.</p>
-</section>
-</div>
-<div class="exercise admonition" id="recThm/self_writing-exercise-9">
-
-<p class="admonition-title"><span class="caption-number">Exercise 79 </span></p>
-<section id="exercise-content">
-<p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code>
-which trades places with its input in R1.
-That is, running <code class="docutils literal notranslate"><span class="pre">trade</span></code>  with p in R1
-and all other registers empty does the same thing
-as running p with <code class="docutils literal notranslate"><span class="pre">trade</span></code> in R1 and all other
-registers empty.</p>
-<p>[You will probably want to work through some later lessons
-before attempting this problem.  But it might be fun to try now.]</p>
-</section>
-</div>
-<div class="exercise admonition" id="recThm/self_writing-exercise-10">
-
-<p class="admonition-title"><span class="caption-number">Exercise 80 </span></p>
-<section id="exercise-content">
-<p>Write two “twin’’ programs <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> with the properties
-that <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are different programs;
-running <span class="math notranslate nohighlight">\(s\)</span> with all registers empty gives <span class="math notranslate nohighlight">\(t\)</span> in R1; and
-running <span class="math notranslate nohighlight">\(t\)</span> with all registers empty gives <span class="math notranslate nohighlight">\(s\)</span> in
-R1.</p>
-<p>“Different” here means that <span class="math notranslate nohighlight">\(s\)</span> and <span class="math notranslate nohighlight">\(t\)</span> are not symbol-for-symbol the same.</p>
 </section>
 </div>
 </section>
