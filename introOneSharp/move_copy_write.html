@@ -627,7 +627,31 @@ We turn to the simplest programs in the language.</p>
 </table>
 </div></div>
 </div>
-<p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
+<CENTER>
+<TABLE>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>11#####</TD> <TD>Cases on R2</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>111111###</TD> <TD>R2 is empty; go forward 6 (we're done)
+                  to move<sub>2,1</sub> part</TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>1##</TD> <TD>first symbol is #: add # to R1</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>1111####</TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
+         <TR  BGCOLOR="#D4B48C">
+                <TD>1#</TD> <TD>Add 1 to R1</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11##</TD> <TD>Add # to R2</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111111####</TD> <TD>go backward 6 to instruction 1 (the top)
+(to the top)</TD>  
+        </TR>
+        <TR BGCOLOR="#FFFFCC">
+             <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
+</TABLE>        
+</CENTER><p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
 <p>If the first symbol of R2 is a 1, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a 1 to R1 and return to the very beginning of the program.</p>
 <p>If the first symbol of R2 is a #, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a # to R1 and return to the very beginning of the program.</p>
 <p>The point is that by going around loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
@@ -727,7 +751,7 @@ other registers empty.</p></li>
 <p>In the notation from <a class="reference internal" href="functions.html"><span class="doc std std-doc">a little later</span></a>, we have</p>
 <div class="math notranslate nohighlight">
 \[
-[\![[\![ write\!](x)]\!](\ ) = x
+[\![ [\![ write]\!](x)]\!](\ ) = x
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
