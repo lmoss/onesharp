@@ -539,7 +539,7 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 <ol class="arabic simple" start="3">
 <li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(n(x)\)</span> match appropriately (see below).</p></li>
 <li><p>For all <span class="math notranslate nohighlight">\(x\)</span>, the tiles on <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(e(x)\)</span> match appropriately (see below).</p></li>
-<li><p>The tile on <span class="math notranslate nohighlight">\(0\)</span> is <span class="math notranslate nohighlight">\(t_0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{k^*}(0)\)</span>, where the distinguished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is <span class="math notranslate nohighlight">\(t_{k^*}\)</span>.</p></li>
 </ol>
 <div class="proof example admonition" id="example-church-tiling">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
@@ -583,7 +583,8 @@ We now add to <span class="math notranslate nohighlight">\(\Sigma\)</span> a rel
 \end{array}
 \end{split}\]</div>
 <p>This sentence may be computed from the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> because it only requires “local” information: which tiles can go on top of a given tile.  In particular, one need now know whether <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> can tile the quadrant in order to construct the sentence above.</p>
-<p>Point 5, pertaining to the distinuished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, would be <span class="math notranslate nohighlight">\(T_5(0)\)</span>.</p>
+<p>Point 5, pertaining to the distintuished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>, would be <span class="math notranslate nohighlight">\(T_5(0)\)</span>.    That is, point 5 says
+that tile on <span class="math notranslate nohighlight">\(0\)</span> is the distinguished tile of <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="logic/church_turing-exercise-2">
 
@@ -647,7 +648,7 @@ and a new unary function symbol <span class="math notranslate nohighlight">\(on\
 </div>
 <section id="validity-in-first-order-logic">
 <h2>Validity in first-order logic<a class="headerlink" href="#validity-in-first-order-logic" title="Link to this heading">#</a></h2>
-<p>A first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>valid</em> if it is true in all models.  This is the same thing as saying that <span class="math notranslate nohighlight">\(\neg\phi\)</span> is not satisfiable.   So if we let <span class="math notranslate nohighlight">\(Valid_{FO}\)</span> be the set of valid sentences, then</p>
+<p>Recall that a first-order logic sentence <span class="math notranslate nohighlight">\(\phi\)</span> is <em>valid</em> if it is true in all models.  This is the same thing as saying that <span class="math notranslate nohighlight">\(\neg\phi\)</span> is not satisfiable.   So if we let <span class="math notranslate nohighlight">\(Valid_{FO}\)</span> be the set of valid sentences, then</p>
 <div class="math notranslate nohighlight">
 \[
 K \leq_m Val_{FO}
@@ -672,12 +673,12 @@ K \leq_m Val_{FO}
 <li><p><span class="math notranslate nohighlight">\(\phi\in Valid_{FO}\)</span> if and only if for some <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(P\)</span> is a proof of <span class="math notranslate nohighlight">\(\phi\)</span>.</p></li>
 </ol>
 <p>Point 2 is called the <em>Completeness Theorem</em> of first-order logic.   It says that a sentence is true in all models if and only if it has a formal proof.</p>
-<p>It follows from the two points that the set <span class="math notranslate nohighlight">\(Valid_{FO}\)</span>  is <span class="math notranslate nohighlight">\(\Sigma_1\)</span> and hence computably enumerable. Therefore <span class="math notranslate nohighlight">\(Valid_{FO}\leq_m K\)</span>.</p>
+<p>It follows from the two points  just above  that the set <span class="math notranslate nohighlight">\(Valid_{FO}\)</span>  is <span class="math notranslate nohighlight">\(\Sigma_1\)</span> and hence computably enumerable. Therefore <span class="math notranslate nohighlight">\(Valid_{FO}\leq_m K\)</span>.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="trakhtentbrot-s-theorem">
 <h1>Trakhtentbrot’s Theorem<a class="headerlink" href="#trakhtentbrot-s-theorem" title="Link to this heading">#</a></h1>
-<p>The work which we have done so far show that whenever a first-order signature contains a binary relation sybmol, the validty problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete, and the satisfiabililty problem is <span class="math notranslate nohighlight">\(\Pi_1\)</span>-complete.    We might ask about the <em>finite</em> versions of these.   That is, we study the problem of whether a logic sentence has a <em>finite</em> model.   The results here shows that this problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete.</p>
+<p>The work which we have done so far show that whenever a first-order signature contains a binary relation symbol, the validty problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete, and the satisfiabililty problem is <span class="math notranslate nohighlight">\(\Pi_1\)</span>-complete.    We might ask about the <em>finite</em> versions of these.   That is, we study the problem of whether a logic sentence has a <em>finite</em> model.   The results here shows that this problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete.</p>
 <div class="exercise admonition" id="logic/church_turing-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 107 </span></p>

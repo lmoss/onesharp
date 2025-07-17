@@ -494,7 +494,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="basic-programs">
 <h1>Basic programs<a class="headerlink" href="#basic-programs" title="Link to this heading">#</a></h1>
 <p>We have seen the syntax of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions
-<a class="reference internal" href="instructions.html"><span class="std std-doc">in a previous notebook</span></a>.
+<a class="reference internal" href="instructions.html"><span class="std std-doc">in a previous notebook</span></a>, along with the semantics
 We turn to the simplest programs in the language.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -648,9 +648,9 @@ We turn to the simplest programs in the language.</p>
         </TR>
 </TABLE>        
 </CENTER><p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
-<p>If the first symbol of R2 is a 1, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a 1 to R1 and return to the very beginning of the program.</p>
-<p>If the first symbol of R2 is a #, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a # to R1 and return to the very beginning of the program.</p>
-<p>The point is that by going around loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
+<p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
+<p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1 and return to the very beginning of the program.</p>
+<p>The point is that by going around the loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
 Similarly, whenever m and n are different numbers, we can build a program <code class="docutils literal notranslate"><span class="pre">move_m_n</span></code>. This program would write the contents of Rm onto the end of Rn, emptying Rm in the process.</p>
 </section>
 <section id="modifying-move-2-1">
@@ -713,7 +713,7 @@ register is left empty; but if the contents are copied,
 then the register is left at the end with exactly what it had
 at the beginning.</p>
 </div>
-<p>In order to copy in this way, we need an auxilliary register.
+<p>In order to copy in this way, we need an auxiliary register.
 So while the <code class="docutils literal notranslate"><span class="pre">move</span></code> programs had two registers in their names, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> programs have three.</p>
 <p><br><p>
 Here is the idea behind copying Rm to Rn.   We use
@@ -733,10 +733,10 @@ Here is our program when m = 1, n = 2, p = 3:<div class="cell docutils container
 <section id="write">
 <h2>write<a class="headerlink" href="#write" title="Link to this heading">#</a></h2>
 <p>We construct with
-a program <span class="math notranslate nohighlight">\(write\)</span> with
+a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
 the following properties:</p>
 <ol class="arabic simple">
-<li><p>When <span class="math notranslate nohighlight">\(write\)</span> is started with <span class="math notranslate nohighlight">\(x\)</span> in R1
+<li><p>When <span class="math notranslate nohighlight">\(\writeprog\)</span> is started with <span class="math notranslate nohighlight">\(x\)</span> in R1
 and R2 empty, we eventually halt  with a
 word <span class="math notranslate nohighlight">\(y\)</span>
 in R1 and all other registers empty.</p></li>
@@ -800,7 +800,7 @@ the top)</TD> </TR>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-</CENTER><p>It should be emphasized that <span class="math notranslate nohighlight">\(write\)</span> reads from R1
+</CENTER><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
