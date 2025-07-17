@@ -41,6 +41,8 @@ sphinx:
              "hash": ["\\mathtt{\\#}"]
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
+             "diagprog": ["\\mathtt{diag}"]
+             "selfprog": ["\\mathtt{self}"]
              "copyprog": ["\\mathtt{copy}"]
              "clearprog": ["\\mathtt{clear}"]
              "writeprog": ["\\mathtt{write}"]
