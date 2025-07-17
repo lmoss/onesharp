@@ -524,7 +524,7 @@ We turn to the simplest programs in the language.</p>
 </div>
 </div>
 <p>The words in the brackets are the contents of registers 1 and 2 when we start.  Again, our program moved the contents of R2 onto the end of R1, emptying R2.  You should want to change the opening contents of R1 and R2 in the cell above before going on.</p>
-<p id="content-parsing">It is hard to understand a program of <code class="docutils literal notranslate"><span class="pre">1#</span></code>, but we have tools to help.  First, we can <em>parse</em> the program.  Parsing means dividing the program into instructions.</p>
+<p id="content-parsing">If you have an interpreter handy, you can parse this program and also get glosses.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
@@ -537,114 +537,15 @@ We turn to the simplest programs in the language.</p>
 </div>
 </div>
 </div>
-<p>Even better, we can get a parse with glosses, as follows:</p>
-<p>The program <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> is a loop, and we can further add to the explanations in the chart.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title</span>
-<span class="n">j</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;11#####&#39;</span><span class="p">,</span> <span class="s1">&#39;cases on R2&#39;</span><span class="p">,</span> <span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111111###&#39;</span><span class="p">,</span> <span class="s2">&quot;register 2 is empty: go forward 6 to instruction 8 (we&#39;re done)&quot;</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111###&#39;</span><span class="p">,</span> <span class="s1">&#39;first symbol is a 1: go forward 3 to instruction 6 (to the tan section)&#39;</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;1##&#39;</span><span class="p">,</span> <span class="s1">&#39;first symbol is a #: add # to R1&#39;</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;1111####&#39;</span><span class="p">,</span> <span class="s1">&#39;go backward 4 to instruction 1 (to the top)&#39;</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;1#&#39;</span><span class="p">,</span> <span class="s1">&#39;add 1 to R1&#39;</span><span class="p">],</span>
- <span class="p">[</span><span class="s1">&#39;111111####&#39;</span><span class="p">,</span> <span class="s1">&#39;go backward 6 to instruction 1 (to the top)&#39;</span><span class="p">]</span>
-<span class="p">]</span>
- 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;instruction&quot;</span><span class="p">,</span> <span class="s1">&#39;explanation&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;border&#39;</span><span class="p">:</span> <span class="s1">&#39;1.3px solid green&#39;</span><span class="p">,</span>
-                          <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;magenta&#39;</span><span class="p">})</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;text-align&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">})</span>
-<span class="c1">#df.style.apply(lambda x: [&quot;background-color: red&quot;]*n if x[&#39;instruction&#39;]== &#39;Reading&#39; else [&quot;background-color: white&quot;]*n, axis = 1)</span>
-<span class="c1">#df.style.apply(lambda x: [&quot;background-color: #B0E0E6&quot;]*n if x[&#39;instruction&#39;] in [&#39;1##&#39;,&#39;1111####&#39;] elif [&quot;background-color: #D4B48C&quot;]*n if x[&#39;instruction&#39;] in [&#39;1#&#39;,&#39;111111####&#39;] else [&quot;background-color: #FFFFCC&quot;]*n, axis = 1)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background-color: #B0E0E6&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;instruction&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;1##&#39;</span><span class="p">,</span><span class="s1">&#39;1111####&#39;</span><span class="p">]</span>  <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;background-color: #FFFFCC&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> 
-               <span class="p">[</span><span class="s2">&quot;background-color: #B0E0E6&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;instruction&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;1##&#39;</span><span class="p">,</span><span class="s1">&#39;1111####&#39;</span><span class="p">]</span> 
-               <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;background-color: #D4B48C&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;instruction&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;1#&#39;</span><span class="p">,</span><span class="s1">&#39;111111####&#39;</span><span class="p">]</span>
-               <span class="k">else</span> <span class="p">[</span><span class="s2">&quot;background-color: #FFFFCC&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_explain</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_ade4c_row0_col0, #T_ade4c_row0_col1, #T_ade4c_row1_col0, #T_ade4c_row1_col1, #T_ade4c_row2_col0, #T_ade4c_row2_col1 {
-  background-color: #FFFFCC;
-}
-#T_ade4c_row3_col0, #T_ade4c_row3_col1, #T_ade4c_row4_col0, #T_ade4c_row4_col1 {
-  background-color: #B0E0E6;
-}
-#T_ade4c_row5_col0, #T_ade4c_row5_col1, #T_ade4c_row6_col0, #T_ade4c_row6_col1 {
-  background-color: #D4B48C;
-}
-</style>
-<table id="T_ade4c">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_ade4c_level0_col0" class="col_heading level0 col0" >instruction</th>
-      <th id="T_ade4c_level0_col1" class="col_heading level0 col1" >explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_ade4c_level0_row0" class="row_heading level0 row0" >1</th>
-      <td id="T_ade4c_row0_col0" class="data row0 col0" >11#####</td>
-      <td id="T_ade4c_row0_col1" class="data row0 col1" >cases on R2</td>
-    </tr>
-    <tr>
-      <th id="T_ade4c_level0_row1" class="row_heading level0 row1" >2</th>
-      <td id="T_ade4c_row1_col0" class="data row1 col0" >111111###</td>
-      <td id="T_ade4c_row1_col1" class="data row1 col1" >register 2 is empty: go forward 6 to instruction 8 (we're done)</td>
-    </tr>
-    <tr>
-      <th id="T_ade4c_level0_row2" class="row_heading level0 row2" >3</th>
-      <td id="T_ade4c_row2_col0" class="data row2 col0" >111###</td>
-      <td id="T_ade4c_row2_col1" class="data row2 col1" >first symbol is a 1: go forward 3 to instruction 6 (to the tan section)</td>
-    </tr>
-    <tr>
-      <th id="T_ade4c_level0_row3" class="row_heading level0 row3" >4</th>
-      <td id="T_ade4c_row3_col0" class="data row3 col0" >1##</td>
-      <td id="T_ade4c_row3_col1" class="data row3 col1" >first symbol is a #: add # to R1</td>
-    </tr>
-    <tr>
-      <th id="T_ade4c_level0_row4" class="row_heading level0 row4" >5</th>
-      <td id="T_ade4c_row4_col0" class="data row4 col0" >1111####</td>
-      <td id="T_ade4c_row4_col1" class="data row4 col1" >go backward 4 to instruction 1 (to the top)</td>
-    </tr>
-    <tr>
-      <th id="T_ade4c_level0_row5" class="row_heading level0 row5" >6</th>
-      <td id="T_ade4c_row5_col0" class="data row5 col0" >1#</td>
-      <td id="T_ade4c_row5_col1" class="data row5 col1" >add 1 to R1</td>
-    </tr>
-    <tr>
-      <th id="T_ade4c_level0_row6" class="row_heading level0 row6" >7</th>
-      <td id="T_ade4c_row6_col0" class="data row6 col0" >111111####</td>
-      <td id="T_ade4c_row6_col1" class="data row6 col1" >go backward 6 to instruction 1 (to the top)</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
 </div>
-<TABLE>
-        <TR BGCOLOR="#FFFFCC">
-                <TD>11#####</TD> <TD style="text-aligh" right;>cases on R2</TD></TR>
-        <TR BGCOLOR="#FFFFCC">
-                <TD>111111###</TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
-                  </TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
-        </TR>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>1##</TD> <TD>first symbol is #: add # to R1</TD></tr>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>1111####</TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
-         <TR  BGCOLOR="#D4B48C">
-                <TD>1#</TD> <TD>add 1 to R1</TD></tr>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>111111####</TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
-        </TR>
-</TABLE>        <TABLE>
+<p>Here is this program <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span> expressed as a table.</p>
+<TABLE cellspacing="0" cellpadding="5">
         <TR BGCOLOR="#FFFFCC">
                 <TD>11#####</TD> <TD></TD><TD style="text-aligh" right;>cases on R2</TD></TR>
         <TR BGCOLOR="#FFFFCC">
@@ -661,7 +562,8 @@ We turn to the simplest programs in the language.</p>
          <TR  BGCOLOR="#D4B48C">
                 <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
         </TR>
-</TABLE>        <p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
+</TABLE>        <p>Here is an explanation of what is going on.</p>
+<p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1 and return to the very beginning of the program.</p>
 <p>The point is that by going around the loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
@@ -669,7 +571,7 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 </section>
 <section id="modifying-move-2-1">
 <h2>Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code><a class="headerlink" href="#modifying-move-2-1" title="Link to this heading">#</a></h2>
-<p>Suppose we want to modify <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to get <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code>, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process. Here is a way to do this which shows off some command-line tools that are part of the working environment of this course.</p>
+<p>Suppose we want to modify <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to get <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code>, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process. Here is a way to do this which shows off some command-line tools that are part of the working environment that comes with the Python tools..</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
@@ -763,29 +665,8 @@ other registers empty.</p></li>
 \[
 [\![ [\![ write]\!](x)]\!](\ ) = x
 \]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1#####111111111###11111###11#11##11##111111####11#11##111111111####11#####111111###111###1##1111####1#111111####&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Here is the explicated parse:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse_explain</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Even more informatively, here is a table:</p>
-<CENTER>
-<TABLE>
+<p>Here is a table for <span class="math notranslate nohighlight">\(\writeprog\)</span>:</p>
+<TABLE  cellspacing="0" cellpadding="5">>
         <TR BGCOLOR="#FFFFCC">
                 <TD>1#####</TD> <TD>Cases on R1</TD></TR>
         <TR BGCOLOR="#FFFFCC">
@@ -814,7 +695,7 @@ the top)</TD> </TR>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-</CENTER><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
+<p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
