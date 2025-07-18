@@ -616,23 +616,25 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <section class="definition-content" id="proof-content">
 <p>A <em>program</em> is a finite sequence of instructions run together.   Usually we insist that programs be nonempty.</p>
 </section>
-</div><p>We have already been using this terminology.  For example, we saw</p>
-<p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
-<p>near the top of this notebook.  This is the concatenation of the following sequence of seven instructions:</p>
-<p>(<code class="docutils literal notranslate"><span class="pre">11#####</span></code>, <code class="docutils literal notranslate"><span class="pre">111111###</span></code>, <code class="docutils literal notranslate"><span class="pre">111###</span></code>, <code class="docutils literal notranslate"><span class="pre">1##</span></code>, <code class="docutils literal notranslate"><span class="pre">1111####</span></code>,  <code class="docutils literal notranslate"><span class="pre">1#</span></code>, <code class="docutils literal notranslate"><span class="pre">111111####</span></code>)</p>
-<p>Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
-<p>Incidentally, spaces are not significant in the interpreter above, or in the work we’ll turn to shortly.  You may enter programs with spaces.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Any sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions run together as a single word is a program.</p>
-<p>Spaces inside do not matter.</p>
-</div>
-<div class="tip admonition">
+</div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Here is a program:</p>
 <p><span class="math notranslate nohighlight">\(\one\one\hash\one\one\hash\hash\hash\one\one\hash\hash\hash\hash\one\hash\hash\)</span></p>
 <p>It is four instructions concatenated together.</p>
 <p>The first instruction, <span class="math notranslate nohighlight">\(\one\one\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\hash\)</span>)  and go to the last instruction <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Here is another program:
+$<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash\)</span><span class="math notranslate nohighlight">\(
+This is the concatenation of the following sequence of seven instructions:
+\[
+\begin{array}{l}
+(\onett\onett\hash\hash\hash\hash\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash, \onett\onett\onett\hash\hash\hash, \onett\hash\hash, \onett\onett\onett\onett\hash\hash\hash\hash, \\
+ \onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
+ \end{array}
+\]
+Dividing a program into instructions is a very easy form of *parsing*.  In a real computer language, parsing is more difficult than it is for \)</span>\onesharp$.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
 
