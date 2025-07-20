@@ -555,9 +555,9 @@ the top)</TD> </TR>
 (to the top)</TD>  
         </TR>
         <TR BGCOLOR="#FFFFCC">
-                <TD> move<sub>3,1</sub></TD><td> from Lesson 1</td></TR>
+                <TD> move<sub>3,1</sub></TD><td> from earlier</td></TR>
         <TR BGCOLOR="#FFFFCC">
-             <TD> move<sub>2,1</sub></TD><td> from Lesson 1 </td></TR>
+             <TD> move<sub>2,1</sub></TD><td> from earlier </td></TR>
 </TABLE>        
 </CENTER>
 <p><p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1#</span></code>). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
@@ -587,7 +587,8 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
 <p><span class="math notranslate nohighlight">\(
-[\![self]\!] (\ ) = [\![  [\![ diag]\!](diag)]\!]( ) =   [\![ diag]\!](diag) \simeq self
+[\![\self]\!] (\ ) = [\![  [\![\diag]\!](\diag)]\!]( ) =   [\![\diag]\!](\diag) \simeq 
+\self
 \)</span>.</p>
 </div>
 <p>You can watch the calculation by entering <code class="docutils literal notranslate"><span class="pre">self</span></code> in <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Be sure to use <em>eval slow</em>.</p>
