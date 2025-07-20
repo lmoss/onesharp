@@ -536,9 +536,8 @@ the input program.</p>
 </div>
 <section id="let-s-write-a-universal-program">
 <h2>Let’s write a universal program<a class="headerlink" href="#let-s-write-a-universal-program" title="Link to this heading">#</a></h2>
-<p>The next goal is for you to write a universal program
-yourself, either alone or with others.<br />
-The next sections guide you, using a series of exercises.</p>
+<p>The goal of this section is for you to write a universal program
+yourself, either alone or with others.</p>
 <p>We hasten to make two remarks: first of all, it would be more
 instructive for you to forget about the rest of this lesson
 entirely and to just write your own universal program.   But
@@ -579,8 +578,6 @@ three registers.<br />
 Later on, we’ll come
 back and drop this simplification to get a program which is truly
 universal.</p>
-<p>At this point, we are ready to sketch a method for you to
-write a universal program subject to this simplification.</p>
 <p>We are going to use <i>pseudo-registers</i> as follows:</p>
  <CENTER>
 <TABLE BORDER  Cellpadding="3">
@@ -607,11 +604,8 @@ of a register machine run</strong>.
 This means that they hold all of the relevant information about a register
 machine computation at one particular point in time: they tell what program is
 running, which instruction would be run next and what number instruction it is,
-and also the contents of all of the registers that the program is using.
-Now a real register machine goes from snapshot to snapshot in <i>one</i> step,
-but the universal machine that we are building will take <i>many</i> steps to
-go from one snapshot to the next.<br />
-<br><p>
+and also the contents of all of the registers that the program is using.</p>
+<p><br><p>
 Our universal program is composed of a few sub-programs.
 We shall illustrate the ideas behind several sub-programs by making a
 large chart.   This chart shows just one example
