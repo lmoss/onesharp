@@ -498,7 +498,7 @@ document.write(`
 <p>Technically, this section is not necessary in order to prove the Recursion Theorem in the next section.   One could immediately go there.  But I feel that most people would find this section more approachable, and so I recommend using it.  If one does omit this section, the exercises here still could be worked based on the Recursion Theorem.</p>
 </div>
 <p>A self-writing replicating program is one which outputs itself, starting with all registers empty.
-At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter to spit out the program that is inside it. And anyways, it would seem that typically, a program is usually longer than its output. So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
+At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter to spit out the program that is inside it. So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
 <p>In order to get a program which writes itself, one must use some sort of trick or clever idea. Our goal is to explain one such clever idea, and then to see other applications of it as we go. Before you understand it, the idea will seem to be a trick, or even a fluke: we have a program, and it just so happens to output itself. But as we come to understand it better, the trick becomes tamed into a general method.</p>
 <p>At the root of our work is something we’ve seen in the last lesson: the ability of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs to write and modify other programs.</p>
 <div class="cell docutils container">
@@ -613,7 +613,6 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 </div>
 </div>
 </div>
-<p>The run of <code class="docutils literal notranslate"><span class="pre">self</span></code> on empty registers takes 14,204 steps to output itself.</p>
 <section id="the-idea-in-english">
 <h2>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Link to this heading">#</a></h2>
 <p>We offer another presentation of the idea behind diag and self.</p>
