@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mbox{\\sf Rings}"], "iif": ["\\rightarrow"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'logic/CT_via_matrices';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -273,7 +273,6 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Church-Theorem via matrix mortality</a></li>
-
 </ul>
 
     </div>
@@ -469,13 +468,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Church-Theorem via matrix mortality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rings-with-unit">Rings with unit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rings-with-unit">Rings with unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-9-place-relation-symbol-r">Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span></a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -489,9 +484,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="the-church-theorem-via-matrix-mortality">
 <h1>The Church-Theorem via matrix mortality<a class="headerlink" href="#the-church-theorem-via-matrix-mortality" title="Link to this heading">#</a></h1>
 <p>We give another short proof of <a class="reference internal" href="church_turing.html#Churchs-theorem">Theorem 17</a>, this time using our work on matrix mortality.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="rings-with-unit">
-<h1>Rings with unit<a class="headerlink" href="#rings-with-unit" title="Link to this heading">#</a></h1>
+<section id="rings-with-unit">
+<h2>Rings with unit<a class="headerlink" href="#rings-with-unit" title="Link to this heading">#</a></h2>
 <p>The first-order signature in this section has symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>, and an extra relation symbol <span class="math notranslate nohighlight">\(R\)</span>.  The symbol <span class="math notranslate nohighlight">\(-\)</span> is unary.
 Let <span class="math notranslate nohighlight">\(\Rings\)</span>  be \emph{the theory of rings with unit}.  Here are the \emph{axioms of ring theory}:</p>
 <div class="math notranslate nohighlight">
@@ -533,7 +527,8 @@ For example, <span class="math notranslate nohighlight">\(\underline{-3}\)</span
 <li><p><span class="math notranslate nohighlight">\(\underline{n} \times \underline{m} =\underline{n\times m}\)</span>.</p></li>
 </ol>
 </section>
-</div><section id="add-a-9-place-relation-symbol-r">
+</div></section>
+<section id="add-a-9-place-relation-symbol-r">
 <h2>Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#add-a-9-place-relation-symbol-r" title="Link to this heading">#</a></h2>
 <p>The signature in this section also includes a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span>.The <span class="math notranslate nohighlight">\(9\)</span> comes from <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices, and since we are thinking of matrices, we use subscripts on variables  as a reminder.   So we write</p>
 <div class="math notranslate nohighlight">
@@ -551,7 +546,7 @@ R(\underline{m_{1,1}},\underline{m_{1,2}}, \underline{m_{1,3}},
 \underline{m_{2,1}},\underline{m_{2,2}}, \underline{m_{2,3}},
 \underline{m_{3,1}},\underline{m_{3,2}}, \underline{m_{3,3}})
 \]</div>
-<p>This is a first-order sentence in the language of our signature. The idea of <span class="math notranslate nohighlight">\(R(M)\)</span> is that it should mean that <span class="math notranslate nohighlight">\(M\)</span> is obtainable as a finite product of elements of a given finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices.  But we are getting ahead of ourselves here, since we have not mentioned our overall strategy in this proof.  Here it is: we are going to associate to each  finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices a sentence <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\)</span> in our signature, and we shall arrange in <a class="reference internal" href="#CT_via_matrices">Lemma 15</a> that <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\to )_3\)</span> is provable in first-order logic if and only if some finite product of elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is the zero matrix.   As before, we allow repeats in the product.  To simplify things a touch, we regard the empty product as <span class="math notranslate nohighlight">\(I_3\)</span> the identity matrix.</p>
+<p>This is a first-order sentence in the language of our signature. The idea of <span class="math notranslate nohighlight">\(R(M)\)</span> is that it should mean that <span class="math notranslate nohighlight">\(M\)</span> is obtainable as a finite product of elements of a given finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices.  But we are getting ahead of ourselves here, since we have not mentioned our overall strategy in this proof.  Here it is: we are going to associate to each  finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices a sentence <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\)</span> in our signature, and we shall arrange in <a class="reference internal" href="#CT_via_matrices">Lemma 15</a> that <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\to 0_3\)</span> is provable in first-order logic if and only if some finite product of elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is the zero matrix.   As before, we allow repeats in the product.  To simplify things a touch, we regard the empty product as <span class="math notranslate nohighlight">\(I_3\)</span> the identity matrix.</p>
 <p>Whenever <span class="math notranslate nohighlight">\(M = (m_{i,j})\)</span> is an integer matrix, let <span class="math notranslate nohighlight">\(\psi_{M}\)</span> be</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -566,8 +561,8 @@ x_{3,1}, x_{3,2}, x_{3,3}) \\
 \end{array}
 \end{split}\]</div>
 <p>Finally, for each finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices, let the sentence  <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\)</span> be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c0fa913-6315-4905-b6b3-d1707b54ed97">
-<span class="eqno">(3)<a class="headerlink" href="#equation-1c0fa913-6315-4905-b6b3-d1707b54ed97" title="Permalink to this equation">#</a></span>\[\begin{equation}\label{eq-CR}
+<div class="amsmath math notranslate nohighlight" id="equation-3302efa3-bdfd-4462-bea4-b9a37de52b0b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3302efa3-bdfd-4462-bea4-b9a37de52b0b" title="Permalink to this equation">#</a></span>\[\begin{equation}\label{eq-CR}
   \Rings \andd  \bigwedge_{M\in \mathcal{S}} \psi_{M} \andd R(I_3)
  \end{equation}\]</div>
 <p>Notice that for all finite sets <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices,
@@ -602,8 +597,12 @@ So to say that <span class="math notranslate nohighlight">\(R(0_3)\)</span> is t
 is <span class="math notranslate nohighlight">\(R(I_3)\)</span>, and so  this base step is easy.  Assume our fact for <span class="math notranslate nohighlight">\(i\)</span>, and consider a sequence
 <span class="math notranslate nohighlight">\(M_1, M_2, \ldots, M_i, M_{i+1}\)</span> of elements of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.  Write <span class="math notranslate nohighlight">\(M^*\)</span> for <span class="math notranslate nohighlight">\(M_1 M_2 \cdots M_i\)</span>.  By induction hypothesis,
 <span class="math notranslate nohighlight">\(\vdash \phi_{\mathcal{S}} \iif R(M^*)\)</span>.
-Since <span class="math notranslate nohighlight">\(M_{i+1}\in\mathcal{S}\)</span>,  Lemma~\ref{matrix_closure} implies that
-[  \vdash \psi_{M_{i+1}} \andd R(M^<em>)\to  R(M^</em>\times M_{i+1}).]   This easily gives <span class="math notranslate nohighlight">\(\vdash \phi_{\mathcal{S}} \rightarrow R(M_1 M_2 \cdots M_i M_{i+1})\)</span>.</p>
+Since <span class="math notranslate nohighlight">\(M_{i+1}\in\mathcal{S}\)</span>,   <a class="reference internal" href="#matrix_closure">Lemma 14</a> implies that</p>
+<div class="math notranslate nohighlight">
+\[
+\vdash \psi_{M_{i+1}} \andd R(M^*)\to  R(M^*\times M_{i+1}).
+\]</div>
+<p>This easily gives <span class="math notranslate nohighlight">\(\vdash \phi_{\mathcal{S}} \rightarrow R(M_1 M_2 \cdots M_i M_{i+1})\)</span>.</p>
 </div>
 <p><a class="reference internal" href="#CT_via_matrices">Lemma 15</a> implies the Church-Turing Theorem, <a class="reference internal" href="church_turing.html#Churchs-theorem">Theorem 17</a>, in view of the undecidability of matrix mortality.</p>
 <div class="exercise admonition" id="logic/CT_via_matrices-exercise-3">
@@ -672,13 +671,9 @@ In fact <span class="math notranslate nohighlight">\(\overline{K}\leq_m SAT_{FO}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Church-Theorem via matrix mortality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rings-with-unit">Rings with unit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rings-with-unit">Rings with unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-9-place-relation-symbol-r">Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span></a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
