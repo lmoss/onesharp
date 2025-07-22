@@ -509,12 +509,12 @@ Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to
 \[\begin{equation*}\label{eq-recursion-theorem}\ref{3}
 [\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)
 \end{equation*}\]</div>
-<p>When we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that <span class="math notranslate nohighlight">\(eqref{eq:K2}\)</span> holds.</p>
+<p>When we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that <span class="math notranslate nohighlight">\(\eqref{eq:K2}\)</span> holds.</p>
 <p>Thus, we reduce everything to the matter of writing <span class="math notranslate nohighlight">\(\hat{q}\)</span> as in <span class="math notranslate nohighlight">\(\eqref{qhat}\)</span>.
 We take</p>
 <div class="math notranslate nohighlight">
 \[
-&amp; \diagprog + \moveprog_{1,2} + \semantics{\writeprog}(\moveprog_{1,4} )  
+ \diagprog + \moveprog_{1,2} + \semantics{\writeprog}(\moveprog_{1,4} )  
 +   
 \moveprog_{2,1} + [\![\writeprog]\!](\moveprog_{4,2} + p)
 \]</div>
@@ -525,16 +525,17 @@ every program of the form <span class="math notranslate nohighlight">\(\semantic
 \[
 [\![\hat{q}]\!](x) \simeq \moveprog_{1,4}  +[\![\diagprog]\!](x) + \moveprog_{4,2} + p
 \]</div>
-<p>So
-$$</p>
-<p>\semantics{\semantics{\hat{q}}(x)}(r) \simeq \semantics{ \moveprog_{1,4}  +<a class="reference internal" href="#x"><span class="xref myst">![\diagprog]!</span></a> + \moveprog_{4,2} + p}(r)
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[
+\semantics{\semantics{\hat{q}}(x)}(r) \simeq \semantics{ \moveprog_{1,4}  +\semantics{\diagprog}(x) + \moveprog_{4,2} + p}(r)
 \simeq \semantics{p}(\semantics{x}(x),r).
-$$</p>
+\]</div>
 <p>This last point is exactly where we use the assumption that <span class="math notranslate nohighlight">\(x\)</span> mentions only  the first three registers:
 when we run the program <span class="math notranslate nohighlight">\(\semantics{\diagprog}(x)\)</span> there is nothing in the first three registers and <span class="math notranslate nohighlight">\(r\)</span> is in R4,
 so this computation gives <span class="math notranslate nohighlight">\(\semantics{x}(x)\)</span>, as desired.
 This completes the proof.</p>
-<p>Recall that a \emph{self-writing} program is a program <span class="math notranslate nohighlight">\(q\)</span> such that <span class="math notranslate nohighlight">\([\![ q ]\!](\ ) \simeq q\)</span>.  Our program <span class="math notranslate nohighlight">\( \selfprog\)</span> is such a program.  Our proof of the Recursion Theorem was not so far from our derivation of <span class="math notranslate nohighlight">\(\selfprog\)</span>,
+<p>Recall that a <em>self-writing</em> program is a program <span class="math notranslate nohighlight">\(q\)</span> such that <span class="math notranslate nohighlight">\(\semantics{q}(\ ) \simeq q\)</span>.  Our program <span class="math notranslate nohighlight">\( \selfprog\)</span> is such a program.  Our proof of the Recursion Theorem was not so far from our derivation of <span class="math notranslate nohighlight">\(\selfprog\)</span>,
 so it is not surprising that the theorem is more general and implies easily that self-writing programs exist.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example: quines derived from the Recursion Theorem</p>
