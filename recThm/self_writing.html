@@ -566,8 +566,8 @@ the top)</TD> </TR>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{rcl}
-[\![ \diag ]\!](x) &amp; \simeq &amp; \writeprog(x) + x \\
-[\![ [\![ {\tt diag} ]\!](x)]\!](y) &amp; \simeq &amp; [\![ x ]\!](y+x)
+\semantics{\diagprog}(x) &amp; \simeq &amp; \semantics{\writeprog}(x) + x \\
+\semantics{\semantics{\diagprog}(x)}(y)&amp; \simeq &amp; \semantics{x}(y+x)
 \end{array}
 \end{split}\]</div>
 <p>Also our program <span class="math notranslate nohighlight">\({\tt diag}\)</span> uses only R1, R2, and R3.</p>
@@ -629,7 +629,7 @@ s &amp; = &amp; \semantics{\writeprog} (x)+ y \\
 <p>But these give</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\label{eq:deriveK2trick}\tag{2}
+\label{eq:deriveK2}\tag{2}
 \semantics{y}(x) =  \semantics{s}(\ ) =  s = \semantics{\writeprog} (x)+ y
 \end{equation*}\]</div>
 <p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span>, since then we
