@@ -582,8 +582,7 @@ When we run <code class="docutils literal notranslate"><span class="pre">diag</s
 This, then, is <code class="docutils literal notranslate"><span class="pre">self</span></code>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
 the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
 <p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
-After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.
-But running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> gives us <code class="docutils literal notranslate"><span class="pre">self</span></code>, by definition.</p>
+After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.  But running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> gives us <code class="docutils literal notranslate"><span class="pre">self</span></code>, by definition.</p>
 <p>So we conclude that running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing gives <code class="docutils literal notranslate"><span class="pre">self</span></code>, as desired.</p>
 <p>To summarize: running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing is the same as running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> itself; and this is <code class="docutils literal notranslate"><span class="pre">self</span></code>. In symbols:</p>
 <div class="tip admonition">
@@ -593,10 +592,7 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 \self
 \)</span>.</p>
 </div>
-<p>You can watch the calculation by entering <code class="docutils literal notranslate"><span class="pre">self</span></code> in <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Be sure to use <em>eval slow</em>.</p>
-<p>\begin{quotation}</p>
-<p>1#1##1##1##1##1##1#1#1#1#1#1#1#1#1#1#1#1##1##1##1#1#1#1#1#1#1##1##1##1#1#1##1##1#1#1#1##1#1#1#1##1##1#1#1#1##1##1#1#1#1#1#1#1#1##1##1##1##1#1#1##1#1#1#1##1#1#1#1##1##1#1#1#1#1##1##1##1##1#1#1#1##1##1##1##1##1#1#1#1#1#1#1##1##1##1#1#1#1##1##1##1#1##1##1#1#1#1#1##1##1##1##1#1##1#1#1##1##1##1##1#1#1##1##1##1##1##1#1#1#1#1#1#1##1##1##1#1#1#1##1##1##1#1##1##1#1#1#1#1##1##1##1##1#1##1#1#1##1##1##1##1#####11111111111###111111###11##111#111##111##1111111####11#111#111##1111####111#####111111###111###1##1111####1#11####11#####111111###111###1##1111####1#11####</p>
-<p>\end{quotation}</p>
+<p>Here is <span class="math notranslate nohighlight">\(\selfprog\)</span>.    You can watch the calculation by copying the program below and pasting it into the program editor box of  <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Be sure to use <em>eval slow</em> to watch it in action</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="c1">#1##1##1##1##1##1#1#1#1#1#1#1#1#1#1#1#1##1##1##1#1#1#1#1#1#1##1##1##1#1#1##1##1#1#1#1##1#1#1#1##1##1#1#1#1##1##1#1#1#1#1#1#1#1##1##1##1##1#1#1##1#1#1#1##1#1#1#1##1##1#1#1#1#1##1##1##1##1#1#1#1##1##1##1##1##1#1#1#1#1#1#1##1##1##1#1#1#1##1##1##1#1##1##1#1#1#1#1##1##1##1##1#1##1#1#1##1##1##1##1#1#1##1##1##1##1##1#1#1#1#1#1#1##1##1##1#1#1#1##1##1##1#1##1##1#1#1#1#1##1##1##1##1#1##1#1#1##1##1##1##1#####11111111111###111111###11##111#111##111##1111111####11#111#111##1111####111#####111111###111###1##1111####1#11####11#####111111###111###1##1111####1#11####</span>
@@ -604,13 +600,7 @@ But running <code class="docutils literal notranslate"><span class="pre">diag</s
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>You can also do some calculations if you run programs on Colab or CoCalc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="bp">self</span><span class="p">,[])</span>
