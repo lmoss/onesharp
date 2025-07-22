@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recThm/recursion_theorem';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -470,7 +470,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof">Kleene’s proof</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recusion-theorem">Another form of the Recusion Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recursion-theorem">Another form of the Recursion Theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computability-of-functions-defined-by-recursion">Computability of functions defined by recursion</a></li>
 </ul>
             </nav>
@@ -491,43 +491,51 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\label{eq:K2}\ref{1}
 [\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r)
-\]</div>
+\end{equation*}\]</div>
 </section>
-</div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\([\![\hat{q}]\!](\hat{q})\)</span>.
+</div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\(\semantics{\hat{q}}(\hat{q})\)</span>.
 So we first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\label{qhat} \ref{2}
 [\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
-\]</div>
+\end{equation*}\]</div>
 <p>We want to be sure that our program <span class="math notranslate nohighlight">\(\hat{q}\)</span> itself only uses the first three registers.
 Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to see that for all <span class="math notranslate nohighlight">\(r\)</span></p>
-<div class="math notranslate nohighlight" id="equation-eq-recursion-theorem">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-recursion-theorem" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
-<p>When we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\label{eq-recursion-theorem}\ref{3}
+[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)
+\end{equation*}\]</div>
+<p>When we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that <span class="math notranslate nohighlight">\(eqref{eq:K2}\)</span> holds.</p>
+<p>Thus, we reduce everything to the matter of writing <span class="math notranslate nohighlight">\(\hat{q}\)</span> as in <span class="math notranslate nohighlight">\(\eqref{qhat}\)</span>.
+We take</p>
 <div class="math notranslate nohighlight">
 \[
-[\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r)
+&amp; \diagprog + \moveprog_{1,2} + \semantics{\writeprog}(\moveprog_{1,4} )  
++   
+\moveprog_{2,1} + [\![\writeprog]\!](\moveprog_{4,2} + p)
 \]</div>
-<p>This is the desired equation.   Now to get <span class="math notranslate nohighlight">\(\hat{q}\)</span>, we take</p>
+<p>We’ll see in a minute where the 4 comes from as we check that <span class="math notranslate nohighlight">\(\eqref{qhat}\)</span> holds.  Note that <span class="math notranslate nohighlight">\(\hat{q}\)</span>
+only mentions R1, R2, and R3.   (The program <span class="math notranslate nohighlight">\(\diagprog\)</span> mentions these three registers only, and
+every program of the form <span class="math notranslate nohighlight">\(\semantics{\writeprog}(y)\)</span> only mentions R1, no matter what <span class="math notranslate nohighlight">\(y\)</span> is.) Then for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-\diagprog + \moveprog(1,2) + [\![\writeprog]\!](\moveprog(1,4)) +  \moveprog(2,1) + [\![\writeprog]\!](\moveprog(4,2) + p)
+[\![\hat{q}]\!](x) \simeq \moveprog_{1,4}  +[\![\diagprog]\!](x) + \moveprog_{4,2} + p
 \]</div>
-<p>This only mentions R1, R2, and R3.   (R3 is mentioned in <span class="math notranslate nohighlight">\(\diagprog\)</span>.) Then for all <span class="math notranslate nohighlight">\(x\)</span> which also mentions only those registers,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![\hat{q}]\!](x) \simeq \moveprog(1,4) +[\![\diagprog]\!](x) + \moveprog(4,2) + p
-\]</div>
-<p>In particular,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![\hat{q}]\!] (\hat{q}) = \moveprog(1,4) +[\![\diagprog]\!] (\hat{q}) + \moveprog(4,2) + p
-\]</div>
-<p>Then a routine calculation shows that <a class="reference internal" href="#equation-eq-recursion-theorem">(1)</a> above holds. (It is here that we us the assumption that <span class="math notranslate nohighlight">\(\hat{q}\)</span> mentions only the the first three registers.)  This last equation was our goal, and so we are done.</p>
-<p>Recall that a <em>quine</em> is a program <span class="math notranslate nohighlight">\(q\)</span> such that <span class="math notranslate nohighlight">\([\![ q ]\!](\ ) \simeq q\)</span>.  Our program <span class="math notranslate nohighlight">\([\![ \diagprog]\!](\diagprog) \simeq \selfprog\)</span> is a quine.  We used a similar construction in proving the Recursion Theorem, so it is not surprising that the theorem is much more general and implies easily that quines exist.</p>
+<p>So
+$$</p>
+<p>\semantics{\semantics{\hat{q}}(x)}(r) \simeq \semantics{ \moveprog_{1,4}  +<a class="reference internal" href="#x"><span class="xref myst">![\diagprog]!</span></a> + \moveprog_{4,2} + p}(r)
+\simeq \semantics{p}(\semantics{x}(x),r).
+$$</p>
+<p>This last point is exactly where we use the assumption that <span class="math notranslate nohighlight">\(x\)</span> mentions only  the first three registers:
+when we run the program <span class="math notranslate nohighlight">\(\semantics{\diagprog}(x)\)</span> there is nothing in the first three registers and <span class="math notranslate nohighlight">\(r\)</span> is in R4,
+so this computation gives <span class="math notranslate nohighlight">\(\semantics{x}(x)\)</span>, as desired.
+This completes the proof.</p>
+<p>Recall that a \emph{self-writing} program is a program <span class="math notranslate nohighlight">\(q\)</span> such that <span class="math notranslate nohighlight">\([\![ q ]\!](\ ) \simeq q\)</span>.  Our program <span class="math notranslate nohighlight">\( \selfprog\)</span> is such a program.  Our proof of the Recursion Theorem was not so far from our derivation of <span class="math notranslate nohighlight">\(\selfprog\)</span>,
+so it is not surprising that the theorem is more general and implies easily that self-writing programs exist.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example: quines derived from the Recursion Theorem</p>
 <p>Take <span class="math notranslate nohighlight">\(p\)</span> to be a program computing the first projection on two variables, so <span class="math notranslate nohighlight">\([\![ p ]\!](q,r) \simeq q\)</span> for all <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(r\)</span>.  By the Recursion Theorem, there is some <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
@@ -588,23 +596,23 @@ which trades places with its input in R1.  That is, for all <span class="math no
 \]</div>
 <p>for some program <span class="math notranslate nohighlight">\(p'\)</span> which is built from <span class="math notranslate nohighlight">\(p\)</span>.  Indeed, we take <span class="math notranslate nohighlight">\(p'\)</span> to be a program with the property that</p>
 <div class="math notranslate nohighlight" id="equation-kleene-proof">
-<span class="eqno">(2)<a class="headerlink" href="#equation-kleene-proof" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-kleene-proof" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
 <div class="exercise admonition" id="recThm/recursion_theorem-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 81 </span></p>
 <section id="exercise-content">
-<p>Show that this works: Let <span class="math notranslate nohighlight">\(p'\)</span> be any program with the property in <a class="reference internal" href="#equation-kleene-proof">(2)</a>, and let <span class="math notranslate nohighlight">\(q^* = [\![s^1_1]\!] (p',p')\)</span>.
+<p>Show that this works: Let <span class="math notranslate nohighlight">\(p'\)</span> be any program with the property in <a class="reference internal" href="#equation-kleene-proof">(1)</a>, and let <span class="math notranslate nohighlight">\(q^* = [\![s^1_1]\!] (p',p')\)</span>.
 Show that this program <span class="math notranslate nohighlight">\(q^*\)</span> satisfies the equation <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
 </section>
 </div>
 </section>
-<section id="another-form-of-the-recusion-theorem">
-<h2>Another form of the Recusion Theorem<a class="headerlink" href="#another-form-of-the-recusion-theorem" title="Link to this heading">#</a></h2>
-<p>Here is a second form of the Recursion Theorem, due (?) to Hartley Rogers in his famous book.</p>
+<section id="another-form-of-the-recursion-theorem">
+<h2>Another form of the Recursion Theorem<a class="headerlink" href="#another-form-of-the-recursion-theorem" title="Link to this heading">#</a></h2>
+<p>Here is a second form of the Recursion Theorem, due to Hartley Rogers.</p>
 <div class="proof theorem admonition" id="recursion_theorem_2">
 <p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>For every computable <span class="math notranslate nohighlight">\(f: Words \to Words\)</span> there is a program <span class="math notranslate nohighlight">\(p^*\)</span> so that
+<p>For every computable <span class="math notranslate nohighlight">\(f: \Words \to \Words\)</span> there is a program <span class="math notranslate nohighlight">\(p^*\)</span> so that
 <span class="math notranslate nohighlight">\([\![p^*]\!]  = [\![f(p^*)]\!]\)</span>.</p>
 </section>
 </div><p>Here is the proof.   Let <span class="math notranslate nohighlight">\(y\)</span> be a program which computes <span class="math notranslate nohighlight">\(f\)</span>. That is, for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
@@ -847,7 +855,7 @@ Bad(x)  \simeq Bad(x+1)
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kleene-s-proof">Kleene’s proof</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recusion-theorem">Another form of the Recusion Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-form-of-the-recursion-theorem">Another form of the Recursion Theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computability-of-functions-defined-by-recursion">Computability of functions defined by recursion</a></li>
 </ul>
   </nav></div>
