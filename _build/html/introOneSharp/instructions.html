@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/instructions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -255,14 +255,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to Logic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">The Church-Turing Theorem via tiling</a></li>
 
 
 
 <li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
-
 </ul>
 
     </div>
@@ -492,7 +491,7 @@ document.write(`
 <p>Note for instructors</p>
 <p>The book could begin here instead of with the previous chapter.  In that case, one would return to one or more sections from the previous chapter on an as-needed basis.  On the other hand, most of this chapter is crucial for what follows.</p>
 </div>
-<p id="content-onesharpinstructions">Computability can be studied on an <em>intuitive</em> or <em>informal</em> level before one sees definitions.   This intuitive level is both the right level for our work, and at the same time the wrong level.   What we mean here is that for some things, working intuitively is exactly what we want to do.   For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions.</p>
+<p id="content-onesharpinstructions">Computability can be studied on an \emph{intuitive} or \emph{informal} level before one sees definitions.   This intuitive level is both the right level for our work, and at the same time the wrong level.   That is, for some things, working intuitively is exactly what we want to do.   For example, this was appropriate in the last chapter.  For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions, starting now.</p>
 <p>A <em>word</em> for us will be a sequence of strings using the characters <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.   For example, <code class="docutils literal notranslate"><span class="pre">1##1</span></code> is a word, as is the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.</p>
 <p>A <em>register</em> is a place that stores words.  A <em>register machine</em> is a collection of registers.
 These registers are called R1, R2, etc.   The machine runs according to a <em>program</em>.  Programs are comprised of <em>instructions</em>.  We are going to describe instructions and programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> shortly.  The idea is that the register machine starts with a few words in the registers, proceeds according to the program, and (if all goes well) eventually <em>halts</em>,.</p>
@@ -599,23 +598,26 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <div class="definition-content section" id="proof-content">
 <p>A <em>program</em> is a finite sequence of instructions run together.   Usually we insist that programs be nonempty.</p>
 </div>
-</div><p>We have already been using this terminology.  For example, we saw</p>
-<p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
-<p>near the top of this notebook.  This is the concatenation of the following sequence of seven instructions:</p>
-<p>(<code class="docutils literal notranslate"><span class="pre">11#####</span></code>, <code class="docutils literal notranslate"><span class="pre">111111###</span></code>, <code class="docutils literal notranslate"><span class="pre">111###</span></code>, <code class="docutils literal notranslate"><span class="pre">1##</span></code>, <code class="docutils literal notranslate"><span class="pre">1111####</span></code>,  <code class="docutils literal notranslate"><span class="pre">1#</span></code>, <code class="docutils literal notranslate"><span class="pre">111111####</span></code>)</p>
-<p>Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.</p>
-<p>Incidentally, spaces are not significant in the interpreter above, or in the work we’ll turn to shortly.  You may enter programs with spaces.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Any sequence of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions run together as a single word is a program.</p>
-<p>Spaces inside do not matter.</p>
-</div>
-<div class="tip admonition">
+</div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Here is a program:</p>
-<p><span class="math notranslate nohighlight">\(\one\one\hash\one\one\hash\hash\hash\one\one\hash\hash\hash\hash\one\hash\hash\)</span></p>
+<p><span class="math notranslate nohighlight">\(\onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash\)</span></p>
 <p>It is four instructions concatenated together.</p>
-<p>The first instruction, <span class="math notranslate nohighlight">\(\one\one\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\hash\)</span>),  and go to the last instruction <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+<p>The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>)  and go to the last instruction <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Here is another program:</p>
+<div class="math notranslate nohighlight">
+\[\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
+\]</div>
+<p>This is the concatenation of the following sequence of seven instructions:$<span class="math notranslate nohighlight">\(
+\begin{array}{l}
+(\onett\onett\hash\hash\hash\hash\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash, \onett\onett\onett\hash\hash\hash, \onett\hash\hash, \onett\onett\onett\onett\hash\hash\hash\hash, \\
+\onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
+\end{array}
+\)</span>$</p>
+<p>Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
 

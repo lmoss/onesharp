@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/move_copy_write';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -255,14 +255,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/post.html">Post’s Correspondence Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../undecidability/matrixMortality.html">Matrix mortality</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications in Logic</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to Logic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../logic/church_turing.html">The Church-Turing Theorem via tiling</a></li>
 
 
 
 <li class="toctree-l1"><a class="reference internal" href="../logic/CT_via_matrices.html">The Church-Theorem via matrix mortality</a></li>
-
 </ul>
 
     </div>
@@ -650,7 +649,7 @@ with.</p>
 </TABLE>        <br></div>
 <div class="section" id="write">
 <h2><code class="docutils literal notranslate"><span class="pre">write</span></code><a class="headerlink" href="#write" title="Permalink to this heading">#</a></h2>
-<p>We construct with
+<p>We continue with
 a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
 the following properties:</p>
 <ol class="arabic simple">
@@ -746,7 +745,7 @@ So we have a <a class="reference external" href="https://en.wikipedia.org/wiki/M
 </div><p>This means that we can “add” programs (since they are words).  For example, let</p>
 <div class="math notranslate nohighlight">
 \[
-q =\mbox{copy}_{1,2,3} + \mbox{move}_{2,1}
+q =copyprog_{1,2,3} + \moveprog_{2,1}
 \]</div>
 <p>This program <span class="math notranslate nohighlight">\(q\)</span> would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that registers 2 and 3 were empty to begin with, running <span class="math notranslate nohighlight">\(q\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in register <span class="math notranslate nohighlight">\(1\)</span> would give us <span class="math notranslate nohighlight">\(x + x\)</span> in register 1 at the end.</p>
 <div class="exercise admonition" id="pre-diag">
@@ -758,7 +757,7 @@ q =\mbox{copy}_{1,2,3} + \mbox{move}_{2,1}
 </ol>
 <div class="math notranslate nohighlight">
 \[
-[\![[\![\mbox{write}]\!](x)]\!](y) = x + y \quad \mbox{ or } \quad [\![[\![\mbox{write}]\!](x)]\!](y) = y + x
+[\![[\![\writeprog]\!](x)]\!](y) = x + y \quad \mbox{ or } \quad [\![[\![\writeprog]\!](x)]\!](y) = y + x
 \]</div>
 <ol class="arabic simple" start="2">
 <li><p>Now let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">copy_1_3_2</span> <span class="pre">+</span> <span class="pre">write</span> <span class="pre">+</span> <span class="pre">move_3_1</span></code>. Find an equation satisfied by <span class="math notranslate nohighlight">\(p\)</span>. That is, fill in the blank</p></li>
