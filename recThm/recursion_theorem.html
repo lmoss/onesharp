@@ -493,7 +493,7 @@ document.write(`
 <p>For every word <span class="math notranslate nohighlight">\(p\)</span> there is some word <span class="math notranslate nohighlight">\(q^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\label{eq:K2}\ref{1}
+\label{eq:K2}\tag{1}
 [\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r)
 \end{equation*}\]</div>
 </section>
@@ -501,8 +501,8 @@ document.write(`
 So we first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\label{qhat} \ref{2}
-[\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
+\label{qhat} \tag{2}
+\semantics{\hat{q}}(x)(r) \simeq \semantics{p}(\semantics{x}(x) ,r)
 \end{equation*}\]</div>
 <p>We want to be sure that our program <span class="math notranslate nohighlight">\(\hat{q}\)</span> itself only uses the first three registers.
 Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to see that for all <span class="math notranslate nohighlight">\(r\)</span></p>
