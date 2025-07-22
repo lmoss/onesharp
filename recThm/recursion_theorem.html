@@ -500,14 +500,16 @@ document.write(`
 </div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\(\semantics{\hat{q}}(\hat{q})\)</span>.
 So we first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
 <div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}\label{qhat} \ref{2}
+\[\begin{equation*}
+\label{qhat} \ref{2}
 [\![  [\![\hat{q}]\!](x)]\!](r) \simeq [\![p]\!]([\![x]\!](x) ,r)
 \end{equation*}\]</div>
 <p>We want to be sure that our program <span class="math notranslate nohighlight">\(\hat{q}\)</span> itself only uses the first three registers.
 Then we set <span class="math notranslate nohighlight">\(x = \hat{q}\)</span> to see that for all <span class="math notranslate nohighlight">\(r\)</span></p>
 <div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}\label{eq-recursion-theorem}\ref{3}
-[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)
+\[\begin{equation*}
+\label{eq-recursion-theorem}\ref{3}
+\semantics{\semantics{\hat{q}}(\hat{q})}(r) \simeq \semantics{p}(\semantics{\hat{q}}(\hat{q}) ,r)
 \end{equation*}\]</div>
 <p>When we take <span class="math notranslate nohighlight">\(q^* = [\![\hat{q}]\!] (\hat{q})\)</span>, we see that <span class="math notranslate nohighlight">\(\eqref{eq:K2}\)</span> holds.</p>
 <p>Thus, we reduce everything to the matter of writing <span class="math notranslate nohighlight">\(\hat{q}\)</span> as in <span class="math notranslate nohighlight">\(\eqref{qhat}\)</span>.
