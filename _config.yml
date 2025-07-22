@@ -38,6 +38,7 @@ sphinx:
              "N": "\\mathbb{N}"
              "set": ["\\left\\{#1\\right\\}", 1]
              "one": ["\\mathtt{1}"]
+             "onett": ["\\mathtt{1}"]
              "hash": ["\\mathtt{\\#}"]
              "onesharp": ["\mathttt{1\\#}"]
              "diag": ["\\mathtt{diag}"]
