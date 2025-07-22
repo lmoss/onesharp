@@ -627,28 +627,29 @@ y \\
 <p>We present one idea that could explain what is behind <span class="math notranslate nohighlight">\(\diagprog\)</span> and <span class="math notranslate nohighlight">\(\selfprog\)</span>.
 Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.
 Let’s say that you just have a glimmer of an idea: a self-replicating program <span class="math notranslate nohighlight">\(s\)</span> should be a two-stage affair;   when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run some program <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span>.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> to be <span class="math notranslate nohighlight">\(s\)</span>.  So in effect, we want to solve a <em>system of equations</em>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \begin{array}{lcl}
 s &amp; = &amp; \semantics{\writeprog} (x)+ y \\
 \semantics{s}(\ ) &amp; = &amp; s\\
 \end{array}
-\end{split}\]</div>
+\label{eq:systemstart}\tag{1}
+\end{equation*}\]</div>
 <p>But these give</p>
-<div class="amsmath math notranslate nohighlight" id="equation-44d6e3f8-a809-430c-8804-4aa1a5693a13">
-<span class="eqno">(1)<a class="headerlink" href="#equation-44d6e3f8-a809-430c-8804-4aa1a5693a13" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\label{deriveK2}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\label{eq:deriveK2}\tag{2}
 \semantics{y}(x) =  \semantics{s}(\ ) =  s = \semantics{\writeprog} (x)+ y
-\end{equation}\]</div>
-<p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies (\ref{deriveK2}), since then we
+\end{equation*}\]</div>
+<p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span>, since then we
 could take solve the original system by taking <span class="math notranslate nohighlight">\(s\)</span> to be <span class="math notranslate nohighlight">\([\![ \writeprog]\!](x)+ y\)</span>.</p>
-<p>Now here is where things become interesting.   Instead of simply finding <em>any old</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> satisfying (\ref{deriveK2}), let’s find some <span class="math notranslate nohighlight">\(y\)</span> such that for <em>all</em> <span class="math notranslate nohighlight">\(x\)</span>, we have the following different condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bfbd187c-60a4-416c-a471-ae9e60383a8a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-bfbd187c-60a4-416c-a471-ae9e60383a8a" title="Permalink to this equation">#</a></span>\[\begin{equation} \label{deriveK2trick}
+<p>Now here is where things become interesting.   Instead of simply finding <em>any old</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> satisfying <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span>, let’s find some <span class="math notranslate nohighlight">\(y\)</span> such that for <em>all</em> <span class="math notranslate nohighlight">\(x\)</span>, we have the following different condition:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} \label{eq:deriveK2trick}
 \semantics{y}(x) =  \semantics{\writeprog} (x)+ x
-\end{equation}\]</div>
-<p>(Note that(\ref{deriveK2}) and (\ref{deriveK2trick}) are different due to the last symbol in each.)
-If we find <span class="math notranslate nohighlight">\(y\)</span> to make (\ref{deriveK2trick}) hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span>; this arranges   (\ref{deriveK2}).</p>
+\end{equation*}\]</div>
+<p>(Note that <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2trick}\)</span> are different due to the last symbol in each.)
+If we find <span class="math notranslate nohighlight">\(y\)</span> to make <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2trick}\)</span> hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span>; this arranges <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span>.</p>
 <p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to satisfy a more stringent condition.  But in reality it’s easier, since (\ref{deriveK2trick}) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(\diagprog\)</span>!</p>
 <p>To conclude: we take <span class="math notranslate nohighlight">\(y = \diagprog\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
 We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ \writeprog]\!](\diagprog)+ \diagprog = [\![ \diagprog]\!](\diagprog)\)</span>.</p>
