@@ -59,8 +59,10 @@ sphinx:
              "Rtwo": ["R2"]
              "words": ["\\mbox{words}"]
              "Words": ["\\textit{words}"]
-             "Rings": ["\\mbox{\\sf Rings}"]
+             "Rings": ["\\mathsf{Rings}"]
              "iif": ["\\rightarrow"]
+             "andd": ["\\wedge"]
+             "proves": ["\\vdash"]
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof
