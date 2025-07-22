@@ -39,6 +39,7 @@ sphinx:
              "set": ["\\left\\{#1\\right\\}", 1]
              "one": ["\\mathtt{1}"]
              "hash": ["\\mathtt{\\#}"]
+             "onesharp": ["\mathttt{1\\#}"]
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
              "diagprog": ["\\mathtt{diag}"]
