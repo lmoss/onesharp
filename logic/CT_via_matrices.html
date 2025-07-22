@@ -470,6 +470,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rings-with-unit">Rings with unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-9-place-relation-symbol-r">Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-lemma">The main lemma</a></li>
 </ul>
             </nav>
         </div>
@@ -487,7 +488,7 @@ document.write(`
 <section id="rings-with-unit">
 <h2>Rings with unit<a class="headerlink" href="#rings-with-unit" title="Link to this heading">#</a></h2>
 <p>The first-order signature in this section has symbols <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>, and an extra relation symbol <span class="math notranslate nohighlight">\(R\)</span>.  The symbol <span class="math notranslate nohighlight">\(-\)</span> is unary.
-Let <span class="math notranslate nohighlight">\(\Rings\)</span>  be \emph{the theory of rings with unit}.  Here are the \emph{axioms of ring theory}:</p>
+Let <span class="math notranslate nohighlight">\(\Rings\)</span>  be <em>the axioms of ring theory with a unit</em>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -561,10 +562,10 @@ x_{3,1}, x_{3,2}, x_{3,3}) \\
 \end{array}
 \end{split}\]</div>
 <p>Finally, for each finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices, let the sentence  <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\)</span> be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3302efa3-bdfd-4462-bea4-b9a37de52b0b">
-<span class="eqno">(3)<a class="headerlink" href="#equation-3302efa3-bdfd-4462-bea4-b9a37de52b0b" title="Permalink to this equation">#</a></span>\[\begin{equation}\label{eq-CR}
-  \Rings \andd  \bigwedge_{M\in \mathcal{S}} \psi_{M} \andd R(I_3)
- \end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Rings \andd  \bigwedge_{M\in \mathcal{S}} \psi_{M} \andd R(I_3)
+\]</div>
 <p>Notice that for all finite sets <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices,
 <span class="math notranslate nohighlight">\(\varphi_{{\mathcal S}}\)</span> is a sentence of first-order logic, and the map <span class="math notranslate nohighlight">\(\mathcal{S}\mapsto \varphi_{\mathcal{S}}\)</span> is computable.   For each finite set <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, we have
 a model <span class="math notranslate nohighlight">\(\mathbb{Z}_{\mathcal{S}}\)</span> which satisfies <span class="math notranslate nohighlight">\(\varphi_{\mathcal{S}}\)</span>.
@@ -576,7 +577,10 @@ The main point to check is that <span class="math notranslate nohighlight">\(\ma
 <p>If <span class="math notranslate nohighlight">\(M_1\)</span> is any <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix and
 <span class="math notranslate nohighlight">\(M_2\in \mathcal{S}\)</span>, then <span class="math notranslate nohighlight">\(\proves  \psi_{M_2} \andd R(M_1)\iif R(M_1\times M_2)\)</span>.</p>
 </section>
-</div><div class="proof lemma admonition" id="CT_via_matrices">
+</div></section>
+<section id="the-main-lemma">
+<h2>The main lemma<a class="headerlink" href="#the-main-lemma" title="Link to this heading">#</a></h2>
+<div class="proof lemma admonition" id="CT_via_matrices">
 <p class="admonition-title"><span class="caption-number">Lemma 15 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>For all finite sets <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> of matrices,
@@ -673,6 +677,7 @@ In fact <span class="math notranslate nohighlight">\(\overline{K}\leq_m SAT_{FO}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rings-with-unit">Rings with unit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-9-place-relation-symbol-r">Add a <span class="math notranslate nohighlight">\(9\)</span>-place relation symbol <span class="math notranslate nohighlight">\(R\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-lemma">The main lemma</a></li>
 </ul>
   </nav></div>
 
