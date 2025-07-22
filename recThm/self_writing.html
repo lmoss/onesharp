@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'recThm/self_writing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -472,7 +472,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-writing programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-words">The idea in words</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
@@ -496,10 +496,10 @@ document.write(`
 <p>Note for instructors</p>
 <p>Technically, this section is not necessary in order to prove the Recursion Theorem in the next section.   One could immediately go there.  But I feel that most people would find this section more approachable, and so I recommend using it.  If one does omit this section, the exercises here still could be worked based on the Recursion Theorem.</p>
 </div>
-<p>A self-writing replicating program is one which outputs itself, starting with all registers empty.
-At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <code class="docutils literal notranslate"><span class="pre">1#</span></code> interpreter to spit out the program that is inside it. So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
-<p>In order to get a program which writes itself, one must use some sort of trick or clever idea. Our goal is to explain one such clever idea, and then to see other applications of it as we go. Before you understand it, the idea will seem to be a trick, or even a fluke: we have a program, and it just so happens to output itself. But as we come to understand it better, the trick becomes tamed into a general method.</p>
-<p>At the root of our work is something we’ve seen in the last lesson: the ability of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs to write and modify other programs.</p>
+<p>A self-writing program is one which outputs itself, starting with all registers empty.
+At first blush it seems paradoxical that such programs would exist: there is no direct way to get the <span class="math notranslate nohighlight">\(\onesharp\)</span> interpreter to spit out the program that is inside it.  So how can a program output itself? This lesson shows how it is done. Even more, it will show you how such programs work and give you a chance to try your hand at writing related programs.</p>
+<p>In order to get a program which writes itself, one must use some sort of trick or clever idea. Our goal is to explain one such clever idea, and then to see other applications of it as we go. Before you understand it, the idea will seem to be a trick, or even a fluke: we have a program, and it just so happens to output itself. But as we come to understand it better, the trick becomes tamed into a general method</p>
+<p>At the root of our work is something we’ve seen from early on, the ability of <span class="math notranslate nohighlight">\(\onesharp\)</span> programs to write and modify other programs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
@@ -559,7 +559,7 @@ the top)</TD> </TR>
              <TD> move<sub>2,1</sub></TD><td> from earlier </td></TR>
 </TABLE>        
 </CENTER>
-<p><p>The three branches of the case instruction at the top take us to move(3,1) (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, and to the brown sub-program if that symbol is a <code class="docutils literal notranslate"><span class="pre">#</span></code>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <code class="docutils literal notranslate"><span class="pre">1</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1#</span></code>). And each time a <code class="docutils literal notranslate"><span class="pre">#</span></code> is removed from R1, what goes into R3 is the program which would write a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R1 (this is <code class="docutils literal notranslate"><span class="pre">1##</span></code>).</p>
+<p><p>The three branches of the case instruction at the top take us to <span class="math notranslate nohighlight">\(\moveprog_{3,1}\)</span> (if R1 is empty), to the blue sub-program if the first symbol of R1 is a <span class="math notranslate nohighlight">\(\onett\)</span>, and to the brown sub-program if that symbol is a <span class="math notranslate nohighlight">\(\hash\)</span>. Note that we have a big loop that takes symbols off of R1 and writes the same thing in R2 and some related words in R3. The way that the words in R3 are related to the original input in R1 is as follows: each time a <span class="math notranslate nohighlight">\(\onett\)</span> is removed from R1, what goes into R3 is the program which would write a <span class="math notranslate nohighlight">\(\onett\)</span> in R1 (this is <span class="math notranslate nohighlight">\(\onesharp\)</span>). And each time a <span class="math notranslate nohighlight">\(\hash\)</span> is removed from R1, what goes into R3 is the program which would write a <span class="math notranslate nohighlight">\(\hash\)</span> in R1 (this is <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>).</p>
 <div class="tip admonition">
 <p class="admonition-title">Important</p>
 <p>We often will use the following facts:</p>
@@ -575,15 +575,14 @@ the top)</TD> </TR>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="self">
 <h1>Self<a class="headerlink" href="#self" title="Link to this heading">#</a></h1>
-<p>We now define a self-writing program, <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-<p>The idea is to apply the program <code class="docutils literal notranslate"><span class="pre">diag</span></code> to diag itself.
+<p>We now define a self-writing program, <span class="math notranslate nohighlight">\(\selfprog\)</span>.
+The idea is to apply the program <span class="math notranslate nohighlight">\(\diagprog\)</span> to <span class="math notranslate nohighlight">\(\diagprog\)</span> itself.
 This might seem like a strange thing to do. But as we’ll see, it gives us exactly what we’re looking for.
-When we run <code class="docutils literal notranslate"><span class="pre">diag</span></code> on itself, we get <code class="docutils literal notranslate"><span class="pre">[[</span> <span class="pre">write]](diag)</span> <span class="pre">+</span> <span class="pre">diag</span></code> in R1.
-This, then, is <code class="docutils literal notranslate"><span class="pre">self</span></code>: the program which would write out the word <code class="docutils literal notranslate"><span class="pre">diag</span></code> into R1 followed by an application of
-the program <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
-<p>So when we run <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing, we first spell out diag into R1.
-After this, we run <code class="docutils literal notranslate"><span class="pre">diag</span></code>. Notice that we aren’t running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on empty registers, because at this point R1 contains <code class="docutils literal notranslate"><span class="pre">diag</span></code>.  But running <code class="docutils literal notranslate"><span class="pre">diag</span></code> on <code class="docutils literal notranslate"><span class="pre">diag</span></code> gives us <code class="docutils literal notranslate"><span class="pre">self</span></code>, by definition.</p>
-<p>So we conclude that running <code class="docutils literal notranslate"><span class="pre">self</span></code> on nothing gives <code class="docutils literal notranslate"><span class="pre">self</span></code>, as desired.</p>
+When we run <span class="math notranslate nohighlight">\(\diagprog\)</span> on itself, we get <span class="math notranslate nohighlight">\([[\writeprog]](\diagprog) + \diagprog\)</span> in R1.
+This, then, is <span class="math notranslate nohighlight">\(\selfprog\)</span>. When we run <span class="math notranslate nohighlight">\(\selfprog\)</span> on nothing, we first write <span class="math notranslate nohighlight">\(\diagprog\)</span> into R1.
+After this, we run <span class="math notranslate nohighlight">\(\diagprog\)</span>.  At the point we are running <span class="math notranslate nohighlight">\(\diagprog\)</span>,  R1 contains <span class="math notranslate nohighlight">\(\diagprog\)</span>, and the other registers are empty.
+So we get  <span class="math notranslate nohighlight">\(\selfprog\)</span>, by definition.</p>
+<p>To summarize: running <span class="math notranslate nohighlight">\(\selfprog\)</span> on nothing is the same as running <span class="math notranslate nohighlight">\(\diagprog\)</span> on <span class="math notranslate nohighlight">\(\diagprog\)</span> itself; and this is <span class="math notranslate nohighlight">\(\selfprog\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Summary</p>
 <p><span class="math notranslate nohighlight">\(
@@ -591,7 +590,7 @@ After this, we run <code class="docutils literal notranslate"><span class="pre">
 \self
 \)</span>.</p>
 </div>
-<p>Here is <span class="math notranslate nohighlight">\(\selfprog\)</span>.    You can watch the calculation by copying the program below and pasting it into the program editor box of  <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Be sure to use <em>eval slow</em> to watch it in action</p>
+<p>Here is <span class="math notranslate nohighlight">\(\selfprog\)</span>.    You can watch the calculation by copying the program below and pasting it into the program editor box of  <a href="https://rrose1.github.io/jsonesharp/" target="_blank">the Javascript interpreter</a> for <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Be sure to use <em>eval slow</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="c1">#1##1##1##1##1##1#1#1#1#1#1#1#1#1#1#1#1##1##1##1#1#1#1#1#1#1##1##1##1#1#1##1##1#1#1#1##1#1#1#1##1##1#1#1#1##1##1#1#1#1#1#1#1#1##1##1##1##1#1#1##1#1#1#1##1#1#1#1##1##1#1#1#1#1##1##1##1##1#1#1#1##1##1##1##1##1#1#1#1#1#1#1##1##1##1#1#1#1##1##1##1#1##1##1#1#1#1#1##1##1##1##1#1##1#1#1##1##1##1##1#1#1##1##1##1##1##1#1#1#1#1#1#1##1##1##1#1#1#1##1##1##1#1##1##1#1#1#1#1##1##1##1##1#1##1#1#1##1##1##1##1#####11111111111###111111###11##111#111##111##1111111####11#111#111##1111####111#####111111###111###1##1111####1#11####11#####111111###111###1##1111####1#11####</span>
@@ -614,44 +613,45 @@ After this, we run <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 </div>
-<section id="the-idea-in-english">
-<h2>The idea in English<a class="headerlink" href="#the-idea-in-english" title="Link to this heading">#</a></h2>
-<p>We offer another presentation of the idea behind diag and self.</p>
-<p>Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.</p>
-<p>Let’s say that you just have on glimmer of an idea, that when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run a program <span class="math notranslate nohighlight">\(y\)</span> on it.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> should be <span class="math notranslate nohighlight">\(s\)</span>.
-So in effect, we want to solve a <em>system of equations</em></p>
+<section id="the-idea-in-words">
+<h2>The idea in words<a class="headerlink" href="#the-idea-in-words" title="Link to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\mathbf{r} \equiv \begin{bmatrix}
+y \\
+\theta
+\end{bmatrix}
+\label{eq:vector_ray} \tag{1}
+\end{equation*}\]</div>
+<p>Vector <strong>r</strong> is defined by equation <span class="math notranslate nohighlight">\(\eqref{eq:vector_ray}\)</span></p>
+<p>We present one idea that could explain what is behind <span class="math notranslate nohighlight">\(\diagprog\)</span> and <span class="math notranslate nohighlight">\(\selfprog\)</span>.
+Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.
+Let’s say that you just have a glimmer of an idea: a self-replicating program <span class="math notranslate nohighlight">\(s\)</span> should be a two-stage affair;   when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run some program <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span>.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> to be <span class="math notranslate nohighlight">\(s\)</span>.  So in effect, we want to solve a <em>system of equations</em>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
-s &amp; = &amp; [\![ write]\!](x)+ y\\
-[\![ s]\!](\ ) &amp; = &amp; [\![ y]\!](x)\\
-[\![ [\![ y]\!](x) ]\!](\ ) &amp; = &amp; s \\
+s &amp; = &amp; \semantics{\writeprog} (x)+ y \\
+\semantics{s}(\ ) &amp; = &amp; s\\
 \end{array}
 \end{split}\]</div>
-<p>The second of these follows from the first, of course.  Putting together the first and third gives</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{lcl}
-[\![ [\![ y]\!](x) ]\!](\ ) &amp; = &amp; [\![ write]\!](x)+ y  \quad (*)\\
-\end{array}
-\end{split}\]</div>
-<p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies (*), since then we
-could take <span class="math notranslate nohighlight">\(s\)</span> to be <span class="math notranslate nohighlight">\([\![ write]\!](x)+ y\)</span>.</p>
-<p>Now here is where things become interesting.   Instead of simply finding <em>any old</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> satisfying the last equation, let’s find some <span class="math notranslate nohighlight">\(y\)</span> such that for <em>all</em> <span class="math notranslate nohighlight">\(x\)</span>, we have the following different condition:</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x, \quad (**)
-\]</div>
-<p>and then set <span class="math notranslate nohighlight">\(x = y\)</span>.
-(Note that (*) and (**) are different due to the last symbol in each.)</p>
-<p>If we find <span class="math notranslate nohighlight">\(y\)</span> to make (**) hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span> and thus have (*), because</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ [\![ y]\!](x) ]\!](\ ) =  [\![ write]\!](x)+ x  =  [\![ write]\!](x)+ y
-\]</div>
-<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to satisfy a more stringent condition.  But in reality it’s easier, since the second equation (**) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(diag\)</span>!</p>
-<p>To conclude: we take <span class="math notranslate nohighlight">\(y = diag\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
-We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ write]\!](diag)+ diag = [\![ diag]\!](diag)\)</span>.</p>
+<p>But these give</p>
+<div class="amsmath math notranslate nohighlight" id="equation-44d6e3f8-a809-430c-8804-4aa1a5693a13">
+<span class="eqno">(1)<a class="headerlink" href="#equation-44d6e3f8-a809-430c-8804-4aa1a5693a13" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\label{deriveK2}
+\semantics{y}(x) =  \semantics{s}(\ ) =  s = \semantics{\writeprog} (x)+ y
+\end{equation}\]</div>
+<p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies (\ref{deriveK2}), since then we
+could take solve the original system by taking <span class="math notranslate nohighlight">\(s\)</span> to be <span class="math notranslate nohighlight">\([\![ \writeprog]\!](x)+ y\)</span>.</p>
+<p>Now here is where things become interesting.   Instead of simply finding <em>any old</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> satisfying (\ref{deriveK2}), let’s find some <span class="math notranslate nohighlight">\(y\)</span> such that for <em>all</em> <span class="math notranslate nohighlight">\(x\)</span>, we have the following different condition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bfbd187c-60a4-416c-a471-ae9e60383a8a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-bfbd187c-60a4-416c-a471-ae9e60383a8a" title="Permalink to this equation">#</a></span>\[\begin{equation} \label{deriveK2trick}
+\semantics{y}(x) =  \semantics{\writeprog} (x)+ x
+\end{equation}\]</div>
+<p>(Note that(\ref{deriveK2}) and (\ref{deriveK2trick}) are different due to the last symbol in each.)
+If we find <span class="math notranslate nohighlight">\(y\)</span> to make (\ref{deriveK2trick}) hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span>; this arranges   (\ref{deriveK2}).</p>
+<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to satisfy a more stringent condition.  But in reality it’s easier, since (\ref{deriveK2trick}) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(\diagprog\)</span>!</p>
+<p>To conclude: we take <span class="math notranslate nohighlight">\(y = \diagprog\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
+We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ \writeprog]\!](\diagprog)+ \diagprog = [\![ \diagprog]\!](\diagprog)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160"></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="exercises">
@@ -675,8 +675,7 @@ writes itself to R1 and also writes <code class="docutils literal notranslate"><
 <p class="admonition-title"><span class="caption-number">Exercise 71 </span></p>
 <section id="exercise-content">
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> which when started on all empty registers
-doesn’t
-write itself to R1 but rather writes itself followed by a <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+doesn’t   write itself to R1 but rather writes itself followed by a <code class="docutils literal notranslate"><span class="pre">#</span></code>.
 In other words, <span class="math notranslate nohighlight">\([\![ p]\!](\ ) =  p + \# \)</span>.</p>
 </section>
 </div>
@@ -805,7 +804,7 @@ equal to <code class="docutils literal notranslate"><span class="pre">selfknow</
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Self-writing programs</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diag">Diag</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#self">Self</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-english">The idea in English</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-in-words">The idea in words</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>

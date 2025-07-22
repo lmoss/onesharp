@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/instructions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -618,22 +618,23 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 </div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Here is a program:</p>
-<p><span class="math notranslate nohighlight">\(\one\one\hash\one\one\hash\hash\hash\one\one\hash\hash\hash\hash\one\hash\hash\)</span></p>
+<p><span class="math notranslate nohighlight">\(\onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash\)</span></p>
 <p>It is four instructions concatenated together.</p>
-<p>The first instruction, <span class="math notranslate nohighlight">\(\one\one\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\one\one\hash\hash\hash\hash\)</span>)  and go to the last instruction <span class="math notranslate nohighlight">\(\one\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+<p>The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>)  and go to the last instruction <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
-<p>Here is another program:
-$<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash\)</span><span class="math notranslate nohighlight">\(
-This is the concatenation of the following sequence of seven instructions:
-\[
+<p>Here is another program:</p>
+<div class="math notranslate nohighlight">
+\[\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
+\]</div>
+<p>This is the concatenation of the following sequence of seven instructions:$<span class="math notranslate nohighlight">\(
 \begin{array}{l}
 (\onett\onett\hash\hash\hash\hash\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash, \onett\onett\onett\hash\hash\hash, \onett\hash\hash, \onett\onett\onett\onett\hash\hash\hash\hash, \\
- \onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
- \end{array}
-\]
-Dividing a program into instructions is a very easy form of *parsing*.  In a real computer language, parsing is more difficult than it is for \)</span>\onesharp$.</p>
+\onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
+\end{array}
+\)</span>$</p>
+<p>Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
 
