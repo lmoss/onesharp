@@ -615,15 +615,6 @@ So we get  <span class="math notranslate nohighlight">\(\selfprog\)</span>, by d
 </div>
 <section id="the-idea-in-words">
 <h2>The idea in words<a class="headerlink" href="#the-idea-in-words" title="Link to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\mathbf{r} \equiv \begin{bmatrix}
-y \\
-\theta
-\end{bmatrix}
-\label{eq:vector_ray} \tag{1}
-\end{equation*}\]</div>
-<p>Vector <strong>r</strong> is defined by equation <span class="math notranslate nohighlight">\(\eqref{eq:vector_ray}\)</span></p>
 <p>We present one idea that could explain what is behind <span class="math notranslate nohighlight">\(\diagprog\)</span> and <span class="math notranslate nohighlight">\(\selfprog\)</span>.
 Let’s suppose that you want to write a self-replicating program, say <span class="math notranslate nohighlight">\(s\)</span>, from scratch.
 Let’s say that you just have a glimmer of an idea: a self-replicating program <span class="math notranslate nohighlight">\(s\)</span> should be a two-stage affair;   when we run <span class="math notranslate nohighlight">\(s\)</span> on empty registers, we first write a word <span class="math notranslate nohighlight">\(x\)</span> to R1, and then run some program <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span>.  And of course, we want the result of running <span class="math notranslate nohighlight">\(y\)</span> on <span class="math notranslate nohighlight">\(x\)</span> to be <span class="math notranslate nohighlight">\(s\)</span>.  So in effect, we want to solve a <em>system of equations</em>:</p>
@@ -638,7 +629,7 @@ s &amp; = &amp; \semantics{\writeprog} (x)+ y \\
 <p>But these give</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\label{eq:deriveK2}\tag{2}
+\label{eq:deriveK2trick}\tag{2}
 \semantics{y}(x) =  \semantics{s}(\ ) =  s = \semantics{\writeprog} (x)+ y
 \end{equation*}\]</div>
 <p>We are free to find any <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that we like that satisfies <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span>, since then we
@@ -650,7 +641,7 @@ could take solve the original system by taking <span class="math notranslate noh
 \end{equation*}\]</div>
 <p>(Note that <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2trick}\)</span> are different due to the last symbol in each.)
 If we find <span class="math notranslate nohighlight">\(y\)</span> to make <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2trick}\)</span> hold for all <span class="math notranslate nohighlight">\(x\)</span>, we can set <span class="math notranslate nohighlight">\(x = y\)</span>; this arranges <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2}\)</span>.</p>
-<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to satisfy a more stringent condition.  But in reality it’s easier, since (\ref{deriveK2trick}) only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(\diagprog\)</span>!</p>
+<p>It looks like we made our problem harder by asking <span class="math notranslate nohighlight">\(y\)</span> to satisfy a more stringent condition.  But in reality it’s easier, since <span class="math notranslate nohighlight">\(\eqref{eq:deriveK2trick}\)</span> only has <span class="math notranslate nohighlight">\(y\)</span> on one side.   So it is much more manageable.  In fact, we can solve it by simply taking <span class="math notranslate nohighlight">\(y\)</span> to be <span class="math notranslate nohighlight">\(\diagprog\)</span>!</p>
 <p>To conclude: we take <span class="math notranslate nohighlight">\(y = \diagprog\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>.  This arranges that all of our equations hold.<br />
 We thus can get a self replicating program by setting <span class="math notranslate nohighlight">\(s =  [\![ \writeprog]\!](\diagprog)+ \diagprog = [\![ \diagprog]\!](\diagprog)\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160"></section>
