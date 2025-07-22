@@ -40,7 +40,7 @@ sphinx:
              "one": ["\\mathtt{1}"]
              "onett": ["\\mathtt{1}"]
              "hash": ["\\mathtt{\\#}"]
-             "onesharp": ["\mathttt{1\\#}"]
+             "onesharp": ["\\mathttt{1\\#}"]
              "diag": ["\\mathtt{diag}"]
              "self": ["\\mathtt{self}"]
              "diagprog": ["\\mathtt{diag}"]
