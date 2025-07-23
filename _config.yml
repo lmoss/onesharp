@@ -46,6 +46,7 @@ sphinx:
              "diagprog": ["\\mathtt{diag}"]
              "selfprog": ["\\mathtt{self}"]
              "copyprog": ["\\mathtt{copy}"]
+             "uprog": ["\\mathtt{u}"]
              "clearprog": ["\\mathtt{clear}"]
              "writeprog": ["\\mathtt{write}"]
              "writetotwo": ["\\mathtt{write}_2"]
