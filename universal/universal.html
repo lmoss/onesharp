@@ -509,7 +509,7 @@ the input program.</p>
 <p>A word <span class="math notranslate nohighlight">\(\uprog\)</span> is <em>universal</em> if</p>
 <div class="math notranslate nohighlight">
 \[
-[\![u]\!] (x) \simeq [\![x]\!](\ )
+$\semantics{\uprog}$ (x) \simeq [\![x]\!](\ )
 \]</div>
 <p>for all words <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
@@ -524,14 +524,14 @@ the input program.</p>
 </div>
 <div class="admonition-examples admonition">
 <p class="admonition-title">Examples</p>
-<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash) \simeq \one\)</span> because <span class="math notranslate nohighlight">\([\![\one\hash]\!](\ )\simeq \one\)</span>.</p>
-<p><span class="math notranslate nohighlight">\([\![u]\!](\one)\!\uparrow\)</span>  because <span class="math notranslate nohighlight">\(\one\)</span> is not a program.</p>
+<p>$<span class="math notranslate nohighlight">\(\semantics{\uprog}\)</span>(\one\hash) \simeq \one<span class="math notranslate nohighlight">\( because \)</span>[![\one\hash]!](\ )\simeq \one$.</p>
+<p>$<span class="math notranslate nohighlight">\(\semantics{\uprog}\)</span>(\one)!\uparrow<span class="math notranslate nohighlight">\(  because \)</span>\one$ is not a program.</p>
 </div>
 <div class="admonition-more-examples admonition">
 <p class="admonition-title">More examples</p>
 <p>Try to figure out what the next two should be and then confirm your guesses by running them.</p>
-<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash\one\hash\hash)\)</span></p>
-<p><span class="math notranslate nohighlight">\([\![u]\!](\one\hash \one\hash\hash \one\hash \one\hash \hash  \one\hash \hash+ u)\)</span></p>
+<p>$<span class="math notranslate nohighlight">\(\semantics{\uprog}\)</span>(\one\hash\one\hash\hash)$</p>
+<p>$<span class="math notranslate nohighlight">\(\semantics{\uprog}\)</span>(\one\hash \one\hash\hash \one\hash \one\hash \hash  \one\hash \hash+ \semantics{\uprog})$</p>
 </div>
 <section id="let-s-write-a-universal-program">
 <h2>Let’s write a universal program<a class="headerlink" href="#let-s-write-a-universal-program" title="Link to this heading">#</a></h2>
@@ -1226,16 +1226,8 @@ K_0 &amp; = &amp; \{ p : [\![ p ]\!](\ )\!\downarrow\}\\
 
 <p class="admonition-title"><span class="caption-number">Exercise 64 </span></p>
 <section id="exercise-content">
-<p>Write a program <code class="docutils literal notranslate"><span class="pre">trade</span></code> which looks like it trades places with its input in R1. (Of course, a program cannot literally trade places with its input. But here is what we mean: running trade with p in R1 and all other registers empty does the same thing as running p with trade in R1 and all other registers empty.)</p>
-<p>[Hint: You will need a universal program, and also an application of the Recursion Theorem.]</p>
-</section>
-</div>
-<div class="exercise admonition" id="universal/universal-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 65 </span></p>
-<section id="exercise-content">
-<p>Write a program <code class="docutils literal notranslate"><span class="pre">self1</span></code> which writes itself to R1 but only uses R1 itself (no other registers).
-This exercise requires a trick, since there is no program like <code class="docutils literal notranslate"><span class="pre">diag</span></code> which only uses one register.</p>
+<p>Write a program <span class="math notranslate nohighlight">\(\selfprog_1\)</span> which writes itself to R1 but only uses R1 itself (no other registers).
+This exercise requires a trick, since there is no program like <span class="math notranslate nohighlight">\(\diagprog\)</span> which only uses one register.</p>
 <p>[Hint: you will need the technique of coding several registers into R1.]</p>
 </section>
 </div>
