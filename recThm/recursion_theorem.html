@@ -497,8 +497,8 @@ document.write(`
 [\![ q^* ]\!](r) \simeq [\![p]\!] (q^*,r)
 \end{equation*}\]</div>
 </section>
-</div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\(\semantics{\hat{q}}(\hat{q})\)</span>.
-So we first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
+</div><p>The basic idea in this proof is that <span class="math notranslate nohighlight">\(q^*\)</span> should be a word of the form <span class="math notranslate nohighlight">\(\semantics{\hat{q}}(\hat{q})\)</span>.  We make this leap of faith based on what we saw with the self-writing program in the last section.</p>
+<p>We first write a program <span class="math notranslate nohighlight">\(\hat{q}\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span> and all programs <span class="math notranslate nohighlight">\(x\)</span> which mention only the first three registers,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \label{qhat} \tag{2}
@@ -627,7 +627,7 @@ f(x) = [\![y]\!](x)
 For example,  <span class="math notranslate nohighlight">\(z\)</span> could be</p>
 <div class="math notranslate nohighlight">
 \[
-\moveprog(2,k) + y + \moveprog(k,2) + u_1
+\moveprog_{2,k} + y + \moveprog_{k,2} + u_1
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is large enough so that <span class="math notranslate nohighlight">\(y\)</span> does not mention Rk, and <span class="math notranslate nohighlight">\(u_1\)</span> is as in
 <a class="reference external" href="https://lmoss.github.io/onesharp/universal/universal.html#universal-programs-of-more-than-one-argument">our work on the universal program</a>.</p>
