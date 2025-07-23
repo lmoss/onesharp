@@ -506,14 +506,14 @@ the input program.</p>
 </div>
 <div class="attention admonition">
 <p class="admonition-title">Definition</p>
-<p>A word <span class="math notranslate nohighlight">\(u\)</span> is <em>universal</em> if</p>
+<p>A word <span class="math notranslate nohighlight">\(\uprog\)</span> is <em>universal</em> if</p>
 <div class="math notranslate nohighlight">
 \[
 [\![u]\!] (x) \simeq [\![x]\!](\ )
 \]</div>
 <p>for all words <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
-<p>This means that if running <span class="math notranslate nohighlight">\(x\)</span> on all empty registers eventually gives some output in R1 (and all other registers are empty), then that same output would be the result of running <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty. In the other direction, <em>if</em> running <span class="math notranslate nohighlight">\(x\)</span> with all empty registers gives some output, say <span class="math notranslate nohighlight">\(y\)</span>, in R1 (and all registers empty at the end), then we would get the same output <span class="math notranslate nohighlight">\(y\)</span> in R1 when we run <span class="math notranslate nohighlight">\(u\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.</p>
+<p>This means that if running <span class="math notranslate nohighlight">\(x\)</span> on all empty registers eventually gives some output in R1 (and all other registers are empty), then that same output would be the result of running <span class="math notranslate nohighlight">\(\uprog\)</span> with <span class="math notranslate nohighlight">\(p\)</span> in R1 and all other registers empty. In the other direction, <em>if</em> running <span class="math notranslate nohighlight">\(x\)</span> with all empty registers gives some output, say <span class="math notranslate nohighlight">\(y\)</span>, in R1 (and all registers empty at the end), then we would get the same output <span class="math notranslate nohighlight">\(y\)</span> in R1 when we run <span class="math notranslate nohighlight">\(\uprog\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in R1 and all other registers empty.</p>
 <p>Let’s take a look at such a program and try it out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +543,7 @@ entirely and to just write your own universal program.   But
 most readers would probably appreciate the hints and will find
 enough of a challenge in the construction of a long working program.</p>
 <p>Second, the sections to come do not guide you to write a program that
-is <em>exactly</em> like <span class="math notranslate nohighlight">\(u\)</span> above.   The program <span class="math notranslate nohighlight">\(u\)</span>
+is <em>exactly</em> like <span class="math notranslate nohighlight">\(\uprog\)</span> above.   The program <span class="math notranslate nohighlight">\(\uprog\)</span>
 above was designed to be as short as possible.
 In fact, we leave you with a challenge: write a universal
 program with the smallest number of instructions.  The one above has
@@ -555,7 +555,7 @@ program with the smallest number of instructions.  The one above has
 it easier to write a universal program.  So we’ll outline how
 to write a program that is <i>close</i> to a universal program,
 but not quite a universal program.</p>
-<p>We’ll write a program <span class="math notranslate nohighlight">\(u\)</span> that acts like a universal
+<p>We’ll write a program <span class="math notranslate nohighlight">\(\uprog\)</span> that acts like a universal
 program, but <em>only for programs which use only R1, R2, and R3</em>.
 In more detail:</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be any
@@ -565,14 +565,14 @@ including possibly the empty word. Then the following are equivalent:</p>
 <p>(A’)
 If <span class="math notranslate nohighlight">\(p\)</span> is started with all empty registers, then eventually we halt
 with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
-<p>(B’) If <span class="math notranslate nohighlight">\(u\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and with the empty word
+<p>(B’) If <span class="math notranslate nohighlight">\(\uprog\)</span> is started with <span class="math notranslate nohighlight">\(p\)</span> in R1 and with the empty word
 in all other
 registers, then eventually we halt with <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
 <p>Once again, the work of this section sketches a construction of
-such a program <span class="math notranslate nohighlight">\(u\)</span>.   You will need to do much of the work yourself
+such a program <span class="math notranslate nohighlight">\(\uprog\)</span>.   You will need to do much of the work yourself
 in actually getting the program from the sketch.  And even when we
-have <span class="math notranslate nohighlight">\(u\)</span>, it will not be what we really want, since
-the resulting program <span class="math notranslate nohighlight">\(u\)</span> will only behave right on programs which use the first
+have <span class="math notranslate nohighlight">\(\uprog\)</span>, it will not be what we really want, since
+the resulting program <span class="math notranslate nohighlight">\(\uprog\)</span> will only behave right on programs which use the first
 three registers.<br />
 Later on, we’ll come
 back and drop this simplification to get a program which is truly
@@ -1204,8 +1204,8 @@ the input program only uses R1, R2, and R3.  You should get a program
 
 <p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <section id="exercise-content">
-<p>What happens if we run the universal program <span class="math notranslate nohighlight">\(u\)</span> on the self-writing program <span class="math notranslate nohighlight">\(\self\)</span>?</p>
-<p>Incidentally, running <span class="math notranslate nohighlight">\(u\)</span> on <span class="math notranslate nohighlight">\(\self\)</span> takes 22,376,608 steps, whereas running <span class="math notranslate nohighlight">\(\self\)</span> on empty registers takes 3,322.</p>
+<p>What happens if we run the universal program <span class="math notranslate nohighlight">\(\uprog\)</span> on the self-writing program <span class="math notranslate nohighlight">\(\self\)</span>?</p>
+<p>Incidentally, running <span class="math notranslate nohighlight">\(\uprog\)</span> on <span class="math notranslate nohighlight">\(\self\)</span> takes 22,376,608 steps, whereas running <span class="math notranslate nohighlight">\(\self\)</span> on empty registers takes 3,322.</p>
 </section>
 </div>
 <div class="exercise admonition" id="universal/universal-exercise-1">
