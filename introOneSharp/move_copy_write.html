@@ -693,6 +693,33 @@ and running <span class="math notranslate nohighlight">\(\onett\hash\hash\)</spa
 and adds <span class="math notranslate nohighlight">\(\onett\hash\)</span> to R2, and each <span class="math notranslate nohighlight">\(\hash\)</span> results in <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span> in R2.   These are instructions which would add <span class="math notranslate nohighlight">\(\onett\)</span>
 and <span class="math notranslate nohighlight">\(\hash\)</span> to R1.  After the loop is done, the contents of R2 are moved back to R1.</p>
 <p>The program <span class="math notranslate nohighlight">\(\writeprog\)</span> may be found in a chart.</p>
+<TABLE  cellspacing="0" cellpadding="5">
+        <TR BGCOLOR="#FFFFCC">
+                <TD>1#####</TD> <TD>cases on R1</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>111111111###</TD> <TD>go forward 9
+                  to the move<sub>2,1</sub> part</TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD><TD>go forward 5:
+to the brown part</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11##</TD> <TD>add # to R2</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11##</TD> <TD>add # to R2</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111111####</TD> <TD>go backward 6 (to the top)</TD> </TR>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11#</TD> <TD>add 1 to R2 </TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11##</TD> <TD>add # to R2</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111111111####</TD> <TD>go backward 9 (to the top)</TD>  
+        </TR>
+        <TR BGCOLOR="#FFFFCC">
+             <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
+</TABLE>        
 <p>\begin{figure}[t]
 \includegraphics[scale=0.7]{basicsthree719.pdf}
 \caption{The program <span class="math notranslate nohighlight">\(\writeprog\)</span>.\label{fig-write}}
@@ -745,35 +772,7 @@ q =\copyprog_{1,2,3} + \moveprog_{2,1}
 \)</span><span class="math notranslate nohighlight">\(
 This program \)</span>q<span class="math notranslate nohighlight">\( would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that R2 and R3 were empty to begin with, running \)</span>q<span class="math notranslate nohighlight">\( with \)</span>x<span class="math notranslate nohighlight">\( in R1 would give us \)</span>x + x$ in R1  at the end.</p>
 </div>
-<br><p>Here is a table for <span class="math notranslate nohighlight">\(\writeprog\)</span>:</p>
-<TABLE  cellspacing="0" cellpadding="5">
-        <TR BGCOLOR="#FFFFCC">
-                <TD>1#####</TD> <TD>cases on R1</TD></TR>
-        <TR BGCOLOR="#FFFFCC">
-                <TD>111111111###</TD> <TD>go forward 9
-                  to the move<sub>2,1</sub> part</TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD><TD>go forward 5:
-to the brown part</TD>  
-        </TR>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>11##</TD> <TD>add # to R2</TD></tr>   
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>11##</TD> <TD>add # to R2</TD></tr>   
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>111111####</TD> <TD>go backward 6 (to the top)</TD> </TR>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>11#</TD> <TD>add 1 to R2 </TD></tr>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>11##</TD> <TD>add # to R2</TD></tr>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>111111111####</TD> <TD>go backward 9 (to the top)</TD>  
-        </TR>
-        <TR BGCOLOR="#FFFFCC">
-             <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
-</TABLE>        
-<br><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
+<br><br><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
 and writes to R2; it  makes no
 use of any other register.</p>
 </section>
@@ -799,7 +798,7 @@ So we have a <a class="reference external" href="https://en.wikipedia.org/wiki/M
 </div><p>This means that we can “add” programs (since they are words).  For example, let</p>
 <div class="math notranslate nohighlight">
 \[
-q =copyprog_{1,2,3} + \moveprog_{2,1}
+q =\copyprog_{1,2,3} + \moveprog_{2,1}
 \]</div>
 <p>This program <span class="math notranslate nohighlight">\(q\)</span> would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that registers 2 and 3 were empty to begin with, running <span class="math notranslate nohighlight">\(q\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in register <span class="math notranslate nohighlight">\(1\)</span> would give us <span class="math notranslate nohighlight">\(x + x\)</span> in register 1 at the end.</p>
 <div class="exercise admonition" id="pre-diag">
