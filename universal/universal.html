@@ -504,23 +504,6 @@ the input program.</p>
 </div>
 </div>
 </div>
-<p>It can be argued that the <span class="math notranslate nohighlight">\(\onesharp\)</span>-computable functions include basically every function that anyone could imagine computing in any way. For example, any function which could be computed on any actual computer could be programmed in <span class="math notranslate nohighlight">\(\onehash\)</span>.   Later, we will make the claim that</p>
-<div class="danger admonition">
-<p class="admonition-title">Church-Turing thesis for <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
-<p>Any function <span class="math notranslate nohighlight">\(f:\words\to\words\)</span> for which anyone could write clear and explicit instructions is  <span class="math notranslate nohighlight">\(\onesharp\)</span>-computable.</p>
-</div>
-<p>One of the tasks that someone could  write clear and explicit instructions for is the task of executing a given <span class="math notranslate nohighlight">\(\onesharp\)</span> program.  So our claim above implies that</p>
-<div class="danger admonition">
-<p class="admonition-title">Main result in this notebook</p>
-<p>Propose a precise definition of computability.</p>
-</div>
-<p>There is a <span class="math notranslate nohighlight">\(\onesharp\)</span> program that
-executes <span class="math notranslate nohighlight">\(\onesharp\)</span> programs.</p>
-<p>This <em>follows</em> from the Church-Turing thesis.  But we are going to prove it in detail in this chapter.  We do this for several reasons.  First, the  Church-Turing thesis is just that:
-<em>thesis</em>,  a <em>claim</em> that really cannot be completely proved.  We discuss this later, in Section 5.6.  So since we want to use the existence of programs that execute programs,
-it would be better to firmly establish this by exhibiting such a program.   Second, there is something to be learned from writing a long program in a low-level language like <span class="math notranslate nohighlight">\(\onehash\)</span>.<br />
-These would be missing if we used the <em>hand-waving approach</em> of appealing to the  Church-Turing thesis.
-The reason that people frequently prefer to use the hand-waving approach in computability theory is that to be explicit often involves a lot of details that are “as expected”, or tedious, or which even obscure what is “really going on” in a result.   This brings us to our third reason for giving the details on programs that run programs: we’re doing this in full detail so that afterwards we won’t do this again.   After doing the hard work of writing a long program that does something that might be “obvious”, you will have earned the right to use a hand-waving approach.</p>
 <div class="attention admonition">
 <p class="admonition-title">Definition</p>
 <p>A word <span class="math notranslate nohighlight">\(\uprog\)</span> is <em>universal</em> if</p>
