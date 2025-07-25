@@ -720,14 +720,6 @@ to the brown part</TD>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-<p>\begin{figure}[t]
-\includegraphics[scale=0.7]{basicsthree719.pdf}
-\caption{The program <span class="math notranslate nohighlight">\(\writeprog\)</span>.\label{fig-write}}
-\end{figure}</p>
-<p>For future reference,
-let us mention that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
-and writes to R2; it  makes no
-use of any other register.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
@@ -752,30 +744,7 @@ in R2 and all other registers empty; moreover, running
 other registers empty.</p>
 </section>
 </div>
-<p>\subsection{The <span class="math notranslate nohighlight">\(+\)</span> notation on words}</p>
-<div class="attention admonition">
-<p class="admonition-title">Definition</p>
-<p>If <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are words, then <span class="math notranslate nohighlight">\(x + y\)</span> is the <em>concatenation</em> of <span class="math notranslate nohighlight">\(x\)</span> followed by <span class="math notranslate nohighlight">\(y\)</span>.  For example,
-$<span class="math notranslate nohighlight">\(
-\onett\hash\onett + \hash \hash = \onett\hash\onett  \hash \hash.
-\)</span><span class="math notranslate nohighlight">\(
-This operation is associative: \)</span>x + (y+z) = (x+y) + z<span class="math notranslate nohighlight">\(.   
-The *empty word* \)</span>\eps<span class="math notranslate nohighlight">\( is an identity element for it:
-\)</span>x + \eps = x = \eps + x<span class="math notranslate nohighlight">\(.
-So we have a *monoid*
-\)</span><span class="math notranslate nohighlight">\(
-(\words, +, \eps)
-\)</span>$</p>
-<p>This means that we can ``add’’ programs (since they are words).  For example, let
-$<span class="math notranslate nohighlight">\(
-q =\copyprog_{1,2,3} + \moveprog_{2,1}
-\)</span><span class="math notranslate nohighlight">\(
-This program \)</span>q<span class="math notranslate nohighlight">\( would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that R2 and R3 were empty to begin with, running \)</span>q<span class="math notranslate nohighlight">\( with \)</span>x<span class="math notranslate nohighlight">\( in R1 would give us \)</span>x + x$ in R1  at the end.</p>
-</div>
-<br><br><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
-and writes to R2; it  makes no
-use of any other register.</p>
-</section>
+<br><br></section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-notation-on-words">
 <h1>The <span class="math notranslate nohighlight">\(+\)</span> notation on words<a class="headerlink" href="#the-notation-on-words" title="Link to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-9">
