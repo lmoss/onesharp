@@ -516,10 +516,29 @@ We turn to the simplest programs in the language.</p>
 \]</div>
 <p>It is more informative to exhibit this program as a chart with instruction numbers and glosses, and we do this below.
 The program has seven instructions.  We call these the <em>lines</em> of the program. Here is an explanation of what is going when we run  <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span>.  We start with words in the registers.  The only registers mentioned in the program are R2 and R1. Let’s say that at the start <span class="math notranslate nohighlight">\(x\)</span> is the word in R2,and <span class="math notranslate nohighlight">\(y\)</span> is the word in R1.</p>
+<TABLE cellspacing="0" cellpadding="5">
+        <TR BGCOLOR="#FFFFCC">
+                <TD>1#####</TD> <TD>cases on R1</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>11111111###</TD> <TD>go forward 8 to instruction 10 (the  move<sub>3,1</sub> part) </TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>1111###</TD><TD>go forward 4 to instruction 7</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11##</TD> <TD>add # to R2</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111##</TD> <TD>add # to R3</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11111####</TD> <TD>go backward 5 to the top</TD> </TR>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111#</TD> <TD>add 1 to R3</TD></tr>
+         <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
+         <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
+</TABLE>        
 <p>This is our first look at a case statement <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>.   Upon execution, if <span class="math notranslate nohighlight">\(x = \eps\)</span>, we move
 to line 2.  If <span class="math notranslate nohighlight">\(x\)</span> starts with  <span class="math notranslate nohighlight">\(\onett\)</span>, we delete it and go to line 3 and thence to line 6 and thus to the third section of the program.  There is no significance
-to the colors; they are just there to help us read and understand the program. If instead <span class="math notranslate nohighlight">\(x\)</span> starts with <span class="math notranslate nohighlight">\(\hash\)</span>, we would delete it
-and go to the second section, starting in line 4.  That section ends in line 5, and from there we return to the top.</p>
+to the colors; they are just there to help us read and understand the program. If instead <span class="math notranslate nohighlight">\(x\)</span> starts with <span class="math notranslate nohighlight">\(\hash\)</span>, we would delete it and go to the second section, starting in line 4.  That section ends in line 5, and from there we return to the top.</p>
 <p>Our program is a loop.  Each time through the loop we take a symbol from the start of whatever is in R2 and add the same symbol to the end of R1.
 As soon as R2 becomes empty, we transfer out of the program.   We do this in line 2 by going forward 6 lines, to the first line out of our program.
 By going around the loop repeatedly, we transfer <span class="math notranslate nohighlight">\(x\)</span> symbol-by-symbol to the end of R1.   At the end, the contents of R1 will be <span class="math notranslate nohighlight">\(y\)</span> followed by <span class="math notranslate nohighlight">\(x\)</span>;
@@ -539,13 +558,9 @@ soon we will write this as <span class="math notranslate nohighlight">\(y+x\)</s
 <p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
 <section id="exercise-content">
 <ol class="arabic simple">
-<li></li>
+<li><p>Write a program <span class="math notranslate nohighlight">\(\clearprog_1\)</span> that clears out R1, leaving it empty.   This program does not touch other registers.</p></li>
+<li><p>Similarly, for each <span class="math notranslate nohighlight">\(n\)</span> there is a program  <span class="math notranslate nohighlight">\(\clearprog_n\)</span> that clears out Rn.     Is there a single program that clears out R<span class="math notranslate nohighlight">\(n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>?</p></li>
 </ol>
-<p>Write a program <span class="math notranslate nohighlight">\(\clearprog_1\)</span> that clears out R1, leaving it empty.   This program does not touch other registers.</p>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
-<p>Similarly, for each <span class="math notranslate nohighlight">\(n\)</span> there is a program  <span class="math notranslate nohighlight">\(\clearprog_n\)</span> that clears out Rn.     Is there a single program that clears out R<span class="math notranslate nohighlight">\(n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>?</p>
 </section>
 </div>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-2">
@@ -627,7 +642,6 @@ the register is left at the end with exactly what it had
 at the beginning.</p>
 <p>In order to copy in this way, we need an auxiliary register, Rp.  So while the <span class="math notranslate nohighlight">\(\moveprog\)</span> programs had two registers in their names, the <span class="math notranslate nohighlight">\(\copyprog\)</span> programs have three.</p>
 <p>Here is our program when m = 1, n = 2, p = 3.   That is, here is <span class="math notranslate nohighlight">\(\copyprog_{1,2,3}\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(\includegraphics[scale=0.8]{basicstwo944.pdf}\)</span></p>
 <p>The program is a loop, exactly like <span class="math notranslate nohighlight">\(\moveprog_{m,n}\)</span>.    Each time through, we not only replicate in Rn the first symbol of the word in Rm,
 but we also an additional copy into Rp.   At the end, when Rm has been emptied, we return Rp to Rm and thus restore the original  contents of Rm. But this only works as described when Rp was empty to begin with.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-3">
@@ -658,26 +672,7 @@ but we also an additional copy into Rp.   At the end, when Rm has been emptied, 
 <p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\one\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\one\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.) Of course, your program may use R2!</p>
 </section>
 </div>
-<TABLE cellspacing="0" cellpadding="5">
-        <TR BGCOLOR="#FFFFCC">
-                <TD>1#####</TD> <TD>cases on R1</TD></TR>
-        <TR BGCOLOR="#FFFFCC">
-                <TD>11111111###</TD> <TD>go forward 8 to instruction 10 (the  move<sub>3,1</sub> part) </TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>1111###</TD><TD>go forward 4 to instruction 7</TD>  
-        </TR>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>11##</TD> <TD>add # to R2</TD></tr>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>111##</TD> <TD>add # to R3</TD></tr>   
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>11111####</TD> <TD>go backward 5 to the top</TD> </TR>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>111#</TD> <TD>add 1 to R3</TD></tr>
-         <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
-         <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
-</TABLE>        </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="writeprog">
 <h1><span class="math notranslate nohighlight">\(\writeprog\)</span><a class="headerlink" href="#writeprog" title="Link to this heading">#</a></h1>
 <p>We continue with
