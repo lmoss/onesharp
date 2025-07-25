@@ -514,28 +514,27 @@ We turn to the simplest programs in the language.</p>
 <div class="math notranslate nohighlight">
 \[\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
 \]</div>
-<p>It is more informative to exhibit this program as a chart with instruction numbers and glosses, and we do this below.
-The program has seven instructions.  We call these the <em>lines</em> of the program. Here is an explanation of what is going when we run  <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span>.  We start with words in the registers.  The only registers mentioned in the program are R2 and R1. Let’s say that at the start <span class="math notranslate nohighlight">\(x\)</span> is the word in R2,and <span class="math notranslate nohighlight">\(y\)</span> is the word in R1.</p>
+<p>It is more informative to exhibit this program as a chart with instruction numbers and glosses:</p>
 <TABLE cellspacing="0" cellpadding="5">
         <TR BGCOLOR="#FFFFCC">
-                <TD>1#####</TD> <TD>cases on R1</TD></TR>
+                <TD>11#####</TD> <TD></TD><TD style="text-aligh" right;>cases on R2</TD></TR>
         <TR BGCOLOR="#FFFFCC">
-                <TD>11111111###</TD> <TD>go forward 8 to instruction 10 (the  move<sub>3,1</sub> part) </TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>1111###</TD><TD>go forward 4 to instruction 7</TD>  
+                <TD>111111###</TD> <TD></TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
+                  </TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD> <TD></TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
         </TR>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>11##</TD> <TD>add # to R2</TD></tr>
+                <TD>1##</TD>  <TD></TD><TD>first symbol is #: add # to R1</TD></tr>
          <TR  BGCOLOR="#B0E0E6">
-                <TD>111##</TD> <TD>add # to R3</TD></tr>   
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>11111####</TD> <TD>go backward 5 to the top</TD> </TR>
+                <TD>1111####</TD> <TD></TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
          <TR  BGCOLOR="#D4B48C">
-                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
+                <TD>1#</TD> <TD></TD> <TD>add 1 to R1</TD></tr>
          <TR  BGCOLOR="#D4B48C">
-                <TD>111#</TD> <TD>add 1 to R3</TD></tr>
-         <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
-         <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
-</TABLE>        
+                <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
+        </TR>
+</TABLE> 
+<br>
+<p>The program has seven instructions.  We call these the <em>lines</em> of the program. Here is an explanation of what is going when we run  <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span>.  We start with words in the registers.  The only registers mentioned in the program are R2 and R1. Let’s say that at the start <span class="math notranslate nohighlight">\(x\)</span> is the word in R2,and <span class="math notranslate nohighlight">\(y\)</span> is the word in R1.</p>
 <p>This is our first look at a case statement <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>.   Upon execution, if <span class="math notranslate nohighlight">\(x = \eps\)</span>, we move
 to line 2.  If <span class="math notranslate nohighlight">\(x\)</span> starts with  <span class="math notranslate nohighlight">\(\onett\)</span>, we delete it and go to line 3 and thence to line 6 and thus to the third section of the program.  There is no significance
 to the colors; they are just there to help us read and understand the program. If instead <span class="math notranslate nohighlight">\(x\)</span> starts with <span class="math notranslate nohighlight">\(\hash\)</span>, we would delete it and go to the second section, starting in line 4.  That section ends in line 5, and from there we return to the top.</p>
@@ -603,26 +602,7 @@ soon we will write this as <span class="math notranslate nohighlight">\(y+x\)</s
 </div>
 </div>
 </div>
-<p>Here is this program <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span> expressed as a table.</p>
-<TABLE cellspacing="0" cellpadding="5">
-        <TR BGCOLOR="#FFFFCC">
-                <TD>11#####</TD> <TD></TD><TD style="text-aligh" right;>cases on R2</TD></TR>
-        <TR BGCOLOR="#FFFFCC">
-                <TD>111111###</TD> <TD></TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
-                  </TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD> <TD></TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
-        </TR>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>1##</TD>  <TD></TD><TD>first symbol is #: add # to R1</TD></tr>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>1111####</TD> <TD></TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
-         <TR  BGCOLOR="#D4B48C">
-                <TD>1#</TD> <TD></TD> <TD>add 1 to R1</TD></tr>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
-        </TR>
-</TABLE> 
-<br><p>Here is an explanation of what is going on.</p>
+<p>Here is an explanation of what is going on.</p>
 <p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
 <p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1 and return to the very beginning of the program.</p>
@@ -636,12 +616,31 @@ Similarly, whenever m and n are different numbers, we can build a program <code 
 <p>The second program in this section is called <span class="math notranslate nohighlight">\(\copyprog\)</span>.
 Like <span class="math notranslate nohighlight">\(\moveprog\)</span>, the <span class="math notranslate nohighlight">\(\copyprog\)</span> program is actually an infinite batch of programs.
 The difference between <span class="math notranslate nohighlight">\(\moveprog\)</span> and <span class="math notranslate nohighlight">\(\copyprog\)</span>
-for us is that  when a register’s contents are <span class="math notranslate nohighlight">\(\moveprog\)</span>d, the
-register is left empty; but with <span class="math notranslate nohighlight">\(\copyprog\)</span>,
+for us is that  when a register’s contents are <span class="math notranslate nohighlight">\(\moveprog\)</span>d, the register is left empty; but with <span class="math notranslate nohighlight">\(\copyprog\)</span>,
 the register is left at the end with exactly what it had
-at the beginning.</p>
+t the beginning.</p>
 <p>In order to copy in this way, we need an auxiliary register, Rp.  So while the <span class="math notranslate nohighlight">\(\moveprog\)</span> programs had two registers in their names, the <span class="math notranslate nohighlight">\(\copyprog\)</span> programs have three.</p>
 <p>Here is our program when m = 1, n = 2, p = 3.   That is, here is <span class="math notranslate nohighlight">\(\copyprog_{1,2,3}\)</span>.</p>
+<TABLE cellspacing="0" cellpadding="5">
+        <TR BGCOLOR="#FFFFCC">
+                <TD>1#####</TD> <TD>cases on R1</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>11111111###</TD> <TD>go forward 8 to instruction 10 (the  move<sub>3,1</sub> part) </TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>1111###</TD><TD>go forward 4 to instruction 7</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11##</TD> <TD>add # to R2</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>111##</TD> <TD>add # to R3</TD></tr>   
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>11111####</TD> <TD>go backward 5 to the top</TD> </TR>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>11#</TD> <TD>add 1 to R2</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111#</TD> <TD>add 1 to R3</TD></tr>
+         <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
+         <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
+</TABLE>        
 <p>The program is a loop, exactly like <span class="math notranslate nohighlight">\(\moveprog_{m,n}\)</span>.    Each time through, we not only replicate in Rn the first symbol of the word in Rm,
 but we also an additional copy into Rp.   At the end, when Rm has been emptied, we return Rp to Rm and thus restore the original  contents of Rm. But this only works as described when Rp was empty to begin with.</p>
 <div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-3">
