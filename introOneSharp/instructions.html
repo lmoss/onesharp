@@ -201,6 +201,8 @@
 <li class="toctree-l1"><a class="reference internal" href="interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
 
+
+
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
 
 
@@ -469,7 +471,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-onesharp-instruction-set">The <span class="math notranslate nohighlight">\(\onesharp\)</span> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="nav section-nav flex-column">
@@ -505,15 +506,11 @@ document.write(`
 <p>The book could begin here instead of with the previous chapter.  In that case, one would return to one or more sections from the previous chapter on an as-needed basis.  On the other hand, most of this chapter is crucial for what follows.</p>
 </div>
 <p id="content-onesharpinstructions">Computability can be studied on an <em>intuitive</em> or <em>informal</em> level before one sees definitions.   This intuitive level is both the right level for our work, and at the same time the wrong level.   That is, for some things, working intuitively is exactly what we want to do.   For example, this was appropriate in the last chapter.  For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions, starting now.</p>
-<p>A <em>word</em> for us will be a sequence of strings using the characters <span class="math notranslate nohighlight">\(\onett\)</span> and <span class="math notranslate nohighlight">\(\hash\)</span>.   For example, <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span> is a word, as is the <em>empty word</em> <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.    We use <span class="math notranslate nohighlight">\(\Words\)</span> to denote the set of all words.  We use letters like <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span>, etc.~for words.<br />
-We deal a lot with (finite) sequences of words.<br />
-A sequence of words <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span> is often denoted <span class="math notranslate nohighlight">\(\overline{x}\)</span> for short.</p>
+<p>A <em>word</em> for us will be a sequence of strings using the characters <span class="math notranslate nohighlight">\(\onett\)</span> and <span class="math notranslate nohighlight">\(\hash\)</span>.   For example, <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span> is a word, as is the <em>empty word</em> <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.    We use <span class="math notranslate nohighlight">\(\Words\)</span> to denote the set of all words.  We use letters like <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span>, etc. for words.</p>
+<p>We deal a lot with (finite) sequences of words.  A sequence of words <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span> is often denoted <span class="math notranslate nohighlight">\(\overline{x}\)</span> for short.</p>
 <p>A <em>register</em> is a place that stores words.  A <em>register machine</em> is a collection of registers indexed by nonzero natural numbers.
 These registers are called R1, R2, etc.   The machine runs according to a <em>program</em>.  Programs are comprised of <em>instructions</em>.  We are going to describe instructions and programs in <span class="math notranslate nohighlight">\(\onesharp\)</span> shortly.  The idea is that the register machine starts with <em>input words</em> in its registers – all but finitely many are <span class="math notranslate nohighlight">\(\eps\)</span> –  proceeds according to the program, and (if all goes well) eventually
 <em>halts</em> with an <em>output</em> in R1.</p>
-<section id="the-1-instruction-set">
-<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set<a class="headerlink" href="#the-1-instruction-set" title="Link to this heading">#</a></h2>
-</section>
 <section id="the-onesharp-instruction-set">
 <h2>The <span class="math notranslate nohighlight">\(\onesharp\)</span> instruction set<a class="headerlink" href="#the-onesharp-instruction-set" title="Link to this heading">#</a></h2>
 <p>The chart below contains the full set of instructions of  <span class="math notranslate nohighlight">\(\onesharp\)</span>.  There are five instruction types.</p>
@@ -547,14 +544,16 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
 <section class="remark-content" id="proof-content">
 <p>When we use superscripts and write, for example,  <span class="math notranslate nohighlight">\(\onett^m \hash^n\)</span> we mean <span class="math notranslate nohighlight">\(m\)</span> copies of the symbol <span class="math notranslate nohighlight">\(\onett\)</span> followed by <span class="math notranslate nohighlight">\(n\)</span> copies of the symbol <span class="math notranslate nohighlight">\(\hash\)</span>.  For example,
-<span class="math notranslate nohighlight">\(\onett^{15} \hash^4\)</span> abbreviates<br />
-[ \onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash.]</p>
+<span class="math notranslate nohighlight">\(\onett^{15} \hash^4\)</span> abbreviates</p>
+<div class="math notranslate nohighlight">
+\[
+\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash.
+\]</div>
 </section>
 </div><p>There are only five kinds of  <span class="math notranslate nohighlight">\(\onesharp\)</span> instructions.
 We begin with the first two kinds, those that end in <span class="math notranslate nohighlight">\(\hash\)</span> and those that end in <span class="math notranslate nohighlight">\(\hash\hash\)</span>.
 For example, <span class="math notranslate nohighlight">\(\onett\hash\)</span> takes whatever word happens to be in R1 and adds a <span class="math notranslate nohighlight">\(\onett\)</span> to its right end. Similarly, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span> takes whatever word happens to be in R2 and adds a <span class="math notranslate nohighlight">\(\onett\)</span> to its right end.  As for the instructions which end in <span class="math notranslate nohighlight">\(\hash\hash\)</span>,  such as <span class="math notranslate nohighlight">\(\onett^5\hash\hash\)</span>, it would add <span class="math notranslate nohighlight">\(\hash\)</span> to the right end of R5.</p>
-<p>The programs of <span class="math notranslate nohighlight">\(\onesharp\)</span> are just sequences of instructions run together.  There is no punctuation between the instructions.<br />
-To move around in a program, we have two other kinds of instructions:
+<p>The programs of <span class="math notranslate nohighlight">\(\onesharp\)</span> are just sequences of instructions run together.  There is no punctuation between the instructions.   To move around in a program, we have two other kinds of instructions:
 The instructions <span class="math notranslate nohighlight">\(\onett^m \hash^3\)</span> move forward.  So if instruction <span class="math notranslate nohighlight">\(15\)</span> in a program happens to be
 <span class="math notranslate nohighlight">\(\onett^8 \hash^3\)</span>, then when we execute it we next go to instruction <span class="math notranslate nohighlight">\(15 + 8 = 23\)</span>.   Similarly,
 The instructions <span class="math notranslate nohighlight">\(\onett^m \hash^4\)</span> move backward.
@@ -575,23 +574,28 @@ The workings of these <em>case instructions</em> will be clarified through examp
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>Here is a program:
-$<span class="math notranslate nohighlight">\(\onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash.\)</span><span class="math notranslate nohighlight">\(
-It is four instructions concatenated together.   
-The first instruction, \)</span>\onett\onett\hash<span class="math notranslate nohighlight">\(, adds \)</span>\onett<span class="math notranslate nohighlight">\( to R2.   The second instruction says ``go forward two instructions'', so we skip the third instruction (\)</span>\onett\onett\hash\hash\hash\hash<span class="math notranslate nohighlight">\()  and go to the fourth instruction, \)</span>\onett\hash\hash<span class="math notranslate nohighlight">\(.   This adds \)</span>\hash$ to R1.</p>
+<p>Here is a program:</p>
+<div class="math notranslate nohighlight">
+\[
+\onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash.
+\]</div>
+<p>It is four instructions concatenated together.<br />
+The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\onett\)</span> to R2.   The second instruction says ``go forward two instructions’’, so we skip the third instruction (<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>)  and go to the fourth instruction, <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Examples</p>
-<p>Here is another program:
-$<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash\)</span><span class="math notranslate nohighlight">\(
-This is the concatenation of the following sequence of seven instructions:
-\[
+<p>Here is another program:</p>
+<div class="math notranslate nohighlight">
+\[\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
+\]</div>
+<p>This is the concatenation of the following sequence of seven instructions:
+[
 \begin{array}{l}
-(\onett\onett\hash\hash\hash\hash\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash, \onett\onett\onett\hash\hash\hash, \onett\hash\hash, \onett\onett\onett\onett\hash\hash\hash\hash, \\
- \onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
- \end{array}
-\]
-Dividing a program into instructions is a very easy form of *parsing*.  In a real computer language, parsing is more difficult than it is for \)</span>\onesharp$.</p>
+(\onett\onett\hash\hash\hash\hash\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash, \onett\onett\onett\hash\hash\hash, \onett\hash\hash, \onett\onett\onett\onett\hash\hash\hash\hash, \
+\onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
+\end{array}
+]
+Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
 
@@ -607,7 +611,7 @@ Dividing a program into instructions is a very easy form of *parsing*.  In a rea
 <p>This problem is about the program <span class="math notranslate nohighlight">\(p = \onett\onett\onett\hash\hash\)</span>.</p>
 <ol class="arabic simple">
 <li><p>Start with <span class="math notranslate nohighlight">\(\onett\)</span> in R1 and R2, <span class="math notranslate nohighlight">\(\onett\hash\)</span> in R3, and the other registers empty. What happens in each register if we run <span class="math notranslate nohighlight">\(p\)</span>?</p></li>
-<li><p>Start with <span class="math notranslate nohighlight">\(\onehash\)</span> in R1 and R3, <span class="math notranslate nohighlight">\(\onett\)</span> in R2 and R4, and the other registers empty. What happens in each register if we run <span class="math notranslate nohighlight">\(p\)</span>?</p></li>
+<li><p>Start with <span class="math notranslate nohighlight">\(\onesharp\)</span> in R1 and R3, <span class="math notranslate nohighlight">\(\onett\)</span> in R2 and R4, and the other registers empty. What happens in each register if we run <span class="math notranslate nohighlight">\(p\)</span>?</p></li>
 </ol>
 </section>
 </div>
@@ -729,7 +733,6 @@ and  <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>  is 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-onesharp-instruction-set">The <span class="math notranslate nohighlight">\(\onesharp\)</span> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="nav section-nav flex-column">

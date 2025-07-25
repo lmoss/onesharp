@@ -201,6 +201,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
 
+
+
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
 
@@ -587,7 +589,7 @@ that tile on <span class="math notranslate nohighlight">\(0\)</span> is the dist
 </section>
 </div><div class="exercise admonition" id="logic/church_turing-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 101 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 104 </span></p>
 <section id="exercise-content">
 <ol class="arabic simple">
 <li><p>What should the disjunction <span class="math notranslate nohighlight">\(\bigvee \emptyset\)</span> be in logic?</p></li>
@@ -612,7 +614,7 @@ e(n^j e^i(0))  = n e(n^{j-1} e^i(0))  = \cdots = n^j e (e^{i}(0)) = n^{j} e^{i+1
 <p>By construction, those are the same tiles as on <span class="math notranslate nohighlight">\((i,j)\)</span> and <span class="math notranslate nohighlight">\((i+1,j)\)</span> in the quadrant.  So those tiles match.</p>
 <div class="exercise admonition" id="logic/church_turing-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 102 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 105 </span></p>
 <section id="exercise-content">
 <p>Find a tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> and a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> which is finite.</p>
 </section>
@@ -623,7 +625,7 @@ e(n^j e^i(0))  = n e(n^{j-1} e^i(0))  = \cdots = n^j e (e^{i}(0)) = n^{j} e^{i+1
 <h1>Two improvements<a class="headerlink" href="#two-improvements" title="Link to this heading">#</a></h1>
 <div class="exercise admonition" id="logic/church_turing-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 103 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 106 </span></p>
 <section id="exercise-content">
 <p>Our proof of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a> used a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences with the property that we want:
 <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  can tile the quadrant iff <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> has a model.   This function has the property
@@ -634,7 +636,7 @@ and a new unary function symbol <span class="math notranslate nohighlight">\(on\
 </div>
 <div class="exercise admonition" id="logic/church_turing-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 104 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 107 </span></p>
 <section id="exercise-content">
 <p>Here is another strengthening of <a class="reference internal" href="#Churchs-theorem">Theorem 17</a>.  There is a fixed signature <span class="math notranslate nohighlight">\(\Sigma\)</span> consisting of relation symbols of arity <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(2\)</span> and a function <span class="math notranslate nohighlight">\(\varphi\)</span> from tile sets to first-order logic sentences in the language of <span class="math notranslate nohighlight">\(\Sigma\)</span> such that for all tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>:</p>
 <ol class="arabic simple">
@@ -652,7 +654,7 @@ K \leq_m Val_{FO}
 \]</div>
 <div class="exercise admonition" id="logic/church_turing-exercise-6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 105 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 108 </span></p>
 <section id="exercise-content">
 <p>Prove this last fact, given what we have done above.</p>
 </section>
@@ -678,7 +680,7 @@ K \leq_m Val_{FO}
 <p>The work which we have done so far show that whenever a first-order signature contains a binary relation symbol, the validity problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete, and the satisfiability problem is <span class="math notranslate nohighlight">\(\Pi_1\)</span>-complete.    We might ask about the <em>finite</em> versions of these.   That is, we study the problem of whether a logic sentence has a <em>finite</em> model.   The results here shows that this problem is <span class="math notranslate nohighlight">\(\Sigma_1\)</span>-complete.</p>
 <div class="exercise admonition" id="logic/church_turing-exercise-7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 106 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 109 </span></p>
 <section id="exercise-content">
 <p>Use <a class="reference internal" href="../undecidability/tiling.html#tilingforTrakhtenbrot"><span class="std std-ref">Exercise</span></a> to show that the problem of determining whether a first-order logic sentence has a finite model is undecidable.</p>
 <p>[Hint: you will not be able to use the functions <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> as we did above.  This is due to the fact that in a finite rectangle it is not entirely clear what to do about those functions on the north and east edges of a rectangle.   So you will need to fix this, either by making a decision on how to define <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(e\)</span> on the edges, or else by moving from functions to relations.  Either way, there are a fair amount of details to work out and check in this problem.]</p>
