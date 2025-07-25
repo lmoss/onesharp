@@ -602,12 +602,6 @@ soon we will write this as <span class="math notranslate nohighlight">\(y+x\)</s
 </div>
 </div>
 </div>
-<p>Here is an explanation of what is going on.</p>
-<p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="std std-doc">in a different notebook</span></a>.)</p>
-<p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
-<p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1 and return to the very beginning of the program.</p>
-<p>The point is that by going around the loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
-Similarly, whenever m and n are different numbers, we can build a program <code class="docutils literal notranslate"><span class="pre">move_m_n</span></code>. This program would write the contents of Rm onto the end of Rn, emptying Rm in the process.</p>
 </section>
 </section>
 </section>
