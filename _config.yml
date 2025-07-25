@@ -67,6 +67,7 @@ sphinx:
              "iif": ["\\rightarrow"]
              "andd": ["\\wedge"]
              "proves": ["\\vdash"]
+             "eps": ["\\varepsilon"]
   extra_extensions:
     - sphinx_exercise
     - sphinx_proof
