@@ -511,7 +511,7 @@ is that we start the register machine with <span class="math notranslate nohighl
 are empty; this means that they are the empty word <span class="math notranslate nohighlight">\(\eps\)</span>.  But this is an extra assumption is something that we mention specially when we make it.</p>
 <p>We (informally) say that a program  <span class="math notranslate nohighlight">\(p\)</span> halts <span class="math notranslate nohighlight">\(\overline{x}\)</span> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>, the control transfers to right below the last instruction of
 <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span>  has <span class="math notranslate nohighlight">\(n\)</span> instructions. The formal definition is given below.</p>
-<p>In contrast, we say that <span class="math notranslate nohighlight">\(p\)</span> <em>halts improperly</em> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>} if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>,
+<p>In contrast, we say that <span class="math notranslate nohighlight">\(p\)</span> <em>halts improperly</em> on <span class="math notranslate nohighlight">\(\overline{x}\)</span> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>,
 the control transfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>To see the difference, consider the following two programs: <span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\onett\hash\)</span> and <span class="math notranslate nohighlight">\(\onett\hash\onett\onett\hash\hash\hash\)</span>. Suppose we run them with some fixed but arbitrary word in R1.  The first says “go forward 2,” and the second “add <span class="math notranslate nohighlight">\(\onett\)</span> to R1, and then advance two instructions.” The first halts, while the second halts improperly.</p>
 </div>
@@ -595,7 +595,7 @@ is <em>undefined</em>.</p>
 <li><p><span class="math notranslate nohighlight">\(\semantics{\moveprog_{2,1}}(\onett,\hash, \onett\hash\onett) \)</span> is undefined, since at the end R3 is not empty.</p></li>
 <li></li>
 </ol>
-<p><span class="math notranslate nohighlight">\([\![\protect{\onett\hash\hash\hash\onett\hash\hash\hash\hash}]\!]^1(x)\)</span> is undefined for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\semantics{\onett\hash\hash\hash\onett\hash\hash\hash\hash}^1(x)\)</span> is undefined for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <ol class="arabic simple" start="7">
 <li><p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program</p></li>
 </ol>
