@@ -580,7 +580,7 @@ The workings of these <em>case instructions</em> will be clarified through examp
 \[
 \onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash.
 \]</div>
-<p>It is four instructions concatenated together.   The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\onett\)</span> to R2.   The second instruction says ``go forward two instructions’’, so we skip the third instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>, and go to the fourth instruction, <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+<p>It is four instructions concatenated together.   The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\onett\)</span> to R2.   The second instruction says “go forward two instructions,” so we skip the third instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>, and go to the fourth instruction, <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Examples</p>
@@ -663,7 +663,7 @@ and  <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>  is 
 <p>All numbers in this chart are written in unary, and <span class="math notranslate nohighlight">\(n\geq 1\)</span>.</p>
 <p>Registers are processed as queues: symbols enter on the right and exit on the left.</p>
 <p>The first two types of instructions add symbols to the right ends of the registers.</p>
-<p>Here is a review of how the case instruction <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#####</span></code> works.</p>
+<p>Here is a review of how the case instruction <span class="math notranslate nohighlight">\(\onett^n \hash^5\)</span> works.</p>
 <p>If Rn is empty, we go to the very next instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mathtt{1}\)</span>, we delete that symbol and go to the second instruction after the case instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mathtt{\#}\)</span>, we delete that symbol and go to the third instruction after the case instruction.</p>
