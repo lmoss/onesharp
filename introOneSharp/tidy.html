@@ -496,26 +496,26 @@ document.write(`
 <p>(b) If line <span class="math notranslate nohighlight">\(i\)</span> is a backward transfer instruction <span class="math notranslate nohighlight">\(\onett^k \hash\hash\hash\hash\)</span>, then <span class="math notranslate nohighlight">\(i-k \geq \onett\)</span>.</p>
 <p>(c) If line <span class="math notranslate nohighlight">\(i\)</span> is a case instruction <span class="math notranslate nohighlight">\(\onett^k \hash\hash\hash\hash\hash\)</span>, then <span class="math notranslate nohighlight">\(k+2 \leq N\)</span>.</p>
 <p>Here is a comment on condition (c).
-Suppose that <span class="math notranslate nohighlight">\(p\)</span> had <span class="math notranslate nohighlight">\(N\)</span> lines, and line <span class="math notranslate nohighlight">\(N\)</span> were a case instruction. <span class="math notranslate nohighlight">\(\onett^k \hash\hash\hash\hash\hash\)</span>. If Rk started with a <span class="math notranslate nohighlight">\(\hash\)</span>, then executing  <span class="math notranslate nohighlight">\(\onett^k\ hash\hash\hash\hash\hash\)</span> would take us to line <span class="math notranslate nohighlight">\(N+3\)</span>, and there is no such line. For the same reason, lines <span class="math notranslate nohighlight">\(N-\onett\)</span> and <span class="math notranslate nohighlight">\(N-2\)</span> cannot be case instructions.</p>
+Suppose that <span class="math notranslate nohighlight">\(p\)</span> had <span class="math notranslate nohighlight">\(N\)</span> lines, and line <span class="math notranslate nohighlight">\(N\)</span> were a case instruction. <span class="math notranslate nohighlight">\(\onett^k \hash\hash\hash\hash\hash\)</span>. If Rk started with a <span class="math notranslate nohighlight">\(\hash\)</span>, then executing  <span class="math notranslate nohighlight">\(\onett^k\ \hash\hash\hash\hash\hash\)</span> would take us to line <span class="math notranslate nohighlight">\(N+3\)</span>, and there is no such line. For the same reason, lines <span class="math notranslate nohighlight">\(N-\onett\)</span> and <span class="math notranslate nohighlight">\(N-2\)</span> cannot be case instructions.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/tidy-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
 <section id="exercise-content">
-<p>Prove that every program is strongly equivalent to a program in which the none of the last three instructions are case instructions <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#^5</span></code>.</p>
+<p>Prove that every program is strongly equivalent to a program in which the none of the last three instructions are case instructions <span class="math notranslate nohighlight">\(\onett^n \hash^5\)</span>.</p>
 </section>
 </div>
 <div class="proof proposition admonition" id="proposition-1">
 <p class="admonition-title"><span class="caption-number">Proposition 7 </span></p>
 <section class="proposition-content" id="proof-content">
-<p>Every program is strongly equivalent to a tidy program. Moreover, there is a program <code class="docutils literal notranslate"><span class="pre">tidy</span></code> such that for all programs <span class="math notranslate nohighlight">\(p\)</span>,
-<span class="math notranslate nohighlight">\([\![tidy]\!](p)\)</span> is a tidy program strongly equivalent to <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Every program is strongly equivalent to a tidy program. Moreover, there is a program <span class="math notranslate nohighlight">\(\tidyprog\)</span> such that for all programs <span class="math notranslate nohighlight">\(p\)</span>,
+<span class="math notranslate nohighlight">\([\![\tidyprog]\!](p)\)</span> is a tidy program strongly equivalent to <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </section>
 </div><div class="exercise admonition" id="introOneSharp/tidy-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
 <section id="exercise-content">
-<p>Prove this proposition. (Alternatively, write a program in either Python or 1# which found a tidy version of an input program.)</p>
+<p>Prove this proposition. (Alternatively, write a program in either Python or <span class="math notranslate nohighlight">\(\onesharp\)</span> which found a tidy version of an input program.)</p>
 </section>
 </div>
 <div class="exercise admonition" id="tidiness">
@@ -523,7 +523,10 @@ Suppose that <span class="math notranslate nohighlight">\(p\)</span> had <span c
 <p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
 <section id="exercise-content">
 <p>If <span class="math notranslate nohighlight">\(p\)</span> is tidy, show that <span class="math notranslate nohighlight">\(p\)</span> is strongly equivalent to every program of the form</p>
-<p><code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span></code> <code class="docutils literal notranslate"><span class="pre">1###</span> </code><span class="math notranslate nohighlight">\(\cdots\)</span> <code class="docutils literal notranslate"><span class="pre">1###</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+\onett\hash^3 \cdots \onett\hash^3 \quad p \quad \onett\hash^3 \cdots \onett\hash^3
+\]</div>
 <p>Show that all three parts of the definition of tidiness are needed in order to show this fact.</p>
 </section>
 </div>
