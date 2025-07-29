@@ -799,12 +799,11 @@ Then the first tile in instruction 4744 can be any of the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">This is because the symbols in the middle of row 4744 have to be <span class="math notranslate nohighlight">\(\onett\)</span>, <span class="math notranslate nohighlight">\(\hash\)</span> or ``blank.’’
 So there would be no way to match the heart symbol at the end.</p>
-<p class="sd-card-text">We must have all blanks on the far right, and then next to that a tiles with two <span class="math notranslate nohighlight">\(\onett\)</span>s:
-We now know the last tiles before the blank tiles in row 4744:
+<p class="sd-card-text">We must have all blanks on the far right, and then next to that a tile with a <span class="math notranslate nohighlight">\(\onett\)</span>
+on the bottom and blank on the right:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
-<p class="sd-card-text">Indeed, the whole row has to be
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%">
-A detail to check at this point is that the only instruction tile with 24 on the bottom and <span class="math notranslate nohighlight">\(\onett\)</span> on the right has 26 on the top.</p>
+<p class="sd-card-text">By arguing right-to-left, the whole row has to be
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">By our induction hypothesis on <span class="math notranslate nohighlight">\(n\)</span>, the word encoded in row 4743
 is the contents of the register after 4743 steps.
 The word encoded in row 4744  is <span class="math notranslate nohighlight">\(\hash\hash\onett\)</span>.
@@ -819,7 +818,8 @@ However, similar work applies when the word encoded in row 4743 starts with a <s
 <p class="sd-card-text">Now what happens when the word encoded in row 4743 is the empty word?  By induction hypothesis, after 4743 steps of running <span class="math notranslate nohighlight">\(p\)</span>,
 the register is empty.  As to the first tile in row 4744, we again have three options:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%">
-<p class="sd-card-text">It must be the first of these.  By trying things out, we see that the rest of row 4744 must be copies of the empty tile.   So the word encoded in row 4744 is <span class="math notranslate nohighlight">\(\eps\)</span>.
+<p class="sd-card-text">It must be the first of these.  Then the rest of row 4744 must be copies of the empty tile,
+by our first observation above.   So the word encoded in row 4744 is <span class="math notranslate nohighlight">\(\eps\)</span>.
 Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\)</span>.  This all corresponds to executing the <span class="math notranslate nohighlight">\(\onett\hash^5\)</span> instruction on the empty register.</p>
 <p class="sd-card-text">We have verified all parts of (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 </div>
