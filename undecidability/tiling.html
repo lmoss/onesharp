@@ -572,7 +572,7 @@ we want a run of <span class="math notranslate nohighlight">\(p\)</span> to give
 the leftmost entry will contain the instruction number, and the rest of the row will contain the register contents.
 Since <span class="math notranslate nohighlight">\(p\)</span> is tidy, the run of <span class="math notranslate nohighlight">\(p\)</span> on empty registers takes infinitely many steps.  The run will correspond to the tiling of the entire quadrant.    And if <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span>, there will not be such a tiling; the fact that the computation halted will preclude a tiling of the quadrant.</p>
 <p>Here is an example which we shall mention at several points in the rest of this discussion.  We take <span class="math notranslate nohighlight">\(p\)</span> to be the program
-<span class="math notranslate nohighlight">\(\onett\hash\onett\hash\hash\one\one\hasn^4\)</span>.  Clearly <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.  We want the bottom 8 rows of the tiling of the quadrant to resemble</p>
+<span class="math notranslate nohighlight">\(\onett\hash\onett\hash\hash\one\one\hash^4\)</span>.  Clearly <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\uparrow\)</span>.  We want the bottom 8 rows of the tiling of the quadrant to resemble</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-23.png?raw=1" width="100%" height="100%">
 <p>We say that we want the bottom 8 rows to <em>resemble</em> this because what is shown above is not a set of tiles in the first place: there are no colors on the edges.  But our details below are an elaboration of this idea.   It might be fun for you to work out your own elaboration at this point before looking below.   If you want to see how our definitions will work, you can look at
 <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">example-formal-tiling</span></code>.</p>
@@ -600,28 +600,28 @@ an oblong rectangle, the copyright symbol (a circle with the letter C inside),
 the word “start”, and a blank color (where the side of a square is just left blank).</p>
 <p>We start with 18 tiles that are part of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> for <em>all</em> <span class="math notranslate nohighlight">\(p\in A\)</span>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t1-01.png?raw=1" width="100%" height="100%">
-<p>The rest of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> depends on the program <span class="math notranslate nohighlight">\(p\)</span>.  To begin, when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>, we include the tile
+<p>The rest of <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> depends on the program <span class="math notranslate nohighlight">\(p\)</span>.  To begin, when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash\)</span>, we include the tile
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t2-02.png?raw=1" width="100%" height="100%"></p>
-<p>And when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1##</span></code>,  we include the tile
+<p>And when  instruction <span class="math notranslate nohighlight">\(i\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>,  we include the tile
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t3-03.png?raw=1" width="100%" height="100%"></p>
-<p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code> we include the two tiles
+<p>When  instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\onett\hash\hash\hash\)</span> we include the two tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t4-04.png?raw=1" width="100%" height="100%"></p>
-<p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>,
+<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is  <span class="math notranslate nohighlight">\(\onett\hash^4\)</span> we include the two tiles
+<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%"></p>
+<p>Finally, when instruction <span class="math notranslate nohighlight">\(i\)</span> is the cases instruction <span class="math notranslate nohighlight">\(\onett\hash^5\)</span>,<br />
 we include the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t6-06.png?raw=1" width="100%" height="100%"></p>
 <p>Notice that <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> is a finite set of tiles.
 We also want <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> to be pointed, and we take the green tile above.</p>
 <p>This completes the definition of the function <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  It’s clear that <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is total and computable.  The easy part of our result is showing that if <span class="math notranslate nohighlight">\(p\in A\)</span> halts, then there is a propert tiling of the quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>.</p>
-<p>When instruction <span class="math notranslate nohighlight">\(i\)</span> is   <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^m\)</span><code class="docutils literal notranslate"><span class="pre">####</span></code> we include the two tiles
-<img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1" width="100%" height="100%"></p>
 <div class="proof example admonition" id="example-formal-tilinghttps://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t5-05.png?raw=1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
 <section class="example-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(p\)</span> be our running example program  <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
+<p>Let <span class="math notranslate nohighlight">\(p\)</span> be our running example program <span class="math notranslate nohighlight">\(\onett\hash\onett\hash\hash\one\one\hash^4\)</span>.
 <span class="math notranslate nohighlight">\(\TT(p)\)</span> contains the 18 tiles that come for free, and also the three tiles below:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t22-22.png?raw=1" width="100%" height="100%">
-In these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
-not the <code class="docutils literal notranslate"><span class="pre">1#</span></code> symbol <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+As mentioned above, in these two tiles, the symbol <span class="math notranslate nohighlight">\(1\)</span> is the first line number of <span class="math notranslate nohighlight">\(p\)</span>,
+not the symbol <span class="math notranslate nohighlight">\(\one\)</span> coming from the language <span class="math notranslate nohighlight">\(\one\hash\)</span>.</p>
 <p>Here is a finite part of a tiling of the first quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span>:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-24.png?raw=1" width="100%" height="100%">
 </section>
@@ -644,8 +644,7 @@ on the top
 if and only if that tile is in the first column.
 We call these <em>instruction tiles</em>.  The instruction tiles
 are the only ones with the oblong rectangle on the left side.</p>
-<p>We are going to denote by <span class="math notranslate nohighlight">\(k\)</span> the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.
-Notice that there is no tile with <span class="math notranslate nohighlight">\(k+1\)</span> on the bottom.</p>
+<p>There is no tile with <span class="math notranslate nohighlight">\(n+1\)</span> on the bottom.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Consider a tiling of two neighboring rows of the quadrant, say row <span class="math notranslate nohighlight">\(i\)</span> and row <span class="math notranslate nohighlight">\(i+1\)</span>.
@@ -680,9 +679,9 @@ We start counting the rows with row <span class="math notranslate nohighlight">\
 <p>For a program <span class="math notranslate nohighlight">\(p\)</span>, “step 0” gets us ready before step <span class="math notranslate nohighlight">\(1\)</span>.  In step <span class="math notranslate nohighlight">\(1\)</span>, we execute the first instruction of <span class="math notranslate nohighlight">\(p\)</span>.   In each step <span class="math notranslate nohighlight">\(n\)</span>, we execute
 instruction <span class="math notranslate nohighlight">\(i(n)\)</span>, and we also calculate the next instruction to execute, <span class="math notranslate nohighlight">\(i(n+1)\)</span>.  We always have <span class="math notranslate nohighlight">\(0\leq i(n)\leq k+1\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the
 number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>For example, let <span class="math notranslate nohighlight">\(p\)</span> be the program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
+<p>For example, let <span class="math notranslate nohighlight">\(p\)</span> be the program  <span class="math notranslate nohighlight">\(\onett\hash\onett\hash\hash\one\one\hash^4\)</span>.
 We have <span class="math notranslate nohighlight">\(i(0) = 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 2\)</span>, <span class="math notranslate nohighlight">\(i(3) = 3\)</span>, <span class="math notranslate nohighlight">\(i(4) = 1\)</span>, <span class="math notranslate nohighlight">\(i(5) = 2\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>.</p>
-<p>For another, let <span class="math notranslate nohighlight">\(q\)</span> be <code class="docutils literal notranslate"><span class="pre">1#1##</span></code>.  Then <span class="math notranslate nohighlight">\(i(0)= 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 3\)</span>.  The number of instructions in <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(k =2\)</span>,
+<p>For another, let <span class="math notranslate nohighlight">\(q\)</span> be <span class="math notranslate nohighlight">\(\onett\hash\onett\hash\hash\)</span>.  Then <span class="math notranslate nohighlight">\(i(0)= 0\)</span>, <span class="math notranslate nohighlight">\(i(1) = 1\)</span>, <span class="math notranslate nohighlight">\(i(2) = 3\)</span>.  The number of instructions in <span class="math notranslate nohighlight">\(q\)</span> is <span class="math notranslate nohighlight">\(k =2\)</span>,
 and so <span class="math notranslate nohighlight">\(i(2) = k+1\)</span>.</p>
 <div class="proof lemma admonition" id="tiling_works">
 <p class="admonition-title"><span class="caption-number">Lemma 9 </span></p>
@@ -893,8 +892,7 @@ Let <span class="math notranslate nohighlight">\(t_{n+1}\)</span> be any such no
 <p>Proof. We show the contrapositive.   Assume that for all <span class="math notranslate nohighlight">\(n\)</span> there is a tiling using <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of the <span class="math notranslate nohighlight">\(n\times n\)</span> square in the corner.  We show that there is a tiling of the entire quadrant.</p>
 <p>Consider the set of all tilings of all <span class="math notranslate nohighlight">\(n\times n\)</span> squares in the corner.  It is a tree, where the “edge” relation
 relates a tiling of the <span class="math notranslate nohighlight">\(n\times n\)</span> square to a tiling of the <span class="math notranslate nohighlight">\((n+1)\times (n+1)\)</span> square iff the first is a restriction of the second.
-This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 10</a>, the tree has an infinite branch.<br />
-By taking the union of the tilings along this branch, we tile the entire quadrant.</p>
+This is tree: the root is the empty tiling of the <span class="math notranslate nohighlight">\(0\times 0\)</span> square.   It is finitely branching, since the tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> is finite to begin with.   By <a class="reference internal" href="#Konig">Lemma 10</a>, the tree has an infinite branch.   By taking the union of the tilings along this branch, we tile the entire quadrant.</p>
 <p>(One cannot in general take the union of tilings, since those tilings might conflict.  But if we have a branch in this tree, then the tilings along the branch agree on their common squares.  And in this case, we <em>can</em> take the union.)</p>
 </div>
 <p>We turn this observation into the proof of <a class="reference internal" href="#tiling_undecidability_converse">Theorem 15</a>.</p>
@@ -943,7 +941,7 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Credits</p>
-<p>The original source on tiling is Hao Wang’s paper from 1961 entitled “Proving theorems by pattern recognition—II”, Bell System Technical Journal, 40 (1): 1–41.  This paper has the undecidability of tiling a pointed tile set.  It was for tiling the entire plane rather than the quadrant.  It also employed the undecidability of the halting problem for <em>Turing machines</em> rather than for register machines.  The work there is a bit easier than what we do here.  Put another way, if one were to prove that Turing machines can emulate register machines, the details would be similar to what we did concerning the instructions of the form <code class="docutils literal notranslate"><span class="pre">1#</span></code>,  <code class="docutils literal notranslate"><span class="pre">1##</span></code>, or  <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.</p>
+<p>The original source on tiling is Hao Wang’s paper from 1961 entitled “Proving theorems by pattern recognition—II”, Bell System Technical Journal, 40 (1): 1–41.  This paper has the undecidability of tiling a pointed tile set.  It was for tiling the entire plane rather than the quadrant.  It also employed the undecidability of the halting problem for <em>Turing machines</em> rather than for register machines.  The work there is a bit easier than what we do here.  Put another way, if one were to prove that Turing machines can emulate register machines, the details would be similar to what we did concerning the instructions of the form <span class="math notranslate nohighlight">\(\onett\hash\)</span>, <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>, or <span class="math notranslate nohighlight">\(\onett\hash^5\)</span>.</p>
 <p>It is more interesting and much more difficult to study the tiling problem on tile sets that do not come with a “start tile” <span class="math notranslate nohighlight">\(t_0\)</span>.
 The tiling problem for finite tile sets was shown to be undecidable by Raphael Robinson in his paper “Undecidability and Nonperiodicity for Tilings of the Plane,” Inventiones Mathematicae, 12(3), 1971 pp. 177–209.   There are newer and simpler proofs of this result as well.</p>
 </div>
