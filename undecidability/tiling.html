@@ -562,7 +562,7 @@ p\in \overline{K}^1 \quadiff   \mathcal{T}(p) \in {K}^{\mathbb{T}}
 </ol>
 <div class="attention admonition">
 <p class="admonition-title">Assumption</p>
-<p>We are going to replace <span class="math notranslate nohighlight">\(p\)</span> by <span class="math notranslate nohighlight">\(q\)</span>.   That is, we <em>assume</em> from now on that the  only register mentioned in <span class="math notranslate nohighlight">\(p\)</span> is R1.  We thus speak of \emph{the register}.</p>
+<p>We are going to replace <span class="math notranslate nohighlight">\(p\)</span> by <span class="math notranslate nohighlight">\(q\)</span>.   That is, we <em>assume</em> from now on that the  only register mentioned in <span class="math notranslate nohighlight">\(p\)</span> is R1.  We thus speak of <em>the register</em>.</p>
 </div>
 </section>
 <section id="ideas-behind-the-construction">
@@ -728,13 +728,13 @@ The first tile in that row must be
 This is because the only tile in <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(24\)</span> on the bottom is the tile above.
 What are the next tiles in row 4744?
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t13-13.png?raw=1" width="100%" height="100%"></p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click for the answer.</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t14-14.png?raw=1" width="100%" height="100%">
 Of course, it must be checked that this really is the only way to tile row 4744.   The observations made above should help you do this.
 </div>
+</details></div>
 </details><p>So we see that there is a unique way to tile row 4744.   Recall that we are verifying point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  It remains to
 show that the word encoded in the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps is  is the contents of the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps.
 By what we saw above, the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps is <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span>.  Step <span class="math notranslate nohighlight">\(n+1\)</span> executed the instruction <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.
@@ -801,7 +801,7 @@ We now know the last tiles before the blank tiles in row 4744:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">Indeed, the whole row has to be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%">
-An important detail here is that the only instruction tile with 24 on the bottom and <span class="math notranslate nohighlight">\(\onett\)</span> on the right has 26 on the top.</p>
+A detail to check at this point is that the only instruction tile with 24 on the bottom and <span class="math notranslate nohighlight">\(\onett\)</span> on the right has 26 on the top.</p>
 <p class="sd-card-text">By our induction hypothesis on <span class="math notranslate nohighlight">\(n\)</span>, the word encoded in row 4743
 is the contents of the register after 4743 steps.
 The word encoded in row 4744  is <span class="math notranslate nohighlight">\(\hash\hash\onett\)</span>.
