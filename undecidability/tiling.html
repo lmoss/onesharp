@@ -713,7 +713,7 @@ where <span class="math notranslate nohighlight">\(M\)</span> is the number of i
 For if <span class="math notranslate nohighlight">\(i(n+1) = M+1\)</span>, the program <span class="math notranslate nohighlight">\(p\)</span> would not run for <span class="math notranslate nohighlight">\(n+1\)</span> steps.
 Therefore <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq M\)</span>.</p>
 <p>At this point the proof splits into cases depending on what instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is,
-and whether the regsiter is empty or not.</p>
+and whether the regsiter is empty or not after <span class="math notranslate nohighlight">\(p\)</span> runs for <span class="math notranslate nohighlight">\(n\)</span> steps.</p>
 <p>Case 1: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash\)</span>. This is very similar to Case 2 just below.</p>
 <p>Case 2: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -820,24 +820,7 @@ the register is empty.  Moreove, the first tile in row 4744 must be the first of
 Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\)</span>.  This all corresponds to executing the <span class="math notranslate nohighlight">\(\onett\hash^5\)</span> instruction on the empty register.</p>
 <p class="sd-card-text">We have verified all parts of (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 </div>
-</details><div class="exercise admonition" id="undecidability/tiling-exercise-5">
-
-<p class="admonition-title"><span class="caption-number">Exercise 99 </span></p>
-<section id="exercise-content">
-<p>Let <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> be finite tile set, and consider <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>.<br />
-Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span> that is <em>not</em> isomorphic to the grid model (the model that we had in mind when we formulated <span class="math notranslate nohighlight">\(\varphi(\mathcal{T})\)</span>).</p>
-<p>Does this matter?   That is, does this invalidate or complicate the proof above (or neither)?</p>
-</section>
-</div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-6">
-
-<p class="admonition-title"><span class="caption-number">Exercise 100 </span></p>
-<section id="exercise-content">
-<p>Consider the program <span class="math notranslate nohighlight">\(\onett\hash\onett\hash^4 + \clearprog_1\)</span>.</p>
-<p>It has six instructions.  It does not halt.   The tile set associated with it, <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> has a tile with <span class="math notranslate nohighlight">\(7\)</span> as the instruction number on the top.  Find a model of <span class="math notranslate nohighlight">\(\phi(\mathcal{T}(p))\)</span> which has some point with this tile on it.</p>
-</section>
-</div>
-</section>
+</details></section>
 <section class="tex2jax_ignore mathjax_ignore" id="proof-of-the-theorem">
 <h1>Proof of the theorem<a class="headerlink" href="#proof-of-the-theorem" title="Link to this heading">#</a></h1>
 <p><a class="reference internal" href="#tiling_works">Lemma 9</a>
@@ -890,7 +873,7 @@ whose distance is <span class="math notranslate nohighlight">\(&gt; n\)</span> i
 Let <span class="math notranslate nohighlight">\(t_{n+1}\)</span> be any such node <span class="math notranslate nohighlight">\(u\)</span>.</p>
 </div>
 <p>This very general result has as a special case the following fact:</p>
-<div class="proof lemma admonition" id="lemma-9">
+<div class="proof lemma admonition" id="lemma-7">
 <p class="admonition-title"><span class="caption-number">Lemma 11 </span></p>
 <section class="lemma-content" id="proof-content">
 <p>If a tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> cannot tile the entire quadrant, then there is some natural number <span class="math notranslate nohighlight">\(n\)</span> such that
@@ -912,9 +895,9 @@ such that  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> <em
 <p>(If there is no such <span class="math notranslate nohighlight">\(n\)</span>, the program goes on looking forever.)</p>
 <p>The point again is that if <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> has no tiling of the whole quadrant,
 then our last lemma shows that  <span class="math notranslate nohighlight">\([\![f(\mathcal{T})]\!](\ )\!\!\downarrow\)</span>.</p>
-<div class="exercise admonition" id="undecidability/tiling-exercise-10">
+<div class="exercise admonition" id="undecidability/tiling-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 101 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 99 </span></p>
 <section id="exercise-content">
 <p>Our work on tiling dealt with <em>finite</em> tile sets.  This problem relaxes the finiteness requirement.    Construct an infinite pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <ol class="arabic simple">
@@ -924,9 +907,9 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 </ol>
 </section>
 </div>
-<div class="exercise admonition" id="undecidability/tiling-exercise-11">
+<div class="exercise admonition" id="undecidability/tiling-exercise-9">
 
-<p class="admonition-title"><span class="caption-number">Exercise 102 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 100 </span></p>
 <section id="exercise-content">
 <p>In our work on tiling, we took a program <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(n\)</span> lines and defined <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(n+9\)</span> colors.  Is it possible to change the mapping <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> to only use a fixed finite set of colors?</p>
 </section>
@@ -935,7 +918,7 @@ then our last lemma shows that  <span class="math notranslate nohighlight">\([\!
 <h2>A problem related to tiling finite rectangles<a class="headerlink" href="#a-problem-related-to-tiling-finite-rectangles" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="tilingforTrakhtenbrot">
 
-<p class="admonition-title"><span class="caption-number">Exercise 103 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 101 </span></p>
 <section id="exercise-content">
 <p>In this problem we consider a variant of the tiling problem where the goal is not to tile the entire first quadrant but rather to tile a finite rectangle in a noteworthy way.</p>
 <p>A <em>three-pointed</em> tile set is a tile set <span class="math notranslate nohighlight">\(\mathcal{T}_3\)</span> with three distinguished tiles, a <em>start</em> tile, a <em>halt</em> tile, and a <em>blank</em> tile.</p>
