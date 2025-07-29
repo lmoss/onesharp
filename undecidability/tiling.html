@@ -502,29 +502,51 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/undecidability/tiling.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="tiling">
 <h1>Tiling<a class="headerlink" href="#tiling" title="Link to this heading">#</a></h1>
-<p>Early on, we mentioned
-<a class="reference internal" href="../issues/problems.html#content-firsttiles"><span class="std std-ref">some algorithmic problems related to tiling</span></a>.
-Here is a quick review.</p>
-<p>A <em>tile</em> is a square with <em>colors</em> on the four sides.
-The colors can be anything, of course.
-A <em>finite, pointed tile set</em>
-<span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>
-is a finite set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> of tiles with a fixed <em>distinguished tile</em>
-<span class="math notranslate nohighlight">\(t_0\in\mathcal{T}\)</span>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Notation</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> be the set of (codes of) all finite pointed tile sets <span class="math notranslate nohighlight">\((\mathcal{T},t_0)\)</span>.
-Let <span class="math notranslate nohighlight">\(K^{\mathbb{T}}\)</span> be the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
-there is a <em>proper tiling</em> of
-the first quadrant with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.  (<em>Proper</em> here means that <span class="math notranslate nohighlight">\(t_0\)</span> goes in the bottom-left corner,
-and edges shared by neighboring tiles have the same color.)</p>
-<p>When we talk about tile sets in this section, we always will mean a
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">A dropdown</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">A dropdown in a dropdown</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></div>
+</details><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Early on, we mentioned 
+[some algorithmic problems related to tiling](content:firstTiles).
+Here is a quick review.
+
+A *tile* is a square with *colors* on the four sides.
+ The colors can be anything, of course.
+A *finite, pointed tile set*
+$(\mathcal{T},t_0)$
+is a finite set $\mathcal{T}$ of tiles with a fixed *distinguished tile*
+$t_0\in\mathcal{T}$.
+
+
+
+
+
+```{admonition} Notation
+:class: tip
+
+Let $\mathbb{T}$ be the set of (codes of) all finite pointed tile sets $(\mathcal{T},t_0)$.
+Let $K^{\mathbb{T}}$ be the set of (codes of) tile sets $\mathcal{T}$  with the property that
+there is a *proper tiling* of
+the first quadrant with $\mathcal{T}$.  (*Proper* here means that $t_0$ goes in the bottom-left corner,
+and edges shared by neighboring tiles have the same color.)
+
+When we talk about tile sets in this section, we always will mean a 
 finite,
-pointed tile set.  And when we talk about a tiling, we always mean a proper tiling.</p>
-<p>The complement set
-<span class="math notranslate nohighlight">\(\overline{K}^{\mathbb{T}}\)</span> is the set of (codes of) tile sets <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>  with the property that
+pointed tile set.  And when we talk about a tiling, we always mean a proper tiling.
+
+
+
+
+The complement set
+$\overline{K}^{\mathbb{T}}$ is the set of (codes of) tile sets $\mathcal{T}$  with the property that
 the
-the first quadrant <em>cannot</em> be properly tiled with <span class="math notranslate nohighlight">\(\mathcal{T}\)</span>.</p>
+the first quadrant *cannot* be properly tiled with $\mathcal{T}$.
+</pre></div>
 </div>
 <div class="attention admonition">
 <p class="admonition-title">Our goal</p>
