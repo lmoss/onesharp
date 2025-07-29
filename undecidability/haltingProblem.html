@@ -250,6 +250,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -499,7 +500,7 @@ document.write(`
 </div>
 <p>We come to one of the most famous and most basic results in computability theory, the <em>undecidability of the halting problem</em>, first proved by Turing in 1936.</p>
 <div class="proof theorem admonition" id="Turings-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>There is no program <span class="math notranslate nohighlight">\(p\)</span> such that
 for all words <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>,</p>
@@ -565,7 +566,7 @@ again have a contradiction: <span class="math notranslate nohighlight">\([\![r]\
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you have read the
-<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/recursion_theorem.html">section on the Recursion Theorem</a>, you might enjoy a slightly different proof of <a class="reference internal" href="#Turings-theorem">Theorem 11</a>.</p>
+<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/recursion_theorem.html">section on the Recursion Theorem</a>, you might enjoy a slightly different proof of <a class="reference internal" href="#Turings-theorem">Theorem 12</a>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 <p>Assume towards a contradiction that there is a program <span class="math notranslate nohighlight">\(p\)</span> as above.  Then we easily modify it to get a program <span class="math notranslate nohighlight">\(q\)</span> so that</p>
 <div class="math notranslate nohighlight">
@@ -611,7 +612,7 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
-<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 11</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
+<p>Of these the first two are computable, easily.   But all of the others are not.   These are all corollaries of <a class="reference internal" href="#Turings-theorem">Theorem 12</a>, sometimes with additional points provided by the <span class="math notranslate nohighlight">\(s^m_n\)</span>-Theorem.</p>
 <div class="proof corollary admonition" id="corollary-2">
 <p class="admonition-title"><span class="caption-number">Corollary 4 </span></p>
 <section class="corollary-content" id="proof-content">
@@ -663,7 +664,7 @@ Find a subset of <span class="math notranslate nohighlight">\(A\)</span> which i
 <section class="tex2jax_ignore mathjax_ignore" id="rice-s-theorem">
 <h1>Rice’s Theorem<a class="headerlink" href="#rice-s-theorem" title="Link to this heading">#</a></h1>
 <div class="proof theorem admonition" id="Rices-theorem">
-<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> be any set of programs, and assume that <span class="math notranslate nohighlight">\(S\)</span> is
 closed under <em>equivalence of words as one-place functions</em>: if <span class="math notranslate nohighlight">\(x\in S\)</span>, and if
