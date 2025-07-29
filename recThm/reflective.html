@@ -474,17 +474,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://colab.research.google.com/github/lmoss/onesharp/blob/main/recThm/reflective.ipynb&quot;</span> <span class="n">target</span><span class="o">=</span><span class="s2">&quot;_parent&quot;</span><span class="o">&gt;&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://colab.research.google.com/assets/colab-badge.svg&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;Open In Colab&quot;</span><span class="o">/&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/recThm/reflective.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="reflective-onehash">
 <h1>Reflective <span class="math notranslate nohighlight">\(\onehash\)</span><a class="headerlink" href="#reflective-onehash" title="Link to this heading">#</a></h1>
 <p>One sometimes hears the claim that the Recursion Theorem allows one to write programs that ``have access to their own source code.’’
-This section makes this precise by formulating an an extension of <span class="math notranslate nohighlight">\(\onett\hash\)</span> called \emph{Reflective <span class="math notranslate nohighlight">\(\onesharp\)</span>} (<span class="math notranslate nohighlight">\(\Ronesharp\)</span>).
+This section makes this precise by formulating an an extension of <span class="math notranslate nohighlight">\(\onett\hash\)</span> called <em>Reflective <span class="math notranslate nohighlight">\(\onesharp\)</span></em> (<span class="math notranslate nohighlight">\(\Ronesharp\)</span>).
 In <span class="math notranslate nohighlight">\(\Ronesharp\)</span> one can write programs which directly can output themselves without calling on the Recursion Theorem or tricks which
 we have seen.    Then we  give a new proof of the Recursion Theorem for <span class="math notranslate nohighlight">\(\Ronesharp\)</span>,  one which is perhaps simpler conceptually
 than the proofs which we have seen.   As a bonus, we will use <span class="math notranslate nohighlight">\(\Ronesharp\)</span> to directly implement recursive definitions, as mentioned
@@ -515,12 +509,13 @@ with these computations being in <span class="math notranslate nohighlight">\(\R
 <p>Proof. For (1), we need only change the universal program of <span class="math notranslate nohighlight">\(\onesharp\)</span> in a minor way.</p>
 <p>Part (2) follows immediately from part (1) and the observation that <span class="math notranslate nohighlight">\(\uprog_1\)</span> is a program of <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
 <p>Here is the proof of   (3).   We are given a program <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Let <span class="math notranslate nohighlight">\(q^*\)</span> be the following program of <span class="math notranslate nohighlight">\(\Ronesharp\)</span>:
-[
+<p>Let <span class="math notranslate nohighlight">\(q^*\)</span> be the following program of <span class="math notranslate nohighlight">\(\Ronesharp\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 \moveprog_{n,n+2} + \moveprog_{n-1, n+1} + \cdots +
-\moveprog_{1,3} + \onett\hash^6 +  \moveprog_{1,2} + \semantics{\writeprog}(p) + \uprog_{n+1}
-]
-We are using part (1) to get <span class="math notranslate nohighlight">\(\uprog_{n+1}\)</span>.
+ \moveprog_{1,3} + \onett\hash^6 +  \moveprog_{1,2} + \semantics{\writeprog}(p) + \uprog_{n+1}
+\]</div>
+<p>We are using part (1) to get <span class="math notranslate nohighlight">\(\uprog_{n+1}\)</span>.
 Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
