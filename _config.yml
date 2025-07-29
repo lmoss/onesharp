@@ -52,6 +52,7 @@ sphinx:
              "writeprog": ["\\mathtt{write}"]
              "writetotwo": ["\\mathtt{write}_2"]
              "tradeprog": ["\\mathtt{trade}"]
+             "tidyprog": ["\\mathtt{tidy}"]
              "semantics": ["[\\![#1]\\!]", 1]
              "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1]
              "moveprog": ["\\mathtt{move}"]
