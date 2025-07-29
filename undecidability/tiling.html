@@ -667,7 +667,7 @@ is the word composed of all symbols on the
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
 <section class="example-content" id="proof-content">
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t-25.png?raw=1" width="100%" height="100%">
-<p>Again we take <span class="math notranslate nohighlight">\(p\)</span> to be our example program <code class="docutils literal notranslate"><span class="pre">1#1##11####</span></code>.
+<p>Again we take <span class="math notranslate nohighlight">\(p\)</span> to be our example program <span class="math notranslate nohighlight">\(\onett\hash\onett\hash\hash\one\one\hash^4\)</span>.
 We see part a tiling (the bottom four rows), together with the words encoded in those rows, shown on the right.</p>
 </section>
 </div></section>
@@ -714,15 +714,15 @@ where <span class="math notranslate nohighlight">\(k\)</span> is the number of i
 For if <span class="math notranslate nohighlight">\(i(n+1) = k+1\)</span>, the program <span class="math notranslate nohighlight">\(p\)</span> could not run for <span class="math notranslate nohighlight">\(n+1\)</span> steps.
 So <span class="math notranslate nohighlight">\(1\leq i(n+1)\leq k\)</span>.</p>
 <p>At this point the proof splits into cases depending on what instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is.</p>
-<p>Case 1: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#</span></code>. This is very similar to Case 2 just below.</p>
-<p>Case 2: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.</p>
+<p>Case 1: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash\)</span>. This is very similar to Case 2 just below.</p>
+<p>Case 2: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">For the sake of exposition we work an example rather than the general case.</p>
 <p class="sd-card-text">Let <span class="math notranslate nohighlight">\(n = 4743\)</span>.  Suppose that row 4743 of the tiling starts out
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%"></p>
-<p class="sd-card-text">and instruction 24 of the program is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  We check that there is a unique way to tile row 4744.
+<p class="sd-card-text">and instruction 24 of the program is <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.  We check that there is a unique way to tile row 4744.
 The first tile in that row must be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t12-12.png?raw=1" width="100%" height="100%">
 This is because the only tile in <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> with <span class="math notranslate nohighlight">\(24\)</span> on the bottom is the tile above.
@@ -737,16 +737,16 @@ Of course, it must be checked that this really is the only way to tile row 4744.
 </details></div>
 </details><p>So we see that there is a unique way to tile row 4744.   Recall that we are verifying point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  It remains to
 show that the word encoded in the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps is  is the contents of the register after <span class="math notranslate nohighlight">\(n+1\)</span> steps.
-By what we saw above, the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1##1</span></code>.  Step <span class="math notranslate nohighlight">\(n+1\)</span> executed the instruction <code class="docutils literal notranslate"><span class="pre">1##</span></code>.
-And so the contents after <span class="math notranslate nohighlight">\(n+1\)</span> steps is <code class="docutils literal notranslate"><span class="pre">1###1#</span></code>.  This is exactly the word encoded in row 4744.</p>
+By what we saw above, the contents of the register after <span class="math notranslate nohighlight">\(n\)</span> steps is <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span>.  Step <span class="math notranslate nohighlight">\(n+1\)</span> executed the instruction <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.
+And so the contents after <span class="math notranslate nohighlight">\(n+1\)</span> steps is <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\hash\)</span>.  This is exactly the word encoded in row 4744.</p>
 <p>This verifies point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.  Of course, we only worked with an example, but the general case is an elaboration of what we showed here.</p>
-<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Case 3(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\onett^m\hash\hash\hash\)</span> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To make things concrete, suppose that <span class="math notranslate nohighlight">\(n = 67\)</span>, <span class="math notranslate nohighlight">\(i(68) = 131\)</span>,  <span class="math notranslate nohighlight">\(m=8\)</span>,  that row <span class="math notranslate nohighlight">\(n\)</span> of the tiling is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t9-09.png?raw=1" width="100%" height="100%">
-and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1</span></code><span class="math notranslate nohighlight">\({}^8\)</span><code class="docutils literal notranslate"><span class="pre">###</span></code>.   Thus, <span class="math notranslate nohighlight">\(i(69) = 131 + 8=169\)</span>.
+and that instruction 131 of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett^8\hash^3\)</span>.   Thus, <span class="math notranslate nohighlight">\(i(69) = 131 + 8=169\)</span>.
 We have two options for the instruction tile in row <span class="math notranslate nohighlight">\(68\)</span>.
 We claim that this tile must be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t8-08.png?raw=1" width="100%" height="100%">
@@ -755,61 +755,60 @@ It is important to check that the instruction tile in row <span class="math notr
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t10-10.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">We mainly leave this verification to you.  The tiles in row <span class="math notranslate nohighlight">\(68\)</span> must either be blank or involve the copyright symbol,
 and a case-by-case analysis shows that row 68 must be as above.</p>
-<p class="sd-card-text">The word encoded in row <span class="math notranslate nohighlight">\(67\)</span>  is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  By our induction hypothesis on <span class="math notranslate nohighlight">\(n = 67\)</span>,
-This is exactly the same as the same as the contents of the register after <span class="math notranslate nohighlight">\(67\)</span> steps.  Instruction 68 of <span class="math notranslate nohighlight">\(p\)</span> was
-<code class="docutils literal notranslate"><span class="pre">1^8</span> <span class="pre">#^3</span></code>.   After executing that instruction, the register did not change.   So it still is <code class="docutils literal notranslate"><span class="pre">1##</span></code>.  All of this verifies
-(2) for <span class="math notranslate nohighlight">\(n+1\)</span> in Case 3(a).</p>
+<p class="sd-card-text">The word encoded in row <span class="math notranslate nohighlight">\(67\)</span>  is <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.  By our induction hypothesis on <span class="math notranslate nohighlight">\(n = 67\)</span>,
+This is exactly the same as the same as the contents of the register after <span class="math notranslate nohighlight">\(67\)</span> steps.  Instruction 68 of <span class="math notranslate nohighlight">\(p\)</span> was <span class="math notranslate nohighlight">\(\onett^8\hash^3\)</span>.
+After executing that instruction, the register did not change.   So it still is  <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.  All of this verifies (2) for <span class="math notranslate nohighlight">\(n+1\)</span> in Case 3(a).</p>
 <p class="sd-card-text">Don’t read the symbol as “copyright” but as “copy right.”</p>
 </div>
-</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">###</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</details><p>Case 3(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\onett^m\hash\hash\hash\)</span> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">This is very much like Case 3(a) above, with one important change.   The instruction tile in row <span class="math notranslate nohighlight">\(n+1\)</span> now <em>must</em> be the tile with a blank on the right side.</p>
 <p class="sd-card-text">The rest of the details are as in in Case 3(a).</p>
 </div>
-</details><p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+</details><p>Case 4(a): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is  <span class="math notranslate nohighlight">\(\onett^m\hash^4\)</span> and R1 is not empty after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 Of course, this is similar to Case 3(a).</p>
-<p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">####</span></code> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
+<p>Case 4(b): Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span>  of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett^m\hash^4\)</span> and R1 is empty  after executing <span class="math notranslate nohighlight">\(n\)</span> steps of <span class="math notranslate nohighlight">\(p\)</span>.
 This is similar to Case 3(b).</p>
-<p>Case 5: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.</p>
+<p>Case 5: Instruction <span class="math notranslate nohighlight">\(i(n+1)\)</span> of <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\onett\hash^5\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Details here</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Suppose again that <span class="math notranslate nohighlight">\(n = 4743\)</span> and that row 4743 of some tiling of the quadrant has the encoded word <code class="docutils literal notranslate"><span class="pre">1##1</span></code>.  For example, it might be
+<p class="sd-card-text">Suppose again that <span class="math notranslate nohighlight">\(n = 4743\)</span> and that row 4743 of some tiling of the quadrant has the encoded word <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span>. For example, it might be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t11-11.png?raw=1" width="100%" height="100%">
 So <span class="math notranslate nohighlight">\(i(4744) = 24\)</span>.    We are assuming
-that instruction 24 of the program is the case instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.
+that instruction 24 of the program is the case instruction <span class="math notranslate nohighlight">\(\onett\hash^5\)</span>.
 Then the first tile in instruction 4744 can be any of the three tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">So the situation is
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t16-16.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">We cannot have the symbol above the blank to be as below
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t17-17.png?raw=1" width="100%" height="100%"></p>
-<p class="sd-card-text">This is because the symbols in the middle of row 4744 have to be
-<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, or ``blank.’’ So there would be no way to match the heart symbol at the end.</p>
-<p class="sd-card-text">We must have all blanks on the far right, and then next to that a tiles with two <code class="docutils literal notranslate"><span class="pre">1</span></code>s:
+<p class="sd-card-text">This is because the symbols in the middle of row 4744 have to be <span class="math notranslate nohighlight">\(\onett\)</span>, <span class="math notranslate nohighlight">\(\hash\)</span> or ``blank.’’
+So there would be no way to match the heart symbol at the end.</p>
+<p class="sd-card-text">We must have all blanks on the far right, and then next to that a tiles with two <span class="math notranslate nohighlight">\(\onett\)</span>s:
 We now know the last tiles before the blank tiles in row 4744:
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t18-18.png?raw=1" width="100%" height="100%"></p>
 <p class="sd-card-text">Indeed, the whole row has to be
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t19-19.png?raw=1" width="100%" height="100%">
-An important detail here is that the only instruction tile with 24 on the bottom and <code class="docutils literal notranslate"><span class="pre">1</span></code> on the right has 26 on the top.</p>
+An important detail here is that the only instruction tile with 24 on the bottom and <span class="math notranslate nohighlight">\(\onett\)</span> on the right has 26 on the top.</p>
 <p class="sd-card-text">By our induction hypothesis on <span class="math notranslate nohighlight">\(n\)</span>, the word encoded in row 4743
 is the contents of the register after 4743 steps.
-The word encoded in row 4744  is <code class="docutils literal notranslate"><span class="pre">##1</span></code>.
+The word encoded in row 4744  is <span class="math notranslate nohighlight">\(\hash\hash\onett\)</span>.
 This is exactly
-the word encoded in row 4743, with  the first symbol (a <code class="docutils literal notranslate"><span class="pre">1</span></code>) deleted.   So, this is the contents of the register after 4744 steps.</p>
+the word encoded in row 4743, with  the first symbol (a <span class="math notranslate nohighlight">\(\onett\)</span>) deleted.   So, this is the contents of the register after 4744 steps.</p>
 <p class="sd-card-text">To verify point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>, we only need to check the point about the top of the instruction tile in row 4744.  We have seen that
-step 4744 executed a case instruction and step 4744 of the execution of <span class="math notranslate nohighlight">\(p\)</span> was for the instruction <code class="docutils literal notranslate"><span class="pre">1#####</span></code>.
-Since this starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>, the next instruction to execute is 24 + 2 = 26.   That is, <span class="math notranslate nohighlight">\(i(n+1) = 26\)</span>.</p>
+step 4744 executed a case instruction and step 4744 of the execution of <span class="math notranslate nohighlight">\(p\)</span> was for the instruction <span class="math notranslate nohighlight">\(\onett\hash^5\)</span>.
+Since this starts with a <span class="math notranslate nohighlight">\(\onett\)</span>, the next instruction to execute is 24 + 2 = 26.   That is, <span class="math notranslate nohighlight">\(i(n+1) = 26\)</span>.</p>
 <p class="sd-card-text">All of this verifies point (2) for <span class="math notranslate nohighlight">\(n+1\)</span>,
-but only in the case when the word encoded in row 4743 starts with a <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<p class="sd-card-text">Similar work applies when the word encoded in row 4743 starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
+but only in the case when the word encoded in row 4743 starts with a <span class="math notranslate nohighlight">\(\onett\)</span>,.</p>
+<p class="sd-card-text">Similar work applies when the word encoded in row 4743 starts with a <span class="math notranslate nohighlight">\(\hash\)</span>.</p>
 <p class="sd-card-text">Now what happens when the word encoded in row 4743 is the empty word?  By induction hypothesis, after 4743 steps of running <span class="math notranslate nohighlight">\(p\)</span>,
 the register is empty.  Moreove, the first tile in row 4744 must be the first of our three options, shown again below:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/undecidability/tilingPictures/t15-15.png?raw=1" width="100%" height="100%">
 <p class="sd-card-text">By trying things out again, we see that the rest of row 4744 must be copies of the empty tile.   So the word encoded in that register is again empty.
-Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\)</span>.  This all corresponds to executing the <code class="docutils literal notranslate"><span class="pre">1#####</span></code> instruction on the empty register.</p>
+Note also that <span class="math notranslate nohighlight">\(i(4744) = 25 = 24+1\)</span>.  This all corresponds to executing the <span class="math notranslate nohighlight">\(\onett\hash^5\)</span> instruction on the empty register.</p>
 <p class="sd-card-text">We have verified all parts of (2) for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 </div>
 </details><div class="exercise admonition" id="undecidability/tiling-exercise-5">
@@ -825,7 +824,7 @@ Find a model of <span class="math notranslate nohighlight">\(\varphi(\mathcal{T}
 
 <p class="admonition-title"><span class="caption-number">Exercise 100 </span></p>
 <section id="exercise-content">
-<p>In a similar vein, consider the program <code class="docutils literal notranslate"><span class="pre">1#</span> <span class="pre">1####</span> <span class="pre">+</span> <span class="pre">clear_1</span></code>.</p>
+<p>Consider the program <span class="math notranslate nohighlight">\(\onett\hash\onett\hash^4 + \clearprog_1\)</span>.</p>
 <p>It has six instructions.  It does not halt.   The tile set associated with it, <span class="math notranslate nohighlight">\(\mathcal{T}(p)\)</span> has a tile with <span class="math notranslate nohighlight">\(7\)</span> as the instruction number on the top.  Find a model of <span class="math notranslate nohighlight">\(\phi(\mathcal{T}(p))\)</span> which has some point with this tile on it.</p>
 </section>
 </div>
