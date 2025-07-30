@@ -518,7 +518,8 @@ with these computations being in <span class="math notranslate nohighlight">\(\R
  \moveprog_{1,3} + \onett\hash^6 +  \moveprog_{1,2} + \semantics{\writeprog}(p) + \uprog_{n+1}
 \]</div>
 <p>We are using part (1) to get <span class="math notranslate nohighlight">\(\uprog_{n+1}\)</span>.
-Then</p>
+In words, <span class="math notranslate nohighlight">\(q^*\)</span> takes a tuple <span class="math notranslate nohighlight">\(\ybar = y_1, \ldots, y_n\)</span> and moves each down two registers, so as
+to free up R1 and R2.  Then <span class="math notranslate nohighlight">\(q^*\)</span> “spits itself out” into R1, moves this to R2, and then writes <span class="math notranslate nohighlight">\(p\)</span> to R1.  Finally it applies <span class="math notranslate nohighlight">\(\uprog_{n+1}\)</span> to what is in the registers.   To review and then go on:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{cl}
