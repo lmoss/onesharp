@@ -1,4 +1,4 @@
-# Invitation to Computability 
+# Invitation to Computability and Recursion
 
 Lawrence S. Moss
 
