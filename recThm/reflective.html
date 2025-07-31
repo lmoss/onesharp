@@ -493,7 +493,7 @@ This instruction may be used anywhere in a program (<span class="math notranslat
 <p>Please keep in mind that <span class="math notranslate nohighlight">\(\Ronesharp\)</span>  extends <span class="math notranslate nohighlight">\(\onett\hash\)</span>.  So if <span class="math notranslate nohighlight">\(x\)</span> is a program of <span class="math notranslate nohighlight">\(\onehash\)</span>,
 then viewing it as a program of <span class="math notranslate nohighlight">\(\Ronesharp\)</span> should not change any how it works.  That is,
 <span class="math notranslate nohighlight">\(\semantics{x}(\ybar)\)</span> as a program of <span class="math notranslate nohighlight">\(\Ronesharp\)</span> has the same value as <span class="math notranslate nohighlight">\(\semantics{x}(\ybar)\)</span> as a program of <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
-<div class="proof theorem admonition" id="reflection_theorem">
+<div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>For each  natural number <span class="math notranslate nohighlight">\(n\)</span>, the following hold:</p>
@@ -534,6 +534,38 @@ to free up R1 and R2.  Then <span class="math notranslate nohighlight">\(q^*\)</
   \simeq  &amp; \semantics{p}(q^*,\ybar)
 \end{array}
 \end{split}\]</div>
+</div>
+<div class="exercise admonition" id="recThm/reflective-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 86 </span></p>
+<section id="exercise-content">
+<p>What happens when we run the programs below on all empty registers?</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\onett\hash^6 + \onett\hash^6 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\onett\hash^6    + \clearprog_1 + \onett\hash^6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\onett\hash^6  + \reverseprog\)</span>, where <span class="math notranslate nohighlight">\(\reverseprog\)</span> reverses what is in R1.</p></li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="recThm/reflective-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 87 </span></p>
+<section id="exercise-content">
+<p>This problem has to do with <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">reflection_theorem</span></code></p>
+<ol class="arabic simple">
+<li><p>Prove part (2) of  using the Recursion Theorem of <span class="math notranslate nohighlight">\(\onehash\)</span> directly.  In fact, the Recursion Theorem for <span class="math notranslate nohighlight">\(\onesharp\)</span>
+implies that there is a translation of programs of <span class="math notranslate nohighlight">\(\Ronesharp\)</span> to programs of <span class="math notranslate nohighlight">\(\onesharp\)</span> that preserves strong equivalence.
+Find this (short) translation.</p></li>
+<li><p>Can part (3) be proved by simply repeating the proof of Theorem~\ref{recursion_theorem}?</p></li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="recThm/reflective-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 88 </span></p>
+<section id="exercise-content">
+<p>Assume that <span class="math notranslate nohighlight">\(\uprog_0\)</span> has the property that whenever <span class="math notranslate nohighlight">\(\semantics{x}(\ )\!\!\downarrow\)</span>, the computation of  <span class="math notranslate nohighlight">\(\uprog_0\)</span> on <span class="math notranslate nohighlight">\(x\)</span> takes at least as many steps as the run of <span class="math notranslate nohighlight">\(x\)</span> on empty registers.  Let <span class="math notranslate nohighlight">\(p\)</span> be the program  <span class="math notranslate nohighlight">\(\onett \hash^6 + \uprog_0\)</span>.    Show that  <span class="math notranslate nohighlight">\(\semantics{p}(\ )\!\!\uparrow\)</span>.</p>
+</section>
 </div>
 </section>
 
