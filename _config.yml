@@ -49,6 +49,7 @@ sphinx:
              "copyprog": ["\\mathtt{copy}"]
              "uprog": ["\\mathtt{u}"]
              "clearprog": ["\\mathtt{clear}"]
+             "reverseprog": ["\\mathtt{reverse}"]
              "writeprog": ["\\mathtt{write}"]
              "writetotwo": ["\\mathtt{write}_2"]
              "tradeprog": ["\\mathtt{trade}"]
