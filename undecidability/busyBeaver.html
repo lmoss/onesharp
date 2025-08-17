@@ -505,29 +505,9 @@ for all <span class="math notranslate nohighlight">\(n\)</span></p>
 <p>But by definition of <span class="math notranslate nohighlight">\(BB\)</span>, for all programs <span class="math notranslate nohighlight">\(r\)</span>, if <span class="math notranslate nohighlight">\([\![ r ]\!](\ ) \simeq \mathtt{1}^k\)</span>, then <span class="math notranslate nohighlight">\(k \leq BB(|r|)\)</span>. Taking <span class="math notranslate nohighlight">\(r\)</span> to be <span class="math notranslate nohighlight">\(p\)</span>, we see that</p>
 <div class="math notranslate nohighlight">
 \[
-BB(|p) + 1 \leq BB(|p|),
+BB(|p|) + 1 \leq BB(|p|),
 \]</div>
-<p>and this is a contradiction.</p>
-<p>XXXX</p>
-<p>Suppose that we had a program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.  Let <span class="math notranslate nohighlight">\(q\)</span> be a program so that
-for all <span class="math notranslate nohighlight">\(p\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ q]\!](p) = [\![\mathtt{beaver}]\!](|p|) + \mathtt{1},
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(|p|\)</span> is the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.   The function <span class="math notranslate nohighlight">\(p\mapsto |p|\)</span> is computable.   So <span class="math notranslate nohighlight">\(q\)</span> is computable.   By the Recursion Theorem, there is some <span class="math notranslate nohighlight">\(p^*\)</span> so that</p>
-<div class="math notranslate nohighlight">
-\[
-[\![ p^* ]\!](\ ) \simeq 
-[\![ q]\!](p^*) = [\![\mathtt{beaver}]\!](|p^*|) + \mathtt{1} 
-= \mathtt{1}^{BB(|p^*|) + 1}
-\]</div>
-<p>But by definition of <span class="math notranslate nohighlight">\(BB\)</span>, for all programs <span class="math notranslate nohighlight">\(r\)</span>, if <span class="math notranslate nohighlight">\([\![ r ]\!](\ ) \simeq \mathtt{1}^k\)</span>, then <span class="math notranslate nohighlight">\(k \leq BB(|r|)\)</span>.
-Taking <span class="math notranslate nohighlight">\(r\)</span> to be <span class="math notranslate nohighlight">\(p^*\)</span>, we see that</p>
-<div class="math notranslate nohighlight">
-\[
-BB(|p^*|) + 1 \leq BB(|p^*|),\]</div>
-<p>and this is a contradiction.</p>
+<p>and this is a contradiction.  So there can be no program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.</p>
 </div>
 <div class="proof admonition" id="proof">
 <p>Proof. Here is a second proof.
