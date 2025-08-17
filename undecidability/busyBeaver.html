@@ -487,12 +487,13 @@ for all <span class="math notranslate nohighlight">\(n\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \begin{array}{lcl}
-[\![\mathtt{beaver}]\!](\one^n) &amp; = &amp; \one^{BB(n)}
+[\![\mathtt{beaver}]\!](\onett^n) &amp; = &amp; \onett^{BB(n)}
 \end{array}
 \]</div>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. We are going to prove this two ways.   Our first proof uses the Recursion Theorem.</p>
+<p>Proof. We are going to prove this two ways.   Our first proof uses the Recursion Theorem in the guise of
+<a class="reference external" href="https://lmoss.github.io/onesharp/recThm/beaver.html">reflective <span class="math notranslate nohighlight">\(\onesharp\)</span></a></p>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
 <p>Suppose that we had a program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.  Let <span class="math notranslate nohighlight">\(q\)</span> be a program so that
 for all <span class="math notranslate nohighlight">\(p\)</span>,</p>
@@ -527,7 +528,7 @@ p_n \quadeq (\one\hash)^{n} + \mathtt{square} +
 \mathtt{beaver} + \one\hash
 \]</div>
 <p>Then
-<span class="math notranslate nohighlight">\([\![ p_n]\!](\ )\simeq \one^K\)</span>, where <span class="math notranslate nohighlight">\(K = BB(n^2) + 1\)</span>.</p>
+<span class="math notranslate nohighlight">\([\![ p_n]\!](\ )\simeq \onett^K\)</span>, where <span class="math notranslate nohighlight">\(K = BB(n^2) + 1\)</span>.</p>
 <p>Notice that the number of instructions in <span class="math notranslate nohighlight">\(p_n\)</span> is <em>linear in <span class="math notranslate nohighlight">\(n\)</span></em>.
 In fact, it is <span class="math notranslate nohighlight">\(n + m +1\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the total number of instructions
 in <span class="math notranslate nohighlight">\(\mathtt{square}\)</span> and <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.</p>
