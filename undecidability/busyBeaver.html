@@ -495,7 +495,20 @@ for all <span class="math notranslate nohighlight">\(n\)</span></p>
 <p>Proof. We are going to prove this two ways.   Our first proof uses the Recursion Theorem in the guise of
 <a class="reference external" href="https://lmoss.github.io/onesharp/recThm/reflective.html">reflective <span class="math notranslate nohighlight">\(\onesharp\)</span></a>.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/ourboros1.jpg?raw=1" width="200" height="160">
-<p>Suppose that we had a program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.  Let <span class="math notranslate nohighlight">\(q\)</span> be a program which writes itself to R1, then takes it length (it number of instructions), applies <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>, and finally adds a <span class="math notranslate nohighlight">\(\onett\)</span> at the end.</p>
+<p>Suppose that we had a program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.  Let <span class="math notranslate nohighlight">\(p\)</span> be a program which writes itself to R1, then takes it length (its number of instructions), applies <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>, and finally adds a <span class="math notranslate nohighlight">\(\onett\)</span> at the end.  Thus</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ p ]\!](\ ) \simeq 
+ [\![\mathtt{beaver}]\!](|p|) + \mathtt{1} 
+= \mathtt{1}^{BB(|p|) + 1}
+\]</div>
+<p>But by definition of <span class="math notranslate nohighlight">\(BB\)</span>, for all programs <span class="math notranslate nohighlight">\(r\)</span>, if <span class="math notranslate nohighlight">\([\![ r ]\!](\ ) \simeq \mathtt{1}^k\)</span>, then <span class="math notranslate nohighlight">\(k \leq BB(|r|)\)</span>. Taking <span class="math notranslate nohighlight">\(r\)</span> to be <span class="math notranslate nohighlight">\(p\)</span>, we see that</p>
+<div class="math notranslate nohighlight">
+\[
+BB(|p) + 1 \leq BB(|p|),
+\]</div>
+<p>and this is a contradiction.</p>
+<p>XXXX</p>
 <p>Suppose that we had a program <span class="math notranslate nohighlight">\(\mathtt{beaver}\)</span>.  Let <span class="math notranslate nohighlight">\(q\)</span> be a program so that
 for all <span class="math notranslate nohighlight">\(p\)</span>,</p>
 <div class="math notranslate nohighlight">
