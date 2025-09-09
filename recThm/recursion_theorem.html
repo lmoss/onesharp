@@ -600,15 +600,22 @@ which trades places with its input in R1.  That is, for all <span class="math no
 \[
 [\![s^1_1]\!] (p',p')
 \]</div>
-<p>for some program <span class="math notranslate nohighlight">\(p'\)</span> which is built from <span class="math notranslate nohighlight">\(p\)</span>.  Indeed, we take <span class="math notranslate nohighlight">\(p'\)</span> to be a program with the property that</p>
+<p>for some program <span class="math notranslate nohighlight">\(p'\)</span> which is built from <span class="math notranslate nohighlight">\(p\)</span>.  Indeed, we take <span class="math notranslate nohighlight">\(p'\)</span> to be a program with the property that for all <span class="math notranslate nohighlight">\(\hat{q}\)</span> and <span class="math notranslate nohighlight">\(r\)</span></p>
 <div class="math notranslate nohighlight" id="equation-kleene-proof">
-<span class="eqno">(1)<a class="headerlink" href="#equation-kleene-proof" title="Link to this equation">#</a></span>\[[\![  [\![\hat{q}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-kleene-proof" title="Link to this equation">#</a></span>\[[\![  [\![\hat{p'}]\!](\hat{q})]\!](r) \simeq [\![p]\!]([\![\hat{q}]\!](\hat{q}) ,r)\]</div>
 <div class="exercise admonition" id="recThm/recursion_theorem-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 84 </span></p>
 <section id="exercise-content">
 <p>Show that this works: Let <span class="math notranslate nohighlight">\(p'\)</span> be any program with the property in <a class="reference internal" href="#equation-kleene-proof">(1)</a>, and let <span class="math notranslate nohighlight">\(q^* = [\![s^1_1]\!] (p',p')\)</span>.
 Show that this program <span class="math notranslate nohighlight">\(q^*\)</span> satisfies the equation <span class="math notranslate nohighlight">\([\![ q^*]\!](r) \simeq [\![ p]\!](q^*,r)\)</span>.</p>
+</section>
+</div>
+<div class="exercise admonition" id="recThm/recursion_theorem-exercise-5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 85 </span></p>
+<section id="exercise-content">
+<p>Find an expresssion for <span class="math notranslate nohighlight">\(p'\)</span> satisfying  <a class="reference internal" href="#equation-kleene-proof">(1)</a> in terms of <span class="math notranslate nohighlight">\(s^1_1\)</span> and <span class="math notranslate nohighlight">\(\copyprog\)</span> and <span class="math notranslate nohighlight">\(\moveprog\)</span> programs, similar to what we did in getting <span class="math notranslate nohighlight">\(\hat{q}\)</span> as in <span class="math notranslate nohighlight">\(\eqref{qhat}\)</span>.</p>
 </section>
 </div>
 </section>
@@ -641,7 +648,7 @@ For example,  <span class="math notranslate nohighlight">\(z\)</span> could be</
 \]</div>
 <p>This completes the proof.</p>
 <p>Here is a corollary which illustrates the power of this form of the Recursion Theorem.</p>
-<div class="proof corollary admonition" id="corollary-6">
+<div class="proof corollary admonition" id="corollary-7">
 <p class="admonition-title"><span class="caption-number">Corollary 2 </span></p>
 <section class="corollary-content" id="proof-content">
 <p>There is a word <span class="math notranslate nohighlight">\(p^*\)</span> so that for all <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\([\![p^*]\!](r) = r + p^*\)</span>.</p>
@@ -655,9 +662,9 @@ Then for all <span class="math notranslate nohighlight">\(r\)</span>,</p>
 [\![p^*]\!](r)  =  [\![ [\![\writeprog]\!](p^*) ]\!] (r) = r + p^*
 \]</div>
 </div>
-<div class="exercise admonition" id="recThm/recursion_theorem-exercise-7">
+<div class="exercise admonition" id="recThm/recursion_theorem-exercise-8">
 
-<p class="admonition-title"><span class="caption-number">Exercise 85 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 86 </span></p>
 <section id="exercise-content">
 <p>Show that <a class="reference internal" href="#recursion_theorem">Theorem 9</a> follows from <a class="reference internal" href="#recursion_theorem_2">Theorem 10</a>.</p>
 </section>
