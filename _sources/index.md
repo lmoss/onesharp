@@ -79,9 +79,11 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
 
 
 
-# Summer 2025 Status report
+# Fall 2025 Status report
 
-The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.)   There are a few things in the $\onesharp$ section that ought to change: 
+The book that you see here has a ways to go before anyone besides me could use it. But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.  There is also the beginning of a print version of the book, and some of the material now appears only in the print version.  (Similarly, some material only appears in this online form.) One of the things that I am thinking about is the relation between the ultimate print and online versions of this book.
+
+There are a few things in the $\onesharp$ section that ought to change: 
 [the tool called "sanity" that turns flowcharts into programs](content:firstSanity) should be improved so as to have a more forgiving syntax. There needs to be a glossary of the many Python tools that exist that help people write long $\onesharp$ programs.   
 
 Some of the sections of the book here (c.e. sets) are placeholders.  Others are not even that (Church-Turing Thesis, and also models of computation beyond register machines).
