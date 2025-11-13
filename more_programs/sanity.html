@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>A tool to help write programs &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A tool to help write programs &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'more_programs/sanity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,14 +429,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -493,11 +478,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/more_programs/sanity.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="a-tool-to-help-write-programs">
-<span id="content-firstsanity"></span><h1>A tool to help write programs<a class="headerlink" href="#a-tool-to-help-write-programs" title="Link to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-tool-to-help-write-programs">
+<span id="content-firstsanity"></span><h1>A tool to help write programs<a class="headerlink" href="#a-tool-to-help-write-programs" title="Permalink to this heading">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Note for instructors</p>
@@ -517,9 +502,9 @@ document.write(`
 <p>To start, run the next code cell to install the 1# Python package in your preferred environment. Then run the second code cell to import the functions from the 1# package which are used in this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">setuptools</span>
-<span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lmoss</span><span class="o">/</span><span class="n">onesharp</span><span class="o">.</span><span class="n">git</span><span class="nd">@main</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!python -m pip install -U setuptools
+!python -m pip install -U git+https://github.com/lmoss/onesharp.git@main
+from onesharp.interpreter.interpreter import *
 </pre></div>
 </div>
 </div>
@@ -558,8 +543,8 @@ R2 would have <span class="math notranslate nohighlight">\(w_{n}\cdots w_2 w_1\)
 <p>We have here 8 <em>segments</em>.   A segment is not the same what we called a <em>line</em> of a <span class="math notranslate nohighlight">\(\one\hash\)</span> program.  As the name suggests, a segment corresponds to a sequence of lines.
 For example, segments 6 and 8 each contain <code class="docutils literal notranslate"><span class="pre">move</span></code> programs that are bigger than a single instruction.  Segments 2, 4 5, and 6 each begin with a <em>label</em>.  Labels are strings that other parts of the program could point to.  For example, the first segment is a case statement <span class="math notranslate nohighlight">\(\one\hash^5\)</span>, and it also contains the information that if R1 is empty, we should go to whichever segmet has the label “move_phase”. (That would be the segment named ‘move_stuff_around’.) The first segment also tells us that if R1 begins with <span class="math notranslate nohighlight">\(\one\)</span> we should (delete is and) go to the segment containing ‘first-is_one’.   Note also that ‘goto’ is not a label.</p>
 <p>Also, note that a segment is not quite the samething as an item in the flowchart.   But this is pretty close.</p>
-<section id="workflow">
-<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<div class="section" id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h2>
 <p>The workflow in this notebook is that you will need to</p>
 <p>(a) think about things deeply enough to make a correct flowchart</p>
 <p>(b) draw that flowchart, either with pencil and paper or with some tool (as I did here)</p>
@@ -616,10 +601,10 @@ For example, segments 6 and 8 each contain <code class="docutils literal notrans
 </div>
 </div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-inputs-to-sanity">
-<h1>The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code><a class="headerlink" href="#the-inputs-to-sanity" title="Link to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-inputs-to-sanity">
+<h1>The inputs to <code class="docutils literal notranslate"><span class="pre">sanity</span></code><a class="headerlink" href="#the-inputs-to-sanity" title="Permalink to this heading">#</a></h1>
 <p>In order to use the tool, we have clarify what we mean by <em>segments</em> and <em>labels</em>.</p>
 <p>A segment in sanity is one of the lists in square brackets.</p>
 <div class="attention admonition">
@@ -680,8 +665,8 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
 </div>
 </div>
 </div>
-<section id="examples-of-segments">
-<h2>Examples of segments:<a class="headerlink" href="#examples-of-segments" title="Link to this heading">#</a></h2>
+<div class="section" id="examples-of-segments">
+<h2>Examples of segments:<a class="headerlink" href="#examples-of-segments" title="Permalink to this heading">#</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;top&#39;,&#39;cases&#39;,1,&#39;empty&#39;, &#39;one_found&#39;,&#39;sharp_found&#39;],
 [&#39;empty&#39;, &#39;goto&#39;, &#39;moveback&#39;],
 [&#39;one_found&#39;, &#39;add1&#39;, 2],
@@ -693,14 +678,14 @@ A use of ‘goto’ must be followed either by a label or the word ‘end’.</p
 [&#39;moveback&#39;, move(3,1)+move(2,1)]
 </pre></div>
 </div>
-</section>
-<section id="how-does-sanity-work">
-<h2>How does Sanity work?<a class="headerlink" href="#how-does-sanity-work" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="how-does-sanity-work">
+<h2>How does Sanity work?<a class="headerlink" href="#how-does-sanity-work" title="Permalink to this heading">#</a></h2>
 <p>We aren’t going to discuss this at length (now), but you can read the Python code for it by examining the input box at the top.   Eventually this code will be documented well-enough so that it can be read.  The overall idea is to work with <em>parsed</em> programs, the Python lists that we obtained with <a class="reference internal" href="../introOneSharp/move_copy_write.html#content-parsing"><span class="std std-ref">the function <code class="docutils literal notranslate"><span class="pre">parse</span></code> that we saw earlier</span></a>.  The program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> consists of manipulations of parses, followed by an application of <code class="docutils literal notranslate"><span class="pre">unparse</span></code> which returns us to a <code class="docutils literal notranslate"><span class="pre">1#</span></code> program.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="further-programs">
-<h1>Further programs<a class="headerlink" href="#further-programs" title="Link to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="further-programs">
+<h1>Further programs<a class="headerlink" href="#further-programs" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code cell contains a Sane program which multiplies the contents of</span>
@@ -905,29 +890,29 @@ The register contents at the end are shown below.
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <div class="exercise admonition" id="more_programs/sanity-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program which takes a program <span class="math notranslate nohighlight">\(p\)</span> as input and gives the first instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="more_programs/sanity-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
+<div class="section" id="exercise-content">
 <p>For any program <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(|p|\)</span> denotes the number of instructions in <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>Write a program to compute the function <span class="math notranslate nohighlight">\(p\mapsto |p|\)</span>, using unary representation of numbers.</p>
-</section>
+</div>
 </div>
 <div class="danger admonition">
 <p class="admonition-title">An issue to think about</p>
 <p>You probabily noticed that the program <code class="docutils literal notranslate"><span class="pre">sanity</span></code> was written in Python, a high-level programming language.   This is partly because <code class="docutils literal notranslate"><span class="pre">1#</span></code> does not have any support for the Roman alphabet, and so to even to read the tags one would need to do some coding.  But even more importantly, a high-level programming language has things that enable a person to write programs: attention to structure, a type system, conventions about handling variables, and more.   This brings us to a question that will crop up at several points: can one really do <em>everthing</em> in <code class="docutils literal notranslate"><span class="pre">1#</span></code>, or are high-level tools necessary?  This is not a mathematical question, and it might be more of an opinion question than anything else.   We bring it up here so that you can keep it in mind as you use high-level tools in connection with a very low-level language.</p>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -956,7 +941,7 @@ The register contents at the end are shown below.
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -985,7 +970,6 @@ The register contents at the end are shown below.
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1053,8 +1037,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

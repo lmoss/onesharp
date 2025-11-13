@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Halting &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halting &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/haltDef';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,14 +429,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -477,7 +462,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definition">Halting: the formal definition</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology-and-notation">Terminology and notation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#up-arrow-and-down-arrow-notation">Up-arrow and down-arrow notation</a></li>
 </ul>
 </li>
@@ -492,150 +476,69 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/haltDef.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="halting">
-<span id="content-halting"></span><h1>Halting<a class="headerlink" href="#halting" title="Link to this heading">#</a></h1>
-<p><span class="math notranslate nohighlight">\(\onehash\)</span> has programs which contain infinite loops such as</p>
-<div class="math notranslate nohighlight">
-\[
-\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\hash
-\]</div>
-<p>This program never finishes. If you run this in an interpreter, you will need to figure out how to stop the execution. Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
-<section id="halting-informally">
-<h2>Halting: informally<a class="headerlink" href="#halting-informally" title="Link to this heading">#</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="halting">
+<h1>Halting<a class="headerlink" href="#halting" title="Permalink to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">1#</span></code> has programs which contain <em>infinite loops</em> such as</p>
+<p><code class="docutils literal notranslate"><span class="pre">111###111####</span></code></p>
+<p>This program never finishes. If you run this in an interpreter, you will need to figure out how to stop the execution.    Most of the time, we are interested in programs which do finish. Actually, we are interested in programs which finish in a special way.</p>
+<div class="section" id="halting-informally">
+<h2>Halting: informally<a class="headerlink" href="#halting-informally" title="Permalink to this heading">#</a></h2>
 <div class="admonition-definitions admonition">
 <p class="admonition-title">Definitions</p>
-<p>Given a program <span class="math notranslate nohighlight">\(p\)</span> and a sequence words <span class="math notranslate nohighlight">\(\overline{x} = x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span>, what it means to <em>run <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span></em>
-is that we start the register machine with <span class="math notranslate nohighlight">\(x_1\)</span> in R1, <span class="math notranslate nohighlight">\(x_2\)</span> in R2, <span class="math notranslate nohighlight">\(\ldots\)</span>, and <span class="math notranslate nohighlight">\(x_n\)</span> in R<span class="math notranslate nohighlight">\(n\)</span>.   Frequently we assume that all other registers
-are empty; this means that they are the empty word <span class="math notranslate nohighlight">\(\eps\)</span>.  But this is an extra assumption is something that we mention specially when we make it.</p>
-<p>We (informally) say that a program  <span class="math notranslate nohighlight">\(p\)</span> halts <span class="math notranslate nohighlight">\(\overline{x}\)</span> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>, the control transfers to right below the last instruction of
-<span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span>  has <span class="math notranslate nohighlight">\(n\)</span> instructions. The formal definition is given below.</p>
-<p>In contrast, we say that <span class="math notranslate nohighlight">\(p\)</span> <em>halts improperly</em> on <span class="math notranslate nohighlight">\(\overline{x}\)</span> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>,
-the control transfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>To see the difference, consider the following two programs: <span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\onett\hash\)</span> and <span class="math notranslate nohighlight">\(\onett\hash\onett\onett\hash\hash\hash\)</span>. Suppose we run them with some fixed but arbitrary word in R1.  The first says “go forward 2,” and the second “add <span class="math notranslate nohighlight">\(\onett\)</span> to R1, and then advance two instructions.” The first halts, while the second halts improperly.</p>
+<p>We (informally) say that a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs <span class="math notranslate nohighlight">\(\overline{x}\)</span> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on <span class="math notranslate nohighlight">\(\overline{x}\)</span>, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>. In more detail, suppose that <span class="math notranslate nohighlight">\(p\)</span> has n instructions. The formal definition is given below, after we discuss the remaining types of instructions.</p>
+<p>In contrast, we say that p <em>halts improperly on <span class="math notranslate nohighlight">\(\overline{x}\)</span></em> if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span>, the control transfers either to a point before the beginning of <span class="math notranslate nohighlight">\(p\)</span> or to points more than one instruction beyond the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
 </div>
-<div class="exercise admonition" id="introOneSharp/haltDef-exercise-0">
+<p>To see the difference, consider the following two programs:
+<code class="docutils literal notranslate"><span class="pre">11###1#</span></code> and <code class="docutils literal notranslate"><span class="pre">1#11###</span></code>.  Suppose we run them with some fixed but arbitrary word <span class="math notranslate nohighlight">\(x\)</span> in R1.</p>
+<p>The first says “Go forward 2,” and the second “Add <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1, and then advance two instructions.”</p>
+<p>The first halts, while the second halts improperly.</p>
+<div class="exercise admonition" id="on-halting">
 
-<p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
-<section id="exercise-content">
-<p><span class="xref std std-ref">on-halting</span> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
+<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
+<div class="section" id="exercise-content">
+<p>Which of the following programs halt when run on all empty registers? Which halt improperly? Why?</p>
+<ol class="arabic simple">
+<li><p>11###111###1####</p></li>
+<li><p>11###111###11####</p></li>
+<li><p>11###111###111####</p></li>
+<li><p>1111###1111###1####11###11####</p></li>
+</ol>
+<p>[It would be better to try to solve this problem without running the programs.]</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/haltDef-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
+<div class="section" id="exercise-content">
+<p><a class="reference internal" href="#on-halting"><span class="std std-numref">Exercise 37</span></a> was concerned with programs run on all empty registers.  Find a program <span class="math notranslate nohighlight">\(p\)</span> and words <span class="math notranslate nohighlight">\(w_1\)</span>, <span class="math notranslate nohighlight">\(w_2\)</span>, and <span class="math notranslate nohighlight">\(w_3\)</span> so that</p>
 <p>(a) When started with <span class="math notranslate nohighlight">\(w_1\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts.</p>
 <p>(b) When started with <span class="math notranslate nohighlight">\(w_2\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> halts improperly.</p>
 <p>(c) When started with <span class="math notranslate nohighlight">\(w_3\)</span> in R1, <span class="math notranslate nohighlight">\(p\)</span> goes into an infinite loop.</p>
-</section>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="halting-the-formal-definition">
-<span id="content-haltdef"></span><h1>Halting: the formal definition<a class="headerlink" href="#halting-the-formal-definition" title="Link to this heading">#</a></h1>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="halting-the-formal-definition">
+<span id="content-haltdef"></span><h1>Halting: the formal definition<a class="headerlink" href="#halting-the-formal-definition" title="Permalink to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(p\)</span> be a program with <span class="math notranslate nohighlight">\(n\)</span> instructions.
 There are five ways that the run of a program <span class="math notranslate nohighlight">\(p\)</span> on some register contents could halt.</p>
 <ol class="arabic simple">
-<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form <span class="math notranslate nohighlight">\(\onett^k\hash\)</span> or <span class="math notranslate nohighlight">\(\onett^k\hash\hash\)</span>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction.</p></li>
-<li><p>Some instruction of <span class="math notranslate nohighlight">\(p\)</span>, say instruction number <span class="math notranslate nohighlight">\(i\)</span>, is of the form <span class="math notranslate nohighlight">\(\onett^k\hash^3\)</span>; and also <span class="math notranslate nohighlight">\(i + k = n + 1\)</span>; and finally that at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach instruction <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form <span class="math notranslate nohighlight">\(\onett^k\hash^5\)</span>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction with Rk empty.</p></li>
-<li><p>Instruction <span class="math notranslate nohighlight">\(n-1\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the next-to-last instruction) is of the form <span class="math notranslate nohighlight">\(\onett^k\hash^5\)</span>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <span class="math notranslate nohighlight">\(\onett\)</span>.</p></li>
-<li><p>Instruction <span class="math notranslate nohighlight">\(n-2\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the second-to-last instruction) is of the form <span class="math notranslate nohighlight">\(\onett^k\hash^5\)</span>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <span class="math notranslate nohighlight">\(\hash\)</span>.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">##</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction.</p></li>
+<li><p>Some instruction of <span class="math notranslate nohighlight">\(p\)</span>, say instruction number <span class="math notranslate nohighlight">\(i\)</span>, is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">###</span></code>; and also <span class="math notranslate nohighlight">\(i + k = n + 1\)</span>; and finally that at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach instruction <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this last instruction with Rk empty.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n-1\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the next-to-last instruction) is of the form <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>Instruction <span class="math notranslate nohighlight">\(n-2\)</span> of <span class="math notranslate nohighlight">\(p\)</span> (the second-to-last instruction) is of the form  <code class="docutils literal notranslate"><span class="pre">1</span></code><sup><span class="math notranslate nohighlight">\(k\)</span></sup><code class="docutils literal notranslate"><span class="pre">#####</span></code>, and at some point in the run of <span class="math notranslate nohighlight">\(p\)</span>, we reach this instruction with Rk containing a word beginning with <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p></li>
 </ol>
 </div>
 <p>Again, these are the formal conditions.  Most of the time it is enough to work with the informal conditions that we started with:
 a program <span class="math notranslate nohighlight">\(p\)</span> <em>halts</em> on some inputs if at some point during the execution of <span class="math notranslate nohighlight">\(p\)</span> on the inputs, the control transfers to right below the last instruction of <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<section id="terminology-and-notation">
-<h2>Terminology and notation<a class="headerlink" href="#terminology-and-notation" title="Link to this heading">#</a></h2>
-<p>Fix a program <span class="math notranslate nohighlight">\(p\)</span>.
-This program can be run with anything we like in the registers to start.
-We want some notation to describe what happens when we do this.    Here is the relevant definition.</p>
-<div class="attention admonition">
-<p class="admonition-title">Definition</p>
-<p>Fix a word <span class="math notranslate nohighlight">\(p\)</span> and a natural number <span class="math notranslate nohighlight">\(n\)</span>.
-For each <span class="math notranslate nohighlight">\(n\)</span>-tuple <span class="math notranslate nohighlight">\(\overline{x} = x_1, \ldots, x_n\)</span> of words, we define</p>
-<div class="math notranslate nohighlight">
-\[
-[\![p]\!] (\overline{x}) \simeq y
-\]</div>
-<p>to mean that
-<span class="math notranslate nohighlight">\(p\)</span> is a program, and
-when  we
-run it
-<span class="math notranslate nohighlight">\(p\)</span>  with <span class="math notranslate nohighlight">\(x_i\)</span> in  R<span class="math notranslate nohighlight">\(i\)</span> (for <span class="math notranslate nohighlight">\(1\leq i \leq n\)</span>) and all other registers empty,
-then the register machine
-eventually halts with <span class="math notranslate nohighlight">\(y\)</span> in R1 and all other
-registers
-empty.</p>
-<p>In all other cases
-(if <span class="math notranslate nohighlight">\(p\)</span> isn’t a program,
-or if <span class="math notranslate nohighlight">\(p\)</span> does not halt when run on <span class="math notranslate nohighlight">\(\overline{x}\)</span> and all other registers empty,
-or if
-<span class="math notranslate nohighlight">\(p\)</span> does halt when we do this
-but upon halting, not all of the registers besides R1 are empty),
-then we say that <span class="math notranslate nohighlight">\([\![ p]\!] (\overline{x})\)</span>
-is <em>undefined</em>.</p>
-</div>
-<p>This definition is a mouthful, and so it pays to see a lot of examples:</p>
-<div class="tip admonition">
-<p class="admonition-title">Examples</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\([\![\onett\hash\hash ]\!](\onett) \simeq \onett\hash\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![\onett\hash]\!](\hash\onett) \simeq \hash\onett\onett\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![\hash]\!](\onett)\)</span> is undefined, since <span class="math notranslate nohighlight">\(\hash\)</span> is not a program.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\semantics{\moveprog_{2,1}}(\onett,\hash\hash\onett) \simeq
-\onett\hash\hash\onett\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\semantics{\moveprog_{2,1}}(\onett,\hash, \onett\hash\onett) \)</span> is undefined, since at the end R3 is not empty.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\semantics{\onett\hash\hash\hash\onett\hash\hash\hash\hash}^1(x)\)</span> is undefined for all <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-<li><p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-\clearprog_1 + \clearprog_3 + \moveprog_{2,1}
-\]</div>
-<p>Then <span class="math notranslate nohighlight">\([\![ p]\!](x,y,z) \simeq y\)</span> for all words <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>.
-(Here <span class="math notranslate nohighlight">\(\clearprog_1\)</span> and <span class="math notranslate nohighlight">\(\clearprog_3\)</span> are programs that simply delete all the symbols in those registers; see <a class="reference internal" href="move_copy_write.html#exer-clear"><span class="std std-numref">Exercise 32</span></a>.)</p>
-<ol class="arabic simple" start="8">
-<li><p>For all words <span class="math notranslate nohighlight">\(x\)</span>,
-<span class="math notranslate nohighlight">\(
-[\![ [\![ \writeprog]\!](x)] \!](\ ) = x
-\)</span>.  Here <span class="math notranslate nohighlight">\(\writeprog\)</span> is the program from <a class="reference internal" href="#content:basicfunctions"><span class="xref myst">the section where it was introduced</span></a>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![\onett\hash\onett\hash\hash ]\!]( \ ) \simeq \onett\hash\)</span>.  That is,  our definition applies when <span class="math notranslate nohighlight">\(n = 0\)</span>.  In this case, here is what the definition boils down to.<br />
-To say that  <span class="math notranslate nohighlight">\([\![\onett\hash\onett\hash\hash ]\!]( \ ) \simeq \onett\hash\)</span> means: when we start the register machine with all registers empty, in some number of steps we halt with
-<span class="math notranslate nohighlight">\( \onett\hash\)</span> in R1 and all other registers empty.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![\onett\hash]\!](\ ) \simeq \onett\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\([\![[\![\writeprog]\!](\hash\hash\onett)]\!](\hash ) \simeq \hash\hash\hash\onett\)</span>.</p></li>
-</ol>
-</div>
-<div class="exercise admonition" id="introOneSharp/haltDef-exercise-1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
-<section id="exercise-content">
-<ol class="arabic simple">
-<li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(q\)</span>. Suppose that we run <span class="math notranslate nohighlight">\(q\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>.  Which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-[\![[\![\mbox{write}]\!](x)]\!](y) = x + y \quad \mbox{ or } \quad [\![[\![\mbox{write}]\!](x)]\!](y) = y + x
-\]</div>
-<ol class="arabic simple" start="2">
-<li><p>Let <span class="math notranslate nohighlight">\(p\)</span> be the program <span class="math notranslate nohighlight">\(\copyprog_{1,3,2} + \writeprog + \moveprog_{3,1}\)</span>. Find an equation satisfied by <span class="math notranslate nohighlight">\(p\)</span>. That is, fill in the blank</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-[\![ p]\!](x) = \underline{\qquad\qquad\qquad}
-\]</div>
-<ol class="arabic simple" start="3">
-<li><p>Now fill in another blank, where <span class="math notranslate nohighlight">\(p\)</span> again is <span class="math notranslate nohighlight">\(\copyprog_{1,3,2} + \writeprog + \moveprog_{3,1}\)</span>:</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-[\![ [\![ p]\!](x)]\!](y) = \underline{\qquad\qquad\qquad}
-\]</div>
-</section>
-</div>
-</section>
-<section id="up-arrow-and-down-arrow-notation">
-<h2>Up-arrow and down-arrow notation<a class="headerlink" href="#up-arrow-and-down-arrow-notation" title="Link to this heading">#</a></h2>
+<div class="section" id="up-arrow-and-down-arrow-notation">
+<h2>Up-arrow and down-arrow notation<a class="headerlink" href="#up-arrow-and-down-arrow-notation" title="Permalink to this heading">#</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">Definition</p>
 <p>We write <span class="math notranslate nohighlight">\([\![p]\!](\ )\!\!\downarrow\)</span> to mean that <span class="math notranslate nohighlight">\(p\)</span> is a program, and running <span class="math notranslate nohighlight">\(p\)</span> on all empty registers eventually halts.</p>
@@ -646,10 +549,10 @@ To say that  <span class="math notranslate nohighlight">\([\![\onett\hash\onett\
 <hr class="docutils" />
 <p>The definitions of <span class="math notranslate nohighlight">\([\![p]\!](x_1, \ldots, x_n)\!\!\downarrow\)</span>  and  <span class="math notranslate nohighlight">\([\![p]\!](x_1, \ldots, x_n)\!\!\uparrow\)</span> are similar.</p>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-halting-problem">
-<h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Link to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-halting-problem">
+<h1>The halting problem<a class="headerlink" href="#the-halting-problem" title="Permalink to this heading">#</a></h1>
 <p>We now can state one of the key foundational points in computability theory.  This is that the <em>halting problem</em> is unsolvable.  It is a result due to Alan Turing in his seminal paper of 1936.  Although his original paper dealt with what we now call <em>Turing machines</em> (indeed, they first appeared in this same paper), the discussion carries over to register machines.</p>
 <p>We begin by thinking about <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs <span class="math notranslate nohighlight">\(x\)</span> and asking whether they halt or not.  As we know, it makes a difference whether we run <span class="math notranslate nohighlight">\(x\)</span> on all empty registers or with some non-empty words in the registers.  Let us for a moment just consider <span class="math notranslate nohighlight">\(x\)</span> on all empty registers.  It might be nice to know if <span class="math notranslate nohighlight">\(x\)</span> halts or not.   Of course we mean “halting” according to our formal definition.    In computability theory, we always ask whether or not a function which we define is computable.  In the language of <em>problems</em> from the last chapter, we are dealing with the set <span class="math notranslate nohighlight">\(\set{x : [\![x]\!](\ )\!\!\downarrow}\)</span>.
 So we are asking about whether this set if computable.</p>
@@ -679,8 +582,8 @@ So we are asking about whether this set if computable.</p>
 \right.
 \end{array}
 \end{split}\]</div>
-<p>Although it appears much later in this book, you could read <a class="reference internal" href="../undecidability/haltingProblem.html#Turings-theorem">Theorem 12</a> right now.</p>
-</section>
+<p>Although it appears much later in this book, you could read <a class="reference internal" href="../undecidability/haltingProblem.html#Turings-theorem">Theorem 11</a> right now.</p>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -709,7 +612,7 @@ So we are asking about whether this set if computable.</p>
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -739,7 +642,6 @@ So we are asking about whether this set if computable.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -751,7 +653,6 @@ So we are asking about whether this set if computable.</p>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halting-the-formal-definition">Halting: the formal definition</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology-and-notation">Terminology and notation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#up-arrow-and-down-arrow-notation">Up-arrow and down-arrow notation</a></li>
 </ul>
 </li>
@@ -805,8 +706,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

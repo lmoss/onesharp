@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Computable functions on encoded structures &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computable functions on encoded structures &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/coding';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,7 +429,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -472,16 +457,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/coding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="computable-functions-on-encoded-structures">
-<h1>Computable functions on encoded structures<a class="headerlink" href="#computable-functions-on-encoded-structures" title="Link to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="computable-functions-on-encoded-structures">
+<h1>Computable functions on encoded structures<a class="headerlink" href="#computable-functions-on-encoded-structures" title="Permalink to this heading">#</a></h1>
 <p>At this point, we have seen a bit about one particular model of computation, leading to the definition of a <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable function.   We also saw some mathematically natural algorithmic problems having to do with graphs, tiling, dominoes, and matricies.  What we want to do at this point is to connect these two discussions.
 We also want to say in a more formal way what it means for one or another algorithmic problem to be decidable or undecidable.</p>
 <div class="proof definition admonition" id="structure">
 <p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A <em>structure</em> is a tuple</p>
 <div class="math notranslate nohighlight">
 \[ 
@@ -490,12 +475,12 @@ We also want to say in a more formal way what it means for one or another algori
 <p>where <span class="math notranslate nohighlight">\(S\)</span> is a set, <span class="math notranslate nohighlight">\(R_1, \ldots, R_n\)</span> are relations on <span class="math notranslate nohighlight">\(S\)</span>, each of some finite number
 <span class="math notranslate nohighlight">\(n_R\geq 1\)</span> of variables, and <span class="math notranslate nohighlight">\(f_1, \ldots, f_m\)</span> are functions on <span class="math notranslate nohighlight">\(S\)</span>, each of some finite number
 <span class="math notranslate nohighlight">\(n_f \geq 0\)</span> of variables.   Note that we allow <span class="math notranslate nohighlight">\(n_f = 0\)</span>, and in this case <span class="math notranslate nohighlight">\(f\)</span> is called a <em>constant symbol</em>.</p>
-</section>
+</div>
 </div><p>This is the standard notion of a <em>first-order structure</em> from mathematical logic.</p>
 <p>The kinds of problems that interest us are where we are given a type of mathematical problem represented by a <em>structure</em> <span class="math notranslate nohighlight">\(S\)</span>, and a <em>target set</em> <span class="math notranslate nohighlight">\(T\subseteq S\)</span>.  We are interested to know whether a given <span class="math notranslate nohighlight">\(s\in S\)</span> belongs to <span class="math notranslate nohighlight">\(T\)</span> or not.</p>
 <div class="proof definition admonition" id="coding">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span></p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>Given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>, a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-<em>encoding</em> of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> consists of</p>
 <ol class="arabic simple">
 <li><p>A set <span class="math notranslate nohighlight">\(\widehat{S} \subset Words\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words. <span class="math notranslate nohighlight">\(\widehat{S}\)</span> must be decidable.</p></li>
@@ -516,7 +501,7 @@ We require that <span class="math notranslate nohighlight">\(\widehat{f}\)</span
 \pi(f(s_1, \ldots, s_n)) = \widehat{f}(\pi(s_1),\ldots, \pi(s_n)).
 \]</div>
 <p>An encoding of a structure has a lot of components, but to keep our notation short we usually abbreviate the whole thing by <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-</section>
+</div>
 </div><p>Another way to say this is that an encoding of <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is an isomorphic copy in which all parts of the structure are <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -540,11 +525,11 @@ And <span class="math notranslate nohighlight">\(\hat{s}\)</span> is also comput
 </div>
 <div class="proof definition admonition" id="coding_what_for">
 <p class="admonition-title"><span class="caption-number">Definition 3 </span></p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>Suppose we are given a structure <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> and an encoding <span class="math notranslate nohighlight">\(\pi\)</span> of it.</p>
 <p>A function <span class="math notranslate nohighlight">\(f: S^n\to S\)</span> is <em>computable relative to the encoding</em> if the isomorphic version of it is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable.</p>
 <p>A relation <span class="math notranslate nohighlight">\(R\subseteq S^n\)</span> is <em>computable</em> or <em>decidable</em> if its isomorphic version is <code class="docutils literal notranslate"><span class="pre">1#</span></code> computable.</p>
-</section>
+</div>
 </div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Let us return to the example of <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> and the unary encoding of it.</p>
@@ -558,24 +543,24 @@ And <span class="math notranslate nohighlight">\(\hat{s}\)</span> is also comput
 <div class="exercise admonition" id="issues/coding-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Check that the structure <span class="math notranslate nohighlight">\(\mathcal{W} = (W,\varepsilon, \)</span>{\tt 1}, {\tt #},<span class="math notranslate nohighlight">\(+)\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words is decidable,
 where <span class="math notranslate nohighlight">\(W\)</span> is the set of all <code class="docutils literal notranslate"><span class="pre">1#</span></code> words; <span class="math notranslate nohighlight">\(\varepsilon\)</span>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">#</span></code> are the evident constants, and <span class="math notranslate nohighlight">\(+\)</span> is the function of two arguments giving their concantenation.</p>
 <p>[This should be easy.]</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Show that if <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> is a structure which has a <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encoding, then every finite subset of <span class="math notranslate nohighlight">\(S\)</span> is computable.</p>
 <p>[Use <span class="xref std std-ref">proposition_finite_computable</span>]</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>The structure <span class="math notranslate nohighlight">\(\mathbb{Z} = (Z,0, s, p)\)</span> of integers has</p>
 <div class="math notranslate nohighlight">
 \[
@@ -588,12 +573,12 @@ Z = \{\ldots, -2, -1, 0, 1, 2, \ldots\}
 <li><p>Show that the addition function on the integers is <code class="docutils literal notranslate"><span class="pre">1#</span></code>-computable relative to your encoding.</p></li>
 </ol>
 <p>This might be messy and/or tedious, because you have to exhibit <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs as part of the encoding and also to represent addition.  It is fine to be hand-wavy here.  Soon we will have tools to make it easier to actually write programs.  And for something tedious, it is usually sufficient to convince yourself that you <em>could</em> write the program.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(P\)</span> be the set of pairs <span class="math notranslate nohighlight">\((p,q)\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code>-words.   We consider the structure</p>
 <div class="math notranslate nohighlight">
 \[
@@ -610,12 +595,12 @@ b_{\#} (p,q)  &amp; =  &amp; (p, q + \# )\\
 \end{array}
 \end{split}\]</div>
 <p>Find a computable encoding of this structure.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>If we want to discuss whether <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix mortality is decidable, or whether <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality is decidable, it is natural to propose <code class="docutils literal notranslate"><span class="pre">1#</span></code>-encodings.  Let’s do this for <span class="math notranslate nohighlight">\(2\times 2\)</span> matricies.<br />
 Consider</p>
 <div class="math notranslate nohighlight">
@@ -628,20 +613,20 @@ Consider</p>
 <li><p>What are the rest of the requirements on a computable encoding of this structure?   You don’t need to give the program which corresponds to
 <span class="math notranslate nohighlight">\(times\)</span>, since that would be quite tedious.</p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/coding-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{G}\)</span> be the set of finite graphs whose set of vertices is of the form <span class="math notranslate nohighlight">\(\{1,2, \ldots, n\}\)</span> for some <span class="math notranslate nohighlight">\(n\)</span>.  We make this into a structure.  There are no relations or functions, just the set by itself.  What is an encoding of this structure?   What does it mean to say that the subset <span class="math notranslate nohighlight">\(C\)</span> of graphs which contain a cycle is a decidable set relative to an encoding?</p>
-</section>
+</div>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Credits</p>
 <p>Jose Meseguer and Joseph A. Goguen, “Initiality, induction, and computability”, in <em>Algebraic methods in semantics</em>, Cambridge University Press, 1985, 459-541.</p>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -670,7 +655,7 @@ Consider</p>
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -741,8 +726,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

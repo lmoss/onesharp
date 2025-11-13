@@ -1,64 +1,68 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Programs for arithmetic &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs for arithmetic &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'more_programs/arithmetic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -73,23 +77,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,20 +120,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,8 +142,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -155,29 +154,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -198,8 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
@@ -248,7 +234,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -290,7 +275,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -299,14 +284,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -431,10 +416,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -442,14 +427,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -491,26 +476,26 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/arithmetic.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section id="programs-for-arithmetic">
-<h1>Programs for arithmetic<a class="headerlink" href="#programs-for-arithmetic" title="Link to this heading">#</a></h1>
+<div class="section" id="programs-for-arithmetic">
+<h1>Programs for arithmetic<a class="headerlink" href="#programs-for-arithmetic" title="Permalink to this heading">#</a></h1>
 <p>The main point of working with <code class="docutils literal notranslate"><span class="pre">1#</span></code> is that it gives an explicit treatment of some of the most important results of the theory of computation. This was the reason the language was formulated and developed. Nobody ever intended 1# to be used very widely.</p>
 <p>At the same time, once we have <code class="docutils literal notranslate"><span class="pre">1#</span></code> or some other programming language, it will be of some interest to check that we really can use it to do computation. This lesson is mainly a verification that you can use 1# to send a rocket to the moon. That is, it hints that one could theoretically use 1# to do any numerical computations that could be done with any computer. So this backs up the claim that our very simple language 1# is computationally complete.</p>
 <p>For the most part, this lesson is optional. The specific results on arithmetic are not going to be used later. The definitions of primitive recursive function and computable function are important in computability theory. But if you already know them from other sources and are willing to believe that <code class="docutils literal notranslate"><span class="pre">1#</span></code> is a Turing-complete formalism, then you should feel free to work through this lesson quickly, or even to skip it altogether. .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">setuptools</span>
-<span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lmoss</span><span class="o">/</span><span class="n">onesharp</span><span class="o">.</span><span class="n">git</span><span class="nd">@main</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!python -m pip install -U setuptools
+!python -m pip install -U git+https://github.com/lmoss/onesharp.git@main
+from onesharp.interpreter.interpreter import *
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="bb-representation">
-<h1>bb representation<a class="headerlink" href="#bb-representation" title="Link to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="bb-representation">
+<h1>bb representation<a class="headerlink" href="#bb-representation" title="Permalink to this heading">#</a></h1>
 <p>Before we get look at arithmetic, we have to decide on how numbers are to be represented. There are lots of ways to do this, and we need to settle on a choice.</p>
 <p>We’ve already seen the unary representation of numbers. We could continue on with this. The main reason against it has to do with zero: we would like our words to be non-empty words, and so we cannot use the empty word to represent zero. One way around this is to represent the number n by the unary n + 1. This could be confusing, and so we’ll use a different representation of numbers. Ours is called the backwards binary or bb representation.</p>
 <p>As a first step, you should remember or look up the binary or base 2 representation of numbers. Here are some examples:</p>
@@ -586,14 +571,14 @@ document.write(`
 </TABLE>        
 </td>
 </table>
-<section id="removing-superfluous-s">
-<h2>Removing superfluous <code class="docutils literal notranslate"><span class="pre">#</span></code>s<a class="headerlink" href="#removing-superfluous-s" title="Link to this heading">#</a></h2>
+<div class="section" id="removing-superfluous-s">
+<h2>Removing superfluous <code class="docutils literal notranslate"><span class="pre">#</span></code>s<a class="headerlink" href="#removing-superfluous-s" title="Permalink to this heading">#</a></h2>
 <p>One touchy point about bb representations is that all bb representations should either be the word # or else end in a <code class="docutils literal notranslate"><span class="pre">1</span></code>. Here is a program that strips off superfluous <code class="docutils literal notranslate"><span class="pre">#</span></code>s at the end of a word in R1. It uses the first three registers It also converts an empty R1 to a <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">1#####</span> <span class="pre">1111111111</span> <span class="pre">11111111111</span> <span class="pre">11111111111</span> <span class="pre">11111111111</span> <span class="pre">1111###</span> <span class="pre">111###</span> <span class="pre">11##</span> <span class="pre">11###</span> <span class="pre">11#</span> <span class="pre">1#####</span> <span class="pre">1111111111</span> <span class="pre">1111111111###</span> <span class="pre">1111111111###</span> <span class="pre">11#####</span> <span class="pre">1###</span> <span class="pre">1111###</span> <span class="pre">111##</span> <span class="pre">11##</span> <span class="pre">11111111####</span> <span class="pre">111#</span> <span class="pre">11##</span> <span class="pre">1111111111</span> <span class="pre">1####</span> <span class="pre">11#####</span> <span class="pre">1###</span> <span class="pre">1111###</span> <span class="pre">111##</span> <span class="pre">11#</span> <span class="pre">1111111111</span> <span class="pre">1111111####</span> <span class="pre">111#</span> <span class="pre">11#</span> <span class="pre">1111111111</span> <span class="pre">1111111111####</span> <span class="pre">11#####</span> <span class="pre">1111111111###</span> <span class="pre">1111111111###</span> <span class="pre">111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">1111111111</span> <span class="pre">11111111111</span> <span class="pre">11111111111</span> <span class="pre">11111####</span> <span class="pre">1111111111</span> <span class="pre">1###</span> <span class="pre">111#</span> <span class="pre">111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">11###</span> <span class="pre">1##</span></code></p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-successor-function">
-<h1>The successor function<a class="headerlink" href="#the-successor-function" title="Link to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-successor-function">
+<h1>The successor function<a class="headerlink" href="#the-successor-function" title="Permalink to this heading">#</a></h1>
 <p>Here is a program succ which takes a bb representation of a number n and outputs the bb representation of n+1.</p>
 <TABLE CELLPADDING="3">
         <TR BGCOLOR="#FFFFCC">
@@ -626,21 +611,21 @@ document.write(`
 </TABLE>        
 <p>Here is how the program works: as long as a <code class="docutils literal notranslate"><span class="pre">1</span></code> is seen in R1, a <code class="docutils literal notranslate"><span class="pre">#</span></code> is put in R2; the program then loops to the top. On encountering the first <code class="docutils literal notranslate"><span class="pre">#</span></code>, the program goes to the blue part: it adds a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R2 and then copies the rest of R1 to the end of R2. If the original input is empty, a <code class="docutils literal notranslate"><span class="pre">1</span></code> is put in R2. And after all of this, R2 is moved back to R1. The full code is shown below.</p>
 <p>1##### 1111111111 111### 1111111111### 11# 1##### 111111### 111### 11## 1111#### 11# 111111#### 1111### 11## 1111111111 111#### 11# 11##### 111111### 111### 1## 1111#### 1# 111111####</p>
-<section id="comparison">
-<h2>Comparison<a class="headerlink" href="#comparison" title="Link to this heading">#</a></h2>
+<div class="section" id="comparison">
+<h2>Comparison<a class="headerlink" href="#comparison" title="Permalink to this heading">#</a></h2>
 <p>Here is a program compare which takes words in R1 and R2 and decides if they are symbol-for-symbol the same. If so, it outputs a <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1; if not, it leaves R1 empty.</p>
 <p>1##### 111111### 111111111### 11##### 1111111111 1### 1111111111### 111111#### 11##### 1111111111 11111### 111111### 11111### 11##### 111### 1111111111 111#### 1### 1##### 111### 11#### 111#### 11##### 1111### 11#### 111#### 1#</p>
 <p>The original contents of R1 and R2 are destroyed in the process.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="addition">
-<h1>Addition<a class="headerlink" href="#addition" title="Link to this heading">#</a></h1>
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"></div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="addition">
+<h1>Addition<a class="headerlink" href="#addition" title="Permalink to this heading">#</a></h1>
 <p>Here is a program add which adds numbers. Given m in R1 and n in R2 (represented in bb), the program computes the sum m + n (again, represented in bb) and puts it in R1. At the end, all other registers are empty (and in particular the original inputs m and n are lost).</p>
 <p>1##### 111### 111111### 111111111### 11##### 1111111111 11111111111 11111111111 111### 1111111111 11111111111 11111### 1111111111 11111111111 111111### 11##### 1111111111 11111111111 11### 1111111111 11111111111 1111111### 1111111111 11111111111### 11##### 1111111111 11111111111### 1111111111 11111111### 1111111111 111111111### 1##### 111### 111111### 111111111### 11##### 1111111111 1### 1111111111 111111### 111111111### 11##### 1111111111 111### 1111111111### 1111111111 1### 11##### 111### 11111111### 1### 111# 1111111111 11111111111 11111111111 1#### 111## 1111111111 11111111111 11111111111 111#### 111# 1111111111 11111111111#### 111## 1111111111 11111111111 11#### 1### 111##### 111111### 111### 1## 1111#### 1# 111111####</p>
 <p>This program implements the usual algorithm for addition using carrying. It is also possible to get a program for addition using some of the work that we’ll see soon on primitive recursion.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></section>
-<section class="tex2jax_ignore mathjax_ignore" id="multiplication">
-<h1>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h1>
+<img src="https://github.com/lmoss/onesharp/blob/main/harp.jpg?raw=1" width="200" height="160"></div>
+<div class="tex2jax_ignore mathjax_ignore section" id="multiplication">
+<h1>Multiplication<a class="headerlink" href="#multiplication" title="Permalink to this heading">#</a></h1>
 <p>Having seen a program for addition, we next look at multiplication.</p>
 <p>We seek a program times with the following features: Given m in R1 and n in R2 the program computes the sum m x n and puts it in R1. At the end, all other registers are empty (and in particular the original inputs m and n are lost). As with addition, we want to work with bb representations.</p>
 <p>Recall that with addition, our program was designed to implement the usual carrying algorithm. We could do the same for multiplication, but this is not the best choice for us. Although it is more familiar, it is less general; so the ideas used in the traditional algorithm are not going to be useful in other contexts. The basic idea in our treatment is that multiplication satisfies two recursion equations:</p>
@@ -734,33 +719,33 @@ This is φbump(compare,4)
 <p>The parts of the program that are shaded red are special to the multiplication algorithm. The point is that if we wish to write a program for something similar, we could keep the outside “shell” and just modify the red lines above. Your first exercise below asks you to do just that.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/drum.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="more_programs/arithmetic-exercise-0">
 
-<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
+<div class="section" id="exercise-content">
 <p>Modify the multiplication program to compute exponentiation. This would be a program <code class="docutils literal notranslate"><span class="pre">exp</span></code> with the following property: when started with the bb representation of m in R1 and n in R2, the program eventually halts with the bb representation of mn in R1.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
+<div class="section" id="exercise-content">
 <p>In our work on multiplication, we assumed addition and worked with it to get multiplication. Now forget about our program for addition, and using only the program <code class="docutils literal notranslate"><span class="pre">succ</span></code> for the successor function, construct a program for addition.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 63 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
+<div class="section" id="exercise-content">
 <p>Write a program which, when started with n in bb in R1, gives n! in R1. [Here n! is the factorial function. Remember that 0! = 1 and (n+1)! = (n+1) x n!.]</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="more_programs/arithmetic-exercise-3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 64 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
+<div class="section" id="exercise-content">
 <p>Write two programs which convert back and forth from unary to binary representation.</p>
-</section>
 </div>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -789,7 +774,7 @@ This is φbump(compare,4)
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -818,7 +803,6 @@ This is φbump(compare,4)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -886,8 +870,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

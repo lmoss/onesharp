@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Reduction of one problem to another &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduction of one problem to another &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/reduction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,14 +429,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -495,11 +480,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/reduction.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="reduction-of-one-problem-to-another">
-<h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Link to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="reduction-of-one-problem-to-another">
+<h1>Reduction of one problem to another<a class="headerlink" href="#reduction-of-one-problem-to-another" title="Permalink to this heading">#</a></h1>
 <p>We are very interested in <em>relations between problems</em>.  Here is the main definition that we will use.</p>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
@@ -518,12 +503,12 @@ A \leq B
 <p>We are going to see a few examples of this soon.  But first, here is the result that shows why we are interested in this definition in the first place.</p>
 <div class="proof proposition admonition" id="proposition_intuitive_decidability">
 <p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
-<section class="proposition-content" id="proof-content">
+<div class="proposition-content section" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is intuitively decidable,
 then <span class="math notranslate nohighlight">\(A\)</span> is also intuitively decidable.</p>
 <p>If <span class="math notranslate nohighlight">\(A\leq B\)</span> and <span class="math notranslate nohighlight">\(A\)</span> is intuitively undecidable,
 then <span class="math notranslate nohighlight">\(B\)</span> is also intuitively undecidable.</p>
-</section>
+</div>
 </div><div class="proof admonition" id="proof">
 <p>Proof. For the first part: given <span class="math notranslate nohighlight">\(x\)</span>, to see if <span class="math notranslate nohighlight">\(x\in A\)</span> or not,
 apply the intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span>, and then see if <span class="math notranslate nohighlight">\(t(x)\in B\)</span> or not.  The answer must be the same!</p>
@@ -533,19 +518,19 @@ apply the intuitively computable translation <span class="math notranslate nohig
 <div class="exercise admonition" id="issues/reduction-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(T\)</span> be the set of natural numbers, let <span class="math notranslate nohighlight">\(A\)</span> be the set of prime numbers, and let <span class="math notranslate nohighlight">\(B = \set{1,2,3}\)</span>.  Show that according to our definitions <span class="math notranslate nohighlight">\(A\leq B\)</span>.   However, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are both intuitively decidable, and most people who know about such things would agree that <span class="math notranslate nohighlight">\(A\)</span> is harder than <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p>The moral of the story is that our English rendering of <span class="math notranslate nohighlight">\(A\leq B\)</span> is only good for comparisons of decidable vs. undecidable problems.</p>
-</section>
 </div>
-<section id="example-related-to-the-pcp">
-<h2>Example related to the PCP<a class="headerlink" href="#example-related-to-the-pcp" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="example-related-to-the-pcp">
+<h2>Example related to the PCP<a class="headerlink" href="#example-related-to-the-pcp" title="Permalink to this heading">#</a></h2>
 <p>Recall that <a class="reference internal" href="problems.html#content-firstpcp"><span class="std std-ref">the Post Correspondence Problem (PCP)</span></a> is the set of finite domino sets which have a post word.  We introduce a variant of this problem, the   <em>Modified PCP (MPCP)</em>:  A <em>pointed domino set</em> is one that comes with a distinguished domino <span class="math notranslate nohighlight">\(d^*\)</span> called the <em>start domino</em>.  Technically, it is a pair <span class="math notranslate nohighlight">\((\mathcal{D},d^*)\)</span>, where <span class="math notranslate nohighlight">\(d^*\in \DD\)</span>.  The MPCP is the set of finite pointed domino sets which have a Post sequence starting with <span class="math notranslate nohighlight">\(d^*\)</span>.</p>
 <div class="proof proposition admonition" id="proposition-2">
 <p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
-<section class="proposition-content" id="proof-content">
+<div class="proposition-content section" id="proof-content">
 <p><span class="math notranslate nohighlight">\(MPCP \leq PCP\)</span>.   That is, there is an intuitively computable translation function <span class="math notranslate nohighlight">\(t: MPCP \to PCP\)</span> such that each pointed domino system <span class="math notranslate nohighlight">\((\mathcal{D},d^*)\)</span>, has a Post sequence iff its translation <span class="math notranslate nohighlight">\(t(\mathcal{D},d^*)\)</span> is an ordinary domino system which has a Post sequence.</p>
-</section>
+</div>
 </div><p>Given an input to the MPCP, say <span class="math notranslate nohighlight">\((\DD,d^*)\)</span>, take two new symbols, say <span style="color:red"><span class="math notranslate nohighlight">\(\blacksquare\)</span></span> and
 <span style="color:blue"><span class="math notranslate nohighlight">\(\$ \)</span></span>, and then define <span class="math notranslate nohighlight">\(t(\DD,d^*)\)</span> in the following way:</p>
 <ol class="arabic simple">
@@ -577,22 +562,22 @@ we trade in these dominoes for the evident corresponding dominoes in <span class
 <div class="exercise admonition" id="issues/reduction-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Show that <span class="math notranslate nohighlight">\(PCP \leq MPCP\)</span>.   Here is what this means, spelled out.  You need to define an intuitively computable function <span class="math notranslate nohighlight">\(t\)</span> from domino sets to pointed domino sets with the property that for all domino sets <span class="math notranslate nohighlight">\(\DD\)</span>:</p>
 <ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence, then <span class="math notranslate nohighlight">\(t(\DD)\)</span> has one also, and one that starts with the start domino of <span class="math notranslate nohighlight">\(t(\DD)\)</span>.</p></li>
 <li><p>Conversely, if <span class="math notranslate nohighlight">\(t(\DD)\)</span> has a Post sequence that starts with its start domino, then <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.</p></li>
 </ol>
-</section>
 </div>
 </div>
-</section>
-<section id="why-does-t-have-to-be-intuitively-computable">
-<h2>Why does <span class="math notranslate nohighlight">\(t\)</span> have to be intuitively computable?<a class="headerlink" href="#why-does-t-have-to-be-intuitively-computable" title="Link to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="why-does-t-have-to-be-intuitively-computable">
+<h2>Why does <span class="math notranslate nohighlight">\(t\)</span> have to be intuitively computable?<a class="headerlink" href="#why-does-t-have-to-be-intuitively-computable" title="Permalink to this heading">#</a></h2>
 <p>Similarly, we can now say why our definition of <span class="math notranslate nohighlight">\(A \leq B\)</span> requires the translation function <span class="math notranslate nohighlight">\(t: S\to T\)</span> to be intuitively computable.   If we took away this restriction,  <a class="reference internal" href="#proposition_intuitive_decidability">Proposition 2</a> would be false in general: consider the case when <span class="math notranslate nohighlight">\(A\)</span> is undecidable and <span class="math notranslate nohighlight">\(B\)</span> is decidable, and <span class="math notranslate nohighlight">\(t\)</span> is a constant function.</p>
-</section>
-<section id="examples-related-to-integer-roots-of-polynomials">
-<h2>Examples related to integer roots of polynomials<a class="headerlink" href="#examples-related-to-integer-roots-of-polynomials" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="examples-related-to-integer-roots-of-polynomials">
+<h2>Examples related to integer roots of polynomials<a class="headerlink" href="#examples-related-to-integer-roots-of-polynomials" title="Permalink to this heading">#</a></h2>
 <p>We turn to some examples related to <em>polynomials</em> and <em>systems</em> of them.  In this discussion, we are looking at polynomials in many variables with integer coefficients.   Consider the following sets:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -614,15 +599,15 @@ xyzw - 15
 <p>One common root is <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(y = 2\)</span>, <span class="math notranslate nohighlight">\(z = 3\)</span>, <span class="math notranslate nohighlight">\(w = 5\)</span>.  There might be others, but it only takes one common root to put a system into <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <div class="proof proposition admonition" id="proposition-4">
 <p class="admonition-title"><span class="caption-number">Proposition 4 </span></p>
-<section class="proposition-content" id="proof-content">
+<div class="proposition-content section" id="proof-content">
 <p><span class="math notranslate nohighlight">\(A \leq B\)</span>.</p>
-</section>
+</div>
 </div><p>Every polynomial is a system with just one polynomial.   So we may take the translation map <span class="math notranslate nohighlight">\(t\)</span> taking polynomials into systems to be the <em>inclusion</em> map.</p>
 <div class="proof proposition admonition" id="proposition-5">
 <p class="admonition-title"><span class="caption-number">Proposition 5 </span></p>
-<section class="proposition-content" id="proof-content">
+<div class="proposition-content section" id="proof-content">
 <p><span class="math notranslate nohighlight">\(B \leq A\)</span>.</p>
-</section>
+</div>
 </div><p>We need to exhibit an intuitively computable translation <span class="math notranslate nohighlight">\(t\)</span> from systems of polynomials to single polynomials with the property that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{cl}
@@ -693,75 +678,75 @@ h   &amp; = &amp; gz \\
 \end{split}\]</div>
 <p>This transformation preserves satisfiability in <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and shows that  <span class="math notranslate nohighlight">\(A \leq A_{\leq 4}\)</span>.</p>
 <p>The method of introducing variables to make something simpler is sometimes called <em>Skolem’s trick</em>.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
 <p>Here are some exercises to help you get catch on.  Some of these will be quite tricky, and the trickiness is due to two things: first, the definition of the translation function <span class="math notranslate nohighlight">\(t\)</span> often requires ingenuity and cleverness.   Your first attempt might not be correct.  That is, you might not be able to prove the required ‘if and only if’ statement; this itself might require a tricky argument.</p>
 <div class="admonition-observation admonition">
 <p class="admonition-title">Observation</p>
 <p>In showing that <span class="math notranslate nohighlight">\(t: S\to T\)</span> works, the hard direction is often the one that “goes backwards”, saying: “if <span class="math notranslate nohighlight">\(t(x)\in B\)</span>, then <span class="math notranslate nohighlight">\(x\in A\)</span>.”</p>
 </div>
-<section id="tiling">
-<h2>Tiling<a class="headerlink" href="#tiling" title="Link to this heading">#</a></h2>
+<div class="section" id="tiling">
+<h2>Tiling<a class="headerlink" href="#tiling" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
-<section id="exercise-content">
-<p>The <em>one-row</em> tiling problem* is the problem of deciding whether a tile set can tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis” part of the quadrant (the bottom infinite row).  Show that this problem is decidable by reducing to the problem of whether a finite graph has a cycle.</p>
-</section>
+<div class="section" id="exercise-content">
+<p>The <em>one dimensional tiling problem</em> is the problem of deciding whether a tile set can tile the “positive <span class="math notranslate nohighlight">\(x\)</span>-axis” part of the quadrant (the bottom infinite row).  Show that this problem is decidable by reducing to the problem of whether a finite graph has a cycle.</p>
+</div>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>The <em>two-row tiling problem</em> is the same problem, but we want to tile the bottom-most two infinite rows.  Is this problem decidable or undecidable?</p>
 <p>What about the two-column tiling problem?</p>
-</section>
 </div>
-</section>
-<section id="roots-of-polynomials">
-<h2>Roots of polynomials<a class="headerlink" href="#roots-of-polynomials" title="Link to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="roots-of-polynomials">
+<h2>Roots of polynomials<a class="headerlink" href="#roots-of-polynomials" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-8">
 
 <p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> be the set of multi-variable polynomials <span class="math notranslate nohighlight">\(p(x_1, \ldots, x_n)\)</span> with integer coefficients which have a root consisting of positive integers, and let <span class="math notranslate nohighlight">\(Y\)</span> be the polynomials with integer coefficients which have a root consisting of negative integers.  Show that <span class="math notranslate nohighlight">\(X \leq Y\)</span> and <span class="math notranslate nohighlight">\(Y\leq X\)</span>.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/reduction-exercise-9">
 
 <p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>We presented an example of how <span class="math notranslate nohighlight">\(A \leq A_4\)</span> could work, but we didn’t really define a function that does this.  Your task is to do this.</p>
-</section>
 </div>
-</section>
-<section id="pcp">
-<h2>PCP<a class="headerlink" href="#pcp" title="Link to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="pcp">
+<h2>PCP<a class="headerlink" href="#pcp" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-10">
 
 <p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Assuming that <span class="math notranslate nohighlight">\(PCP\)</span> is undecidable, show that it is undecidable even if the alphabet has only two letters.</p>
-</section>
 </div>
-</section>
-<section id="matrix-mortality">
-<h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="matrix-mortality">
+<h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="issues/reduction-exercise-11">
 
 <p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(P_3\)</span> be the matrix mortality problem for <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.  Let <span class="math notranslate nohighlight">\(P_2\)</span> and <span class="math notranslate nohighlight">\(P_4\)</span> be defined similarly, for the <span class="math notranslate nohighlight">\(2\times 2\)</span> and <span class="math notranslate nohighlight">\(4\times 4\)</span> matrices.   Show that <span class="math notranslate nohighlight">\(P_2 \leq P_3 \leq P_4\)</span>.  This is a straightforward algebraic argument.</p>
 <p>Later we will see that <span class="math notranslate nohighlight">\(P_4 \leq P_3\)</span>, but the argument will not be not as easy.</p>
-</section>
 </div>
-<p>Here is an exercise pertaining to the matrix mortality problem.   Although it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="../undecidability/matrixMortality.html#content-matrixmortalityundecidable"><span class="std std-ref">our later work on the undecidability of matrix mortality</span></a>.</p>
+</div>
+<p>Here is an exercise pertaining to the matrix mortality problem.   Athough it looks long, we are presenting it as result in outlined form.  All you have to do is to fill in the steps.  This result will be used in <a class="reference internal" href="../undecidability/matrixMortality.html#content-matrixmortalityundecidable"><span class="std std-ref">our later work on the undecidability of matrix mortality</span></a>.</p>
 <div class="exercise admonition" id="matrix-mortality-exercise">
 
 <p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(M_{1,1}\)</span> be the set of finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product which equals <span class="math notranslate nohighlight">\(0\)</span>.    Let <span class="math notranslate nohighlight">\(M_{0}\)</span> be the set of  finite sets of <span class="math notranslate nohighlight">\(3\times 3\)</span> integer matrices which have some finite product with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.   In this exercise, we show that <span class="math notranslate nohighlight">\(M_{1,1} \leq  M_0\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix</p>
 <div class="math notranslate nohighlight">
@@ -794,7 +779,7 @@ h   &amp; = &amp; gz \\
 t(S) = S\cup \{A\}
 \]</div>
 <p>Our goal is to prove the following fact:</p>
-<p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices.</p>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be  a finite set of <span class="math notranslate nohighlight">\(3\times 3\)</span> matricies.</p>
 <ol class="arabic simple">
 <li><p>Show that if <span class="math notranslate nohighlight">\(S \in M_{1,1}\)</span>, then <span class="math notranslate nohighlight">\(t(S) \in M_0\)</span>.  [This is easy given the facts above.]</p></li>
 <li><p>In the other direction, suppose that <span class="math notranslate nohighlight">\(t(S) \in M_0\)</span>.   Take a finite sequence from <span class="math notranslate nohighlight">\(t(S)\)</span> whose product has a zero in the upper-left corner.   Let us assume that the sequence both begins and ends with <span class="math notranslate nohighlight">\(A\)</span>.   Write the product as</p></li>
@@ -822,15 +807,15 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
 \end{split}\]</div>
 <p>Figure out what each <span class="math notranslate nohighlight">\(a^i\)</span> represents in terms of the groups of matrices above.</p>
 <p>Evaluate the upper-left corner of the product, and check that one of the groups <span class="math notranslate nohighlight">\( B^i_1 B^i_2 \cdots B^i_{n_i}\)</span> must multiply to give a matrix with <span class="math notranslate nohighlight">\(0\)</span> in the upper-left corner.</p>
-</section>
+</div>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Credits</p>
 <p>The source for the reduction involving <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices is</p>
 <p>Vesa Halava and Tero Harju, (2001). Mortality in Matrix Semigroups. The American Mathematical Monthly, 108(7), 649–653.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -859,7 +844,7 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -888,7 +873,6 @@ A B^1_1 B^1_2 \cdots B^1_{n_1}  A B^2_1 B^2_2 \cdots B^2_{n_1}\cdots   A B^k_1 B
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -958,8 +942,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

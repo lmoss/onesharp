@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Basic programs &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic programs &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/move_copy_write';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interpreters.html">Interpreters</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,14 +429,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -473,14 +458,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basic programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moveprog-2-1"><span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-moveprog-2-1">Modifying <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1"><code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-move-2-1">Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy"><code class="docutils literal notranslate"><span class="pre">copy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write"><code class="docutils literal notranslate"><span class="pre">write</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#copyprog"><span class="math notranslate nohighlight">\(\copyprog\)</span></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#writeprog"><span class="math notranslate nohighlight">\(\writeprog\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notation-on-words">The <span class="math notranslate nohighlight">\(+\)</span> notation on words</a></li>
 </ul>
 
@@ -492,84 +475,29 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/move_copy_write.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="basic-programs">
-<h1>Basic programs<a class="headerlink" href="#basic-programs" title="Link to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="basic-programs">
+<h1>Basic programs<a class="headerlink" href="#basic-programs" title="Permalink to this heading">#</a></h1>
 <p>We have seen the syntax of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions
-<a class="reference internal" href="instructions.html"><span class="std std-doc">in a previous notebook</span></a>, along with the semantics
+<a class="reference internal" href="instructions.html"><span class="doc std std-doc">in a previous notebook</span></a>, along with the semantics
 We turn to the simplest programs in the language.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
 <span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
-<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="moveprog-2-1">
-<h2><span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span><a class="headerlink" href="#moveprog-2-1" title="Link to this heading">#</a></h2>
-<p>The first is a program called <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span>.   It moves the contents of R2 onto the end of R1, emptying out R2 in the process.   It is</p>
-<div class="math notranslate nohighlight">
-\[\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
-\]</div>
-<p>It is more informative to exhibit this program as a chart with instruction numbers and glosses:</p>
-<TABLE cellspacing="0" cellpadding="5">
-        <TR BGCOLOR="#FFFFCC">
-                <TD>11#####</TD> <TD></TD><TD style="text-aligh" right;>cases on R2</TD></TR>
-        <TR BGCOLOR="#FFFFCC">
-                <TD>111111###</TD> <TD></TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
-                  </TD>  </tr>
-        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD> <TD></TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
-        </TR>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>1##</TD>  <TD></TD><TD>first symbol is #: add # to R1</TD></tr>
-         <TR  BGCOLOR="#B0E0E6">
-                <TD>1111####</TD> <TD></TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
-         <TR  BGCOLOR="#D4B48C">
-                <TD>1#</TD> <TD></TD> <TD>add 1 to R1</TD></tr>
-         <TR  BGCOLOR="#D4B48C">
-                <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
-        </TR>
-</TABLE> 
-<br>
-<p>The program has seven instructions.  We call these the <em>lines</em> of the program. Here is an explanation of what is going when we run  <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span>.  We start with words in the registers.  The only registers mentioned in the program are R2 and R1. Let’s say that at the start <span class="math notranslate nohighlight">\(x\)</span> is the word in R2,and <span class="math notranslate nohighlight">\(y\)</span> is the word in R1.</p>
-<p>This is our first look at a case statement <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>.   Upon execution, if <span class="math notranslate nohighlight">\(x = \eps\)</span>, we move
-to line 2.  If <span class="math notranslate nohighlight">\(x\)</span> starts with  <span class="math notranslate nohighlight">\(\onett\)</span>, we delete it and go to line 3 and thence to line 6 and thus to the third section of the program.  There is no significance
-to the colors; they are just there to help us read and understand the program. If instead <span class="math notranslate nohighlight">\(x\)</span> starts with <span class="math notranslate nohighlight">\(\hash\)</span>, we would delete it and go to the second section, starting in line 4.  That section ends in line 5, and from there we return to the top.</p>
-<p>Our program is a loop.  Each time through the loop we take a symbol from the start of whatever is in R2 and add the same symbol to the end of R1.
-As soon as R2 becomes empty, we transfer out of the program.   We do this in line 2 by going forward 6 lines, to the first line out of our program.
-By going around the loop repeatedly, we transfer <span class="math notranslate nohighlight">\(x\)</span> symbol-by-symbol to the end of R1.   At the end, the contents of R1 will be <span class="math notranslate nohighlight">\(y\)</span> followed by <span class="math notranslate nohighlight">\(x\)</span>;
-soon we will write this as <span class="math notranslate nohighlight">\(y+x\)</span>.</p>
-<p>Whenever <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are different numbers, we can build a similar  program <span class="math notranslate nohighlight">\(\moveprog_{m,n}\)</span>. This program would write the contents of Rm onto the end of Rn, emptying Rm in the process.</p>
-<section id="modifying-moveprog-2-1">
-<h3>Modifying <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span><a class="headerlink" href="#modifying-moveprog-2-1" title="Link to this heading">#</a></h3>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-0">
-
-<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
-<section id="exercise-content">
-<p>Write a program which takes the contents of R1 and adds them to the ends of <em>both</em> R2 and R3.</p>
-</section>
-</div>
-<div class="exercise admonition" id="exer-clear">
-
-<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
-<section id="exercise-content">
-<ol class="arabic simple">
-<li><p>Write a program <span class="math notranslate nohighlight">\(\clearprog_1\)</span> that clears out R1, leaving it empty.   This program does not touch other registers.</p></li>
-<li><p>Similarly, for each <span class="math notranslate nohighlight">\(n\)</span> there is a program  <span class="math notranslate nohighlight">\(\clearprog_n\)</span> that clears out Rn.     Is there a single program that clears out R<span class="math notranslate nohighlight">\(n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>?</p></li>
-</ol>
-</section>
-</div>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
-<section id="exercise-content">
-<p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\onett\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\onett\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span>.)</p>
-</section>
-</div>
+<div class="section" id="move-2-1">
+<h2><code class="docutils literal notranslate"><span class="pre">move_2_1</span></code><a class="headerlink" href="#move-2-1" title="Permalink to this heading">#</a></h2>
+<p>The first is a program called <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code>.   It is designed to move the contents of R2 onto the end of R1, emptying out R2 in the process.  Written out in full it is</p>
+<p><code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code></p>
+<p>We have defined <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to be this program, and so you can run it as shown below.</p>
+<p>You can try the program by entering the following line.   In it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">onesharp</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;11#&#39;</span><span class="p">,</span><span class="s1">&#39;####1##11111&#39;</span><span class="p">])</span>
@@ -603,19 +531,102 @@ soon we will write this as <span class="math notranslate nohighlight">\(y+x\)</s
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="copyprog">
-<h1><span class="math notranslate nohighlight">\(\copyprog\)</span><a class="headerlink" href="#copyprog" title="Link to this heading">#</a></h1>
-<p>The second program in this section is called <span class="math notranslate nohighlight">\(\copyprog\)</span>.
-Like <span class="math notranslate nohighlight">\(\moveprog\)</span>, the <span class="math notranslate nohighlight">\(\copyprog\)</span> program is actually an infinite batch of programs.
-The difference between <span class="math notranslate nohighlight">\(\moveprog\)</span> and <span class="math notranslate nohighlight">\(\copyprog\)</span>
-for us is that  when a register’s contents are <span class="math notranslate nohighlight">\(\moveprog\)</span>d, the register is left empty; but with <span class="math notranslate nohighlight">\(\copyprog\)</span>,
-the register is left at the end with exactly what it had
-t the beginning.</p>
-<p>In order to copy in this way, we need an auxiliary register, Rp.  So while the <span class="math notranslate nohighlight">\(\moveprog\)</span> programs had two registers in their names, the <span class="math notranslate nohighlight">\(\copyprog\)</span> programs have three.</p>
-<p>Here is our program when m = 1, n = 2, p = 3.   That is, here is <span class="math notranslate nohighlight">\(\copyprog_{1,2,3}\)</span>.</p>
+<p>Here is this program <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span> expressed as a table.</p>
+<TABLE cellspacing="0" cellpadding="5">
+        <TR BGCOLOR="#FFFFCC">
+                <TD>11#####</TD> <TD></TD><TD style="text-aligh" right;>cases on R2</TD></TR>
+        <TR BGCOLOR="#FFFFCC">
+                <TD>111111###</TD> <TD></TD> <TD style="text-aligh" right;">R2 is empty; go forward 6 (we're done)
+                  </TD>  </tr>
+        <TR BGCOLOR="#FFFFCC"><TD>11111###</TD> <TD></TD><TD>go forward 3 to instruction 6 (the brown section)</TD>  
+        </TR>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>1##</TD>  <TD></TD><TD>first symbol is #: add # to R1</TD></tr>
+         <TR  BGCOLOR="#B0E0E6">
+                <TD>1111####</TD> <TD></TD> <TD>go backward 4 to instruction 1 (the top)</TD></tr>   
+         <TR  BGCOLOR="#D4B48C">
+                <TD>1#</TD> <TD></TD> <TD>add 1 to R1</TD></tr>
+         <TR  BGCOLOR="#D4B48C">
+                <TD>111111####</TD> <TD></TD> <TD style="text-aligh" right;>go backward 6 to instruction 1 (the top) </TD>  
+        </TR>
+</TABLE> 
+<br><p>Here is an explanation of what is going on.</p>
+<p>If R2 is empty, it goes to line 8.  Since the program itself only has 7 lines, this means that we have transferred <em>out</em> of the program.  We say that the program <em>halts</em> at that point.  (Please note that <em>halt</em> is an important technical term which we explain <a class="reference internal" href="haltDef.html"><span class="doc std std-doc">in a different notebook</span></a>.)</p>
+<p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">1</span></code>, then the second instruction after the case instruction at the top transfers us down to line 6. This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">1</span></code> to R1 and return to the very beginning of the program.</p>
+<p>If the first symbol of R2 is a <code class="docutils literal notranslate"><span class="pre">#</span></code>, then we delete that # and go three steps forward, to line 4.  This part of the program would then add a <code class="docutils literal notranslate"><span class="pre">#</span></code> to R1 and return to the very beginning of the program.</p>
+<p>The point is that by going around the loop repeatedly, we transfer the contents of R2 symbol-by-symbol to R1.
+Similarly, whenever m and n are different numbers, we can build a program <code class="docutils literal notranslate"><span class="pre">move_m_n</span></code>. This program would write the contents of Rm onto the end of Rn, emptying Rm in the process.</p>
+</div>
+<div class="section" id="modifying-move-2-1">
+<h2>Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code><a class="headerlink" href="#modifying-move-2-1" title="Permalink to this heading">#</a></h2>
+<p>Suppose we want to modify <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> to get <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code>, a program which would copy the contents of R3 onto the end of R4 (and empty R4) in the process. Here is a way to do this which shows off some command-line tools that are part of the working environment that comes with the Python tools..</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parse</span><span class="p">(</span><span class="n">move_2_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you enter the cell above, you get the program <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code> as a Python <em>list</em> of instructions. We have seen the explanation of this parse above.  What we want to do in <code class="docutils literal notranslate"><span class="pre">move_3_4</span></code> is to change the overall “case” instruction in the beginning from <code class="docutils literal notranslate"><span class="pre">11#####</span></code> to <code class="docutils literal notranslate"><span class="pre">111#####</span></code>.   And each time our program writes to a register, we want that register to be R4, not R1.  So we make two changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unparse</span><span class="p">(</span><span class="n">pre_program</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check this out by entering it into the interpreter.  We could either copy the output line (without the quotes), and go up to the top of this notebook.  Alternatively, we could move the interpreter down to here using an up-arrow command that you will need to find.</p>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program which takes the contents of R1 and adds them to the ends of <em>both</em> R2 and R3.</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program that clears out R1, leaving it empty.</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).</p>
+</div>
+</div>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\one\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\one\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.) Of course, your program may use R2!</p>
+</div>
+</div>
+</div>
+<div class="section" id="copy">
+<h2><code class="docutils literal notranslate"><span class="pre">copy</span></code><a class="headerlink" href="#copy" title="Permalink to this heading">#</a></h2>
+<p>The second program in this notebook is called <code class="docutils literal notranslate"><span class="pre">copy</span></code>.
+Like <code class="docutils literal notranslate"><span class="pre">move</span></code>, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> program is actually an infinite batch of programs.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The difference between <i>move</i> and <i>copy</i>
+for us is that when a register’s contents are moved, the
+register is left empty; but if the contents are copied,
+then the register is left at the end with exactly what it had
+at the beginning.</p>
+</div>
+<p>In order to copy in this way, we need an auxiliary register.
+So while the <code class="docutils literal notranslate"><span class="pre">move</span></code> programs had two registers in their names, the <code class="docutils literal notranslate"><span class="pre">copy</span></code> programs have three.</p>
+<p><br><p>
+Here is the idea behind copying Rm to Rn.   We use
+an auxilliary register, say Rp.  We move Rm into Rn and Rp
+at the same time, and then be move Rp back to Rm.
+Of course, when we do this, we should have Rp empty to start
+with.</p>
+<p>
+<p>Here is our program when m = 1, n = 2, p = 3.  That is, here is <span class="math notranslate nohighlight">\(\copyprog_{1,2,3}\)</span>.</p>
 <TABLE cellspacing="0" cellpadding="5">
         <TR BGCOLOR="#FFFFCC">
                 <TD>1#####</TD> <TD>cases on R1</TD></TR>
@@ -635,40 +646,9 @@ t the beginning.</p>
                 <TD>111#</TD> <TD>add 1 to R3</TD></tr>
          <TR  BGCOLOR="#D4B48C"> <TD>11111111####</TD> <TD>go backward 8 to the top</TD> </TR>
          <TR BGCOLOR="#FFFFCC"> <TD> move<sub>3,1</sub></TD><td> from earlier in this notebook </td></TR>
-</TABLE>        
-<p>The program is a loop, exactly like <span class="math notranslate nohighlight">\(\moveprog_{m,n}\)</span>.    Each time through, we not only replicate in Rn the first symbol of the word in Rm,
-but we also an additional copy into Rp.   At the end, when Rm has been emptied, we return Rp to Rm and thus restore the original  contents of Rm. But this only works as described when Rp was empty to begin with.</p>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
-<section id="exercise-content">
-<p>Write a program which takes the contents of R1 and adds them to the ends of <em>both</em> R2 and R3.</p>
-</section>
-</div>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
-
-<p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
-<section id="exercise-content">
-<p>Write a program that clears out R1, leaving it empty.</p>
-</section>
-</div>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-5">
-
-<p class="admonition-title"><span class="caption-number">Exercise 36 </span></p>
-<section id="exercise-content">
-<p>Write a program that clears R3 and then swaps the contents of R1 and R2 (using the now-empty R3).</p>
-</section>
-</div>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-6">
-
-<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
-<section id="exercise-content">
-<p>Write a program <span class="math notranslate nohighlight">\(p\)</span> that adds a <span class="math notranslate nohighlight">\(\one\)</span> to the beginning of R1, assuming that R2 is empty. (For example, if R1 has <span class="math notranslate nohighlight">\(\hash\hash\one\)</span> to start, then running <span class="math notranslate nohighlight">\(p\)</span> would result in R1 having <span class="math notranslate nohighlight">\(\one\hash\hash\one\)</span>.) Of course, your program may use R2!</p>
-</section>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="writeprog">
-<h1><span class="math notranslate nohighlight">\(\writeprog\)</span><a class="headerlink" href="#writeprog" title="Link to this heading">#</a></h1>
+</TABLE>        <br></div>
+<div class="section" id="write">
+<h2><code class="docutils literal notranslate"><span class="pre">write</span></code><a class="headerlink" href="#write" title="Permalink to this heading">#</a></h2>
 <p>We continue with
 a program <span class="math notranslate nohighlight">\(\writeprog\)</span> with
 the following properties:</p>
@@ -681,12 +661,12 @@ in R1 and all other registers empty.</p></li>
 <span class="math notranslate nohighlight">\(y\)</span> with R1 empty results in <span class="math notranslate nohighlight">\(x\)</span> back in R1 and all
 other registers empty.</p></li>
 </ol>
-<p>Before we explain <span class="math notranslate nohighlight">\(\writeprog\)</span>, recall that running <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>  adds a <span class="math notranslate nohighlight">\(\onett\)</span> to R1,
-and running <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>  adds a <span class="math notranslate nohighlight">\(\hash\)</span>.</p>
-<p>As with <span class="math notranslate nohighlight">\(\writeprog\)</span> and <span class="math notranslate nohighlight">\(\copyprog\)</span>, this program is a loop.   Going symbol-by-symbol from the input in R1, <span class="math notranslate nohighlight">\(\writeprog\)</span> takes each <span class="math notranslate nohighlight">\(\onett\)</span>
-and adds <span class="math notranslate nohighlight">\(\onett\hash\)</span> to R2, and each <span class="math notranslate nohighlight">\(\hash\)</span> results in <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span> in R2.   These are instructions which would add <span class="math notranslate nohighlight">\(\onett\)</span>
-and <span class="math notranslate nohighlight">\(\hash\)</span> to R1.  After the loop is done, the contents of R2 are moved back to R1.</p>
-<p>The program <span class="math notranslate nohighlight">\(\writeprog\)</span> may be found in a chart.</p>
+<p>In the notation from <a class="reference internal" href="functions.html"><span class="doc std std-doc">a little later</span></a>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+[\![ [\![ \writeprog]\!](x)]\!](\ ) = x
+\]</div>
+<p>Here is a table for <span class="math notranslate nohighlight">\(\writeprog\)</span>:</p>
 <TABLE  cellspacing="0" cellpadding="5">
         <TR BGCOLOR="#FFFFCC">
                 <TD>1#####</TD> <TD>cases on R1</TD></TR>
@@ -714,18 +694,21 @@ to the brown part</TD>
         <TR BGCOLOR="#FFFFCC">
              <TD> move<sub>2,1</sub></TD><td> from earlier in this notebook </td></TR>
 </TABLE>        
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-7">
+<br><p>It should be emphasized that <span class="math notranslate nohighlight">\(\writeprog\)</span> reads from R1
+and writes to R2; it  makes no
+use of any other register.</p>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
+<div class="section" id="exercise-content">
 <p>Why is the result of running <span class="math notranslate nohighlight">\(\writeprog\)</span> on a word <span class="math notranslate nohighlight">\(x\)</span>  always a program,
 even if  <span class="math notranslate nohighlight">\(x\)</span> is a word which is not a program?</p>
-</section>
 </div>
-<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-8">
+</div>
+<div class="exercise admonition" id="introOneSharp/move_copy_write-exercise-5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
+<div class="section" id="exercise-content">
 <p>Modify <span class="math notranslate nohighlight">\(\writeprog\)</span>
 to get a program <span class="math notranslate nohighlight">\(\writetotwo\)</span>
 with the following feature:
@@ -736,14 +719,15 @@ word
 in R2 and all other registers empty; moreover, running
 <span class="math notranslate nohighlight">\(y\)</span>  with R2 empty results in <span class="math notranslate nohighlight">\(x\)</span> back in R2  (not R1) and all
 other registers empty.</p>
-</section>
 </div>
-<br><br></section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-notation-on-words">
-<h1>The <span class="math notranslate nohighlight">\(+\)</span> notation on words<a class="headerlink" href="#the-notation-on-words" title="Link to this heading">#</a></h1>
-<div class="proof definition admonition" id="definition-9">
-<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
-<section class="definition-content" id="proof-content">
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-notation-on-words">
+<h1>The <span class="math notranslate nohighlight">\(+\)</span> notation on words<a class="headerlink" href="#the-notation-on-words" title="Permalink to this heading">#</a></h1>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span></p>
+<div class="definition-content section" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are words, then <span class="math notranslate nohighlight">\(x + y\)</span> is the <em>concatenation</em> of <span class="math notranslate nohighlight">\(x\)</span> followed by <span class="math notranslate nohighlight">\(y\)</span>.  For example,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -757,17 +741,17 @@ So we have a <a class="reference external" href="https://en.wikipedia.org/wiki/M
 \[
 (\words, +, \eps)
 \]</div>
-</section>
+</div>
 </div><p>This means that we can “add” programs (since they are words).  For example, let</p>
 <div class="math notranslate nohighlight">
 \[
-q =\copyprog_{1,2,3} + \moveprog_{2,1}
+q =copyprog_{1,2,3} + \moveprog_{2,1}
 \]</div>
 <p>This program <span class="math notranslate nohighlight">\(q\)</span> would take the contents of register 1, copy it into register 2 (using register 3), and then move register 2 back to register 1.  So assuming that registers 2 and 3 were empty to begin with, running <span class="math notranslate nohighlight">\(q\)</span> with <span class="math notranslate nohighlight">\(x\)</span> in register <span class="math notranslate nohighlight">\(1\)</span> would give us <span class="math notranslate nohighlight">\(x + x\)</span> in register 1 at the end.</p>
 <div class="exercise admonition" id="pre-diag">
 
-<p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
-<section id="exercise-content">
+<p class="admonition-title"><span class="caption-number">Exercise 36 </span></p>
+<div class="section" id="exercise-content">
 <ol class="arabic simple">
 <li><p>Let’s take a word <span class="math notranslate nohighlight">\(x\)</span> and run <span class="math notranslate nohighlight">\(\writeprog\)</span> on it.  Call the resulting program <span class="math notranslate nohighlight">\(q\)</span>. Suppose that we run <span class="math notranslate nohighlight">\(q\)</span> on a word <span class="math notranslate nohighlight">\(y\)</span>.  Which do we get: <span class="math notranslate nohighlight">\(x + y\)</span> or <span class="math notranslate nohighlight">\(y + x\)</span>?  That is, which is true?</p></li>
 </ol>
@@ -789,9 +773,9 @@ q =\copyprog_{1,2,3} + \moveprog_{2,1}
 \[
 [\![ [\![ p]\!](x)]\!](y) = \underline{\qquad\qquad\qquad}
 \]</div>
-</section>
 </div>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -820,7 +804,7 @@ q =\copyprog_{1,2,3} + \moveprog_{2,1}
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -850,7 +834,6 @@ q =\copyprog_{1,2,3} + \moveprog_{2,1}
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -858,14 +841,12 @@ q =\copyprog_{1,2,3} + \moveprog_{2,1}
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Basic programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moveprog-2-1"><span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-moveprog-2-1">Modifying <span class="math notranslate nohighlight">\(\moveprog_{2,1}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#move-2-1"><code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-move-2-1">Modifying <code class="docutils literal notranslate"><span class="pre">move_2_1</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy"><code class="docutils literal notranslate"><span class="pre">copy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write"><code class="docutils literal notranslate"><span class="pre">write</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#copyprog"><span class="math notranslate nohighlight">\(\copyprog\)</span></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#writeprog"><span class="math notranslate nohighlight">\(\writeprog\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notation-on-words">The <span class="math notranslate nohighlight">\(+\)</span> notation on words</a></li>
 </ul>
 
@@ -916,8 +897,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

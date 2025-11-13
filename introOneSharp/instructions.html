@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Instructions of 1# &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructions of 1# &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introOneSharp/instructions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="haltDef.html">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,14 +429,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -472,7 +457,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-onesharp-instruction-set">The <span class="math notranslate nohighlight">\(\onesharp\)</span> instruction set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-set-of-instructions-of-1">The full set of instructions of 1#</a></li>
@@ -487,35 +472,77 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/introOneSharp/instructions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
 <span class="o">!</span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/lmoss/onesharp.git@main
-<span class="kn">from</span><span class="w"> </span><span class="nn">onesharp.interpreter.interpreter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">onesharp.interpreter.interpreter</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="instructions-of-1">
-<h1>Instructions of 1#<a class="headerlink" href="#instructions-of-1" title="Link to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="instructions-of-1">
+<h1>Instructions of 1#<a class="headerlink" href="#instructions-of-1" title="Permalink to this heading">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Note for instructors</p>
 <p>The book could begin here instead of with the previous chapter.  In that case, one would return to one or more sections from the previous chapter on an as-needed basis.  On the other hand, most of this chapter is crucial for what follows.</p>
 </div>
-<p id="content-onesharpinstructions">Computability can be studied on an <em>intuitive</em> or <em>informal</em> level before one sees definitions.   This intuitive level is both the right level for our work, and at the same time the wrong level.   That is, for some things, working intuitively is exactly what we want to do.   For example, this was appropriate in the last chapter.  For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions, starting now.</p>
-<p>A <em>word</em> for us will be a sequence of strings using the characters <span class="math notranslate nohighlight">\(\onett\)</span> and <span class="math notranslate nohighlight">\(\hash\)</span>.   For example, <span class="math notranslate nohighlight">\(\onett\hash\hash\onett\)</span> is a word, as is the <em>empty word</em> <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.    We use <span class="math notranslate nohighlight">\(\Words\)</span> to denote the set of all words.  We use letters like <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span>, etc. for words.</p>
-<p>We deal a lot with (finite) sequences of words.  A sequence of words <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(x_n\)</span> is often denoted <span class="math notranslate nohighlight">\(\overline{x}\)</span> for short.</p>
-<p>A <em>register</em> is a place that stores words.  A <em>register machine</em> is a collection of registers indexed by nonzero natural numbers.
-These registers are called R1, R2, etc.   The machine runs according to a <em>program</em>.  Programs are comprised of <em>instructions</em>.  We are going to describe instructions and programs in <span class="math notranslate nohighlight">\(\onesharp\)</span> shortly.  The idea is that the register machine starts with <em>input words</em> in its registers – all but finitely many are <span class="math notranslate nohighlight">\(\eps\)</span> –  proceeds according to the program, and (if all goes well) eventually
-<em>halts</em> with an <em>output</em> in R1.</p>
-<section id="the-onesharp-instruction-set">
-<h2>The <span class="math notranslate nohighlight">\(\onesharp\)</span> instruction set<a class="headerlink" href="#the-onesharp-instruction-set" title="Link to this heading">#</a></h2>
-<p>The chart below contains the full set of instructions of  <span class="math notranslate nohighlight">\(\onesharp\)</span>.  There are five instruction types.</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<p id="content-onesharpinstructions">Computability can be studied on an \emph{intuitive} or \emph{informal} level before one sees definitions.   This intuitive level is both the right level for our work, and at the same time the wrong level.   That is, for some things, working intuitively is exactly what we want to do.   For example, this was appropriate in the last chapter.  For other things, it is not nearly precise or specific enough.   And for those, this book goes into a rather detailed set of definitions, starting now.</p>
+<p>A <em>word</em> for us will be a sequence of strings using the characters <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">#</span></code>.   For example, <code class="docutils literal notranslate"><span class="pre">1##1</span></code> is a word, as is the empty word <span class="math notranslate nohighlight">\(\varepsilon\)</span>.   Words must be finite.</p>
+<p>A <em>register</em> is a place that stores words.  A <em>register machine</em> is a collection of registers.
+These registers are called R1, R2, etc.   The machine runs according to a <em>program</em>.  Programs are comprised of <em>instructions</em>.  We are going to describe instructions and programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code> shortly.  The idea is that the register machine starts with a few words in the registers, proceeds according to the program, and (if all goes well) eventually <em>halts</em>,.</p>
+<div class="section" id="the-1-instruction-set">
+<h2>The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set<a class="headerlink" href="#the-1-instruction-set" title="Permalink to this heading">#</a></h2>
+<p>We list below the full set of instructions of <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  There are five instruction types.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>When we use superscripts and write, for example,  <code class="docutils literal notranslate"><span class="pre">1^m</span> <span class="pre">#^n</span></code> we mean <span class="math notranslate nohighlight">\(m\)</span> copies of the symbol <code class="docutils literal notranslate"><span class="pre">1</span></code> followed by <span class="math notranslate nohighlight">\(n\)</span> copies of the symbol <code class="docutils literal notranslate"><span class="pre">#</span></code>.  For example,</p>
+<p><code class="docutils literal notranslate"><span class="pre">1^15</span> <span class="pre">#^4</span></code> abbreviates <code class="docutils literal notranslate"><span class="pre">111111111111111####</span></code></p>
+</div>
+<p>There are only five kinds of <code class="docutils literal notranslate"><span class="pre">1#</span></code> instructions.</p>
+<p>We begin with the first two kinds of instructions, those that end in <code class="docutils literal notranslate"><span class="pre">#</span></code> and those that end in <code class="docutils literal notranslate"><span class="pre">##</span></code>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instruction</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1#</p></td>
+<td><p>Add 1 to the right end of R1</p></td>
+</tr>
+<tr class="row-odd"><td><p>11#</p></td>
+<td><p>Add 1 to the right end of R2</p></td>
+</tr>
+<tr class="row-even"><td><p>111#</p></td>
+<td><p>Add 1 to the right end of  R3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instruction</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1##</p></td>
+<td><p>Add # to the right end of R1</p></td>
+</tr>
+<tr class="row-odd"><td><p>11##</p></td>
+<td><p>Add # to the right end of R2</p></td>
+</tr>
+<tr class="row-even"><td><p>111##</p></td>
+<td><p>Add # to the right end of  R3</p></td>
+</tr>
+</tbody>
+</table>
+<p>We can summarize the two kinds of instructions which we have seen, and also extend them:</p>
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Instruction</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -528,114 +555,98 @@ These registers are called R1, R2, etc.   The machine runs according to a <em>pr
 <tr class="row-odd"><td><p>1^n ##</p></td>
 <td><p>Add # to Rn</p></td>
 </tr>
+</tbody>
+</table>
+<p>The programs of <code class="docutils literal notranslate"><span class="pre">1#</span></code> are just sequences of instructions run together.  There is no punctuation between the instructions.  To move around in a program, we have two other kinds of instructions:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instruction</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
 <tr class="row-even"><td><p>1^n ###</p></td>
-<td><p>Go forward n instructions</p></td>
+<td><p>Go forward n instructions in the program</p></td>
 </tr>
 <tr class="row-odd"><td><p>1^n ####</p></td>
-<td><p>Go backward n instructions</p></td>
-</tr>
-<tr class="row-even"><td><p>1^n #####</p></td>
-<td><p>Cases on Rn</p></td>
+<td><p>Go backward n instructions in the program</p></td>
 </tr>
 </tbody>
 </table>
+<p>Here is the last kind of instruction:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Instruction</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1^n #####</p></td>
+<td><p>Cases on register n</p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is what it does:</p>
+<p>If Rn is empty, we go to the very next instruction.</p>
+<p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">1</span></code>, we delete that symbol and go to the second instruction after the case instruction.</p>
+<p>If the first symbol of Rn is <code class="docutils literal notranslate"><span class="pre">#</span></code>, we delete that symbol and go to the third instruction after the case instruction.</p>
+<img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></div>
+<div class="section" id="what-are-programs">
+<span id="content-whatareprograms"></span><h2>What are programs?<a class="headerlink" href="#what-are-programs" title="Permalink to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span></p>
+<div class="definition-content section" id="proof-content">
+<p>A <em>program</em> is a finite sequence of instructions run together.   Usually we insist that programs be nonempty.</p>
 </div>
-<p>We now discuss them.</p>
-<div class="proof remark admonition" id="remark-0">
-<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
-<section class="remark-content" id="proof-content">
-<p>When we use superscripts and write, for example,  <span class="math notranslate nohighlight">\(\onett^m \hash^n\)</span> we mean <span class="math notranslate nohighlight">\(m\)</span> copies of the symbol <span class="math notranslate nohighlight">\(\onett\)</span> followed by <span class="math notranslate nohighlight">\(n\)</span> copies of the symbol <span class="math notranslate nohighlight">\(\hash\)</span>.  For example,
-<span class="math notranslate nohighlight">\(\onett^{15} \hash^4\)</span> abbreviates</p>
-<div class="math notranslate nohighlight">
-\[
-\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash.
-\]</div>
-</section>
-</div><p>There are only five kinds of  <span class="math notranslate nohighlight">\(\onesharp\)</span> instructions.
-We begin with the first two kinds, those that end in <span class="math notranslate nohighlight">\(\hash\)</span> and those that end in <span class="math notranslate nohighlight">\(\hash\hash\)</span>.
-For example, <span class="math notranslate nohighlight">\(\onett\hash\)</span> takes whatever word happens to be in R1 and adds a <span class="math notranslate nohighlight">\(\onett\)</span> to its right end. Similarly, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span> takes whatever word happens to be in R2 and adds a <span class="math notranslate nohighlight">\(\onett\)</span> to its right end.  As for the instructions which end in <span class="math notranslate nohighlight">\(\hash\hash\)</span>,  such as <span class="math notranslate nohighlight">\(\onett^5\hash\hash\)</span>, it would add <span class="math notranslate nohighlight">\(\hash\)</span> to the right end of R5.</p>
-<p>The programs of <span class="math notranslate nohighlight">\(\onesharp\)</span> are just sequences of instructions run together.  There is no punctuation between the instructions.   To move around in a program, we have two other kinds of instructions:
-The instructions <span class="math notranslate nohighlight">\(\onett^m \hash^3\)</span> move forward.  So if instruction <span class="math notranslate nohighlight">\(15\)</span> in a program happens to be
-<span class="math notranslate nohighlight">\(\onett^8 \hash^3\)</span>, then when we execute it we next go to instruction <span class="math notranslate nohighlight">\(15 + 8 = 23\)</span>.   Similarly,
-The instructions <span class="math notranslate nohighlight">\(\onett^m \hash^4\)</span> move backward.
-If instruction <span class="math notranslate nohighlight">\(31\)</span> in a program happens to be
-<span class="math notranslate nohighlight">\(\onett^2 \hash^4\)</span>, then when we execute it we next go to instruction <span class="math notranslate nohighlight">\(31- 2 = 29\)</span>.</p>
-<p>The last kind of instruction, <span class="math notranslate nohighlight">\(\onett^n \hash^5\)</span> is the most complicated.
-Here is what it does:
-If Rn is empty, we go to the very next instruction.
-If the first symbol of Rn is <span class="math notranslate nohighlight">\(\onett\)</span>, we delete that symbol and go to the second instruction after the case instruction.
-If the first symbol of Rn is <span class="math notranslate nohighlight">\(\hash\)</span>, we delete that symbol and go to the third instruction after the case instruction.
-The workings of these <em>case instructions</em> will be clarified through examples, and we will see several in  <a class="reference internal" href="#content:basicprograms"><span class="xref myst">the section on basic programs</span></a></p>
-<img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
-<section id="what-are-programs">
-<span id="content-whatareprograms"></span><h2>What are programs?<a class="headerlink" href="#what-are-programs" title="Link to this heading">#</a></h2>
-<div class="attention admonition">
-<p class="admonition-title">Definition</p>
-<p>As mentioned, a <em>program</em> is a finite sequence of instructions run together to make a word.</p>
-</div>
-<div class="tip admonition">
+</div><div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Here is a program:</p>
-<div class="math notranslate nohighlight">
-\[
-\onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash.
-\]</div>
-<p>It is four instructions concatenated together.   The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\onett\)</span> to R2.   The second instruction says “go forward two instructions,” so we skip the third instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>, and go to the fourth instruction, <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
+<p><span class="math notranslate nohighlight">\(\onett\onett\hash\onett\onett\hash\hash\hash\onett\onett\hash\hash\hash\hash\onett\hash\hash\)</span></p>
+<p>It is four instructions concatenated together.</p>
+<p>The first instruction, <span class="math notranslate nohighlight">\(\onett\onett\hash\)</span>, adds <span class="math notranslate nohighlight">\(\one\)</span> to R2.   The second instruction says “go forward two instructions”, so we skip the next instruction (<span class="math notranslate nohighlight">\(\onett\onett\hash\hash\hash\hash\)</span>)  and go to the last instruction <span class="math notranslate nohighlight">\(\onett\hash\hash\)</span>.   This adds <span class="math notranslate nohighlight">\(\hash\)</span> to R1.</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Examples</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
 <p>Here is another program:</p>
 <div class="math notranslate nohighlight">
-\[
-\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
+\[\onett\onett\hash\hash\hash\hash\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\onett\onett\onett\hash\hash\hash\onett\hash\hash\onett\onett\onett\onett\hash\hash\hash\hash\onett\hash\onett\onett\onett\onett\onett\onett\hash\hash\hash\hash
 \]</div>
-<p>This is the concatenation of the following sequence of seven instructions:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>This is the concatenation of the following sequence of seven instructions:$<span class="math notranslate nohighlight">\(
 \begin{array}{l}
 (\onett\onett\hash\hash\hash\hash\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash, \onett\onett\onett\hash\hash\hash, \onett\hash\hash, \onett\onett\onett\onett\hash\hash\hash\hash, \\
- \onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
- \end{array}
-\end{split}\]</div>
+\onett\hash, \onett\onett\onett\onett\onett\onett\hash\hash\hash\hash)
+\end{array}
+\)</span>$</p>
 <p>Dividing a program into instructions is a very easy form of <em>parsing</em>.  In a real computer language, parsing is more difficult than it is for <span class="math notranslate nohighlight">\(\onesharp\)</span>.</p>
 </div>
 <div class="exercise admonition" id="introOneSharp/instructions-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
-<section id="exercise-content">
-<p>Write a program which, when started with all registers empty, gives  <span class="math notranslate nohighlight">\(\onesharp\)</span> in R1 and R2, <span class="math notranslate nohighlight">\(\hash\onett\)</span> in R3, and keeps the other registers empty.</p>
-</section>
+<div class="section" id="exercise-content">
+<p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">#1</span></code> in R3, and the other registers empty.</p>
 </div>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Words have to be <em>finite</em>, and so programs also must be finite.  Further, each program <span class="math notranslate nohighlight">\(p\)</span> of <code class="docutils literal notranslate"><span class="pre">1#</span></code> can only mention finitely many registers.</p>
+<p>(That is, there is a finite set <span class="math notranslate nohighlight">\(F\subseteq \N\)</span> such that if
+<code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">#</span></code> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
+if <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">##</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
+and  <code class="docutils literal notranslate"><span class="pre">1^k</span> <span class="pre">#####</span></code>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>.)</p>
+</div>
+<img src="https://github.com/lmoss/onesharp/blob/main/pianotrumpet.jpg?raw=1" width="200" height="160"><div class="exercise admonition" id="introOneSharp/instructions-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
-<section id="exercise-content">
-<p>This problem is about the program <span class="math notranslate nohighlight">\(p = \onett\onett\onett\hash\hash\)</span>.</p>
-<ol class="arabic simple">
-<li><p>Start with <span class="math notranslate nohighlight">\(\onett\)</span> in R1 and R2, <span class="math notranslate nohighlight">\(\onett\hash\)</span> in R3, and the other registers empty. What happens in each register if we run <span class="math notranslate nohighlight">\(p\)</span>?</p></li>
-<li><p>Start with <span class="math notranslate nohighlight">\(\onesharp\)</span> in R1 and R3, <span class="math notranslate nohighlight">\(\onett\)</span> in R2 and R4, and the other registers empty. What happens in each register if we run <span class="math notranslate nohighlight">\(p\)</span>?</p></li>
-</ol>
-</section>
+<div class="section" id="exercise-content">
+<p>If you know about <em>formal language theory</em>, verify that the set of <code class="docutils literal notranslate"><span class="pre">1#</span></code> programs is a regular language.</p>
 </div>
-<p>Here is an important point:
-Words have to be <em>finite</em>, and so programs also must be finite.  Further, each program <span class="math notranslate nohighlight">\(p\)</span> of  <span class="math notranslate nohighlight">\(\onesharp\)</span> can only mention finitely many registers.
-(That is, there is a finite set <span class="math notranslate nohighlight">\(F\subseteq N\)</span> such that if
-<span class="math notranslate nohighlight">\(\onett^k \hash\)</span> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
-if  <span class="math notranslate nohighlight">\(\onett^k \hash\hash\)</span> is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>;
-and  <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>  is an instruction in <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(k\in F\)</span>.)</p>
-<div class="exercise admonition" id="introOneSharp/instructions-exercise-3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
-<section id="exercise-content">
-<p>If you know about <em>formal language theory</em>, verify that the set of   <span class="math notranslate nohighlight">\(\onesharp\)</span> programs is a regular language.</p>
-</section>
 </div>
-<img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
-<section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
-<section id="the-full-set-of-instructions-of-1">
-<h3>The full set of instructions of 1#<a class="headerlink" href="#the-full-set-of-instructions-of-1" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<div class="section" id="the-full-set-of-instructions-of-1">
+<h3>The full set of instructions of 1#<a class="headerlink" href="#the-full-set-of-instructions-of-1" title="Permalink to this heading">#</a></h3>
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Instruction</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -659,17 +670,16 @@ and  <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>  is 
 </tr>
 </tbody>
 </table>
-</div>
 <p>All numbers in this chart are written in unary, and <span class="math notranslate nohighlight">\(n\geq 1\)</span>.</p>
 <p>Registers are processed as queues: symbols enter on the right and exit on the left.</p>
 <p>The first two types of instructions add symbols to the right ends of the registers.</p>
-<p>Here is a review of how the case instruction <span class="math notranslate nohighlight">\(\onett^n \hash^5\)</span> works.</p>
+<p>Here is a review of how the case instruction <code class="docutils literal notranslate"><span class="pre">1^n</span> <span class="pre">#####</span></code> works.</p>
 <p>If Rn is empty, we go to the very next instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mathtt{1}\)</span>, we delete that symbol and go to the second instruction after the case instruction.</p>
 <p>If the first symbol of Rn is <span class="math notranslate nohighlight">\(\mathtt{\#}\)</span>, we delete that symbol and go to the third instruction after the case instruction.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -698,7 +708,7 @@ and  <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>  is 
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -728,14 +738,13 @@ and  <span class="math notranslate nohighlight">\(\onett^k \hash^5\)</span>  is 
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-onesharp-instruction-set">The <span class="math notranslate nohighlight">\(\onesharp\)</span> instruction set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-1-instruction-set">The <code class="docutils literal notranslate"><span class="pre">1#</span></code> instruction set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-programs">What are programs?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-set-of-instructions-of-1">The full set of instructions of 1#</a></li>
@@ -789,8 +798,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

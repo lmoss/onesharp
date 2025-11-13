@@ -1,65 +1,69 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Algorithmic problems, decidable and undecidable &#8212; Invitation to Computability and Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithmic problems, decidable and undecidable &#8212; Invitation to Computability</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/problems';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,23 +79,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,20 +122,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,8 +144,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -157,29 +156,18 @@
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability and Recursion - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
+    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability and Recursion
+                    Invitation to Computability
                 </a>
             </li>
         </ul>
@@ -200,8 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
-
-
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
@@ -250,7 +236,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -292,7 +277,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -301,14 +286,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -433,10 +418,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -444,14 +429,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -494,20 +479,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/problems.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="algorithmic-problems-decidable-and-undecidable">
-<h1>Algorithmic problems, decidable and undecidable<a class="headerlink" href="#algorithmic-problems-decidable-and-undecidable" title="Link to this heading">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="algorithmic-problems-decidable-and-undecidable">
+<h1>Algorithmic problems, decidable and undecidable<a class="headerlink" href="#algorithmic-problems-decidable-and-undecidable" title="Permalink to this heading">#</a></h1>
 <p>A major message of computability theory is that there are problems which cannot be solved.  But to say what this means precisely, we have to say what a “problem” is, and also what it means to “solve” one.    The point of this section is to do this work on an intuitive level, and in the next chapter we are going to see more detailed and precise definitions.  Much later in the book, we start to verify that certain sets are or are not decidable.</p>
 <p>An <em>algorithmic problem</em> is a well-defined set <span class="math notranslate nohighlight">\(S\)</span> of objects.  The question that we would like raise is whether we can imagine writing a program to decide whether an object is in or out of it.   If we can, the set <span class="math notranslate nohighlight">\(S\)</span> is called <em>intuitively decidable</em>
 or <em>intuitively solvable</em>.   For example, the set <span class="math notranslate nohighlight">\(E\)</span> of even numbers is an intuitively decidable algorithmic problem, since we could imagine (and in fact write) a program which inputs an arbitrary number and deciding whether or not it belongs to <span class="math notranslate nohighlight">\(E\)</span>.  The same goes for the set of odd numbers.  In fact, before one takes up the study of computability theory, I would be surprised if they could think of any sets of numbers which are algorithmic problems (that is, well-defined sets of numbers) and yet are not decidable.  As we said above, it is a major message of this subject that there are such sets.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="a-set-of-diverse-problems">
-<h1>A set of diverse problems<a class="headerlink" href="#a-set-of-diverse-problems" title="Link to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-set-of-diverse-problems">
+<h1>A set of diverse problems<a class="headerlink" href="#a-set-of-diverse-problems" title="Permalink to this heading">#</a></h1>
 <p>This section contains a general discussion of algorithmic problems with examples from ones with a finite search space (like finding a cycle in a directed graph) and ones with a potentially infinite space (tiling, PCP and related problems, matrix mortality, and satisfiability in logical systems).  These are examples which we return to later on, when we shall prove that all of them (except the first) are <em>unsolvable</em>.</p>
-<section id="does-a-finite-graph-have-a-cycle">
-<h2>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Link to this heading">#</a></h2>
+<div class="section" id="does-a-finite-graph-have-a-cycle">
+<h2>Does a finite graph have a cycle?<a class="headerlink" href="#does-a-finite-graph-have-a-cycle" title="Permalink to this heading">#</a></h2>
 <p>A <em>finite graph</em> is a finite set of points together with a relation on the set.    We usually draw the relation with arrows between the points.  For example, here is a graph:</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-57.png?raw=1" width="100%" height="100%">
 <p>Given a finite graph, we might wonder if there is a cycle: this is a path following the arrows that starts and ends at the same point.   This problem is a very well-studied example of a decidable problem.  The basic reason is that if there is a cycle, there is one whose length is at most the number of points in the graph.</p>
@@ -515,10 +500,10 @@ or <em>intuitively solvable</em>.   For example, the set <span class="math notra
 <hr class="docutils" />
 <img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160">
 <hr class="docutils" />
-</section>
-<section id="tiling-problems">
-<span id="content-firsttiles"></span><h2>Tiling problems<a class="headerlink" href="#tiling-problems" title="Link to this heading">#</a></h2>
-<p>A <em>tile</em> is a square with a color on each side.   For example, here are eight tiles:
+</div>
+<div class="section" id="tiling-problems">
+<span id="content-firsttiles"></span><h2>Tiling problems<a class="headerlink" href="#tiling-problems" title="Permalink to this heading">#</a></h2>
+<p>A <em>tile</em> is a square with a color on each side.   For example, here are eight tiles
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-01.png?raw=1" width="100%" height="100%">
 The colors involved are red, black, grey, green, yellow,
 cyan (light blue) and dark blue.</p>
@@ -543,24 +528,24 @@ The algorithmic question is to determine from<span class="math notranslate nohig
 <div class="exercise admonition" id="issues/problems-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(\TT^*\)</span> be the pointed tile set consisting of the tiles in the bottom row of the last set:
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-05.png?raw=1" width="100%" height="100%">
 Does the quadrant have a tiling with this set?</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="issues/problems-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Construct a (finite) pointed tile set <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> with the following properties:</p>
 <p>(a) The quadrant can be tiled using <span class="math notranslate nohighlight">\(\TT\)</span> in exactly one way.</p>
 <p>(b) In the tiling of the quadrant, the start tile appears on the main diagonal, and nowhere else.</p>
-</section>
 </div>
-</section>
-<section id="post-s-correspondence-problem">
-<span id="content-firstpcp"></span><h2>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Link to this heading">#</a></h2>
+</div>
+</div>
+<div class="section" id="post-s-correspondence-problem">
+<span id="content-firstpcp"></span><h2>Post’s correspondence problem<a class="headerlink" href="#post-s-correspondence-problem" title="Permalink to this heading">#</a></h2>
 <p>An <em>alphabet</em> is just a set <span class="math notranslate nohighlight">\(A\)</span> of symbols.</p>
 <p>Given an alphabet <span class="math notranslate nohighlight">\(A\)</span>, we define</p>
 <div class="math notranslate nohighlight">
@@ -589,12 +574,12 @@ in such a way that the words on the top
 <p>The Post word is <span class="math notranslate nohighlight">\(ababaaabbbaabbaababaa\)</span>.</p>
 <div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Post, 1946)</p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>There is no algorithm which,
 when given <em>any</em> finite set of dominoes with two words on each,
 tells <em>in finite time</em>
 whether or not one can find a Post sequence for the given domino set.</p>
-</section>
+</div>
 </div><p>We are going to see a proof of this result.
 It is very important to understand the statement of
 this kind of result,
@@ -611,9 +596,9 @@ which inputs a domino set <span class="math notranslate nohighlight">\(\DD\)</sp
 <span class="math notranslate nohighlight">\(\DD\)</span> has a Post sequence.
 To say <em>PCP is undecidable</em> means that   <em>there is no</em>
 computable function <span class="math notranslate nohighlight">\(f\)</span> like this.</p>
-</section>
-<section id="integer-roots-of-polynomials">
-<h2>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="integer-roots-of-polynomials">
+<h2>Integer roots of polynomials<a class="headerlink" href="#integer-roots-of-polynomials" title="Permalink to this heading">#</a></h2>
 <p>There are a number of algorithmic problems of great interest in mathematics.  One of the most famous is the following:</p>
 <div class="danger admonition">
 <p class="admonition-title">Problem</p>
@@ -621,7 +606,7 @@ computable function <span class="math notranslate nohighlight">\(f\)</span> like
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>For example here is a polynomial in three variables: <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - 33\)</span>.  What we are asking is whether there are integers comprising a root.   This was open for quite some time.  It turns out that the answer is Yes.  The only known solution:</p>
+<p>For example here is a polynomial in three variables: <span class="math notranslate nohighlight">\(x^3 + y^3 + z^3 - 33\)</span>.  What we are asking is whether there are integers comprising a root.   This was open for quite some time.  It turns out that the answer is Yes:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcr}
@@ -635,11 +620,11 @@ z &amp; =  &amp;  −2, 736, 111, 468, 807, 040
 </div>
 <p>The general problem is called <em>Hilbert’s 10th problem</em>.  In view of how hard it is to actually solve instances (despite having a lot of number theory to use), it is perhaps not surprising that Hilbert’s 10th problem is undecidable.  This is called the Maitiasevich-Robinson-Davis-Putnam (MRDP) Theorem.</p>
 <p>Hilbert’s 10th problem is <em>semi-decidable</em>: there is a program which runs through the <span class="math notranslate nohighlight">\(n\)</span>-tuples of integers and looks to see if each is a root.  If so, it stops and outputs “Yes”.  Otherwise, it keeps looking.  So if there are no integer roots, the program would never halt.   This program is obvious and does not tell us much.  The example above was not found by this method.  This all raises the question of whether there is a Yes/No answer which always runs in finite time.</p>
-<p>As we said, it turns out that there is <em>no</em> algorithm to do solve Hilbert’s 10th problem in general.  This is the only question which we raise in this notebook which we will not answer in detail, mostly because the techniques that it takes to do so are involve so much number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
+<p>As we said, it turns out that there is <em>no</em> algorithm to do solve Hilbert’s 10th problem in general.  This is the only question whichv we raise in this notebook which we will not answer in detail, mostly because the techniqes that it takes to do so are involve so much number theory.  So they are not so connected to the rest of the book, and it takes more background to pursue them.</p>
 <p>Of course, the fact that the general problem is undecidable does not deter people from solving special cases, as they did above.</p>
-</section>
-<section id="matrix-mortality">
-<span id="content-firstmatrixmortality"></span><h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="matrix-mortality">
+<span id="content-firstmatrixmortality"></span><h2>Matrix mortality<a class="headerlink" href="#matrix-mortality" title="Permalink to this heading">#</a></h2>
 <p>This section deals with a specific problem about <span class="math notranslate nohighlight">\(n\times n\)</span>
 matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> of integers.   It is called the <em>matrix mortality</em> problem.</p>
 <div class="danger admonition">
@@ -650,7 +635,7 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 <div class="exercise admonition" id="issues/problems-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Here are three matrices:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -677,12 +662,12 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 \end{split}\]</div>
 <p>Find a sequence of these (allowing repetitions) whose product is the zero matrix.</p>
 <p>In other words, show that the answer to the <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix mortality problem for the set of three matrices shown above is Yes.</p>
-</section>
+</div>
 </div>
 <p>In the cells below I provide a function <code class="docutils literal notranslate"><span class="pre">list_multiply</span></code> in Python in case you want to take guesses.   With a little more, you could write a program that conducted an orderly search for what we want.  I leave this to you.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="c1"># this is a 3x3 matrix; it&#39;s a list of 3 lists of length 3 of numbers</span>
 <span class="n">b</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
 <span class="c1">## you will want to enter c here</span>
@@ -709,7 +694,7 @@ matrices over the set <span class="math notranslate nohighlight">\(\mathbf{Z}\)<
 <div class="exercise admonition" id="issues/problems-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>For each natural number <span class="math notranslate nohighlight">\(n\)</span>, let <span class="math notranslate nohighlight">\(A_n\)</span> be the set of sets <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(3\times 3\)</span> matrices such that
 (a) for all <span class="math notranslate nohighlight">\(S\in A_n\)</span>, <span class="math notranslate nohighlight">\(|S|\leq n\)</span>; and (b) every entry in each element of <span class="math notranslate nohighlight">\(S\)</span> has absolute value <span class="math notranslate nohighlight">\(\leq n\)</span>.</p>
 <ol class="arabic simple">
@@ -720,12 +705,12 @@ does <span class="math notranslate nohighlight">\(S\)</span> have a product (all
 <ol class="arabic simple" start="2">
 <li><p>Now consider the a variation on the last part.  Consider the problem whose inputs are pairs <span class="math notranslate nohighlight">\((n,S)\)</span> consisting of a number <span class="math notranslate nohighlight">\(n\)</span> and some <span class="math notranslate nohighlight">\(S\in A_n\)</span>.  We again ask whether <span class="math notranslate nohighlight">\(S\)</span> has a product (allowing repetitions) which is the <span class="math notranslate nohighlight">\(0\)</span> matrix.  Does the last part imply that this problem is decidable?  Be sure to give a clear, concise, and convincing answer.</p></li>
 </ol>
-</section>
 </div>
-</section>
-<section id="the-halting-set-k-and-related-sets">
-<h2>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Link to this heading">#</a></h2>
-<p>We also want to study a few problems related to computer programs.   These include</p>
+</div>
+</div>
+<div class="section" id="the-halting-set-k-and-related-sets">
+<h2>The halting set K and related sets<a class="headerlink" href="#the-halting-set-k-and-related-sets" title="Permalink to this heading">#</a></h2>
+<p>We also want to study a few problems related to computer prorgrams.   These include</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lcl}
@@ -739,10 +724,10 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 \textit{Equiv} &amp; = &amp; \mbox{the set of pairs $(p,q)$ of programs which are strongly equivalent}\\                                                          
 \end{array}
 \end{split}\]</div>
-<p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <span class="math notranslate nohighlight">\(\onehash\)</span>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
-</section>
-<section id="truth-and-proof">
-<h2>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Link to this heading">#</a></h2>
+<p>In all of these, we mean to be working in a fixed programming language.  In this book, that language will be called <code class="docutils literal notranslate"><span class="pre">1#</span></code>.  Some of the programs in the list above will not be familiar to you, and this is fine.   We will return to this list later when we study these problems.</p>
+</div>
+<div class="section" id="truth-and-proof">
+<h2>Truth and proof<a class="headerlink" href="#truth-and-proof" title="Permalink to this heading">#</a></h2>
 <p>We would like to ask about the set of <em>sentences in the language of ordinary mathematics</em> and as about the problem of deciding whether a given sentence is true or not.</p>
 <p>There are a few reasons why we are not going to directly do this.</p>
 <ol class="arabic simple">
@@ -763,10 +748,10 @@ K &amp; = &amp; \mbox{the programs which halt when run on themselves} \\
 This, too, is an interesting thing to do.</p></li>
 </ol>
 <p>We are going to investigate both of these <em>back off</em> questions in some detail.</p>
-<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"></section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="the-definition-of-intuitive-decidability">
-<h1>The definition of intuitive decidability<a class="headerlink" href="#the-definition-of-intuitive-decidability" title="Link to this heading">#</a></h1>
+<img src="https://github.com/lmoss/onesharp/blob/main/questions.jpg?raw=1" width="200" height="160"></div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-definition-of-intuitive-decidability">
+<h1>The definition of intuitive decidability<a class="headerlink" href="#the-definition-of-intuitive-decidability" title="Permalink to this heading">#</a></h1>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Definition</p>
 <p>A problem <span class="math notranslate nohighlight">\(P\)</span> is <em>intuitively decidable</em>  if there is an algorithm which,  when given an element of <span class="math notranslate nohighlight">\(S\)</span>, tells in finite time whether or not that input belongs to <span class="math notranslate nohighlight">\(P\)</span>, or not.  <span class="math notranslate nohighlight">\(P\)</span> is <em>undecidable</em> if no such algorithm exists.</p>
@@ -780,10 +765,10 @@ This, too, is an interesting thing to do.</p></li>
 <div class="exercise admonition" id="issues/problems-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Prove this:  show that there is an algorithm which, given a polynomial in one variable with integer coefficients, tells whether it has an integer root.</p>
 <p>[Hint: Look up and use either the rational root theorem, or the Cauchy bound, or both.]</p>
-</section>
+</div>
 </div>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -796,7 +781,7 @@ This, too, is an interesting thing to do.</p></li>
 <p class="admonition-title">Credits</p>
 <p>The amazing example from number theory is due to Andrew Booker, and <a class="reference external" href="https://people.maths.bris.ac.uk/~maarb/papers/cubesv1.pdf">you can find it here</a>.    It was popularized in a number of places, including <a class="reference external" href="https://youtu.be/wymmCdLdPvM">here</a>.</p>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -825,7 +810,7 @@ This, too, is an interesting thing to do.</p></li>
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -854,7 +839,6 @@ This, too, is an interesting thing to do.</p></li>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -923,8 +907,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
