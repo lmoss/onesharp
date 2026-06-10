@@ -16,7 +16,7 @@ RESERVED = {"cases", "goto", "end"}
 
 CELL_W = "88px"
 DEL_W = "42px"
-GRID_W = "500px"
+GRID_W = "550px"
 
 # ---------- helpers ----------
 
