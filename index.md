@@ -81,7 +81,7 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
 
 # Fall 2026 Status report
 
-I spent quite a bit of time over the summer working on the material, but all of that work has gone into the traditional (print) version of it.  So this electronic version is out of date relative to the print one.  I will be teaching this material again in the upcoming semester, and I expect to make a lot of changes to the electronic version.
+I spent quite a bit of time over the summer working on the material, but most of that work has gone into the traditional (print) version of it.  So this electronic version is out of date relative to the print one.  I will be teaching this material again in the upcoming semester, and I expect to make a lot of changes to the electronic version.
 
 The book that you see here has a ways to go before anyone besides me could use it. But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.
 
