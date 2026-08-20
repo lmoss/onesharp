@@ -1,110 +1,101 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Computability: choices &#8212; Invitation to Computability</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Computability: choices &#8212; Invitation to Computability and Recursion</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onesharp": ["\\mathttt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "clearprog": ["\\mathtt{clear}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"quadiff": ["\\quad\\mbox{iff}\\quad"], "quadeq": ["\\quad =\\quad"], "dar": ["\\downarrow"], "uar": ["\\uparrow"], "eps": ["\\varepsilon"], "id": ["id"], "o": ["\\circ"], "N": "\\mathbb{N}", "set": ["\\left\\{#1\\right\\}", 1], "one": ["\\mathtt{1}"], "onett": ["\\mathtt{1}"], "hash": ["\\mathtt{\\#}"], "onehash": ["\\onett\\hash"], "onesharp": ["\\mathtt{1\\#}"], "diag": ["\\mathtt{diag}"], "self": ["\\mathtt{self}"], "diagprog": ["\\mathtt{diag}"], "selfprog": ["\\mathtt{self}"], "copyprog": ["\\mathtt{copy}"], "uprog": ["\\mathtt{u}"], "clearprog": ["\\mathtt{clear}"], "reverseprog": ["\\mathtt{reverse}"], "writeprog": ["\\mathtt{write}"], "writetotwo": ["\\mathtt{write}_2"], "tradeprog": ["\\mathtt{trade}"], "tidyprog": ["\\mathtt{tidy}"], "semantics": ["[\\![#1]\\!]", 1], "semanticsalt": ["\\langle\\!\\langle #1\\rangle\\!\\rangle", 1], "moveprog": ["\\mathtt{move}"], "moveprogtwoone": ["\\mathtt{move}_{2,1}"], "phifn": ["\\varphi"], "Tile": ["\\mathit{Tile}"], "TT": ["\\mathcal{T}"], "DD": ["\\mathcal{D}"], "Rone": ["R1"], "Rtwo": ["R2"], "words": ["\\mbox{words}"], "Words": ["\\textit{words}"], "Rings": ["\\mathsf{Rings}"], "iif": ["\\rightarrow"], "andd": ["\\wedge"], "proves": ["\\vdash"], "xbar": ["\\overline{x}"], "ybar": ["\\overline{y}"], "Ronesharp": ["R\\onesharp"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'issues/issues';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Algorithmic problems, decidable and undecidable" href="problems.html" />
-    <link rel="prev" title="Invitation to Computability" href="../index.html" />
+    <link rel="prev" title="Invitation to Computability and Recursion" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -112,7 +103,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -120,16 +110,69 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
   
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -144,6 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -156,18 +201,25 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability - Home"/>
-    <script>document.write(`<img src="../_static/ourboros1.jpg" class="logo__image only-dark" alt="Invitation to Computability - Home"/>`);</script>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-light" alt="Invitation to Computability and Recursion - Home"/>
+    <img src="../_static/ourboros1.jpg" class="logo__image only-dark pst-js-only" alt="Invitation to Computability and Recursion - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Invitation to Computability
+                    Invitation to Computability and Recursion
                 </a>
             </li>
         </ul>
@@ -188,6 +240,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/instructions.html">Instructions of 1#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/interpreters.html">Interpreters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/move_copy_write.html">Basic programs</a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="../introOneSharp/haltDef.html">Halting</a></li>
 
@@ -236,6 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../recThm/recursion_theorem.html">The Recursion Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../recThm/reflective.html">Reflective <span class="math notranslate nohighlight">\(\onehash\)</span></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computably Enumerable Sets And Beyond</span></p>
 <ul class="nav bd-sidenav">
@@ -270,14 +325,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -286,14 +346,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -402,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -416,27 +476,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -456,8 +508,8 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: choices</a><ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: choices</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
@@ -476,11 +528,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a href="https://colab.research.google.com/github/lmoss/onesharp/blob/main/issues/issues.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="computability-choices">
-<h1>Computability: choices<a class="headerlink" href="#computability-choices" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="computability-choices">
+<h1>Computability: choices<a class="headerlink" href="#computability-choices" title="Link to this heading">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Note for instructors</p>
@@ -514,20 +566,20 @@ h(n) = \mbox{the least $m &gt; n$ such that $m$ and $m+2$ are both prime numbers
 <p class="admonition-title">Problem which we will address</p>
 <p>Propose a precise definition of computability.</p>
 </div>
-<div class="section" id="in-principle-vs-in-practice">
-<h2>In principle vs. in practice<a class="headerlink" href="#in-principle-vs-in-practice" title="Permalink to this heading">#</a></h2>
+<section id="in-principle-vs-in-practice">
+<h2>In principle vs. in practice<a class="headerlink" href="#in-principle-vs-in-practice" title="Link to this heading">#</a></h2>
 <p>This section is about different issues to keep in mind regarding computability.   Our next issue is about computability <em>in principle</em> vs. computability <em>in practice</em>.   It is the topic of the diagram below.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/issues/pictures/pictures-56.png?raw=1" width="100%" height="100%"><p>What we have been discussing up to now is <em>in principle</em> computability.   This is because we decided to ignore all matters having to do with time or space.  This is not always a useful thing to do.  What good would it be to know that a function is computable if whenever we tried to run it we would be sure that it took a billion years to compute anything?   Would we even want to say that this function is computable?</p>
 <p>The inner-most region above represents what could be “computed” at the time of this writing.  It is marked by a jagged boundary, since this border depends on the sofware and hardware, and on top of that it is time-dependent.  It is very hard to have a detailed and useful scientific study of such a concept.  Of more interest is the red boundary, the division between mathematical matters which are “in principle” computable, and those which are out of this boundary.  What we mean by “in principle” here is that we want to set aside all considerations of time and space limitations, except that everything must take only finitely many steps, and use only finitely much space.</p>
-</div>
-<div class="section" id="models-of-computation">
-<h2>Models of computation<a class="headerlink" href="#models-of-computation" title="Permalink to this heading">#</a></h2>
-<p>Even with the distinction between “in practice” and “in principle” computability, and even with our decsion to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
+</section>
+<section id="models-of-computation">
+<h2>Models of computation<a class="headerlink" href="#models-of-computation" title="Link to this heading">#</a></h2>
+<p>Even with the distinction between “in practice” and “in principle” computability, and even with our decision to focus on “in principle” computability, there still is the question of how to pin down this notion.  How should it be defined in order to get a mathematical theory off the ground?  Our answer in this text is a variation on a standard practice.   We will do two things:</p>
 <p>First, we will provide a very concrete definition of computability based on a <em>machine model</em>.  We have already begun this with our introduction of <code class="docutils literal notranslate"><span class="pre">1#</span></code> and its associated notion of <em>functions computed by programs</em>.   There are other ways to do just this, and the machine models involved have names like <em>Turing machine</em> or <em>register machine</em>.   (Our <em>text register machine</em> is of course very close to an ordinary register machine; the main difference is that we have an alphabet with two symbols instead of just one, and our language of instructions and programs is identical to the language of words stored in the registers.   We will see later what differences come to.)</p>
 <p>Second, we argue that in a very real sense, it doesn’t matter which concrete model of computation one works with, “it comes to the same thing”.  This is the second part of the <em>Church-Turing Thesis</em>.  One way to make this concrete is to take computability on the natural numbers as a sort of reference point, and then check that all of the concrete models give the same notion of computable partial functions.   It would take quite some work to provide the evidence that all of the models of computation lead to the same class of computable partial functions of numbers, and so we are not going to do much of it.  The first part of this same <em>Church-Turing Thesis</em> is that this class of computable partial functions of numbers is the correct formalization of the intuitive notion of a computable function.</p>
-</div>
-<div class="section" id="intentional-vs-extensional">
-<h2>Intentional vs. Extensional<a class="headerlink" href="#intentional-vs-extensional" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="intentional-vs-extensional">
+<h2>Intentional vs. Extensional<a class="headerlink" href="#intentional-vs-extensional" title="Link to this heading">#</a></h2>
 <p>Yet another choice point in our study is whether to take computability as an <em>extensional</em> or <em>intensional</em> notion.   Here is what we mean: for any function <span class="math notranslate nohighlight">\(f\)</span>, the <em>graph</em> of <span class="math notranslate nohighlight">\(f\)</span> is the set of input-output pairs of <span class="math notranslate nohighlight">\(f\)</span>.  For example, the graph of <span class="math notranslate nohighlight">\(s(n) = n+1\)</span> on the natural numbers is the set</p>
 <div class="math notranslate nohighlight">
 \[
@@ -545,25 +597,24 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <p>These have the same graph relation, so they are extensionally the same.   But the descriptions are different, so those descriptions are intensionally different.</p>
 <p>Now the standard practice in mathematics is to regard function equality as extensional.  Thus, <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are regarded as <em>identical</em>.  One takes function identity in the extensional sense in mathematics partly because it is clear and unproblematic, and because the alternative is very difficult to pin down.</p>
 <p>For computability, we naturally want to do the same thing, and generally we will.   But there are situations where it would be more naturally to be intensional, and we want to flag those.</p>
-<p>does the question of whether a function is computable or not depend on how the function is presented, or is it a property of the</p>
-</div>
-<div class="section" id="total-vs-partial-functions">
-<h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="total-vs-partial-functions">
+<h2>Total vs. partial functions<a class="headerlink" href="#total-vs-partial-functions" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be sets.  A <em>function</em> from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is a way to take each element of <span class="math notranslate nohighlight">\(A\)</span> to some element of <span class="math notranslate nohighlight">\(B\)</span>.   It must be defined for all <span class="math notranslate nohighlight">\(a\in A\)</span>, and we emphasize this point by saying that it is <em>total</em>.   A <em>partial function</em> from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is a total function from a subset of <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>.  Another way to say this: <span class="math notranslate nohighlight">\(f\)</span> is a partial function if some (but perhaps not all) of the elements of <span class="math notranslate nohighlight">\(A\)</span> are taken to elements of <span class="math notranslate nohighlight">\(B\)</span>.  We say that <span class="math notranslate nohighlight">\(f(a)\)</span> is <em>defined</em> in this case, and we write <span class="math notranslate nohighlight">\(f(a)\!\!\downarrow\)</span>.  Finally, the <em>domain</em> of <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\{ a\in A \colon f(a)\!\!\downarrow\}\)</span>.</p>
 <p>Please note that every total <span class="math notranslate nohighlight">\(f\colon A\to B\)</span> is automatically partial.</p>
 <p>Another choice point is whether to stick to total functions or to allow partial functions in our study.   We opt to include partial functions in a big way.  That is, we are foregrounding the partial functions.   When a function is total, we make a special mention of this.   (To contrast, with <span class="math notranslate nohighlight">\(A = B = \)</span> the real numbers, the function
 <span class="math notranslate nohighlight">\(f(x)= \frac{1}{x}\)</span> is not defined at <span class="math notranslate nohighlight">\(x = 0\)</span>.  But usually one pretends that it is total and then makes a special note afterwards about <span class="math notranslate nohighlight">\(0\)</span>.  Here, every function is presumed to be merely partial, and the total functions are the ones that get a special notice.)</p>
-</div>
-<div class="section" id="finite-vs-infinite">
-<h2>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="finite-vs-infinite">
+<h2>Finite vs. infinite<a class="headerlink" href="#finite-vs-infinite" title="Link to this heading">#</a></h2>
 <p>As is clear from our picture at the top of this page, much of the action in the subject is ultimately do to the tension between the finite and the infinite.   Indeed, at some level the distinction between the “in principle computable” and “not-even-in-principle computable” corresponds to the difference between (a) problems with a search space that at first looks infinite but which can be reduced to a finite space, and (b) problems with an unavoidably infinite search space.</p>
 <p>In more detail: suppose that we are looking for a cycle in a given finite graph <span class="math notranslate nohighlight">\(G\)</span>. At first glance, the length of the smallest cycle could look to be arbitrarily large.  But upon further reflection, if <span class="math notranslate nohighlight">\(G\)</span> has <span class="math notranslate nohighlight">\(n\)</span> points, then every cycle of length larger than <span class="math notranslate nohighlight">\(n\)</span> must have a repeated element and thus a sub-cycle of length at most <span class="math notranslate nohighlight">\(n\)</span>.  So the search space in this problem is finite.   On the other hand, in the example problems which turn out to be undecidable, the space is unavoidably infinite.</p>
 <p>There is one important principle related to finiteness which is worth mentioning and understanding.</p>
 <div class="proof proposition admonition" id="proposition-0">
 <p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
-<div class="proposition-content section" id="proof-content">
+<section class="proposition-content" id="proof-content">
 <p>Every finite set is decidable.</p>
-</div>
+</section>
 </div><p>The proof basically comes down to a <em>table look-up</em>.</p>
 <p>For many, this result is uninspiring, even wrong somehow.  So it is worthwhile to understand both the result itself and the objections.</p>
 <div class="tip admonition">
@@ -573,40 +624,40 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
 <div class="exercise admonition" id="issues/issues-exercise-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Find a computable function <span class="math notranslate nohighlight">\(c: Inst \times Inst \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\![c(p,q)]\!] = [\![q]\!] \o [\![q]\!]\)</span>.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="issues/issues-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Find a computable function <span class="math notranslate nohighlight">\(con: N \to Inst\)</span> such that <span class="math notranslate nohighlight">\([\![c(n)]\!]\)</span> is the constant function with value <span class="math notranslate nohighlight">\(n\)</span>. That is,</p>
 <div class="math notranslate nohighlight">
 \[
 [\![c(n)]\!](m) = n \mbox{ for all $m$}
 \]</div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="issues/issues-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Let <span class="math notranslate nohighlight">\(f: N \to N\)</span> be any function with the property that if <span class="math notranslate nohighlight">\(n \leq m\)</span>, then <span class="math notranslate nohighlight">\(f(n) \geq f(m)\)</span>.  Show that <span class="math notranslate nohighlight">\(f\)</span> is intuitively computable.</p>
+</section>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <div class="danger admonition">
-<p class="admonition-title">Going forward </p>
+<p class="admonition-title">Going forward</p>
 <p>We will propose and study a precise definition of computability, starting <a class="reference internal" href="../introOneSharp/instructions.html#content-onesharpinstructions"><span class="std std-ref">here</span></a>.</p>
 <p>Nevertheless, there are still interesting things that one can do in computability theory with purely intuitive notions.</p>
 <p>We will allow partial functions.</p>
 <p>We will concentrate on <em>in principle</em> computability, and we will be thinking of equality extensionally.</p>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -635,7 +686,7 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -644,7 +695,7 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Invitation to Computability</p>
+        <p class="prev-next-title">Invitation to Computability and Recursion</p>
       </div>
     </a>
     <a class="right-next"
@@ -663,15 +714,18 @@ g(m,n) = \mbox{the product $m n$ divided by the least common multiple of $m$ and
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: choices</a><ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computability: choices</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-principle-vs-in-practice">In principle vs. in practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-of-computation">Models of computation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intentional-vs-extensional">Intentional vs. Extensional</a></li>
@@ -729,8 +783,8 @@ By Lawrence S. Moss
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

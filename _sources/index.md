@@ -1,4 +1,4 @@
-# Invitation to Computability 
+# Invitation to Computability and Recursion
 
 Lawrence S. Moss
 
@@ -34,14 +34,14 @@ The are three distinctive features of this book.   Three of the first four chapt
 
 Compared to the many other books on the subject, the treatment here is in some ways more concrete and in some ways more abstract and sophisticated.  How can this be?  It is more concrete in the beginning than other books, and more abstract later on.  It is more concrete in that it comes with a dedicated computer implementation and because it goes into full details on coding.  But later it is more abstract because it discusses matters like recursion on induction on a fairly abstract level and because it also discusses corecursion alongside recursion.
 
-The concrete part in the beginning develops a model of computation which is a variant of a register machine called a *text register machine*.  The "text" in "text register machine" is the feature that the programming language of the machine is the same as the language of programs.  This language the set of words on the two letter alphabet ```{1,#}```.  So the language is called ```1#```. This text comes with two interpreters for ```1#```, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to help people to write long programs in ```1#```; for example, one can turn a flowchart into a  ```1#``` program.  Another tool turns a decription of a primitive recursive function into ```1#``` code.   Those tools are in Python, and while one need not read the programs to use them, a class for computer science students could indeed do so.  Using ```1#``` and the accompanying tools, the main first theorems of computability theory are presented constructively in full detail, with no coding and no hand-waving.    One can write explicit universal programs, $s^m_n$ programs, self-writing programs, the T-predicate, and similar artifacts that essentially *are* the main first results in computability theory.   One can prove Kleene's Second Recursion Theorem in full detail, too.
+The concrete part in the beginning develops a model of computation which is a variant of a register machine called a *text register machine*.  The "text" in "text register machine" is the feature that the programming language of the machine is the same as the language of programs.  This language the set of words on the two letter alphabet $\{\onett,\hash\}$.  So the language is called $\onesharp$. This text comes with two interpreters for $\onesharp$, so the programs can be run.  The programs themselves are unreadable; that is, they are not intended to be human readable but rather to be used in this presentation of computabililty (and nowhere else).  The book comes with tool support to help people to write long programs in $\onesharp$; for example, one can turn a flowchart into a  $\onesharp$ program.  Another tool turns a decription of a primitive recursive function into $\onesharp$ code.   Those tools are in Python, and while one need not read the programs to use them, a class for computer science students could indeed do so.  Using $\onesharp$ and the accompanying tools, the main first theorems of computability theory are presented constructively in full detail, with no coding and no hand-waving.    One can write explicit universal programs, $s^m_n$ programs, self-writing programs, the T-predicate, and similar artifacts that essentially *are* the main first results in computability theory.   One can prove Kleene's Second Recursion Theorem in full detail, too.
 
 
-The use of ```1#``` is why the treatment here is much more explicit than usual.   The way the book works is that those main first results are presented in full detail, and then after doing so it becomes more "hand wavy".  Probably every book on the topic becomes "hand wavy" at some point.  But this one does fairly late, due to our use of ```1#``` and the extra tools.
+The use of $\onesharp$ is why the treatment here is much more explicit than usual.   The way the book works is that those main first results are presented in full detail, and then after doing so it becomes more "hand wavy".  Probably every book on the topic becomes "hand wavy" at some point.  But this one does fairly late, due to our use of $\onesharp$ and the extra tools.
 
 ## Unsolvable problems
 
-The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as the Church-Turing Theorem (satisfiability in first-order logic is undecidable).   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with ```1#``` earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church's Theorem.   
+The book also presents quite a bit on undecidability matters and the main negative results of 20th century mathematical logic such as the Church-Turing Theorem (satisfiability in first-order logic is undecidable).   In this, we use other interesting undecidability results such as tiling and also matrix mortality.  Our treatment is fuller than any source we know of on these topics.  The reason that we can provide a full treatment is that we build on work done with $\onesharp$ earlier.  For example, the work done in writing the universal program gets called back when we prove the undecidability of tiling, and the undecidability of tiling leads to a fairly easy proof of Church's Theorem.   
 
 
 ## Recursion principles and the categorical treatment of recursion
@@ -55,7 +55,7 @@ The final distinctive feature of the book is a "gentle introduction" to areas of
 # Using it in a classroom or for self-study
 
 
-There are a number of ways the book could be used in courses for students in several disciplines.  An instructor would have to be happy with the {ref}`content:DistinctiveFeatures` in the book, especially with the use of ```1#``` and the Jupyter book format.  But one would not have to do everything in the book that uses ```1#``` in order to teach a course.   The chapter that covers the basics of the language could be taught in a week (two or three lectures).  After that, the book contains a tool that help in writing programs by converting flow charts to programs, and then it uses the tool to give explicit ```1#``` programs for the basic primitive recursive functions of numbers and also the universal program.   One could decide that it is enough to know that such programs exist without having students work on the topic.  (On the other hand,  I have found that students really like the challenge of writing the universal program in complete detail. (See {ref}`content:firstGroupProject`. They turn in short papers on what they did; for some it is their first experience of this kind.)  Again, if an instructor wants to omit this experience, they could do so.  
+There are a number of ways the book could be used in courses for students in several disciplines.  An instructor would have to be happy with the {ref}`content:DistinctiveFeatures` in the book, especially with the use of $\onesharp$ and the Jupyter book format.  But one would not have to do everything in the book that uses $\onesharp$ in order to teach a course.   The chapter that covers the basics of the language could be taught in a week (two or three lectures).  After that, the book contains a tool that help in writing programs by converting flow charts to programs, and then it uses the tool to give explicit $\onesharp$ programs for the basic primitive recursive functions of numbers and also the universal program.   One could decide that it is enough to know that such programs exist without having students work on the topic.  (On the other hand,  I have found that students really like the challenge of writing the universal program in complete detail. (See {ref}`content:firstGroupProject`. They turn in short papers on what they did; for some it is their first experience of this kind.)  Again, if an instructor wants to omit this experience, they could do so.  
 
 Returning to the book as it stands, there is almost enough here now for a one-semester course.  The topics that are missing are largely those where a traditional printed book would be as good as an online resource.  With the addition of the foundational material at the end, there will be more material here than what would cover in a semester.  The topic of computability has many connections and developments, far too many for an "invitation" book.  My hope is that instructors would use this book for part of their courses and to provide other material as well.   
 
@@ -68,7 +68,7 @@ Our subjects are often taught as one of several topics in a course that is mainl
 For all such courses, it would be possible to use this book for a unit in a course as opposed to an entire course.
 Here are ideas for units that are roughly four weeks long.
 
-Week 1: basics of ```1#```.
+Week 1: basics of $\onesharp$.
 
 Week 2: Algorithmic problems, and reduction of one problem to another.
 
@@ -79,10 +79,12 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
 
 
 
-# Summer 2025 Status report
+# Fall 2025 Status report
 
-The book that you see here has a ways to go before anyone besides me could use it.  (But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.)   There are a few things in the ```1#``` section that ought to change: 
-[the tool called "sanity" that turns flowcharts into programs](content:firstSanity) should be improved so as to have a more forgiving syntax. There needs to be a glossary of the many Python tools that exist that help people write long ```1#``` programs.   
+The book that you see here has a ways to go before anyone besides me could use it. But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.  There is also the beginning of a print version of the book, and some of the material now appears only in the print version.  (Similarly, some material only appears in this online form.) One of the things that I am thinking about is the relation between the ultimate print and online versions of this book.
+
+There are a few things in the $\onesharp$ section that ought to change: 
+[the tool called "sanity" that turns flowcharts into programs](content:firstSanity) should be improved so as to have a more forgiving syntax. There needs to be a glossary of the many Python tools that exist that help people write long $\onesharp$ programs.   
 
 Some of the sections of the book here (c.e. sets) are placeholders.  Others are not even that (Church-Turing Thesis, and also models of computation beyond register machines).
 
