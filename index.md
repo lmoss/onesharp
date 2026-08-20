@@ -79,22 +79,15 @@ As of now (June 2025), the book does not quite have the Incompleteness Theorem a
 
 
 
-# Fall 2025 Status report
+# Fall 2026 Status report
 
-The book that you see here has a ways to go before anyone besides me could use it. But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.  There is also the beginning of a print version of the book, and some of the material now appears only in the print version.  (Similarly, some material only appears in this online form.) One of the things that I am thinking about is the relation between the ultimate print and online versions of this book.
+I spent quite a bit of time over the summer working on the material, but all of that work has gone into the traditional (print) version of it.  So this electronic version is out of date relative to the print one.  I will be teaching this material again in the upcoming semester, and I expect to make a lot of changes to the electronic version.
 
-There are a few things in the $\onesharp$ section that ought to change: 
-[the tool called "sanity" that turns flowcharts into programs](content:firstSanity) should be improved so as to have a more forgiving syntax. There needs to be a glossary of the many Python tools that exist that help people write long $\onesharp$ programs.   
+The book that you see here has a ways to go before anyone besides me could use it. But if you are interested in doing so, please let me know: I have material that could help, and I would like to know others' opinions about what is here.
 
-Some of the sections of the book here (c.e. sets) are placeholders.  Others are not even that (Church-Turing Thesis, and also models of computation beyond register machines).
+One of the things that I am thinking about is the relation between the print and online versions.  An ideal online book would generate a learning community that discusses it and improves it, and I would like that to happen with this book.   I envsion a growing world of software artifiacts for online teaching in logic and theoretical computer science.   So if you would like to do that, please be in touch.  I also welcome thoughts on the relation between the ultimate print version and the changeable, living, online versions of this book.
 
-I would like to explore animation as a tool for presenting aspects of this subject.
 
-The section on the Godel Incompleteness Theorem is yet to come.  This might expand to a chapter on its own.
-
-I would like to add sections on combinatory logic, partly to compare the fixed-point combinators there with what we see in the Recursion Theorem, and partly to discuss it as another model of computation.
-
-I mentioned above material on recursion principles and on the categorical treament of recursion.  All of this material exists in the form of notes or lecture slides.  So it needs to be set in a proper form and added to the book.
 
 
 # Art
