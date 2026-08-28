@@ -510,7 +510,10 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-javascript-interpreter">Online Javascript interpreter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-a-notebook-on-google-colab">Python interpreter in a notebook on Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-a-notebook-on-google-colab">Python interpreter in a notebook on Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-should-click-on-open-in-colab-at-the-top-of-this-page">At this point you should click on Open in Colab at the top of this page.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-operations-inside-a-jupyter-notebook">Useful operations inside a Jupyter notebook</a></li>
@@ -548,6 +551,8 @@ It was written in JavaScript by my former PhD students Robert Rose and David Spr
 <section id="python-interpreter-in-a-notebook-on-google-colab">
 <h2>Python interpreter in a notebook on Google Colab<a class="headerlink" href="#python-interpreter-in-a-notebook-on-google-colab" title="Link to this heading">#</a></h2>
 <p>The Javascript editor is convenient, and we hope you’ll at least try it out.   It’s very basic, and most people would find it better to use an interpreter with more features, even if it means learning how to do so.  For this, we have a Python interpreter.</p>
+<section id="at-this-point-you-should-click-on-open-in-colab-at-the-top-of-this-page">
+<h3>At this point you should click on Open in Colab at the top of this page.<a class="headerlink" href="#at-this-point-you-should-click-on-open-in-colab-at-the-top-of-this-page" title="Link to this heading">#</a></h3>
 <p>The differences between the standalone interpreter and the one embedded in this Colab notebook are that (1) the standalone interpreter has more functionality.
 You can watch a computation run slowly, and you can see more than two registers.<br />
 (2) The Colab notebook allows you to enter code cells above and below, and then you can use the Python tools.  After you learn the basics of the language, the Python tools are going to be useful.</p>
@@ -586,19 +591,14 @@ You can watch a computation run slowly, and you can see more than two registers.
 <p>What you should find after doing this is that the output is the input in <span class="math notranslate nohighlight">\(R1\)</span> followed by the input in <span class="math notranslate nohighlight">\(R2\)</span>. We also will say <em>concatenated</em> instead of <em>followed by</em>.</p>
 <hr class="docutils" />
 <p>The overall point is that the program <code class="docutils literal notranslate"><span class="pre">11#####111111###111###1##1111####1#111111####</span></code> may be run on words which are input in the registers. This program does not change when we run it.  Our little interpreter didn’t show the step-by-step behavior of the register machine, it only showed the final output.   We’ll return to the soon, after we understand what the program is doing.  It turns out that this program is composed of seven instructions. We’ll get to the instructions soon, but first we have an exercise for you to try.</p>
-<div class="exercise admonition" id="introOneSharp/interpreters-exercise-0">
-
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
-<section id="exercise-content">
-<p>Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
-</section>
-</div>
+<p>Here is an exercise.  Just below, you’ll see another 1# program. It takes its input from the first two registers. Enter some words in R1 and R2 input boxes, and then run the program. Your job is to try to figure out what the program does.</p>
 <p><code class="docutils literal notranslate"><span class="pre">1#####</span> <span class="pre">11111111###</span> <span class="pre">1111###</span> <span class="pre">111##</span> <span class="pre">1111##</span> <span class="pre">11111####</span> <span class="pre">111#</span> <span class="pre">1111#</span> <span class="pre">11111111####</span> <span class="pre">111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">1111#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span> <span class="pre">11#####</span> <span class="pre">111111###</span> <span class="pre">111###</span> <span class="pre">1##</span> <span class="pre">1111####</span> <span class="pre">1#</span> <span class="pre">111111####</span></code></p>
-<p>An exercise: Again, start with <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty. What happens in each register if we run <code class="docutils literal notranslate"><span class="pre">111##</span></code>?
+<p>An exercise: start with <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R3, and the other registers empty. What happens in each register if we run <code class="docutils literal notranslate"><span class="pre">111##</span></code>?
 Try to figure this out for yourself, and then check your work by actually running the program.</p>
 <p>Another exercise: As before, start with <code class="docutils literal notranslate"><span class="pre">1</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">13</span></code> in R3, and the other registers empty.  What happens in each register if we run the same program <code class="docutils literal notranslate"><span class="pre">111##</span></code>from the previous exercise?</p>
 <p>Write a program which, when started with all registers empty, gives <code class="docutils literal notranslate"><span class="pre">1#</span></code> in R1 and R2, <code class="docutils literal notranslate"><span class="pre">#</span></code> in R3, and the other registers empty.</p>
 <img src="https://github.com/lmoss/onesharp/blob/main/hopeless.jpg?raw=1" width="200" height="160"></section>
+</section>
 <section id="running-programs-in-code-cells">
 <h2>Running programs in code cells<a class="headerlink" href="#running-programs-in-code-cells" title="Link to this heading">#</a></h2>
 <p>Because notebooks like this are composed of cells, we also want to run programs in a command-line fashion.</p>
@@ -758,7 +758,10 @@ Try to figure this out for yourself, and then check your work by actually runnin
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#online-javascript-interpreter">Online Javascript interpreter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-a-notebook-on-google-colab">Python interpreter in a notebook on Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-interpreter-in-a-notebook-on-google-colab">Python interpreter in a notebook on Google Colab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#at-this-point-you-should-click-on-open-in-colab-at-the-top-of-this-page">At this point you should click on Open in Colab at the top of this page.</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-programs-in-code-cells">Running programs in code cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-command-line-tools">Useful command-line tools</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-operations-inside-a-jupyter-notebook">Useful operations inside a Jupyter notebook</a></li>
