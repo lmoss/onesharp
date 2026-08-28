@@ -510,6 +510,7 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A tool to help write programs</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-tool-in-a-separate-notebook">Here is the tool in a separate notebook.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 </ul>
 </li>
@@ -549,6 +550,8 @@
 <li><p>Write a program that trades places with its input. This is a program <span class="math notranslate nohighlight">\(p\)</span> with the property that for all programs <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\([\![p]\!](q)\simeq [\![q]\!](p)\)</span>.</p></li>
 </ol>
 <p>We have seen problem 1, and this is basically handled by the <code class="docutils literal notranslate"><span class="pre">write</span></code> program.   When it comes to doing numerical computation, or much of anything else, it is hard to use <code class="docutils literal notranslate"><span class="pre">1#</span></code> “out of the box.”  That is, it was designed to illustrate results in computability theory but as a result it is very hard for a person to use.   This section rectifies matters by providing a tool that makes it easier to write programs in <code class="docutils literal notranslate"><span class="pre">1#</span></code>.   The program is called <code class="docutils literal notranslate"><span class="pre">sanity</span></code>.</p>
+<section id="here-is-the-tool-in-a-separate-notebook">
+<h2><a class="reference external" href="https://github.com/lmoss/onesharp/blob/main/more_programs/sanityTool.ipynb">Here is the tool in a separate notebook</a>.<a class="headerlink" href="#here-is-the-tool-in-a-separate-notebook" title="Link to this heading">#</a></h2>
 <p>This tool makes it easier for someone to organize 1# programs and to write them without having to count lines for all of the forward- and backward-transfer statements.</p>
 <p>The concept and the name come from Jon Bowman, who once took my class and felt that construction 1# programs by hand was crazy, and that counting all the 1’s in a long expression “made his eyeballs bleed.”</p>
 <p>To start, run the next code cell to install the 1# Python package in your preferred environment. Then run the second code cell to import the functions from the 1# package which are used in this notebook.</p>
@@ -720,6 +723,7 @@ R2 would have <span class="math notranslate nohighlight">\(w_{n}\cdots w_2 w_1\)
 <p>We have here 8 <em>segments</em>.   A segment is not the same what we called a <em>line</em> of a <span class="math notranslate nohighlight">\(\one\hash\)</span> program.  As the name suggests, a segment corresponds to a sequence of lines.
 For example, segments 6 and 8 each contain <code class="docutils literal notranslate"><span class="pre">move</span></code> programs that are bigger than a single instruction.  Segments 2, 4 5, and 6 each begin with a <em>label</em>.  Labels are strings that other parts of the program could point to.  For example, the first segment is a case statement <span class="math notranslate nohighlight">\(\one\hash^5\)</span>, and it also contains the information that if R1 is empty, we should go to whichever segmet has the label “move_phase”. (That would be the segment named ‘move_stuff_around’.) The first segment also tells us that if R1 begins with <span class="math notranslate nohighlight">\(\one\)</span> we should (delete is and) go to the segment containing ‘first-is_one’.   Note also that ‘goto’ is not a label.</p>
 <p>Also, note that a segment is not quite the samething as an item in the flowchart.   But this is pretty close.</p>
+</section>
 <section id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
 <p>The workflow in this notebook is that you will need to</p>
@@ -1478,7 +1482,7 @@ The register contents at the end are shown below.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d86541b69155430a9f1e5ee6941d87d7"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d86541b69155430a9f1e5ee6941d87d7", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1916,7 +1920,7 @@ The register contents at the end are shown below.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "af3d3e82bcbf42efa4cc4b636e84b943"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "af3d3e82bcbf42efa4cc4b636e84b943", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2297,7 +2301,7 @@ The register contents at the end are shown below.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e3dae2e24de0468a86e7945d003bacf2"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e3dae2e24de0468a86e7945d003bacf2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2306,7 +2310,7 @@ The register contents at the end are shown below.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e3dae2e24de0468a86e7945d003bacf2"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e3dae2e24de0468a86e7945d003bacf2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2406,6 +2410,7 @@ The register contents at the end are shown below.
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A tool to help write programs</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-tool-in-a-separate-notebook">Here is the tool in a separate notebook.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 </ul>
 </li>
